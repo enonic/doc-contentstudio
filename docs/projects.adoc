@@ -1,0 +1,33 @@
+= Content Projects
+:toc: right
+:imagesdir: projects/images
+
+Content Studio allows you to organize your content in multiple independent repositories aka Projects.
+
+Content Projects also offer individual access control and permissions, as well as other settings to toggle features and language(s) for the project.
+
+Privileged users can create and manage projects via <<settings#, Content Studio settings>>.
+
+
+== First project
+For new Enonic installations, you will have to <<settings#new_project_wizard,create an project>> to get started.
+
+image::context-no-projects.png[No projects, 987w]
+
+
+== Project selector
+If you have access to multiple projects, you can easily swich to a different project in the context selector
+
+image::project-switcher.png[Project switcher, 1226w]
+
+
+== Project context
+The project context is always visible in the Content Studio header, including when you are editing a single content item:
+
+image::content-wizard-context.png[Context in Content Wizard, 789w]
+
+
+== Project layering
+
+Content Studio also offers an advanced feature for reusing and augmenting content across multiple projects. This is called <<layers#, content layering>>.
+

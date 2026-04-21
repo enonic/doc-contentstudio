@@ -1,0 +1,294 @@
+= Release Notes
+
+:imagesdir: release/images
+
+:toc: right
+
+TIP: Release Notes for Content Studio 4.x can be found https://developer.enonic.com/docs/content-studio/4.x/release[here]
+
+
+== Content Studio 5 Update 3
+
+IMPORTANT: Content Studio 5.3 requires XP 7.15.0 or higher.
+
+=== What's new
+
+video::PG_OzKGDow8[youtube, 75%]
+
+=== Juke AI support
+
+Content Studio has been adapted to support ecosystem of Juke applications, new AI-powered extensions that enable high-level
+assistance for content editors. In this release Content Studio provides integration with Juke apps responsible for
+content localisation (<<layers#_ai_translation, Juke Translator>>) and content creation (<<ai#, Juke Content Operator>>).
+
+NOTE: Juke apps are not built into Content Studio and need to be installed and configured individually. Contact us if you want to enable Juke AI support in your Content Studio.
+
+IMPORTANT: Enonic does not store any conversations or data processed by Juke AI. During conversations, the data is sent to the Google Vertex service and the response is displayed directly in Content Studio. Once the browser tab is closed or refreshed, the conversation thread will be gone.
+
+==== Juke Translator
+
+With this application installed, Content Studio will suggest translating content localised in a layer, to the language of the layer. After clicking "Localise" for an inherited content in a layer, user will see a dialog suggesting automatic translation of all text fields in the localised content to the language of the layer.
+
+It's possible to provide custom instructions for the Juke AI to follow when translating the content. If you need to provide some context on a regular basis, add "Juke Translator" to your site and set instructions via site config, then Juke will reuse them for every translation.
+
+image::cs53-juke-translator.png[Juke Translator, 75%, align="center"]
+
+==== Juke Content Operator
+
+Help-text icons for inputs in the Content Form have been replaced with icons to require assistance from the Juke AI Content operator for this specific field. As of now, Content Operator provides assistance only for inputs of type TextLine, TextArea and HtmlArea.
+
+image::cs53-juke-icon.png[Juke icon for input, 75%, align="center"]
+
+TIP: Help-text for inputs can still be toggled by using the help-text icon in the content form toolbar.
+
+image::cs53-juke-operator-dialog.png[Juke Content Operator, 75%, align="center"]
+
+TIP: To provide custom instructions for the Juke AI to follow when assisting with content creation, add "Juke Content Operator" to your site and set instructions via site config.
+
+=== Preview mode
+
+==== Mode selector
+
+It's now possible to select preview mode inside the Preview panel. Currently available built-in modes are: Media, Enonic rendering and JSON. Default selection is "Automatic" which will automatically find and use the first mode that supports preview of current content.
+
+image::cs53-preview-mode.png[Preview, 75%, align="center"]
+
+TIP: In future versions it will be possible to add custom preview modes.
+
+Read more about content preview modes in the <<navigator#preview_panel,Content Navigator documentation>>.
+
+==== Emulator
+
+Device emulator selector - that used to be a widget inside Context Panel - has been turned into selector inside the Preview panel's toolbar.
+
+image::cs53-preview-emulator.png[Emulator, 50%, align="center"]
+
+==== Preview button
+
+Preview button was moved from the Content Navigator's toolbar to the Preview panel's toolbar. It will still open preview of currently selected content in a new browser tab, but preview in the new tab will use the currently selected mode (f.ex. JSON).
+
+=== Edit text in the Inspect panel
+
+It's now possible to edit contents of a Text component directly in the Inspect panel on the right.
+
+image::cs53-inspect-text.png[Emulator, 75%, align="center"]
+
+=== Support for webp and avif
+
+Content Studio now supports upload and preview of images in webp and avif format. Image modifications are not yet supported.
+
+=== Accessibility improvements
+
+Several improvements have been made to make Content Studio more accessible and comply with WCAG 2.1 standards:
+
+* Focused elements are now highlighted with a blue border
+* Keyboard navigation has been improved
+* Toolbars and their child elements are now focusable and can be navigated with arrow keys, according to WCAG 2.1 standards
+* Most of the elements received proper ARIA roles and labels
+
+:imagesdir: navigator/images
+
+image::navigator-accessibility.png[Toolbar accessibility, 50%, align="center"]
+
+=== Other improvements
+
+* If a page component (part or layout) provides page contributions, Content Studio will automatically inject them into the page editor, so it's no longer required to refresh the page for the contributions to start working.
+* Tag input will now parse a string pasted into it and create tags from the parsed values.
+* We have strengthened Content Security Policy (CSP) even more by disabling `unsafe-eval` in `script-src` (read more https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/script-src#unsafe_eval_expressions[here]). Please test and adapt your applications accordingly.
+
+== Content Studio 5 Update 2
+
+IMPORTANT: Content Studio 5.2 requires XP 7.14.1 or higher.
+
+=== What's new
+
+video::MjWxNLDsUEc[youtube, 75%]
+
+=== Project graph
+
+:imagesdir: settings/images
+
+By selecting "Projects" in the Content Studio's "Settings" module it's now possible to see a visualised graph of existing content projects and their relations.
+
+image::settings-grid.png[Project graph, 75%]
+
+=== Project Wizard improvements
+
+==== Preset parent project
+
+If an existing project is selected in the Project tree when the "New" button is clicked, the Project Wizard will create a layer of the selected project and set up synhronisation of data in the layer with its parent project.
+
+==== Removed type selection
+
+Before this release, users had to explicitly select whether they are about to create a project or a layer. This requirement has been removed. If a parent project is selected on the first step of the Wizard, a layer will be created and set up to inherit data from the selected project. Otherwise, a regular project will be created.
+
+image::new-project-dialog-1.png[Select parent project, 75%]
+
+==== Parent project apps
+
+A layer will always inherit applications from its parent project, even though it was not obvious from the UI before this release. "Applications" step of the "Project Wizard" has been changed to automatically display applications inherited from the parent project (if any), with no option to remove them. Other applications can be added to the layer in addition to the inherited ones.
+
+The settings form of an existing layer has also been fixed accordingly.
+
+In the screenshot below, the top two applications were inherited from the parent project, while the bottom one was added manually.
+
+image::new-project-dialog-5.png[Apps inherited from parent project, 75%]
+
+=== Reference check in the Unpublish Wizard
+
+The Unpublish Wizard will now check if any of the content items to be unpublished are referenced by other _published_ content items. If there are inbound references, the user will be warned and asked to confirm the unpublish operation.
+
+:imagesdir: actions/images
+
+image::dialog-unpublish-references.png[Reference check in the Unpublish Wizard, 75%]
+
+=== Decorative images
+
+A new "Accessibility" section in the <<editor/rich-text-editor#insertedit_image,Insert/Edit Image dialog>> of Rich Text editor allows the setting of decorative images as such. Decorative images are used for styling purposes only and meant to be skipped by screen readers, as opposed to images with meaningful alt text.
+
+:imagesdir: editor/images
+
+image::rich-text-editor-image-dialog.png[Insert Image dialog, 75%]
+
+=== Default Online From time
+
+:imagesdir: config/images
+
+image::pubwiz-online-from.png[Default Online From time in the Publishing Wizard, 75%]
+
+Default Online From time in the Publishing Wizard can now be configured in Content Studio's <<config#default_online_from_time,config file>>. If no config is set, the default time will be set to 12:00.
+
+=== Page Components view
+
+Styling of regions inside the Page Components view has been changed to make regions take less space and attention away from the main page components. Region names are now capitalized.
+
+:imagesdir: release/images
+
+image::cs52-pcv-regions.png[Regions in the Page Components view, 75%]
+
+=== Other improvements
+
+==== Performance
+
+Preview and Page Editor panels will no longer be refreshed whenever content is published or unpublished.
+
+==== Soft-hyphen in the Rich Text Editor
+
+Soft-hyphen character `\&shy;` added to Rich Text Editor's "Special chars" dialog.
+
+==== Email sender
+
+Before this release, email notifications for <<issues#,issues>> created in Content Studio used the current user's email address in the sender field. A new https://developer.enonic.com/docs/xp/stable/deployment/config#mail[config property^] is implemented in XP 7.14.1 which can be used to configure default email sender for emails sent by XP. If properly configured, the sender field in the email notifications sent for issues in Content Studio will be set to the configured email address.
+
+==== eXtra Data
+
+Layout and behaviour of optional X-Data sections in the Content Form have been changed. `+` icon is now right-aligned and transforms to `x` icon whenever the X-Data is active.
+
+image::cs52-x-data.png[x-data in the Content Editor form, 75%]
+
+== Content Studio 5 Update 1
+
+IMPORTANT: Content Studio 5.1 requires XP 7.13.0 or higher.
+
+=== What's new
+
+video::Lc8GVT7V5cU[youtube, 75%]
+
+=== Improved move operation
+
+* Move Content dialog: New "Project root" node on top of the content tree to make it more obvious how to move content to the root. Previously one had to click "Move" button with no target content selected.
+* Move Content dialog: "Move" button is disabled until new parent node is selected.
+* It's now possible to move content from inside the Content Editor
+* Notification about successful move includes the new parent's path which can be clicked to locate and expand the new parent inside the Content Navigator.
+
+:imagesdir: actions/images
+
+image::dialog-move.png[Move dialog, 75%]
+
+image::notification-move.png[Move notification, 75%]
+
+=== Improved auto-exclusion of optional dependencies
+
+The new mode for auto-exclusion of optional dependencies in the Publishing Wizard, originally introduced in Content Studio 5.0, has been improved to not hide the auto-excluded dependencies but  keep them visible (while still excluded) in the list.
+
+image::dialog-publish-auto-excluded.png[Auto-excluded dependencies, 75%]
+
+TIP: This mode can be turned on in Content Studio's <<config#exclude_optional_dependencies,config file>>
+
+=== Export of search results
+
+Search results produced by Content Navigator's <<navigator#search_panel,Search Panel>> can now be exported into a CSV file using the download icon next to the Search Panel's free-text search field. The file will contain the following fields: *Id*, *Path*, *Creator*, *Modifier*, *Created*, *Modified*, *Owner*, *Content Type*, *Display Name*, *Language*, *Published From*, *Published Until*, *First Published*.
+
+:imagesdir: release/images
+
+image::cs51-search-export.png[Search export, 75%]
+
+=== New Find/Replace dialog in Rich Text Editor
+
+The old <<editor/rich-text-editor#findreplace,Find/Replace dialog>> in the Rich Text Editor that used to cover the text it was searching inside, has been replaced with the new inline dialog that allows editor to use the search/replace functions without blocking the source text.
+
+:imagesdir: editor/images
+
+image::rich-text-editor-find-replace.png[Insert Link dialog, 75%]
+
+=== Locked path for published content
+
+Previously, the editor had to click the "lock" icon next to the locked path input inside the Content Editor, in order to rename a published content. That icon is now removed and the path itself has to be clicked to open the Rename content dialog.
+
+=== Other improvements
+
+* Improved responsiveness in the Content Navigator
+
+* Improved synchronisation between the Content Form's <<editor/content-form#page_components_tree,Page Components tree>> and components inside the <<editor/page-editor#,Page Editor>>
+
+* When a published item has been first moved, then modified its status will be shown as `Moved, Modified` (previously just `Moved`)
+
+* "Show changes" link for comparison of publishing modifications is replaced with an icon
+
+* New icon for switching the project context
+
+== Content Studio 5
+
+IMPORTANT: Content Studio 5.0 requires XP 7.13.0 or higher.
+
+=== What's new
+
+video::hB8TOBjRxYc[youtube, 75%]
+
+=== Default Content Project is hidden by default
+
+Default Content Project is no longer available in Content Studio without tweaking the config file.
+
+If you need the Default project (for example, you already have content in it and want to continue working with it after
+upgrading to Content Studio 5), enable it via Content Studio's <<config#enable_default_content_project,config file>>.
+
+
+=== Page Components View
+
+Page Components View, which used to be a floating modal window inside Page Editor, is now made a part
+of the <<editor/content-form#page_components_tree,Content Editor form>>. It will be automatically undocked whenever the Content Form is collapsed.
+
+:imagesdir: editor/images
+
+image::wizard-component-view-collapsed.png[Page Components view - Docked, 75%]
+image::wizard-component-view-floating.png[Page Components view - Floating, 75%]
+
+=== Publishing Wizard improvements
+
+It's now possible to auto-exclude optional dependencies of selected content from publishing batch via Content Studio's <<config#exclude_optional_dependencies,config file>>.
+
+=== Call links in the Insert Link dialog
+
+:imagesdir: release/images
+
+A new URL type option `Tel` in the Rich Editor's "Insert Link" dialog enables adding call links.
+
+image::cs50-call-links.png[Page Components view - Docked, 75%]
+
+=== Other improvements
+
+* Preview panel won't be auto-expanded for a site until there's at least one controller from apps assigned to the site.
+
+* Content Selector displays status of selected content items.
+
+* Widgets inside Content Studio have been localised to other languages than English
