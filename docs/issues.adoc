@@ -48,7 +48,7 @@ To add specific content to an issue, click on the `Add items` button. The *Items
 
 image::dialog-issue-1.png[New task, 708]
 
-You can read about creating a new Publishing Request in a dedicated <<workflow#publish_request,workflow section>>.
+You can read about creating a new Publishing Request on the <<workflow/publish-request#,Publish request>> page.
 
 === Update an issue
 

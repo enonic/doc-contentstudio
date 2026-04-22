@@ -29,7 +29,7 @@ image::navigator-action-menu.png[Toolbar, 25%,align="center"]
  * If selected content is published: *Unpublish* (opens the <<workflow/unpublish#,Unpublish Wizard>> dialog for taking the content offline)
  * If selected content is published but has child items that are not published: *Publish Tree* (opens the <<workflow/publish#_publish_tree,Publishing wizard>> dialog with selected content and all descendants)
  * If selected content has workflow state "In progress": *Mark as Ready* (to mark selected content item(s) as ready for publishing)
- * If selected content is not published and current user doesn't have publishing permissions: *Request Publishing* (opens the <<workflow#publish_request,Publish Request>> wizard)
+ * If selected content is not published and current user doesn't have publishing permissions: *Request Publishing* (opens the <<workflow/publish-request#,Publish Request>> wizard)
  * If no content is selected: *Create Task* opens the <<issues#create_a_task,New Task>> dialog
 
 These options are also available in the context menu that appears when right-clicking on a content item in the tree grid panel.

@@ -2,7 +2,7 @@
 :toc: right
 :imagesdir: images
 
-The *Components* widget is the primary tool for building and configuring pages. It is only available in the <<../editor#,Content Editor>> for renderable content with the <<../editor/preview/visual-editor#,Visual editor>> enabled.
+The *Components* widget is the primary tool for building and configuring pages. It is only available in the <<../editor#,Content Editor>> for renderable content with the <<../editor/page-editor#,Page editor>> enabled.
 
 The widget has two tabs: *Insert* for adding new components to the page, and the per-component tab for configuring a selected component (renamed _Page_, _Part_, _Layout_, etc. to match the selection).
 
@@ -23,11 +23,11 @@ When you drag a placeholder across the page, a red circle indicates an area wher
 image::context-panel_insert.png[Placing a part component, 697]
 image::context-panel_insert2.png[Selecting the specific part, 440]
 
-For the full component-category reference, see the <<../editor/preview/visual-editor#_component_categories,Visual editor>> chapter.
+For the full component-category reference, see the <<../editor/page-editor#_component_categories,Page editor>> chapter.
 
 == Inspect tab
 
-The Inspect tab configures whichever component is currently selected in the <<../editor/preview/visual-editor#,Visual editor>>. The tab header changes to match the selected component's type (*Page*, *Part*, *Layout*, etc.). When nothing is selected, it defaults to *Page*.
+The Inspect tab configures whichever component is currently selected in the <<../editor/page-editor#,Page editor>>. The tab header changes to match the selected component's type (*Page*, *Part*, *Layout*, etc.). When nothing is selected, it defaults to *Page*.
 
 image::widgets-components-page.png[Page-level inspection, 207]
 

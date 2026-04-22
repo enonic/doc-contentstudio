@@ -3,7 +3,7 @@
 :imagesdir: images
 
 Rich Text Editor is used by the https://developer.enonic.com/docs/xp/stable/cms/schemas/input-types/htmlarea[HTMLArea input type]
-and for editing <<preview/visual-editor#_text,Text components>> inside the Visual editor.
+and for editing <<page-editor#_text,Text components>> inside the Page editor.
 It's capable of formatting the text in many ways, pasting from Word and Google Docs, using macros to insert code snippets
 and iFrames, inserting tables, images and content links etc.
 

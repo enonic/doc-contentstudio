@@ -14,7 +14,7 @@ image::widgets-search.png[Widget selector with filter, 206]
 
 == Built-in widgets
 
-* <<context-panel/components#,Components>> — drag-and-drop component placement and configuration for renderable pages. Only available in the Content Editor for content with the <<editor/preview/visual-editor#,Visual editor>> enabled.
+* <<context-panel/components#,Components>> — drag-and-drop component placement and configuration for renderable pages. Only available in the Content Editor for content with the <<editor/page-editor#,Page editor>> enabled.
 * <<context-panel/details#,Details>> — properties and metadata of the selected content.
 * <<context-panel/version-history#,Version history>> — all versions of the content, with compare and revert actions.
 * <<context-panel/dependencies#,Dependencies>> — inbound and outbound references between content items.

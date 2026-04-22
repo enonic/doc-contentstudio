@@ -35,14 +35,12 @@
           "document": "editor/rich-text-editor"
         },
         {
+          "title": "Page editor",
+          "document": "editor/page-editor"
+        },
+        {
           "title": "Preview",
-          "document": "editor/preview",
-          "menuItems": [
-            {
-              "title": "Visual editor",
-              "document": "editor/preview/visual-editor"
-            }
-          ]
+          "document": "editor/preview"
         }
       ]
     },
@@ -72,6 +70,24 @@
       "title": "Content Management",
       "document": "content-management",
       "menuItems": [
+        {
+          "title": "Workflow",
+          "document": "workflow",
+          "menuItems": [
+            {
+              "title": "Publish",
+              "document": "workflow/publish"
+            },
+            {
+              "title": "Publish request",
+              "document": "workflow/publish-request"
+            },
+            {
+              "title": "Unpublish",
+              "document": "workflow/unpublish"
+            }
+          ]
+        },
         {
           "title": "Actions",
           "document": "actions",
@@ -103,26 +119,12 @@
           ]
         },
         {
-          "title": "Workflow",
-          "document": "workflow",
-          "menuItems": [
-            {
-              "title": "Publish",
-              "document": "workflow/publish"
-            },
-            {
-              "title": "Unpublish",
-              "document": "workflow/unpublish"
-            }
-          ]
+          "title": "Variants",
+          "document": "variants"
         },
         {
           "title": "Permissions",
           "document": "permissions"
-        },
-        {
-          "title": "Variants",
-          "document": "variants"
         },
         {
           "title": "Built-in content types",
@@ -152,13 +154,7 @@
     },
     {
       "title": "Release notes",
-      "document": "release",
-      "menuItems": [
-        {
-          "title": "Upgrade notes",
-          "document": "release/upgrade"
-        }
-      ]
+      "document": "release"
     }
   ]
 }

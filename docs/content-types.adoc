@@ -30,7 +30,7 @@ image::browse-template.png[Templates folder]
 
 === Applications
 
-Applications provide the code behind a site. Some apps contribute components (parts, layouts, page controllers) used for page-building in the <<editor/preview/visual-editor#,Visual editor>>; others just add functionality. A site needs at least one app that contributes a page controller before any content can be rendered as a page.
+Applications provide the code behind a site. Some apps contribute components (parts, layouts, page controllers) used for page-building in the <<editor/page-editor#,Page editor>>; others just add functionality. A site needs at least one app that contributes a page controller before any content can be rendered as a page.
 
 Apps are added to a site via the *Applications* selector in the site's edit view. Adding or removing an application requires the *Administrator* or *Content Manager Administrator* role.
 
@@ -51,7 +51,7 @@ A *Page template* is a reusable page definition that renders one or more content
 Create a new *Page template* content inside the Templates folder. Two fields drive the template:
 
 * *Supports* — the content types this template can render.
-* *Controller* (the selector on the right of the editor) — the page component from an installed application that provides the HTML skeleton. Once a controller is picked, the Visual editor becomes active and components can be placed into the controller's regions.
+* *Controller* (the selector on the right of the editor) — the page component from an installed application that provides the HTML skeleton. Once a controller is picked, the Page editor becomes active and components can be placed into the controller's regions.
 
 image::browse-templates-list.png[List of page templates]
 
@@ -63,7 +63,7 @@ image::wizard-template.png[Choosing a template for a content item]
 
 === Rendering content without a matching template
 
-Content with no supporting template can still be rendered as a page — for example, rendering a *Folder* called _Articles_ as a listing of its children. Open the content in the editor, pick a page controller from the dropdown in the empty Visual editor, and build the page from components as usual.
+Content with no supporting template can still be rendered as a page — for example, rendering a *Folder* called _Articles_ as a listing of its children. Open the content in the editor, pick a page controller from the dropdown in the empty Page editor, and build the page from components as usual.
 
 image::wizard-template-select.png[Selecting a controller for unsupported content]
 

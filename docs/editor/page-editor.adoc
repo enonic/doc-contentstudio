@@ -1,14 +1,14 @@
-= Visual editor
+= Page editor
 :toc: right
-:imagesdir: ../images
+:imagesdir: images
 
-The *Visual editor* is the default <<../preview#,Preview>> mode for renderable content. It is both a preview of the page as end users will see it _and_ a drag-and-drop surface for building that page: components can be added, configured, rearranged, and removed directly in the editor.
+The *Page editor* is the drag-and-drop surface for building pages. It replaces the <<preview#,Preview>> panel on the right side of the <<../editor#,Content Editor>> when the selected content is renderable (sites, page templates, and content with a supporting template). It is both a live rendering of the page _and_ the primary tool for placing, configuring, and arranging the components that make up that page.
 
-The Visual editor works in tandem with the <<../content-form#,Content Form>> (for the content's data fields) and the <<../../context-panel#,Context Panel>> (for component configuration and page-level widgets).
+The Page editor works in tandem with the <<content-form#,Content Form>> (for the content's data fields) and the <<../context-panel#,Context Panel>> (for component configuration and page-level widgets).
 
 == Selecting a controller or template
 
-The Visual editor is hidden for content that cannot be rendered (folders, shortcuts, unstructured content without a supporting template).
+The Page editor is hidden for content that cannot be rendered (folders, shortcuts, unstructured content without a supporting template).
 
 For a *Site* without any installed applications that contain a page controller, the editor is shown but disabled:
 
@@ -25,7 +25,7 @@ image::page-editor-lock.png[]
 [[editing-page]]
 == Working with components
 
-Click a component in the page to select it — the selection is highlighted and its configuration appears in the <<../../context-panel/components#_inspect_tab,Inspect tab>> of the Components widget. Right-clicking a component opens a menu with the available actions:
+Click a component in the page to select it — the selection is highlighted and its configuration appears in the <<../context-panel/components#_inspect_tab,Inspect tab>> of the Components widget. Right-clicking a component opens a menu with the available actions:
 
 * *Select parent* — move the selection up the component tree.
 * *Insert* — add another component.
@@ -41,7 +41,7 @@ image::page-editor-menu.png[]
 
 == Component categories
 
-Enonic XP has five categories of components that can be placed in page regions. They are available from the <<../../context-panel/components#_insert_tab,Insert tab>> of the Components widget.
+Enonic XP has five categories of components that can be placed in page regions. They are available from the <<../context-panel/components#_insert_tab,Insert tab>> of the Components widget.
 
 === Part
 
@@ -70,7 +70,7 @@ NOTE: Layouts cannot be nested inside other layouts. If a layout is hard to clic
 
 === Text
 
-The Text component is a formatted text block — it places a rich-text surface directly into a page region. Text components support images, videos, links, and macros, all edited via the <<../rich-text-editor#,Rich Text Editor>>.
+The Text component is a formatted text block — it places a rich-text surface directly into a page region. Text components support images, videos, links, and macros, all edited via the <<rich-text-editor#,Rich Text Editor>>.
 
 Drag a Text component into a region and start typing. If another component is selected first, double-click the text component to return to editing.
 
@@ -78,14 +78,14 @@ image::component-types-text-insert.png[]
 
 === Image
 
-The Image component inserts an image content item directly into a page region. The image is selected from existing content, and any <<../../content-types#_image_content,crop or focal point>> settings on the underlying image content apply automatically when the page is rendered.
+The Image component inserts an image content item directly into a page region. The image is selected from existing content, and any <<../content-types#_image_content,crop or focal point>> settings on the underlying image content apply automatically when the page is rendered.
 
 [[_fragment]]
 === Fragment
 
 A *Fragment* is a component saved as its own content item so it can be reused on multiple pages with identical configuration. Editing a fragment updates every page that uses it — unlike the other components, which are configured independently on every page.
 
-Fragments are created by right-clicking any component in the Visual editor and choosing *Save as fragment*. The new fragment opens in its own editor tab, and the original component is replaced with a reference to the fragment.
+Fragments are created by right-clicking any component in the Page editor and choosing *Save as fragment*. The new fragment opens in its own editor tab, and the original component is replaced with a reference to the fragment.
 
 To place an existing fragment on a page, drag a Fragment placeholder from the Insert tab and pick the desired fragment content from the dropdown.
 
@@ -103,4 +103,4 @@ image::wizard-component-view-collapsed.png[Page Components collapsed]
 
 == Related widgets
 
-When the Visual editor is available, the <<../../context-panel/components#,Components widget>> is the primary tool for configuring the selected component. The other built-in Context Panel widgets (Details, Version history, Dependencies) work the same way on renderable content as they do on regular content.
+When the Page editor is available, the <<../context-panel/components#,Components widget>> is the primary tool for configuring the selected component. The other built-in Context Panel widgets (Details, Version history, Dependencies) work the same way on renderable content as they do on regular content.
