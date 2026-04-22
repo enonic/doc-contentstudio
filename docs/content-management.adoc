@@ -1,0 +1,28 @@
+= Content Management
+:toc: right
+:imagesdir: images
+
+Content Management covers the operations that apply _across_ content items once they exist — the editorial lifecycle rather than the shape or content of any single item.
+
+These operations are available from both the <<navigator#,Content Navigator>> and the <<editor#,Content Editor>>, and they are gated by <<permissions#,permissions>>: whether a given button is shown, enabled, or disabled on the toolbar depends on the current user's rights for the selected content.
+
+== In this chapter
+
+<<actions#,Actions>>::
+The toolbar and context-menu verbs editors use day-to-day — *New*, *Edit*, *Duplicate*, *Move*, *Sort*, *Preview*, *Publish*, *Unpublish*, *Archive*. This is the reference for what each action does, where to invoke it, and which dialogs it opens.
+
+<<workflow#,Workflow>>::
+The states a content item moves through between creation and publication — *In progress*, *Ready for publishing*, *Publish request*, *Published*, *Unpublished* — and how editors and reviewers hand off between them.
+
+<<permissions#,Permissions>>::
+The per-content security model: principals (users, groups, roles), the granular permission flags (*Read*, *Create*, *Modify*, *Delete*, *Publish*, *Read/Write permissions*), inheritance, and the *Edit permissions* dialog.
+
+<<issues#,Issues>>::
+Lightweight work tracking inside Content Studio — *Tasks* for general editorial assignments, and *Publish requests* for content that needs review before going live.
+
+<<archive#,Archive>>::
+What happens when content is archived (soft-deleted) versus deleted outright, how the archive interacts with <<layers#,layers>>, and how to restore items.
+
+== Where this sits
+
+Content Management assumes you already have content to manage. For the creation side, see <<navigator#,Content Navigator>> (finding and creating items) and <<editor#,Content Editor>> (editing a single item). For the schema and data structure behind a content item, see the https://developer.enonic.com/docs/xp/stable/cms[Enonic XP CMS docs].

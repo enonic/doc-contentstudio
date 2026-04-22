@@ -1,0 +1,27 @@
+= Preview
+:toc: right
+:imagesdir: images
+
+The *Preview* panel occupies the right-hand side of the <<../editor#,Content Editor>> and shows how the content will look to an end user. Preview is *pluggable*: the actual view that appears depends on the content item, the applications installed on its site, and any preview contributions from those applications.
+
+Preview can be closed and reopened with the monitor icon on the far right of the editor toolbar.
+
+== Preview modes
+
+Content Studio ships with a handful of built-in preview modes, and selects the appropriate one automatically based on the selected content.
+
+<<preview/visual-editor#,Visual editor>>::
+For renderable content (sites, pages, page templates, and any content type with a supporting template). The visual editor is both a preview _and_ a page-building surface — components can be added, configured, and rearranged directly in the preview.
+
+Media preview::
+For image, video and other media content types. Shows the media itself at its original resolution, with basic metadata.
+
+Plain preview::
+For content that has a page controller but no editable regions — shows the rendered output without the visual-editor chrome.
+
+Unavailable::
+For content that cannot be rendered (folders, shortcuts, unstructured content without a supporting template), the Preview panel is hidden or shows a placeholder. The <<context-panel#,Context Panel>> remains available for these items.
+
+== Custom preview modes
+
+Applications can contribute their own preview modes by implementing the appropriate widget interface in the application descriptor. Custom preview modes appear in the preview-mode selector alongside the built-ins. See the https://developer.enonic.com/docs/xp/stable/admin/widgets[XP admin widgets reference] for how applications contribute preview and widget UI to Content Studio.

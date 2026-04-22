@@ -1,4 +1,26 @@
-= Widgets
+////
+REMOVED in CS6 restructure.
+
+Why: "Widgets" as a top-level chapter was redundant with the Context Panel,
+which is where built-in widgets (Details, Version History, Dependencies,
+Components) actually live. In CS6 these are documented in
+docs/editor/context-panel.adoc.
+
+What was kept: All built-in widget descriptions (Details, Version History,
+Dependencies, Components) were folded into docs/editor/context-panel.adoc,
+which now doubles as the pluggable-widget host reference. The "Custom widgets"
+concept is summarised there with a link to the XP admin widgets reference.
+
+What was dropped: The XML descriptor samples for contentstudio.contextpanel
+and contentstudio.menuitem widgets. These are implementation details for app
+developers, not editorial UI docs; they belong in the XP / app-development
+documentation.
+
+Images referenced by the new Context Panel page still live in
+docs/widgets/images/ — that folder was NOT moved.
+////
+
+= Widgets (removed)
 :toc: right
 :imagesdir: widgets/images
 

@@ -1,4 +1,22 @@
-= Component Types
+////
+REMOVED in CS6 restructure.
+
+Why: docs/editor/component-types.adoc mixed editor-facing prose (how to add a
+part/layout/text/fragment from the UI) with XML descriptor schema samples
+(allow-on-content-type rules for app developers).
+
+What was kept: The editorial prose — how each component category behaves in
+the UI and the drag/drop/select flow — was folded into
+docs/editor/preview/visual-editor.adoc under "Component categories".
+
+What was dropped: The XML descriptor samples (<part>, <layout> with
+<allow-on-content-type>, regex examples). These are app-developer concerns
+and belong in the XP content-type schema docs, not in editor-facing UI
+reference. The new prose links out to the XP part descriptor reference in
+place of inlining the XML.
+////
+
+= Component Types (removed)
 :toc: right
 :imagesdir: images
 

@@ -3,7 +3,7 @@
 
 :imagesdir: variants/images
 
-NOTE: Widget for creating variants is provided by <<../#content_studio,Content Studio+>> application which requires Enonic license.
+NOTE: *Content Studio+ feature.* The Variants widget is part of the <<content-studio-plus#,Content Studio+>> subscription.
 
 Variants are essentially slightly modified copies of a content item used for comparing them against each other to determine
 which one performs better for end user (A/B Testing).

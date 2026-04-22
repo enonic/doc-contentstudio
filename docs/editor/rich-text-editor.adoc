@@ -2,8 +2,8 @@
 :toc: right
 :imagesdir: images
 
-Rich Text Editor is used by https://developer.enonic.com/docs/xp/stable/cms/schemas/input-types/htmlarea[HTMLArea input type]
-and for editing <<component-types#text_component,text component>> inside the Page Editor.
+Rich Text Editor is used by the https://developer.enonic.com/docs/xp/stable/cms/schemas/input-types/htmlarea[HTMLArea input type]
+and for editing <<preview/visual-editor#_text,Text components>> inside the Visual editor.
 It's capable of formatting the text in many ways, pasting from Word and Google Docs, using macros to insert code snippets
 and iFrames, inserting tables, images and content links etc.
 

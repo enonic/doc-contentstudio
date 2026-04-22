@@ -13,21 +13,31 @@ We have compiled a page packed with short videos demonstrating Content Studio's 
 
 == Overview
 
-Content Studio provide editors with an efficient way of creating and curating content without technical skills.
+Content Studio provides editors with an efficient way of creating and curating content without technical skills.
 
 Content is organized within <<projects#,Content Projects>>. Content can be re-used, localized or augmented across different projects through a feature called <<layers#, content layering>>.
 
-Editors will commonly use the <<navigator#,navigator panel>> to browse, search and perform actions on one or more items.
+Editors will commonly use the <<navigator#,Content Navigator>> to browse, search and perform actions on one or more items.
 
-The <<editor#, content editor>> offers a consistent and intuitive interface for editing and previewing your content.
+The <<editor#, Content Editor>> offers a consistent and intuitive interface for editing and previewing your content.
+
+== Main menu
+
+The left-hand vertical menu is Content Studio's main menu. It lets you switch between the different top-level areas of the application. The standard entries are:
+
+* *Content Navigator* — the default browse and search view for content items.
+* *Archive* — browse and restore archived content (see <<archive#,Archive>>).
+* *GraphQL Playground* — a developer tool for exploring the content data API.
+
+The main menu is *pluggable*: applications installed in Enonic XP can contribute additional entries. New entries appear automatically in the menu once the contributing application is deployed. In a future release, *Issues* will move from the toolbar into the main menu.
 
 == Go beyond
 
-Content Studio is free and open source, but also highly extendable. A subscription gives you access to licensed applications that extend Content Studio with advanced capabilities like an <<ai#, AI assistant>>, the <<archive#, archive browser>> and <<layers#, automated translations>>.
+Content Studio is free and open source, but also highly extendable. A subscription unlocks <<content-studio-plus#,Content Studio+>>, a companion application that adds advanced capabilities like an <<ai#, AI assistant>>, the <<archive#, archive browser>>, <<variants#, content variants>> and <<layers#ai_translation, automated translations>>.
 
 == Browser support
 
-Content Studio works in all modern browsers.  We are explicitly testing it and supporting it for the latest versions of Google Chrome, Apple Safari, Mozilla Firefox and Microsoft Edge.
+Content Studio works in all modern browsers. We are explicitly testing and supporting the latest versions of Google Chrome, Apple Safari, Mozilla Firefox and Microsoft Edge.
 
 
 == Release notes

@@ -239,7 +239,7 @@ Previously, the editor had to click the "lock" icon next to the locked path inpu
 
 * Improved responsiveness in the Content Navigator
 
-* Improved synchronisation between the Content Form's <<editor/content-form#page_components_tree,Page Components tree>> and components inside the <<editor/page-editor#,Page Editor>>
+* Improved synchronisation between the Content Form's <<editor/content-form#page_components_tree,Page Components tree>> and components inside the <<editor/preview/visual-editor#,Visual editor>>
 
 * When a published item has been first moved, then modified its status will be shown as `Moved, Modified` (previously just `Moved`)
 
