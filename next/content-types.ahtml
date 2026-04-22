@@ -589,7 +589,7 @@ Shortcuts cannot use page templates — the redirect fires even if a matching te
 <div class="sect2">
 <h3 id="which_template_is_used"><a class="link" href="#which_template_is_used">Which template is used</a></h3>
 <div class="paragraph">
-<p>When several templates support the same content type, the one that appears <em>first</em> in the Templates folder is used by default. Individual content items can override the default via the <strong>Page template</strong> dropdown in the <a href="editor/context-panel.ahtml#_inspect_tab">Inspect tab</a>.</p>
+<p>When several templates support the same content type, the one that appears <em>first</em> in the Templates folder is used by default. Individual content items can override the default via the <strong>Page template</strong> dropdown in the <a href="context-panel/components.ahtml#_inspect_tab">Inspect tab</a>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -675,7 +675,7 @@ Shortcuts cannot use page templates — the redirect fires even if a matching te
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-04-22 08:24:08 UTC
+Last updated 2026-04-22 08:34:40 UTC
 </div>
 </div>
 </body>

@@ -43,14 +43,28 @@
               "document": "editor/preview/visual-editor"
             }
           ]
+        }
+      ]
+    },
+    {
+      "title": "Context panel",
+      "document": "context-panel",
+      "menuItems": [
+        {
+          "title": "Components",
+          "document": "context-panel/components"
         },
         {
-          "title": "Context panel",
-          "document": "editor/context-panel"
+          "title": "Details",
+          "document": "context-panel/details"
         },
         {
-          "title": "Variants",
-          "document": "variants"
+          "title": "Version history",
+          "document": "context-panel/version-history"
+        },
+        {
+          "title": "Dependencies",
+          "document": "context-panel/dependencies"
         }
       ]
     },
@@ -77,16 +91,20 @@
         {
           "title": "Archive",
           "document": "archive"
+        },
+        {
+          "title": "Variants",
+          "document": "variants"
+        },
+        {
+          "title": "Built-in content types",
+          "document": "content-types"
         }
       ]
     },
     {
       "title": "AI Assistant",
       "document": "ai"
-    },
-    {
-      "title": "Built-in content types",
-      "document": "content-types"
     },
     {
       "title": "Keyboard shortcuts",

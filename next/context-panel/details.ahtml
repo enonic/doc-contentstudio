@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.26">
-<title>Variants</title>
+<title>Details widget</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -437,61 +437,56 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article">
 <div id="header">
-<h1>Variants</h1>
+<h1>Details widget</h1>
 </div>
 <div id="content">
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Widget for creating variants is provided by <a href="../.ahtml#content_studio">Content Studio+</a> application which requires Enonic license.
-</td>
-</tr>
-</table>
-</div>
 <div class="paragraph">
-<p>Variants are essentially slightly modified copies of a content item used for comparing them against each other to determine
-which one performs better for end user (A/B Testing).</p>
-</div>
-<div class="paragraph">
-<p>Using "Variants" widget provided by <strong>Content Studio+</strong>, user can create variants of a specific content item, duplicate them (make copies of variants),
-then use URLs of variants in a 3rd party A/B Testing tool. Variants can be managed (modified, published, duplicated, deleted etc.) just as regular
-content items.</p>
-</div>
-<div class="paragraph">
-<p>To create a new variant, select a content item in the Content Navigator grid, then open the "Variants" widget in the
-Context Panel on the right-hand side (if you cannot find it then you probably don&#8217;t have <strong>Content Studio+</strong> installed) and click "<strong>Create Variant</strong>" button.</p>
-</div>
-<div class="paragraph">
-<p>This will open a new modal dialog for specifying name of a variant, suggesting "<em>variant-1</em>", "<em>variant-2</em>" etc., based on how many variants of the item
-already exist. A new name will be verified for uniqueness. The rest of the properties will be copied from the original item.</p>
+<p>The <strong>Details</strong> widget shows the basic properties of the selected content item — everything an editor typically needs to know without opening the item.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="variants/images/variants-dialog.png" alt="New variant dialog" width="400px">
+<img src="images/widgets-details.png" alt="Details widget" width="450">
 </div>
 </div>
 <div class="paragraph">
-<p>After a new variant is created, it will be placed under the original item in the Navigator grid and displayed in the "Variants" widget under
-the original item. Each variant has a context menu with "<strong>Edit</strong>" and "<strong>Duplicate</strong>" options.</p>
+<p>The widget is organised into sections:</p>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="variants/images/variants-grid.png" alt="Variants in Content Navigator" width="400px">
-</div>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="variants/images/variants-widget.png" alt="Variants widget" width="400px">
-</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Content</dt>
+<dd>
+<p>Icon, display name, and full content path.</p>
+</dd>
+<dt class="hdlist1">Status</dt>
+<dd>
+<p>Current content status: <em>New</em>, <em>Modified</em>, <em>Published</em>, <em>Unpublished</em>, or <em>Archived</em>. See <a href="../workflow.ahtml">Workflow</a> for the state model.</p>
+</dd>
+<dt class="hdlist1">User access</dt>
+<dd>
+<p>The effective <a href="../permissions.ahtml">permissions</a> for the current user. The <strong>Edit Permissions</strong> link opens the permissions dialog.</p>
+</dd>
+<dt class="hdlist1">Properties</dt>
+<dd>
+<p>Metadata about the content — its type, owner, and created/modified timestamps.</p>
+</dd>
+<dt class="hdlist1">Schedule</dt>
+<dd>
+<p>The from/to dates the content is scheduled to be online. Only shown for published content that has a schedule configured.</p>
+</dd>
+<dt class="hdlist1">Page template</dt>
+<dd>
+<p>The <a href="../content-types.ahtml#_page_template">page template</a> used to render the content, if any.</p>
+</dd>
+<dt class="hdlist1">Attachments</dt>
+<dd>
+<p>Downloadable binary attachments on the content item.</p>
+</dd>
+</dl>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-04-22 08:34:14 UTC
+Last updated 2026-04-22 08:34:40 UTC
 </div>
 </div>
 </body>

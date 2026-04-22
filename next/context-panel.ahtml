@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.26">
-<title>Variants</title>
+<title>Context Panel</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -435,63 +435,98 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body class="article">
+<body class="article toc2 toc-right">
 <div id="header">
-<h1>Variants</h1>
+<h1>Context Panel</h1>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#built_in_widgets">Built-in widgets</a></li>
+<li><a href="#content_studio_widgets">Content Studio+ widgets</a></li>
+<li><a href="#custom_widgets">Custom widgets</a></li>
+</ul>
+</div>
 </div>
 <div id="content">
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Widget for creating variants is provided by <a href="../.ahtml#content_studio">Content Studio+</a> application which requires Enonic license.
-</td>
-</tr>
-</table>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <strong>Context Panel</strong> is the multi-function column on the right-hand side of the <a href="navigator.ahtml">Content Navigator</a> and the <a href="editor.ahtml">Content Editor</a>. It hosts a set of <strong>widgets</strong> — small tools that act on the currently selected content item. Widgets can be built-in, shipped by <a href="content-studio-plus.ahtml">Content Studio+</a>, or contributed by any installed application.</p>
 </div>
 <div class="paragraph">
-<p>Variants are essentially slightly modified copies of a content item used for comparing them against each other to determine
-which one performs better for end user (A/B Testing).</p>
-</div>
-<div class="paragraph">
-<p>Using "Variants" widget provided by <strong>Content Studio+</strong>, user can create variants of a specific content item, duplicate them (make copies of variants),
-then use URLs of variants in a 3rd party A/B Testing tool. Variants can be managed (modified, published, duplicated, deleted etc.) just as regular
-content items.</p>
-</div>
-<div class="paragraph">
-<p>To create a new variant, select a content item in the Content Navigator grid, then open the "Variants" widget in the
-Context Panel on the right-hand side (if you cannot find it then you probably don&#8217;t have <strong>Content Studio+</strong> installed) and click "<strong>Create Variant</strong>" button.</p>
-</div>
-<div class="paragraph">
-<p>This will open a new modal dialog for specifying name of a variant, suggesting "<em>variant-1</em>", "<em>variant-2</em>" etc., based on how many variants of the item
-already exist. A new name will be verified for uniqueness. The rest of the properties will be copied from the original item.</p>
+<p>Toggle the panel open and closed with the cog icon on the right of the toolbar.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="variants/images/variants-dialog.png" alt="New variant dialog" width="400px">
+<img src="context-panel/images/widgets-panel-button.png" alt="Context Panel toggle" width="209">
 </div>
 </div>
 <div class="paragraph">
-<p>After a new variant is created, it will be placed under the original item in the Navigator grid and displayed in the "Variants" widget under
-the original item. Each variant has a context menu with "<strong>Edit</strong>" and "<strong>Duplicate</strong>" options.</p>
+<p>The widget selector dropdown at the top of the panel lists the available widgets: the built-ins appear first, followed by widgets from installed applications. A filter field at the top narrows the list by keyword.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="variants/images/variants-grid.png" alt="Variants in Content Navigator" width="400px">
+<img src="context-panel/images/widgets-search.png" alt="Widget selector with filter" width="206">
 </div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="built_in_widgets"><a class="link" href="#built_in_widgets">Built-in widgets</a></h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="context-panel/components.ahtml">Components</a> — drag-and-drop component placement and configuration for renderable pages. Only available in the Content Editor for content with the <a href="editor/preview/visual-editor.ahtml">Visual editor</a> enabled.</p>
+</li>
+<li>
+<p><a href="context-panel/details.ahtml">Details</a> — properties and metadata of the selected content.</p>
+</li>
+<li>
+<p><a href="context-panel/version-history.ahtml">Version history</a> — all versions of the content, with compare and revert actions.</p>
+</li>
+<li>
+<p><a href="context-panel/dependencies.ahtml">Dependencies</a> — inbound and outbound references between content items.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="content_studio_widgets"><a class="link" href="#content_studio_widgets">Content Studio+ widgets</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The following widgets are contributed by <a href="content-studio-plus.ahtml">Content Studio+</a>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="layers.ahtml#layers_panel">Layers</a> — shows the status of a content item across every layer in the system.</p>
+</li>
+<li>
+<p><a href="variants.ahtml">Variants</a> — creates and manages A/B variants of the selected item.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="custom_widgets"><a class="link" href="#custom_widgets">Custom widgets</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Context Panel is <strong>pluggable</strong>: any installed application can contribute a widget that appears in the widget selector. The interface for contributing a widget to the Context Panel is <code>contentstudio.contextpanel</code>; see the <a href="https://developer.enonic.com/docs/xp/stable/admin/widgets">XP admin widgets reference</a> for the descriptor format and lifecycle.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="variants/images/variants-widget.png" alt="Variants widget" width="400px">
+<img src="context-panel/images/widgets-context-panel.png" alt="Custom widget in the Context Panel" width="207">
+</div>
+</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-04-22 08:34:14 UTC
+Last updated 2026-04-22 08:34:40 UTC
 </div>
 </div>
 </body>

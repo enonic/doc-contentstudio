@@ -464,7 +464,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>The <strong>Visual editor</strong> is the default <a href="../preview.ahtml">Preview</a> mode for renderable content. It is both a preview of the page as end users will see it <em>and</em> a drag-and-drop surface for building that page: components can be added, configured, rearranged, and removed directly in the editor.</p>
 </div>
 <div class="paragraph">
-<p>The Visual editor works in tandem with the <a href="../content-form.ahtml">Content Form</a> (for the content&#8217;s data fields) and the <a href="../context-panel.ahtml">Context Panel</a> (for component configuration and page-level widgets).</p>
+<p>The Visual editor works in tandem with the <a href="../content-form.ahtml">Content Form</a> (for the content&#8217;s data fields) and the <a href="../../context-panel.ahtml">Context Panel</a> (for component configuration and page-level widgets).</p>
 </div>
 </div>
 </div>
@@ -504,7 +504,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="editing-page"><a class="link" href="#editing-page">Working with components</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Click a component in the page to select it — the selection is highlighted and its configuration appears in the <a href="../context-panel.ahtml#_inspect_tab">Inspect tab</a> of the Context Panel. Right-clicking a component opens a menu with the available actions:</p>
+<p>Click a component in the page to select it — the selection is highlighted and its configuration appears in the <a href="../../context-panel/components.ahtml#_inspect_tab">Inspect tab</a> of the Components widget. Right-clicking a component opens a menu with the available actions:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -545,7 +545,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="component_categories"><a class="link" href="#component_categories">Component categories</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Enonic XP has five categories of components that can be placed in page regions. They are available from the <a href="../context-panel.ahtml#_insert_tab">Insert tab</a> of the Components widget.</p>
+<p>Enonic XP has five categories of components that can be placed in page regions. They are available from the <a href="../../context-panel/components.ahtml#_insert_tab">Insert tab</a> of the Components widget.</p>
 </div>
 <div class="sect2">
 <h3 id="part"><a class="link" href="#part">Part</a></h3>
@@ -676,14 +676,14 @@ Layouts cannot be nested inside other layouts. If a layout is hard to click in t
 <h2 id="related_widgets"><a class="link" href="#related_widgets">Related widgets</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>When the Visual editor is available, the <a href="../context-panel.ahtml#_components">Components widget</a> is also available in the Context Panel and is the primary tool for configuring the selected component. Other built-in widgets (Details, Version History, Dependencies) work the same way here as on non-renderable content.</p>
+<p>When the Visual editor is available, the <a href="../../context-panel/components.ahtml">Components widget</a> is the primary tool for configuring the selected component. The other built-in Context Panel widgets (Details, Version history, Dependencies) work the same way on renderable content as they do on regular content.</p>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-04-22 08:24:08 UTC
+Last updated 2026-04-22 08:34:40 UTC
 </div>
 </div>
 </body>
