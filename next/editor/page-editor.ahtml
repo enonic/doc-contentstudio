@@ -691,7 +691,7 @@ Layouts cannot be nested inside other layouts. If a layout is hard to click in t
 <div class="sect2">
 <h3 id="image"><a class="link" href="#image">Image</a></h3>
 <div class="paragraph">
-<p>The Image component inserts an image content item directly into a page region. The image is selected from existing content, and any <a href="../content-types.ahtml#_image_content">crop or focal point</a> settings on the underlying image content apply automatically when the page is rendered.</p>
+<p>The Image component inserts an image content item directly into a page region. The image is selected from existing content, and any <a href="image.ahtml">crop or focal point</a> settings on the underlying image content apply automatically when the page is rendered.</p>
 </div>
 </div>
 <div class="sect2">
@@ -737,7 +737,7 @@ Layouts cannot be nested inside other layouts. If a layout is hard to click in t
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-04-22 11:31:24 UTC
+Last updated 2026-04-22 22:02:53 UTC
 </div>
 </div>
 </body>

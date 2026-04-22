@@ -457,12 +457,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ul>
 </li>
 <li><a href="#templates_folder">Templates folder</a></li>
-<li><a href="#image">Image</a>
-<ul class="sectlevel2">
-<li><a href="#cropping">Cropping</a></li>
-<li><a href="#focal_point">Focal point</a></li>
-</ul>
-</li>
 <li><a href="#unstructured">Unstructured</a></li>
 </ul>
 </div>
@@ -619,52 +613,6 @@ Shortcuts cannot use page templates — the redirect fires even if a matching te
 </div>
 </div>
 <div class="sect1">
-<h2 id="image"><a class="link" href="#image">Image</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Uploading an image file creates an <strong>Image</strong> content item. Storing images as content means they are indexed for search, inherit the site&#8217;s language and permissions, and can be referenced by ID from other content.</p>
-</div>
-<div class="paragraph">
-<p>Image content items have fields for Caption, Artist, Copyright, Tags, and Text, and automatically pick up any Exif metadata from the source file. The underlying file can be swapped via the upload button or by dragging a new file onto the preview.</p>
-</div>
-<div class="sect2">
-<h3 id="cropping"><a class="link" href="#cropping">Cropping</a></h3>
-<div class="paragraph">
-<p>The crop icon above the image dims the surrounding area and reveals the crop-editing tools. The zoom slider enlarges the preview; the image can be dragged to reposition. The aspect-ratio handle (circle with arrows at the bottom) changes the crop ratio. <strong>Apply</strong> returns the editor to normal mode.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="content-types/images/image-crop.png" alt="Cropping an image">
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="focal_point"><a class="link" href="#focal_point">Focal point</a></h3>
-<div class="paragraph">
-<p>Rendered images often need to be cropped to match a different aspect ratio than the original, which can cut off the subject. Setting a <strong>focal point</strong> tells the renderer which part of the image to always keep in frame.</p>
-</div>
-<div class="paragraph">
-<p>Click the focal point icon, then click the part of the image that should stay centred, and <strong>Apply</strong>. The focal point is marked with a red circle in the editor.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="content-types/images/image-focal-point-1.png" alt="Original image" width="no focal point">
-</div>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="content-types/images/image-focal-point-2.png" alt="Setting the focal point">
-</div>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="content-types/images/image-focal-point-3.png" alt="Subject stays in frame across aspect ratios">
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
 <h2 id="unstructured"><a class="link" href="#unstructured">Unstructured</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
@@ -675,7 +623,7 @@ Shortcuts cannot use page templates — the redirect fires even if a matching te
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-04-22 11:31:24 UTC
+Last updated 2026-04-22 22:02:53 UTC
 </div>
 </div>
 </body>

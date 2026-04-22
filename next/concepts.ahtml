@@ -517,7 +517,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="versions"><a class="link" href="#versions">Versions</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Every save, publish, unpublish, rename, or permissions change on a content item creates a new <strong>version</strong>. Versions can be compared and reverted from the Version history widget — see <a href="versions.ahtml">Versions</a>.</p>
+<p>Every save, publish, unpublish, rename, or permissions change on a content item creates a new <strong>version</strong>. Versions can be compared and reverted from the Version history widget — see <a href="editor/versions.ahtml">Versions</a>.</p>
 </div>
 </div>
 </div>
@@ -525,7 +525,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="dependencies"><a class="link" href="#dependencies">Dependencies</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Content items reference each other — pages embed images, shortcuts target content, text fields link to other items. Those references are <strong>dependencies</strong>, tracked in both directions (inbound: who uses this; outbound: what does this use). Publishing, archiving, and unpublishing all check dependencies — see <a href="dependencies.ahtml">Dependencies</a>.</p>
+<p>Content items reference each other — pages embed images, shortcuts target content, text fields link to other items. Those references are <strong>dependencies</strong>, tracked in both directions (inbound: who uses this; outbound: what does this use). Publishing, archiving, and unpublishing all check dependencies — see <a href="navigator/dependencies.ahtml">Dependencies</a>.</p>
 </div>
 </div>
 </div>
@@ -568,14 +568,14 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="content_studio"><a class="link" href="#content_studio">Content Studio+</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Content Studio itself is free and open source. A paid Enonic subscription unlocks <strong>Content Studio+</strong> — a companion application that adds the <a href="ai.ahtml">AI Assistant</a>, the <a href="archive.ahtml">Archive browser</a>, <a href="variants.ahtml">Content Variants</a>, <a href="layers.ahtml#ai_translation">AI translation</a> for layers, and the <a href="layers.ahtml#layers_panel">Layers widget</a>. Pages that document a Content Studio+ feature carry a <strong>Content Studio+ feature</strong> admonition at the top.</p>
+<p>Content Studio itself is free and open source. A paid Enonic subscription unlocks <strong>Content Studio+</strong> — a companion application that adds the <a href="ai.ahtml">AI Assistant</a>, the <a href="archive.ahtml">Archive browser</a>, <a href="editor/variants.ahtml">Content Variants</a>, <a href="layers.ahtml#ai_translation">AI translation</a> for layers, and the <a href="layers.ahtml#layers_panel">Layers widget</a>. Pages that document a Content Studio+ feature carry a <strong>Content Studio+ feature</strong> admonition at the top.</p>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-04-22 11:31:24 UTC
+Last updated 2026-04-22 22:02:53 UTC
 </div>
 </div>
 </body>

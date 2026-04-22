@@ -864,10 +864,10 @@ Only the <strong>Draft</strong> version of content is visible in the preview pan
 <div class="ulist">
 <ul>
 <li>
-<p>The <strong>Version history</strong> widget lists every version of the selected item and lets you compare or revert. See <a href="versions.ahtml">Versions</a>.</p>
+<p>The <strong>Version history</strong> widget lists every version of the selected item and lets you compare or revert. See <a href="editor/versions.ahtml">Versions</a>.</p>
 </li>
 <li>
-<p>The <strong>Dependencies</strong> widget shows the inbound and outbound references between the item and other content. See <a href="dependencies.ahtml">Dependencies</a>.</p>
+<p>The <strong>Dependencies</strong> widget shows the inbound and outbound references between the item and other content. See <a href="navigator/dependencies.ahtml">Dependencies</a>.</p>
 </li>
 <li>
 <p>The <strong>Components</strong> widget is the page-building tool that appears in the Content Editor for renderable content. See <a href="editor/page-editor.ahtml#_components_widget">Page editor</a>.</p>
@@ -887,7 +887,7 @@ Only the <strong>Draft</strong> version of content is visible in the preview pan
 <p><a href="layers.ahtml#layers_panel">Layers</a> — shows the status of a content item across every layer in the system.</p>
 </li>
 <li>
-<p><a href="variants.ahtml">Variants</a> — creates and manages A/B variants of the selected item.</p>
+<p><a href="editor/variants.ahtml">Variants</a> — creates and manages A/B variants of the selected item.</p>
 </li>
 </ul>
 </div>
@@ -908,7 +908,7 @@ Only the <strong>Draft</strong> version of content is visible in the preview pan
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-04-22 11:31:24 UTC
+Last updated 2026-04-22 22:02:53 UTC
 </div>
 </div>
 </body>

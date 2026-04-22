@@ -449,7 +449,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Content items reference each other — pages embed images, shortcuts target content, text fields link to other items. Those references are <strong>dependencies</strong>. Content Studio tracks them in both directions, and makes them inspectable via the <strong>Dependencies</strong> widget in the <a href="navigator.ahtml#context_panel">Context panel</a>.</p>
+<p>Content items reference each other — pages embed images, shortcuts target content, text fields link to other items. Those references are <strong>dependencies</strong>. Content Studio tracks them in both directions, and makes them inspectable via the <strong>Dependencies</strong> widget in the <a href="../navigator.ahtml#context_panel">Context panel</a>.</p>
 </div>
 <div class="ulist">
 <ul>
@@ -463,7 +463,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="dependencies/images/widgets-dependencies.png" alt="Dependencies widget" width="207">
+<img src="images/widgets-dependencies.png" alt="Dependencies widget" width="207">
 </div>
 </div>
 <div class="paragraph">
@@ -474,7 +474,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="dependencies/images/widgets-dependencies-filter.png" alt="Dependencies filtered by type" width="370">
+<img src="images/widgets-dependencies-filter.png" alt="Dependencies filtered by type" width="370">
 </div>
 </div>
 </div>
@@ -488,13 +488,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="ulist">
 <ul>
 <li>
-<p><a href="workflow/publish.ahtml">Publishing</a> automatically includes required inbound dependencies in the batch so the published page does not end up with missing references.</p>
+<p><a href="../workflow/publish.ahtml">Publishing</a> automatically includes required inbound dependencies in the batch so the published page does not end up with missing references.</p>
 </li>
 <li>
-<p><a href="archive.ahtml">Archive</a> warns if another content depends on the item being archived.</p>
+<p><a href="../archive.ahtml">Archive</a> warns if another content depends on the item being archived.</p>
 </li>
 <li>
-<p><a href="workflow/unpublish.ahtml">Unpublish</a> warns if a <em>published</em> content depends on the item being taken offline.</p>
+<p><a href="../workflow/unpublish.ahtml">Unpublish</a> warns if a <em>published</em> content depends on the item being taken offline.</p>
 </li>
 </ul>
 </div>
@@ -503,7 +503,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-04-22 11:31:24 UTC
+Last updated 2026-04-22 22:02:53 UTC
 </div>
 </div>
 </body>

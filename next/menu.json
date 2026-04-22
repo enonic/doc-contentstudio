@@ -20,7 +20,13 @@
     },
     {
       "title": "Navigator",
-      "document": "navigator"
+      "document": "navigator",
+      "menuItems": [
+        {
+          "title": "Dependencies",
+          "document": "navigator/dependencies"
+        }
+      ]
     },
     {
       "title": "Editor",
@@ -41,6 +47,18 @@
         {
           "title": "Preview",
           "document": "editor/preview"
+        },
+        {
+          "title": "Image",
+          "document": "editor/image"
+        },
+        {
+          "title": "Versions",
+          "document": "editor/versions"
+        },
+        {
+          "title": "Variants",
+          "document": "editor/variants"
         }
       ]
     },
@@ -93,24 +111,12 @@
       ]
     },
     {
-      "title": "Versions",
-      "document": "versions"
-    },
-    {
-      "title": "Dependencies",
-      "document": "dependencies"
-    },
-    {
       "title": "Permissions",
       "document": "permissions"
     },
     {
       "title": "Archive",
       "document": "archive"
-    },
-    {
-      "title": "Variants",
-      "document": "variants"
     },
     {
       "title": "Issues",

@@ -534,7 +534,7 @@ Content Studio can be installed from <a href="https://market.enonic.com/vendors/
 <p><a href="archive.ahtml">Archive browser</a> — the dedicated <strong>Archive</strong> main-menu entry for browsing, restoring, and permanently deleting archived content.</p>
 </li>
 <li>
-<p><a href="variants.ahtml">Content Variants</a> — create and manage variant copies of a content item for A/B testing.</p>
+<p><a href="editor/variants.ahtml">Content Variants</a> — create and manage variant copies of a content item for A/B testing.</p>
 </li>
 <li>
 <p><a href="layers.ahtml#ai_translation">AI translation</a> — automatic translation of inherited content when localizing in a layer.</p>
@@ -568,7 +568,7 @@ Content Studio can be installed from <a href="https://market.enonic.com/vendors/
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-04-22 11:31:24 UTC
+Last updated 2026-04-22 22:02:53 UTC
 </div>
 </div>
 </body>
