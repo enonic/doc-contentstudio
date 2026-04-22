@@ -19,11 +19,11 @@
       ]
     },
     {
-      "title": "Content Navigator",
+      "title": "Navigator",
       "document": "navigator"
     },
     {
-      "title": "Content Editor",
+      "title": "Editor",
       "document": "editor",
       "menuItems": [
         {
@@ -51,10 +51,6 @@
       "document": "context-panel",
       "menuItems": [
         {
-          "title": "Components",
-          "document": "context-panel/components"
-        },
-        {
           "title": "Details",
           "document": "context-panel/details"
         },
@@ -65,6 +61,10 @@
         {
           "title": "Dependencies",
           "document": "context-panel/dependencies"
+        },
+        {
+          "title": "Components",
+          "document": "context-panel/components"
         }
       ]
     },
@@ -74,23 +74,51 @@
       "menuItems": [
         {
           "title": "Actions",
-          "document": "actions"
+          "document": "actions",
+          "menuItems": [
+            {
+              "title": "New",
+              "document": "actions/new"
+            },
+            {
+              "title": "Edit",
+              "document": "actions/edit"
+            },
+            {
+              "title": "Duplicate",
+              "document": "actions/duplicate"
+            },
+            {
+              "title": "Move",
+              "document": "actions/move"
+            },
+            {
+              "title": "Sort",
+              "document": "actions/sort"
+            },
+            {
+              "title": "Preview",
+              "document": "actions/preview"
+            }
+          ]
         },
         {
           "title": "Workflow",
-          "document": "workflow"
+          "document": "workflow",
+          "menuItems": [
+            {
+              "title": "Publish",
+              "document": "workflow/publish"
+            },
+            {
+              "title": "Unpublish",
+              "document": "workflow/unpublish"
+            }
+          ]
         },
         {
           "title": "Permissions",
           "document": "permissions"
-        },
-        {
-          "title": "Issues",
-          "document": "issues"
-        },
-        {
-          "title": "Archive",
-          "document": "archive"
         },
         {
           "title": "Variants",
@@ -101,6 +129,14 @@
           "document": "content-types"
         }
       ]
+    },
+    {
+      "title": "Archive",
+      "document": "archive"
+    },
+    {
+      "title": "Issues",
+      "document": "issues"
     },
     {
       "title": "AI Assistant",

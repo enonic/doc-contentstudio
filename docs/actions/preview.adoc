@@ -1,0 +1,12 @@
+= Preview
+:toc: right
+:imagesdir: images
+
+The *Preview* action renders a site or page content in a new browser tab as the end user would see it. Unlike the in-editor <<../editor/preview#,Preview panel>>, the *Preview* action opens the rendered output in a full browser tab — useful for checking responsive behavior, printing, or sharing a draft link.
+
+There are two ways to invoke Preview:
+
+* The *Preview* button in the toolbar.
+* The *Preview* entry in the context menu (right-click an item).
+
+NOTE: Preview only opens for content that can be rendered as a page — sites, page templates, and content with a supporting template. For other content types, the action is disabled.

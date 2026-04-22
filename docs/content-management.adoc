@@ -9,19 +9,13 @@ These operations are available from both the <<navigator#,Content Navigator>> an
 == In this chapter
 
 <<actions#,Actions>>::
-The toolbar and context-menu verbs editors use day-to-day — *New*, *Edit*, *Duplicate*, *Move*, *Sort*, *Preview*, *Publish*, *Unpublish*, *Archive*. Reference for what each action does, where to invoke it, and which dialogs it opens.
+The toolbar and context-menu verbs editors use day-to-day — *New*, *Edit*, *Duplicate*, *Move*, *Sort*, *Preview*. Reference for what each action does, where to invoke it, and which dialogs it opens.
 
 <<workflow#,Workflow>>::
-The states a content item moves through between creation and publication — *In progress*, *Ready for publishing*, *Publish request*, *Published*, *Unpublished* — and how editors and reviewers hand off between them.
+The states a content item moves through between creation and publication — *In progress*, *Ready for publishing*, *Publish request*, *Published*, *Unpublished* — together with the actions that drive those transitions (*Publish*, *Unpublish*, *Mark as ready*, *Request publishing*).
 
 <<permissions#,Permissions>>::
 The per-content security model: principals (users, groups, roles), the granular permission flags (*Read*, *Create*, *Modify*, *Delete*, *Publish*, *Read/Write permissions*), inheritance, and the *Edit permissions* dialog.
-
-<<issues#,Issues>>::
-Lightweight work tracking inside Content Studio — *Tasks* for general editorial assignments, and *Publish requests* for content that needs review before going live.
-
-<<archive#,Archive>>::
-What happens when content is archived (soft-deleted) versus deleted outright, how the archive interacts with <<layers#,layers>>, and how to restore items.
 
 <<variants#,Variants>>::
 Create and manage variant copies of a content item for A/B testing. Requires <<content-studio-plus#,Content Studio+>>.
@@ -31,4 +25,6 @@ The reference for the content types Enonic XP ships with — *Folder*, *Shortcut
 
 == Where this sits
 
-Content Management assumes you already have content to manage. For the creation side, see <<navigator#,Content Navigator>> (finding and creating items) and <<editor#,Content Editor>> (editing a single item). For the schema and data structure behind a custom content type, see the https://developer.enonic.com/docs/xp/stable/cms[Enonic XP CMS docs].
+Content Management assumes you already have content to manage. For the creation side, see <<navigator#,Navigator>> (finding and creating items) and <<editor#,Editor>> (editing a single item). For the schema and data structure behind a custom content type, see the https://developer.enonic.com/docs/xp/stable/cms[Enonic XP CMS docs].
+
+Two closely-related chapters have their own top-level entries because they also have dedicated main-menu destinations in the Content Studio UI: <<archive#,Archive>> (browsing, restoring, and permanently deleting archived content) and <<issues#,Issues>> (tasks and publish requests).

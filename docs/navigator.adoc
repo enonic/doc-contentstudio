@@ -14,24 +14,23 @@ image::navigator-toolbar.png[Toolbar, 75%]
 
 The Menu Toolbar in the Content Navigator has buttons for the following actions:
 
-* *New:* Opens the <<actions#new,New content>> dialog for creating new content;
-* *Edit:* Opens the content for <<editor#,editing>> in a new browser tab;
-* *Archive:* Opens the <<actions#archive,Archive item(s)>> dialog for the selected content.
-* *Duplicate:* Makes a <<actions#duplicate,copy>> of the selected content;
-* *Move:* Opens the <<actions#move,Move item(s) with children>> dialog;
-* *Sort:* Opens the <<actions#sort,Sort items>> dialog where child items of the selected content can be sorted;
+* *New:* Opens the <<actions/new#,New content>> dialog for creating new content;
+* *Edit:* Opens the content for <<actions/edit#,editing>> in a new browser tab;
+* *Archive:* Opens the <<archive#,Archive item(s)>> dialog for the selected content.
+* *Duplicate:* Makes a <<actions/duplicate#,copy>> of the selected content;
+* *Move:* Opens the <<actions/move#,Move item(s) with children>> dialog;
+* *Sort:* Opens the <<actions/sort#,Sort items>> dialog where child items of the selected content can be sorted;
 
 Dropdown action button on the right of the Toolbar is context-dependent and will have a different main action preset, depending on if a content is selected, what state content has, current user permissions etc.:
 
 image::navigator-action-menu.png[Toolbar, 25%,align="center"]
 
- * If selected content is not published: *Publish* (opens the <<actions#publishing_wizard,Publishing wizard>> dialog)
- * If selected content is published: *Unpublish* (opens the <<actions#unpublish,Unpublish Wizard>> dialog for taking the content offline)
- * If selected content is published but has child items that are not published: *Publish Tree* (opens the <<actions#publishing_wizard,Publishing wizard>>)
-dialog with selected content and all descendants
+ * If selected content is not published: *Publish* (opens the <<workflow/publish#_publishing_wizard,Publishing wizard>> dialog)
+ * If selected content is published: *Unpublish* (opens the <<workflow/unpublish#,Unpublish Wizard>> dialog for taking the content offline)
+ * If selected content is published but has child items that are not published: *Publish Tree* (opens the <<workflow/publish#_publish_tree,Publishing wizard>> dialog with selected content and all descendants)
  * If selected content has workflow state "In progress": *Mark as Ready* (to mark selected content item(s) as ready for publishing)
- * If selected content is not published and current user doesn't have publishing permissions: *Request Publishing:* (opens the <<actions#unpublish,Unpublish Wizard>> dialog for taking the item offline)
- * If no content is selected: *Create Issue*, opens the <<issues#create_a_task,New Task>> dialog
+ * If selected content is not published and current user doesn't have publishing permissions: *Request Publishing* (opens the <<workflow#publish_request,Publish Request>> wizard)
+ * If no content is selected: *Create Task* opens the <<issues#create_a_task,New Task>> dialog
 
 These options are also available in the context menu that appears when right-clicking on a content item in the tree grid panel.
 
@@ -92,7 +91,7 @@ Information in the content list is displayed in four columns. The number of colu
 
 * The first column contains a content type icon, a display name and a path. A gray expand icon will appear to the left of the icon if the content has child content.
 
-* The second column shows the icon, representing the current <<actions#sort,sorting>> order of the content's children.
+* The second column shows the icon, representing the current <<actions/sort#,sorting>> order of the content's children.
 
 * The third column shows status of the content: `New`, `Published`, `Unpublished` or `Modified`.
 

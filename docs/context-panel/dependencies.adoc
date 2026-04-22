@@ -15,4 +15,4 @@ Clicking the count button opens a new browser tab listing all dependencies of th
 
 image::widgets-dependencies-filter.png[Dependencies filtered by type, 370]
 
-TIP: Dependencies are what the *Archive* and *Unpublish* actions check for before allowing the operation — if another content depends on the one you are trying to archive or take offline, you will be warned. See <<../actions#_archive,Archive>> and <<../actions#_unpublish,Unpublish>> for details.
+TIP: Dependencies are what the *Archive* and *Unpublish* actions check for before allowing the operation — if another content depends on the one you are trying to archive or take offline, you will be warned. See <<../archive#,Archive>> and <<../workflow/unpublish#,Unpublish>> for details.

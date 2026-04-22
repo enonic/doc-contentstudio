@@ -10,7 +10,7 @@ Content Workflow in Content Studio consists of the following stages:
 * Published
 * Unpublished
 
-Workflow state of the content is displayed via corresponding icon, except for "Published" state when no icon is used.
+Workflow state of the content is displayed via corresponding icon, except for "Published" state when no icon is used. Transitions between states are driven by a handful of publishing actions: *Mark as ready*, *Request publishing*, *<<workflow/publish#,Publish>>*, and *<<workflow/unpublish#,Unpublish>>*.
 
 In addition to the workflow stages above, if the content at any time is invalid based on required elements or other rules in the content type,
 it is marked with a red icon:
