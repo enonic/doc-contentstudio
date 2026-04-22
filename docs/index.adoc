@@ -2,7 +2,7 @@
 :toc: right
 :imagesdir: images
 
-Enonic XP's Content Management interface
+Enonic XP's Content management user interface
 
 NOTE: Content Studio can be installed from https://market.enonic.com/vendors/enonic/content-studio[Enonic Market]
 
