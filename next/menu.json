@@ -1,8 +1,8 @@
 {
   "menuItems": [
     {
-      "title": "Content Studio+",
-      "document": "content-studio-plus"
+      "title": "Concepts",
+      "document": "concepts"
     },
     {
       "title": "Projects",
@@ -45,96 +45,72 @@
       ]
     },
     {
-      "title": "Context panel",
-      "document": "context-panel",
+      "title": "Actions",
+      "document": "actions",
       "menuItems": [
         {
-          "title": "Details",
-          "document": "context-panel/details"
+          "title": "New",
+          "document": "actions/new"
         },
         {
-          "title": "Version history",
-          "document": "context-panel/version-history"
+          "title": "Edit",
+          "document": "actions/edit"
         },
         {
-          "title": "Dependencies",
-          "document": "context-panel/dependencies"
+          "title": "Duplicate",
+          "document": "actions/duplicate"
         },
         {
-          "title": "Components",
-          "document": "context-panel/components"
+          "title": "Move",
+          "document": "actions/move"
+        },
+        {
+          "title": "Sort",
+          "document": "actions/sort"
+        },
+        {
+          "title": "Preview",
+          "document": "actions/preview"
         }
       ]
     },
     {
-      "title": "Content Management",
-      "document": "content-management",
+      "title": "Workflow",
+      "document": "workflow",
       "menuItems": [
         {
-          "title": "Workflow",
-          "document": "workflow",
-          "menuItems": [
-            {
-              "title": "Publish",
-              "document": "workflow/publish"
-            },
-            {
-              "title": "Publish request",
-              "document": "workflow/publish-request"
-            },
-            {
-              "title": "Unpublish",
-              "document": "workflow/unpublish"
-            }
-          ]
+          "title": "Publish",
+          "document": "workflow/publish"
         },
         {
-          "title": "Actions",
-          "document": "actions",
-          "menuItems": [
-            {
-              "title": "New",
-              "document": "actions/new"
-            },
-            {
-              "title": "Edit",
-              "document": "actions/edit"
-            },
-            {
-              "title": "Duplicate",
-              "document": "actions/duplicate"
-            },
-            {
-              "title": "Move",
-              "document": "actions/move"
-            },
-            {
-              "title": "Sort",
-              "document": "actions/sort"
-            },
-            {
-              "title": "Preview",
-              "document": "actions/preview"
-            }
-          ]
+          "title": "Publish request",
+          "document": "workflow/publish-request"
         },
         {
-          "title": "Variants",
-          "document": "variants"
-        },
-        {
-          "title": "Permissions",
-          "document": "permissions"
-        },
-        {
-          "title": "Built-in content types",
-          "document": "content-types"
+          "title": "Unpublish",
+          "document": "workflow/unpublish"
         }
       ]
+    },
+    {
+      "title": "Versions",
+      "document": "versions"
+    },
+    {
+      "title": "Dependencies",
+      "document": "dependencies"
+    },
+    {
+      "title": "Permissions",
+      "document": "permissions"
     },
     {
       "title": "Archive",
       "document": "archive"
+    },
+    {
+      "title": "Variants",
+      "document": "variants"
     },
     {
       "title": "Issues",
@@ -143,6 +119,10 @@
     {
       "title": "AI Assistant",
       "document": "ai"
+    },
+    {
+      "title": "Content types",
+      "document": "content-types"
     },
     {
       "title": "Keyboard shortcuts",

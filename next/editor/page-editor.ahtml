@@ -442,8 +442,14 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
 <li><a href="#selecting_a_controller_or_template">Selecting a controller or template</a></li>
+<li><a href="#_components_widget">Components widget</a>
+<ul class="sectlevel2">
+<li><a href="#insert_tab">Insert tab</a></li>
+<li><a href="#inspect_tab">Inspect tab</a></li>
+</ul>
+</li>
 <li><a href="#editing-page">Working with components</a></li>
-<li><a href="#component_categories">Component categories</a>
+<li><a href="#_component_categories">Component categories</a>
 <ul class="sectlevel2">
 <li><a href="#part">Part</a></li>
 <li><a href="#layout">Layout</a></li>
@@ -453,7 +459,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ul>
 </li>
 <li><a href="#page_components_tree">Page Components tree</a></li>
-<li><a href="#related_widgets">Related widgets</a></li>
 </ul>
 </div>
 </div>
@@ -464,7 +469,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>The <strong>Page editor</strong> is the drag-and-drop surface for building pages. It replaces the <a href="preview.ahtml">Preview</a> panel on the right side of the <a href="../editor.ahtml">Content Editor</a> when the selected content is renderable (sites, page templates, and content with a supporting template). It is both a live rendering of the page <em>and</em> the primary tool for placing, configuring, and arranging the components that make up that page.</p>
 </div>
 <div class="paragraph">
-<p>The Page editor works in tandem with the <a href="content-form.ahtml">Content Form</a> (for the content&#8217;s data fields) and the <a href="../context-panel.ahtml">Context Panel</a> (for component configuration and page-level widgets).</p>
+<p>The Page editor works in tandem with the <a href="content-form.ahtml">Content Form</a> (for the content&#8217;s data fields) and the <a href="../navigator.ahtml#context_panel">Context panel</a> (for component configuration and other widgets).</p>
 </div>
 </div>
 </div>
@@ -501,10 +506,67 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
+<h2 id="_components_widget"><a class="link" href="#_components_widget">Components widget</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <strong>Components</strong> widget appears in the <a href="../navigator.ahtml#context_panel">Context panel</a> whenever the Page editor is available. It has two tabs: <strong>Insert</strong> for adding new components to the page, and a per-component <strong>Inspect</strong> tab for configuring the currently selected component.</p>
+</div>
+<div class="sect2">
+<h3 id="insert_tab"><a class="link" href="#insert_tab">Insert tab</a></h3>
+<div class="paragraph">
+<p>The Insert tab lets you drag and drop component placeholders onto the page.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/widgets-components-insert.png" alt="Insert tab" width="207">
+</div>
+</div>
+<div class="paragraph">
+<p>When you drag a placeholder across the page, a red circle indicates an area where the component cannot be dropped; a green checkmark and blue target box appear over valid drop locations. Once dropped, the placeholder shows a combo-box where you pick the specific part, layout, fragment, etc. to use.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/context-panel_insert.png" alt="Placing a part component" width="697">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/context-panel_insert2.png" alt="Selecting the specific part" width="440">
+</div>
+</div>
+<div class="paragraph">
+<p>The five available component categories are documented under <a href="#_component_categories">Component categories</a> below.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="inspect_tab"><a class="link" href="#inspect_tab">Inspect tab</a></h3>
+<div class="paragraph">
+<p>The Inspect tab configures whichever component is currently selected in the page. The tab header changes to match the selected component&#8217;s type (<strong>Page</strong>, <strong>Part</strong>, <strong>Layout</strong>, etc.). When nothing is selected, it defaults to <strong>Page</strong>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/widgets-components-page.png" alt="Page-level inspection" width="207">
+</div>
+</div>
+<div class="paragraph">
+<p>For the <strong>Page</strong> itself, the Inspect tab is where you choose the controller or page template for the content item. For other components, the tab shows the component&#8217;s configuration form.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/widgets-components-part.png" alt="Part-level inspection" width="207">
+</div>
+</div>
+<div class="paragraph">
+<p>Configuration changes take effect on save, or immediately when you click the <strong>Apply</strong> button at the bottom of the panel.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="editing-page"><a class="link" href="#editing-page">Working with components</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Click a component in the page to select it — the selection is highlighted and its configuration appears in the <a href="../context-panel/components.ahtml#_inspect_tab">Inspect tab</a> of the Components widget. Right-clicking a component opens a menu with the available actions:</p>
+<p>Click a component in the page to select it — the selection is highlighted and its configuration appears in the <a href="#_inspect_tab">Inspect tab</a> of the Components widget. Right-clicking a component opens a menu with the available actions:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -542,10 +604,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="component_categories"><a class="link" href="#component_categories">Component categories</a></h2>
+<h2 id="_component_categories"><a class="link" href="#_component_categories">Component categories</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Enonic XP has five categories of components that can be placed in page regions. They are available from the <a href="../context-panel/components.ahtml#_insert_tab">Insert tab</a> of the Components widget.</p>
+<p>Enonic XP has five categories of components that can be placed in page regions. All are available from the <a href="#_insert_tab">Insert tab</a> of the Components widget.</p>
 </div>
 <div class="sect2">
 <h3 id="part"><a class="link" href="#part">Part</a></h3>
@@ -672,18 +734,10 @@ Layouts cannot be nested inside other layouts. If a layout is hard to click in t
 </div>
 </div>
 </div>
-<div class="sect1">
-<h2 id="related_widgets"><a class="link" href="#related_widgets">Related widgets</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>When the Page editor is available, the <a href="../context-panel/components.ahtml">Components widget</a> is the primary tool for configuring the selected component. The other built-in Context Panel widgets (Details, Version history, Dependencies) work the same way on renderable content as they do on regular content.</p>
-</div>
-</div>
-</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-04-22 09:23:18 UTC
+Last updated 2026-04-22 11:31:24 UTC
 </div>
 </div>
 </body>

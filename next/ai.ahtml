@@ -462,7 +462,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-<strong>Content Studio+ feature.</strong> The AI Assistant is part of the <a href="content-studio-plus.ahtml">Content Studio+</a> subscription. It also requires the <a href="https://market.enonic.com/vendors/enonic/ai-content-operator">Juke AI Content Operator</a> application.
+<strong>Content Studio+ feature.</strong> The AI Assistant is part of the <a href="https://market.enonic.com/vendors/enonic/content-studio-plus">Content Studio+</a> subscription. It also requires the <a href="https://market.enonic.com/vendors/enonic/ai-content-operator">Juke AI Content Operator</a> application.
 </td>
 </tr>
 </table>
@@ -696,7 +696,7 @@ Working with application settings requires "Project owner" roles or higher.
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-04-22 09:23:18 UTC
+Last updated 2026-04-22 11:31:24 UTC
 </div>
 </div>
 </body>

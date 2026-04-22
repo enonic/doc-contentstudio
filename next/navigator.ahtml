@@ -449,7 +449,14 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#search_panel">Search Panel</a></li>
 <li><a href="#content_tree">Content Tree</a></li>
 <li><a href="#preview_panel">Preview panel</a></li>
-<li><a href="#context_panel">Context panel</a></li>
+<li><a href="#context_panel">Context panel</a>
+<ul class="sectlevel2">
+<li><a href="#widget_selector">Widget selector</a></li>
+<li><a href="#built_in_widgets">Built-in widgets</a></li>
+<li><a href="#content_studio_widgets">Content Studio+ widgets</a></li>
+<li><a href="#custom_widgets">Custom widgets</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -772,31 +779,136 @@ Only the <strong>Draft</strong> version of content is visible in the preview pan
 <div class="sect1">
 <h2 id="context_panel"><a class="link" href="#context_panel">Context panel</a></h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>The <strong>Context panel</strong> is the multi-function column on the right of the Content Navigator (and the <a href="editor.ahtml">Content Editor</a>). It hosts a set of <strong>widgets</strong> — small tools that act on the currently selected content item. Widgets can be built-in, shipped by <a href="https://market.enonic.com/vendors/enonic/content-studio-plus">Content Studio+</a>, or contributed by any installed application.</p>
+</div>
 <div class="imageblock text-center">
 <div class="content">
 <img src="navigator/images/navigator-context-panel.png" alt="Context panel" width="50%">
 </div>
 </div>
 <div class="paragraph">
-<p>Context panel for the selected content can be expanded with the <span class="image"><img src="navigator/images/navigator-context-panel-icon.png" alt="navigator context panel icon" width="24px" title="Preview button"></span> icon next to the Action menu button in the top-right corner.</p>
+<p>The panel is toggled open and closed with the <span class="image"><img src="navigator/images/navigator-context-panel-icon.png" alt="navigator context panel icon" width="24px" title="Context panel toggle"></span> icon next to the Action-menu button, or (in the Content Editor) with the cog icon on the right of the editor toolbar.</p>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="navigator/images/widgets-panel-button.png" alt="Context panel toggle" width="209">
+</div>
+</div>
+<div class="sect2">
+<h3 id="widget_selector"><a class="link" href="#widget_selector">Widget selector</a></h3>
 <div class="paragraph">
-<p>This panel displays the list of contextual widgets which can be used to work with the selected content. Widgets are applications that expand the functionality of Content Studio. See the <a href="context-panel.ahtml">Context Panel</a> reference for the built-in widgets and how custom widgets plug in.</p>
+<p>The dropdown at the top of the panel lists the available widgets: the built-ins appear first, followed by widgets from installed applications. A filter field at the top narrows the list by keyword.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="navigator/images/widgets-search.png" alt="Widget selector with filter" width="206">
+</div>
 </div>
 <div class="imageblock text-center">
 <div class="content">
 <img src="navigator/images/navigator-widget-selector.png" alt="Widget selector" width="25%">
 </div>
 </div>
+</div>
+<div class="sect2">
+<h3 id="built_in_widgets"><a class="link" href="#built_in_widgets">Built-in widgets</a></h3>
+<div class="sect3">
+<h4 id="details"><a class="link" href="#details">Details</a></h4>
 <div class="paragraph">
-<p>In the screenshot above, the top 3 widgets are built into Content Studio and the bottom 2 are coming from two external applications installed in the system.</p>
+<p>The <strong>Details</strong> widget shows the basic properties of the selected content item — the core metadata an editor typically needs to know without opening the item.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="navigator/images/widgets-details.png" alt="Details widget" width="450">
+</div>
+</div>
+<div class="paragraph">
+<p>The widget is organised into sections:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Content</dt>
+<dd>
+<p>Icon, display name, and full content path.</p>
+</dd>
+<dt class="hdlist1">Status</dt>
+<dd>
+<p>Current content status: <em>New</em>, <em>Modified</em>, <em>Published</em>, <em>Unpublished</em>, or <em>Archived</em>. See <a href="workflow.ahtml">Workflow</a> for the state model.</p>
+</dd>
+<dt class="hdlist1">User access</dt>
+<dd>
+<p>The effective <a href="permissions.ahtml">permissions</a> for the current user. The <strong>Edit Permissions</strong> link opens the permissions dialog.</p>
+</dd>
+<dt class="hdlist1">Properties</dt>
+<dd>
+<p>Metadata about the content — its type, owner, and created/modified timestamps.</p>
+</dd>
+<dt class="hdlist1">Schedule</dt>
+<dd>
+<p>The from/to dates the content is scheduled to be online. Only shown for published content that has a schedule configured.</p>
+</dd>
+<dt class="hdlist1">Page template</dt>
+<dd>
+<p>The <a href="content-types.ahtml#_page_template">page template</a> used to render the content, if any.</p>
+</dd>
+<dt class="hdlist1">Attachments</dt>
+<dd>
+<p>Downloadable binary attachments on the content item.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect3">
+<h4 id="versions_dependencies_components"><a class="link" href="#versions_dependencies_components">Versions, Dependencies, Components</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>The <strong>Version history</strong> widget lists every version of the selected item and lets you compare or revert. See <a href="versions.ahtml">Versions</a>.</p>
+</li>
+<li>
+<p>The <strong>Dependencies</strong> widget shows the inbound and outbound references between the item and other content. See <a href="dependencies.ahtml">Dependencies</a>.</p>
+</li>
+<li>
+<p>The <strong>Components</strong> widget is the page-building tool that appears in the Content Editor for renderable content. See <a href="editor/page-editor.ahtml#_components_widget">Page editor</a>.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="content_studio_widgets"><a class="link" href="#content_studio_widgets">Content Studio+ widgets</a></h3>
+<div class="paragraph">
+<p>The following widgets are contributed by <a href="https://market.enonic.com/vendors/enonic/content-studio-plus">Content Studio+</a>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="layers.ahtml#layers_panel">Layers</a> — shows the status of a content item across every layer in the system.</p>
+</li>
+<li>
+<p><a href="variants.ahtml">Variants</a> — creates and manages A/B variants of the selected item.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="custom_widgets"><a class="link" href="#custom_widgets">Custom widgets</a></h3>
+<div class="paragraph">
+<p>The Context panel is <strong>pluggable</strong>: any installed application can contribute a widget that appears in the widget selector. The interface for contributing a widget is <code>contentstudio.contextpanel</code>; see the <a href="https://developer.enonic.com/docs/xp/stable/admin/widgets">XP admin widgets reference</a> for the descriptor format and lifecycle.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="navigator/images/widgets-context-panel.png" alt="Custom widget in the Context panel" width="207">
+</div>
+</div>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-04-22 09:23:18 UTC
+Last updated 2026-04-22 11:31:24 UTC
 </div>
 </div>
 </body>

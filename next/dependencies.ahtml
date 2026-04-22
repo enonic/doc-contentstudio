@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.26">
-<title>Components widget</title>
+<title>Dependencies</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -437,12 +437,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article toc2 toc-right">
 <div id="header">
-<h1>Components widget</h1>
+<h1>Dependencies</h1>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#insert_tab">Insert tab</a></li>
-<li><a href="#inspect_tab">Inspect tab</a></li>
+<li><a href="#dependencies_and_publishing">Dependencies and publishing</a></li>
 </ul>
 </div>
 </div>
@@ -450,89 +449,61 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>The <strong>Components</strong> widget is the primary tool for building and configuring pages. It is only available in the <a href="../editor.ahtml">Content Editor</a> for renderable content with the <a href="../editor/page-editor.ahtml">Page editor</a> enabled.</p>
-</div>
-<div class="paragraph">
-<p>The widget has two tabs: <strong>Insert</strong> for adding new components to the page, and the per-component tab for configuring a selected component (renamed <em>Page</em>, <em>Part</em>, <em>Layout</em>, etc. to match the selection).</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="insert_tab"><a class="link" href="#insert_tab">Insert tab</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The Insert tab lets you drag and drop component placeholders onto the page. Enonic XP has five component categories:</p>
+<p>Content items reference each other — pages embed images, shortcuts target content, text fields link to other items. Those references are <strong>dependencies</strong>. Content Studio tracks them in both directions, and makes them inspectable via the <strong>Dependencies</strong> widget in the <a href="navigator.ahtml#context_panel">Context panel</a>.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Layout</strong> — a container component that defines regions where other components can sit.</p>
+<p>An <strong>inbound</strong> dependency is content that <em>uses</em> the selected item — for example, a page that embeds it, or a shortcut that points at it.</p>
 </li>
 <li>
-<p><strong>Part</strong> — a configurable component from one of the site&#8217;s applications.</p>
-</li>
-<li>
-<p><strong>Text</strong> — a formatted text block edited via the <a href="../editor/rich-text-editor.ahtml">Rich Text Editor</a>.</p>
-</li>
-<li>
-<p><strong>Fragment</strong> — a reusable component saved as its own content item.</p>
-</li>
-<li>
-<p><strong>Image</strong> — an image content item rendered directly as a page component.</p>
+<p>An <strong>outbound</strong> dependency is content that the selected item <em>uses</em> — for example, images referenced in its rich-text fields, or targets of content selectors.</p>
 </li>
 </ul>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/widgets-components-insert.png" alt="Insert tab" width="207">
+<img src="dependencies/images/widgets-dependencies.png" alt="Dependencies widget" width="207">
 </div>
 </div>
 <div class="paragraph">
-<p>When you drag a placeholder across the page, a red circle indicates an area where the component cannot be dropped; a green checkmark and blue target box appear over valid drop locations. Once dropped, the placeholder shows a combo-box where you pick the specific part, layout, fragment, etc. to use.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/context-panel_insert.png" alt="Placing a part component" width="697">
-</div>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/context-panel_insert2.png" alt="Selecting the specific part" width="440">
-</div>
+<p>Inbound dependencies are listed above the content box, outbound below. When there are no dependencies of a kind, the widget shows a placeholder (<em>No incoming dependencies</em>, etc.). When there are dependencies, a button displays the total count, with icons and counts broken out per content type.</p>
 </div>
 <div class="paragraph">
-<p>For the full component-category reference, see the <a href="../editor/page-editor.ahtml#_component_categories">Page editor</a> chapter.</p>
+<p>Clicking the count button opens a new browser tab listing all dependencies of that direction. Clicking a per-type icon opens the same view, pre-filtered to that type.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="dependencies/images/widgets-dependencies-filter.png" alt="Dependencies filtered by type" width="370">
+</div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="inspect_tab"><a class="link" href="#inspect_tab">Inspect tab</a></h2>
+<h2 id="dependencies_and_publishing"><a class="link" href="#dependencies_and_publishing">Dependencies and publishing</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The Inspect tab configures whichever component is currently selected in the <a href="../editor/page-editor.ahtml">Page editor</a>. The tab header changes to match the selected component&#8217;s type (<strong>Page</strong>, <strong>Part</strong>, <strong>Layout</strong>, etc.). When nothing is selected, it defaults to <strong>Page</strong>.</p>
+<p>Dependencies are checked throughout the publishing lifecycle:</p>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="images/widgets-components-page.png" alt="Page-level inspection" width="207">
-</div>
-</div>
-<div class="paragraph">
-<p>For the <strong>Page</strong> itself, the Inspect tab is where you choose the controller or page template for the content item. For other components, the tab shows the component&#8217;s configuration form.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/widgets-components-part.png" alt="Part-level inspection" width="207">
-</div>
-</div>
-<div class="paragraph">
-<p>Configuration changes take effect on save, or immediately when you click the <strong>Apply</strong> button at the bottom of the panel.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="workflow/publish.ahtml">Publishing</a> automatically includes required inbound dependencies in the batch so the published page does not end up with missing references.</p>
+</li>
+<li>
+<p><a href="archive.ahtml">Archive</a> warns if another content depends on the item being archived.</p>
+</li>
+<li>
+<p><a href="workflow/unpublish.ahtml">Unpublish</a> warns if a <em>published</em> content depends on the item being taken offline.</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-04-22 09:23:18 UTC
+Last updated 2026-04-22 11:31:24 UTC
 </div>
 </div>
 </body>

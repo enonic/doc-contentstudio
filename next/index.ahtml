@@ -444,7 +444,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#intro_videos">Intro videos</a></li>
 <li><a href="#overview">Overview</a></li>
 <li><a href="#main_menu">Main menu</a></li>
-<li><a href="#go_beyond">Go beyond</a></li>
+<li><a href="#content_studio">Content Studio+</a></li>
 <li><a href="#browser_support">Browser support</a></li>
 <li><a href="#release_notes">Release notes</a></li>
 </ul>
@@ -520,10 +520,32 @@ Content Studio can be installed from <a href="https://market.enonic.com/vendors/
 </div>
 </div>
 <div class="sect1">
-<h2 id="go_beyond"><a class="link" href="#go_beyond">Go beyond</a></h2>
+<h2 id="content_studio"><a class="link" href="#content_studio">Content Studio+</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Content Studio is free and open source, but also highly extendable. A subscription unlocks <a href="content-studio-plus.ahtml">Content Studio+</a>, a companion application that adds advanced capabilities like an <a href="ai.ahtml">AI assistant</a>, the <a href="archive.ahtml">archive browser</a>, <a href="variants.ahtml">content variants</a> and <a href="layers.ahtml#ai_translation">automated translations</a>.</p>
+<p>Content Studio itself is free and open source. An Enonic subscription unlocks <strong>Content Studio+</strong>, a companion application distributed on <a href="https://market.enonic.com/vendors/enonic/content-studio-plus">Enonic Market</a> that adds advanced editorial capabilities:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="ai.ahtml">AI Assistant (Juke)</a> — in-context AI help for editors, including field-level assistance, variants, and project-level instructions.</p>
+</li>
+<li>
+<p><a href="archive.ahtml">Archive browser</a> — the dedicated <strong>Archive</strong> main-menu entry for browsing, restoring, and permanently deleting archived content.</p>
+</li>
+<li>
+<p><a href="variants.ahtml">Content Variants</a> — create and manage variant copies of a content item for A/B testing.</p>
+</li>
+<li>
+<p><a href="layers.ahtml#ai_translation">AI translation</a> — automatic translation of inherited content when localizing in a layer.</p>
+</li>
+<li>
+<p><a href="layers.ahtml#layers_panel">Layers widget</a> — see the status of a content item across every layer in the system.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Without a valid license the Content Studio+ application can still be installed, but its UI contributions remain inactive. Pages that document a CS+ feature carry a <strong>Content Studio+ feature</strong> admonition at the top.</p>
 </div>
 </div>
 </div>
@@ -546,7 +568,7 @@ Content Studio can be installed from <a href="https://market.enonic.com/vendors/
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-04-22 09:23:18 UTC
+Last updated 2026-04-22 11:31:24 UTC
 </div>
 </div>
 </body>

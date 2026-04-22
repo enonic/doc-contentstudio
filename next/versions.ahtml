@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.26">
-<title>Content Studio+</title>
+<title>Versions</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -437,13 +437,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article toc2 toc-right">
 <div id="header">
-<h1>Content Studio+</h1>
+<h1>Versions</h1>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#installation">Installation</a></li>
-<li><a href="#features">Features</a></li>
-<li><a href="#licensing">Licensing</a></li>
+<li><a href="#reverting_to_a_version">Reverting to a version</a></li>
+<li><a href="#comparing_versions">Comparing versions</a></li>
 </ul>
 </div>
 </div>
@@ -451,7 +450,23 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p><strong>Content Studio+</strong> is a companion application that extends Content Studio with a set of advanced capabilities aimed at professional editorial teams. Content Studio itself is free and open source; Content Studio+ requires an Enonic subscription.</p>
+<p>Every save, publish, unpublish, rename, or permissions change on a content item creates a new <strong>version</strong>. The full history is available via the <strong>Version history</strong> widget in the <a href="navigator.ahtml#context_panel">Context panel</a>: you can see every change, compare any two versions, and revert to an older one.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="versions/images/widgets-version-history.png" alt="Version history widget" width="283">
+</div>
+</div>
+<div class="paragraph">
+<p>The current workflow status is shown in the widget header. Versions created by publish and unpublish events are listed alongside content versions so the full audit trail is visible in one place.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="reverting_to_a_version"><a class="link" href="#reverting_to_a_version">Reverting to a version</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Click a version box to expand it, then click <strong>Revert</strong>. The current (active) version cannot be reverted to itself, so it does not expand. Publish and unpublish markers are also non-expandable.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -460,7 +475,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-This documentation covers both Content Studio and Content Studio+. Features that require Content Studio+ are marked with a <strong>Content Studio+ feature</strong> admonition at the top of the page or section where they are described.
+Some versions cannot be reverted — typically those created by permissions updates, renames, or moves. The widget disables the action for these.
 </td>
 </tr>
 </table>
@@ -468,55 +483,36 @@ This documentation covers both Content Studio and Content Studio+. Features that
 </div>
 </div>
 <div class="sect1">
-<h2 id="installation"><a class="link" href="#installation">Installation</a></h2>
+<h2 id="comparing_versions"><a class="link" href="#comparing_versions">Comparing versions</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Content Studio+ is distributed as a standard Enonic application from <a href="https://market.enonic.com/vendors/enonic/content-studio-plus">Enonic Market</a>. Once the application is deployed to an Enonic XP instance with a valid subscription license, its features become available automatically inside Content Studio — no separate UI configuration is required.</p>
+<p>Click the <span class="image"><img src="versions/images/widgets-version-compare-icon.png" alt="widgets version compare icon" width="24"></span> icon on any version to open the <strong>Compare versions</strong> dialog. The two dropdowns at the top select the pair of versions being compared: the left one is <em>older</em>, the right one <em>newer</em>.</p>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="versions/images/widgets-version-compare-dialog.png" alt="Version compare dialog" width="909">
 </div>
-</div>
-<div class="sect1">
-<h2 id="features"><a class="link" href="#features">Features</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The following capabilities in this documentation are provided by Content Studio+:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="ai.ahtml">AI Assistant (Juke)</a> — in-context AI help for editors: field-level assistance, variants, mentions, and project-level instructions.</p>
-</li>
-<li>
-<p><a href="archive.ahtml">Archive browser</a> — the dedicated <strong>Archive</strong> main-menu entry for browsing, restoring, and permanently deleting archived content.</p>
-</li>
-<li>
-<p><a href="variants.ahtml">Content Variants</a> — create and manage variant copies of a content item for A/B testing.</p>
-</li>
-<li>
-<p><a href="layers.ahtml#ai_translation">AI translation</a> — automatic translation of inherited content when localizing in a layer.</p>
-</li>
-<li>
-<p><a href="layers.ahtml#layers_panel">Layers widget</a> — visualize the status of a content item across every layer in the system.</p>
-</li>
-</ul>
 </div>
 <div class="paragraph">
-<p>Individual features may also depend on additional applications (for example, the Juke AI translator app for AI translation). The page for each feature lists any extra requirements.</p>
+<p>By default the dialog shows only the differences between the two versions. Toggle <strong>Show entire content</strong> to see the full content JSON side-by-side.</p>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="licensing"><a class="link" href="#licensing">Licensing</a></h2>
-<div class="sectionbody">
 <div class="paragraph">
-<p>Content Studio+ requires a valid Enonic subscription. Without a license, the application can still be installed, but its UI contributions will not activate. See <a href="https://www.enonic.com/pricing">Enonic pricing</a> for subscription details.</p>
+<p>Both dropdowns have aliases at the top of the list — <em>previous</em>, <em>next</em>, <em>published</em>, <em>current</em> — so you can compare against those without scrolling through the full version list.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="versions/images/widgets-version-compare-dialog-aliases.png" alt="Version aliases" width="456">
+</div>
+</div>
+<div class="paragraph">
+<p>The kebab menu on the right of each dropdown has one option, <strong>Revert</strong>, which reverts to the version currently selected in that dropdown.</p>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-04-22 09:23:18 UTC
+Last updated 2026-04-22 11:31:24 UTC
 </div>
 </div>
 </body>

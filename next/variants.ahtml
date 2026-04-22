@@ -447,7 +447,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-<strong>Content Studio+ feature.</strong> The Variants widget is part of the <a href="content-studio-plus.ahtml">Content Studio+</a> subscription.
+<strong>Content Studio+ feature.</strong> The Variants widget is part of the <a href="https://market.enonic.com/vendors/enonic/content-studio-plus">Content Studio+</a> subscription.
 </td>
 </tr>
 </table>
@@ -491,7 +491,7 @@ the original item. Each variant has a context menu with "<strong>Edit</strong>" 
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-04-22 09:23:18 UTC
+Last updated 2026-04-22 11:31:24 UTC
 </div>
 </div>
 </body>

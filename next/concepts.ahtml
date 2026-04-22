@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.26">
-<title>Context Panel</title>
+<title>Concepts</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -437,13 +437,21 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article toc2 toc-right">
 <div id="header">
-<h1>Context Panel</h1>
+<h1>Concepts</h1>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#built_in_widgets">Built-in widgets</a></li>
-<li><a href="#content_studio_widgets">Content Studio+ widgets</a></li>
-<li><a href="#custom_widgets">Custom widgets</a></li>
+<li><a href="#content_items_and_content_types">Content items and content types</a></li>
+<li><a href="#sites_pages_and_templates">Sites, pages, and templates</a></li>
+<li><a href="#projects_and_layers">Projects and layers</a></li>
+<li><a href="#draft_master_and_publishing">Draft, master, and publishing</a></li>
+<li><a href="#versions">Versions</a></li>
+<li><a href="#dependencies">Dependencies</a></li>
+<li><a href="#permissions">Permissions</a></li>
+<li><a href="#archive">Archive</a></li>
+<li><a href="#applications_and_widgets">Applications and widgets</a></li>
+<li><a href="#issues_and_publish_requests">Issues and publish requests</a></li>
+<li><a href="#content_studio">Content Studio+</a></li>
 </ul>
 </div>
 </div>
@@ -451,82 +459,123 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>The <strong>Context Panel</strong> is the multi-function column on the right-hand side of the <a href="navigator.ahtml">Content Navigator</a> and the <a href="editor.ahtml">Content Editor</a>. It hosts a set of <strong>widgets</strong> — small tools that act on the currently selected content item. Widgets can be built-in, shipped by <a href="content-studio-plus.ahtml">Content Studio+</a>, or contributed by any installed application.</p>
+<p>Content Studio is a user interface on top of Enonic XP&#8217;s content model. Effective use of the UI depends on a few recurring concepts that surface everywhere — in dialogs, widgets, toolbars, and URLs. This page defines them once and points to where each one is documented in depth.</p>
 </div>
 <div class="paragraph">
-<p>Toggle the panel open and closed with the cog icon on the right of the toolbar.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="context-panel/images/widgets-panel-button.png" alt="Context Panel toggle" width="209">
-</div>
-</div>
-<div class="paragraph">
-<p>The widget selector dropdown at the top of the panel lists the available widgets: the built-ins appear first, followed by widgets from installed applications. A filter field at the top narrows the list by keyword.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="context-panel/images/widgets-search.png" alt="Widget selector with filter" width="206">
-</div>
+<p>For the low-level reference (schemas, field types, APIs), see the <a href="https://developer.enonic.com/docs/xp/stable/cms">Enonic XP CMS docs</a>. Content Studio&#8217;s own docs focus on how editors interact with these concepts through the UI.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="built_in_widgets"><a class="link" href="#built_in_widgets">Built-in widgets</a></h2>
+<h2 id="content_items_and_content_types"><a class="link" href="#content_items_and_content_types">Content items and content types</a></h2>
 <div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p><a href="context-panel/components.ahtml">Components</a> — drag-and-drop component placement and configuration for renderable pages. Only available in the Content Editor for content with the <a href="editor/page-editor.ahtml">Page editor</a> enabled.</p>
-</li>
-<li>
-<p><a href="context-panel/details.ahtml">Details</a> — properties and metadata of the selected content.</p>
-</li>
-<li>
-<p><a href="context-panel/version-history.ahtml">Version history</a> — all versions of the content, with compare and revert actions.</p>
-</li>
-<li>
-<p><a href="context-panel/dependencies.ahtml">Dependencies</a> — inbound and outbound references between content items.</p>
-</li>
-</ul>
+<div class="paragraph">
+<p>A <strong>content item</strong> is a single piece of content in the repository — an article, an image, a page, a site. Every content item has an identity (path, display name, id), a type, a set of field values, and a small envelope of metadata (security, schedule, workflow state).</p>
+</div>
+<div class="paragraph">
+<p>A <strong>content type</strong> is the schema that defines what fields a content item has. Some types ship with XP (see <a href="content-types.ahtml">Content types</a>); others are defined in application code.</p>
+</div>
+<div class="paragraph">
+<p>Editors create and edit content items; developers define content types.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="content_studio_widgets"><a class="link" href="#content_studio_widgets">Content Studio+ widgets</a></h2>
+<h2 id="sites_pages_and_templates"><a class="link" href="#sites_pages_and_templates">Sites, pages, and templates</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The following widgets are contributed by <a href="content-studio-plus.ahtml">Content Studio+</a>:</p>
+<p>A <strong>site</strong> is a special kind of content item that sits at the root of a website. Sites can have installed applications attached to them, which contribute the components (parts, layouts, page controllers) used in rendering. Each site automatically gets a <strong>Templates</strong> folder where page templates live.</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="layers.ahtml#layers_panel">Layers</a> — shows the status of a content item across every layer in the system.</p>
-</li>
-<li>
-<p><a href="variants.ahtml">Variants</a> — creates and manages A/B variants of the selected item.</p>
-</li>
-</ul>
+<div class="paragraph">
+<p>A <strong>page template</strong> is a reusable page definition that renders one or more content types as a page. Page building happens in the <a href="editor/page-editor.ahtml">Page editor</a>, where components are placed into the regions the template defines.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="custom_widgets"><a class="link" href="#custom_widgets">Custom widgets</a></h2>
+<h2 id="projects_and_layers"><a class="link" href="#projects_and_layers">Projects and layers</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The Context Panel is <strong>pluggable</strong>: any installed application can contribute a widget that appears in the widget selector. The interface for contributing a widget to the Context Panel is <code>contentstudio.contextpanel</code>; see the <a href="https://developer.enonic.com/docs/xp/stable/admin/widgets">XP admin widgets reference</a> for the descriptor format and lifecycle.</p>
+<p>A <strong>project</strong> is a top-level container for content — a separate repository root with its own content tree, applications, and settings. See <a href="projects.ahtml">Projects</a>.</p>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="context-panel/images/widgets-context-panel.png" alt="Custom widget in the Context Panel" width="207">
+<div class="paragraph">
+<p>A <strong>layer</strong> is a project that inherits its content from another project. Layers allow localization (translate inherited content into another language) and selective override without duplicating entire trees. See <a href="layers.ahtml">Layers &amp; localization</a>.</p>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="draft_master_and_publishing"><a class="link" href="#draft_master_and_publishing">Draft, master, and publishing</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Content in Content Studio is always edited in the <strong>draft</strong> branch. Publishing copies the active draft version of an item into the <strong>master</strong> branch, from which it becomes available to public consumers of the API.</p>
+</div>
+<div class="paragraph">
+<p><strong>Workflow state</strong> is the signal between editors that a draft is (or isn&#8217;t) ready to publish — <em>In progress</em>, <em>Ready for publishing</em>, <em>Publish request</em>, <em>Published</em>, <em>Unpublished</em>. See <a href="workflow.ahtml">Workflow</a> for the state machine and <a href="workflow/publish.ahtml">Publish</a> for the actual publishing flow.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="versions"><a class="link" href="#versions">Versions</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Every save, publish, unpublish, rename, or permissions change on a content item creates a new <strong>version</strong>. Versions can be compared and reverted from the Version history widget — see <a href="versions.ahtml">Versions</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="dependencies"><a class="link" href="#dependencies">Dependencies</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Content items reference each other — pages embed images, shortcuts target content, text fields link to other items. Those references are <strong>dependencies</strong>, tracked in both directions (inbound: who uses this; outbound: what does this use). Publishing, archiving, and unpublishing all check dependencies — see <a href="dependencies.ahtml">Dependencies</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="permissions"><a class="link" href="#permissions">Permissions</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Each content item has its own security settings: a list of <strong>principals</strong> (users, groups, roles) and the <strong>permission flags</strong> they have on that item (<em>Read</em>, <em>Create</em>, <em>Modify</em>, <em>Delete</em>, <em>Publish</em>, <em>Read/Write permissions</em>). Permissions are inherited from parent content by default and can be overridden per-item. See <a href="permissions.ahtml">Permissions</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="archive"><a class="link" href="#archive">Archive</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Deleting content is destructive. <strong>Archiving</strong> is the non-destructive alternative — items are moved to a separate archive storage where they can be browsed, restored, or permanently deleted later. See <a href="archive.ahtml">Archive</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="applications_and_widgets"><a class="link" href="#applications_and_widgets">Applications and widgets</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>An <strong>application</strong> is an installable unit of XP code that can contribute content types, page controllers, parts, layouts, translations, and UI widgets. Applications are attached to a site via its Applications field; some (like Juke and Content Studio+) contribute UI across all sites.</p>
+</div>
+<div class="paragraph">
+<p>A <strong>widget</strong> is a small UI surface contributed by an application. The main host for widgets is the <a href="navigator.ahtml#context_panel">Context panel</a> on the right of the Navigator and Editor; applications can also contribute preview modes and main-menu entries.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="issues_and_publish_requests"><a class="link" href="#issues_and_publish_requests">Issues and publish requests</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Issues</strong> are lightweight work items used to coordinate between editors — either a <strong>task</strong> (e.g. "spellcheck this article") or a <strong>publish request</strong> (review-and-publish handoff for users without publish permission, or just for approval flow). See <a href="issues.ahtml">Issues</a> and <a href="workflow/publish-request.ahtml">Publish request</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="content_studio"><a class="link" href="#content_studio">Content Studio+</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Content Studio itself is free and open source. A paid Enonic subscription unlocks <strong>Content Studio+</strong> — a companion application that adds the <a href="ai.ahtml">AI Assistant</a>, the <a href="archive.ahtml">Archive browser</a>, <a href="variants.ahtml">Content Variants</a>, <a href="layers.ahtml#ai_translation">AI translation</a> for layers, and the <a href="layers.ahtml#layers_panel">Layers widget</a>. Pages that document a Content Studio+ feature carry a <strong>Content Studio+ feature</strong> admonition at the top.</p>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-04-22 09:23:18 UTC
+Last updated 2026-04-22 11:31:24 UTC
 </div>
 </div>
 </body>
