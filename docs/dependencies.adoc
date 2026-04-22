@@ -1,8 +1,8 @@
-= Dependencies widget
+= Dependencies
 :toc: right
-:imagesdir: images
+:imagesdir: dependencies/images
 
-The *Dependencies* widget shows the references between the selected content and other content items in the repository.
+Content items reference each other — pages embed images, shortcuts target content, text fields link to other items. Those references are *dependencies*. Content Studio tracks them in both directions, and makes them inspectable via the *Dependencies* widget in the <<navigator#context_panel,Context panel>>.
 
 * An *inbound* dependency is content that _uses_ the selected item — for example, a page that embeds it, or a shortcut that points at it.
 * An *outbound* dependency is content that the selected item _uses_ — for example, images referenced in its rich-text fields, or targets of content selectors.
@@ -15,4 +15,10 @@ Clicking the count button opens a new browser tab listing all dependencies of th
 
 image::widgets-dependencies-filter.png[Dependencies filtered by type, 370]
 
-TIP: Dependencies are what the *Archive* and *Unpublish* actions check for before allowing the operation — if another content depends on the one you are trying to archive or take offline, you will be warned. See <<../archive#,Archive>> and <<../workflow/unpublish#,Unpublish>> for details.
+== Dependencies and publishing
+
+Dependencies are checked throughout the publishing lifecycle:
+
+* <<workflow/publish#,Publishing>> automatically includes required inbound dependencies in the batch so the published page does not end up with missing references.
+* <<archive#,Archive>> warns if another content depends on the item being archived.
+* <<workflow/unpublish#,Unpublish>> warns if a _published_ content depends on the item being taken offline.

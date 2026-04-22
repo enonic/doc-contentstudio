@@ -32,7 +32,7 @@ in the parent project/layer. It's an effective way to "clean up" a layer of unwa
 
 == View archived content
 
-NOTE: *Content Studio+ feature.* The dedicated *Archive* section in the main menu is part of the <<content-studio-plus#,Content Studio+>> subscription. The *Archive* action itself (moving content to the archive) is available in all installations.
+NOTE: *Content Studio+ feature.* The dedicated *Archive* section in the main menu is part of the https://market.enonic.com/vendors/enonic/content-studio-plus[Content Studio+] subscription. The *Archive* action itself (moving content to the archive) is available in all installations.
 
 image::archived-content.png[Archived contents, 600]
 
@@ -48,7 +48,7 @@ image::archived-content.png[Archived contents, 600]
 
 == Restore content
 
-NOTE: Archived content can only be restored from the Archive section, which requires <<content-studio-plus#,Content Studio+>>.
+NOTE: Archived content can only be restored from the Archive section, which requires https://market.enonic.com/vendors/enonic/content-studio-plus[Content Studio+].
 
 Use *Restore* action to restore selected archived content via "Restore from Archive" dialog. Content will always be restored along with all
 of its descendant items to preserve content structure.

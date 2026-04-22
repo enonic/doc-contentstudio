@@ -131,14 +131,70 @@ If currently selected content cannot be rendered by any of the available preview
 
 NOTE: Only the *Draft* version of content is visible in the preview panel.
 
+[[context_panel]]
 == Context panel
+
+The *Context panel* is the multi-function column on the right of the Content Navigator (and the <<editor#,Content Editor>>). It hosts a set of *widgets* — small tools that act on the currently selected content item. Widgets can be built-in, shipped by https://market.enonic.com/vendors/enonic/content-studio-plus[Content Studio+], or contributed by any installed application.
 
 image::navigator-context-panel.png[Context panel, 50%, align="center"]
 
-Context panel for the selected content can be expanded with the image:navigator-context-panel-icon.png[title=Preview button, width=24px] icon next to the Action menu button in the top-right corner.
+The panel is toggled open and closed with the image:navigator-context-panel-icon.png[title=Context panel toggle, width=24px] icon next to the Action-menu button, or (in the Content Editor) with the cog icon on the right of the editor toolbar.
 
-This panel displays the list of contextual widgets which can be used to work with the selected content. Widgets are applications that expand the functionality of Content Studio. See the <<context-panel#,Context Panel>> reference for the built-in widgets and how custom widgets plug in.
+image::widgets-panel-button.png[Context panel toggle, 209]
 
+=== Widget selector
+
+The dropdown at the top of the panel lists the available widgets: the built-ins appear first, followed by widgets from installed applications. A filter field at the top narrows the list by keyword.
+
+image::widgets-search.png[Widget selector with filter, 206]
 image::navigator-widget-selector.png[Widget selector, 25%,align="center"]
 
-In the screenshot above, the top 3 widgets are built into Content Studio and the bottom 2 are coming from two external applications installed in the system.
+=== Built-in widgets
+
+==== Details
+
+The *Details* widget shows the basic properties of the selected content item — the core metadata an editor typically needs to know without opening the item.
+
+image::widgets-details.png[Details widget, 450]
+
+The widget is organised into sections:
+
+Content::
+Icon, display name, and full content path.
+
+Status::
+Current content status: _New_, _Modified_, _Published_, _Unpublished_, or _Archived_. See <<workflow#,Workflow>> for the state model.
+
+User access::
+The effective <<permissions#,permissions>> for the current user. The *Edit Permissions* link opens the permissions dialog.
+
+Properties::
+Metadata about the content — its type, owner, and created/modified timestamps.
+
+Schedule::
+The from/to dates the content is scheduled to be online. Only shown for published content that has a schedule configured.
+
+Page template::
+The <<content-types#_page_template,page template>> used to render the content, if any.
+
+Attachments::
+Downloadable binary attachments on the content item.
+
+==== Versions, Dependencies, Components
+
+* The *Version history* widget lists every version of the selected item and lets you compare or revert. See <<versions#,Versions>>.
+* The *Dependencies* widget shows the inbound and outbound references between the item and other content. See <<dependencies#,Dependencies>>.
+* The *Components* widget is the page-building tool that appears in the Content Editor for renderable content. See <<editor/page-editor#_components_widget,Page editor>>.
+
+=== Content Studio+ widgets
+
+The following widgets are contributed by https://market.enonic.com/vendors/enonic/content-studio-plus[Content Studio+]:
+
+* <<layers#layers_panel,Layers>> — shows the status of a content item across every layer in the system.
+* <<variants#,Variants>> — creates and manages A/B variants of the selected item.
+
+=== Custom widgets
+
+The Context panel is *pluggable*: any installed application can contribute a widget that appears in the widget selector. The interface for contributing a widget is `contentstudio.contextpanel`; see the https://developer.enonic.com/docs/xp/stable/admin/widgets[XP admin widgets reference] for the descriptor format and lifecycle.
+
+image::widgets-context-panel.png[Custom widget in the Context panel, 207]

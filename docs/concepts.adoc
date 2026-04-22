@@ -1,0 +1,63 @@
+= Concepts
+:toc: right
+:imagesdir: images
+
+Content Studio is a user interface on top of Enonic XP's content model. Effective use of the UI depends on a few recurring concepts that surface everywhere — in dialogs, widgets, toolbars, and URLs. This page defines them once and points to where each one is documented in depth.
+
+For the low-level reference (schemas, field types, APIs), see the https://developer.enonic.com/docs/xp/stable/cms[Enonic XP CMS docs]. Content Studio's own docs focus on how editors interact with these concepts through the UI.
+
+== Content items and content types
+
+A *content item* is a single piece of content in the repository — an article, an image, a page, a site. Every content item has an identity (path, display name, id), a type, a set of field values, and a small envelope of metadata (security, schedule, workflow state).
+
+A *content type* is the schema that defines what fields a content item has. Some types ship with XP (see <<content-types#,Content types>>); others are defined in application code.
+
+Editors create and edit content items; developers define content types.
+
+== Sites, pages, and templates
+
+A *site* is a special kind of content item that sits at the root of a website. Sites can have installed applications attached to them, which contribute the components (parts, layouts, page controllers) used in rendering. Each site automatically gets a *Templates* folder where page templates live.
+
+A *page template* is a reusable page definition that renders one or more content types as a page. Page building happens in the <<editor/page-editor#,Page editor>>, where components are placed into the regions the template defines.
+
+== Projects and layers
+
+A *project* is a top-level container for content — a separate repository root with its own content tree, applications, and settings. See <<projects#,Projects>>.
+
+A *layer* is a project that inherits its content from another project. Layers allow localization (translate inherited content into another language) and selective override without duplicating entire trees. See <<layers#,Layers & localization>>.
+
+== Draft, master, and publishing
+
+Content in Content Studio is always edited in the *draft* branch. Publishing copies the active draft version of an item into the *master* branch, from which it becomes available to public consumers of the API.
+
+*Workflow state* is the signal between editors that a draft is (or isn't) ready to publish — _In progress_, _Ready for publishing_, _Publish request_, _Published_, _Unpublished_. See <<workflow#,Workflow>> for the state machine and <<workflow/publish#,Publish>> for the actual publishing flow.
+
+== Versions
+
+Every save, publish, unpublish, rename, or permissions change on a content item creates a new *version*. Versions can be compared and reverted from the Version history widget — see <<versions#,Versions>>.
+
+== Dependencies
+
+Content items reference each other — pages embed images, shortcuts target content, text fields link to other items. Those references are *dependencies*, tracked in both directions (inbound: who uses this; outbound: what does this use). Publishing, archiving, and unpublishing all check dependencies — see <<dependencies#,Dependencies>>.
+
+== Permissions
+
+Each content item has its own security settings: a list of *principals* (users, groups, roles) and the *permission flags* they have on that item (_Read_, _Create_, _Modify_, _Delete_, _Publish_, _Read/Write permissions_). Permissions are inherited from parent content by default and can be overridden per-item. See <<permissions#,Permissions>>.
+
+== Archive
+
+Deleting content is destructive. *Archiving* is the non-destructive alternative — items are moved to a separate archive storage where they can be browsed, restored, or permanently deleted later. See <<archive#,Archive>>.
+
+== Applications and widgets
+
+An *application* is an installable unit of XP code that can contribute content types, page controllers, parts, layouts, translations, and UI widgets. Applications are attached to a site via its Applications field; some (like Juke and Content Studio+) contribute UI across all sites.
+
+A *widget* is a small UI surface contributed by an application. The main host for widgets is the <<navigator#context_panel,Context panel>> on the right of the Navigator and Editor; applications can also contribute preview modes and main-menu entries.
+
+== Issues and publish requests
+
+*Issues* are lightweight work items used to coordinate between editors — either a *task* (e.g. "spellcheck this article") or a *publish request* (review-and-publish handoff for users without publish permission, or just for approval flow). See <<issues#,Issues>> and <<workflow/publish-request#,Publish request>>.
+
+== Content Studio+
+
+Content Studio itself is free and open source. A paid Enonic subscription unlocks *Content Studio+* — a companion application that adds the <<ai#,AI Assistant>>, the <<archive#,Archive browser>>, <<variants#,Content Variants>>, <<layers#ai_translation,AI translation>> for layers, and the <<layers#layers_panel,Layers widget>>. Pages that document a Content Studio+ feature carry a *Content Studio+ feature* admonition at the top.

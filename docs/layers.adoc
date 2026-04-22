@@ -69,7 +69,7 @@ This should open the Content Editor. You may now edit and publish the item as if
 [[ai_translation]]
 == AI translation
 
-NOTE: *Content Studio+ feature.* AI translation is part of the <<content-studio-plus#,Content Studio+>> subscription. It also requires the https://market.enonic.com/vendors/enonic/juke-ai-content-translator[Juke AI Content Translator] application.
+NOTE: *Content Studio+ feature.* AI translation is part of the https://market.enonic.com/vendors/enonic/content-studio-plus[Content Studio+] subscription. It also requires the https://market.enonic.com/vendors/enonic/juke-ai-content-translator[Juke AI Content Translator] application.
 
 With the Juke AI translator enabled, clicking btn:[Localize] will instantly reveal the translation dialog. Here you may optionally provide detailed instructions or simply hit btn:[Translate]. This will automatically translate all text fields within your content - just watch it go.
 
@@ -93,7 +93,7 @@ image::layer-content-reset.png[Reset localisation, 617]
 [[layers_panel]]
 == Layers Panel
 
-NOTE: *Content Studio+ feature.* The Layers widget is part of the <<content-studio-plus#,Content Studio+>> subscription.
+NOTE: *Content Studio+ feature.* The Layers widget is part of the https://market.enonic.com/vendors/enonic/content-studio-plus[Content Studio+] subscription.
 
 The Layers widget enables the user to see the status of a specific content item in all existing layers in the system.
 

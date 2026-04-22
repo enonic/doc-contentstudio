@@ -1,10 +1,12 @@
-= Version history widget
+= Versions
 :toc: right
-:imagesdir: images
+:imagesdir: versions/images
 
-Every save, publish, or structural change to a content item creates a new *version*. The *Version history* widget lists those versions together with the publish and unpublish events, lets you compare any two versions, and lets you revert to an older version. The current workflow status is shown in the widget header.
+Every save, publish, unpublish, rename, or permissions change on a content item creates a new *version*. The full history is available via the *Version history* widget in the <<navigator#context_panel,Context panel>>: you can see every change, compare any two versions, and revert to an older one.
 
-image::widgets-version-history.png[Version history, 283]
+image::widgets-version-history.png[Version history widget, 283]
+
+The current workflow status is shown in the widget header. Versions created by publish and unpublish events are listed alongside content versions so the full audit trail is visible in one place.
 
 == Reverting to a version
 

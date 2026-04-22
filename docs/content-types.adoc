@@ -1,4 +1,4 @@
-= Built-in content types
+= Content types
 :toc: right
 :imagesdir: content-types/images
 
@@ -57,7 +57,7 @@ image::browse-templates-list.png[List of page templates]
 
 === Which template is used
 
-When several templates support the same content type, the one that appears _first_ in the Templates folder is used by default. Individual content items can override the default via the *Page template* dropdown in the <<context-panel/components#_inspect_tab,Inspect tab>>.
+When several templates support the same content type, the one that appears _first_ in the Templates folder is used by default. Individual content items can override the default via the *Page template* dropdown in the <<editor/page-editor#_inspect_tab,Inspect tab>> of the Components widget.
 
 image::wizard-template.png[Choosing a template for a content item]
 

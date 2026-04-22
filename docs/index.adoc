@@ -31,9 +31,17 @@ The left-hand vertical menu is Content Studio's main menu. It lets you switch be
 
 The main menu is *pluggable*: applications installed in Enonic XP can contribute additional entries. New entries appear automatically in the menu once the contributing application is deployed. In a future release, *Issues* will move from the toolbar into the main menu.
 
-== Go beyond
+== Content Studio+
 
-Content Studio is free and open source, but also highly extendable. A subscription unlocks <<content-studio-plus#,Content Studio+>>, a companion application that adds advanced capabilities like an <<ai#, AI assistant>>, the <<archive#, archive browser>>, <<variants#, content variants>> and <<layers#ai_translation, automated translations>>.
+Content Studio itself is free and open source. An Enonic subscription unlocks *Content Studio+*, a companion application distributed on https://market.enonic.com/vendors/enonic/content-studio-plus[Enonic Market] that adds advanced editorial capabilities:
+
+* <<ai#,AI Assistant (Juke)>> — in-context AI help for editors, including field-level assistance, variants, and project-level instructions.
+* <<archive#,Archive browser>> — the dedicated *Archive* main-menu entry for browsing, restoring, and permanently deleting archived content.
+* <<variants#,Content Variants>> — create and manage variant copies of a content item for A/B testing.
+* <<layers#ai_translation,AI translation>> — automatic translation of inherited content when localizing in a layer.
+* <<layers#layers_panel,Layers widget>> — see the status of a content item across every layer in the system.
+
+Without a valid license the Content Studio+ application can still be installed, but its UI contributions remain inactive. Pages that document a CS+ feature carry a *Content Studio+ feature* admonition at the top.
 
 == Browser support
 

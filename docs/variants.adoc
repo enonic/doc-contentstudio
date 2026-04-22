@@ -3,7 +3,7 @@
 
 :imagesdir: variants/images
 
-NOTE: *Content Studio+ feature.* The Variants widget is part of the <<content-studio-plus#,Content Studio+>> subscription.
+NOTE: *Content Studio+ feature.* The Variants widget is part of the https://market.enonic.com/vendors/enonic/content-studio-plus[Content Studio+] subscription.
 
 Variants are essentially slightly modified copies of a content item used for comparing them against each other to determine
 which one performs better for end user (A/B Testing).

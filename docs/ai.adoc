@@ -2,7 +2,7 @@
 :toc: right
 :imagesdir: ai/images
 
-NOTE: *Content Studio+ feature.* The AI Assistant is part of the <<content-studio-plus#,Content Studio+>> subscription. It also requires the https://market.enonic.com/vendors/enonic/ai-content-operator[Juke AI Content Operator] application.
+NOTE: *Content Studio+ feature.* The AI Assistant is part of the https://market.enonic.com/vendors/enonic/content-studio-plus[Content Studio+] subscription. It also requires the https://market.enonic.com/vendors/enonic/ai-content-operator[Juke AI Content Operator] application.
 
 Juke AI brings artificial intelligence to Content Studio. Over time, Juke will evolve to help out with a range of daily content management chores.
 

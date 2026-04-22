@@ -4,7 +4,7 @@
 
 The *Page editor* is the drag-and-drop surface for building pages. It replaces the <<preview#,Preview>> panel on the right side of the <<../editor#,Content Editor>> when the selected content is renderable (sites, page templates, and content with a supporting template). It is both a live rendering of the page _and_ the primary tool for placing, configuring, and arranging the components that make up that page.
 
-The Page editor works in tandem with the <<content-form#,Content Form>> (for the content's data fields) and the <<../context-panel#,Context Panel>> (for component configuration and page-level widgets).
+The Page editor works in tandem with the <<content-form#,Content Form>> (for the content's data fields) and the <<../navigator#context_panel,Context panel>> (for component configuration and other widgets).
 
 == Selecting a controller or template
 
@@ -22,10 +22,40 @@ Pages rendered by an automatic template are locked against editing by default. C
 
 image::page-editor-lock.png[]
 
+[[_components_widget]]
+== Components widget
+
+The *Components* widget appears in the <<../navigator#context_panel,Context panel>> whenever the Page editor is available. It has two tabs: *Insert* for adding new components to the page, and a per-component *Inspect* tab for configuring the currently selected component.
+
+=== Insert tab
+
+The Insert tab lets you drag and drop component placeholders onto the page.
+
+image::widgets-components-insert.png[Insert tab, 207]
+
+When you drag a placeholder across the page, a red circle indicates an area where the component cannot be dropped; a green checkmark and blue target box appear over valid drop locations. Once dropped, the placeholder shows a combo-box where you pick the specific part, layout, fragment, etc. to use.
+
+image::context-panel_insert.png[Placing a part component, 697]
+image::context-panel_insert2.png[Selecting the specific part, 440]
+
+The five available component categories are documented under <<#_component_categories,Component categories>> below.
+
+=== Inspect tab
+
+The Inspect tab configures whichever component is currently selected in the page. The tab header changes to match the selected component's type (*Page*, *Part*, *Layout*, etc.). When nothing is selected, it defaults to *Page*.
+
+image::widgets-components-page.png[Page-level inspection, 207]
+
+For the *Page* itself, the Inspect tab is where you choose the controller or page template for the content item. For other components, the tab shows the component's configuration form.
+
+image::widgets-components-part.png[Part-level inspection, 207]
+
+Configuration changes take effect on save, or immediately when you click the *Apply* button at the bottom of the panel.
+
 [[editing-page]]
 == Working with components
 
-Click a component in the page to select it — the selection is highlighted and its configuration appears in the <<../context-panel/components#_inspect_tab,Inspect tab>> of the Components widget. Right-clicking a component opens a menu with the available actions:
+Click a component in the page to select it — the selection is highlighted and its configuration appears in the <<#_inspect_tab,Inspect tab>> of the Components widget. Right-clicking a component opens a menu with the available actions:
 
 * *Select parent* — move the selection up the component tree.
 * *Insert* — add another component.
@@ -39,9 +69,10 @@ For a *Fragment* component, the last item is replaced with *Detach from fragment
 
 image::page-editor-menu.png[]
 
+[[_component_categories]]
 == Component categories
 
-Enonic XP has five categories of components that can be placed in page regions. They are available from the <<../context-panel/components#_insert_tab,Insert tab>> of the Components widget.
+Enonic XP has five categories of components that can be placed in page regions. All are available from the <<#_insert_tab,Insert tab>> of the Components widget.
 
 === Part
 
@@ -100,7 +131,3 @@ image::wizard-component-view-floating.png[Page Components floating, 75%]
 The floating view can be collapsed with the icon in its header; the tree then docks into the vertical menu toolbar and its icon appears at the bottom. Clicking the icon reopens the view.
 
 image::wizard-component-view-collapsed.png[Page Components collapsed]
-
-== Related widgets
-
-When the Page editor is available, the <<../context-panel/components#,Components widget>> is the primary tool for configuring the selected component. The other built-in Context Panel widgets (Details, Version history, Dependencies) work the same way on renderable content as they do on regular content.
