@@ -41,7 +41,7 @@ NOTE: If you collapse the tree, your browser will remember this selection and wo
 When content has a controller the toolbar menu will have a step called "Page". This form step contains a hierarchical tree representation
 of all the components and regions on the page, including the page itself. This tree makes it very easy to manage content structure without having to use the Page Editor.
 
-Selecting a component in the tree will highlight the component in the Visual editor and display its configuration in the <<context-panel#_components,Components widget>>.
+Selecting a component in the tree will highlight the component in the Visual editor and display its configuration in the <<../context-panel/components#,Components widget>>.
 The triple dot icon on the right of each component will open a context menu. This menu is the same as the one that would open for the same component
 in the <<preview/visual-editor#editing-page,Visual editor>>.
 

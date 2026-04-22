@@ -20,7 +20,7 @@ Plain preview::
 For content that has a page controller but no editable regions — shows the rendered output without the visual-editor chrome.
 
 Unavailable::
-For content that cannot be rendered (folders, shortcuts, unstructured content without a supporting template), the Preview panel is hidden or shows a placeholder. The <<context-panel#,Context Panel>> remains available for these items.
+For content that cannot be rendered (folders, shortcuts, unstructured content without a supporting template), the Preview panel is hidden or shows a placeholder. The <<../context-panel#,Context Panel>> remains available for these items.
 
 == Custom preview modes
 

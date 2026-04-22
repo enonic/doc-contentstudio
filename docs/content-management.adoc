@@ -2,14 +2,14 @@
 :toc: right
 :imagesdir: images
 
-Content Management covers the operations that apply _across_ content items once they exist — the editorial lifecycle rather than the shape or content of any single item.
+Content Management covers the operations that apply _across_ content items once they exist — the editorial lifecycle rather than the shape of any single item.
 
-These operations are available from both the <<navigator#,Content Navigator>> and the <<editor#,Content Editor>>, and they are gated by <<permissions#,permissions>>: whether a given button is shown, enabled, or disabled on the toolbar depends on the current user's rights for the selected content.
+These operations are available from both the <<navigator#,Content Navigator>> and the <<editor#,Content Editor>>, and they are gated by <<permissions#,permissions>>: whether a given button is shown, enabled, or disabled depends on the current user's rights for the selected content.
 
 == In this chapter
 
 <<actions#,Actions>>::
-The toolbar and context-menu verbs editors use day-to-day — *New*, *Edit*, *Duplicate*, *Move*, *Sort*, *Preview*, *Publish*, *Unpublish*, *Archive*. This is the reference for what each action does, where to invoke it, and which dialogs it opens.
+The toolbar and context-menu verbs editors use day-to-day — *New*, *Edit*, *Duplicate*, *Move*, *Sort*, *Preview*, *Publish*, *Unpublish*, *Archive*. Reference for what each action does, where to invoke it, and which dialogs it opens.
 
 <<workflow#,Workflow>>::
 The states a content item moves through between creation and publication — *In progress*, *Ready for publishing*, *Publish request*, *Published*, *Unpublished* — and how editors and reviewers hand off between them.
@@ -23,6 +23,12 @@ Lightweight work tracking inside Content Studio — *Tasks* for general editoria
 <<archive#,Archive>>::
 What happens when content is archived (soft-deleted) versus deleted outright, how the archive interacts with <<layers#,layers>>, and how to restore items.
 
+<<variants#,Variants>>::
+Create and manage variant copies of a content item for A/B testing. Requires <<content-studio-plus#,Content Studio+>>.
+
+<<content-types#,Built-in content types>>::
+The reference for the content types Enonic XP ships with — *Folder*, *Shortcut*, *Site*, *Page template*, *Image*, *Unstructured* — and how they behave in the Content Studio UI.
+
 == Where this sits
 
-Content Management assumes you already have content to manage. For the creation side, see <<navigator#,Content Navigator>> (finding and creating items) and <<editor#,Content Editor>> (editing a single item). For the schema and data structure behind a content item, see the https://developer.enonic.com/docs/xp/stable/cms[Enonic XP CMS docs].
+Content Management assumes you already have content to manage. For the creation side, see <<navigator#,Content Navigator>> (finding and creating items) and <<editor#,Content Editor>> (editing a single item). For the schema and data structure behind a custom content type, see the https://developer.enonic.com/docs/xp/stable/cms[Enonic XP CMS docs].

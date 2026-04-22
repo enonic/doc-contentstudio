@@ -1,0 +1,38 @@
+= Components widget
+:toc: right
+:imagesdir: images
+
+The *Components* widget is the primary tool for building and configuring pages. It is only available in the <<../editor#,Content Editor>> for renderable content with the <<../editor/preview/visual-editor#,Visual editor>> enabled.
+
+The widget has two tabs: *Insert* for adding new components to the page, and the per-component tab for configuring a selected component (renamed _Page_, _Part_, _Layout_, etc. to match the selection).
+
+== Insert tab
+
+The Insert tab lets you drag and drop component placeholders onto the page. Enonic XP has five component categories:
+
+* *Layout* — a container component that defines regions where other components can sit.
+* *Part* — a configurable component from one of the site's applications.
+* *Text* — a formatted text block edited via the <<../editor/rich-text-editor#,Rich Text Editor>>.
+* *Fragment* — a reusable component saved as its own content item.
+* *Image* — an image content item rendered directly as a page component.
+
+image::widgets-components-insert.png[Insert tab, 207]
+
+When you drag a placeholder across the page, a red circle indicates an area where the component cannot be dropped; a green checkmark and blue target box appear over valid drop locations. Once dropped, the placeholder shows a combo-box where you pick the specific part, layout, fragment, etc. to use.
+
+image::context-panel_insert.png[Placing a part component, 697]
+image::context-panel_insert2.png[Selecting the specific part, 440]
+
+For the full component-category reference, see the <<../editor/preview/visual-editor#_component_categories,Visual editor>> chapter.
+
+== Inspect tab
+
+The Inspect tab configures whichever component is currently selected in the <<../editor/preview/visual-editor#,Visual editor>>. The tab header changes to match the selected component's type (*Page*, *Part*, *Layout*, etc.). When nothing is selected, it defaults to *Page*.
+
+image::widgets-components-page.png[Page-level inspection, 207]
+
+For the *Page* itself, the Inspect tab is where you choose the controller or page template for the content item. For other components, the tab shows the component's configuration form.
+
+image::widgets-components-part.png[Part-level inspection, 207]
+
+Configuration changes take effect on save, or immediately when you click the *Apply* button at the bottom of the panel.

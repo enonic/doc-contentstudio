@@ -4,7 +4,7 @@
 
 The *Visual editor* is the default <<../preview#,Preview>> mode for renderable content. It is both a preview of the page as end users will see it _and_ a drag-and-drop surface for building that page: components can be added, configured, rearranged, and removed directly in the editor.
 
-The Visual editor works in tandem with the <<../content-form#,Content Form>> (for the content's data fields) and the <<../context-panel#,Context Panel>> (for component configuration and page-level widgets).
+The Visual editor works in tandem with the <<../content-form#,Content Form>> (for the content's data fields) and the <<../../context-panel#,Context Panel>> (for component configuration and page-level widgets).
 
 == Selecting a controller or template
 
@@ -25,7 +25,7 @@ image::page-editor-lock.png[]
 [[editing-page]]
 == Working with components
 
-Click a component in the page to select it — the selection is highlighted and its configuration appears in the <<../context-panel#_inspect_tab,Inspect tab>> of the Context Panel. Right-clicking a component opens a menu with the available actions:
+Click a component in the page to select it — the selection is highlighted and its configuration appears in the <<../../context-panel/components#_inspect_tab,Inspect tab>> of the Components widget. Right-clicking a component opens a menu with the available actions:
 
 * *Select parent* — move the selection up the component tree.
 * *Insert* — add another component.
@@ -41,7 +41,7 @@ image::page-editor-menu.png[]
 
 == Component categories
 
-Enonic XP has five categories of components that can be placed in page regions. They are available from the <<../context-panel#_insert_tab,Insert tab>> of the Components widget.
+Enonic XP has five categories of components that can be placed in page regions. They are available from the <<../../context-panel/components#_insert_tab,Insert tab>> of the Components widget.
 
 === Part
 
@@ -103,4 +103,4 @@ image::wizard-component-view-collapsed.png[Page Components collapsed]
 
 == Related widgets
 
-When the Visual editor is available, the <<../context-panel#_components,Components widget>> is also available in the Context Panel and is the primary tool for configuring the selected component. Other built-in widgets (Details, Version History, Dependencies) work the same way here as on non-renderable content.
+When the Visual editor is available, the <<../../context-panel/components#,Components widget>> is the primary tool for configuring the selected component. The other built-in Context Panel widgets (Details, Version history, Dependencies) work the same way on renderable content as they do on regular content.

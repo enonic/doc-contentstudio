@@ -1,0 +1,27 @@
+= Version history widget
+:toc: right
+:imagesdir: images
+
+Every save, publish, or structural change to a content item creates a new *version*. The *Version history* widget lists those versions together with the publish and unpublish events, lets you compare any two versions, and lets you revert to an older version. The current workflow status is shown in the widget header.
+
+image::widgets-version-history.png[Version history, 283]
+
+== Reverting to a version
+
+Click a version box to expand it, then click *Revert*. The current (active) version cannot be reverted to itself, so it does not expand. Publish and unpublish markers are also non-expandable.
+
+NOTE: Some versions cannot be reverted — typically those created by permissions updates, renames, or moves. The widget disables the action for these.
+
+== Comparing versions
+
+Click the image:widgets-version-compare-icon.png[,24] icon on any version to open the *Compare versions* dialog. The two dropdowns at the top select the pair of versions being compared: the left one is _older_, the right one _newer_.
+
+image::widgets-version-compare-dialog.png[Version compare dialog, 909]
+
+By default the dialog shows only the differences between the two versions. Toggle *Show entire content* to see the full content JSON side-by-side.
+
+Both dropdowns have aliases at the top of the list — _previous_, _next_, _published_, _current_ — so you can compare against those without scrolling through the full version list.
+
+image::widgets-version-compare-dialog-aliases.png[Version aliases, 456]
+
+The kebab menu on the right of each dropdown has one option, *Revert*, which reverts to the version currently selected in that dropdown.

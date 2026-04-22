@@ -1,0 +1,18 @@
+= Dependencies widget
+:toc: right
+:imagesdir: images
+
+The *Dependencies* widget shows the references between the selected content and other content items in the repository.
+
+* An *inbound* dependency is content that _uses_ the selected item — for example, a page that embeds it, or a shortcut that points at it.
+* An *outbound* dependency is content that the selected item _uses_ — for example, images referenced in its rich-text fields, or targets of content selectors.
+
+image::widgets-dependencies.png[Dependencies widget, 207]
+
+Inbound dependencies are listed above the content box, outbound below. When there are no dependencies of a kind, the widget shows a placeholder (_No incoming dependencies_, etc.). When there are dependencies, a button displays the total count, with icons and counts broken out per content type.
+
+Clicking the count button opens a new browser tab listing all dependencies of that direction. Clicking a per-type icon opens the same view, pre-filtered to that type.
+
+image::widgets-dependencies-filter.png[Dependencies filtered by type, 370]
+
+TIP: Dependencies are what the *Archive* and *Unpublish* actions check for before allowing the operation — if another content depends on the one you are trying to archive or take offline, you will be warned. See <<../actions#_archive,Archive>> and <<../actions#_unpublish,Unpublish>> for details.

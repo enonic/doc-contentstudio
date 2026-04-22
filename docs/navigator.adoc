@@ -138,7 +138,7 @@ image::navigator-context-panel.png[Context panel, 50%, align="center"]
 
 Context panel for the selected content can be expanded with the image:navigator-context-panel-icon.png[title=Preview button, width=24px] icon next to the Action menu button in the top-right corner.
 
-This panel displays the list of contextual widgets which can be used to work with the selected content. Widgets are applications that expand the functionality of Content Studio. See the <<editor/context-panel#,Context Panel>> reference for the built-in widgets and how custom widgets plug in.
+This panel displays the list of contextual widgets which can be used to work with the selected content. Widgets are applications that expand the functionality of Content Studio. See the <<context-panel#,Context Panel>> reference for the built-in widgets and how custom widgets plug in.
 
 image::navigator-widget-selector.png[Widget selector, 25%,align="center"]
 

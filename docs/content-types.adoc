@@ -57,7 +57,7 @@ image::browse-templates-list.png[List of page templates]
 
 === Which template is used
 
-When several templates support the same content type, the one that appears _first_ in the Templates folder is used by default. Individual content items can override the default via the *Page template* dropdown in the <<editor/context-panel#_inspect_tab,Inspect tab>>.
+When several templates support the same content type, the one that appears _first_ in the Templates folder is used by default. Individual content items can override the default via the *Page template* dropdown in the <<context-panel/components#_inspect_tab,Inspect tab>>.
 
 image::wizard-template.png[Choosing a template for a content item]
 
