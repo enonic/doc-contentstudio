@@ -109,7 +109,7 @@ image::component-types-text-insert.png[]
 
 === Image
 
-The Image component inserts an image content item directly into a page region. The image is selected from existing content, and any <<../content-types#_image_content,crop or focal point>> settings on the underlying image content apply automatically when the page is rendered.
+The Image component inserts an image content item directly into a page region. The image is selected from existing content, and any <<image#,crop or focal point>> settings on the underlying image content apply automatically when the page is rendered.
 
 [[_fragment]]
 === Fragment

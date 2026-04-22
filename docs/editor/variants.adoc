@@ -1,7 +1,7 @@
 = Variants
 :toc: right
 
-:imagesdir: variants/images
+:imagesdir: images
 
 NOTE: *Content Studio+ feature.* The Variants widget is part of the https://market.enonic.com/vendors/enonic/content-studio-plus[Content Studio+] subscription.
 

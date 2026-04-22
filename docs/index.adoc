@@ -37,7 +37,7 @@ Content Studio itself is free and open source. An Enonic subscription unlocks *C
 
 * <<ai#,AI Assistant (Juke)>> — in-context AI help for editors, including field-level assistance, variants, and project-level instructions.
 * <<archive#,Archive browser>> — the dedicated *Archive* main-menu entry for browsing, restoring, and permanently deleting archived content.
-* <<variants#,Content Variants>> — create and manage variant copies of a content item for A/B testing.
+* <<editor/variants#,Content Variants>> — create and manage variant copies of a content item for A/B testing.
 * <<layers#ai_translation,AI translation>> — automatic translation of inherited content when localizing in a layer.
 * <<layers#layers_panel,Layers widget>> — see the status of a content item across every layer in the system.
 

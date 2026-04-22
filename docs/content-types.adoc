@@ -71,28 +71,6 @@ image::wizard-template-select.png[Selecting a controller for unsupported content
 
 The *Templates* folder is a specialised folder that can only contain *Page template* content and is created automatically as a child of every site.
 
-== Image
-
-Uploading an image file creates an *Image* content item. Storing images as content means they are indexed for search, inherit the site's language and permissions, and can be referenced by ID from other content.
-
-Image content items have fields for Caption, Artist, Copyright, Tags, and Text, and automatically pick up any Exif metadata from the source file. The underlying file can be swapped via the upload button or by dragging a new file onto the preview.
-
-=== Cropping
-
-The crop icon above the image dims the surrounding area and reveals the crop-editing tools. The zoom slider enlarges the preview; the image can be dragged to reposition. The aspect-ratio handle (circle with arrows at the bottom) changes the crop ratio. *Apply* returns the editor to normal mode.
-
-image::image-crop.png[Cropping an image]
-
-=== Focal point
-
-Rendered images often need to be cropped to match a different aspect ratio than the original, which can cut off the subject. Setting a *focal point* tells the renderer which part of the image to always keep in frame.
-
-Click the focal point icon, then click the part of the image that should stay centred, and *Apply*. The focal point is marked with a red circle in the editor.
-
-image::image-focal-point-1.png[Original image, no focal point]
-image::image-focal-point-2.png[Setting the focal point]
-image::image-focal-point-3.png[Subject stays in frame across aspect ratios]
-
 == Unstructured
 
 *Unstructured* content has no data form — it stores free-form data used by applications (for example, persisted form submissions). Unstructured content items can only be edited for their display name, path, settings, and security in Content Studio; the actual data is not visible in the UI unless an application provides a page controller that renders it.

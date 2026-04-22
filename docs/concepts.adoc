@@ -34,11 +34,11 @@ Content in Content Studio is always edited in the *draft* branch. Publishing cop
 
 == Versions
 
-Every save, publish, unpublish, rename, or permissions change on a content item creates a new *version*. Versions can be compared and reverted from the Version history widget — see <<versions#,Versions>>.
+Every save, publish, unpublish, rename, or permissions change on a content item creates a new *version*. Versions can be compared and reverted from the Version history widget — see <<editor/versions#,Versions>>.
 
 == Dependencies
 
-Content items reference each other — pages embed images, shortcuts target content, text fields link to other items. Those references are *dependencies*, tracked in both directions (inbound: who uses this; outbound: what does this use). Publishing, archiving, and unpublishing all check dependencies — see <<dependencies#,Dependencies>>.
+Content items reference each other — pages embed images, shortcuts target content, text fields link to other items. Those references are *dependencies*, tracked in both directions (inbound: who uses this; outbound: what does this use). Publishing, archiving, and unpublishing all check dependencies — see <<navigator/dependencies#,Dependencies>>.
 
 == Permissions
 
@@ -60,4 +60,4 @@ A *widget* is a small UI surface contributed by an application. The main host fo
 
 == Content Studio+
 
-Content Studio itself is free and open source. A paid Enonic subscription unlocks *Content Studio+* — a companion application that adds the <<ai#,AI Assistant>>, the <<archive#,Archive browser>>, <<variants#,Content Variants>>, <<layers#ai_translation,AI translation>> for layers, and the <<layers#layers_panel,Layers widget>>. Pages that document a Content Studio+ feature carry a *Content Studio+ feature* admonition at the top.
+Content Studio itself is free and open source. A paid Enonic subscription unlocks *Content Studio+* — a companion application that adds the <<ai#,AI Assistant>>, the <<archive#,Archive browser>>, <<editor/variants#,Content Variants>>, <<layers#ai_translation,AI translation>> for layers, and the <<layers#layers_panel,Layers widget>>. Pages that document a Content Studio+ feature carry a *Content Studio+ feature* admonition at the top.

@@ -182,8 +182,8 @@ Downloadable binary attachments on the content item.
 
 ==== Versions, Dependencies, Components
 
-* The *Version history* widget lists every version of the selected item and lets you compare or revert. See <<versions#,Versions>>.
-* The *Dependencies* widget shows the inbound and outbound references between the item and other content. See <<dependencies#,Dependencies>>.
+* The *Version history* widget lists every version of the selected item and lets you compare or revert. See <<editor/versions#,Versions>>.
+* The *Dependencies* widget shows the inbound and outbound references between the item and other content. See <<navigator/dependencies#,Dependencies>>.
 * The *Components* widget is the page-building tool that appears in the Content Editor for renderable content. See <<editor/page-editor#_components_widget,Page editor>>.
 
 === Content Studio+ widgets
@@ -191,7 +191,7 @@ Downloadable binary attachments on the content item.
 The following widgets are contributed by https://market.enonic.com/vendors/enonic/content-studio-plus[Content Studio+]:
 
 * <<layers#layers_panel,Layers>> — shows the status of a content item across every layer in the system.
-* <<variants#,Variants>> — creates and manages A/B variants of the selected item.
+* <<editor/variants#,Variants>> — creates and manages A/B variants of the selected item.
 
 === Custom widgets
 
