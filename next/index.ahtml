@@ -443,6 +443,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel1">
 <li><a href="#intro_videos">Intro videos</a></li>
 <li><a href="#overview">Overview</a></li>
+<li><a href="#main_menu">Main menu</a></li>
 <li><a href="#go_beyond">Go beyond</a></li>
 <li><a href="#browser_support">Browser support</a></li>
 <li><a href="#release_notes">Release notes</a></li>
@@ -481,16 +482,40 @@ Content Studio can be installed from <a href="https://market.enonic.com/vendors/
 <h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Content Studio provide editors with an efficient way of creating and curating content without technical skills.</p>
+<p>Content Studio provides editors with an efficient way of creating and curating content without technical skills.</p>
 </div>
 <div class="paragraph">
 <p>Content is organized within <a href="projects.ahtml">Content Projects</a>. Content can be re-used, localized or augmented across different projects through a feature called <a href="layers.ahtml">content layering</a>.</p>
 </div>
 <div class="paragraph">
-<p>Editors will commonly use the <a href="navigator.ahtml">navigator panel</a> to browse, search and perform actions on one or more items.</p>
+<p>Editors will commonly use the <a href="navigator.ahtml">Content Navigator</a> to browse, search and perform actions on one or more items.</p>
 </div>
 <div class="paragraph">
-<p>The <a href="editor.ahtml">content editor</a> offers a consistent and intuitive interface for editing and previewing your content.</p>
+<p>The <a href="editor.ahtml">Content Editor</a> offers a consistent and intuitive interface for editing and previewing your content.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="main_menu"><a class="link" href="#main_menu">Main menu</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The left-hand vertical menu is Content Studio&#8217;s main menu. It lets you switch between the different top-level areas of the application. The standard entries are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Content Navigator</strong> — the default browse and search view for content items.</p>
+</li>
+<li>
+<p><strong>Archive</strong> — browse and restore archived content (see <a href="archive.ahtml">Archive</a>).</p>
+</li>
+<li>
+<p><strong>GraphQL Playground</strong> — a developer tool for exploring the content data API.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The main menu is <strong>pluggable</strong>: applications installed in Enonic XP can contribute additional entries. New entries appear automatically in the menu once the contributing application is deployed. In a future release, <strong>Issues</strong> will move from the toolbar into the main menu.</p>
 </div>
 </div>
 </div>
@@ -498,7 +523,7 @@ Content Studio can be installed from <a href="https://market.enonic.com/vendors/
 <h2 id="go_beyond"><a class="link" href="#go_beyond">Go beyond</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Content Studio is free and open source, but also highly extendable. A subscription gives you access to licensed applications that extend Content Studio with advanced capabilities like an <a href="ai.ahtml">AI assistant</a>, the <a href="archive.ahtml">archive browser</a> and <a href="layers.ahtml">automated translations</a>.</p>
+<p>Content Studio is free and open source, but also highly extendable. A subscription unlocks <a href="content-studio-plus.ahtml">Content Studio+</a>, a companion application that adds advanced capabilities like an <a href="ai.ahtml">AI assistant</a>, the <a href="archive.ahtml">archive browser</a>, <a href="variants.ahtml">content variants</a> and <a href="layers.ahtml#ai_translation">automated translations</a>.</p>
 </div>
 </div>
 </div>
@@ -506,7 +531,7 @@ Content Studio can be installed from <a href="https://market.enonic.com/vendors/
 <h2 id="browser_support"><a class="link" href="#browser_support">Browser support</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Content Studio works in all modern browsers.  We are explicitly testing it and supporting it for the latest versions of Google Chrome, Apple Safari, Mozilla Firefox and Microsoft Edge.</p>
+<p>Content Studio works in all modern browsers. We are explicitly testing and supporting the latest versions of Google Chrome, Apple Safari, Mozilla Firefox and Microsoft Edge.</p>
 </div>
 </div>
 </div>
@@ -521,7 +546,7 @@ Content Studio can be installed from <a href="https://market.enonic.com/vendors/
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-04-22 08:19:43 UTC
+Last updated 2026-04-22 08:24:08 UTC
 </div>
 </div>
 </body>

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.26">
-<title>Content Types</title>
+<title>Built-in content types</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -437,24 +437,33 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article toc2 toc-right">
 <div id="header">
-<h1>Content Types</h1>
+<h1>Built-in content types</h1>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#special_content_types">Special content types</a>
-<ul class="sectlevel2">
 <li><a href="#folder">Folder</a></li>
 <li><a href="#shortcut">Shortcut</a></li>
-<li><a href="#site">Site</a></li>
-<li><a href="#page_templates">Page templates</a></li>
-<li><a href="#templates_folder">Templates folder</a></li>
-<li><a href="#unstructured">Unstructured</a></li>
-<li><a href="#image_content">Image content</a></li>
+<li><a href="#site">Site</a>
+<ul class="sectlevel2">
+<li><a href="#applications">Applications</a></li>
+<li><a href="#application_configuration">Application configuration</a></li>
 </ul>
 </li>
-<li><a href="#custom_content_types">Custom content types</a></li>
-<li><a href="#display_name_expression">Display name expression</a></li>
-<li><a href="#list_title_expression">List title expression</a></li>
+<li><a href="#page_template">Page template</a>
+<ul class="sectlevel2">
+<li><a href="#creating_a_page_template">Creating a page template</a></li>
+<li><a href="#which_template_is_used">Which template is used</a></li>
+<li><a href="#rendering_content_without_a_matching_template">Rendering content without a matching template</a></li>
+</ul>
+</li>
+<li><a href="#templates_folder">Templates folder</a></li>
+<li><a href="#image">Image</a>
+<ul class="sectlevel2">
+<li><a href="#cropping">Cropping</a></li>
+<li><a href="#focal_point">Focal point</a></li>
+</ul>
+</li>
+<li><a href="#unstructured">Unstructured</a></li>
 </ul>
 </div>
 </div>
@@ -462,89 +471,41 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Content Types are the essential elements of Content Studio and the content API. Some content types are built into Enonic XP. A basic understanding of these will be essential to building sites with the Content Studio.</p>
+<p>A few content types ship with Enonic XP itself and behave specially in Content Studio. Everything else — the custom content types that shape your editorial work — is defined by an application&#8217;s schemas. For the schema reference (how custom content types are defined, field types, configuration flags, display-name and list-title expressions, etc.), see the <a href="https://developer.enonic.com/docs/xp/stable/cms/content-types">XP CMS content-types documentation</a>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="content-types/images/new-content-dialog.png" alt="new content dialog">
+<img src="content-types/images/new-content-dialog.png" alt="New Content dialog" width="723">
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="special_content_types"><a class="link" href="#special_content_types">Special content types</a></h2>
+<h2 id="folder"><a class="link" href="#folder">Folder</a></h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="folder"><a class="link" href="#folder">Folder</a></h3>
 <div class="paragraph">
-<p>Content of type <strong>Folder</strong> is only used to group other contents. Folders have no data fields other than the display name and path name. They also have the <strong>Settings</strong> and <strong>Security</strong> sections like any other content.</p>
+<p>A <strong>Folder</strong> is a plain grouping container — it has no data fields beyond the display name, path, and the standard Settings and Security sections. Folders are used to organise other content in the tree.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="content-types/images/wizard-folder.png" alt="wizard folder">
+<img src="content-types/images/wizard-folder.png" alt="Folder editor">
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="shortcut"><a class="link" href="#shortcut">Shortcut</a></h3>
+</div>
+<div class="sect1">
+<h2 id="shortcut"><a class="link" href="#shortcut">Shortcut</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>Shortcuts create a content path that will redirect to another content. This allows a content deep inside a site to be accessed with a short URL.</p>
-</div>
-<div class="paragraph">
-<p>For example, a content in the “Posts” folder named “Gotham sure is a big town” would normally be reached at a URL with <code>superhero/posts/gotham-sure-is-a-big-town</code>. But a shortcut as a first child of “Superhero” would make it available at <code>superhero/gotham</code>.</p>
-</div>
-<div class="paragraph">
-<p>Each shortcut has a required <strong>Target</strong> field. The selected target content can be edited with the pencil icon.</p>
+<p><strong>Shortcuts</strong> create a content path that redirects to another content item, letting a deeply-nested content be reached via a short URL. For example, a shortcut can expose <code>/superhero/gotham</code> that redirects to <code>/superhero/posts/gotham-sure-is-a-big-town</code>.</p>
 </div>
 <div class="paragraph">
-<p>In addition it is possible to set custom parameters as a list of name-value pairs. These optional parameters will be added to the redirect URL.</p>
+<p>Each shortcut has a required <strong>Target</strong> field (click the pencil icon to edit the target in place) and an optional list of name-value <strong>Parameters</strong> that are appended to the redirect URL.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="content-types/images/wizard-shortcut.png" alt="wizard shortcut">
+<img src="content-types/images/wizard-shortcut.png" alt="Shortcut editor">
 </div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="site"><a class="link" href="#site">Site</a></h3>
-<div class="paragraph">
-<p>Sites are usually created at the root level of the tree grid from a special built-in content type represented by a globe icon. Site contents have a textarea field for the site description and a dropdown selector for adding and configuring applications. Every site content will have a <strong>Templates</strong> folder which is automatically created along with the site content.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="content-types/images/browse-template.png" alt="browse template">
-</div>
-</div>
-<div class="sect3">
-<h4 id="applications"><a class="link" href="#applications">Applications</a></h4>
-<div class="paragraph">
-<p>Applications contain all the code behind a website. Apps are installed with the <strong>Applications</strong> tool and apps are used by adding them to a Site content. Some apps will have components for building a site and others will only add functionality to existing sites. Sites will need at least one app that has at least one page component before any rendering can happen.</p>
-</div>
-<div class="paragraph">
-<p>Edit a Site content and add the desired apps with the <strong>Applications</strong> dropdown selector. Only users with the role “Administrator” or “Content Manager Administrator” can add an application to a site. The image below shows the edit view for the Superhero Site content. This site has two applications: one is the <strong>Superhero Blog</strong> which was used to build the site and the other is the <strong>Siteimprove</strong> that adds some functionality.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="content-types/images/wizard-applications.png" alt="wizard applications">
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="configuration"><a class="link" href="#configuration">Configuration</a></h4>
-<div class="paragraph">
-<p>Applications that have been added to a Site are listed in the content edit panel with the display name and app name. The X icon removes the app from the site and the pencil icon opens the application configuration dialogue with the current values. Only users with the role “Administrator” or “Content Manager Administrator” can remove an application from a site or edit application configuration. The configuration options available are defined in the application code.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="content-types/images/wizard-config.png" alt="wizard config">
-</div>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="page_templates"><a class="link" href="#page_templates">Page templates</a></h3>
-<div class="paragraph">
-<p>A page template is special content that enable other content to be rendered as pages. Page template must support one or more content types. When a request endpoint matches a content path, the content’s supporting template will be used to render it. The Page Editor is used to build page templates by placing the desired components into regions on the page in the desired locations.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -553,251 +514,168 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Page Templates cannot be used for Shortcuts. A shortcut will redirect to the target content even if there is a matching page template.
+Shortcuts cannot use page templates — the redirect fires even if a matching template exists.
 </td>
-</tr>
-</table>
-</div>
-<div class="sect3">
-<h4 id="page_components"><a class="link" href="#page_components">Page components</a></h4>
-<div class="paragraph">
-<p>Page components are defined in the application code and contain the basic HTML structure of all rendered pages. Each page template uses one page component. They usually contain the page header, footer and menu. Most page components will have one or more regions where other components (parts, layouts, <a href="editor/component-types.ahtml">etc.</a>) can be placed with the page editor. A single page component can be used by any number of page templates.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="creating_page_templates"><a class="link" href="#creating_page_templates">Creating page templates</a></h4>
-<div class="paragraph">
-<p>A page template can only be created in its site’s <a href="#_templates-folder">Template folder</a>. Create a new template content here and choose which content types will use it for rendering with the dropdown selector labeled <strong>Supports</strong>. A dropdown selector on the right side of the page is used for choosing the page component. Once a page component is selected, the page preview will be visible in the page editor. Use the <strong>inspect panel</strong> or the <strong>component view</strong> to add components to the region(s) in the page.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="content-types/images/browse-templates-list.png" alt="browse templates list">
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="customizing_content"><a class="link" href="#customizing_content">Customizing content</a></h4>
-<div class="paragraph">
-<p>More than one page template can support the same content type. In this situation, the template that appears first in the Templates folder will be used to render the content by default. But individual content can be manually configured to use any template that supports its type. For example, in the image below there is a content type called “Post” and two templates that support the Post type, first is “Post show — 2 columns” and then “Post show — 1 column”. The “Post show — 2 columns” will be used automatically by all Post content. To force an individual Post content to use the 1 column template, edit the content and select the 1 column template in the <strong>Page Template</strong> dropdown at the top of the <strong>Inspect panel</strong>.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="content-types/images/wizard-template.png" alt="wizard template">
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="rendering_other_content"><a class="link" href="#rendering_other_content">Rendering other content</a></h4>
-<div class="paragraph">
-<p>Even content that has no supporting templates can be rendered as a page. For example, if a site has a <strong>Folder</strong> content called “Articles” and it has child <strong>Article</strong> content then it might be desirable to render the “Articles” folder as a page with a list of the articles that it contains. This is achieved by adding a page component to the unsupported content with the page editor. Edit the content and open the page editor. Select a page component from the dropdown selector and then add components (parts, layouts, <a href="editor/component-types.ahtml">etc.</a>) to the page.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="content-types/images/wizard-template-select.png" alt="wizard template select">
-</div>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="templates_folder"><a class="link" href="#templates_folder">Templates folder</a></h3>
-<div class="paragraph">
-<p>The <strong>Templates</strong> folder is just like a regular folder except that it has a special icon and it can only contain <strong>Page-template</strong> content. When a Site content is created, a Templates folder is automatically created with it as a child of the Site.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="unstructured"><a class="link" href="#unstructured">Unstructured</a></h3>
-<div class="paragraph">
-<p>Unstructured content cannot be edited in the Content Studio except for the display name, the content name, and the settings and security. Content of this type is meant to be used by applications to store data when the structure is not known. Form entries are often stored as unstructured content to avoid the need to create a custom content type for each form on a site. The stored data cannot be viewed in the Content Studio without a custom page component or page template that supports the Unstructured content type.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="image_content"><a class="link" href="#image_content">Image content</a></h3>
-<div class="paragraph">
-<p>An image content is created when an image file is uploaded. Storing images as content allows them to be indexed for searches and have the same language and security settings as other content. Image content items have fields for Caption, Artist, Copyright, Tags and Text. Image content also has fields that are automatically filled in with any Exif data the image file contains. The image file itself can be swapped out with the upload button or by dragging a file onto the image. Images can be cropped and a focal point can be added in the editor.</p>
-</div>
-<div class="sect3">
-<h4 id="cropping"><a class="link" href="#cropping">Cropping</a></h4>
-<div class="paragraph">
-<p>Clicking the crop icon (above the image) will darken the page outside of the image preview and the editing tools. The zoom slider will make the preview larger and parts of the image will extend into the dark regions of the page. The image can be moved by clicking and dragging it around. The aspect ratio can be changed by clicking and dragging the circle (arrows icon) at the bottom of the picture. Make the necessary adjustments so that the part of the picture you want to keep is within the highlighted area. The <strong>Apply</strong> button will restore the page to normal edit mode.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="content-types/images/image-crop.png" alt="image crop">
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="focal_point"><a class="link" href="#focal_point">Focal point</a></h4>
-<div class="paragraph">
-<p>Images can be displayed on a web page with a different aspect ratio than the original. When this happens, the top and bottom or the left and right edges of the picture will be automatically cropped. This can cause the subject of the image to be lost. For example, the heads of people in a portrait image could be cut off when the image is rendered with a landscape ratio. Setting a focal point on an image ensures that the subject will always be in the picture, no matter the ratio used to render it.</p>
-</div>
-<div class="paragraph">
-<p>Click the focal point icon. A red circle appears in the center of the image preview. Click on the part of the picture that you want to always keep in frame and then click the Apply button. Once a focal point is set, its location will be marked with a red circle when the content is in edit mode.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="content-types/images/image-focal-point-1.png" alt="image focal point 1">
-</div>
-</div>
-<div class="paragraph">
-<p>In the image above, the original picture has a tall aspect ratio. No focal point is set.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="content-types/images/image-focal-point-2.png" alt="image focal point 2">
-</div>
-</div>
-<div class="paragraph">
-<p>Setting the focal point.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="content-types/images/image-focal-point-3.png" alt="image focal point 3">
-</div>
-</div>
-<div class="paragraph">
-<p>The crown of the tree remains in frame with the focal point set.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-More information on built-in content types can be found <a href="https://developer.enonic.com/docs/xp/stable/cms/content-types#built_in_content_types">here</a>
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="custom_content_types"><a class="link" href="#custom_content_types">Custom content types</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Custom content type can be built by implementing a content type schema as described <a href="https://developer.enonic.com/docs/xp/stable/cms/content-types#form_definition">here</a>.
-In addition to the fields described on that page, content type schema supports optional <code>config</code> object with additional configuration of
-content type behaviour in Content Studio.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;content-type&gt;
-  &lt;display-name&gt;Person&lt;/display-name&gt;
-  &lt;super-type&gt;base:structured&lt;/super-type&gt;
-  &lt;form&gt;
-    &lt;input name="firstName" type="TextLine"&gt;
-      &lt;label&gt;First Name&lt;/label&gt;
-    &lt;/input&gt;
-    &lt;input name="lastName" type="TextLine"&gt;
-      &lt;label&gt;Last Name&lt;/label&gt;
-    &lt;/input&gt;
-    &lt;input name="city" type="TextLine"&gt;
-      &lt;label&gt;City&lt;/label&gt;
-    &lt;/input&gt;
-  &lt;/form&gt;
-  &lt;config&gt; <i class="conum" data-value="1"></i><b>(1)</b>
-    &lt;allow-new-content&gt;false&lt;/allow-new-content&gt; <i class="conum" data-value="2"></i><b>(2)</b>
-  &lt;/config&gt;
-&lt;/content-type&gt;</code></pre>
-</div>
-</div>
-<div class="colist arabic">
-<table>
-<tr>
-<td><i class="conum" data-value="1"></i><b>1</b></td>
-<td><strong>config</strong> Optional object that defines content type behaviour in the Content Studio.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="2"></i><b>2</b></td>
-<td><strong>allow-new-content</strong> (default: <code>true</code>) When set to <code>false</code>, removes the content type from the "New Content" modal dialog.
-Existing content items of this type will not be affected. New content of this type can still be created via
-<a href="https://developer.enonic.com/docs/xp/stable/api/lib-content">Content API</a>.</td>
 </tr>
 </table>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="display_name_expression"><a class="link" href="#display_name_expression">Display name expression</a></h2>
+<h2 id="site"><a class="link" href="#site">Site</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>It&#8217;s possible to auto-generate display name based on values from the form fields by using ES6 template literals.
-In the example below, the display name will consist of the values from the <code>firstName</code> and <code>lastName</code> fields, separated by a space.</p>
+<p>A <strong>Site</strong> is the root of a website and is usually created at the top level of the content tree. Sites have a description field and a selector for adding and configuring applications. A <strong>Templates</strong> folder is created automatically alongside every new site.</p>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Only simple input types may be used as variables, so input types like HtmlArea or CheckBox are not supported. Additionally, if an input allows multiple occurrences, only the first occurrence will be used in the generated display name.
-</td>
-</tr>
-</table>
-</div>
-<div class="listingblock">
+<div class="imageblock">
 <div class="content">
-<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;content-type&gt;
-  &lt;display-name&gt;Person&lt;/display-name&gt;
-  &lt;display-name-expression&gt;${firstName} ${lastName}&lt;/display-name-expression&gt; <i class="conum" data-value="1"></i><b>(1)</b>
-  &lt;form&gt;
-    &lt;input name="firstName" type="TextLine"&gt;
-      &lt;label&gt;First Name&lt;/label&gt;
-    &lt;/input&gt;
-    &lt;input name="lastName" type="TextLine"&gt;
-      &lt;label&gt;Last Name&lt;/label&gt;
-    &lt;/input&gt;
-  &lt;/form&gt;
-&lt;/content-type&gt;</code></pre>
+<img src="content-types/images/browse-template.png" alt="Templates folder">
+</div>
+</div>
+<div class="sect2">
+<h3 id="applications"><a class="link" href="#applications">Applications</a></h3>
+<div class="paragraph">
+<p>Applications provide the code behind a site. Some apps contribute components (parts, layouts, page controllers) used for page-building in the <a href="editor/preview/visual-editor.ahtml">Visual editor</a>; others just add functionality. A site needs at least one app that contributes a page controller before any content can be rendered as a page.</p>
+</div>
+<div class="paragraph">
+<p>Apps are added to a site via the <strong>Applications</strong> selector in the site&#8217;s edit view. Adding or removing an application requires the <strong>Administrator</strong> or <strong>Content Manager Administrator</strong> role.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="content-types/images/wizard-applications.png" alt="Adding applications to a site">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="application_configuration"><a class="link" href="#application_configuration">Application configuration</a></h3>
+<div class="paragraph">
+<p>Each application added to a site appears with a pencil icon for editing its configuration (fields defined by the app) and an X icon for removing it. The available configuration options vary per application and only users with the <strong>Administrator</strong> or <strong>Content Manager Administrator</strong> role can modify them.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="content-types/images/wizard-config.png" alt="Application configuration dialog">
+</div>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="list_title_expression"><a class="link" href="#list_title_expression">List title expression</a></h2>
+<h2 id="page_template"><a class="link" href="#page_template">Page template</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This config is similar to <a href="#_display_name_expression">display-name-expression</a> but used for displaying a composite content
-title in the Content Studio&#8217;s Content Browser. For example, by defining an expression like in the example below you can combine three field values
-with some static text.</p>
+<p>A <strong>Page template</strong> is a reusable page definition that renders one or more content types as pages. Templates are created inside a site&#8217;s automatically-provisioned <strong>Templates</strong> folder.</p>
 </div>
-<div class="listingblock">
+<div class="sect2">
+<h3 id="creating_a_page_template"><a class="link" href="#creating_a_page_template">Creating a page template</a></h3>
+<div class="paragraph">
+<p>Create a new <strong>Page template</strong> content inside the Templates folder. Two fields drive the template:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Supports</strong> — the content types this template can render.</p>
+</li>
+<li>
+<p><strong>Controller</strong> (the selector on the right of the editor) — the page component from an installed application that provides the HTML skeleton. Once a controller is picked, the Visual editor becomes active and components can be placed into the controller&#8217;s regions.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
 <div class="content">
-<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;content-type&gt;
-  &lt;display-name&gt;Person&lt;/display-name&gt;
-  &lt;super-type&gt;base:structured&lt;/super-type&gt;
-  &lt;form&gt;
-    &lt;input name="firstName" type="TextLine"&gt;
-      &lt;label&gt;First Name&lt;/label&gt;
-    &lt;/input&gt;
-    &lt;input name="lastName" type="TextLine"&gt;
-      &lt;label&gt;Last Name&lt;/label&gt;
-    &lt;/input&gt;
-    &lt;input name="city" type="TextLine"&gt;
-      &lt;label&gt;City&lt;/label&gt;
-    &lt;/input&gt;
-  &lt;/form&gt;
-  &lt;config&gt;
-    &lt;list-title-expression&gt;${data.firstName} ${data.lastName} from ${data.city}&lt;/list-title-expression&gt;
-  &lt;/config&gt;
-&lt;/content-type&gt;</code></pre>
+<img src="content-types/images/browse-templates-list.png" alt="List of page templates">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="which_template_is_used"><a class="link" href="#which_template_is_used">Which template is used</a></h3>
+<div class="paragraph">
+<p>When several templates support the same content type, the one that appears <em>first</em> in the Templates folder is used by default. Individual content items can override the default via the <strong>Page template</strong> dropdown in the <a href="editor/context-panel.ahtml#_inspect_tab">Inspect tab</a>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="content-types/images/wizard-template.png" alt="Choosing a template for a content item">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="rendering_content_without_a_matching_template"><a class="link" href="#rendering_content_without_a_matching_template">Rendering content without a matching template</a></h3>
+<div class="paragraph">
+<p>Content with no supporting template can still be rendered as a page — for example, rendering a <strong>Folder</strong> called <em>Articles</em> as a listing of its children. Open the content in the editor, pick a page controller from the dropdown in the empty Visual editor, and build the page from components as usual.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="content-types/images/wizard-template-select.png" alt="Selecting a controller for unsupported content">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="templates_folder"><a class="link" href="#templates_folder">Templates folder</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <strong>Templates</strong> folder is a specialised folder that can only contain <strong>Page template</strong> content and is created automatically as a child of every site.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="image"><a class="link" href="#image">Image</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Uploading an image file creates an <strong>Image</strong> content item. Storing images as content means they are indexed for search, inherit the site&#8217;s language and permissions, and can be referenced by ID from other content.</p>
+</div>
+<div class="paragraph">
+<p>Image content items have fields for Caption, Artist, Copyright, Tags, and Text, and automatically pick up any Exif metadata from the source file. The underlying file can be swapped via the upload button or by dragging a new file onto the preview.</p>
+</div>
+<div class="sect2">
+<h3 id="cropping"><a class="link" href="#cropping">Cropping</a></h3>
+<div class="paragraph">
+<p>The crop icon above the image dims the surrounding area and reveals the crop-editing tools. The zoom slider enlarges the preview; the image can be dragged to reposition. The aspect-ratio handle (circle with arrows at the bottom) changes the crop ratio. <strong>Apply</strong> returns the editor to normal mode.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="content-types/images/image-crop.png" alt="Cropping an image">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="focal_point"><a class="link" href="#focal_point">Focal point</a></h3>
+<div class="paragraph">
+<p>Rendered images often need to be cropped to match a different aspect ratio than the original, which can cut off the subject. Setting a <strong>focal point</strong> tells the renderer which part of the image to always keep in frame.</p>
+</div>
+<div class="paragraph">
+<p>Click the focal point icon, then click the part of the image that should stay centred, and <strong>Apply</strong>. The focal point is marked with a red circle in the editor.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="content-types/images/image-focal-point-1.png" alt="Original image" width="no focal point">
 </div>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="content-types/images/list-title-expression.png" alt="List title expression">
+<img src="content-types/images/image-focal-point-2.png" alt="Setting the focal point">
 </div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="content-types/images/image-focal-point-3.png" alt="Subject stays in frame across aspect ratios">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="unstructured"><a class="link" href="#unstructured">Unstructured</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Unstructured</strong> content has no data form — it stores free-form data used by applications (for example, persisted form submissions). Unstructured content items can only be edited for their display name, path, settings, and security in Content Studio; the actual data is not visible in the UI unless an application provides a page controller that renders it.</p>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-04-22 08:19:43 UTC
+Last updated 2026-04-22 08:24:08 UTC
 </div>
 </div>
 </body>

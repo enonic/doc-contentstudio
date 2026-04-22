@@ -782,7 +782,7 @@ Only the <strong>Draft</strong> version of content is visible in the preview pan
 <p>Context panel for the selected content can be expanded with the <span class="image"><img src="navigator/images/navigator-context-panel-icon.png" alt="navigator context panel icon" width="24px" title="Preview button"></span> icon next to the Action menu button in the top-right corner.</p>
 </div>
 <div class="paragraph">
-<p>This panel displays the list of contextual widgets which can be used to work with the selected content. Widgets are applications that expand the functionality of  Content Studio. There are several built-in widgets (described in the <a href="widgets.ahtml">Widgets section</a>), the rest is coming from installed applications.</p>
+<p>This panel displays the list of contextual widgets which can be used to work with the selected content. Widgets are applications that expand the functionality of Content Studio. See the <a href="editor/context-panel.ahtml">Context Panel</a> reference for the built-in widgets and how custom widgets plug in.</p>
 </div>
 <div class="imageblock text-center">
 <div class="content">
@@ -797,7 +797,7 @@ Only the <strong>Draft</strong> version of content is visible in the preview pan
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-04-22 08:19:43 UTC
+Last updated 2026-04-22 08:24:08 UTC
 </div>
 </div>
 </body>

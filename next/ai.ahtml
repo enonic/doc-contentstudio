@@ -455,20 +455,20 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="content">
 <div id="preamble">
 <div class="sectionbody">
-<div class="paragraph">
-<p>Juke AI brings artificial intelligence to Content Studio. Over time, Juke will evolve to help out with a range of daily content management chores.</p>
-</div>
-<div class="admonitionblock tip">
+<div class="admonitionblock note">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
+<i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-The <a href="https://market.enonic.com/vendors/enonic/ai-content-operator">Juke AI Content operator</a> application must be installed to access the features described in this chapter
+<strong>Content Studio+ feature.</strong> The AI Assistant is part of the <a href="content-studio-plus.ahtml">Content Studio+</a> subscription. It also requires the <a href="https://market.enonic.com/vendors/enonic/ai-content-operator">Juke AI Content Operator</a> application.
 </td>
 </tr>
 </table>
+</div>
+<div class="paragraph">
+<p>Juke AI brings artificial intelligence to Content Studio. Over time, Juke will evolve to help out with a range of daily content management chores.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -696,7 +696,7 @@ Working with application settings requires "Project owner" roles or higher.
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-04-22 08:19:43 UTC
+Last updated 2026-04-22 08:24:08 UTC
 </div>
 </div>
 </body>

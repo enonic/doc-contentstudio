@@ -619,7 +619,7 @@ For inherited items <b class="button">Edit</b> is replaced with <b class="button
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-The <a href="https://market.enonic.com/vendors/enonic/juke-ai-content-translator">Juke AI translator</a> application must be installed to access the features described in this section
+<strong>Content Studio+ feature.</strong> AI translation is part of the <a href="content-studio-plus.ahtml">Content Studio+</a> subscription. It also requires the <a href="https://market.enonic.com/vendors/enonic/juke-ai-content-translator">Juke AI Content Translator</a> application.
 </td>
 </tr>
 </table>
@@ -680,7 +680,7 @@ Changing these settings require <code>Project Owner</code> role or higher.
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-The <a href="https://market.enonic.com/vendors/enonic/content-studio-plus">Content Studio+</a> application must be installed to access the features described in this section
+<strong>Content Studio+ feature.</strong> The Layers widget is part of the <a href="content-studio-plus.ahtml">Content Studio+</a> subscription.
 </td>
 </tr>
 </table>
@@ -762,7 +762,7 @@ Read about the high-level concept of Content Layers <a href="https://developer.e
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-04-22 08:19:43 UTC
+Last updated 2026-04-22 08:24:08 UTC
 </div>
 </div>
 </body>

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.26">
-<title>Context Panel</title>
+<title>Content Management</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -437,19 +437,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article toc2 toc-right">
 <div id="header">
-<h1>Context Panel</h1>
+<h1>Content Management</h1>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#built_in_widgets">Built-in widgets</a>
-<ul class="sectlevel2">
-<li><a href="#components">Components</a></li>
-<li><a href="#details">Details</a></li>
-<li><a href="#version_history">Version History</a></li>
-<li><a href="#dependencies">Dependencies</a></li>
-</ul>
-</li>
-<li><a href="#optional_and_custom_widgets">Optional and custom widgets</a></li>
+<li><a href="#in_this_chapter">In this chapter</a></li>
+<li><a href="#where_this_sits">Where this sits</a></li>
 </ul>
 </div>
 </div>
@@ -457,244 +450,47 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>The <strong>Context Panel</strong> is the multi-function tool column on the right-hand side of the editor. It hosts a set of <strong>widgets</strong> — small tools that operate on the currently selected content item. Toggle the panel open and closed with the cog icon on the right of the toolbar.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../widgets/images/widgets-panel-button.png" alt="Context Panel toggle button" width="209">
-</div>
+<p>Content Management covers the operations that apply <em>across</em> content items once they exist — the editorial lifecycle rather than the shape or content of any single item.</p>
 </div>
 <div class="paragraph">
-<p>The panel contains a widget selector dropdown: built-in widgets appear first, followed by any custom widgets contributed by installed applications. The top of the dropdown has a filter field for quickly finding a widget by keyword.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../widgets/images/widgets-search.png" alt="Widget selector with filter" width="206">
-</div>
+<p>These operations are available from both the <a href="navigator.ahtml">Content Navigator</a> and the <a href="editor.ahtml">Content Editor</a>, and they are gated by <a href="permissions.ahtml">permissions</a>: whether a given button is shown, enabled, or disabled on the toolbar depends on the current user&#8217;s rights for the selected content.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="built_in_widgets"><a class="link" href="#built_in_widgets">Built-in widgets</a></h2>
+<h2 id="in_this_chapter"><a class="link" href="#in_this_chapter">In this chapter</a></h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="components"><a class="link" href="#components">Components</a></h3>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-The <strong>Components</strong> widget is only available for renderable content with the <a href="preview/visual-editor.ahtml">Visual editor</a> enabled.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>The Components widget manipulates the page content and has two tabs.</p>
-</div>
-<div class="sect3">
-<h4 id="insert_tab"><a class="link" href="#insert_tab">Insert tab</a></h4>
-<div class="paragraph">
-<p>The Insert tab lets you drag and drop components onto the page. Enonic XP has five built-in component categories:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Layout</strong> — adds a container that defines regions where other components can sit.</p>
-</li>
-<li>
-<p><strong>Part</strong> — adds a configurable component from one of the site&#8217;s applications.</p>
-</li>
-<li>
-<p><strong>Text</strong> — adds a formatted text block edited via the <a href="rich-text-editor.ahtml">Rich Text Editor</a>. Supports images, videos, links, and macros.</p>
-</li>
-<li>
-<p><strong>Fragment</strong> — adds a reusable fragment (a component saved as its own content item and reused across pages).</p>
-</li>
-<li>
-<p><strong>Image</strong> — inserts an image content item directly as a page component.</p>
-</li>
-</ul>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../widgets/images/widgets-components-insert.png" alt="Insert tab" width="207">
-</div>
-</div>
-<div class="paragraph">
-<p>When you drag a placeholder onto the page, a red circle indicates an area where the component cannot be dropped; a green checkmark and blue target box appear over valid drop locations. Once dropped, the placeholder shows a combo-box where you select the specific part/layout/fragment to use.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/context-panel_insert.png" alt="Placing a part component" width="697">
-</div>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/context-panel_insert2.png" alt="Selecting the specific part" width="440">
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="inspect_tab"><a class="link" href="#inspect_tab">Inspect tab</a></h4>
-<div class="paragraph">
-<p>The Inspect tab configures whichever component is currently selected in the Visual editor. The tab header changes to match the selected component&#8217;s type (<strong>Page</strong>, <strong>Part</strong>, <strong>Layout</strong>, etc.). When nothing is selected, it defaults to <strong>Page</strong>.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../widgets/images/widgets-components-page.png" alt="Page-level inspection" width="207">
-</div>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../widgets/images/widgets-components-part.png" alt="Part-level inspection" width="207">
-</div>
-</div>
-<div class="paragraph">
-<p>For the <strong>Page</strong> itself, the Inspect tab is where you choose the controller or page template. For other components, the tab shows the component&#8217;s configuration form. Changes to configuration values take effect on save or when you hit the <strong>Apply</strong> button at the bottom of the panel.</p>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="details"><a class="link" href="#details">Details</a></h3>
-<div class="paragraph">
-<p>The Details widget shows properties of the selected content item:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Content</strong> — icon, display name and full path.</p>
-</li>
-<li>
-<p><strong>Status</strong> — current content status (<em>New</em>, <em>Published</em>, <em>Modified</em>, etc.).</p>
-</li>
-<li>
-<p><strong>User access</strong> — the effective permissions. The <strong>Edit Permissions</strong> link opens the <a href="../permissions.ahtml">permissions dialog</a>.</p>
-</li>
-<li>
-<p><strong>Properties</strong> — metadata such as type, created/modified timestamps and owners.</p>
-</li>
-<li>
-<p><strong>Schedule</strong> — the from/to dates the content is online (only shown for published content with a schedule).</p>
-</li>
-<li>
-<p><strong>Page template</strong> — the template used to render the content, if any.</p>
-</li>
-<li>
-<p><strong>Attachments</strong> — downloadable binary attachments.</p>
-</li>
-</ul>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../widgets/images/widgets-details.png" alt="Details widget" width="450">
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="version_history"><a class="link" href="#version_history">Version History</a></h3>
-<div class="paragraph">
-<p>Every action on a content item creates a new version. The Version History widget lists all versions and publish/unpublish events and lets you revert, restore and compare them. The current workflow status appears in the widget header.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../widgets/images/widgets-version-history.png" alt="Version history" width="283">
-</div>
-</div>
-<div class="paragraph">
-<p>To revert to a specific version, click its box to expand it and then click <strong>Revert</strong>. The current (active) version cannot be reverted and is therefore not expandable — the same applies to publish/unpublish markers.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Some versions cannot be reverted — for example those created by permissions updates, rename, or move operations.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Click the <span class="image"><img src="../widgets/images/widgets-version-compare-icon.png" alt="widgets version compare icon" width="24"></span> icon on a version to open the <strong>Compare versions</strong> dialog. Two dropdowns at the top select the pair of versions to compare (the left one is older, the right one newer). By default the dialog shows only differences; toggle <strong>Show entire content</strong> to see the full content JSON.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../widgets/images/widgets-version-compare-dialog.png" alt="Version compare dialog" width="909">
-</div>
-</div>
-<div class="paragraph">
-<p>Both dropdowns include aliases at the top of the list (<em>previous</em>, <em>next</em>, <em>published</em>, <em>current</em>) so you can compare against those without scrolling.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../widgets/images/widgets-version-compare-dialog-aliases.png" alt="Version aliases" width="456">
-</div>
-</div>
-<div class="paragraph">
-<p>The kebab menu on the right of each dropdown has a single option — <strong>Revert</strong> — to revert to that version.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="dependencies"><a class="link" href="#dependencies">Dependencies</a></h3>
-<div class="paragraph">
-<p>The Dependencies widget shows the inbound and outbound references of the selected content item.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>An <strong>inbound</strong> dependency is content that uses the selected item.</p>
-</li>
-<li>
-<p>An <strong>outbound</strong> dependency is content that the selected item uses.</p>
-</li>
-</ul>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../widgets/images/widgets-dependencies.png" alt="Dependencies widget" width="207">
-</div>
-</div>
-<div class="paragraph">
-<p>Inbound dependencies appear above the content, outbound below. If there are none of a particular kind, the widget shows <code>No incoming dependencies</code> (or equivalent). When there are dependencies, a button shows the total count; clicking it opens a new browser tab listing the dependencies. Clicking a per-type icon opens the same view filtered to that type.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../widgets/images/widgets-dependencies-filter.png" alt="Dependency filter" width="370">
-</div>
-</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><a href="actions.ahtml">Actions</a></dt>
+<dd>
+<p>The toolbar and context-menu verbs editors use day-to-day — <strong>New</strong>, <strong>Edit</strong>, <strong>Duplicate</strong>, <strong>Move</strong>, <strong>Sort</strong>, <strong>Preview</strong>, <strong>Publish</strong>, <strong>Unpublish</strong>, <strong>Archive</strong>. This is the reference for what each action does, where to invoke it, and which dialogs it opens.</p>
+</dd>
+<dt class="hdlist1"><a href="workflow.ahtml">Workflow</a></dt>
+<dd>
+<p>The states a content item moves through between creation and publication — <strong>In progress</strong>, <strong>Ready for publishing</strong>, <strong>Publish request</strong>, <strong>Published</strong>, <strong>Unpublished</strong> — and how editors and reviewers hand off between them.</p>
+</dd>
+<dt class="hdlist1"><a href="permissions.ahtml">Permissions</a></dt>
+<dd>
+<p>The per-content security model: principals (users, groups, roles), the granular permission flags (<strong>Read</strong>, <strong>Create</strong>, <strong>Modify</strong>, <strong>Delete</strong>, <strong>Publish</strong>, <strong>Read/Write permissions</strong>), inheritance, and the <strong>Edit permissions</strong> dialog.</p>
+</dd>
+<dt class="hdlist1"><a href="issues.ahtml">Issues</a></dt>
+<dd>
+<p>Lightweight work tracking inside Content Studio — <strong>Tasks</strong> for general editorial assignments, and <strong>Publish requests</strong> for content that needs review before going live.</p>
+</dd>
+<dt class="hdlist1"><a href="archive.ahtml">Archive</a></dt>
+<dd>
+<p>What happens when content is archived (soft-deleted) versus deleted outright, how the archive interacts with <a href="layers.ahtml">layers</a>, and how to restore items.</p>
+</dd>
+</dl>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="optional_and_custom_widgets"><a class="link" href="#optional_and_custom_widgets">Optional and custom widgets</a></h2>
+<h2 id="where_this_sits"><a class="link" href="#where_this_sits">Where this sits</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The Context Panel is <strong>pluggable</strong>. In addition to the built-ins above, any installed application can contribute a widget that will appear in the widget selector.</p>
-</div>
-<div class="paragraph">
-<p>Widgets shipped via <a href="../content-studio-plus.ahtml">Content Studio+</a>:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="../layers.ahtml#layers_panel">Layers</a> — shows where the content item exists across every layer in the system.</p>
-</li>
-<li>
-<p><a href="../variants.ahtml">Variants</a> — manages A/B variants of the selected content item.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Third-party and custom widgets appear below the built-ins in the dropdown. The interface for contributing a widget to the Context Panel is <code>contentstudio.contextpanel</code>; see the <a href="https://developer.enonic.com/docs/xp/stable/admin/widgets">XP admin widgets reference</a> for implementation details.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../widgets/images/widgets-context-panel.png" alt="Custom widget in the Context Panel" width="207">
-</div>
+<p>Content Management assumes you already have content to manage. For the creation side, see <a href="navigator.ahtml">Content Navigator</a> (finding and creating items) and <a href="editor.ahtml">Content Editor</a> (editing a single item). For the schema and data structure behind a content item, see the <a href="https://developer.enonic.com/docs/xp/stable/cms">Enonic XP CMS docs</a>.</p>
 </div>
 </div>
 </div>
