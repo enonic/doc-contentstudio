@@ -1,4 +1,4 @@
-= Content Studio documentation
+= Content Studio 6 documentation - WIP
 :toc: right
 :imagesdir: images
 
