@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.26">
-<title>Content Editor</title>
+<title>New</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -437,11 +437,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article toc2 toc-right">
 <div id="header">
-<h1>Content Editor</h1>
+<h1>New</h1>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#collaboration">Collaboration</a></li>
+<li><a href="#new_by_type">New by type</a></li>
+<li><a href="#new_by_uploading">New by uploading</a></li>
 </ul>
 </div>
 </div>
@@ -449,27 +450,103 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>The <strong>Content Editor</strong> opens in a new browser tab from the <a href="navigator.ahtml">Browse View</a> when content is created or edited. Multiple content tabs can be open at the same time. Clicking on the <strong>Content Studio</strong> tree icon in the top left corner will open <a href="navigator.ahtml">Browse View</a> in a new browser tab. User will get a browser warning upon trying to close a tab with modified but unsaved content.</p>
+<p>The <strong>New</strong> action launches the <strong>New Content</strong> dialog for creating content. It can be invoked three ways:</p>
 </div>
-<div class="paragraph">
-<p>The edit view consists of several parts. On the left is the <a href="editor/content-form.ahtml">Content Form</a>. If content is editable, the <a href="editor/page-editor.ahtml">Page Editor</a> will automatically open on the right. A <a href="editor/context-panel.ahtml">Context Panel</a> can be accessed from inside the Page Editor.  The Context Panel contain a number of widgets to work with the page, and will be placed to the right of the <a href="editor/page-editor.ahtml">Page Editor</a> or expand over it, based on screen resolution.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Keyboard shortcut — <code>alt + n</code>.</p>
+</li>
+<li>
+<p>The <strong>New</strong> button in the toolbar.</p>
+</li>
+<li>
+<p>The <strong>New</strong> entry in the context menu (right-click an item in the Content Navigator).</p>
+</li>
+</ul>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="editor/images/editor.png" alt="Content Wizard" width="1680">
+<img src="images/dialog-new.png" alt="New Content dialog" width="723">
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The <strong>New Content</strong> dialog uses the current selection as the parent for the new item. If nothing is selected, the new item is created at the root of the project.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="new_by_type"><a class="link" href="#new_by_type">New by type</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The dialog lets you choose from the content types available in the current context. Pick a type and a new content item is created; the Content Editor opens in a new tab.</p>
+</div>
+<div class="paragraph">
+<p>The dialog offers three ways to find a type:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The full list of all content types available in the current context.</p>
+</li>
+<li>
+<p>The <strong>Most Popular</strong> list — the types most frequently used at this location.</p>
+</li>
+<li>
+<p>The <strong>Recently Used</strong> list — based on your own recent actions.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Start typing on your keyboard to filter the list by name.
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/dialog-new-search.png" alt="Filtered list of content types" width="720">
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="collaboration"><a class="link" href="#collaboration">Collaboration</a></h2>
+<h2 id="new_by_uploading"><a class="link" href="#new_by_uploading">New by uploading</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Toolbar of the Content Editor will display avatar icons of users who currently have the same content opened in the Content Editor.</p>
+<p>File-based content (images, videos, other media) can be created directly by uploading. The underlying content type is detected automatically from the file&#8217;s type.</p>
+</div>
+<div class="paragraph">
+<p>There are two ways to upload:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Click the upload icon in the top right of the dialog.</p>
+</li>
+<li>
+<p>Drag files onto the dialog. Bulk uploading is supported — drop multiple files at once.</p>
+</li>
+</ul>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="editor/images/content-wizard-collaboration.png" alt="Collaboration" width="1331">
+<img src="images/dialog-new-media.png" alt="Drag-and-drop upload" width="721">
 </div>
 </div>
 </div>
@@ -477,7 +554,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-04-22 09:01:09 UTC
+Last updated 2026-04-22 09:01:35 UTC
 </div>
 </div>
 </body>

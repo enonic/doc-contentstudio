@@ -464,23 +464,15 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <dl>
 <dt class="hdlist1"><a href="actions.ahtml">Actions</a></dt>
 <dd>
-<p>The toolbar and context-menu verbs editors use day-to-day — <strong>New</strong>, <strong>Edit</strong>, <strong>Duplicate</strong>, <strong>Move</strong>, <strong>Sort</strong>, <strong>Preview</strong>, <strong>Publish</strong>, <strong>Unpublish</strong>, <strong>Archive</strong>. Reference for what each action does, where to invoke it, and which dialogs it opens.</p>
+<p>The toolbar and context-menu verbs editors use day-to-day — <strong>New</strong>, <strong>Edit</strong>, <strong>Duplicate</strong>, <strong>Move</strong>, <strong>Sort</strong>, <strong>Preview</strong>. Reference for what each action does, where to invoke it, and which dialogs it opens.</p>
 </dd>
 <dt class="hdlist1"><a href="workflow.ahtml">Workflow</a></dt>
 <dd>
-<p>The states a content item moves through between creation and publication — <strong>In progress</strong>, <strong>Ready for publishing</strong>, <strong>Publish request</strong>, <strong>Published</strong>, <strong>Unpublished</strong> — and how editors and reviewers hand off between them.</p>
+<p>The states a content item moves through between creation and publication — <strong>In progress</strong>, <strong>Ready for publishing</strong>, <strong>Publish request</strong>, <strong>Published</strong>, <strong>Unpublished</strong> — together with the actions that drive those transitions (<strong>Publish</strong>, <strong>Unpublish</strong>, <strong>Mark as ready</strong>, <strong>Request publishing</strong>).</p>
 </dd>
 <dt class="hdlist1"><a href="permissions.ahtml">Permissions</a></dt>
 <dd>
 <p>The per-content security model: principals (users, groups, roles), the granular permission flags (<strong>Read</strong>, <strong>Create</strong>, <strong>Modify</strong>, <strong>Delete</strong>, <strong>Publish</strong>, <strong>Read/Write permissions</strong>), inheritance, and the <strong>Edit permissions</strong> dialog.</p>
-</dd>
-<dt class="hdlist1"><a href="issues.ahtml">Issues</a></dt>
-<dd>
-<p>Lightweight work tracking inside Content Studio — <strong>Tasks</strong> for general editorial assignments, and <strong>Publish requests</strong> for content that needs review before going live.</p>
-</dd>
-<dt class="hdlist1"><a href="archive.ahtml">Archive</a></dt>
-<dd>
-<p>What happens when content is archived (soft-deleted) versus deleted outright, how the archive interacts with <a href="layers.ahtml">layers</a>, and how to restore items.</p>
 </dd>
 <dt class="hdlist1"><a href="variants.ahtml">Variants</a></dt>
 <dd>
@@ -498,14 +490,17 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="where_this_sits"><a class="link" href="#where_this_sits">Where this sits</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Content Management assumes you already have content to manage. For the creation side, see <a href="navigator.ahtml">Content Navigator</a> (finding and creating items) and <a href="editor.ahtml">Content Editor</a> (editing a single item). For the schema and data structure behind a custom content type, see the <a href="https://developer.enonic.com/docs/xp/stable/cms">Enonic XP CMS docs</a>.</p>
+<p>Content Management assumes you already have content to manage. For the creation side, see <a href="navigator.ahtml">Navigator</a> (finding and creating items) and <a href="editor.ahtml">Editor</a> (editing a single item). For the schema and data structure behind a custom content type, see the <a href="https://developer.enonic.com/docs/xp/stable/cms">Enonic XP CMS docs</a>.</p>
+</div>
+<div class="paragraph">
+<p>Two closely-related chapters have their own top-level entries because they also have dedicated main-menu destinations in the Content Studio UI: <a href="archive.ahtml">Archive</a> (browsing, restoring, and permanently deleting archived content) and <a href="issues.ahtml">Issues</a> (tasks and publish requests).</p>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-04-22 08:34:40 UTC
+Last updated 2026-04-22 09:01:35 UTC
 </div>
 </div>
 </body>

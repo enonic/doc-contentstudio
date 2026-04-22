@@ -476,7 +476,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-Dependencies are what the <strong>Archive</strong> and <strong>Unpublish</strong> actions check for before allowing the operation — if another content depends on the one you are trying to archive or take offline, you will be warned. See <a href="../actions.ahtml#_archive">Archive</a> and <a href="../actions.ahtml#_unpublish">Unpublish</a> for details.
+Dependencies are what the <strong>Archive</strong> and <strong>Unpublish</strong> actions check for before allowing the operation — if another content depends on the one you are trying to archive or take offline, you will be warned. See <a href="../archive.ahtml">Archive</a> and <a href="../workflow/unpublish.ahtml">Unpublish</a> for details.
 </td>
 </tr>
 </table>
@@ -484,7 +484,7 @@ Dependencies are what the <strong>Archive</strong> and <strong>Unpublish</strong
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-04-22 08:34:40 UTC
+Last updated 2026-04-22 09:01:35 UTC
 </div>
 </div>
 </body>

@@ -475,7 +475,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ul>
 </div>
 <div class="paragraph">
-<p>Workflow state of the content is displayed via corresponding icon, except for "Published" state when no icon is used.</p>
+<p>Workflow state of the content is displayed via corresponding icon, except for "Published" state when no icon is used. Transitions between states are driven by a handful of publishing actions: <strong>Mark as ready</strong>, <strong>Request publishing</strong>, <strong><a href="workflow/publish.ahtml">Publish</a></strong>, and <strong><a href="workflow/unpublish.ahtml">Unpublish</a></strong>.</p>
 </div>
 <div class="paragraph">
 <p>In addition to the workflow stages above, if the content at any time is invalid based on required elements or other rules in the content type,
@@ -698,7 +698,7 @@ automatically unpublish all of its child items as well.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-04-22 08:34:40 UTC
+Last updated 2026-04-22 09:01:35 UTC
 </div>
 </div>
 </body>
