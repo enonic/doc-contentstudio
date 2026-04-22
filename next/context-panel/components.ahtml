@@ -450,7 +450,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>The <strong>Components</strong> widget is the primary tool for building and configuring pages. It is only available in the <a href="../editor.ahtml">Content Editor</a> for renderable content with the <a href="../editor/preview/visual-editor.ahtml">Visual editor</a> enabled.</p>
+<p>The <strong>Components</strong> widget is the primary tool for building and configuring pages. It is only available in the <a href="../editor.ahtml">Content Editor</a> for renderable content with the <a href="../editor/page-editor.ahtml">Page editor</a> enabled.</p>
 </div>
 <div class="paragraph">
 <p>The widget has two tabs: <strong>Insert</strong> for adding new components to the page, and the per-component tab for configuring a selected component (renamed <em>Page</em>, <em>Part</em>, <em>Layout</em>, etc. to match the selection).</p>
@@ -501,7 +501,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="paragraph">
-<p>For the full component-category reference, see the <a href="../editor/preview/visual-editor.ahtml#_component_categories">Visual editor</a> chapter.</p>
+<p>For the full component-category reference, see the <a href="../editor/page-editor.ahtml#_component_categories">Page editor</a> chapter.</p>
 </div>
 </div>
 </div>
@@ -509,7 +509,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="inspect_tab"><a class="link" href="#inspect_tab">Inspect tab</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The Inspect tab configures whichever component is currently selected in the <a href="../editor/preview/visual-editor.ahtml">Visual editor</a>. The tab header changes to match the selected component&#8217;s type (<strong>Page</strong>, <strong>Part</strong>, <strong>Layout</strong>, etc.). When nothing is selected, it defaults to <strong>Page</strong>.</p>
+<p>The Inspect tab configures whichever component is currently selected in the <a href="../editor/page-editor.ahtml">Page editor</a>. The tab header changes to match the selected component&#8217;s type (<strong>Page</strong>, <strong>Part</strong>, <strong>Layout</strong>, etc.). When nothing is selected, it defaults to <strong>Page</strong>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -532,7 +532,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-04-22 09:01:35 UTC
+Last updated 2026-04-22 09:23:18 UTC
 </div>
 </div>
 </body>

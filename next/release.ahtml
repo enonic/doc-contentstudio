@@ -982,7 +982,7 @@ This mode can be turned on in Content Studio&#8217;s <a href="config.ahtml#exclu
 <p>Improved responsiveness in the Content Navigator</p>
 </li>
 <li>
-<p>Improved synchronisation between the Content Form&#8217;s <a href="editor/content-form.ahtml#page_components_tree">Page Components tree</a> and components inside the <a href="editor/preview/visual-editor.ahtml">Visual editor</a></p>
+<p>Improved synchronisation between the Content Form&#8217;s <a href="editor/content-form.ahtml#page_components_tree">Page Components tree</a> and components inside the <a href="editor/page-editor.ahtml">Page editor</a></p>
 </li>
 <li>
 <p>When a published item has been first moved, then modified its status will be shown as <code>Moved, Modified</code> (previously just <code>Moved</code>)</p>
@@ -1086,7 +1086,7 @@ of the <a href="editor/content-form.ahtml#page_components_tree">Content Editor f
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-04-22 09:01:35 UTC
+Last updated 2026-04-22 09:23:18 UTC
 </div>
 </div>
 </body>

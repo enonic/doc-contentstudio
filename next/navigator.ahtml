@@ -523,7 +523,7 @@ It consists of the <a href="#toolbar">action toolbar</a> on top, followed by the
 <p>If selected content has workflow state "In progress": <strong>Mark as Ready</strong> (to mark selected content item(s) as ready for publishing)</p>
 </li>
 <li>
-<p>If selected content is not published and current user doesn&#8217;t have publishing permissions: <strong>Request Publishing</strong> (opens the <a href="workflow.ahtml#publish_request">Publish Request</a> wizard)</p>
+<p>If selected content is not published and current user doesn&#8217;t have publishing permissions: <strong>Request Publishing</strong> (opens the <a href="workflow/publish-request.ahtml">Publish Request</a> wizard)</p>
 </li>
 <li>
 <p>If no content is selected: <strong>Create Task</strong> opens the <a href="issues.ahtml#create_a_task">New Task</a> dialog</p>
@@ -796,7 +796,7 @@ Only the <strong>Draft</strong> version of content is visible in the preview pan
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-04-22 09:01:35 UTC
+Last updated 2026-04-22 09:23:18 UTC
 </div>
 </div>
 </body>

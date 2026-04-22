@@ -452,7 +452,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>The <strong>Content Editor</strong> opens in a new browser tab from the <a href="navigator.ahtml">Browse View</a> when content is created or edited. Multiple content tabs can be open at the same time. Clicking on the <strong>Content Studio</strong> tree icon in the top left corner will open <a href="navigator.ahtml">Browse View</a> in a new browser tab. User will get a browser warning upon trying to close a tab with modified but unsaved content.</p>
 </div>
 <div class="paragraph">
-<p>The edit view has three panels. On the left is the <a href="editor/content-form.ahtml">Content Form</a>, where the content&#8217;s data fields are edited. In the middle is the <a href="editor/preview.ahtml">Preview</a> panel — for renderable content this is the <a href="editor/preview/visual-editor.ahtml">Visual editor</a>, a drag-and-drop page-building surface; for other content types it shows a type-appropriate preview (e.g. the media itself for an image). On the right is the <a href="context-panel.ahtml">Context Panel</a>, which hosts built-in widgets (component configuration, details, version history, dependencies) as well as any widgets contributed by installed applications.</p>
+<p>The edit view has three panels. On the left is the <a href="editor/content-form.ahtml">Content Form</a>, where the content&#8217;s data fields are edited. In the middle is either the <a href="editor/page-editor.ahtml">Page editor</a> (for renderable content — a drag-and-drop page-building surface) or the <a href="editor/preview.ahtml">Preview</a> panel (for other content types — a type-appropriate read-only preview). On the right is the <a href="context-panel.ahtml">Context Panel</a>, which hosts built-in widgets (component configuration, details, version history, dependencies) as well as any widgets contributed by installed applications.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -477,7 +477,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-04-22 09:01:35 UTC
+Last updated 2026-04-22 09:23:18 UTC
 </div>
 </div>
 </body>

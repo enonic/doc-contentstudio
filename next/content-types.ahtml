@@ -535,7 +535,7 @@ Shortcuts cannot use page templates — the redirect fires even if a matching te
 <div class="sect2">
 <h3 id="applications"><a class="link" href="#applications">Applications</a></h3>
 <div class="paragraph">
-<p>Applications provide the code behind a site. Some apps contribute components (parts, layouts, page controllers) used for page-building in the <a href="editor/preview/visual-editor.ahtml">Visual editor</a>; others just add functionality. A site needs at least one app that contributes a page controller before any content can be rendered as a page.</p>
+<p>Applications provide the code behind a site. Some apps contribute components (parts, layouts, page controllers) used for page-building in the <a href="editor/page-editor.ahtml">Page editor</a>; others just add functionality. A site needs at least one app that contributes a page controller before any content can be rendered as a page.</p>
 </div>
 <div class="paragraph">
 <p>Apps are added to a site via the <strong>Applications</strong> selector in the site&#8217;s edit view. Adding or removing an application requires the <strong>Administrator</strong> or <strong>Content Manager Administrator</strong> role.</p>
@@ -576,7 +576,7 @@ Shortcuts cannot use page templates — the redirect fires even if a matching te
 <p><strong>Supports</strong> — the content types this template can render.</p>
 </li>
 <li>
-<p><strong>Controller</strong> (the selector on the right of the editor) — the page component from an installed application that provides the HTML skeleton. Once a controller is picked, the Visual editor becomes active and components can be placed into the controller&#8217;s regions.</p>
+<p><strong>Controller</strong> (the selector on the right of the editor) — the page component from an installed application that provides the HTML skeleton. Once a controller is picked, the Page editor becomes active and components can be placed into the controller&#8217;s regions.</p>
 </li>
 </ul>
 </div>
@@ -600,7 +600,7 @@ Shortcuts cannot use page templates — the redirect fires even if a matching te
 <div class="sect2">
 <h3 id="rendering_content_without_a_matching_template"><a class="link" href="#rendering_content_without_a_matching_template">Rendering content without a matching template</a></h3>
 <div class="paragraph">
-<p>Content with no supporting template can still be rendered as a page — for example, rendering a <strong>Folder</strong> called <em>Articles</em> as a listing of its children. Open the content in the editor, pick a page controller from the dropdown in the empty Visual editor, and build the page from components as usual.</p>
+<p>Content with no supporting template can still be rendered as a page — for example, rendering a <strong>Folder</strong> called <em>Articles</em> as a listing of its children. Open the content in the editor, pick a page controller from the dropdown in the empty Page editor, and build the page from components as usual.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -675,7 +675,7 @@ Shortcuts cannot use page templates — the redirect fires even if a matching te
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-04-22 09:01:35 UTC
+Last updated 2026-04-22 09:23:18 UTC
 </div>
 </div>
 </body>

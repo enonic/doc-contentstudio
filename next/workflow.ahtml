@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.26">
-<title>Content Workflow</title>
+<title>Workflow</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -437,15 +437,15 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article toc2 toc-right">
 <div id="header">
-<h1>Content Workflow</h1>
+<h1>Workflow</h1>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#in_progress">In Progress</a></li>
-<li><a href="#ready_for_publishing">Ready for Publishing</a></li>
-<li><a href="#publish_request">Publish Request</a></li>
-<li><a href="#published">Published</a></li>
-<li><a href="#unpublished">Unpublished</a></li>
+<li><a href="#_in_progress">In progress</a></li>
+<li><a href="#_ready_for_publishing">Ready for publishing</a></li>
+<li><a href="#_publish_request">Publish request</a></li>
+<li><a href="#_published">Published</a></li>
+<li><a href="#_unpublished">Unpublished</a></li>
 </ul>
 </div>
 </div>
@@ -453,64 +453,89 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Content Workflow in Content Studio consists of the following stages:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>In progress</p>
-</li>
-<li>
-<p>Ready for Publishing</p>
-</li>
-<li>
-<p>Publish Request</p>
-</li>
-<li>
-<p>Published</p>
-</li>
-<li>
-<p>Unpublished</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Workflow state of the content is displayed via corresponding icon, except for "Published" state when no icon is used. Transitions between states are driven by a handful of publishing actions: <strong>Mark as ready</strong>, <strong>Request publishing</strong>, <strong><a href="workflow/publish.ahtml">Publish</a></strong>, and <strong><a href="workflow/unpublish.ahtml">Unpublish</a></strong>.</p>
-</div>
-<div class="paragraph">
-<p>In addition to the workflow stages above, if the content at any time is invalid based on required elements or other rules in the content type,
-it is marked with a red icon:</p>
+<p>Workflow is the state machine a content item moves through on its way to being published. The state is shown as an icon next to the content-type icon throughout the UI (a red icon indicates the content is invalid — for example, required fields are missing).</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="workflow/images/invalid-content.png" alt="Invalid content with red icon" width="484">
 </div>
 </div>
+<div class="paragraph">
+<p>The states:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong><a href="#_in_progress">In progress</a></strong> — default state for a new or modified content item. Cannot be published.</p>
+</li>
+<li>
+<p><strong><a href="#_ready_for_publishing">Ready for publishing</a></strong> — the editor has explicitly flagged the content as done.</p>
+</li>
+<li>
+<p><strong><a href="#_publish_request">Publish request</a></strong> — a review/approval has been requested from another user.</p>
+</li>
+<li>
+<p><strong><a href="#_published">Published</a></strong> — the active version in the <code>draft</code> branch matches what is live on <code>master</code>.</p>
+</li>
+<li>
+<p><strong><a href="#_unpublished">Unpublished</a></strong> — previously published content that has been taken offline.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Transitions are driven by four actions: <strong>Mark as ready</strong>, <strong><a href="workflow/publish-request.ahtml">Request publishing</a></strong>, <strong><a href="workflow/publish.ahtml">Publish</a></strong>, and <strong><a href="workflow/unpublish.ahtml">Unpublish</a></strong>.</p>
+</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="in_progress"><a class="link" href="#in_progress">In Progress</a></h2>
+<h2 id="_in_progress"><a class="link" href="#_in_progress">In progress</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Default workflow state of a new content is <code>In progress</code>.
-This means the content in being worked on and it will stay in this state until user marks it as ready.
-Such content is marked with yellow (!) icon everywhere the content type icon is displayed.</p>
+<p>The default state of a new content item. Signals that the content is being worked on; it will stay in this state until the editor explicitly marks it as ready, or until a publisher overrides and publishes it directly.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="workflow/images/content-in-progress.png" alt="Content in progress in the Wizard" width="484">
+<img src="workflow/images/content-in-progress.png" alt="In-progress content in the editor" width="484">
 </div>
 </div>
 <div class="paragraph">
-<p>Content <code>In progress</code> is not allowed to be published - this is to prevent unfinished content from publishing by accident.</p>
+<p>In-progress content is <strong>not eligible for publishing</strong> — this is deliberate, to keep unfinished content from being published by accident. The <a href="workflow/publish.ahtml">Publishing wizard</a> will block the batch and highlight the offending items:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="workflow/images/publish-wizard-in-progress.png" alt="Content in progress in the Publishing Wizard" width="655">
+<img src="workflow/images/publish-wizard-in-progress.png" alt="In-progress content blocked in the Publishing wizard" width="655">
 </div>
 </div>
 <div class="paragraph">
-<p>You can either exclude such a content from publishing, or mark it as ready.</p>
+<p>The default toolbar action for in-progress content is <strong>Mark as ready</strong>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+A user with publish permission can invoke <strong>Publish&#8230;&#8203;</strong> directly on in-progress content from the Content Editor — the item is automatically marked as ready first, on the assumption that invoking publish signals the work is finished.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ready_for_publishing"><a class="link" href="#_ready_for_publishing">Ready for publishing</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Set by the <strong>Mark as ready</strong> action from the Content Editor or Content Navigator. The yellow <code>!</code> icon is replaced with a green <code>✓</code>, and the item becomes eligible for publishing.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="workflow/images/content-ready.png" alt="Ready-for-publishing content in the editor" width="1230">
+</div>
+</div>
+<div class="paragraph">
+<p>The default toolbar action changes to <strong><a href="workflow/publish.ahtml">Publish</a></strong> (if the user has publish permission) or <strong><a href="workflow/publish-request.ahtml">Request publishing</a></strong> (if not).</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -519,186 +544,52 @@ Such content is marked with yellow (!) icon everywhere the content type icon is 
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-Users with publishing permissions are allowed to use <code>Publish&#8230;&#8203;</code> action
-for content "In progress" from the Content Wizard via action menu in the toolbar.
-In this case the item will automatically be marked as ready, assuming user is going
-to publish the content because it&#8217;s ready for publishing.
+Editors with publish permission may still use <strong>Request publishing</strong> when content needs sign-off or additional input from another user.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>For content <code>In progress</code> default action in the action menu is <strong>MARK AS READY</strong>.</p>
-</div>
-<div class="paragraph">
-<p>When work on the content is finished and the content is ready for publishing,
-user can mark it as ready by using <strong>MARK AS READY</strong> action in the Content Wizard or
-Content Navigator. This will mark the content as <strong>READY</strong> and automatically open the Publishing wizard
-for publishing the content.</p>
+<p>Any edit to a <strong>Ready for publishing</strong> item immediately resets it to <strong>In progress</strong> — the editor must mark it ready again once the edits are finished.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="ready_for_publishing"><a class="link" href="#ready_for_publishing">Ready for Publishing</a></h2>
+<h2 id="_publish_request"><a class="link" href="#_publish_request">Publish request</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>After <strong>MARK AS READY</strong> action is executed, the content will be marked as <strong>READY FOR PUBLISHING</strong>
-and the yellow (!) icon will be replaced by the green (V) icon, enabling publishing of the content.
-This is also helpful if the content requires input from several editors - then the first user can
-mark the content as ready to notify the second one that he/she can start his/her part etc.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="workflow/images/content-ready.png" alt="Content ready in the Content Wizard" width="1230">
-</div>
-</div>
-<div class="paragraph">
-<p>Default action for content marked as <strong>READY FOR PUBLISHING</strong> will change to either <strong>PUBLISH</strong> (if user
-has sufficient publishing permissions) or <strong>REQUEST PUBLISHING</strong>.</p>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-Even if user has sufficient publishing permissions, he/she can still request publishing
-from another user, if content requires some additional input or approval.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>The moment the content that is <strong>READY FOR PUBLISHING</strong> starts being edited, its workflow state will
-immediately be changed back to <strong>IN PROGRESS</strong>. User will then have to mark the content as ready again,
-when the modifications are finished.</p>
+<p>Set when another user has been asked to review and publish the item via the <strong>Request publishing</strong> action. The full wizard, the request dialog, and how requests are managed are documented on the <a href="workflow/publish-request.ahtml">Publish request</a> page.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="publish_request"><a class="link" href="#publish_request">Publish Request</a></h2>
+<h2 id="_published"><a class="link" href="#_published">Published</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><strong>REQUEST PUBLISHING</strong> action is used to request publishing from a different user. User can request publishing
-of a single content item from the Content Wizard, or several from Content Navigator.</p>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-As with <code>Publish&#8230;&#8203;</code> action, when <code>Request Publishing&#8230;&#8203;</code> action is triggered for a <strong>single</strong> content that is <strong>IN PROGRESS</strong>,
-it will be automatically marked as <strong>READY</strong>, assuming the user is done with the changes if he/she is requesting
-publishing.
-</td>
-</tr>
-</table>
+<p>Set when the active version has been pushed from <code>draft</code> to <code>master</code>. No icon is shown — published is the default, quiet state.</p>
 </div>
 <div class="paragraph">
-<p>Publish Request is created via simple 2-step wizard.</p>
-</div>
-<div class="paragraph">
-<p>On the first step user can see all of the items that will be sent for publishing, and their dependent items.</p>
+<p>Editing a published item resets the workflow state to <strong>In progress</strong>; the <code>master</code> branch is unaffected until the item is published again.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="workflow/images/request-publishing-wizard-1.png" alt="Request Publishing Wizard - Step 1" width="660">
-</div>
-</div>
-<div class="paragraph">
-<p>The second step is used to describe the changes that will be published (mandatory field) and select
-one or more users that the request will be assigned to.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="workflow/images/request-publishing-wizard-2.png" alt="Request Publishing Wizard - Step 2" width="671">
-</div>
-</div>
-<div class="paragraph">
-<p>"Create request" button will create a new Publish Request and open the modal dialog with its details.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="workflow/images/publishing-request-1.png" alt="Publish Request" width="673">
-</div>
-</div>
-<div class="paragraph">
-<p>This dialog is somewhat similar to the Issue dialog. The main difference is that content items are displayed
-on the first tab and can be published directly from this dialog with "Publish Now" button. Publisher can
-also schedule publishing of the content using calendar icon at the bottom, which will toggle on/off the form
-for scheduling date(s) the content should be online from/to.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="workflow/images/publishing-request-2.png" alt="Publish Request - Scheduling" width="673">
-</div>
-</div>
-<div class="paragraph">
-<p>Publish requests can also be opened from the Issue List dialog which now lists both issues and publish
-requests, split in different tabs.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="workflow/images/publishing-request-list.png" alt="Publish Request List" width="701">
-</div>
-</div>
-<div class="paragraph">
-<p>If content item is a part of an open Publish Request, the default action in the Content Editor is <strong>OPEN REQUEST</strong>.
-Clicking this button will display the latest open Publish Request with this item.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="workflow/images/publishing-request-toolbar.png" alt="Open Request" width="494">
-</div>
-</div>
-<div class="paragraph">
-<p>Complete list of all open issues and publish requests containing this item is available inside the drop-down menu.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="workflow/images/publish-button-menu.png" alt="Publish Button Menu">
-</div>
-</div>
-<div class="paragraph">
-<p>The same list of issues/publish requests is also shown in the Preview panel&#8217;s toolbar of the Content Browser.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="workflow/images/issues-toolbar.png" alt="Issues Menu in the Preview toolbar">
+<img src="workflow/images/modified-content.png" alt="Modified (published + in-progress) content" width="500">
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="published"><a class="link" href="#published">Published</a></h2>
+<h2 id="_unpublished"><a class="link" href="#_unpublished">Unpublished</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>After an item is published - either from a Publish Request or via Publishing Wizard - the workflow state icon is no longer shown.
-Once a published content is modified, the workflow state will be reset to <code>In progress</code>, followed by corresponding icon.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="workflow/images/modified-content.png" alt="Modified content" width="500">
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="unpublished"><a class="link" href="#unpublished">Unpublished</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>When content should no longer be online, it should be unpublished. Unpublishing a content item will always
-automatically unpublish all of its child items as well.</p>
+<p>Set when a previously-published item is removed from <code>master</code> via the <a href="workflow/unpublish.ahtml">Unpublish</a> action. Unpublishing an item automatically unpublishes all of its descendants.</p>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-04-22 09:01:35 UTC
+Last updated 2026-04-22 09:23:18 UTC
 </div>
 </div>
 </body>

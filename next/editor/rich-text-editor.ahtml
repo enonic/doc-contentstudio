@@ -470,7 +470,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sectionbody">
 <div class="paragraph">
 <p>Rich Text Editor is used by the <a href="https://developer.enonic.com/docs/xp/stable/cms/schemas/input-types/htmlarea">HTMLArea input type</a>
-and for editing <a href="preview/visual-editor.ahtml#_text">Text components</a> inside the Visual editor.
+and for editing <a href="page-editor.ahtml#_text">Text components</a> inside the Page editor.
 It&#8217;s capable of formatting the text in many ways, pasting from Word and Google Docs, using macros to insert code snippets
 and iFrames, inserting tables, images and content links etc.</p>
 </div>
@@ -671,7 +671,7 @@ that the image won&#8217;t undergo any processing on the server and will be rend
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-04-22 09:01:35 UTC
+Last updated 2026-04-22 09:23:18 UTC
 </div>
 </div>
 </body>

@@ -491,7 +491,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="ulist">
 <ul>
 <li>
-<p><strong><a href="../workflow.ahtml#ready_for_publishing">Mark as ready</a></strong> — for in-progress content. After marking, automatically opens the Publishing wizard.</p>
+<p><strong><a href="../workflow.ahtml#_ready_for_publishing">Mark as ready</a></strong> — for in-progress content. After marking, automatically opens the Publishing wizard.</p>
 </li>
 <li>
 <p><strong>Publish</strong> — opens the Publishing wizard for the selected items.</p>
@@ -503,7 +503,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p><strong><a href="unpublish.ahtml">Unpublish</a></strong> — available only for published items.</p>
 </li>
 <li>
-<p><strong><a href="../workflow.ahtml#publish_request">Request publishing</a></strong> — available only for unpublished items.</p>
+<p><strong><a href="publish-request.ahtml">Request publishing</a></strong> — available only for unpublished items.</p>
 </li>
 <li>
 <p><strong><a href="../issues.ahtml">Create task</a></strong> — opens the <strong>New Task</strong> dialog.</p>
@@ -590,7 +590,7 @@ The calendar icon next to <strong>Publish Now</strong> enables <a href="#_schedu
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-If the current user lacks publish permission for any of the batched items, <strong>Publish All</strong> is replaced by <strong><a href="../workflow.ahtml#publish_request">Request Publishing</a></strong>.
+If the current user lacks publish permission for any of the batched items, <strong>Publish All</strong> is replaced by <strong><a href="publish-request.ahtml">Request Publishing</a></strong>.
 </td>
 </tr>
 </table>
@@ -739,7 +739,7 @@ Users with publish permission can use <strong>Publish&#8230;&#8203;</strong> on 
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-04-22 09:01:35 UTC
+Last updated 2026-04-22 09:23:18 UTC
 </div>
 </div>
 </body>

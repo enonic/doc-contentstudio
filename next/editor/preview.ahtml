@@ -450,10 +450,22 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>The <strong>Preview</strong> panel occupies the right-hand side of the <a href="../editor.ahtml">Content Editor</a> and shows how the content will look to an end user. Preview is <strong>pluggable</strong>: the actual view that appears depends on the content item, the applications installed on its site, and any preview contributions from those applications.</p>
+<p>The <strong>Preview</strong> panel sits on the right-hand side of the <a href="../editor.ahtml">Content Editor</a> and shows how the selected content will appear to an end user. Preview is <strong>pluggable</strong>: the actual view that appears depends on the content item, the applications installed on its site, and any preview contributions from those applications.</p>
 </div>
 <div class="paragraph">
 <p>Preview can be closed and reopened with the monitor icon on the far right of the editor toolbar.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+For renderable content (sites, pages, page templates, and any content type with a supporting template), the right-hand panel is replaced with the <a href="page-editor.ahtml">Page editor</a> — a drag-and-drop page-building surface rather than a read-only preview.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -465,17 +477,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1"><a href="preview/visual-editor.ahtml">Visual editor</a></dt>
-<dd>
-<p>For renderable content (sites, pages, page templates, and any content type with a supporting template). The visual editor is both a preview <em>and</em> a page-building surface — components can be added, configured, and rearranged directly in the preview.</p>
-</dd>
 <dt class="hdlist1">Media preview</dt>
 <dd>
 <p>For image, video and other media content types. Shows the media itself at its original resolution, with basic metadata.</p>
 </dd>
 <dt class="hdlist1">Plain preview</dt>
 <dd>
-<p>For content that has a page controller but no editable regions — shows the rendered output without the visual-editor chrome.</p>
+<p>For content that has a page controller but no editable regions — shows the rendered output without the page-editor chrome.</p>
 </dd>
 <dt class="hdlist1">Unavailable</dt>
 <dd>
@@ -496,7 +504,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-04-22 09:01:35 UTC
+Last updated 2026-04-22 09:23:18 UTC
 </div>
 </div>
 </body>
