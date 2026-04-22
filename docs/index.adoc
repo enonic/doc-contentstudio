@@ -1,4 +1,4 @@
-= Content Studio documentation
+= Content Studio 5 documentation
 :toc: right
 :imagesdir: images
 
