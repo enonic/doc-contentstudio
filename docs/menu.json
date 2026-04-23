@@ -109,10 +109,6 @@
       ]
     },
     {
-      "title": "Workflow",
-      "document": "workflow"
-    },
-    {
       "title": "Issues",
       "document": "issues",
       "menuItems": [
@@ -123,10 +119,6 @@
       ]
     },
     {
-      "title": "Archive",
-      "document": "archive"
-    },
-    {
       "title": "Sites",
       "document": "sites",
       "menuItems": [
@@ -135,6 +127,14 @@
           "document": "sites/page-templates"
         }
       ]
+    },
+    {
+      "title": "Workflow",
+      "document": "workflow"
+    },
+    {
+      "title": "Archive",
+      "document": "archive"
     },
     {
       "title": "AI Assistant",
