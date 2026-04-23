@@ -442,7 +442,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
 <li><a href="#content_items_and_content_types">Content items and content types</a></li>
-<li><a href="#sites_pages_and_templates">Sites, pages, and templates</a></li>
+<li><a href="#pages_and_rendering">Pages and rendering</a></li>
 <li><a href="#projects_and_layers">Projects and layers</a></li>
 <li><a href="#draft_master_and_publishing">Draft, master, and publishing</a></li>
 <li><a href="#versions">Versions</a></li>
@@ -473,21 +473,40 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>A <strong>content item</strong> is a single piece of content in the repository — an article, an image, a page, a site. Every content item has an identity (path, display name, id), a type, a set of field values, and a small envelope of metadata (security, schedule, workflow state).</p>
 </div>
 <div class="paragraph">
-<p>A <strong>content type</strong> is the schema that defines what fields a content item has. Some types ship with XP (see <a href="content-types.ahtml">Content types</a>); others are defined in application code.</p>
+<p>A <strong>content type</strong> is the schema that defines what fields a content item has. Most content types are defined in application code; a handful ship with XP itself and have special behaviour in Content Studio:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Folder</strong> — a grouping container with no data fields beyond display name and path. Used to organise other content in the tree.</p>
+</li>
+<li>
+<p><strong>Shortcut</strong> — a path that redirects to another content item, typically used to expose a short URL for deep content. Has a required <strong>Target</strong> field and an optional list of name-value <strong>Parameters</strong> appended to the redirect URL. Cannot use page templates — the redirect fires even if a matching template exists.</p>
+</li>
+<li>
+<p><strong>Site</strong> — the root of a website. Sites carry installed applications and get an automatically-provisioned <strong>Templates</strong> folder as their first child. See <a href="sites.ahtml">Sites</a>.</p>
+</li>
+<li>
+<p><strong>Page template</strong> — a reusable page definition that renders one or more content types as pages. See <a href="sites/page-templates.ahtml">Page templates</a>.</p>
+</li>
+<li>
+<p><strong>Image</strong> — a content item backed by an image file, with cropping and focal-point tools. See <a href="editor/image.ahtml">Image</a>.</p>
+</li>
+<li>
+<p><strong>Unstructured</strong> — a formless content type used by applications to store free-form data (for example, persisted form submissions). The data is not editable in Content Studio beyond display name, path, settings, and security.</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>Editors create and edit content items; developers define content types.</p>
+<p>Editors create and edit content items; developers define custom content types.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="sites_pages_and_templates"><a class="link" href="#sites_pages_and_templates">Sites, pages, and templates</a></h2>
+<h2 id="pages_and_rendering"><a class="link" href="#pages_and_rendering">Pages and rendering</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>A <strong>site</strong> is a special kind of content item that sits at the root of a website. Sites can have installed applications attached to them, which contribute the components (parts, layouts, page controllers) used in rendering. Each site automatically gets a <strong>Templates</strong> folder where page templates live.</p>
-</div>
-<div class="paragraph">
-<p>A <strong>page template</strong> is a reusable page definition that renders one or more content types as a page. Page building happens in the <a href="editor/page-editor.ahtml">Page editor</a>, where components are placed into the regions the template defines.</p>
+<p>Page rendering in Content Studio is driven by three collaborating concepts: the content item being rendered, the <strong>page template</strong> that describes how to render it, and the <strong>page controller</strong> (from an installed application) that supplies the HTML skeleton. Page building happens in the <a href="editor/page-editor.ahtml">Page editor</a>, where components are placed into the regions the controller defines.</p>
 </div>
 </div>
 </div>
@@ -509,7 +528,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Content in Content Studio is always edited in the <strong>draft</strong> branch. Publishing copies the active draft version of an item into the <strong>master</strong> branch, from which it becomes available to public consumers of the API.</p>
 </div>
 <div class="paragraph">
-<p><strong>Workflow state</strong> is the signal between editors that a draft is (or isn&#8217;t) ready to publish — <em>In progress</em>, <em>Ready for publishing</em>, <em>Publish request</em>, <em>Published</em>, <em>Unpublished</em>. See <a href="workflow.ahtml">Workflow</a> for the state machine and <a href="workflow/publish.ahtml">Publish</a> for the actual publishing flow.</p>
+<p><strong>Workflow state</strong> is the signal between editors that a draft is (or isn&#8217;t) ready to publish — <em>In progress</em>, <em>Ready for publishing</em>, <em>Publish request</em>, <em>Published</em>, <em>Unpublished</em>. See <a href="workflow.ahtml">Workflow</a> for the state machine and <a href="actions/publish.ahtml">Publish</a> for the actual publishing flow.</p>
 </div>
 </div>
 </div>
@@ -533,7 +552,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="permissions"><a class="link" href="#permissions">Permissions</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Each content item has its own security settings: a list of <strong>principals</strong> (users, groups, roles) and the <strong>permission flags</strong> they have on that item (<em>Read</em>, <em>Create</em>, <em>Modify</em>, <em>Delete</em>, <em>Publish</em>, <em>Read/Write permissions</em>). Permissions are inherited from parent content by default and can be overridden per-item. See <a href="permissions.ahtml">Permissions</a>.</p>
+<p>Each content item has its own security settings: a list of <strong>principals</strong> (users, groups, roles) and the <strong>permission flags</strong> they have on that item (<em>Read</em>, <em>Create</em>, <em>Modify</em>, <em>Delete</em>, <em>Publish</em>, <em>Read/Write permissions</em>). Permissions are inherited from parent content by default and can be overridden per-item. See <a href="navigator/permissions.ahtml">Permissions</a>.</p>
 </div>
 </div>
 </div>
@@ -560,7 +579,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="issues_and_publish_requests"><a class="link" href="#issues_and_publish_requests">Issues and publish requests</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><strong>Issues</strong> are lightweight work items used to coordinate between editors — either a <strong>task</strong> (e.g. "spellcheck this article") or a <strong>publish request</strong> (review-and-publish handoff for users without publish permission, or just for approval flow). See <a href="issues.ahtml">Issues</a> and <a href="workflow/publish-request.ahtml">Publish request</a>.</p>
+<p><strong>Issues</strong> are lightweight work items used to coordinate between editors — either a <strong>task</strong> (e.g. "spellcheck this article") or a <strong>publish request</strong> (review-and-publish handoff for users without publish permission, or just for approval flow). See <a href="issues.ahtml">Issues</a> and <a href="issues/publish-request.ahtml">Publish request</a>.</p>
 </div>
 </div>
 </div>
@@ -575,7 +594,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-04-22 22:02:53 UTC
+Last updated 2026-04-23 07:06:07 UTC
 </div>
 </div>
 </body>

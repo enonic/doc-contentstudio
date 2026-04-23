@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.26">
-<title>Content types</title>
+<title>Publish request</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -437,27 +437,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article toc2 toc-right">
 <div id="header">
-<h1>Content types</h1>
+<h1>Publish request</h1>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#folder">Folder</a></li>
-<li><a href="#shortcut">Shortcut</a></li>
-<li><a href="#site">Site</a>
-<ul class="sectlevel2">
-<li><a href="#applications">Applications</a></li>
-<li><a href="#application_configuration">Application configuration</a></li>
-</ul>
-</li>
-<li><a href="#page_template">Page template</a>
-<ul class="sectlevel2">
-<li><a href="#creating_a_page_template">Creating a page template</a></li>
-<li><a href="#which_template_is_used">Which template is used</a></li>
-<li><a href="#rendering_content_without_a_matching_template">Rendering content without a matching template</a></li>
-</ul>
-</li>
-<li><a href="#templates_folder">Templates folder</a></li>
-<li><a href="#unstructured">Unstructured</a></li>
+<li><a href="#creating_a_request">Creating a request</a></li>
+<li><a href="#the_publish_request_dialog">The publish request dialog</a></li>
+<li><a href="#finding_a_publish_request">Finding a publish request</a></li>
 </ul>
 </div>
 </div>
@@ -465,165 +451,114 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>A few content types ship with Enonic XP itself and behave specially in Content Studio. Everything else — the custom content types that shape your editorial work — is defined by an application&#8217;s schemas. For the schema reference (how custom content types are defined, field types, configuration flags, display-name and list-title expressions, etc.), see the <a href="https://developer.enonic.com/docs/xp/stable/cms/content-types">XP CMS content-types documentation</a>.</p>
+<p>A <strong>publish request</strong> asks another user to review and publish one or more content items. It is the standard path for an editor who lacks publish permission, and it is also useful when the editor has permission but wants a reviewer to sign off before content goes live.</p>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="content-types/images/new-content-dialog.png" alt="New Content dialog" width="723">
-</div>
+<div class="paragraph">
+<p>Publish requests are separate from <a href="../issues.ahtml">Tasks</a> but share the same list in the <strong>Open Issues</strong> dialog — tasks and requests appear on different tabs.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="folder"><a class="link" href="#folder">Folder</a></h2>
+<h2 id="creating_a_request"><a class="link" href="#creating_a_request">Creating a request</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>A <strong>Folder</strong> is a plain grouping container — it has no data fields beyond the display name, path, and the standard Settings and Security sections. Folders are used to organise other content in the tree.</p>
+<p>The <strong>Request publishing</strong> action is available from the same places as <a href="../actions/publish.ahtml">Publish</a> — the toolbar, the context menu, and the Content Editor — but it replaces the <strong>Publish</strong> button for users without publish permission.</p>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="content-types/images/wizard-folder.png" alt="Folder editor">
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="shortcut"><a class="link" href="#shortcut">Shortcut</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>Shortcuts</strong> create a content path that redirects to another content item, letting a deeply-nested content be reached via a short URL. For example, a shortcut can expose <code>/superhero/gotham</code> that redirects to <code>/superhero/posts/gotham-sure-is-a-big-town</code>.</p>
-</div>
-<div class="paragraph">
-<p>Each shortcut has a required <strong>Target</strong> field (click the pencil icon to edit the target in place) and an optional list of name-value <strong>Parameters</strong> that are appended to the redirect URL.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="content-types/images/wizard-shortcut.png" alt="Shortcut editor">
-</div>
-</div>
-<div class="admonitionblock note">
+<div class="admonitionblock tip">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-Shortcuts cannot use page templates — the redirect fires even if a matching template exists.
+When <strong>Request publishing</strong> is invoked on a single item that is currently <strong>In progress</strong>, the item is automatically marked <strong>Ready for publishing</strong>, on the assumption that requesting a publish signals the work is finished.
 </td>
 </tr>
 </table>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="site"><a class="link" href="#site">Site</a></h2>
-<div class="sectionbody">
 <div class="paragraph">
-<p>A <strong>Site</strong> is the root of a website and is usually created at the top level of the content tree. Sites have a description field and a selector for adding and configuring applications. A <strong>Templates</strong> folder is created automatically alongside every new site.</p>
+<p>The Publish Request wizard has two steps.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 1.</strong> Review the items to be published together with their dependencies — the same tree the Publishing wizard would show.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="content-types/images/browse-template.png" alt="Templates folder">
+<img src="images/request-publishing-wizard-1.png" alt="Publish Request wizard — step 1" width="660">
 </div>
-</div>
-<div class="sect2">
-<h3 id="applications"><a class="link" href="#applications">Applications</a></h3>
-<div class="paragraph">
-<p>Applications provide the code behind a site. Some apps contribute components (parts, layouts, page controllers) used for page-building in the <a href="editor/page-editor.ahtml">Page editor</a>; others just add functionality. A site needs at least one app that contributes a page controller before any content can be rendered as a page.</p>
 </div>
 <div class="paragraph">
-<p>Apps are added to a site via the <strong>Applications</strong> selector in the site&#8217;s edit view. Adding or removing an application requires the <strong>Administrator</strong> or <strong>Content Manager Administrator</strong> role.</p>
+<p><strong>Step 2.</strong> Describe the changes (required) and pick one or more assignees who will receive the request.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="content-types/images/wizard-applications.png" alt="Adding applications to a site">
+<img src="images/request-publishing-wizard-2.png" alt="Publish Request wizard — step 2" width="671">
 </div>
 </div>
-</div>
-<div class="sect2">
-<h3 id="application_configuration"><a class="link" href="#application_configuration">Application configuration</a></h3>
 <div class="paragraph">
-<p>Each application added to a site appears with a pencil icon for editing its configuration (fields defined by the app) and an X icon for removing it. The available configuration options vary per application and only users with the <strong>Administrator</strong> or <strong>Content Manager Administrator</strong> role can modify them.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="content-types/images/wizard-config.png" alt="Application configuration dialog">
-</div>
-</div>
+<p>Clicking <strong>Create request</strong> creates the publish request and opens its detail dialog.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="page_template"><a class="link" href="#page_template">Page template</a></h2>
+<h2 id="the_publish_request_dialog"><a class="link" href="#the_publish_request_dialog">The publish request dialog</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>A <strong>Page template</strong> is a reusable page definition that renders one or more content types as pages. Templates are created inside a site&#8217;s automatically-provisioned <strong>Templates</strong> folder.</p>
-</div>
-<div class="sect2">
-<h3 id="creating_a_page_template"><a class="link" href="#creating_a_page_template">Creating a page template</a></h3>
-<div class="paragraph">
-<p>Create a new <strong>Page template</strong> content inside the Templates folder. Two fields drive the template:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Supports</strong> — the content types this template can render.</p>
-</li>
-<li>
-<p><strong>Controller</strong> (the selector on the right of the editor) — the page component from an installed application that provides the HTML skeleton. Once a controller is picked, the Page editor becomes active and components can be placed into the controller&#8217;s regions.</p>
-</li>
-</ul>
+<p>The publish request dialog looks much like an Issue dialog, with one important difference: the <strong>Items</strong> tab includes a <strong>Publish now</strong> button so a reviewer can publish directly from the dialog. The calendar icon at the bottom toggles a scheduling form to set online-from/online-to dates.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="content-types/images/browse-templates-list.png" alt="List of page templates">
+<img src="images/publishing-request-1.png" alt="Publish request dialog" width="673">
 </div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="which_template_is_used"><a class="link" href="#which_template_is_used">Which template is used</a></h3>
-<div class="paragraph">
-<p>When several templates support the same content type, the one that appears <em>first</em> in the Templates folder is used by default. Individual content items can override the default via the <strong>Page template</strong> dropdown in the <a href="editor/page-editor.ahtml#_inspect_tab">Inspect tab</a> of the Components widget.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="content-types/images/wizard-template.png" alt="Choosing a template for a content item">
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="rendering_content_without_a_matching_template"><a class="link" href="#rendering_content_without_a_matching_template">Rendering content without a matching template</a></h3>
-<div class="paragraph">
-<p>Content with no supporting template can still be rendered as a page — for example, rendering a <strong>Folder</strong> called <em>Articles</em> as a listing of its children. Open the content in the editor, pick a page controller from the dropdown in the empty Page editor, and build the page from components as usual.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="content-types/images/wizard-template-select.png" alt="Selecting a controller for unsupported content">
-</div>
+<img src="images/publishing-request-2.png" alt="Publish request with scheduling" width="673">
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="templates_folder"><a class="link" href="#templates_folder">Templates folder</a></h2>
+<h2 id="finding_a_publish_request"><a class="link" href="#finding_a_publish_request">Finding a publish request</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The <strong>Templates</strong> folder is a specialised folder that can only contain <strong>Page template</strong> content and is created automatically as a child of every site.</p>
+<p>Publish requests appear in the same <strong>Open Issues</strong> dialog as tasks, on a dedicated <strong>Publish requests</strong> tab.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/publishing-request-list.png" alt="Publish request list" width="701">
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="unstructured"><a class="link" href="#unstructured">Unstructured</a></h2>
-<div class="sectionbody">
 <div class="paragraph">
-<p><strong>Unstructured</strong> content has no data form — it stores free-form data used by applications (for example, persisted form submissions). Unstructured content items can only be edited for their display name, path, settings, and security in Content Studio; the actual data is not visible in the UI unless an application provides a page controller that renders it.</p>
+<p>When the currently-edited content is part of an open publish request, the default toolbar action in the Content Editor becomes <strong>Open request</strong> — clicking it jumps to the most recent open request containing the item.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/publishing-request-toolbar.png" alt="Open request toolbar button" width="494">
+</div>
+</div>
+<div class="paragraph">
+<p>The full list of open issues and publish requests containing this item is available from the dropdown next to the main button.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/publish-button-menu.png" alt="Issues and publish requests menu">
+</div>
+</div>
+<div class="paragraph">
+<p>The same list is also shown in the Preview-panel toolbar in the <a href="../navigator.ahtml">Content Navigator</a>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/issues-toolbar.png" alt="Issues menu in the Preview toolbar">
+</div>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-04-22 22:02:53 UTC
+Last updated 2026-04-23 07:06:07 UTC
 </div>
 </div>
 </body>

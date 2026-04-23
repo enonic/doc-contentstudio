@@ -25,6 +25,10 @@
         {
           "title": "Dependencies",
           "document": "navigator/dependencies"
+        },
+        {
+          "title": "Permissions",
+          "document": "navigator/permissions"
         }
       ]
     },
@@ -89,46 +93,52 @@
         {
           "title": "Preview",
           "document": "actions/preview"
+        },
+        {
+          "title": "Publish",
+          "document": "actions/publish"
+        },
+        {
+          "title": "Unpublish",
+          "document": "actions/unpublish"
+        },
+        {
+          "title": "Delete",
+          "document": "actions/delete"
         }
       ]
     },
     {
       "title": "Workflow",
-      "document": "workflow",
-      "menuItems": [
-        {
-          "title": "Publish",
-          "document": "workflow/publish"
-        },
-        {
-          "title": "Publish request",
-          "document": "workflow/publish-request"
-        },
-        {
-          "title": "Unpublish",
-          "document": "workflow/unpublish"
-        }
-      ]
+      "document": "workflow"
     },
     {
-      "title": "Permissions",
-      "document": "permissions"
+      "title": "Issues",
+      "document": "issues",
+      "menuItems": [
+        {
+          "title": "Publish request",
+          "document": "issues/publish-request"
+        }
+      ]
     },
     {
       "title": "Archive",
       "document": "archive"
     },
     {
-      "title": "Issues",
-      "document": "issues"
+      "title": "Sites",
+      "document": "sites",
+      "menuItems": [
+        {
+          "title": "Page templates",
+          "document": "sites/page-templates"
+        }
+      ]
     },
     {
       "title": "AI Assistant",
       "document": "ai"
-    },
-    {
-      "title": "Content types",
-      "document": "content-types"
     },
     {
       "title": "Keyboard shortcuts",

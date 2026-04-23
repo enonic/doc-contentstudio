@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.26">
-<title>Permissions</title>
+<title>Delete</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -437,14 +437,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article toc2 toc-right">
 <div id="header">
-<h1>Permissions</h1>
+<h1>Delete</h1>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#principals">Principals</a></li>
-<li><a href="#permissions">Permissions</a></li>
-<li><a href="#public_content">Public content</a></li>
-<li><a href="#editing_permissions">Editing permissions</a></li>
+<li><a href="#reference_checks">Reference checks</a></li>
+<li><a href="#permanent_deletion">Permanent deletion</a></li>
+<li><a href="#delete_in_layers">Delete in layers</a></li>
 </ul>
 </div>
 </div>
@@ -452,107 +451,105 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Security of content is determined by the principals and permissions in the content’s security settings. Principals are <strong>Users</strong>, <strong>Groups</strong> and <strong>Roles</strong> which are managed in the Users application. Principals are added to each content. Permissions are granted to the principals of the content.</p>
+<p>The <strong>Delete</strong> action removes content from the active tree. Deleted items are not destroyed — they are moved to the <a href="../archive.ahtml">Archive</a>, from which they can later be restored or permanently removed.</p>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="principals"><a class="link" href="#principals">Principals</a></h2>
-<div class="sectionbody">
 <div class="paragraph">
-<p>Individual users could be added to each content. But security is easier to manage by adding groups and roles to each content and then granting the appropriate permissions to these groups and roles. When a group is added to content then all users who are members of that group will have the group permissions for that content. Similarly, when a role is granted permissions to content, all users who have that role will also have those permissions.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="permissions"><a class="link" href="#permissions">Permissions</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Permissions are granted to principals on a per-content basis. This means that changing a principal’s permissions for one content does not affect that principal’s permissions for other content. Below is a list of permissions that can be applied to each principal for any content.</p>
+<p>There are three ways to invoke Delete:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Read:</strong> The principal can see this content;</p>
+<p>Keyboard shortcut — <code>⌘ + del</code> on macOS, <code>ctrl + del</code> on Windows/Linux.</p>
 </li>
 <li>
-<p><strong>Create:</strong> The principal can create child items under this content. For example, if a user has this permission on a folder then the user can create new content in the folder;</p>
+<p>The <strong>Delete</strong> button in the toolbar.</p>
 </li>
 <li>
-<p><strong>Modify:</strong> The principal can edit this content and save changes in the draft branch;</p>
-</li>
-<li>
-<p><strong>Delete:</strong> The principal can delete this content from the draft branch;</p>
-</li>
-<li>
-<p><strong>Publish:</strong> The principal can publish this content to the master branch;</p>
-</li>
-<li>
-<p><strong>Read permissions:</strong> The principal can see this content’s permissions;</p>
-</li>
-<li>
-<p><strong>Write permissions:</strong> The principal can change this content’s permissions.</p>
+<p>The <strong>Delete</strong> entry in the context menu (right-click an item in the Navigator).</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Permissions can also be denied to a principal, even if the permissions would otherwise be granted from another principal. For example, all content editors might be added to a group called <strong>Content editors</strong> which has the <code>Can Publish</code> permissions. But new content editors might break stuff, so they would also be added to a group called <strong>Noobs</strong>. Users in this group could be prevented from publishing and deleting content by denying those permissions to the group.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="public_content"><a class="link" href="#public_content">Public content</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>For content to be accessible to the public, (meaning users who are not logged in), it must have the role <strong>Everyone</strong> with the <code>Read</code> permission. The content must also be published. Content without the <strong>Everyone</strong> role can only be seen by users who are logged in and have read access to it through one of the content’s principals.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="editing_permissions"><a class="link" href="#editing_permissions">Editing permissions</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>When a site is first created, it will have the roles <strong>Administrator</strong> and <strong>Content Manager Administrator</strong> with full access. It will also have the role of <strong>Content Manager App</strong> with reading access. When content is created it will inherit the security settings from its parent content. The security settings for any content can be changed through the Edit permissions dialog. This can be accessed with the <code>Edit Permissions</code> button in the Security section when editing content, or by the button in the details panel in browse view.</p>
+<p>A selection is always deleted together with all of its descendants, so the archive preserves the original structure. The dialog lists every item that will be moved.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="permissions/images/permissions-dialog.png" alt="permissions dialog">
+<img src="images/archive-inbound-references.png" alt="Delete dialog" width="600">
 </div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Online content (published items) is taken offline immediately when deleted. The item remains in <code>master</code> only until the delete completes, and end users lose access the moment the action is confirmed.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="reference_checks"><a class="link" href="#reference_checks">Reference checks</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If any item in the selection is referenced by other content that is <em>not</em> being deleted along with it, a warning appears at the top of the dialog and the action button is disabled. The referenced items are marked with a small "link" icon over their content-type icon.</p>
 </div>
 <div class="paragraph">
-<p>Opening the <strong>Edit Permissions</strong> dialog shows a list of the current principals and their permissions for the content. By default, all content will inherit permissions from its parent. Permissions cannot be changed until the box for <code>Inherit permissions</code> is unchecked. Any changes that are made will also be applied to all child items that directly or indirectly inherit permissions from this content. There is also a checkbox at the bottom of the dialog labeled <code>Overwrite child permissions</code>. Checking this box will force the new permissions on child content that do not inherit permissions.</p>
-</div>
-<div class="paragraph">
-<p>When the <code>Inherit permissions</code> checkbox is unchecked, a dropdown selector will appear for adding new principals. The permissions for each principal in the list can be determined by the settings in blue letters on the right. Clicking a setting will open a menu with the available options that can be applied, which are listed below:</p>
+<p>Two links are available:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Can Read:</strong> Has only the <code>Read</code> permission;</p>
+<p><strong>Ignore inbound references</strong> — proceed anyway. Referring content will then point at a non-existent item.</p>
 </li>
 <li>
-<p><strong>Can Write:</strong> Has permissions for <code>Read</code>, <code>Create</code>, <code>Modify</code>, and <code>Delete</code>;</p>
-</li>
-<li>
-<p><strong>Can Publish:</strong> Has permissions for <code>Read</code>, <code>Create</code>, <code>Modify</code>, <code>Delete</code>, and <code>Publish</code>;</p>
-</li>
-<li>
-<p><strong>Full Access:</strong> Has all permissions;</p>
-</li>
-<li>
-<p><strong>Custom:</strong> Any combination of permissions.</p>
+<p><strong>Show references</strong> — open the reference list for each flagged item, so the references can be edited out. Once the references are removed (and saved), the delete dialog refreshes and allows the action.</p>
 </li>
 </ul>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="permanent_deletion"><a class="link" href="#permanent_deletion">Permanent deletion</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>Selecting <strong>Custom</strong> will list all of the permissions. Clicking on permission will toggle it between white (not granted), green (granted) and red (denied).</p>
+<p>Delete is a soft operation — the content is moved into the Archive and remains recoverable. <strong>Permanent</strong> deletion happens only from the <a href="../archive.ahtml">Archive</a> view, where a separate <strong>Delete</strong> action physically removes the item from storage. Permanent deletion is not reversible (short of a snapshot restore).</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/archive-delete-dropdown.png" alt="Permanent delete from the Archive dropdown" width="384">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="delete_in_layers"><a class="link" href="#delete_in_layers">Delete in layers</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Delete behaves specifically when <a href="../layers.ahtml">layers</a> are involved:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>An item deleted in a parent project is deleted in all child layers where it is not localised.</p>
+</li>
+<li>
+<p>Deleting an <em>inherited</em> (non-localised) item in a layer removes it from that layer without touching the parent — a useful way to prune inherited content from a layer.</p>
+</li>
+<li>
+<p>Restoring from a layer&#8217;s archive may recreate the item in the layer if the original still exists in the parent.</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-04-22 22:02:53 UTC
+Last updated 2026-04-23 07:06:07 UTC
 </div>
 </div>
 </body>

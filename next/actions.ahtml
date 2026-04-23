@@ -450,12 +450,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Actions are the verbs editors use day-to-day on content — creating, editing, moving, sorting, and so on. They are available from three consistent places:</p>
+<p>Actions are the verbs editors use day-to-day on content — creating, editing, moving, publishing, and so on. They are available from three consistent places:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The <strong>toolbar</strong> at the top of the <a href="navigator.ahtml">Content Navigator</a> and the <a href="editor.ahtml">Content Editor</a>.</p>
+<p>The <strong>toolbar</strong> at the top of the <a href="navigator.ahtml">Navigator</a> and the <a href="editor.ahtml">Editor</a>.</p>
 </li>
 <li>
 <p>The <strong>context menu</strong> that appears when right-clicking an item in the Navigator.</p>
@@ -466,7 +466,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ul>
 </div>
 <div class="paragraph">
-<p>Whether a given action is shown, enabled, or disabled depends on two things: the selection (what content is currently selected) and the user&#8217;s <a href="permissions.ahtml">permissions</a> on that content.</p>
+<p>Whether a given action is shown, enabled, or disabled depends on two things: the selection (what content is currently selected) and the user&#8217;s <a href="navigator/permissions.ahtml">permissions</a> on that content.</p>
 </div>
 </div>
 </div>
@@ -499,6 +499,18 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <dd>
 <p>Open the rendered page for a site or page content in a new browser tab.</p>
 </dd>
+<dt class="hdlist1"><a href="actions/publish.ahtml">Publish</a></dt>
+<dd>
+<p>Push content from the <em>draft</em> branch to <em>master</em> so it becomes available online. Covers the publishing wizard, scheduled publishing, and publishing with dependencies.</p>
+</dd>
+<dt class="hdlist1"><a href="actions/unpublish.ahtml">Unpublish</a></dt>
+<dd>
+<p>Remove published content from <em>master</em>. Descendants are unpublished along with the selection.</p>
+</dd>
+<dt class="hdlist1"><a href="actions/delete.ahtml">Delete</a></dt>
+<dd>
+<p>Remove content from the active tree. Deleted items are moved to the <a href="archive.ahtml">Archive</a>, preserving descendants and version history so they can be restored.</p>
+</dd>
 </dl>
 </div>
 </div>
@@ -507,14 +519,14 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="related_reference"><a class="link" href="#related_reference">Related reference</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Publishing actions (<strong>Publish</strong>, <strong>Unpublish</strong>, <strong>Mark as ready</strong>, <strong>Request publishing</strong>) live with the state machine they operate on — see <a href="workflow.ahtml">Workflow</a>. Archiving (<strong>Archive</strong> and permanent <strong>Delete</strong>) is documented on the <a href="archive.ahtml">Archive</a> page. Issue-creation entry points (<strong>Create task</strong>) are documented under <a href="issues.ahtml">Issues</a>.</p>
+<p><strong>Mark as ready</strong> and the publishing state machine are documented under <a href="workflow.ahtml">Workflow</a>. <strong>Request publishing</strong> (the review/approval handoff variant of Publish) is a kind of issue — see <a href="issues/publish-request.ahtml">Publish request</a>. <strong>Permanent delete</strong> (from the archive) and restoring archived items are on the <a href="archive.ahtml">Archive</a> page. The <strong>Create task</strong> entry point is documented under <a href="issues.ahtml">Issues</a>.</p>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-04-22 22:02:53 UTC
+Last updated 2026-04-23 07:06:07 UTC
 </div>
 </div>
 </body>

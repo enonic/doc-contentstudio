@@ -483,7 +483,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ul>
 </div>
 <div class="paragraph">
-<p>Transitions are driven by four actions: <strong>Mark as ready</strong>, <strong><a href="workflow/publish-request.ahtml">Request publishing</a></strong>, <strong><a href="workflow/publish.ahtml">Publish</a></strong>, and <strong><a href="workflow/unpublish.ahtml">Unpublish</a></strong>.</p>
+<p>Transitions are driven by four actions: <strong>Mark as ready</strong>, <strong><a href="actions/publish.ahtml">Publish</a></strong>, <strong><a href="actions/unpublish.ahtml">Unpublish</a></strong>, and <strong><a href="issues/publish-request.ahtml">Request publishing</a></strong> (documented under Issues because a publish request is an issue type with assignees, comments, and a shared Open-Issues list).</p>
 </div>
 </div>
 </div>
@@ -499,7 +499,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="paragraph">
-<p>In-progress content is <strong>not eligible for publishing</strong> — this is deliberate, to keep unfinished content from being published by accident. The <a href="workflow/publish.ahtml">Publishing wizard</a> will block the batch and highlight the offending items:</p>
+<p>In-progress content is <strong>not eligible for publishing</strong> — this is deliberate, to keep unfinished content from being published by accident. The <a href="actions/publish.ahtml">Publishing wizard</a> will block the batch and highlight the offending items:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -535,7 +535,7 @@ A user with publish permission can invoke <strong>Publish&#8230;&#8203;</strong>
 </div>
 </div>
 <div class="paragraph">
-<p>The default toolbar action changes to <strong><a href="workflow/publish.ahtml">Publish</a></strong> (if the user has publish permission) or <strong><a href="workflow/publish-request.ahtml">Request publishing</a></strong> (if not).</p>
+<p>The default toolbar action changes to <strong><a href="actions/publish.ahtml">Publish</a></strong> (if the user has publish permission) or <strong><a href="issues/publish-request.ahtml">Request publishing</a></strong> (if not).</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -558,7 +558,7 @@ Editors with publish permission may still use <strong>Request publishing</strong
 <h2 id="_publish_request"><a class="link" href="#_publish_request">Publish request</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Set when another user has been asked to review and publish the item via the <strong>Request publishing</strong> action. The full wizard, the request dialog, and how requests are managed are documented on the <a href="workflow/publish-request.ahtml">Publish request</a> page.</p>
+<p>Set when another user has been asked to review and publish the item via the <strong>Request publishing</strong> action. The full wizard, the request dialog, and how requests are managed are documented on the <a href="issues/publish-request.ahtml">Publish request</a> page.</p>
 </div>
 </div>
 </div>
@@ -582,14 +582,14 @@ Editors with publish permission may still use <strong>Request publishing</strong
 <h2 id="_unpublished"><a class="link" href="#_unpublished">Unpublished</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Set when a previously-published item is removed from <code>master</code> via the <a href="workflow/unpublish.ahtml">Unpublish</a> action. Unpublishing an item automatically unpublishes all of its descendants.</p>
+<p>Set when a previously-published item is removed from <code>master</code> via the <a href="actions/unpublish.ahtml">Unpublish</a> action. Unpublishing an item automatically unpublishes all of its descendants.</p>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-04-22 22:02:53 UTC
+Last updated 2026-04-23 07:06:07 UTC
 </div>
 </div>
 </body>

@@ -494,7 +494,7 @@ It consists of the <a href="#toolbar">action toolbar</a> on top, followed by the
 <p><strong>Edit:</strong> Opens the content for <a href="actions/edit.ahtml">editing</a> in a new browser tab;</p>
 </li>
 <li>
-<p><strong>Archive:</strong> Opens the <a href="archive.ahtml">Archive item(s)</a> dialog for the selected content.</p>
+<p><strong>Delete:</strong> Opens the <a href="actions/delete.ahtml">Delete</a> dialog for the selected content. Deleted items are moved to the <a href="archive.ahtml">Archive</a>.</p>
 </li>
 <li>
 <p><strong>Duplicate:</strong> Makes a <a href="actions/duplicate.ahtml">copy</a> of the selected content;</p>
@@ -518,19 +518,19 @@ It consists of the <a href="#toolbar">action toolbar</a> on top, followed by the
 <div class="ulist">
 <ul>
 <li>
-<p>If selected content is not published: <strong>Publish</strong> (opens the <a href="workflow/publish.ahtml#_publishing_wizard">Publishing wizard</a> dialog)</p>
+<p>If selected content is not published: <strong>Publish</strong> (opens the <a href="actions/publish.ahtml#_publishing_wizard">Publishing wizard</a> dialog)</p>
 </li>
 <li>
-<p>If selected content is published: <strong>Unpublish</strong> (opens the <a href="workflow/unpublish.ahtml">Unpublish Wizard</a> dialog for taking the content offline)</p>
+<p>If selected content is published: <strong>Unpublish</strong> (opens the <a href="actions/unpublish.ahtml">Unpublish Wizard</a> dialog for taking the content offline)</p>
 </li>
 <li>
-<p>If selected content is published but has child items that are not published: <strong>Publish Tree</strong> (opens the <a href="workflow/publish.ahtml#_publish_tree">Publishing wizard</a> dialog with selected content and all descendants)</p>
+<p>If selected content is published but has child items that are not published: <strong>Publish Tree</strong> (opens the <a href="actions/publish.ahtml#_publish_tree">Publishing wizard</a> dialog with selected content and all descendants)</p>
 </li>
 <li>
 <p>If selected content has workflow state "In progress": <strong>Mark as Ready</strong> (to mark selected content item(s) as ready for publishing)</p>
 </li>
 <li>
-<p>If selected content is not published and current user doesn&#8217;t have publishing permissions: <strong>Request Publishing</strong> (opens the <a href="workflow/publish-request.ahtml">Publish Request</a> wizard)</p>
+<p>If selected content is not published and current user doesn&#8217;t have publishing permissions: <strong>Request Publishing</strong> (opens the <a href="issues/publish-request.ahtml">Publish Request</a> wizard)</p>
 </li>
 <li>
 <p>If no content is selected: <strong>Create Task</strong> opens the <a href="issues.ahtml#create_a_task">New Task</a> dialog</p>
@@ -570,7 +570,7 @@ It consists of the <a href="#toolbar">action toolbar</a> on top, followed by the
 <p>Free-text search (by content Id, display name or path)</p>
 </li>
 <li>
-<p><a href="content-types.ahtml">Content Types</a></p>
+<p>Content type</p>
 </li>
 <li>
 <p>Last modification date</p>
@@ -610,7 +610,7 @@ Search results can at any time (except for when there are no hits) be exported t
 <p>The number of hits will appear below the search field, along with a <code>Clear</code> button that will reset the filter.</p>
 </div>
 <div class="paragraph">
-<p>Each content type that has at least one matching content will appear in the <a href="content-types.ahtml">Content Types</a> filter list with the number of matches in brackets <code>()</code>. Checking the box next to a content type will hide the results that do not match that type. Multiple content types can be selected. By default, only the 5 most popular content types will be shown, followed by "Show more" link to expand the entire list.</p>
+<p>Each content type that has at least one matching content will appear in the <strong>Content type</strong> filter list with the number of matches in brackets <code>()</code>. Checking the box next to a content type will hide the results that do not match that type. Multiple content types can be selected. By default, only the 5 most popular content types will be shown, followed by "Show more" link to expand the entire list.</p>
 </div>
 <div class="imageblock text-center">
 <div class="content">
@@ -838,7 +838,7 @@ Only the <strong>Draft</strong> version of content is visible in the preview pan
 </dd>
 <dt class="hdlist1">User access</dt>
 <dd>
-<p>The effective <a href="permissions.ahtml">permissions</a> for the current user. The <strong>Edit Permissions</strong> link opens the permissions dialog.</p>
+<p>The effective <a href="navigator/permissions.ahtml">permissions</a> for the current user. The <strong>Edit Permissions</strong> link opens the permissions dialog.</p>
 </dd>
 <dt class="hdlist1">Properties</dt>
 <dd>
@@ -850,7 +850,7 @@ Only the <strong>Draft</strong> version of content is visible in the preview pan
 </dd>
 <dt class="hdlist1">Page template</dt>
 <dd>
-<p>The <a href="content-types.ahtml#_page_template">page template</a> used to render the content, if any.</p>
+<p>The <a href="sites/page-templates.ahtml">page template</a> used to render the content, if any.</p>
 </dd>
 <dt class="hdlist1">Attachments</dt>
 <dd>
@@ -908,7 +908,7 @@ Only the <strong>Draft</strong> version of content is visible in the preview pan
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-04-22 22:02:53 UTC
+Last updated 2026-04-23 07:06:07 UTC
 </div>
 </div>
 </body>

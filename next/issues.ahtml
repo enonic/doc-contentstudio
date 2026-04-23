@@ -455,11 +455,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>There are two types of issues in Content Studio: tasks and publish requests.</p>
+<p>There are two types of issues in Content Studio: <strong>tasks</strong> and <strong>publish requests</strong>. Both are lightweight work items with assignees, comments, and an Open/Closed state — the <strong>Open Issues</strong> dialog lists both together on separate tabs.</p>
 </div>
 <div class="paragraph">
-<p><strong>Tasks</strong> are used to assign general tasks, like spellcheck an article, or add new content to a site.
-<strong>Publish Requests</strong> are typically used when you have made some changes to a content which you want someone else to approve and publish.</p>
+<p><strong>Tasks</strong> are general editorial work items — "spellcheck this article", "add new content to this section". See <a href="#_tasks">Tasks</a> below.</p>
+</div>
+<div class="paragraph">
+<p><strong>Publish requests</strong> ask another user to review and publish content. Because they have their own wizard and dialog, they are documented on a dedicated page — see <a href="issues/publish-request.ahtml">Publish request</a>.</p>
 </div>
 </div>
 </div>
@@ -546,7 +548,7 @@ In this case selected items will be automatically added to a new issue you are a
 </div>
 </div>
 <div class="paragraph">
-<p>You can read about creating a new Publishing Request on the <a href="workflow/publish-request.ahtml">Publish request</a> page.</p>
+<p>You can read about creating a new Publishing Request on the <a href="issues/publish-request.ahtml">Publish request</a> page.</p>
 </div>
 </div>
 <div class="sect2">
@@ -626,7 +628,7 @@ For a <em>Publish Request</em> you can publish items or schedule publish directl
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-04-22 22:02:53 UTC
+Last updated 2026-04-23 07:06:07 UTC
 </div>
 </div>
 </body>

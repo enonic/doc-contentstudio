@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.26">
-<title>Publish request</title>
+<title>Unpublish</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -437,13 +437,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article toc2 toc-right">
 <div id="header">
-<h1>Publish request</h1>
+<h1>Unpublish</h1>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#creating_a_request">Creating a request</a></li>
-<li><a href="#the_publish_request_dialog">The publish request dialog</a></li>
-<li><a href="#finding_a_publish_request">Finding a publish request</a></li>
+<li><a href="#reference_checks">Reference checks</a></li>
 </ul>
 </div>
 </div>
@@ -451,106 +449,62 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>A <strong>publish request</strong> asks another user to review and publish one or more content items. It is the standard path for an editor who lacks publish permission, and it is also useful when the editor has permission but wants a reviewer to sign off before content goes live.</p>
+<p>The <strong>Unpublish</strong> action takes currently published content offline by removing it from the <strong>master</strong> branch. All of the content&#8217;s descendants are listed and unpublished along with the selected content; the total count appears on the red <strong>Unpublish</strong> button at the bottom of the dialog.</p>
 </div>
 <div class="paragraph">
-<p>Publish requests are separate from <a href="../issues.ahtml">Tasks</a> but share the same list in the <strong>Open Issues</strong> dialog — tasks and requests appear on different tabs.</p>
+<p>There are two ways to invoke Unpublish:</p>
 </div>
+<div class="ulist">
+<ul>
+<li>
+<p>The <strong>Unpublish</strong> button in the toolbar — it replaces the <strong>Publish</strong> button when the selection is currently published, or is available from the Publish button&#8217;s dropdown otherwise.</p>
+</li>
+<li>
+<p>The <strong>Unpublish</strong> entry in the context menu (right-click a published item).</p>
+</li>
+</ul>
 </div>
-</div>
-<div class="sect1">
-<h2 id="creating_a_request"><a class="link" href="#creating_a_request">Creating a request</a></h2>
-<div class="sectionbody">
 <div class="paragraph">
-<p>The <strong>Request publishing</strong> action is available from the same places as <a href="publish.ahtml">Publish</a> — the toolbar, the context menu, and the Content Editor — but it replaces the <strong>Publish</strong> button for users without publish permission.</p>
+<p>Unpublishing a published item that is also marked for deletion first takes it offline and then deletes it.</p>
 </div>
-<div class="admonitionblock tip">
+<div class="imageblock">
+<div class="content">
+<img src="images/dialog-unpublish.png" alt="Unpublish dialog" width="934">
+</div>
+</div>
+<div class="admonitionblock note">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
+<i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-When <strong>Request publishing</strong> is invoked on a single item that is currently <strong>In progress</strong>, the item is automatically marked <strong>Ready for publishing</strong>, on the assumption that requesting a publish signals the work is finished.
+As with deletion, the dialog asks you to confirm by entering the total number of items to unpublish.
 </td>
 </tr>
 </table>
 </div>
-<div class="paragraph">
-<p>The Publish Request wizard has two steps.</p>
-</div>
-<div class="paragraph">
-<p><strong>Step 1.</strong> Review the items to be published together with their dependencies — the same tree the Publishing wizard would show.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/request-publishing-wizard-1.png" alt="Publish Request wizard — step 1" width="660">
-</div>
-</div>
-<div class="paragraph">
-<p><strong>Step 2.</strong> Describe the changes (required) and pick one or more assignees who will receive the request.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/request-publishing-wizard-2.png" alt="Publish Request wizard — step 2" width="671">
-</div>
-</div>
-<div class="paragraph">
-<p>Clicking <strong>Create request</strong> creates the publish request and opens its detail dialog.</p>
-</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="the_publish_request_dialog"><a class="link" href="#the_publish_request_dialog">The publish request dialog</a></h2>
+<h2 id="reference_checks"><a class="link" href="#reference_checks">Reference checks</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The publish request dialog looks much like an Issue dialog, with one important difference: the <strong>Items</strong> tab includes a <strong>Publish now</strong> button so a reviewer can publish directly from the dialog. The calendar icon at the bottom toggles a scheduling form to set online-from/online-to dates.</p>
+<p>If any item in the dialog has a <strong>published</strong> inbound dependency (a published content that references it), a warning appears at the top of the dialog and the button is disabled. Two links are available:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Ignore inbound references</strong> — proceed with unpublishing anyway.</p>
+</li>
+<li>
+<p><strong>Show references</strong> — for each referenced item, open its reference list so it can be edited to remove the dependency. Publishing those changes makes the original unpublish safe to proceed.</p>
+</li>
+</ul>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/publishing-request-1.png" alt="Publish request dialog" width="673">
-</div>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/publishing-request-2.png" alt="Publish request with scheduling" width="673">
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="finding_a_publish_request"><a class="link" href="#finding_a_publish_request">Finding a publish request</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Publish requests appear in the same <strong>Open Issues</strong> dialog as tasks, on a dedicated <strong>Publish requests</strong> tab.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/publishing-request-list.png" alt="Publish request list" width="701">
-</div>
-</div>
-<div class="paragraph">
-<p>When the currently-edited content is part of an open publish request, the default toolbar action in the Content Editor becomes <strong>Open request</strong> — clicking it jumps to the most recent open request containing the item.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/publishing-request-toolbar.png" alt="Open request toolbar button" width="494">
-</div>
-</div>
-<div class="paragraph">
-<p>The full list of open issues and publish requests containing this item is available from the dropdown next to the main button.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/publish-button-menu.png" alt="Issues and publish requests menu">
-</div>
-</div>
-<div class="paragraph">
-<p>The same list is also shown in the Preview-panel toolbar in the <a href="../navigator.ahtml">Content Navigator</a>.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/issues-toolbar.png" alt="Issues menu in the Preview toolbar">
+<img src="images/dialog-unpublish-references.png" alt="Reference check in the Unpublish dialog" width="754">
 </div>
 </div>
 </div>
@@ -558,7 +512,7 @@ When <strong>Request publishing</strong> is invoked on a single item that is cur
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-04-22 22:02:53 UTC
+Last updated 2026-04-23 07:06:07 UTC
 </div>
 </div>
 </body>

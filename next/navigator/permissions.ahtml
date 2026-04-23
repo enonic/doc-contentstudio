@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.26">
-<title>Issues</title>
+<title>Permissions</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -437,17 +437,14 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article toc2 toc-right">
 <div id="header">
-<h1>Issues</h1>
+<h1>Permissions</h1>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#issues_list">Issues list</a></li>
-<li><a href="#tasks">Tasks</a>
-<ul class="sectlevel2">
-<li><a href="#create_a_task">Create a task</a></li>
-<li><a href="#update_an_issue">Update an issue</a></li>
-</ul>
-</li>
+<li><a href="#principals">Principals</a></li>
+<li><a href="#permissions">Permissions</a></li>
+<li><a href="#public_content">Public content</a></li>
+<li><a href="#editing_permissions">Editing permissions</a></li>
 </ul>
 </div>
 </div>
@@ -455,178 +452,107 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>There are two types of issues in Content Studio: tasks and publish requests.</p>
-</div>
-<div class="paragraph">
-<p><strong>Tasks</strong> are used to assign general tasks, like spellcheck an article, or add new content to a site.
-<strong>Publish Requests</strong> are typically used when you have made some changes to a content which you want someone else to approve and publish.</p>
+<p>Security of content is determined by the principals and permissions in the content’s security settings. Principals are <strong>Users</strong>, <strong>Groups</strong> and <strong>Roles</strong> which are managed in the Users application. Principals are added to each content. Permissions are granted to the principals of the content.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="issues_list"><a class="link" href="#issues_list">Issues list</a></h2>
+<h2 id="principals"><a class="link" href="#principals">Principals</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>"<strong>Open Issues"</strong> button in the Content Studio header opens the modal dialog with the list of issues (both tasks and publish requests).
-If there are no active issues, the button will say "<strong>No Open Issues</strong>".</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="issues/images/issues-header.png" alt="Issues button" width="478">
-</div>
-</div>
-<div class="paragraph">
-<p>The list by default shows all active issues. Use Open/Closed toggler to switch between Open and Closed issues.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="issues/images/issues-list.png" alt="Issues list" width="719">
-</div>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-Tasks and Publish Requests are using different icons to make it easier to distinguish them.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>By using the filter above the list you can narrow down the list to issues assigned to current user, created by current user,
-only Publish Requests or only task. By default, if you have any active issues assigned to you, the filter will be preset to show you only them.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="issues/images/issues-list-filter.png" alt="Filter in the Issues list" width="716">
-</div>
-</div>
-<div class="paragraph">
-<p>To create a new task, click the <a href="#_create-a-task"><code>New Task…</code></a> button.</p>
-</div>
-<div class="paragraph">
-<p>Clicking on an issue from the list will open the <a href="#_update-an-issue">issue details dialog</a>.</p>
+<p>Individual users could be added to each content. But security is easier to manage by adding groups and roles to each content and then granting the appropriate permissions to these groups and roles. When a group is added to content then all users who are members of that group will have the group permissions for that content. Similarly, when a role is granted permissions to content, all users who have that role will also have those permissions.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="tasks"><a class="link" href="#tasks">Tasks</a></h2>
+<h2 id="permissions"><a class="link" href="#permissions">Permissions</a></h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="create_a_task"><a class="link" href="#create_a_task">Create a task</a></h3>
 <div class="paragraph">
-<p>To create a new task, click "Create Task&#8230;&#8203;" button in the Content Studio toolbar.</p>
+<p>Permissions are granted to principals on a per-content basis. This means that changing a principal’s permissions for one content does not affect that principal’s permissions for other content. Below is a list of permissions that can be applied to each principal for any content.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Read:</strong> The principal can see this content;</p>
+</li>
+<li>
+<p><strong>Create:</strong> The principal can create child items under this content. For example, if a user has this permission on a folder then the user can create new content in the folder;</p>
+</li>
+<li>
+<p><strong>Modify:</strong> The principal can edit this content and save changes in the draft branch;</p>
+</li>
+<li>
+<p><strong>Delete:</strong> The principal can delete this content from the draft branch;</p>
+</li>
+<li>
+<p><strong>Publish:</strong> The principal can publish this content to the master branch;</p>
+</li>
+<li>
+<p><strong>Read permissions:</strong> The principal can see this content’s permissions;</p>
+</li>
+<li>
+<p><strong>Write permissions:</strong> The principal can change this content’s permissions.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Permissions can also be denied to a principal, even if the permissions would otherwise be granted from another principal. For example, all content editors might be added to a group called <strong>Content editors</strong> which has the <code>Can Publish</code> permissions. But new content editors might break stuff, so they would also be added to a group called <strong>Noobs</strong>. Users in this group could be prevented from publishing and deleting content by denying those permissions to the group.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="public_content"><a class="link" href="#public_content">Public content</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>For content to be accessible to the public, (meaning users who are not logged in), it must have the role <strong>Everyone</strong> with the <code>Read</code> permission. The content must also be published. Content without the <strong>Everyone</strong> role can only be seen by users who are logged in and have read access to it through one of the content’s principals.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="editing_permissions"><a class="link" href="#editing_permissions">Editing permissions</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When a site is first created, it will have the roles <strong>Administrator</strong> and <strong>Content Manager Administrator</strong> with full access. It will also have the role of <strong>Content Manager App</strong> with reading access. When content is created it will inherit the security settings from its parent content. The security settings for any content can be changed through the Edit permissions dialog. This can be accessed with the <code>Edit Permissions</code> button in the Security section when editing content, or by the button in the details panel in browse view.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="issues/images/create-task-1.png" alt="Create Task" width="372">
+<img src="images/permissions-dialog.png" alt="permissions dialog">
 </div>
 </div>
 <div class="paragraph">
-<p>If some content items are selected in the Content Navigator, you can expand the toolbar menu and select either "Create Task&#8230;&#8203;" or "Request Publishing&#8230;&#8203;".
-In this case selected items will be automatically added to a new issue you are about to create.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="issues/images/create-task-2.png" alt="Create Task" width="372">
-</div>
+<p>Opening the <strong>Edit Permissions</strong> dialog shows a list of the current principals and their permissions for the content. By default, all content will inherit permissions from its parent. Permissions cannot be changed until the box for <code>Inherit permissions</code> is unchecked. Any changes that are made will also be applied to all child items that directly or indirectly inherit permissions from this content. There is also a checkbox at the bottom of the dialog labeled <code>Overwrite child permissions</code>. Checking this box will force the new permissions on child content that do not inherit permissions.</p>
 </div>
 <div class="paragraph">
-<p>You can assign multiple users to work on an issue, using the <strong>Assignees</strong> selector, but you can&#8217;t assign yourself.</p>
+<p>When the <code>Inherit permissions</code> checkbox is unchecked, a dropdown selector will appear for adding new principals. The permissions for each principal in the list can be determined by the settings in blue letters on the right. Clicking a setting will open a menu with the available options that can be applied, which are listed below:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Can Read:</strong> Has only the <code>Read</code> permission;</p>
+</li>
+<li>
+<p><strong>Can Write:</strong> Has permissions for <code>Read</code>, <code>Create</code>, <code>Modify</code>, and <code>Delete</code>;</p>
+</li>
+<li>
+<p><strong>Can Publish:</strong> Has permissions for <code>Read</code>, <code>Create</code>, <code>Modify</code>, <code>Delete</code>, and <code>Publish</code>;</p>
+</li>
+<li>
+<p><strong>Full Access:</strong> Has all permissions;</p>
+</li>
+<li>
+<p><strong>Custom:</strong> Any combination of permissions.</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>To add specific content to an issue, click on the <code>Add items</code> button. The <strong>Items</strong> selector will appear.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="issues/images/dialog-issue-1.png" alt="New task" width="708">
-</div>
-</div>
-<div class="paragraph">
-<p>You can read about creating a new Publishing Request in a dedicated <a href="workflow.ahtml#publish_request">workflow section</a>.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="update_an_issue"><a class="link" href="#update_an_issue">Update an issue</a></h3>
-<div class="paragraph">
-<p>To modify an issue, click on it in the <a href="#_issues-list"><strong>Issue list</strong></a> dialog. It will open the dialog with three tabs.</p>
-</div>
-<div class="paragraph">
-<p>Click the title to edit it, then click anywhere outside of the text field to save the changes.</p>
-</div>
-<div class="paragraph">
-<p>Under the title you will see the status of the current issue. It can be <code>Open</code> or <code>Close</code>. Click this button to change the issue status.
-Altenatively, you can use <code>Close Task</code> button (for an active issue) or <code>Reopen Task</code> (for a closed issue).</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="issues/images/dialog-issue-edit-1.png" alt="Issue title and comments" width="714">
-</div>
-</div>
-<div class="sect3">
-<h4 id="comments"><a class="link" href="#comments">Comments</a></h4>
-<div class="paragraph">
-<p>The first tab shows comments on the current issue. Comments can be added by clicking the <code>Comment</code> button.</p>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-When you are in the comment field, "Close Task" button changes to "Comment &amp; Close Task" to comment and close with one click.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>To <strong>edit</strong> or <strong>delete</strong> a comment, click on the <strong>kebab</strong> icon to the right of the comment, that will show the menu with those two options.
-The number next to the tab title shows the total number of comments.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="items"><a class="link" href="#items">Items</a></h4>
-<div class="paragraph">
-<p>On the second tab, you can update the list of content items in this issue.
-There can be multiple items or no content at all.
-Child/dependent items of the selected content can be toggled by clicking on the tree icon next to the content item.</p>
-</div>
-<div class="paragraph">
-<p>If you are inside a <strong>task</strong> and click the <code>Publish&#8230;&#8203;</code> button, you will be taken to the Publishing Wizard where you can publish items immediately
-or schedule publishing.
-For a <em>Publish Request</em> you can publish items or schedule publish directly from this dialog.</p>
-</div>
-<div class="paragraph">
-<p>The number next to the tab title shows the total number of content items inside the issue.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="issues/images/dialog-issue-edit-2.png" alt="Issue content" width="700">
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="assignees"><a class="link" href="#assignees">Assignees</a></h4>
-<div class="paragraph">
-<p>On the third tab, assignees can be added and removed from this issue. The number next to the tab title shows the total number of assignees.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="issues/images/dialog-issue-edit-3.png" alt="Issue assignees" width="700">
-</div>
-</div>
-</div>
+<p>Selecting <strong>Custom</strong> will list all of the permissions. Clicking on permission will toggle it between white (not granted), green (granted) and red (denied).</p>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-04-23 07:05:41 UTC
+Last updated 2026-04-23 07:06:07 UTC
 </div>
 </div>
 </body>
