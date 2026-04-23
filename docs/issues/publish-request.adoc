@@ -8,7 +8,7 @@ Publish requests are separate from <<../issues#,Tasks>> but share the same list 
 
 == Creating a request
 
-The *Request publishing* action is available from the same places as <<publish#,Publish>> — the toolbar, the context menu, and the Content Editor — but it replaces the *Publish* button for users without publish permission.
+The *Request publishing* action is available from the same places as <<../actions/publish#,Publish>> — the toolbar, the context menu, and the Content Editor — but it replaces the *Publish* button for users without publish permission.
 
 TIP: When *Request publishing* is invoked on a single item that is currently *In progress*, the item is automatically marked *Ready for publishing*, on the assumption that requesting a publish signals the work is finished.
 

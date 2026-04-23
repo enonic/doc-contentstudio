@@ -2,13 +2,13 @@
 :toc: right
 :imagesdir: actions/images
 
-Actions are the verbs editors use day-to-day on content — creating, editing, moving, sorting, and so on. They are available from three consistent places:
+Actions are the verbs editors use day-to-day on content — creating, editing, moving, publishing, and so on. They are available from three consistent places:
 
-* The *toolbar* at the top of the <<navigator#,Content Navigator>> and the <<editor#,Content Editor>>.
+* The *toolbar* at the top of the <<navigator#,Navigator>> and the <<editor#,Editor>>.
 * The *context menu* that appears when right-clicking an item in the Navigator.
 * *Keyboard shortcuts* — see the <<keyboard-shortcuts#,Keyboard shortcuts>> reference for the full list.
 
-Whether a given action is shown, enabled, or disabled depends on two things: the selection (what content is currently selected) and the user's <<permissions#,permissions>> on that content.
+Whether a given action is shown, enabled, or disabled depends on two things: the selection (what content is currently selected) and the user's <<navigator/permissions#,permissions>> on that content.
 
 == In this chapter
 
@@ -30,6 +30,15 @@ Configure how child items of the selected content are ordered in the Navigator a
 <<actions/preview#,Preview>>::
 Open the rendered page for a site or page content in a new browser tab.
 
+<<actions/publish#,Publish>>::
+Push content from the _draft_ branch to _master_ so it becomes available online. Covers the publishing wizard, scheduled publishing, and publishing with dependencies.
+
+<<actions/unpublish#,Unpublish>>::
+Remove published content from _master_. Descendants are unpublished along with the selection.
+
+<<actions/delete#,Delete>>::
+Remove content from the active tree. Deleted items are moved to the <<archive#,Archive>>, preserving descendants and version history so they can be restored.
+
 == Related reference
 
-Publishing actions (*Publish*, *Unpublish*, *Mark as ready*, *Request publishing*) live with the state machine they operate on — see <<workflow#,Workflow>>. Archiving (*Archive* and permanent *Delete*) is documented on the <<archive#,Archive>> page. Issue-creation entry points (*Create task*) are documented under <<issues#,Issues>>.
+*Mark as ready* and the publishing state machine are documented under <<workflow#,Workflow>>. *Request publishing* (the review/approval handoff variant of Publish) is a kind of issue — see <<issues/publish-request#,Publish request>>. *Permanent delete* (from the archive) and restoring archived items are on the <<archive#,Archive>> page. The *Create task* entry point is documented under <<issues#,Issues>>.

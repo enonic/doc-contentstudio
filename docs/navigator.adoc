@@ -16,7 +16,7 @@ The Menu Toolbar in the Content Navigator has buttons for the following actions:
 
 * *New:* Opens the <<actions/new#,New content>> dialog for creating new content;
 * *Edit:* Opens the content for <<actions/edit#,editing>> in a new browser tab;
-* *Archive:* Opens the <<archive#,Archive item(s)>> dialog for the selected content.
+* *Delete:* Opens the <<actions/delete#,Delete>> dialog for the selected content. Deleted items are moved to the <<archive#,Archive>>.
 * *Duplicate:* Makes a <<actions/duplicate#,copy>> of the selected content;
 * *Move:* Opens the <<actions/move#,Move item(s) with children>> dialog;
 * *Sort:* Opens the <<actions/sort#,Sort items>> dialog where child items of the selected content can be sorted;
@@ -25,11 +25,11 @@ Dropdown action button on the right of the Toolbar is context-dependent and will
 
 image::navigator-action-menu.png[Toolbar, 25%,align="center"]
 
- * If selected content is not published: *Publish* (opens the <<workflow/publish#_publishing_wizard,Publishing wizard>> dialog)
- * If selected content is published: *Unpublish* (opens the <<workflow/unpublish#,Unpublish Wizard>> dialog for taking the content offline)
- * If selected content is published but has child items that are not published: *Publish Tree* (opens the <<workflow/publish#_publish_tree,Publishing wizard>> dialog with selected content and all descendants)
+ * If selected content is not published: *Publish* (opens the <<actions/publish#_publishing_wizard,Publishing wizard>> dialog)
+ * If selected content is published: *Unpublish* (opens the <<actions/unpublish#,Unpublish Wizard>> dialog for taking the content offline)
+ * If selected content is published but has child items that are not published: *Publish Tree* (opens the <<actions/publish#_publish_tree,Publishing wizard>> dialog with selected content and all descendants)
  * If selected content has workflow state "In progress": *Mark as Ready* (to mark selected content item(s) as ready for publishing)
- * If selected content is not published and current user doesn't have publishing permissions: *Request Publishing* (opens the <<workflow/publish-request#,Publish Request>> wizard)
+ * If selected content is not published and current user doesn't have publishing permissions: *Request Publishing* (opens the <<issues/publish-request#,Publish Request>> wizard)
  * If no content is selected: *Create Task* opens the <<issues#create_a_task,New Task>> dialog
 
 These options are also available in the context menu that appears when right-clicking on a content item in the tree grid panel.
@@ -49,7 +49,7 @@ image::navigator-accessibility.png[Toolbar accessibility, 50%, align="center"]
 The search panel can be toggled with the image:navigator-m-glass.png[title=Search icon, width=24px] icon at the far left of the menu bar. It contains a free-text search field and several parameters to filter the content list by:
 
 * Free-text search (by content Id, display name or path)
-* <<content-types#,Content Types>>
+* Content type
 * Last modification date
 * Last modifier
 * Owner
@@ -63,7 +63,7 @@ Search results are instantly updated in the tree grid as search parameters are c
 
 The number of hits will appear below the search field, along with a `Clear` button that will reset the filter.
 
-Each content type that has at least one matching content will appear in the <<content-types#,Content Types>> filter list with the number of matches in brackets `()`. Checking the box next to a content type will hide the results that do not match that type. Multiple content types can be selected. By default, only the 5 most popular content types will be shown, followed by "Show more" link to expand the entire list.
+Each content type that has at least one matching content will appear in the *Content type* filter list with the number of matches in brackets `()`. Checking the box next to a content type will hide the results that do not match that type. Multiple content types can be selected. By default, only the 5 most popular content types will be shown, followed by "Show more" link to expand the entire list.
 
 image::navigator-search-expanded.png[Full content type list, 75%,align="center"]
 
@@ -166,7 +166,7 @@ Status::
 Current content status: _New_, _Modified_, _Published_, _Unpublished_, or _Archived_. See <<workflow#,Workflow>> for the state model.
 
 User access::
-The effective <<permissions#,permissions>> for the current user. The *Edit Permissions* link opens the permissions dialog.
+The effective <<navigator/permissions#,permissions>> for the current user. The *Edit Permissions* link opens the permissions dialog.
 
 Properties::
 Metadata about the content — its type, owner, and created/modified timestamps.
@@ -175,7 +175,7 @@ Schedule::
 The from/to dates the content is scheduled to be online. Only shown for published content that has a schedule configured.
 
 Page template::
-The <<content-types#_page_template,page template>> used to render the content, if any.
+The <<sites/page-templates#,page template>> used to render the content, if any.
 
 Attachments::
 Downloadable binary attachments on the content item.

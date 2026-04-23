@@ -14,7 +14,7 @@ The states:
 * *<<#_published,Published>>* — the active version in the `draft` branch matches what is live on `master`.
 * *<<#_unpublished,Unpublished>>* — previously published content that has been taken offline.
 
-Transitions are driven by four actions: *Mark as ready*, *<<workflow/publish-request#,Request publishing>>*, *<<workflow/publish#,Publish>>*, and *<<workflow/unpublish#,Unpublish>>*.
+Transitions are driven by four actions: *Mark as ready*, *<<actions/publish#,Publish>>*, *<<actions/unpublish#,Unpublish>>*, and *<<issues/publish-request#,Request publishing>>* (documented under Issues because a publish request is an issue type with assignees, comments, and a shared Open-Issues list).
 
 [[_in_progress]]
 == In progress
@@ -23,7 +23,7 @@ The default state of a new content item. Signals that the content is being worke
 
 image::content-in-progress.png[In-progress content in the editor, 484]
 
-In-progress content is *not eligible for publishing* — this is deliberate, to keep unfinished content from being published by accident. The <<workflow/publish#,Publishing wizard>> will block the batch and highlight the offending items:
+In-progress content is *not eligible for publishing* — this is deliberate, to keep unfinished content from being published by accident. The <<actions/publish#,Publishing wizard>> will block the batch and highlight the offending items:
 
 image::publish-wizard-in-progress.png[In-progress content blocked in the Publishing wizard, 655]
 
@@ -38,7 +38,7 @@ Set by the *Mark as ready* action from the Content Editor or Content Navigator. 
 
 image::content-ready.png[Ready-for-publishing content in the editor, 1230]
 
-The default toolbar action changes to *<<workflow/publish#,Publish>>* (if the user has publish permission) or *<<workflow/publish-request#,Request publishing>>* (if not).
+The default toolbar action changes to *<<actions/publish#,Publish>>* (if the user has publish permission) or *<<issues/publish-request#,Request publishing>>* (if not).
 
 TIP: Editors with publish permission may still use *Request publishing* when content needs sign-off or additional input from another user.
 
@@ -47,7 +47,7 @@ Any edit to a *Ready for publishing* item immediately resets it to *In progress*
 [[_publish_request]]
 == Publish request
 
-Set when another user has been asked to review and publish the item via the *Request publishing* action. The full wizard, the request dialog, and how requests are managed are documented on the <<workflow/publish-request#,Publish request>> page.
+Set when another user has been asked to review and publish the item via the *Request publishing* action. The full wizard, the request dialog, and how requests are managed are documented on the <<issues/publish-request#,Publish request>> page.
 
 [[_published]]
 == Published
@@ -61,4 +61,4 @@ image::modified-content.png[Modified (published + in-progress) content, 500]
 [[_unpublished]]
 == Unpublished
 
-Set when a previously-published item is removed from `master` via the <<workflow/unpublish#,Unpublish>> action. Unpublishing an item automatically unpublishes all of its descendants.
+Set when a previously-published item is removed from `master` via the <<actions/unpublish#,Unpublish>> action. Unpublishing an item automatically unpublishes all of its descendants.

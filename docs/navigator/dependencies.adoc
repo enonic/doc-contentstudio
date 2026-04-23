@@ -19,6 +19,6 @@ image::widgets-dependencies-filter.png[Dependencies filtered by type, 370]
 
 Dependencies are checked throughout the publishing lifecycle:
 
-* <<../workflow/publish#,Publishing>> automatically includes required inbound dependencies in the batch so the published page does not end up with missing references.
-* <<../archive#,Archive>> warns if another content depends on the item being archived.
-* <<../workflow/unpublish#,Unpublish>> warns if a _published_ content depends on the item being taken offline.
+* <<../actions/publish#,Publishing>> automatically includes required inbound dependencies in the batch so the published page does not end up with missing references.
+* <<../actions/delete#,Delete>> warns if another content depends on the item being deleted.
+* <<../actions/unpublish#,Unpublish>> warns if a _published_ content depends on the item being taken offline.

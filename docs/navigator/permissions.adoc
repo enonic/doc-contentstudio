@@ -1,6 +1,6 @@
 = Permissions
-:toc: right1
-:imagesdir: permissions/images
+:toc: right
+:imagesdir: images
 
 Security of content is determined by the principals and permissions in the content’s security settings. Principals are *Users*, *Groups* and *Roles* which are managed in the Users application. Principals are added to each content. Permissions are granted to the principals of the content.
 

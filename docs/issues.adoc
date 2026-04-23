@@ -2,10 +2,11 @@
 :toc: right
 :imagesdir: issues/images
 
-There are two types of issues in Content Studio: tasks and publish requests.
+There are two types of issues in Content Studio: *tasks* and *publish requests*. Both are lightweight work items with assignees, comments, and an Open/Closed state — the *Open Issues* dialog lists both together on separate tabs.
 
-*Tasks* are used to assign general tasks, like spellcheck an article, or add new content to a site.
-*Publish Requests* are typically used when you have made some changes to a content which you want someone else to approve and publish.
+*Tasks* are general editorial work items — "spellcheck this article", "add new content to this section". See <<#_tasks,Tasks>> below.
+
+*Publish requests* ask another user to review and publish content. Because they have their own wizard and dialog, they are documented on a dedicated page — see <<issues/publish-request#,Publish request>>.
 
 == Issues list
 
@@ -48,7 +49,7 @@ To add specific content to an issue, click on the `Add items` button. The *Items
 
 image::dialog-issue-1.png[New task, 708]
 
-You can read about creating a new Publishing Request on the <<workflow/publish-request#,Publish request>> page.
+You can read about creating a new Publishing Request on the <<issues/publish-request#,Publish request>> page.
 
 === Update an issue
 

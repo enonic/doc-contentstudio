@@ -20,7 +20,7 @@ The Publish button's dropdown in the toolbar carries several related actions:
 * *Publish* — opens the Publishing wizard for the selected items.
 * *<<#_publish_tree,Publish tree>>* — same wizard, including all descendants and dependencies.
 * *<<unpublish#,Unpublish>>* — available only for published items.
-* *<<publish-request#,Request publishing>>* — available only for unpublished items.
+* *<<../issues/publish-request#,Request publishing>>* — available only for unpublished items.
 * *<<../issues#,Create task>>* — opens the *New Task* dialog.
 
 NOTE: The default action shown on the toolbar button is the first available action for the current selection.
@@ -50,7 +50,7 @@ In the example below, the post "_March madness_" was selected for publishing. It
 
 TIP: The calendar icon next to *Publish Now* enables <<#_scheduled_publishing,scheduled publishing>>.
 
-NOTE: If the current user lacks publish permission for any of the batched items, *Publish All* is replaced by *<<publish-request#,Request Publishing>>*.
+NOTE: If the current user lacks publish permission for any of the batched items, *Publish All* is replaced by *<<../issues/publish-request#,Request Publishing>>*.
 
 === Dependencies
 
