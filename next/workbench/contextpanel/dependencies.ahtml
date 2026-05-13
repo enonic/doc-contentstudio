@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.26">
-<title>Content navigator</title>
+<title>Dependencies</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -437,26 +437,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article toc2 toc-right">
 <div id="header">
-<h1>Content navigator</h1>
+<h1>Dependencies</h1>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#toolbar">Toolbar</a>
-<ul class="sectlevel2">
-<li><a href="#accessibility">Accessibility</a></li>
-</ul>
-</li>
-<li><a href="#search_panel">Search Panel</a></li>
-<li><a href="#content_tree">Content Tree</a></li>
-<li><a href="#preview_panel">Preview panel</a></li>
-<li><a href="#context_panel">Context panel</a>
-<ul class="sectlevel2">
-<li><a href="#widget_selector">Widget selector</a></li>
-<li><a href="#built_in_widgets">Built-in widgets</a></li>
-<li><a href="#content_studio_widgets">Content Studio+ widgets</a></li>
-<li><a href="#custom_widgets">Custom widgets</a></li>
-</ul>
-</li>
+<li><a href="#dependencies_and_publishing">Dependencies and publishing</a></li>
 </ul>
 </div>
 </div>
@@ -464,451 +449,61 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Content navigator is the default page of <strong>Content Studio</strong>.
-It consists of the <a href="#toolbar">action toolbar</a> on top, followed by the main view divided in four vertical responsive panels, from left to right: <a href="#search_panel">Search panel</a>, <a href="#content_tree">Content tree</a>, <a href="#preview_panel">Preview panel</a> and <a href="#context_panel">Context panel</a>.</p>
+<p>Content items reference each other — pages embed images, shortcuts target content, text fields link to other items. Those references are <strong>dependencies</strong>. Content Studio tracks them in both directions, and makes them inspectable via the <strong>Dependencies</strong> widget in the <a href="../contextpanel.ahtml">Context panel</a>.</p>
 </div>
-<div class="imageblock text-center">
+<div class="ulist">
+<ul>
+<li>
+<p>An <strong>inbound</strong> dependency is content that <em>uses</em> the selected item — for example, a page that embeds it, or a shortcut that points at it.</p>
+</li>
+<li>
+<p>An <strong>outbound</strong> dependency is content that the selected item <em>uses</em> — for example, images referenced in its rich-text fields, or targets of content selectors.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
 <div class="content">
-<img src="navigator/images/navigator.png" alt="Content Navigator" width="90%">
+<img src="images/widgets-dependencies.png" alt="Dependencies widget" width="207">
+</div>
+</div>
+<div class="paragraph">
+<p>Inbound dependencies are listed above the content box, outbound below. When there are no dependencies of a kind, the widget shows a placeholder (<em>No incoming dependencies</em>, etc.). When there are dependencies, a button displays the total count, with icons and counts broken out per content type.</p>
+</div>
+<div class="paragraph">
+<p>Clicking the count button opens a new browser tab listing all dependencies of that direction. Clicking a per-type icon opens the same view, pre-filtered to that type.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/widgets-dependencies-filter.png" alt="Dependencies filtered by type" width="370">
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="toolbar"><a class="link" href="#toolbar">Toolbar</a></h2>
-<div class="sectionbody">
-<div class="imageblock">
-<div class="content">
-<img src="navigator/images/navigator-toolbar.png" alt="Toolbar" width="75%">
-</div>
-</div>
-<div class="paragraph">
-<p>The Menu Toolbar in the Content Navigator has buttons for the following actions:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>New:</strong> Opens the <a href="actions/new.ahtml">New content</a> dialog for creating new content;</p>
-</li>
-<li>
-<p><strong>Edit:</strong> Opens the content for <a href="actions/edit.ahtml">editing</a> in a new browser tab;</p>
-</li>
-<li>
-<p><strong>Delete:</strong> Opens the <a href="actions/delete.ahtml">Delete</a> dialog for the selected content. Deleted items are moved to the <a href="archive.ahtml">Archive</a>.</p>
-</li>
-<li>
-<p><strong>Duplicate:</strong> Makes a <a href="actions/duplicate.ahtml">copy</a> of the selected content;</p>
-</li>
-<li>
-<p><strong>Move:</strong> Opens the <a href="actions/move.ahtml">Move item(s) with children</a> dialog;</p>
-</li>
-<li>
-<p><strong>Sort:</strong> Opens the <a href="actions/sort.ahtml">Sort items</a> dialog where child items of the selected content can be sorted;</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Dropdown action button on the right of the Toolbar is context-dependent and will have a different main action preset, depending on if a content is selected, what state content has, current user permissions etc.:</p>
-</div>
-<div class="imageblock text-center">
-<div class="content">
-<img src="navigator/images/navigator-action-menu.png" alt="Toolbar" width="25%">
-</div>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>If selected content is not published: <strong>Publish</strong> (opens the <a href="actions/publish.ahtml#_publishing_wizard">Publishing wizard</a> dialog)</p>
-</li>
-<li>
-<p>If selected content is published: <strong>Unpublish</strong> (opens the <a href="actions/unpublish.ahtml">Unpublish Wizard</a> dialog for taking the content offline)</p>
-</li>
-<li>
-<p>If selected content is published but has child items that are not published: <strong>Publish Tree</strong> (opens the <a href="actions/publish.ahtml#_publish_tree">Publishing wizard</a> dialog with selected content and all descendants)</p>
-</li>
-<li>
-<p>If selected content has workflow state "In progress": <strong>Mark as Ready</strong> (to mark selected content item(s) as ready for publishing)</p>
-</li>
-<li>
-<p>If selected content is not published and current user doesn&#8217;t have publishing permissions: <strong>Request Publishing</strong> (opens the <a href="issues/publish-request.ahtml">Publish Request</a> wizard)</p>
-</li>
-<li>
-<p>If no content is selected: <strong>Create Task</strong> opens the <a href="issues.ahtml#create_a_task">New Task</a> dialog</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>These options are also available in the context menu that appears when right-clicking on a content item in the tree grid panel.</p>
-</div>
-<div class="sect2">
-<h3 id="accessibility"><a class="link" href="#accessibility">Accessibility</a></h3>
-<div class="paragraph">
-<p>The toolbar supports keyboard navigation. When focused, the toolbar itself and its every interactable child element will be highlighted with a border. When the toolbar is focused, the following keys can be used to navigate and activate its elements:
-* Arrow buttons to navigate between action buttons
-* <code>Enter</code> or <code>Space</code> to activate the focused action button or expand the dropdown</p>
-</div>
-<div class="paragraph">
-<p>Additionally, some action buttons have keyboard shortcuts that are displayed on cursor hover.</p>
-</div>
-<div class="imageblock text-center">
-<div class="content">
-<img src="navigator/images/navigator-accessibility.png" alt="Toolbar accessibility" width="50%">
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="search_panel"><a class="link" href="#search_panel">Search Panel</a></h2>
+<h2 id="dependencies_and_publishing"><a class="link" href="#dependencies_and_publishing">Dependencies and publishing</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The search panel can be toggled with the <span class="image"><img src="navigator/images/navigator-m-glass.png" alt="navigator m glass" width="24px" title="Search icon"></span> icon at the far left of the menu bar. It contains a free-text search field and several parameters to filter the content list by:</p>
+<p>Dependencies are checked throughout the publishing lifecycle:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Free-text search (by content Id, display name or path)</p>
+<p><a href="../../actions/publish.ahtml">Publishing</a> automatically includes required inbound dependencies in the batch so the published page does not end up with missing references.</p>
 </li>
 <li>
-<p>Content type</p>
+<p><a href="../../actions/delete.ahtml">Delete</a> warns if another content depends on the item being deleted.</p>
 </li>
 <li>
-<p>Last modification date</p>
-</li>
-<li>
-<p>Last modifier</p>
-</li>
-<li>
-<p>Owner</p>
-</li>
-<li>
-<p>Language</p>
+<p><a href="../../actions/unpublish.ahtml">Unpublish</a> warns if a <em>published</em> content depends on the item being taken offline.</p>
 </li>
 </ul>
-</div>
-<div class="imageblock text-center">
-<div class="content">
-<img src="navigator/images/navigator-search.png" alt="Search and filtering" width="75%">
-</div>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-Search results can at any time (except for when there are no hits) be exported to a CSV file using the download icon underneath the free-text search field. The file will contain basic meta fields (id, display-name, path etc.), not custom input fields from the content type schema.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Search results are instantly updated in the tree grid as search parameters are changed. Children of matching content items will also be displayed in the tree grid but won’t be visible unless the parent node is expanded.</p>
-</div>
-<div class="paragraph">
-<p>The number of hits will appear below the search field, along with a <code>Clear</code> button that will reset the filter.</p>
-</div>
-<div class="paragraph">
-<p>Each content type that has at least one matching content will appear in the <strong>Content type</strong> filter list with the number of matches in brackets <code>()</code>. Checking the box next to a content type will hide the results that do not match that type. Multiple content types can be selected. By default, only the 5 most popular content types will be shown, followed by "Show more" link to expand the entire list.</p>
-</div>
-<div class="imageblock text-center">
-<div class="content">
-<img src="navigator/images/navigator-search-expanded.png" alt="Full content type list" width="75%">
-</div>
-</div>
-<div class="paragraph">
-<p>The <strong>Last Modified</strong> list works in a similar manner. It is used to limit results to content that has been modified in the last month, week, day or hour. This list may not appear if other search parameters have limited results to content that was modified more than a month ago.</p>
-</div>
-<div class="paragraph">
-<p>Filter aggregations for <strong>Last modified by</strong> and <strong>Owner</strong> are dropdowns with the list of users who last modified content or are content owners. To simplify search for the current user, there&#8217;s <strong>Me</strong> checkbox in both aggregations which serves as an alias for the current user. Selected users will be displayed as checkboxes above the dropdown.</p>
-</div>
-<div class="imageblock text-center">
-<div class="content">
-<img src="navigator/images/navigator-search-modifier-expanded.png" alt="Listing all modifiers" width="75%">
-</div>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-Search results remain in the tree grid when the search panel is collapsed. Don’t forget to clear the search when you are done with your search.
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="content_tree"><a class="link" href="#content_tree">Content Tree</a></h2>
-<div class="sectionbody">
-<div class="imageblock text-center">
-<div class="content">
-<img src="navigator/images/navigator-grid.png" alt="Listing content items" width="75%">
-</div>
-</div>
-<div class="paragraph">
-<p>Content items can be organized and stored in a tree hierarchy with child items collapsed under parent content. Parent content will have a gray triangle to the left of the content icon that can be clicked to expand or collapse the list of its children.</p>
-</div>
-<div class="paragraph">
-<p>The content tree can also be navigated with the keyboard arrow keys.</p>
-</div>
-<div class="paragraph">
-<p>Content tree has its own toolbar with an icon to refresh the content list and a checkbox to select or deselect all the content items in the grid.</p>
-</div>
-<div class="imageblock text-center">
-<div class="content">
-<img src="navigator/images/navigator-selector.png" alt="Listing content items" width="25%">
-</div>
-</div>
-<div class="paragraph">
-<p>Information in the content list is displayed in four columns. The number of columns may vary, depending on the content tree width.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>The first column contains a content type icon, a display name and a path. A gray expand icon will appear to the left of the icon if the content has child content.</p>
-</li>
-<li>
-<p>The second column shows the icon, representing the current <a href="actions/sort.ahtml">sorting</a> order of the content&#8217;s children.</p>
-</li>
-<li>
-<p>The third column shows status of the content: <code>New</code>, <code>Published</code>, <code>Unpublished</code> or <code>Modified</code>.</p>
-</li>
-<li>
-<p>The fourth column shows the date when content was last modified.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Checkboxes to the left of each content in the tree can be used to select more than one content. Group actions available in the menu bar will be performed on all the selected content. Some actions can only be performed on one content at a time.</p>
-</div>
-<div class="paragraph">
-<p>Double-click on a content item will open it for <a href="editor.ahtml">edit</a> in a new browser tab.</p>
-</div>
-<div class="paragraph">
-<p>Right-click on a content item will expand its context menu.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="preview_panel"><a class="link" href="#preview_panel">Preview panel</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>A preview of the selected content appears inside a panel to the right of the Content Tree. The preview is dynamic, so
-clicking a link will navigate you to the target page, both inside the preview panel and the Content Tree.</p>
-</div>
-<div class="paragraph">
-<p>Toolbar of the preview panel contains the following:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Current status of the selected content item (f.ex. <code>New</code>, <code>Published</code>, <code>Unpublished</code>, <code>Modified</code>). For items that have been published and then modified there will be an icon (<span class="image"><img src="navigator/images/navigator-compare.png" alt="navigator compare" width="24px" title="Show changes"></span>) to compare current version with the published version.</p>
-</li>
-</ul>
-</div>
-<div class="imageblock text-center">
-<div class="content">
-<img src="navigator/images/navigator-preview.png" alt="Showing content preview" width="75%">
-</div>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Emulator dropdown to emulate screen resolutions of various device types  (monitor, tablet, mobile) for the preview.</p>
-</li>
-</ul>
-</div>
-<div class="imageblock text-center">
-<div class="content">
-<img src="navigator/images/navigator-preview-emulator.png" alt="Preview emulator" width="25%">
-</div>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Current preview mode. The default mode is "<strong>Automatic</strong>" which will automatically find and use the first mode that supports preview of the current content. You can explicitly select a mode from the dropdown list. Select "<strong>Media</strong>" to preview media content (if supported by browsers), "<strong>Enonic rendering</strong>" to use Enonic&#8217;s Site Engine and "JSON" to display current content in JSON format.</p>
-</li>
-</ul>
-</div>
-<div class="imageblock text-center">
-<div class="content">
-<img src="navigator/images/navigator-preview-mode.png" alt="Preview mode selector" width="25%">
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Even though any content can be displayed in the JSON format, this mode is not used as a fallback in the "Automatic" mode.
-</td>
-</tr>
-</table>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="image"><img src="navigator/images/navigator-preview-button.png" alt="navigator preview button" width="90px" title="Preview button"></span> button will open the content preview in a new browser tab. Note that the currently selected preview mode will be used in the new tab.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>If currently selected content cannot be rendered by any of the available preview modes, the preview panel will display an error message.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Only the <strong>Draft</strong> version of content is visible in the preview panel.
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="context_panel"><a class="link" href="#context_panel">Context panel</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The <strong>Context panel</strong> is the multi-function column on the right of the Content Navigator (and the <a href="editor.ahtml">Content Editor</a>). It hosts a set of <strong>widgets</strong> — small tools that act on the currently selected content item. Widgets can be built-in, shipped by <a href="https://market.enonic.com/vendors/enonic/content-studio-plus">Content Studio+</a>, or contributed by any installed application.</p>
-</div>
-<div class="imageblock text-center">
-<div class="content">
-<img src="navigator/images/navigator-context-panel.png" alt="Context panel" width="50%">
-</div>
-</div>
-<div class="paragraph">
-<p>The panel is toggled open and closed with the <span class="image"><img src="navigator/images/navigator-context-panel-icon.png" alt="navigator context panel icon" width="24px" title="Context panel toggle"></span> icon next to the Action-menu button, or (in the Content Editor) with the cog icon on the right of the editor toolbar.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="navigator/images/widgets-panel-button.png" alt="Context panel toggle" width="209">
-</div>
-</div>
-<div class="sect2">
-<h3 id="widget_selector"><a class="link" href="#widget_selector">Widget selector</a></h3>
-<div class="paragraph">
-<p>The dropdown at the top of the panel lists the available widgets: the built-ins appear first, followed by widgets from installed applications. A filter field at the top narrows the list by keyword.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="navigator/images/widgets-search.png" alt="Widget selector with filter" width="206">
-</div>
-</div>
-<div class="imageblock text-center">
-<div class="content">
-<img src="navigator/images/navigator-widget-selector.png" alt="Widget selector" width="25%">
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="built_in_widgets"><a class="link" href="#built_in_widgets">Built-in widgets</a></h3>
-<div class="sect3">
-<h4 id="details"><a class="link" href="#details">Details</a></h4>
-<div class="paragraph">
-<p>The <strong>Details</strong> widget shows the basic properties of the selected content item — the core metadata an editor typically needs to know without opening the item.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="navigator/images/widgets-details.png" alt="Details widget" width="450">
-</div>
-</div>
-<div class="paragraph">
-<p>The widget is organised into sections:</p>
-</div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Content</dt>
-<dd>
-<p>Icon, display name, and full content path.</p>
-</dd>
-<dt class="hdlist1">Status</dt>
-<dd>
-<p>Current content status: <em>New</em>, <em>Modified</em>, <em>Published</em>, <em>Unpublished</em>, or <em>Archived</em>. See <a href="workflow.ahtml">Workflow</a> for the state model.</p>
-</dd>
-<dt class="hdlist1">User access</dt>
-<dd>
-<p>The effective <a href="navigator/permissions.ahtml">permissions</a> for the current user. The <strong>Edit Permissions</strong> link opens the permissions dialog.</p>
-</dd>
-<dt class="hdlist1">Properties</dt>
-<dd>
-<p>Metadata about the content — its type, owner, and created/modified timestamps.</p>
-</dd>
-<dt class="hdlist1">Schedule</dt>
-<dd>
-<p>The from/to dates the content is scheduled to be online. Only shown for published content that has a schedule configured.</p>
-</dd>
-<dt class="hdlist1">Page template</dt>
-<dd>
-<p>The <a href="sites/page-templates.ahtml">page template</a> used to render the content, if any.</p>
-</dd>
-<dt class="hdlist1">Attachments</dt>
-<dd>
-<p>Downloadable binary attachments on the content item.</p>
-</dd>
-</dl>
-</div>
-</div>
-<div class="sect3">
-<h4 id="versions_dependencies_components"><a class="link" href="#versions_dependencies_components">Versions, Dependencies, Components</a></h4>
-<div class="ulist">
-<ul>
-<li>
-<p>The <strong>Version history</strong> widget lists every version of the selected item and lets you compare or revert. See <a href="editor/versions.ahtml">Versions</a>.</p>
-</li>
-<li>
-<p>The <strong>Dependencies</strong> widget shows the inbound and outbound references between the item and other content. See <a href="navigator/dependencies.ahtml">Dependencies</a>.</p>
-</li>
-<li>
-<p>The <strong>Components</strong> widget is the page-building tool that appears in the Content Editor for renderable content. See <a href="editor/page-editor.ahtml#_components_widget">Page editor</a>.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="content_studio_widgets"><a class="link" href="#content_studio_widgets">Content Studio+ widgets</a></h3>
-<div class="paragraph">
-<p>The following widgets are contributed by <a href="https://market.enonic.com/vendors/enonic/content-studio-plus">Content Studio+</a>:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="layers.ahtml#layers_panel">Layers</a> — shows the status of a content item across every layer in the system.</p>
-</li>
-<li>
-<p><a href="editor/variants.ahtml">Variants</a> — creates and manages A/B variants of the selected item.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="custom_widgets"><a class="link" href="#custom_widgets">Custom widgets</a></h3>
-<div class="paragraph">
-<p>The Context panel is <strong>pluggable</strong>: any installed application can contribute a widget that appears in the widget selector. The interface for contributing a widget is <code>contentstudio.contextpanel</code>; see the <a href="https://developer.enonic.com/docs/xp/stable/admin/widgets">XP admin widgets reference</a> for the descriptor format and lifecycle.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="navigator/images/widgets-context-panel.png" alt="Custom widget in the Context panel" width="207">
-</div>
-</div>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-04-23 07:11:27 UTC
+Last updated 2026-05-13 08:06:51 UTC
 </div>
 </div>
 </body>

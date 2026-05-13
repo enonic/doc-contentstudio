@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.26">
-<title>Archive</title>
+<title>Permissions</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -437,15 +437,14 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article toc2 toc-right">
 <div id="header">
-<h1>Archive</h1>
+<h1>Permissions</h1>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#archive_in_layers">Archive in layers</a></li>
-<li><a href="#archive_view">Archive view</a></li>
-<li><a href="#restore">Restore</a></li>
-<li><a href="#permanent_deletion">Permanent deletion</a></li>
-<li><a href="#version_history">Version history</a></li>
+<li><a href="#principals">Principals</a></li>
+<li><a href="#permissions">Permissions</a></li>
+<li><a href="#public_content">Public content</a></li>
+<li><a href="#editing_permissions">Editing permissions</a></li>
 </ul>
 </div>
 </div>
@@ -453,143 +452,107 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>The <strong>Archive</strong> is a separate storage area where deleted content is held before it is permanently removed. It preserves the structure of removed items (descendants, attachments, version history) so content can be restored if it is deleted by mistake.</p>
-</div>
-<div class="paragraph">
-<p>Content ends up in the Archive via the <a href="actions/delete.ahtml">Delete</a> action from the Navigator or Editor. From the Archive, items can be <strong>restored</strong> to their original location or permanently deleted.</p>
+<p>Security of content is determined by the principals and permissions in the content’s security settings. Principals are <strong>Users</strong>, <strong>Groups</strong> and <strong>Roles</strong> which are managed in the Users application. Principals are added to each content. Permissions are granted to the principals of the content.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="archive_in_layers"><a class="link" href="#archive_in_layers">Archive in layers</a></h2>
+<h2 id="principals"><a class="link" href="#principals">Principals</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>When <a href="layers.ahtml">layers</a> are involved:</p>
+<p>Individual users could be added to each content. But security is easier to manage by adding groups and roles to each content and then granting the appropriate permissions to these groups and roles. When a group is added to content then all users who are members of that group will have the group permissions for that content. Similarly, when a role is granted permissions to content, all users who have that role will also have those permissions.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="permissions"><a class="link" href="#permissions">Permissions</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Permissions are granted to principals on a per-content basis. This means that changing a principal’s permissions for one content does not affect that principal’s permissions for other content. Below is a list of permissions that can be applied to each principal for any content.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Deleting a content item in a parent project automatically archives it in all child layers where it is not localised.</p>
+<p><strong>Read:</strong> The principal can see this content;</p>
 </li>
 <li>
-<p>Creating a new layer automatically inherits the archive of its parent project/layer.</p>
+<p><strong>Create:</strong> The principal can create child items under this content. For example, if a user has this permission on a folder then the user can create new content in the folder;</p>
 </li>
 <li>
-<p>Deleting an inherited (non-localised) item directly in a layer does not recreate it in the "main" storage — this is the intended way to prune unwanted inherited items from a layer.</p>
+<p><strong>Modify:</strong> The principal can edit this content and save changes in the draft branch;</p>
 </li>
 <li>
-<p>Permanently deleting a content item from a layer&#8217;s archive can recreate it in that layer&#8217;s main storage if it still exists in the parent (unless it was originally localised in the layer).</p>
+<p><strong>Delete:</strong> The principal can delete this content from the draft branch;</p>
+</li>
+<li>
+<p><strong>Publish:</strong> The principal can publish this content to the master branch;</p>
+</li>
+<li>
+<p><strong>Read permissions:</strong> The principal can see this content’s permissions;</p>
+</li>
+<li>
+<p><strong>Write permissions:</strong> The principal can change this content’s permissions.</p>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>Permissions can also be denied to a principal, even if the permissions would otherwise be granted from another principal. For example, all content editors might be added to a group called <strong>Content editors</strong> which has the <code>Can Publish</code> permissions. But new content editors might break stuff, so they would also be added to a group called <strong>Noobs</strong>. Users in this group could be prevented from publishing and deleting content by denying those permissions to the group.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="archive_view"><a class="link" href="#archive_view">Archive view</a></h2>
+<h2 id="public_content"><a class="link" href="#public_content">Public content</a></h2>
 <div class="sectionbody">
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<strong>Content Studio+ feature.</strong> The dedicated <strong>Archive</strong> section in the main menu is part of the <a href="https://market.enonic.com/vendors/enonic/content-studio-plus">Content Studio+</a> subscription. The <strong>Delete</strong> action itself (moving content to the archive) is available in all installations.
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p>For content to be accessible to the public, (meaning users who are not logged in), it must have the role <strong>Everyone</strong> with the <code>Read</code> permission. The content must also be published. Content without the <strong>Everyone</strong> role can only be seen by users who are logged in and have read access to it through one of the content’s principals.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="editing_permissions"><a class="link" href="#editing_permissions">Editing permissions</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When a site is first created, it will have the roles <strong>Administrator</strong> and <strong>Content Manager Administrator</strong> with full access. It will also have the role of <strong>Content Manager App</strong> with reading access. When content is created it will inherit the security settings from its parent content. The security settings for any content can be changed through the Edit permissions dialog. This can be accessed with the <code>Edit Permissions</code> button in the Security section when editing content, or by the button in the details panel in browse view.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="archive/images/archived-content.png" alt="Archived contents" width="600">
+<img src="permissions/images/permissions-dialog.png" alt="permissions dialog">
 </div>
 </div>
 <div class="paragraph">
-<p>Click the <strong>Archive</strong> icon in the vertical main menu on the left to open the Archive view. It looks much like the Content Navigator with a few differences:</p>
+<p>Opening the <strong>Edit Permissions</strong> dialog shows a list of the current principals and their permissions for the content. By default, all content will inherit permissions from its parent. Permissions cannot be changed until the box for <code>Inherit permissions</code> is unchecked. Any changes that are made will also be applied to all child items that directly or indirectly inherit permissions from this content. There is also a checkbox at the bottom of the dialog labeled <code>Overwrite child permissions</code>. Checking this box will force the new permissions on child content that do not inherit permissions.</p>
+</div>
+<div class="paragraph">
+<p>When the <code>Inherit permissions</code> checkbox is unchecked, a dropdown selector will appear for adding new principals. The permissions for each principal in the list can be determined by the settings in blue letters on the right. Clicking a setting will open a menu with the available options that can be applied, which are listed below:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Only two actions are available: <strong>Restore</strong> and <strong>Delete</strong>. <strong>Restore</strong> returns the selected content to its original location. <strong>Delete</strong> physically removes the selected content from storage.</p>
+<p><strong>Can Read:</strong> Has only the <code>Read</code> permission;</p>
 </li>
 <li>
-<p>Preview works only for media items (images, videos, etc.).</p>
+<p><strong>Can Write:</strong> Has permissions for <code>Read</code>, <code>Create</code>, <code>Modify</code>, and <code>Delete</code>;</p>
 </li>
 <li>
-<p>The widget selector has only two choices: <strong>Details</strong> and <strong>Version history</strong>.</p>
+<p><strong>Can Publish:</strong> Has permissions for <code>Read</code>, <code>Create</code>, <code>Modify</code>, <code>Delete</code>, and <code>Publish</code>;</p>
+</li>
+<li>
+<p><strong>Full Access:</strong> Has all permissions;</p>
+</li>
+<li>
+<p><strong>Custom:</strong> Any combination of permissions.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>The preview panel on the right shows who archived each item, when, and what its original path was.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="restore"><a class="link" href="#restore">Restore</a></h2>
-<div class="sectionbody">
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Archived content can only be restored from the Archive view, which requires <a href="https://market.enonic.com/vendors/enonic/content-studio-plus">Content Studio+</a>.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>The <strong>Restore</strong> action in the Archive view opens the <strong>Restore from Archive</strong> dialog. Content is always restored together with all of its descendants, preserving structure.</p>
-</div>
-<div class="paragraph">
-<p>If an item is restored directly from a layer&#8217;s archive, it is automatically localised (unlinked from the corresponding content in the parent project/layer).</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="archive/images/restore-content.png" alt="Restore-from-archive dialog" width="600">
-</div>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-If the original location is no longer available (for example, another item now occupies the path), the system appends <code>-1</code>, <code>-2</code>, etc. to the restored item&#8217;s path.
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="permanent_deletion"><a class="link" href="#permanent_deletion">Permanent deletion</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The <strong>Delete</strong> action inside the Archive view physically removes the selected content from storage. This is not reversible from the UI — recovery requires a snapshot restore.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="version_history"><a class="link" href="#version_history">Version history</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Delete and restore operations appear as entries in the <a href="editor/versions.ahtml">Version history</a> widget for each content item.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="archive/images/version-history.png" alt="Version history of a restored item" width="394">
-</div>
+<p>Selecting <strong>Custom</strong> will list all of the permissions. Clicking on permission will toggle it between white (not granted), green (granted) and red (denied).</p>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-04-23 07:11:27 UTC
+Last updated 2026-05-13 08:06:51 UTC
 </div>
 </div>
 </body>

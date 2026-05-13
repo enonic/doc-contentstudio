@@ -639,7 +639,7 @@ In future versions it will be possible to add custom preview modes.
 </table>
 </div>
 <div class="paragraph">
-<p>Read more about content preview modes in the <a href="navigator.ahtml#preview_panel">Content Navigator documentation</a>.</p>
+<p>Read more about content preview modes in the <a href="workbench/preview.ahtml">Preview</a> documentation.</p>
 </div>
 </div>
 <div class="sect3">
@@ -700,7 +700,7 @@ In future versions it will be possible to add custom preview modes.
 </div>
 <div class="imageblock text-center">
 <div class="content">
-<img src="navigator/images/navigator-accessibility.png" alt="Toolbar accessibility" width="50%">
+<img src="workbench/navigator/images/navigator-accessibility.png" alt="Toolbar accessibility" width="50%">
 </div>
 </div>
 </div>
@@ -949,7 +949,7 @@ This mode can be turned on in Content Studio&#8217;s <a href="config.ahtml#exclu
 <div class="sect2">
 <h3 id="export_of_search_results"><a class="link" href="#export_of_search_results">Export of search results</a></h3>
 <div class="paragraph">
-<p>Search results produced by Content Navigator&#8217;s <a href="navigator.ahtml#search_panel">Search Panel</a> can now be exported into a CSV file using the download icon next to the Search Panel&#8217;s free-text search field. The file will contain the following fields: <strong>Id</strong>, <strong>Path</strong>, <strong>Creator</strong>, <strong>Modifier</strong>, <strong>Created</strong>, <strong>Modified</strong>, <strong>Owner</strong>, <strong>Content Type</strong>, <strong>Display Name</strong>, <strong>Language</strong>, <strong>Published From</strong>, <strong>Published Until</strong>, <strong>First Published</strong>.</p>
+<p>Search results produced by the Navigator&#8217;s <a href="workbench/navigator.ahtml#search_panel">Search panel</a> can now be exported into a CSV file using the download icon next to the Search Panel&#8217;s free-text search field. The file will contain the following fields: <strong>Id</strong>, <strong>Path</strong>, <strong>Creator</strong>, <strong>Modifier</strong>, <strong>Created</strong>, <strong>Modified</strong>, <strong>Owner</strong>, <strong>Content Type</strong>, <strong>Display Name</strong>, <strong>Language</strong>, <strong>Published From</strong>, <strong>Published Until</strong>, <strong>First Published</strong>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1086,7 +1086,7 @@ of the <a href="editor/content-form.ahtml#page_components_tree">Content Editor f
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-04-23 07:11:27 UTC
+Last updated 2026-05-13 08:06:51 UTC
 </div>
 </div>
 </body>

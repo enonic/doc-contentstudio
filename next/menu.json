@@ -1,8 +1,8 @@
 {
   "menuItems": [
     {
-      "title": "Concepts",
-      "document": "concepts"
+      "title": "Overview",
+      "document": "index"
     },
     {
       "title": "Projects",
@@ -19,21 +19,51 @@
       ]
     },
     {
-      "title": "Navigator",
-      "document": "navigator",
+      "title": "Workbench",
+      "document": "workbench",
       "menuItems": [
         {
-          "title": "Dependencies",
-          "document": "navigator/dependencies"
+          "title": "Navigator",
+          "document": "workbench/navigator"
+        },
+        {
+          "title": "Archive",
+          "document": "workbench/archive"
+        },
+        {
+          "title": "Preview",
+          "document": "workbench/preview"
+        },
+        {
+          "title": "Context panel",
+          "document": "workbench/contextpanel",
+          "menuItems": [
+            {
+              "title": "Details",
+              "document": "workbench/contextpanel/details"
+            },
+            {
+              "title": "Dependencies",
+              "document": "workbench/contextpanel/dependencies"
+            },
+            {
+              "title": "Versions",
+              "document": "workbench/contextpanel/versions"
+            },
+            {
+              "title": "Variants",
+              "document": "workbench/contextpanel/variants"
+            }
+          ]
         },
         {
           "title": "Permissions",
-          "document": "navigator/permissions"
+          "document": "workbench/permissions"
         }
       ]
     },
     {
-      "title": "Editor",
+      "title": "Content Editor",
       "document": "editor",
       "menuItems": [
         {
@@ -41,7 +71,7 @@
           "document": "editor/content-form"
         },
         {
-          "title": "Rich text editor",
+          "title": "Rich text",
           "document": "editor/rich-text-editor"
         },
         {
@@ -49,20 +79,8 @@
           "document": "editor/page-editor"
         },
         {
-          "title": "Preview",
-          "document": "editor/preview"
-        },
-        {
-          "title": "Image",
+          "title": "Image editor",
           "document": "editor/image"
-        },
-        {
-          "title": "Versions",
-          "document": "editor/versions"
-        },
-        {
-          "title": "Variants",
-          "document": "editor/variants"
         }
       ]
     },
@@ -131,10 +149,6 @@
     {
       "title": "Workflow",
       "document": "workflow"
-    },
-    {
-      "title": "Archive",
-      "document": "archive"
     },
     {
       "title": "AI Assistant",

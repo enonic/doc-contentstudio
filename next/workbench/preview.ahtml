@@ -441,8 +441,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
+<li><a href="#toolbar">Toolbar</a></li>
 <li><a href="#preview_modes">Preview modes</a></li>
-<li><a href="#custom_preview_modes">Custom preview modes</a></li>
+<li><a href="#contributing_a_preview_mode">Contributing a preview mode</a></li>
 </ul>
 </div>
 </div>
@@ -450,22 +451,65 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>The <strong>Preview</strong> panel sits on the right-hand side of the <a href="../editor.ahtml">Content Editor</a> and shows how the selected content will appear to an end user. Preview is <strong>pluggable</strong>: the actual view that appears depends on the content item, the applications installed on its site, and any preview contributions from those applications.</p>
+<p>The <strong>Preview panel</strong> shows how the selected content will appear to an end user. It sits in two places:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>In the <a href="navigator.ahtml">Navigator</a>, to the right of the content tree.</p>
+</li>
+<li>
+<p>In the <a href="../editor.ahtml">Editor</a>, in the middle, when the content is <em>not</em> renderable. For renderable content (sites, pages, page templates, and any content type with a supporting template) the middle panel is replaced with the <a href="../editor/page-editor.ahtml">Page editor</a> — a drag-and-drop page-building surface rather than a read-only preview.</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>Preview can be closed and reopened with the monitor icon on the far right of the editor toolbar.</p>
+<p>Preview is <strong>pluggable</strong>: the actual view that appears depends on the content item, the applications installed on its site, and any preview contributions from those applications.</p>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-For renderable content (sites, pages, page templates, and any content type with a supporting template), the right-hand panel is replaced with the <a href="page-editor.ahtml">Page editor</a> — a drag-and-drop page-building surface rather than a read-only preview.
-</td>
-</tr>
-</table>
+<div class="imageblock text-center">
+<div class="content">
+<img src="preview/images/navigator-preview.png" alt="Showing content preview" width="75%">
+</div>
+</div>
+<div class="paragraph">
+<p>In the Navigator the preview is dynamic — clicking a link will navigate you to the target page, both inside the preview panel and the content tree. Only the <strong>Draft</strong> version of content is visible.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="toolbar"><a class="link" href="#toolbar">Toolbar</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The preview-panel toolbar contains:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Current <strong>status</strong> of the selected content item (e.g. <code>New</code>, <code>Published</code>, <code>Unpublished</code>, <code>Modified</code>). For items that have been published and then modified, an icon (<span class="image"><img src="preview/images/navigator-compare.png" alt="navigator compare" width="24px" title="Show changes"></span>) lets you compare current with published.</p>
+</li>
+<li>
+<p><strong>Emulator</strong> dropdown to emulate screen resolutions of various device types (monitor, tablet, mobile).</p>
+<div class="imageblock text-center">
+<div class="content">
+<img src="preview/images/navigator-preview-emulator.png" alt="Preview emulator" width="25%">
+</div>
+</div>
+</li>
+<li>
+<p><strong>Preview mode</strong> dropdown. The default is <strong>Automatic</strong>, which finds and uses the first mode that supports preview of the current content. You can explicitly pick a mode from the list.</p>
+<div class="imageblock text-center">
+<div class="content">
+<img src="preview/images/navigator-preview-mode.png" alt="Preview mode selector" width="25%">
+</div>
+</div>
+</li>
+<li>
+<p><span class="image"><img src="preview/images/navigator-preview-button.png" alt="navigator preview button" width="90px" title="Preview button"></span> button — opens the preview in a new browser tab. The currently selected preview mode is used in the new tab.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>If currently selected content cannot be rendered by any of the available preview modes, the preview panel displays an error message.</p>
 </div>
 </div>
 </div>
@@ -473,38 +517,53 @@ For renderable content (sites, pages, page templates, and any content type with 
 <h2 id="preview_modes"><a class="link" href="#preview_modes">Preview modes</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Content Studio ships with a handful of built-in preview modes, and selects the appropriate one automatically based on the selected content.</p>
+<p>Content Studio ships with a handful of built-in preview modes. <strong>Automatic</strong> is the default; the others can be selected explicitly from the preview-mode dropdown.</p>
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1">Media preview</dt>
+<dt class="hdlist1">Automatic</dt>
+<dd>
+<p>Picks the first mode that supports the current content. This is the default.</p>
+</dd>
+<dt class="hdlist1">Media</dt>
 <dd>
 <p>For image, video and other media content types. Shows the media itself at its original resolution, with basic metadata.</p>
+</dd>
+<dt class="hdlist1">Enonic rendering</dt>
+<dd>
+<p>Uses Enonic&#8217;s Site Engine to render the content, typically the same renderer used in production.</p>
 </dd>
 <dt class="hdlist1">Plain preview</dt>
 <dd>
 <p>For content that has a page controller but no editable regions — shows the rendered output without the page-editor chrome.</p>
 </dd>
+<dt class="hdlist1">JSON</dt>
+<dd>
+<p>Displays the current content in JSON format. Available for any content, but not used as a fallback by <strong>Automatic</strong>.</p>
+</dd>
 <dt class="hdlist1">Unavailable</dt>
 <dd>
-<p>For content that cannot be rendered (folders, shortcuts, unstructured content without a supporting template), the Preview panel is hidden or shows a placeholder. The <a href="../navigator.ahtml#context_panel">Context panel</a> remains available for these items.</p>
+<p>For content that cannot be rendered (folders, shortcuts, unstructured content without a supporting template), the Preview panel is hidden or shows a placeholder. The <a href="contextpanel.ahtml">Context panel</a> remains available for these items.</p>
 </dd>
 </dl>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="custom_preview_modes"><a class="link" href="#custom_preview_modes">Custom preview modes</a></h2>
+<h2 id="contributing_a_preview_mode"><a class="link" href="#contributing_a_preview_mode">Contributing a preview mode</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Applications can contribute their own preview modes by implementing the appropriate widget interface in the application descriptor. Custom preview modes appear in the preview-mode selector alongside the built-ins. See the <a href="https://developer.enonic.com/docs/xp/stable/admin/widgets">XP admin widgets reference</a> for how applications contribute preview and widget UI to Content Studio.</p>
+<p>Applications can contribute their own preview modes. Custom modes appear in the preview-mode dropdown alongside the built-ins.</p>
+</div>
+<div class="paragraph">
+<p>See the <a href="https://developer.enonic.com/docs/code/stable/extensions/liveview">Live view extension reference</a> for the descriptor format, lifecycle, and implementation details.</p>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-04-23 07:11:27 UTC
+Last updated 2026-05-13 08:06:51 UTC
 </div>
 </div>
 </body>

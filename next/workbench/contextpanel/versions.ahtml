@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.26">
-<title>Dependencies</title>
+<title>Versions</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -437,11 +437,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article toc2 toc-right">
 <div id="header">
-<h1>Dependencies</h1>
+<h1>Versions</h1>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#dependencies_and_publishing">Dependencies and publishing</a></li>
+<li><a href="#reverting_to_a_version">Reverting to a version</a></li>
+<li><a href="#comparing_versions">Comparing versions</a></li>
 </ul>
 </div>
 </div>
@@ -449,61 +450,69 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Content items reference each other — pages embed images, shortcuts target content, text fields link to other items. Those references are <strong>dependencies</strong>. Content Studio tracks them in both directions, and makes them inspectable via the <strong>Dependencies</strong> widget in the <a href="../navigator.ahtml#context_panel">Context panel</a>.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>An <strong>inbound</strong> dependency is content that <em>uses</em> the selected item — for example, a page that embeds it, or a shortcut that points at it.</p>
-</li>
-<li>
-<p>An <strong>outbound</strong> dependency is content that the selected item <em>uses</em> — for example, images referenced in its rich-text fields, or targets of content selectors.</p>
-</li>
-</ul>
+<p>Every save, publish, unpublish, rename, or permissions change on a content item creates a new <strong>version</strong>. The full history is available via the <strong>Version history</strong> widget in the <a href="../contextpanel.ahtml">Context panel</a>: you can see every change, compare any two versions, and revert to an older one.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/widgets-dependencies.png" alt="Dependencies widget" width="207">
+<img src="images/widgets-version-history.png" alt="Version history widget" width="283">
 </div>
 </div>
 <div class="paragraph">
-<p>Inbound dependencies are listed above the content box, outbound below. When there are no dependencies of a kind, the widget shows a placeholder (<em>No incoming dependencies</em>, etc.). When there are dependencies, a button displays the total count, with icons and counts broken out per content type.</p>
-</div>
-<div class="paragraph">
-<p>Clicking the count button opens a new browser tab listing all dependencies of that direction. Clicking a per-type icon opens the same view, pre-filtered to that type.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/widgets-dependencies-filter.png" alt="Dependencies filtered by type" width="370">
-</div>
+<p>The current workflow status is shown in the widget header. Versions created by publish and unpublish events are listed alongside content versions so the full audit trail is visible in one place.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="dependencies_and_publishing"><a class="link" href="#dependencies_and_publishing">Dependencies and publishing</a></h2>
+<h2 id="reverting_to_a_version"><a class="link" href="#reverting_to_a_version">Reverting to a version</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Dependencies are checked throughout the publishing lifecycle:</p>
+<p>Click a version box to expand it, then click <strong>Revert</strong>. The current (active) version cannot be reverted to itself, so it does not expand. Publish and unpublish markers are also non-expandable.</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="../actions/publish.ahtml">Publishing</a> automatically includes required inbound dependencies in the batch so the published page does not end up with missing references.</p>
-</li>
-<li>
-<p><a href="../actions/delete.ahtml">Delete</a> warns if another content depends on the item being deleted.</p>
-</li>
-<li>
-<p><a href="../actions/unpublish.ahtml">Unpublish</a> warns if a <em>published</em> content depends on the item being taken offline.</p>
-</li>
-</ul>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Some versions cannot be reverted — typically those created by permissions updates, renames, or moves. The widget disables the action for these.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="comparing_versions"><a class="link" href="#comparing_versions">Comparing versions</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Click the <span class="image"><img src="images/widgets-version-compare-icon.png" alt="widgets version compare icon" width="24"></span> icon on any version to open the <strong>Compare versions</strong> dialog. The two dropdowns at the top select the pair of versions being compared: the left one is <em>older</em>, the right one <em>newer</em>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/widgets-version-compare-dialog.png" alt="Version compare dialog" width="909">
+</div>
+</div>
+<div class="paragraph">
+<p>By default the dialog shows only the differences between the two versions. Toggle <strong>Show entire content</strong> to see the full content JSON side-by-side.</p>
+</div>
+<div class="paragraph">
+<p>Both dropdowns have aliases at the top of the list — <em>previous</em>, <em>next</em>, <em>published</em>, <em>current</em> — so you can compare against those without scrolling through the full version list.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/widgets-version-compare-dialog-aliases.png" alt="Version aliases" width="456">
+</div>
+</div>
+<div class="paragraph">
+<p>The kebab menu on the right of each dropdown has one option, <strong>Revert</strong>, which reverts to the version currently selected in that dropdown.</p>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-04-23 07:11:27 UTC
+Last updated 2026-05-13 08:06:51 UTC
 </div>
 </div>
 </body>

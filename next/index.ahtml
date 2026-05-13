@@ -443,7 +443,19 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel1">
 <li><a href="#intro_videos">Intro videos</a></li>
 <li><a href="#overview">Overview</a></li>
-<li><a href="#main_menu">Main menu</a></li>
+<li><a href="#concepts">Concepts</a>
+<ul class="sectlevel2">
+<li><a href="#content_items_and_content_types">Content items and content types</a></li>
+<li><a href="#pages_and_rendering">Pages and rendering</a></li>
+<li><a href="#draft_master_and_publishing">Draft, master, and publishing</a></li>
+<li><a href="#versions">Versions</a></li>
+<li><a href="#dependencies">Dependencies</a></li>
+<li><a href="#permissions">Permissions</a></li>
+<li><a href="#archive">Archive</a></li>
+<li><a href="#applications_and_widgets">Applications and widgets</a></li>
+<li><a href="#issues_and_publish_requests">Issues and publish requests</a></li>
+</ul>
+</li>
 <li><a href="#content_studio">Content Studio+</a></li>
 <li><a href="#browser_support">Browser support</a></li>
 <li><a href="#release_notes">Release notes</a></li>
@@ -454,7 +466,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Enonic XP&#8217;s Content management user interface</p>
+<p>Content Studio is Enonic XP&#8217;s content-management UI — the editor-facing application for creating, organising, and publishing content. This reference covers how the UI works for content managers and front-end developers. Tutorials and getting-started guides live on <a href="https://developer.enonic.com">developer.enonic.com</a> and build on top of this content.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -463,7 +475,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Content Studio can be installed from <a href="https://market.enonic.com/vendors/enonic/content-studio">Enonic Market</a>
+Content Studio can be installed from <a href="https://market.enonic.com/vendors/enonic/content-studio">Enonic Market</a>.
 </td>
 </tr>
 </table>
@@ -474,7 +486,7 @@ Content Studio can be installed from <a href="https://market.enonic.com/vendors/
 <h2 id="intro_videos"><a class="link" href="#intro_videos">Intro videos</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>We have compiled a page packed with short videos demonstrating Content Studio&#8217;s features and capabilities. <a href="https://www.enonic.com/resources/content-studio-videos">Check it out</a>.</p>
+<p>A collection of short videos demonstrating Content Studio&#8217;s features and capabilities is available on the <a href="https://www.enonic.com/resources/content-studio-videos">Enonic site</a>.</p>
 </div>
 </div>
 </div>
@@ -482,40 +494,106 @@ Content Studio can be installed from <a href="https://market.enonic.com/vendors/
 <h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Content Studio provides editors with an efficient way of creating and curating content without technical skills.</p>
+<p>Content lives in <a href="projects.ahtml">projects</a> — top-level repositories with their own content tree, applications, and settings. <a href="layers.ahtml">Layers</a> reuse, localise, or augment content across projects without duplicating trees.</p>
 </div>
 <div class="paragraph">
-<p>Content is organized within <a href="projects.ahtml">Content Projects</a>. Content can be re-used, localized or augmented across different projects through a feature called <a href="layers.ahtml">content layering</a>.</p>
+<p>The <a href="workbench.ahtml">Workbench</a> is the in-tab application shell: a project bar on top, a menu bar on the left, and a main panel filling the rest. The default menuitem is the <a href="workbench/navigator.ahtml">Navigator</a> — the content tree, search, and per-content actions.</p>
 </div>
 <div class="paragraph">
-<p>Editors will commonly use the <a href="navigator.ahtml">Content Navigator</a> to browse, search and perform actions on one or more items.</p>
-</div>
-<div class="paragraph">
-<p>The <a href="editor.ahtml">Content Editor</a> offers a consistent and intuitive interface for editing and previewing your content.</p>
+<p>Content is opened for editing in the <a href="editor.ahtml">Editor</a>, which launches in a separate browser tab and provides a consistent interface for editing and previewing.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="main_menu"><a class="link" href="#main_menu">Main menu</a></h2>
+<h2 id="concepts"><a class="link" href="#concepts">Concepts</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The left-hand vertical menu is Content Studio&#8217;s main menu. It lets you switch between the different top-level areas of the application. The standard entries are:</p>
+<p>A few recurring concepts surface everywhere in the UI — in dialogs, widgets, toolbars, and URLs. For the low-level reference (schemas, field types, APIs), see the <a href="https://developer.enonic.com/docs/xp/stable/cms">Enonic XP CMS docs</a>.</p>
+</div>
+<div class="sect2">
+<h3 id="content_items_and_content_types"><a class="link" href="#content_items_and_content_types">Content items and content types</a></h3>
+<div class="paragraph">
+<p>A <strong>content item</strong> is a single piece of content — an article, image, page, or site. Every item has an identity (path, display name, id), a type, a set of field values, and a small envelope of metadata (security, schedule, workflow state).</p>
+</div>
+<div class="paragraph">
+<p>A <strong>content type</strong> is the schema that defines an item&#8217;s fields. Most are defined in application code; a handful ship with XP and have special behaviour:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Content Navigator</strong> — the default browse and search view for content items.</p>
+<p><strong>Folder</strong> — a grouping container with no data fields beyond display name and path.</p>
 </li>
 <li>
-<p><strong>Archive</strong> — browse and restore archived content (see <a href="archive.ahtml">Archive</a>).</p>
+<p><strong>Shortcut</strong> — a path that redirects to another content item. Required <strong>Target</strong> field and optional name-value <strong>Parameters</strong>. Cannot use page templates.</p>
 </li>
 <li>
-<p><strong>GraphQL Playground</strong> — a developer tool for exploring the content data API.</p>
+<p><strong>Site</strong> — the root of a website. Carries installed applications and gets a <strong>Templates</strong> folder as its first child. See <a href="sites.ahtml">Sites</a>.</p>
+</li>
+<li>
+<p><strong>Page template</strong> — a reusable page definition. See <a href="sites/page-templates.ahtml">Page templates</a>.</p>
+</li>
+<li>
+<p><strong>Image</strong> — backed by an image file, with cropping and focal-point tools. See <a href="editor/image.ahtml">Image</a>.</p>
+</li>
+<li>
+<p><strong>Unstructured</strong> — formless content used by applications to store free-form data; not editable in Content Studio beyond name, path, settings, and security.</p>
 </li>
 </ul>
 </div>
+</div>
+<div class="sect2">
+<h3 id="pages_and_rendering"><a class="link" href="#pages_and_rendering">Pages and rendering</a></h3>
 <div class="paragraph">
-<p>The main menu is <strong>pluggable</strong>: applications installed in Enonic XP can contribute additional entries. New entries appear automatically in the menu once the contributing application is deployed. In a future release, <strong>Issues</strong> will move from the toolbar into the main menu.</p>
+<p>Page rendering is driven by three collaborating concepts: the content item, the <strong>page template</strong> that describes how to render it, and the <strong>page controller</strong> (from an installed application) that supplies the HTML skeleton. Page building happens in the <a href="editor/page-editor.ahtml">Page editor</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="draft_master_and_publishing"><a class="link" href="#draft_master_and_publishing">Draft, master, and publishing</a></h3>
+<div class="paragraph">
+<p>Content is always edited in the <strong>draft</strong> branch. Publishing copies the active draft version into the <strong>master</strong> branch, from which it becomes available to public consumers of the API.</p>
+</div>
+<div class="paragraph">
+<p><strong>Workflow state</strong> is the signal between editors that a draft is ready to publish — <em>In progress</em>, <em>Ready for publishing</em>, <em>Publish request</em>, <em>Published</em>, <em>Unpublished</em>. See <a href="workflow.ahtml">Workflow</a> for the state machine and <a href="actions/publish.ahtml">Publish</a> for the flow.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="versions"><a class="link" href="#versions">Versions</a></h3>
+<div class="paragraph">
+<p>Every save, publish, unpublish, rename, or permissions change creates a new <strong>version</strong>. Versions can be compared and reverted from the Version history widget — see <a href="workbench/contextpanel/versions.ahtml">Versions</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="dependencies"><a class="link" href="#dependencies">Dependencies</a></h3>
+<div class="paragraph">
+<p>Content items reference each other — pages embed images, shortcuts target content, text fields link to other items. <strong>Dependencies</strong> are tracked in both directions (inbound: who uses this; outbound: what does this use). Publishing, archiving, and unpublishing all check dependencies — see <a href="workbench/contextpanel/dependencies.ahtml">Dependencies</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="permissions"><a class="link" href="#permissions">Permissions</a></h3>
+<div class="paragraph">
+<p>Each content item has its own security settings: a list of <strong>principals</strong> (users, groups, roles) and the <strong>permission flags</strong> they have on that item (<em>Read</em>, <em>Create</em>, <em>Modify</em>, <em>Delete</em>, <em>Publish</em>, <em>Read/Write permissions</em>). Permissions are inherited from parent content by default and can be overridden per-item. See <a href="workbench/permissions.ahtml">Permissions</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="archive"><a class="link" href="#archive">Archive</a></h3>
+<div class="paragraph">
+<p>Deleting content is destructive. <strong>Archiving</strong> is the non-destructive alternative — items are moved to a separate archive storage where they can be browsed, restored, or permanently deleted later. See <a href="workbench/archive.ahtml">Archive</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="applications_and_widgets"><a class="link" href="#applications_and_widgets">Applications and widgets</a></h3>
+<div class="paragraph">
+<p>An <strong>application</strong> is an installable unit of XP code that can contribute content types, page controllers, parts, layouts, translations, and UI widgets. Applications are attached to a site via its Applications field; some (like Juke and Content Studio+) contribute UI across all sites.</p>
+</div>
+<div class="paragraph">
+<p>A <strong>widget</strong> is a small UI surface contributed by an application. The main host is the <a href="workbench/contextpanel.ahtml">Context panel</a>; applications can also contribute <a href="workbench/preview.ahtml">preview modes</a> and <a href="workbench.ahtml">menuitems</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="issues_and_publish_requests"><a class="link" href="#issues_and_publish_requests">Issues and publish requests</a></h3>
+<div class="paragraph">
+<p><strong>Issues</strong> are lightweight work items used to coordinate between editors — either a <strong>task</strong> (e.g. "spellcheck this article") or a <strong>publish request</strong> (review-and-publish handoff for users without publish permission, or for an approval flow). See <a href="issues.ahtml">Issues</a> and <a href="issues/publish-request.ahtml">Publish request</a>.</p>
+</div>
 </div>
 </div>
 </div>
@@ -531,13 +609,13 @@ Content Studio can be installed from <a href="https://market.enonic.com/vendors/
 <p><a href="ai.ahtml">AI Assistant (Juke)</a> — in-context AI help for editors, including field-level assistance, variants, and project-level instructions.</p>
 </li>
 <li>
-<p><a href="archive.ahtml">Archive browser</a> — the dedicated <strong>Archive</strong> main-menu entry for browsing, restoring, and permanently deleting archived content.</p>
+<p><a href="workbench/archive.ahtml">Archive browser</a> — the dedicated <strong>Archive</strong> menuitem for browsing, restoring, and permanently deleting archived content.</p>
 </li>
 <li>
-<p><a href="editor/variants.ahtml">Content Variants</a> — create and manage variant copies of a content item for A/B testing.</p>
+<p><a href="workbench/contextpanel/variants.ahtml">Content Variants</a> — create and manage variant copies of a content item for A/B testing.</p>
 </li>
 <li>
-<p><a href="layers.ahtml#ai_translation">AI translation</a> — automatic translation of inherited content when localizing in a layer.</p>
+<p><a href="layers.ahtml#ai_translation">AI translation</a> — automatic translation of inherited content when localising in a layer.</p>
 </li>
 <li>
 <p><a href="layers.ahtml#layers_panel">Layers widget</a> — see the status of a content item across every layer in the system.</p>
@@ -553,7 +631,7 @@ Content Studio can be installed from <a href="https://market.enonic.com/vendors/
 <h2 id="browser_support"><a class="link" href="#browser_support">Browser support</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Content Studio works in all modern browsers. We are explicitly testing and supporting the latest versions of Google Chrome, Apple Safari, Mozilla Firefox and Microsoft Edge.</p>
+<p>Content Studio works in all modern browsers. We are explicitly testing and supporting the latest versions of Google Chrome, Apple Safari, Mozilla Firefox, and Microsoft Edge.</p>
 </div>
 </div>
 </div>
@@ -568,7 +646,7 @@ Content Studio can be installed from <a href="https://market.enonic.com/vendors/
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-04-23 07:11:27 UTC
+Last updated 2026-05-13 08:06:51 UTC
 </div>
 </div>
 </body>

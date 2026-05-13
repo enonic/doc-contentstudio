@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.26">
-<title>Permissions</title>
+<title>Workbench</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -437,14 +437,17 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article toc2 toc-right">
 <div id="header">
-<h1>Permissions</h1>
+<h1>Workbench</h1>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#principals">Principals</a></li>
-<li><a href="#permissions">Permissions</a></li>
-<li><a href="#public_content">Public content</a></li>
-<li><a href="#editing_permissions">Editing permissions</a></li>
+<li><a href="#project_bar">Project bar</a></li>
+<li><a href="#menuitems">Menu bar</a>
+<ul class="sectlevel2">
+<li><a href="#contributing_a_menuitem">Contributing a menuitem</a></li>
+</ul>
+</li>
+<li><a href="#main_panel">Main panel</a></li>
 </ul>
 </div>
 </div>
@@ -452,107 +455,89 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Security of content is determined by the principals and permissions in the content’s security settings. Principals are <strong>Users</strong>, <strong>Groups</strong> and <strong>Roles</strong> which are managed in the Users application. Principals are added to each content. Permissions are granted to the principals of the content.</p>
+<p>The <strong>Workbench</strong> is the application shell of Content Studio. It has three parts: a <strong>project bar</strong> across the top, a <strong>menu bar</strong> on the left, and a <strong>main panel</strong> that fills the rest.</p>
+</div>
+<div class="paragraph">
+<p>The <a href="editor.ahtml">Editor</a> is not part of the Workbench — it opens in a separate browser tab.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="principals"><a class="link" href="#principals">Principals</a></h2>
+<h2 id="project_bar"><a class="link" href="#project_bar">Project bar</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Individual users could be added to each content. But security is easier to manage by adding groups and roles to each content and then granting the appropriate permissions to these groups and roles. When a group is added to content then all users who are members of that group will have the group permissions for that content. Similarly, when a role is granted permissions to content, all users who have that role will also have those permissions.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="permissions"><a class="link" href="#permissions">Permissions</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Permissions are granted to principals on a per-content basis. This means that changing a principal’s permissions for one content does not affect that principal’s permissions for other content. Below is a list of permissions that can be applied to each principal for any content.</p>
+<p>The horizontal bar across the top of the window. It carries application-wide controls that are not specific to any single menuitem:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Read:</strong> The principal can see this content;</p>
+<p>The <strong>project context selector</strong> on the left — switches between the projects and layers the current user has access to. Every menuitem (except Settings, see below) inherits the selected project as its context.</p>
 </li>
 <li>
-<p><strong>Create:</strong> The principal can create child items under this content. For example, if a user has this permission on a folder then the user can create new content in the folder;</p>
+<p>An <strong>open issues</strong> indicator showing the number of unresolved <a href="issues.ahtml">issues</a> in the current project, with a dropdown to jump into them.</p>
 </li>
 <li>
-<p><strong>Modify:</strong> The principal can edit this content and save changes in the draft branch;</p>
-</li>
-<li>
-<p><strong>Delete:</strong> The principal can delete this content from the draft branch;</p>
-</li>
-<li>
-<p><strong>Publish:</strong> The principal can publish this content to the master branch;</p>
-</li>
-<li>
-<p><strong>Read permissions:</strong> The principal can see this content’s permissions;</p>
-</li>
-<li>
-<p><strong>Write permissions:</strong> The principal can change this content’s permissions.</p>
+<p>The current user&#8217;s avatar and the XP admin menu on the right.</p>
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>Permissions can also be denied to a principal, even if the permissions would otherwise be granted from another principal. For example, all content editors might be added to a group called <strong>Content editors</strong> which has the <code>Can Publish</code> permissions. But new content editors might break stuff, so they would also be added to a group called <strong>Noobs</strong>. Users in this group could be prevented from publishing and deleting content by denying those permissions to the group.</p>
-</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="public_content"><a class="link" href="#public_content">Public content</a></h2>
+<h2 id="menuitems"><a class="link" href="#menuitems">Menu bar</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>For content to be accessible to the public, (meaning users who are not logged in), it must have the role <strong>Everyone</strong> with the <code>Read</code> permission. The content must also be published. Content without the <strong>Everyone</strong> role can only be seen by users who are logged in and have read access to it through one of the content’s principals.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="editing_permissions"><a class="link" href="#editing_permissions">Editing permissions</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>When a site is first created, it will have the roles <strong>Administrator</strong> and <strong>Content Manager Administrator</strong> with full access. It will also have the role of <strong>Content Manager App</strong> with reading access. When content is created it will inherit the security settings from its parent content. The security settings for any content can be changed through the Edit permissions dialog. This can be accessed with the <code>Edit Permissions</code> button in the Security section when editing content, or by the button in the details panel in browse view.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/permissions-dialog.png" alt="permissions dialog">
-</div>
-</div>
-<div class="paragraph">
-<p>Opening the <strong>Edit Permissions</strong> dialog shows a list of the current principals and their permissions for the content. By default, all content will inherit permissions from its parent. Permissions cannot be changed until the box for <code>Inherit permissions</code> is unchecked. Any changes that are made will also be applied to all child items that directly or indirectly inherit permissions from this content. There is also a checkbox at the bottom of the dialog labeled <code>Overwrite child permissions</code>. Checking this box will force the new permissions on child content that do not inherit permissions.</p>
-</div>
-<div class="paragraph">
-<p>When the <code>Inherit permissions</code> checkbox is unchecked, a dropdown selector will appear for adding new principals. The permissions for each principal in the list can be determined by the settings in blue letters on the right. Clicking a setting will open a menu with the available options that can be applied, which are listed below:</p>
+<p>The vertical strip on the left lists the available <strong>menuitems</strong>: top-level views contributed by Content Studio or by an installed application. Clicking an icon swaps the <a href="#_main_panel">main panel</a> to that menuitem&#8217;s view.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Can Read:</strong> Has only the <code>Read</code> permission;</p>
+<p><strong>Navigator</strong> — the built-in default, anchored at the top of the menu bar. The content tree, search, and per-content actions. See <a href="workbench/navigator.ahtml">Navigator</a>.</p>
 </li>
 <li>
-<p><strong>Can Write:</strong> Has permissions for <code>Read</code>, <code>Create</code>, <code>Modify</code>, and <code>Delete</code>;</p>
-</li>
-<li>
-<p><strong>Can Publish:</strong> Has permissions for <code>Read</code>, <code>Create</code>, <code>Modify</code>, <code>Delete</code>, and <code>Publish</code>;</p>
-</li>
-<li>
-<p><strong>Full Access:</strong> Has all permissions;</p>
-</li>
-<li>
-<p><strong>Custom:</strong> Any combination of permissions.</p>
+<p><strong>Settings</strong> — anchored at the bottom-left, set apart from the regular menuitem stack. Unlike the others, Settings is <strong>not</strong> scoped to the currently selected project — it manages all projects and layers. See <a href="settings.ahtml">Settings</a>.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Selecting <strong>Custom</strong> will list all of the permissions. Clicking on permission will toggle it between white (not granted), green (granted) and red (denied).</p>
+<p>Additional menuitems are contributed by installed applications and appear in the stack between Navigator and Settings. The two most common:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Archive</strong> — browse, restore, and permanently delete archived content. Contributed by <a href="https://market.enonic.com/vendors/enonic/content-studio-plus">Content Studio+</a>. See <a href="workbench/archive.ahtml">Archive</a>.</p>
+</li>
+<li>
+<p><strong>GraphQL Playground</strong> — interactive query console for the Guillotine API. Contributed by <a href="https://market.enonic.com/apps/guillotine">Guillotine</a>.</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="contributing_a_menuitem"><a class="link" href="#contributing_a_menuitem">Contributing a menuitem</a></h3>
+<div class="paragraph">
+<p>Any installed application can add a menuitem to the menu bar. The icon and view appear when the app is installed in the current project.</p>
+</div>
+<div class="paragraph">
+<p>See the <a href="https://developer.enonic.com/docs/code/stable/extensions/menuitem">menuitems extension reference</a> for the descriptor format, lifecycle, and implementation details.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="main_panel"><a class="link" href="#main_panel">Main panel</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The remaining space is the main panel — the surface controlled by the active menuitem. The Navigator splits it into a toolbar, search panel, content tree, <a href="workbench/preview.ahtml">Preview</a>, and <a href="workbench/contextpanel.ahtml">Context panel</a>; other menuitems arrange the panel differently.</p>
+</div>
+<div class="paragraph">
+<p>Two of those panels — <a href="workbench/preview.ahtml">Preview</a> and <a href="workbench/contextpanel.ahtml">Context panel</a> — appear inside multiple menuitem views (Navigator, Archive) and also inside the <a href="editor.ahtml">Editor</a>. Their behaviour and extension models are shared across surfaces, which is why they are documented on their own pages.</p>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-04-23 07:11:27 UTC
+Last updated 2026-05-13 08:06:51 UTC
 </div>
 </div>
 </body>

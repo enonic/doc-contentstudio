@@ -558,7 +558,7 @@ The default action shown on the toolbar button is the first available action for
 <p>When a published content is edited and saved, the new version becomes active in <code>draft</code>, but <code>master</code> is unchanged. Status flips to <code>Modified</code>, and the content must be re-published for changes to go live.</p>
 </div>
 <div class="paragraph">
-<p>Content can either be archived or instantly deleted via the <a href="../archive.ahtml">Archive</a> dialog. Both take the content offline (remove it from <code>master</code>) if it was published. Instant deletion removes it from both branches; archived items move under the <code>/archive</code> node and can be restored.</p>
+<p>Content can either be archived or instantly deleted via the <a href="../workbench/archive.ahtml">Archive</a> dialog. Both take the content offline (remove it from <code>master</code>) if it was published. Instant deletion removes it from both branches; archived items move under the <code>/archive</code> node and can be restored.</p>
 </div>
 </div>
 </div>
@@ -739,7 +739,7 @@ Users with publish permission can use <strong>Publish&#8230;&#8203;</strong> on 
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-04-23 07:11:27 UTC
+Last updated 2026-05-13 08:06:51 UTC
 </div>
 </div>
 </body>

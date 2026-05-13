@@ -455,7 +455,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="ulist">
 <ul>
 <li>
-<p>The <strong>toolbar</strong> at the top of the <a href="navigator.ahtml">Navigator</a> and the <a href="editor.ahtml">Editor</a>.</p>
+<p>The <strong>toolbar</strong> at the top of the <a href="workbench/navigator.ahtml">Navigator</a> and the <a href="editor.ahtml">Editor</a>.</p>
 </li>
 <li>
 <p>The <strong>context menu</strong> that appears when right-clicking an item in the Navigator.</p>
@@ -466,7 +466,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ul>
 </div>
 <div class="paragraph">
-<p>Whether a given action is shown, enabled, or disabled depends on two things: the selection (what content is currently selected) and the user&#8217;s <a href="navigator/permissions.ahtml">permissions</a> on that content.</p>
+<p>Whether a given action is shown, enabled, or disabled depends on two things: the selection (what content is currently selected) and the user&#8217;s <a href="workbench/permissions.ahtml">permissions</a> on that content.</p>
 </div>
 </div>
 </div>
@@ -509,7 +509,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </dd>
 <dt class="hdlist1"><a href="actions/delete.ahtml">Delete</a></dt>
 <dd>
-<p>Remove content from the active tree. Deleted items are moved to the <a href="archive.ahtml">Archive</a>, preserving descendants and version history so they can be restored.</p>
+<p>Remove content from the active tree. Deleted items are moved to the <a href="workbench/archive.ahtml">Archive</a>, preserving descendants and version history so they can be restored.</p>
 </dd>
 </dl>
 </div>
@@ -519,14 +519,14 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="related_reference"><a class="link" href="#related_reference">Related reference</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><strong>Mark as ready</strong> and the publishing state machine are documented under <a href="workflow.ahtml">Workflow</a>. <strong>Request publishing</strong> (the review/approval handoff variant of Publish) is a kind of issue — see <a href="issues/publish-request.ahtml">Publish request</a>. <strong>Permanent delete</strong> (from the archive) and restoring archived items are on the <a href="archive.ahtml">Archive</a> page. The <strong>Create task</strong> entry point is documented under <a href="issues.ahtml">Issues</a>.</p>
+<p><strong>Mark as ready</strong> and the publishing state machine are documented under <a href="workflow.ahtml">Workflow</a>. <strong>Request publishing</strong> (the review/approval handoff variant of Publish) is a kind of issue — see <a href="issues/publish-request.ahtml">Publish request</a>. <strong>Permanent delete</strong> (from the archive) and restoring archived items are on the <a href="workbench/archive.ahtml">Archive</a> page. The <strong>Create task</strong> entry point is documented under <a href="issues.ahtml">Issues</a>.</p>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-04-23 07:11:27 UTC
+Last updated 2026-05-13 08:06:51 UTC
 </div>
 </div>
 </body>

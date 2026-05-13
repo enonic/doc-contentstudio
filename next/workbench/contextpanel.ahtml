@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.26">
-<title>Publish request</title>
+<title>Context panel</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -437,13 +437,14 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article toc2 toc-right">
 <div id="header">
-<h1>Publish request</h1>
+<h1>Context panel</h1>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#creating_a_request">Creating a request</a></li>
-<li><a href="#the_publish_request_dialog">The publish request dialog</a></li>
-<li><a href="#finding_a_publish_request">Finding a publish request</a></li>
+<li><a href="#widget_selector">Widget selector</a></li>
+<li><a href="#built_in_widgets">Built-in widgets</a></li>
+<li><a href="#content_studio_widgets">Content Studio+ widgets</a></li>
+<li><a href="#contributing_a_widget">Contributing a widget</a></li>
 </ul>
 </div>
 </div>
@@ -451,106 +452,92 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>A <strong>publish request</strong> asks another user to review and publish one or more content items. It is the standard path for an editor who lacks publish permission, and it is also useful when the editor has permission but wants a reviewer to sign off before content goes live.</p>
+<p>The <strong>Context panel</strong> is the multi-function column on the right of the <a href="navigator.ahtml">Navigator</a> and the <a href="../editor.ahtml">Editor</a>. It hosts a set of <strong>widgets</strong> — small tools that act on the currently selected content item. Widgets can be built-in, shipped by <a href="https://market.enonic.com/vendors/enonic/content-studio-plus">Content Studio+</a>, or contributed by any installed application.</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="contextpanel/images/navigator-context-panel.png" alt="Context panel" width="50%">
+</div>
 </div>
 <div class="paragraph">
-<p>Publish requests are separate from <a href="../issues.ahtml">Tasks</a> but share the same list in the <strong>Open Issues</strong> dialog — tasks and requests appear on different tabs.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="creating_a_request"><a class="link" href="#creating_a_request">Creating a request</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The <strong>Request publishing</strong> action is available from the same places as <a href="../actions/publish.ahtml">Publish</a> — the toolbar, the context menu, and the Content Editor — but it replaces the <strong>Publish</strong> button for users without publish permission.</p>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-When <strong>Request publishing</strong> is invoked on a single item that is currently <strong>In progress</strong>, the item is automatically marked <strong>Ready for publishing</strong>, on the assumption that requesting a publish signals the work is finished.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>The Publish Request wizard has two steps.</p>
-</div>
-<div class="paragraph">
-<p><strong>Step 1.</strong> Review the items to be published together with their dependencies — the same tree the Publishing wizard would show.</p>
+<p>The panel is toggled open and closed with the <span class="image"><img src="contextpanel/images/navigator-context-panel-icon.png" alt="navigator context panel icon" width="24px" title="Context panel toggle"></span> icon next to the Action-menu button in the Navigator, or with the cog icon on the right of the editor toolbar in the Editor.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/request-publishing-wizard-1.png" alt="Publish Request wizard — step 1" width="660">
-</div>
-</div>
-<div class="paragraph">
-<p><strong>Step 2.</strong> Describe the changes (required) and pick one or more assignees who will receive the request.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/request-publishing-wizard-2.png" alt="Publish Request wizard — step 2" width="671">
-</div>
-</div>
-<div class="paragraph">
-<p>Clicking <strong>Create request</strong> creates the publish request and opens its detail dialog.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="the_publish_request_dialog"><a class="link" href="#the_publish_request_dialog">The publish request dialog</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The publish request dialog looks much like an Issue dialog, with one important difference: the <strong>Items</strong> tab includes a <strong>Publish now</strong> button so a reviewer can publish directly from the dialog. The calendar icon at the bottom toggles a scheduling form to set online-from/online-to dates.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/publishing-request-1.png" alt="Publish request dialog" width="673">
-</div>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/publishing-request-2.png" alt="Publish request with scheduling" width="673">
+<img src="contextpanel/images/widgets-panel-button.png" alt="Context panel toggle" width="209">
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="finding_a_publish_request"><a class="link" href="#finding_a_publish_request">Finding a publish request</a></h2>
+<h2 id="widget_selector"><a class="link" href="#widget_selector">Widget selector</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Publish requests appear in the same <strong>Open Issues</strong> dialog as tasks, on a dedicated <strong>Publish requests</strong> tab.</p>
+<p>The dropdown at the top of the panel lists the available widgets: the built-ins appear first, followed by widgets from installed applications. A filter field at the top narrows the list by keyword.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/publishing-request-list.png" alt="Publish request list" width="701">
+<img src="contextpanel/images/widgets-search.png" alt="Widget selector with filter" width="206">
 </div>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="contextpanel/images/navigator-widget-selector.png" alt="Widget selector" width="25%">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="built_in_widgets"><a class="link" href="#built_in_widgets">Built-in widgets</a></h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="contextpanel/details.ahtml">Details</a> — basic properties of the selected content item (display name, path, status, permissions, properties, schedule, attachments).</p>
+</li>
+<li>
+<p><a href="contextpanel/dependencies.ahtml">Dependencies</a> — inbound and outbound references between the item and other content.</p>
+</li>
+<li>
+<p><a href="contextpanel/versions.ahtml">Version history</a> — every version of the selected item; lets you compare or revert.</p>
+</li>
+<li>
+<p><a href="../editor/page-editor.ahtml#_components_widget">Components</a> — the page-building tool that appears in the Editor for renderable content.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="content_studio_widgets"><a class="link" href="#content_studio_widgets">Content Studio+ widgets</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The following widgets are contributed by <a href="https://market.enonic.com/vendors/enonic/content-studio-plus">Content Studio+</a>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="../layers.ahtml#layers_panel">Layers</a> — shows the status of a content item across every layer in the system.</p>
+</li>
+<li>
+<p><a href="contextpanel/variants.ahtml">Variants</a> — creates and manages A/B variants of the selected item.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="contributing_a_widget"><a class="link" href="#contributing_a_widget">Contributing a widget</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Context panel is <strong>pluggable</strong>: any installed application can contribute a widget that appears in the widget selector.</p>
 </div>
 <div class="paragraph">
-<p>When the currently-edited content is part of an open publish request, the default toolbar action in the Content Editor becomes <strong>Open request</strong> — clicking it jumps to the most recent open request containing the item.</p>
+<p>See the <a href="https://developer.enonic.com/docs/code/stable/extensions/contextpanel">Context panel extension reference</a> for the descriptor format, lifecycle, and implementation details.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/publishing-request-toolbar.png" alt="Open request toolbar button" width="494">
-</div>
-</div>
-<div class="paragraph">
-<p>The full list of open issues and publish requests containing this item is available from the dropdown next to the main button.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/publish-button-menu.png" alt="Issues and publish requests menu">
-</div>
-</div>
-<div class="paragraph">
-<p>The same list is also shown in the Preview-panel toolbar in the <a href="../workbench/navigator.ahtml">Navigator</a>.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/issues-toolbar.png" alt="Issues menu in the Preview toolbar">
+<img src="contextpanel/images/widgets-context-panel.png" alt="Custom widget in the Context panel" width="207">
 </div>
 </div>
 </div>

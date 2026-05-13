@@ -451,7 +451,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>The <strong>Delete</strong> action removes content from the active tree. Deleted items are not destroyed — they are moved to the <a href="../archive.ahtml">Archive</a>, from which they can later be restored or permanently removed.</p>
+<p>The <strong>Delete</strong> action removes content from the active tree. Deleted items are not destroyed — they are moved to the <a href="../workbench/archive.ahtml">Archive</a>, from which they can later be restored or permanently removed.</p>
 </div>
 <div class="paragraph">
 <p>There are three ways to invoke Delete:</p>
@@ -516,7 +516,7 @@ Online content (published items) is taken offline immediately when deleted. The 
 <h2 id="permanent_deletion"><a class="link" href="#permanent_deletion">Permanent deletion</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Delete is a soft operation — the content is moved into the Archive and remains recoverable. <strong>Permanent</strong> deletion happens only from the <a href="../archive.ahtml">Archive</a> view, where a separate <strong>Delete</strong> action physically removes the item from storage. Permanent deletion is not reversible (short of a snapshot restore).</p>
+<p>Delete is a soft operation — the content is moved into the Archive and remains recoverable. <strong>Permanent</strong> deletion happens only from the <a href="../workbench/archive.ahtml">Archive</a> view, where a separate <strong>Delete</strong> action physically removes the item from storage. Permanent deletion is not reversible (short of a snapshot restore).</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -549,7 +549,7 @@ Online content (published items) is taken offline immediately when deleted. The 
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-04-23 07:11:27 UTC
+Last updated 2026-05-13 08:06:51 UTC
 </div>
 </div>
 </body>

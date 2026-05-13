@@ -466,10 +466,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>The <strong>Page editor</strong> is the drag-and-drop surface for building pages. It replaces the <a href="preview.ahtml">Preview</a> panel on the right side of the <a href="../editor.ahtml">Content Editor</a> when the selected content is renderable (sites, page templates, and content with a supporting template). It is both a live rendering of the page <em>and</em> the primary tool for placing, configuring, and arranging the components that make up that page.</p>
+<p>The <strong>Page editor</strong> is the drag-and-drop surface for building pages. It replaces the <a href="../workbench/preview.ahtml">Preview</a> panel on the right side of the <a href="../editor.ahtml">Content Editor</a> when the selected content is renderable (sites, page templates, and content with a supporting template). It is both a live rendering of the page <em>and</em> the primary tool for placing, configuring, and arranging the components that make up that page.</p>
 </div>
 <div class="paragraph">
-<p>The Page editor works in tandem with the <a href="content-form.ahtml">Content Form</a> (for the content&#8217;s data fields) and the <a href="../navigator.ahtml#context_panel">Context panel</a> (for component configuration and other widgets).</p>
+<p>The Page editor works in tandem with the <a href="content-form.ahtml">Content Form</a> (for the content&#8217;s data fields) and the <a href="../workbench/contextpanel.ahtml">Context panel</a> (for component configuration and other widgets).</p>
 </div>
 </div>
 </div>
@@ -509,7 +509,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="_components_widget"><a class="link" href="#_components_widget">Components widget</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The <strong>Components</strong> widget appears in the <a href="../navigator.ahtml#context_panel">Context panel</a> whenever the Page editor is available. It has two tabs: <strong>Insert</strong> for adding new components to the page, and a per-component <strong>Inspect</strong> tab for configuring the currently selected component.</p>
+<p>The <strong>Components</strong> widget appears in the <a href="../workbench/contextpanel.ahtml">Context panel</a> whenever the Page editor is available. It has two tabs: <strong>Insert</strong> for adding new components to the page, and a per-component <strong>Inspect</strong> tab for configuring the currently selected component.</p>
 </div>
 <div class="sect2">
 <h3 id="insert_tab"><a class="link" href="#insert_tab">Insert tab</a></h3>
@@ -737,7 +737,7 @@ Layouts cannot be nested inside other layouts. If a layout is hard to click in t
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-04-23 07:11:27 UTC
+Last updated 2026-05-13 08:06:51 UTC
 </div>
 </div>
 </body>

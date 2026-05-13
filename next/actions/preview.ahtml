@@ -441,7 +441,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="content">
 <div class="paragraph">
-<p>The <strong>Preview</strong> action renders a site or page content in a new browser tab as the end user would see it. Unlike the in-editor <a href="../editor/preview.ahtml">Preview panel</a>, the <strong>Preview</strong> action opens the rendered output in a full browser tab — useful for checking responsive behavior, printing, or sharing a draft link.</p>
+<p>The <strong>Preview</strong> action renders a site or page content in a new browser tab as the end user would see it. Unlike the in-editor <a href="../workbench/preview.ahtml">Preview panel</a>, the <strong>Preview</strong> action opens the rendered output in a full browser tab — useful for checking responsive behavior, printing, or sharing a draft link.</p>
 </div>
 <div class="paragraph">
 <p>There are two ways to invoke Preview:</p>
@@ -471,7 +471,7 @@ Preview only opens for content that can be rendered as a page — sites, page te
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-04-23 07:11:27 UTC
+Last updated 2026-05-13 08:06:51 UTC
 </div>
 </div>
 </body>
