@@ -55,7 +55,7 @@ image::cs53-preview-mode.png[Preview, 75%, align="center"]
 
 TIP: In future versions it will be possible to add custom preview modes.
 
-Read more about content preview modes in the <<navigator#preview_panel,Content Navigator documentation>>.
+Read more about content preview modes in the <<workbench/preview#,Preview>> documentation.
 
 ==== Emulator
 
@@ -86,7 +86,7 @@ Several improvements have been made to make Content Studio more accessible and c
 * Toolbars and their child elements are now focusable and can be navigated with arrow keys, according to WCAG 2.1 standards
 * Most of the elements received proper ARIA roles and labels
 
-:imagesdir: navigator/images
+:imagesdir: workbench/navigator/images
 
 image::navigator-accessibility.png[Toolbar accessibility, 50%, align="center"]
 
@@ -217,7 +217,7 @@ TIP: This mode can be turned on in Content Studio's <<config#exclude_optional_de
 
 === Export of search results
 
-Search results produced by Content Navigator's <<navigator#search_panel,Search Panel>> can now be exported into a CSV file using the download icon next to the Search Panel's free-text search field. The file will contain the following fields: *Id*, *Path*, *Creator*, *Modifier*, *Created*, *Modified*, *Owner*, *Content Type*, *Display Name*, *Language*, *Published From*, *Published Until*, *First Published*.
+Search results produced by the Navigator's <<workbench/navigator#search_panel,Search panel>> can now be exported into a CSV file using the download icon next to the Search Panel's free-text search field. The file will contain the following fields: *Id*, *Path*, *Creator*, *Modifier*, *Created*, *Modified*, *Owner*, *Content Type*, *Display Name*, *Language*, *Published From*, *Published Until*, *First Published*.
 
 :imagesdir: release/images
 

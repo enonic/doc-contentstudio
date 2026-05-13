@@ -40,7 +40,7 @@ When published, the active draft version is copied into the *master* branch. Onl
 
 When a published content is edited and saved, the new version becomes active in `draft`, but `master` is unchanged. Status flips to `Modified`, and the content must be re-published for changes to go live.
 
-Content can either be archived or instantly deleted via the <<../archive#,Archive>> dialog. Both take the content offline (remove it from `master`) if it was published. Instant deletion removes it from both branches; archived items move under the `/archive` node and can be restored.
+Content can either be archived or instantly deleted via the <<../workbench/archive#,Archive>> dialog. Both take the content offline (remove it from `master`) if it was published. Instant deletion removes it from both branches; archived items move under the `/archive` node and can be restored.
 
 == Publishing wizard
 

@@ -45,6 +45,6 @@ The full list of open issues and publish requests containing this item is availa
 
 image::publish-button-menu.png[Issues and publish requests menu]
 
-The same list is also shown in the Preview-panel toolbar in the <<../navigator#,Content Navigator>>.
+The same list is also shown in the Preview-panel toolbar in the <<../workbench/navigator#,Navigator>>.
 
 image::issues-toolbar.png[Issues menu in the Preview toolbar]

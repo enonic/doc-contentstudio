@@ -81,6 +81,8 @@ or change their configuration.
 
 TIP: If an upstream project is selected, you can use "Copy from parent" button to quickly select this setting from the upstream project.
 
+NOTE: Project roles set the *default* permissions that every new content item in the project inherits. Per-item overrides are managed through the *Edit Permissions* dialog opened from the <<workbench/contextpanel/details#,Details widget>> in the Context panel. See <<workbench/permissions#,Permissions>> for the full model.
+
 === Applications
 
 You may assign applications to the project. This will enable usage of content types and controller mappings defined in

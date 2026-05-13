@@ -2,9 +2,9 @@
 :toc: right
 :imagesdir: images
 
-The *Page editor* is the drag-and-drop surface for building pages. It replaces the <<preview#,Preview>> panel on the right side of the <<../editor#,Content Editor>> when the selected content is renderable (sites, page templates, and content with a supporting template). It is both a live rendering of the page _and_ the primary tool for placing, configuring, and arranging the components that make up that page.
+The *Page editor* is the drag-and-drop surface for building pages. It replaces the <<../workbench/preview#,Preview>> panel on the right side of the <<../editor#,Content Editor>> when the selected content is renderable (sites, page templates, and content with a supporting template). It is both a live rendering of the page _and_ the primary tool for placing, configuring, and arranging the components that make up that page.
 
-The Page editor works in tandem with the <<content-form#,Content Form>> (for the content's data fields) and the <<../navigator#context_panel,Context panel>> (for component configuration and other widgets).
+The Page editor works in tandem with the <<content-form#,Content Form>> (for the content's data fields) and the <<../workbench/contextpanel#,Context panel>> (for component configuration and other widgets).
 
 == Selecting a controller or template
 
@@ -25,7 +25,7 @@ image::page-editor-lock.png[]
 [[_components_widget]]
 == Components widget
 
-The *Components* widget appears in the <<../navigator#context_panel,Context panel>> whenever the Page editor is available. It has two tabs: *Insert* for adding new components to the page, and a per-component *Inspect* tab for configuring the currently selected component.
+The *Components* widget appears in the <<../workbench/contextpanel#,Context panel>> whenever the Page editor is available. It has two tabs: *Insert* for adding new components to the page, and a per-component *Inspect* tab for configuring the currently selected component.
 
 === Insert tab
 

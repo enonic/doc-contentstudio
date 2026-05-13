@@ -4,11 +4,11 @@
 
 The *Archive* is a separate storage area where deleted content is held before it is permanently removed. It preserves the structure of removed items (descendants, attachments, version history) so content can be restored if it is deleted by mistake.
 
-Content ends up in the Archive via the <<actions/delete#,Delete>> action from the Navigator or Editor. From the Archive, items can be *restored* to their original location or permanently deleted.
+Content ends up in the Archive via the <<../actions/delete#,Delete>> action from the Navigator or Editor. From the Archive, items can be *restored* to their original location or permanently deleted.
 
 == Archive in layers
 
-When <<layers#,layers>> are involved:
+When <<../layers#,layers>> are involved:
 
 * Deleting a content item in a parent project automatically archives it in all child layers where it is not localised.
 * Creating a new layer automatically inherits the archive of its parent project/layer.
@@ -21,7 +21,7 @@ NOTE: *Content Studio+ feature.* The dedicated *Archive* section in the main men
 
 image::archived-content.png[Archived contents, 600]
 
-Click the *Archive* icon in the vertical main menu on the left to open the Archive view. It looks much like the Content Navigator with a few differences:
+Click the *Archive* icon in the vertical main menu on the left to open the Archive view. It looks much like the <<navigator#,Navigator>> with a few differences:
 
 * Only two actions are available: *Restore* and *Delete*. *Restore* returns the selected content to its original location. *Delete* physically removes the selected content from storage.
 * Preview works only for media items (images, videos, etc.).
@@ -47,6 +47,6 @@ The *Delete* action inside the Archive view physically removes the selected cont
 
 == Version history
 
-Delete and restore operations appear as entries in the <<editor/versions#,Version history>> widget for each content item.
+Delete and restore operations appear as entries in the <<contextpanel/versions#,Version history>> widget for each content item.
 
 image::version-history.png[Version history of a restored item, 394]

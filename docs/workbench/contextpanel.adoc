@@ -1,0 +1,40 @@
+= Context panel
+:toc: right
+:imagesdir: contextpanel/images
+
+The *Context panel* is the multi-function column on the right of the <<navigator#,Navigator>> and the <<../editor#,Editor>>. It hosts a set of *widgets* — small tools that act on the currently selected content item. Widgets can be built-in, shipped by https://market.enonic.com/vendors/enonic/content-studio-plus[Content Studio+], or contributed by any installed application.
+
+image::navigator-context-panel.png[Context panel, 50%, align="center"]
+
+The panel is toggled open and closed with the image:navigator-context-panel-icon.png[title=Context panel toggle, width=24px] icon next to the Action-menu button in the Navigator, or with the cog icon on the right of the editor toolbar in the Editor.
+
+image::widgets-panel-button.png[Context panel toggle, 209]
+
+== Widget selector
+
+The dropdown at the top of the panel lists the available widgets: the built-ins appear first, followed by widgets from installed applications. A filter field at the top narrows the list by keyword.
+
+image::widgets-search.png[Widget selector with filter, 206]
+image::navigator-widget-selector.png[Widget selector, 25%,align="center"]
+
+== Built-in widgets
+
+* <<contextpanel/details#,Details>> — basic properties of the selected content item (display name, path, status, permissions, properties, schedule, attachments).
+* <<contextpanel/dependencies#,Dependencies>> — inbound and outbound references between the item and other content.
+* <<contextpanel/versions#,Version history>> — every version of the selected item; lets you compare or revert.
+* <<../editor/page-editor#_components_widget,Components>> — the page-building tool that appears in the Editor for renderable content.
+
+== Content Studio+ widgets
+
+The following widgets are contributed by https://market.enonic.com/vendors/enonic/content-studio-plus[Content Studio+]:
+
+* <<../layers#layers_panel,Layers>> — shows the status of a content item across every layer in the system.
+* <<contextpanel/variants#,Variants>> — creates and manages A/B variants of the selected item.
+
+== Contributing a widget
+
+The Context panel is *pluggable*: any installed application can contribute a widget that appears in the widget selector.
+
+See the https://developer.enonic.com/docs/code/stable/extensions/contextpanel[Context panel extension reference] for the descriptor format, lifecycle, and implementation details.
+
+image::widgets-context-panel.png[Custom widget in the Context panel, 207]

@@ -1,8 +1,8 @@
 = Versions
 :toc: right
-:imagesdir: versions/images
+:imagesdir: images
 
-Every save, publish, unpublish, rename, or permissions change on a content item creates a new *version*. The full history is available via the *Version history* widget in the <<navigator#context_panel,Context panel>>: you can see every change, compare any two versions, and revert to an older one.
+Every save, publish, unpublish, rename, or permissions change on a content item creates a new *version*. The full history is available via the *Version history* widget in the <<../contextpanel#,Context panel>>: you can see every change, compare any two versions, and revert to an older one.
 
 image::widgets-version-history.png[Version history widget, 283]
 

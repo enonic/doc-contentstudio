@@ -2,7 +2,7 @@
 :toc: right
 :imagesdir: images
 
-The *Preview* action renders a site or page content in a new browser tab as the end user would see it. Unlike the in-editor <<../editor/preview#,Preview panel>>, the *Preview* action opens the rendered output in a full browser tab — useful for checking responsive behavior, printing, or sharing a draft link.
+The *Preview* action renders a site or page content in a new browser tab as the end user would see it. Unlike the in-editor <<../workbench/preview#,Preview panel>>, the *Preview* action opens the rendered output in a full browser tab — useful for checking responsive behavior, printing, or sharing a draft link.
 
 There are two ways to invoke Preview:
 
