@@ -77,10 +77,44 @@
         {
           "title": "Page editor",
           "document": "editor/page-editor"
+        }
+      ]
+    },
+    {
+      "title": "Content types",
+      "document": "content-types",
+      "menuItems": [
+        {
+          "title": "Folder",
+          "document": "content-types/folder"
         },
         {
-          "title": "Image editor",
-          "document": "editor/image"
+          "title": "Shortcut",
+          "document": "content-types/shortcut"
+        },
+        {
+          "title": "Site",
+          "document": "content-types/site"
+        },
+        {
+          "title": "Page template",
+          "document": "content-types/page-template"
+        },
+        {
+          "title": "Media",
+          "document": "content-types/media"
+        },
+        {
+          "title": "Image",
+          "document": "content-types/image"
+        },
+        {
+          "title": "Fragment",
+          "document": "content-types/fragment"
+        },
+        {
+          "title": "Unstructured",
+          "document": "content-types/unstructured"
         }
       ]
     },
@@ -133,16 +167,6 @@
         {
           "title": "Publish request",
           "document": "issues/publish-request"
-        }
-      ]
-    },
-    {
-      "title": "Sites",
-      "document": "sites",
-      "menuItems": [
-        {
-          "title": "Page templates",
-          "document": "sites/page-templates"
         }
       ]
     },

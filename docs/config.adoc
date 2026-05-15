@@ -55,7 +55,7 @@ By default, widgets with inline scripts/styles or scripts loaded from external d
 
 ==== Example: Google Analytics Widget
 
-The https://market.enonic.com/vendors/enonic/google-analytics[Google analytics app^] injects its own scripts referring to an external domains. See CSP example in the https://developer.enonic.com/docs/google-analytics/stable#content_security_policy[GA app documentation^].
+The https://market.enonic.com/vendors/enonic/google-analytics[Google analytics app] injects its own scripts referring to an external domains. See CSP example in the https://developer.enonic.com/docs/google-analytics/stable#content_security_policy[GA app documentation].
 
 ==== Example: Disable CSP
 
@@ -71,7 +71,7 @@ Content Studio's preview uses an Iframe to isolate the front-end.
 
 In production, front-ends built with the Enonic site engine deployed on custom domains. In preview mode however, the site engine is accessed in the same domain and URL context as Content Studio. To mitigate this Site Engine has a standard preview CSP to protect Content Studio and the XP admin.
 
-If your site is not working properly in preview mode, consider improving the implementation. Details on tuning the Site Engine CSP are described in the  https://developer.enonic.com/docs/xp/stable/deployment/config#admin[XP configuration documentation^].
+If your site is not working properly in preview mode, consider improving the implementation. Details on tuning the Site Engine CSP are described in the  https://developer.enonic.com/docs/xp/stable/deployment/config#admin[XP configuration documentation].
 
 NOTE: While using Site Engine in visual edit mode, the CSP is strictly enforced, and is currently not possible to override.
 

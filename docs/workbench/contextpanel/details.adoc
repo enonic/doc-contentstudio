@@ -24,7 +24,7 @@ Schedule::
 The from/to dates the content is scheduled to be online. Only shown for published content that has a schedule configured.
 
 Page template::
-The <<../../sites/page-templates#,page template>> used to render the content, if any.
+The <<../../content-types/page-template#,page template>> used to render the content, if any.
 
 Attachments::
 Downloadable binary attachments on the content item.

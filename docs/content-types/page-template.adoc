@@ -1,8 +1,8 @@
-= Page templates
+= Page template
 :toc: right
 :imagesdir: images
 
-A *Page template* is a reusable page definition that renders one or more content types as pages. Templates live inside a site's automatically-provisioned <<../sites#_templates_folder,Templates folder>>, and each one pairs a page controller (the HTML skeleton from an application) with one or more content types that will use it.
+A *Page template* is a reusable page definition that renders one or more content types as pages. Templates live inside a site's automatically-provisioned <<site#_templates_folder,Templates folder>>, and each one pairs a page controller (the HTML skeleton from an application) with one or more content types that will use it.
 
 image::browse-templates-list.png[List of page templates in the Templates folder]
 

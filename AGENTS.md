@@ -50,9 +50,17 @@ This project relies on GitHub Actions for building and publishing. There are no 
 ## Key Conventions
 
 - **Images:**
-  - Images are stored in `images/` subdirectories relative to the referencing `.adoc` file (e.g., `docs/content/images/`, `docs/schemas/form-items/images/`).
-  - In AsciiDoc files, the `:imagesdir:` is typically set to `images`, mapping files to the respective folders.
-  - Example: `image::my-image.png[]` (where `my-image.png` is placed in `docs/content/images/`).
+  - Images live in `images/` subdirectories. `:imagesdir:` resolves relative to the referencing `.adoc` file.
+  - **One shared `images/` folder per section when subpages are leaves.** If a section's subpages have no further nesting of their own, do not create a per-subpage `images/` folder — all subpages share a single `images/` folder at the section root. Don't leave empty `images/` directories behind.
+  - Example layout (content-types — all subpages are leaves):
+    ```
+    docs/content-types.adoc            :imagesdir: content-types/images
+    docs/content-types/site.adoc       :imagesdir: images
+    docs/content-types/folder.adoc     :imagesdir: images
+    docs/content-types/images/         ← shared by all the above
+    ```
+  - When a section has additional nesting (subpages that themselves have subpages), each level may have its own `images/` dir. For example, `workbench/contextpanel/` has its own subpages (Details, Dependencies, Versions, Variants), so it keeps an `images/` separate from `workbench/images/`.
+  - Example reference: `image::my-image.png[]` resolves via the active `:imagesdir:`.
 - **Menu Updates:** When adding new documentation pages, you MUST update `docs/menu.json` to ensure they appear in the docs navigation.
 - **Links:** Use relative links between `.adoc` files (e.g., `<<path/to/doc#,Label>>`).
 - **Variables:** Use attributes defined in `docs/.variables.adoc` for consistent naming (e.g., `{release}`).

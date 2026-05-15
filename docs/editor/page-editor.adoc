@@ -114,7 +114,7 @@ The Image component inserts an image content item directly into a page region. T
 [[_fragment]]
 === Fragment
 
-A *Fragment* is a component saved as its own content item so it can be reused on multiple pages with identical configuration. Editing a fragment updates every page that uses it — unlike the other components, which are configured independently on every page.
+A *Fragment* is a component saved as its own content item so it can be reused on multiple pages with identical configuration. Editing a fragment updates every page that uses it — unlike the other components, which are configured independently on every page. Fragment is a built-in content type; see <<../content-types/fragment#,Fragment>> for the content-side behaviour.
 
 Fragments are created by right-clicking any component in the Page editor and choosing *Save as fragment*. The new fragment opens in its own editor tab, and the original component is replaced with a reference to the fragment.
 

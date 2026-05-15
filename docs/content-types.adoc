@@ -1,0 +1,24 @@
+= Content types
+:toc: right
+:imagesdir: content-types/images
+
+A *content type* defines the fields of a content form.
+
+== Custom content types
+
+Developers may define and deploy custom content types to your project or site, tailored to your specific needs.
+
+For the developer reference on defining custom content types, see the https://developer.enonic.com/docs/xp/stable/cms/schemas[XP content type schema reference].
+
+== Built-in content types
+
+A handful of *built-in* types ship with Enonic XP and have special behaviour in Content Studio; those are documented here.
+
+* <<content-types/folder#,Folder>> — grouping container with no data fields.
+* <<content-types/shortcut#,Shortcut>> — redirect to another path.
+* <<content-types/site#,Site>> — the root of a website; carries installed applications.
+* <<content-types/page-template#,Page template>> — reusable page definition pairing a page controller with one or more content types.
+* <<content-types/media#,Media>> — images, video, audio, documents, and other binary uploads.
+* <<content-types/image#,Image>> — image-specific tools (cropping, focal point).
+* <<content-types/fragment#,Fragment>> — reusable page component stored as a content item; edits propagate everywhere referenced.
+* <<content-types/unstructured#,Unstructured>> — formless content used by applications to store free-form data.

@@ -178,7 +178,7 @@ Soft-hyphen character `\&shy;` added to Rich Text Editor's "Special chars" dialo
 
 ==== Email sender
 
-Before this release, email notifications for <<issues#,issues>> created in Content Studio used the current user's email address in the sender field. A new https://developer.enonic.com/docs/xp/stable/deployment/config#mail[config property^] is implemented in XP 7.14.1 which can be used to configure default email sender for emails sent by XP. If properly configured, the sender field in the email notifications sent for issues in Content Studio will be set to the configured email address.
+Before this release, email notifications for <<issues#,issues>> created in Content Studio used the current user's email address in the sender field. A new https://developer.enonic.com/docs/xp/stable/deployment/config#mail[config property] is implemented in XP 7.14.1 which can be used to configure default email sender for emails sent by XP. If properly configured, the sender field in the email notifications sent for issues in Content Studio will be set to the configured email address.
 
 ==== eXtra Data
 

@@ -28,12 +28,14 @@ A *content item* is a single piece of content — an article, image, page, or si
 
 A *content type* is the schema that defines an item's fields. Most are defined in application code; a handful ship with XP and have special behaviour:
 
-* *Folder* — a grouping container with no data fields beyond display name and path.
-* *Shortcut* — a path that redirects to another content item. Required *Target* field and optional name-value *Parameters*. Cannot use page templates.
-* *Site* — the root of a website. Carries installed applications and gets a *Templates* folder as its first child. See <<sites#,Sites>>.
-* *Page template* — a reusable page definition. See <<sites/page-templates#,Page templates>>.
-* *Image* — backed by an image file, with cropping and focal-point tools. See <<editor/image#,Image>>.
-* *Unstructured* — formless content used by applications to store free-form data; not editable in Content Studio beyond name, path, settings, and security.
+* *Folder* — a grouping container with no data fields beyond display name and path. See <<content-types/folder#,Folder>>.
+* *Shortcut* — a path that redirects to another content item. See <<content-types/shortcut#,Shortcut>>.
+* *Site* — the root of a website. Carries installed applications and gets a *Templates* folder as its first child. See <<content-types/site#,Site>>.
+* *Page template* — a reusable page definition. See <<content-types/page-template#,Page template>>.
+* *Media* — image, video, audio, and other binary uploads. See <<content-types/media#,Media>>.
+* *Image* — backed by an image file, with cropping and focal-point tools. See <<content-types/image#,Image>>.
+* *Unstructured* — formless content used by applications to store free-form data. See <<content-types/unstructured#,Unstructured>>.
+* *Fragment* — a reusable page component stored as a content item; edits propagate everywhere it's referenced. See <<content-types/fragment#,Fragment>>.
 
 === Pages and rendering
 

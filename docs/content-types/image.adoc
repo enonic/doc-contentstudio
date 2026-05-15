@@ -2,11 +2,22 @@
 :toc: right
 :imagesdir: images
 
-Uploading an image file creates an *Image* content item. Storing images as content means they are indexed for search, inherit the site's language and permissions, and can be referenced by ID from other content.
+Image is a specialised <<media#,Media>> content type. 
 
-Image content items have fields for Caption, Artist, Copyright, Tags, and Text, and automatically pick up any Exif metadata from the source file. The underlying file can be swapped via the upload button or by dragging a new file onto the preview.
 
-The Content Editor provides two specialised image-editing tools — *Cropping* and *Focal point* — that operate on the uploaded file and affect how the image is delivered when it is referenced from other content.
+== Introduction
+
+Uploading an raster image file creates an *Image* content item. Unlike a regular media item, an image content has additional editorial capabilities. 
+
+Visual editor:: Supports basic image editing such as *Cropping* and *Focal point*, which affect the delivery of the image.
+
+Image fields:: The image form has fields such as `Caption` and `Alt text`, but also technical metadata such as dimensions, photo fields like `aperture` and even Geo-location - if available.
+
+== Metadata extraction
+
+Once an image is uploaded, the underlying API will automatically pick up any Exif metadata from the source file and populate the corresponding fields in the content form.
+
+Like other media content, the metadata fields are indexed and searchable, so you can find images by searching for camera model, focal length etc.
 
 == Cropping
 
