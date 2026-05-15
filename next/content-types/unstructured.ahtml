@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.26">
-<title>Page templates</title>
+<title>Unstructured</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -437,13 +437,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article toc2 toc-right">
 <div id="header">
-<h1>Page templates</h1>
+<h1>Unstructured</h1>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#creating_a_page_template">Creating a page template</a></li>
-<li><a href="#which_template_is_used">Which template is used</a></li>
-<li><a href="#rendering_content_without_a_matching_template">Rendering content without a matching template</a></li>
+<li><a href="#when_to_use_it">When to use it</a></li>
 </ul>
 </div>
 </div>
@@ -451,75 +449,28 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>A <strong>Page template</strong> is a reusable page definition that renders one or more content types as pages. Templates live inside a site&#8217;s automatically-provisioned <a href="../sites.ahtml#_templates_folder">Templates folder</a>, and each one pairs a page controller (the HTML skeleton from an application) with one or more content types that will use it.</p>
+<p>The <strong>Unstructured</strong> content type stores free-form data without a fixed schema. Applications use it for runtime data they need to persist as content — for example, captured form submissions, app-specific state, or anything that doesn&#8217;t warrant its own content type.</p>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="images/browse-templates-list.png" alt="List of page templates in the Templates folder">
-</div>
+<div class="paragraph">
+<p>The data is not editable through Content Studio: only display name, path, settings, and security are exposed in the editor. Application code reads and writes the underlying data through the content APIs.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="creating_a_page_template"><a class="link" href="#creating_a_page_template">Creating a page template</a></h2>
+<h2 id="when_to_use_it"><a class="link" href="#when_to_use_it">When to use it</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Create a new <strong>Page template</strong> content inside the Templates folder. Two fields drive the template:</p>
+<p>Unstructured is the right choice when an application needs the standard content envelope (path, permissions, lifecycle, search indexing) but the payload is dynamic or evolving, and defining a fixed content type would be premature or awkward.</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Supports</strong> — the content types this template can render.</p>
-</li>
-<li>
-<p><strong>Controller</strong> (the selector on the right of the editor) — the page component from an installed application that provides the HTML skeleton. Once a controller is picked, the <a href="../editor/page-editor.ahtml">Page editor</a> becomes active and components can be placed into the controller&#8217;s regions.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="which_template_is_used"><a class="link" href="#which_template_is_used">Which template is used</a></h2>
-<div class="sectionbody">
 <div class="paragraph">
-<p>When several templates support the same content type, the one that appears <em>first</em> in the Templates folder is used by default. Individual content items can override the default via the <strong>Page template</strong> dropdown in the <a href="../editor/page-editor.ahtml#_inspect_tab">Inspect tab</a> of the Components widget.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/wizard-template.png" alt="Choosing a template for a content item">
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="rendering_content_without_a_matching_template"><a class="link" href="#rendering_content_without_a_matching_template">Rendering content without a matching template</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Content with no supporting template can still be rendered as a page — for example, rendering a folder called <em>Articles</em> as a listing of its children. Open the content in the editor, pick a page controller from the dropdown in the empty Page editor, and build the page from components as usual.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/wizard-template-select.png" alt="Selecting a controller for unsupported content">
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Shortcuts cannot use page templates — the shortcut&#8217;s redirect fires even if a matching template exists.
-</td>
-</tr>
-</table>
+<p>For data that has a known shape and is edited by humans, a custom content type is the better choice — see the <a href="https://developer.enonic.com/docs/xp/stable/cms/schemas">XP content type schema reference</a>.</p>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-05-13 08:06:51 UTC
+Last updated 2026-05-15 22:22:14 UTC
 </div>
 </div>
 </body>

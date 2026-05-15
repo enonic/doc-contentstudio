@@ -475,7 +475,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </dd>
 <dt class="hdlist1">Page template</dt>
 <dd>
-<p>The <a href="../../sites/page-templates.ahtml">page template</a> used to render the content, if any.</p>
+<p>The <a href="../../content-types/page-template.ahtml">page template</a> used to render the content, if any.</p>
 </dd>
 <dt class="hdlist1">Attachments</dt>
 <dd>
@@ -486,7 +486,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-05-13 08:06:51 UTC
+Last updated 2026-05-15 22:22:14 UTC
 </div>
 </div>
 </body>

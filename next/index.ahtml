@@ -521,22 +521,28 @@ Content Studio can be installed from <a href="https://market.enonic.com/vendors/
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Folder</strong> — a grouping container with no data fields beyond display name and path.</p>
+<p><strong>Folder</strong> — a grouping container with no data fields beyond display name and path. See <a href="content-types/folder.ahtml">Folder</a>.</p>
 </li>
 <li>
-<p><strong>Shortcut</strong> — a path that redirects to another content item. Required <strong>Target</strong> field and optional name-value <strong>Parameters</strong>. Cannot use page templates.</p>
+<p><strong>Shortcut</strong> — a path that redirects to another content item. See <a href="content-types/shortcut.ahtml">Shortcut</a>.</p>
 </li>
 <li>
-<p><strong>Site</strong> — the root of a website. Carries installed applications and gets a <strong>Templates</strong> folder as its first child. See <a href="sites.ahtml">Sites</a>.</p>
+<p><strong>Site</strong> — the root of a website. Carries installed applications and gets a <strong>Templates</strong> folder as its first child. See <a href="content-types/site.ahtml">Site</a>.</p>
 </li>
 <li>
-<p><strong>Page template</strong> — a reusable page definition. See <a href="sites/page-templates.ahtml">Page templates</a>.</p>
+<p><strong>Page template</strong> — a reusable page definition. See <a href="content-types/page-template.ahtml">Page template</a>.</p>
 </li>
 <li>
-<p><strong>Image</strong> — backed by an image file, with cropping and focal-point tools. See <a href="editor/image.ahtml">Image</a>.</p>
+<p><strong>Media</strong> — image, video, audio, and other binary uploads. See <a href="content-types/media.ahtml">Media</a>.</p>
 </li>
 <li>
-<p><strong>Unstructured</strong> — formless content used by applications to store free-form data; not editable in Content Studio beyond name, path, settings, and security.</p>
+<p><strong>Image</strong> — backed by an image file, with cropping and focal-point tools. See <a href="content-types/image.ahtml">Image</a>.</p>
+</li>
+<li>
+<p><strong>Unstructured</strong> — formless content used by applications to store free-form data. See <a href="content-types/unstructured.ahtml">Unstructured</a>.</p>
+</li>
+<li>
+<p><strong>Fragment</strong> — a reusable page component stored as a content item; edits propagate everywhere it&#8217;s referenced. See <a href="content-types/fragment.ahtml">Fragment</a>.</p>
 </li>
 </ul>
 </div>
@@ -646,7 +652,7 @@ Content Studio can be installed from <a href="https://market.enonic.com/vendors/
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-05-13 08:06:51 UTC
+Last updated 2026-05-15 22:22:14 UTC
 </div>
 </div>
 </body>

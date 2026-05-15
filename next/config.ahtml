@@ -535,7 +535,7 @@ See <a href="https://developer.enonic.com/docs/xp/stable/cms/schemas/input-types
 <div class="sect3">
 <h4 id="example_google_analytics_widget"><a class="link" href="#example_google_analytics_widget">Example: Google Analytics Widget</a></h4>
 <div class="paragraph">
-<p>The <a href="https://market.enonic.com/vendors/enonic/google-analytics" target="_blank" rel="noopener">Google analytics app</a> injects its own scripts referring to an external domains. See CSP example in the <a href="https://developer.enonic.com/docs/google-analytics/stable#content_security_policy" target="_blank" rel="noopener">GA app documentation</a>.</p>
+<p>The <a href="https://market.enonic.com/vendors/enonic/google-analytics">Google analytics app</a> injects its own scripts referring to an external domains. See CSP example in the <a href="https://developer.enonic.com/docs/google-analytics/stable#content_security_policy">GA app documentation</a>.</p>
 </div>
 </div>
 <div class="sect3">
@@ -559,7 +559,7 @@ See <a href="https://developer.enonic.com/docs/xp/stable/cms/schemas/input-types
 <p>In production, front-ends built with the Enonic site engine deployed on custom domains. In preview mode however, the site engine is accessed in the same domain and URL context as Content Studio. To mitigate this Site Engine has a standard preview CSP to protect Content Studio and the XP admin.</p>
 </div>
 <div class="paragraph">
-<p>If your site is not working properly in preview mode, consider improving the implementation. Details on tuning the Site Engine CSP are described in the  <a href="https://developer.enonic.com/docs/xp/stable/deployment/config#admin" target="_blank" rel="noopener">XP configuration documentation</a>.</p>
+<p>If your site is not working properly in preview mode, consider improving the implementation. Details on tuning the Site Engine CSP are described in the  <a href="https://developer.enonic.com/docs/xp/stable/deployment/config#admin">XP configuration documentation</a>.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -697,7 +697,7 @@ he/she will be asked to create a new content project using <a href="settings.aht
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-05-13 08:06:51 UTC
+Last updated 2026-05-15 22:22:14 UTC
 </div>
 </div>
 </body>

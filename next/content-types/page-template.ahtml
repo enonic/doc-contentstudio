@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.26">
-<title>Sites</title>
+<title>Page template</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -437,17 +437,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article toc2 toc-right">
 <div id="header">
-<h1>Sites</h1>
+<h1>Page template</h1>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#site_fields">Site fields</a></li>
-<li><a href="#applications">Applications</a>
-<ul class="sectlevel2">
-<li><a href="#application_configuration">Application configuration</a></li>
-</ul>
-</li>
-<li><a href="#templates_folder">Templates folder</a></li>
+<li><a href="#creating_a_page_template">Creating a page template</a></li>
+<li><a href="#which_template_is_used">Which template is used</a></li>
+<li><a href="#rendering_content_without_a_matching_template">Rendering content without a matching template</a></li>
 </ul>
 </div>
 </div>
@@ -455,107 +451,75 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>A <strong>Site</strong> is a special content type that sits at the root of a website. Sites are the bridge between content and applications: installing an application on a site is what makes page rendering, parts, layouts, and custom configuration available to the content inside.</p>
-</div>
-<div class="paragraph">
-<p>Sites are usually created at the root of the content tree. Creating one automatically provisions a <strong>Templates</strong> folder as its first child.</p>
+<p>A <strong>Page template</strong> is a reusable page definition that renders one or more content types as pages. Templates live inside a site&#8217;s automatically-provisioned <a href="site.ahtml#_templates_folder">Templates folder</a>, and each one pairs a page controller (the HTML skeleton from an application) with one or more content types that will use it.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="sites/images/browse-template.png" alt="Site with its Templates folder">
+<img src="images/browse-templates-list.png" alt="List of page templates in the Templates folder">
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="site_fields"><a class="link" href="#site_fields">Site fields</a></h2>
+<h2 id="creating_a_page_template"><a class="link" href="#creating_a_page_template">Creating a page template</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>A Site content item has:</p>
+<p>Create a new <strong>Page template</strong> content inside the Templates folder. Two fields drive the template:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>A description field (plain text).</p>
+<p><strong>Supports</strong> — the content types this template can render.</p>
 </li>
 <li>
-<p>An <strong>Applications</strong> selector for attaching and configuring applications that run on this site.</p>
-</li>
-<li>
-<p>The standard <strong>Settings</strong> and <strong>Security</strong> sections available to any content item.</p>
+<p><strong>Controller</strong> (the selector on the right of the editor) — the page component from an installed application that provides the HTML skeleton. Once a controller is picked, the <a href="../editor/page-editor.ahtml">Page editor</a> becomes active and components can be placed into the controller&#8217;s regions.</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="applications"><a class="link" href="#applications">Applications</a></h2>
+<h2 id="which_template_is_used"><a class="link" href="#which_template_is_used">Which template is used</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Applications provide the code behind a site. Some apps contribute components (parts, layouts, page controllers) used for page building in the <a href="editor/page-editor.ahtml">Page editor</a>; others just add functionality.</p>
-</div>
-<div class="paragraph">
-<p>A site needs at least one app that contributes a page controller before any content inside it can be rendered as a page.</p>
-</div>
-<div class="paragraph">
-<p>Applications are attached via the <strong>Applications</strong> selector in the site&#8217;s edit view. Adding or removing an application requires the <strong>Administrator</strong> or <strong>Content Manager Administrator</strong> role.</p>
+<p>When several templates support the same content type, the one that appears <em>first</em> in the Templates folder is used by default. Individual content items can override the default via the <strong>Page template</strong> dropdown in the <a href="../editor/page-editor.ahtml#_inspect_tab">Inspect tab</a> of the Components widget.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="sites/images/wizard-applications.png" alt="Adding applications to a site">
-</div>
-</div>
-<div class="sect2">
-<h3 id="application_configuration"><a class="link" href="#application_configuration">Application configuration</a></h3>
-<div class="paragraph">
-<p>Each application added to a site appears in the site&#8217;s edit view with:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>A pencil icon — edit the application&#8217;s configuration (fields defined by the application itself).</p>
-</li>
-<li>
-<p>An X icon — remove the application from the site.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>The available configuration options vary per application. Only <strong>Administrator</strong> or <strong>Content Manager Administrator</strong> can edit them.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="sites/images/wizard-config.png" alt="Application configuration dialog">
-</div>
+<img src="images/wizard-template.png" alt="Choosing a template for a content item">
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="templates_folder"><a class="link" href="#templates_folder">Templates folder</a></h2>
+<h2 id="rendering_content_without_a_matching_template"><a class="link" href="#rendering_content_without_a_matching_template">Rendering content without a matching template</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Every site has a <strong>Templates</strong> folder automatically created as a direct child. It behaves like a regular folder except that:</p>
+<p>Content with no supporting template can still be rendered as a page — for example, rendering a folder called <em>Articles</em> as a listing of its children. Open the content in the editor, pick a page controller from the dropdown in the empty Page editor, and build the page from components as usual.</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>It can <em>only</em> contain <a href="sites/page-templates.ahtml">Page template</a> content.</p>
-</li>
-<li>
-<p>It has a distinct icon in the Navigator tree.</p>
-</li>
-</ul>
+<div class="imageblock">
+<div class="content">
+<img src="images/wizard-template-select.png" alt="Selecting a controller for unsupported content">
 </div>
-<div class="paragraph">
-<p>The order of templates inside the folder matters — when several templates support the same content type, the one listed first is used by default.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Shortcuts cannot use page templates — the shortcut&#8217;s redirect fires even if a matching template exists.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-05-13 08:06:51 UTC
+Last updated 2026-05-15 22:22:14 UTC
 </div>
 </div>
 </body>

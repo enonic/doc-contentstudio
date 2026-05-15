@@ -697,7 +697,7 @@ Layouts cannot be nested inside other layouts. If a layout is hard to click in t
 <div class="sect2">
 <h3 id="_fragment"><a class="link" href="#_fragment">Fragment</a></h3>
 <div class="paragraph">
-<p>A <strong>Fragment</strong> is a component saved as its own content item so it can be reused on multiple pages with identical configuration. Editing a fragment updates every page that uses it — unlike the other components, which are configured independently on every page.</p>
+<p>A <strong>Fragment</strong> is a component saved as its own content item so it can be reused on multiple pages with identical configuration. Editing a fragment updates every page that uses it — unlike the other components, which are configured independently on every page. Fragment is a built-in content type; see <a href="../content-types/fragment.ahtml">Fragment</a> for the content-side behaviour.</p>
 </div>
 <div class="paragraph">
 <p>Fragments are created by right-clicking any component in the Page editor and choosing <strong>Save as fragment</strong>. The new fragment opens in its own editor tab, and the original component is replaced with a reference to the fragment.</p>
@@ -737,7 +737,7 @@ Layouts cannot be nested inside other layouts. If a layout is hard to click in t
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-05-13 08:06:51 UTC
+Last updated 2026-05-15 22:22:14 UTC
 </div>
 </div>
 </body>

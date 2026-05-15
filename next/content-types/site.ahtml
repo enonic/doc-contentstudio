@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.26">
-<title>Keyboard Shortcuts</title>
+<title>Site</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -437,13 +437,17 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article toc2 toc-right">
 <div id="header">
-<h1>Keyboard Shortcuts</h1>
+<h1>Site</h1>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#browse_view">Browse View</a></li>
-<li><a href="#content_editor">Content Editor</a></li>
-<li><a href="#rich_text_editor">Rich Text Editor</a></li>
+<li><a href="#site_fields">Site fields</a></li>
+<li><a href="#applications">Applications</a>
+<ul class="sectlevel2">
+<li><a href="#application_configuration">Application configuration</a></li>
+</ul>
+</li>
+<li><a href="#templates_folder">Templates folder</a></li>
 </ul>
 </div>
 </div>
@@ -451,281 +455,107 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>This section describes the shortcuts that are available for power users in the Content Studio.</p>
+<p>A <strong>Site</strong> is a special content type that sits at the root of a website. Sites are the bridge between content and applications: installing an application on a site is what makes page rendering, parts, layouts, and custom configuration available to the content inside.</p>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Press F2 to reveal all available shortcuts for a view.
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p>Sites are usually created at the root of the content tree. Creating one automatically provisions a <strong>Templates</strong> folder as its first child.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/browse-template.png" alt="Site with its Templates folder">
+</div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="browse_view"><a class="link" href="#browse_view">Browse View</a></h2>
+<h2 id="site_fields"><a class="link" href="#site_fields">Site fields</a></h2>
 <div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Content Navigator</th>
-<th class="tableblock halign-center valign-top">Mac OS X</th>
-<th class="tableblock halign-center valign-top">Windows / Linux</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">New content</p></td>
-<td class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><code>Alt + N</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Select / Unselect content</p></td>
-<td class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><code>Space</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Move selected content</p></td>
-<td class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><code>Alt + M</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Edit selected content</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>⌘ + E</code> / <code>Enter</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>Ctrl + E</code> / <code>Enter</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Archive selected content</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>⌘ + Delete</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>Ctrl + Delete</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Publish selected content</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>⌘ + Alt + P</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>Ctrl + Alt + P</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Preview selected content</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>Alt + Space</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>Ctrl + Alt + Space</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Open search panel</p></td>
-<td class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><code>Shift + F</code></p></td>
-</tr>
-</tbody>
-</table>
+<div class="paragraph">
+<p>A Site content item has:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>A description field (plain text).</p>
+</li>
+<li>
+<p>An <strong>Applications</strong> selector for attaching and configuring applications that run on this site.</p>
+</li>
+<li>
+<p>The standard <strong>Settings</strong> and <strong>Security</strong> sections available to any content item.</p>
+</li>
+</ul>
+</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="content_editor"><a class="link" href="#content_editor">Content Editor</a></h2>
+<h2 id="applications"><a class="link" href="#applications">Applications</a></h2>
 <div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Edit content wizard</th>
-<th class="tableblock halign-center valign-top">Mac OS X</th>
-<th class="tableblock halign-center valign-top">Windows / Linux</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Save content</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>⌘ + S</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>Ctrl + S</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Save content and close wizard tab</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>⌘ + Enter</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>Ctrl + Enter</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Close wizard tab</p></td>
-<td class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><code>Alt + W</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Archive content</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>⌘ + Delete</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>Ctrl + Delete</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Publish selected content</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>⌘ + Alt + P</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>Ctrl + Alt + P</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Preview selected content</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>Alt + Space</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>Ctrl + Alt + Space</code></p></td>
-</tr>
-</tbody>
-</table>
+<div class="paragraph">
+<p>Applications provide the code behind a site. Some apps contribute components (parts, layouts, page controllers) used for page building in the <a href="../editor/page-editor.ahtml">Page editor</a>; others just add functionality.</p>
+</div>
+<div class="paragraph">
+<p>A site needs at least one app that contributes a page controller before any content inside it can be rendered as a page.</p>
+</div>
+<div class="paragraph">
+<p>Applications are attached via the <strong>Applications</strong> selector in the site&#8217;s edit view. Adding or removing an application requires the <strong>Administrator</strong> or <strong>Content Manager Administrator</strong> role.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/wizard-applications.png" alt="Adding applications to a site">
+</div>
+</div>
+<div class="sect2">
+<h3 id="application_configuration"><a class="link" href="#application_configuration">Application configuration</a></h3>
+<div class="paragraph">
+<p>Each application added to a site appears in the site&#8217;s edit view with:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>A pencil icon — edit the application&#8217;s configuration (fields defined by the application itself).</p>
+</li>
+<li>
+<p>An X icon — remove the application from the site.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The available configuration options vary per application. Only <strong>Administrator</strong> or <strong>Content Manager Administrator</strong> can edit them.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/wizard-config.png" alt="Application configuration dialog">
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="rich_text_editor"><a class="link" href="#rich_text_editor">Rich Text Editor</a></h2>
+<h2 id="templates_folder"><a class="link" href="#templates_folder">Templates folder</a></h2>
 <div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">HtmlArea editor</th>
-<th class="tableblock halign-center valign-top">Mac OS X</th>
-<th class="tableblock halign-center valign-top">Windows / Linux</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cut</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>⌘ + X</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>Ctrl + X</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Copy</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>⌘ + C</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>Ctrl + C</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Paste</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>⌘ + V</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>Ctrl + V</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Paste as text</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>⌘ + Shift + V</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>Ctrl + Shift + V</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Select All</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>⌘ + A</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>Ctrl + A</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Bold</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>⌘ + B</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>Ctrl + B</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Italic</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>⌘ + I</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>Ctrl + I</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Underline</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>⌘ + U</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>Ctrl + U</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">H1</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>⌘ + Alt + 1</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>Ctrl + Alt + 1</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">H2</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>⌘ + Alt + 2</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>Ctrl + Alt + 2</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">H3</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>⌘ + Alt + 3</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>Ctrl + Alt + 3</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">H4</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>⌘ + Alt + 4</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>Ctrl + Alt + 4</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">H5</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>⌘ + Alt + 5</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>Ctrl + Alt + 5</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">H6</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>⌘ + Alt + 6</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>Ctrl + Alt + 6</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Paragraph</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>⌘ + Shift + 7</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>Ctrl + Shift + 7</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Div (Nornal)</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>⌘ + Shift + 8</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>Ctrl + Shift + 8</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Address</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>⌘ + Shift + 9</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>Ctrl + Shift + 9</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Undo</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>⌘ + Z</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>Ctrl + Z</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Redo</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>⌘ + Y</code> / <code>⌘ + Shift + Z</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>Ctrl + Y</code> / <code>Ctrl + Shift + Z</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Insert link</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>⌘ + K</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>Ctrl + K</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Insert image</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>⌘ + L</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>Ctrl + L</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Find</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>⌘ + F</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>Ctrl + F</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Replace</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>⌘ + R</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>Ctrl + R</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Focus to toolbar</p></td>
-<td class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><code>Alt + F10</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Focus to element</p></td>
-<td class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><code>Alt + F11</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Insert non-breaking space</p></td>
-<td class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><code>Ctrl + Space</code></p></td>
-</tr>
-</tbody>
-</table>
+<div class="paragraph">
+<p>Every site has a <strong>Templates</strong> folder automatically created as a direct child. It behaves like a regular folder except that:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>It can <em>only</em> contain <a href="page-template.ahtml">Page template</a> content.</p>
+</li>
+<li>
+<p>It has a distinct icon in the Navigator tree.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The order of templates inside the folder matters — when several templates support the same content type, the one listed first is used by default.</p>
+</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-05-15 22:21:53 UTC
+Last updated 2026-05-15 22:22:14 UTC
 </div>
 </div>
 </body>
