@@ -466,19 +466,24 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Content Studio is Enonic XP&#8217;s content-management UI — the editor-facing application for creating, organising, and publishing content. This reference covers how the UI works for content managers and front-end developers. Tutorials and getting-started guides live on <a href="https://developer.enonic.com">developer.enonic.com</a> and build on top of this content.</p>
+<p>Content Studio is Enonic XP&#8217;s content-management UI — the editor-facing application for creating, organising, and publishing content.</p>
 </div>
-<div class="admonitionblock note">
+<div class="admonitionblock tip">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
 Content Studio can be installed from <a href="https://market.enonic.com/vendors/enonic/content-studio">Enonic Market</a>.
 </td>
 </tr>
 </table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="workbench/images/navigator.png" alt="Content Studio Navigator view showing the content tree and preview" width="1440px">
+</div>
 </div>
 </div>
 </div>
@@ -497,7 +502,7 @@ Content Studio can be installed from <a href="https://market.enonic.com/vendors/
 <p>Content lives in <a href="projects.ahtml">projects</a> — top-level repositories with their own content tree, applications, and settings. <a href="layers.ahtml">Layers</a> reuse, localise, or augment content across projects without duplicating trees.</p>
 </div>
 <div class="paragraph">
-<p>The <a href="workbench.ahtml">Workbench</a> is the in-tab application shell: a project bar on top, a menu bar on the left, and a main panel filling the rest. The default menuitem is the <a href="workbench/navigator.ahtml">Navigator</a> — the content tree, search, and per-content actions.</p>
+<p>The <a href="workbench.ahtml">Workbench</a> is the application shell: a project bar on top, a menu bar on the left, and a main panel filling the rest. The default menuitem is the <a href="workbench/navigator.ahtml">Navigator</a> — the content tree, search, and per-content actions.</p>
 </div>
 <div class="paragraph">
 <p>Content is opened for editing in the <a href="editor.ahtml">Editor</a>, which launches in a separate browser tab and provides a consistent interface for editing and previewing.</p>
@@ -652,7 +657,7 @@ Content Studio can be installed from <a href="https://market.enonic.com/vendors/
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-05-15 22:22:14 UTC
+Last updated 2026-05-20 15:04:32 UTC
 </div>
 </div>
 </body>
