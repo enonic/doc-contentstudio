@@ -2,9 +2,12 @@
 :toc: right
 :imagesdir: images
 
-Content Studio is Enonic XP's content-management UI — the editor-facing application for creating, organising, and publishing content. This reference covers how the UI works for content managers and front-end developers. Tutorials and getting-started guides live on https://developer.enonic.com[developer.enonic.com] and build on top of this content.
+Content Studio is Enonic XP's content-management UI — the editor-facing application for creating, organising, and publishing content.
 
-NOTE: Content Studio can be installed from https://market.enonic.com/vendors/enonic/content-studio[Enonic Market].
+TIP: Content Studio can be installed from https://market.enonic.com/vendors/enonic/content-studio[Enonic Market].
+
+
+image::../workbench/images/navigator.png[Content Studio Navigator view showing the content tree and preview, width=1440px]
 
 == Intro videos
 
@@ -14,7 +17,7 @@ A collection of short videos demonstrating Content Studio's features and capabil
 
 Content lives in <<projects#,projects>> — top-level repositories with their own content tree, applications, and settings. <<layers#,Layers>> reuse, localise, or augment content across projects without duplicating trees.
 
-The <<workbench#,Workbench>> is the in-tab application shell: a project bar on top, a menu bar on the left, and a main panel filling the rest. The default menuitem is the <<workbench/navigator#,Navigator>> — the content tree, search, and per-content actions.
+The <<workbench#,Workbench>> is the application shell: a project bar on top, a menu bar on the left, and a main panel filling the rest. The default menuitem is the <<workbench/navigator#,Navigator>> — the content tree, search, and per-content actions.
 
 Content is opened for editing in the <<editor#,Editor>>, which launches in a separate browser tab and provides a consistent interface for editing and previewing.
 
