@@ -29,7 +29,7 @@ NOTE: The default action shown on the toolbar button is the first available acti
 
 Content created in Content Studio lands in the *draft* branch with status `New` and workflow state `In progress`. Saves in the draft branch create new versions; the draft can be edited and previewed until it is ready to publish.
 
-When published, the active draft version is copied into the *master* branch. Only content in the *master* branch is visible outside Content Studio (subject to the content's <<../permissions#,security settings>>).
+When published, the active draft version is copied into the *master* branch. Only content in the *master* branch is visible outside Content Studio (subject to the content's <<../workbench/permissions#,security settings>>).
 
 == Content status
 

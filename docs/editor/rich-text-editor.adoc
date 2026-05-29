@@ -58,7 +58,7 @@ This button (or a double click on the image) opens the Insert Image dialog. An e
 Once an image is selected, additional formatting options will appear. The image can be floated to the left or right so that text wraps around it.
 The image can also be centered or set to full width. By checking off “Custom width” you will have an option to set relative width of the image.
 
-Additionally, there's an option to apply <<rich-text-editor#custom_image_styles,custom image styles>>.
+Additionally, there's an option to apply <<#custom_image_styles,custom image styles>>.
 
 "Caption" field allows to enter a caption/title for the image and will be displayed under the image as a part of the `figure` element.
 

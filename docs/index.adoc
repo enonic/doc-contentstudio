@@ -4,26 +4,28 @@
 
 Content Studio is Enonic XP's content-management UI — the editor-facing application for creating, organising, and publishing content.
 
-TIP: Content Studio can be installed from https://market.enonic.com/vendors/enonic/content-studio[Enonic Market].
-
-
 image::../workbench/images/navigator.png[Content Studio Navigator view showing the content tree and preview, width=1440px]
 
-== Intro videos
+TIP: A collection of short videos demonstrating Content Studio's features and capabilities is available on the https://www.enonic.com/resources/content-studio-videos[Enonic site].
 
-A collection of short videos demonstrating Content Studio's features and capabilities is available on the https://www.enonic.com/resources/content-studio-videos[Enonic site].
+*For content modelling* and schema references, go to the https://developer.enonic.com/docs/xp/stable/cms[Enonic CMS docs].
 
-== Overview
+== Installation
+Content Studio is a standalone Enonic XP application that can be installed from https://market.enonic.com/vendors/enonic/content-studio[Enonic Market].
 
-Content lives in <<projects#,projects>> — top-level repositories with their own content tree, applications, and settings. <<layers#,Layers>> reuse, localise, or augment content across projects without duplicating trees.
+== User interface
 
 The <<workbench#,Workbench>> is the application shell: a project bar on top, a menu bar on the left, and a main panel filling the rest. The default menuitem is the <<workbench/navigator#,Navigator>> — the content tree, search, and per-content actions.
 
-Content is opened for editing in the <<editor#,Editor>>, which launches in a separate browser tab and provides a consistent interface for editing and previewing.
+Autoring happesn in the <<editor#,Content Editor>>, which launches in a separate browser tab (Google Docs style) and provides a consistent interface for editing and previewing.
 
 == Concepts
 
-A few recurring concepts surface everywhere in the UI — in dialogs, widgets, toolbars, and URLs. For the low-level reference (schemas, field types, APIs), see the https://developer.enonic.com/docs/xp/stable/cms[Enonic XP CMS docs].
+A few recurring concepts surface everywhere in the UI — in dialogs, widgets, toolbars, and URLs. 
+
+=== Projects and layers
+
+Content lives in <<projects#,projects>>. Each project has a repository with its own content tree, optional applications, and settings. <<layers#,Layers>> inherit content for reuse or adaptation for other markets or languages.
 
 === Content items and content types
 
@@ -66,11 +68,11 @@ Each content item has its own security settings: a list of *principals* (users, 
 
 Deleting content is destructive. *Archiving* is the non-destructive alternative — items are moved to a separate archive storage where they can be browsed, restored, or permanently deleted later. See <<workbench/archive#,Archive>>.
 
-=== Applications and widgets
+=== Applications and extensions
 
 An *application* is an installable unit of XP code that can contribute content types, page controllers, parts, layouts, translations, and UI widgets. Applications are attached to a site via its Applications field; some (like Juke and Content Studio+) contribute UI across all sites.
 
-A *widget* is a small UI surface contributed by an application. The main host is the <<workbench/contextpanel#,Context panel>>; applications can also contribute <<workbench/preview#,preview modes>> and <<workbench#,menuitems>>.
+*Extensions* are typically small UI surfaces contributed by an application. The main host is the <<workbench/contextpanel#,Context panel>>; applications can also contribute <<workbench/preview#,preview modes>> and <<workbench#,menuitems>>.
 
 === Issues and publish requests
 
@@ -80,13 +82,17 @@ A *widget* is a small UI surface contributed by an application. The main host is
 
 Content Studio itself is free and open source. An Enonic subscription unlocks *Content Studio+*, a companion application distributed on https://market.enonic.com/vendors/enonic/content-studio-plus[Enonic Market] that adds advanced editorial capabilities:
 
-* <<ai#,AI Assistant (Juke)>> — in-context AI help for editors, including field-level assistance, variants, and project-level instructions.
 * <<workbench/archive#,Archive browser>> — the dedicated *Archive* menuitem for browsing, restoring, and permanently deleting archived content.
 * <<workbench/contextpanel/variants#,Content Variants>> — create and manage variant copies of a content item for A/B testing.
 * <<layers#ai_translation,AI translation>> — automatic translation of inherited content when localising in a layer.
 * <<layers#layers_panel,Layers widget>> — see the status of a content item across every layer in the system.
 
 Without a valid license the Content Studio+ application can still be installed, but its UI contributions remain inactive. Pages that document a CS+ feature carry a *Content Studio+ feature* admonition at the top.
+
+== Artificial Intelligence
+
+Enonic offers a growing suite of AI-powered features to assist editors in their work. These features are available as for subscription customers under the <<ai#, Juke AI>> brand, and can be installed from https://market.enonic.com/vendors/enonic/ai-content-operator[Enonic Market].
+
 
 == Browser support
 

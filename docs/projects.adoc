@@ -2,29 +2,58 @@
 :toc: right
 :imagesdir: projects/images
 
-Content Studio allows you to organize your content in multiple independent repositories aka Projects.
+Content Studio allows you to organize your content in multiple independent repositories aka projects.
 
-Content Projects also offer individual access control and permissions, as well as other settings to toggle features and language(s) for the project.
+
+== What is a project?
+
+Each project provides a dedicated repository for content. It provides individual access control and permissions, as well as other settings to toggle features and language(s) for the project.
 
 Privileged users can create and manage projects via <<settings#, Content Studio settings>>.
 
+NOTE: Content items cannot be moved or copied between projects. For reusing content across projects, see <<layers#,content layering>>.
 
-== First project
-For new Enonic installations, you will have to <<settings#new_project_wizard,create an project>> to get started.
-
-image::context-no-projects.png[No projects, 987w]
-
-
-== Project selector
-If you have access to multiple projects, you can easily swich to a different project in the context selector
-
-image::project-switcher.png[Project switcher, 1226w]
+== Getting started
+A fresh Enonic installations contains no projects, meaning you will have to create a project before you can start authoring.
 
 
-== Project context
-The project context is always visible in the Content Studio header, including when you are editing a single content item:
+You should see the following dialog when starting Content Studio for the first time:
 
-image::content-wizard-context.png[Context in Content Wizard, 789w]
+image::project-first.png[Dialog showing a button to start project wizard, 839w]
+
+Clicking btn…[Start Project wizard] will launch the <<#project-wizard, project wizard>>, which will guide you through the steps of creating a new project.
+
+
+[[project-wizard]]
+== Project wizard
+
+Follow these steps to create a new project. You can click the "Back" button at any time to review or change your choices, and the "Cancel" button to exit without creating a project.
+
+. Language and layering
++
+Select the parent layer to inherit content from (optional) and the default language for the project. The parent layer cannot be changed later, but the default language can.
++
+image::project-step1.png[Dialog for selecting parent layer and default language, 839w]
++
+. Name and ID
++
+image::project-step2.png[Dialog for setting project name and unique ID, 920w]
++
+. Public or private
++
+image::project-step3.png[Select default content visibility, 920w]
++
+. Roles and permissions
++
+image::project-step4.png[Configure authoring access, 920w]
++
+. Applications and features
++
+image::project-step5.png[Configure applications for project, 920w]
++
+. Summary
++
+image::project-summary.png[Summary of project settings, 920w]
 
 
 == Project layering

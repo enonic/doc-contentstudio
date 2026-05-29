@@ -156,7 +156,7 @@ image::rich-text-editor-image-dialog.png[Insert Image dialog, 75%]
 
 image::pubwiz-online-from.png[Default Online From time in the Publishing Wizard, 75%]
 
-Default Online From time in the Publishing Wizard can now be configured in Content Studio's <<config#default_online_from_time,config file>>. If no config is set, the default time will be set to 12:00.
+Default Online From time in the Publishing Wizard can now be configured in Content Studio's <<config#default_publish_from_time,config file>>. If no config is set, the default time will be set to 12:00.
 
 === Page Components view
 
