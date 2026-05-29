@@ -823,7 +823,7 @@ Content Studio 5.2 requires XP 7.14.1 or higher.
 </div>
 </div>
 <div class="paragraph">
-<p>Default Online From time in the Publishing Wizard can now be configured in Content Studio&#8217;s <a href="config.ahtml#default_online_from_time">config file</a>. If no config is set, the default time will be set to 12:00.</p>
+<p>Default Online From time in the Publishing Wizard can now be configured in Content Studio&#8217;s <a href="config.ahtml#default_publish_from_time">config file</a>. If no config is set, the default time will be set to 12:00.</p>
 </div>
 </div>
 <div class="sect2">
@@ -1086,7 +1086,7 @@ of the <a href="editor/content-form.ahtml#page_components_tree">Content Editor f
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-05-20 15:04:32 UTC
+Last updated 2026-05-29 18:47:00 UTC
 </div>
 </div>
 </body>

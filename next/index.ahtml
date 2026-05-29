@@ -441,10 +441,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#intro_videos">Intro videos</a></li>
-<li><a href="#overview">Overview</a></li>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#user_interface">User interface</a></li>
 <li><a href="#concepts">Concepts</a>
 <ul class="sectlevel2">
+<li><a href="#projects_and_layers">Projects and layers</a></li>
 <li><a href="#content_items_and_content_types">Content items and content types</a></li>
 <li><a href="#pages_and_rendering">Pages and rendering</a></li>
 <li><a href="#draft_master_and_publishing">Draft, master, and publishing</a></li>
@@ -452,11 +453,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#dependencies">Dependencies</a></li>
 <li><a href="#permissions">Permissions</a></li>
 <li><a href="#archive">Archive</a></li>
-<li><a href="#applications_and_widgets">Applications and widgets</a></li>
+<li><a href="#applications_and_extensions">Applications and extensions</a></li>
 <li><a href="#issues_and_publish_requests">Issues and publish requests</a></li>
 </ul>
 </li>
 <li><a href="#content_studio">Content Studio+</a></li>
+<li><a href="#artificial_intelligence">Artificial Intelligence</a></li>
 <li><a href="#browser_support">Browser support</a></li>
 <li><a href="#release_notes">Release notes</a></li>
 </ul>
@@ -468,6 +470,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="paragraph">
 <p>Content Studio is Enonic XP&#8217;s content-management UI — the editor-facing application for creating, organising, and publishing content.</p>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="workbench/images/navigator.png" alt="Content Studio Navigator view showing the content tree and preview" width="1440px">
+</div>
+</div>
 <div class="admonitionblock tip">
 <table>
 <tr>
@@ -475,37 +482,32 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-Content Studio can be installed from <a href="https://market.enonic.com/vendors/enonic/content-studio">Enonic Market</a>.
+A collection of short videos demonstrating Content Studio&#8217;s features and capabilities is available on the <a href="https://www.enonic.com/resources/content-studio-videos">Enonic site</a>.
 </td>
 </tr>
 </table>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="workbench/images/navigator.png" alt="Content Studio Navigator view showing the content tree and preview" width="1440px">
-</div>
+<div class="paragraph">
+<p><strong>For content modelling</strong> and schema references, go to the <a href="https://developer.enonic.com/docs/xp/stable/cms">Enonic CMS docs</a>.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="intro_videos"><a class="link" href="#intro_videos">Intro videos</a></h2>
+<h2 id="installation"><a class="link" href="#installation">Installation</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>A collection of short videos demonstrating Content Studio&#8217;s features and capabilities is available on the <a href="https://www.enonic.com/resources/content-studio-videos">Enonic site</a>.</p>
+<p>Content Studio is a standalone Enonic XP application that can be installed from <a href="https://market.enonic.com/vendors/enonic/content-studio">Enonic Market</a>.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
+<h2 id="user_interface"><a class="link" href="#user_interface">User interface</a></h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>Content lives in <a href="projects.ahtml">projects</a> — top-level repositories with their own content tree, applications, and settings. <a href="layers.ahtml">Layers</a> reuse, localise, or augment content across projects without duplicating trees.</p>
-</div>
 <div class="paragraph">
 <p>The <a href="workbench.ahtml">Workbench</a> is the application shell: a project bar on top, a menu bar on the left, and a main panel filling the rest. The default menuitem is the <a href="workbench/navigator.ahtml">Navigator</a> — the content tree, search, and per-content actions.</p>
 </div>
 <div class="paragraph">
-<p>Content is opened for editing in the <a href="editor.ahtml">Editor</a>, which launches in a separate browser tab and provides a consistent interface for editing and previewing.</p>
+<p>Autoring happesn in the <a href="editor.ahtml">Content Editor</a>, which launches in a separate browser tab (Google Docs style) and provides a consistent interface for editing and previewing.</p>
 </div>
 </div>
 </div>
@@ -513,7 +515,13 @@ Content Studio can be installed from <a href="https://market.enonic.com/vendors/
 <h2 id="concepts"><a class="link" href="#concepts">Concepts</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>A few recurring concepts surface everywhere in the UI — in dialogs, widgets, toolbars, and URLs. For the low-level reference (schemas, field types, APIs), see the <a href="https://developer.enonic.com/docs/xp/stable/cms">Enonic XP CMS docs</a>.</p>
+<p>A few recurring concepts surface everywhere in the UI — in dialogs, widgets, toolbars, and URLs.</p>
+</div>
+<div class="sect2">
+<h3 id="projects_and_layers"><a class="link" href="#projects_and_layers">Projects and layers</a></h3>
+<div class="paragraph">
+<p>Content lives in <a href="projects.ahtml">projects</a>. Each project has a repository with its own content tree, optional applications, and settings. <a href="layers.ahtml">Layers</a> inherit content for reuse or adaptation for other markets or languages.</p>
+</div>
 </div>
 <div class="sect2">
 <h3 id="content_items_and_content_types"><a class="link" href="#content_items_and_content_types">Content items and content types</a></h3>
@@ -592,12 +600,12 @@ Content Studio can be installed from <a href="https://market.enonic.com/vendors/
 </div>
 </div>
 <div class="sect2">
-<h3 id="applications_and_widgets"><a class="link" href="#applications_and_widgets">Applications and widgets</a></h3>
+<h3 id="applications_and_extensions"><a class="link" href="#applications_and_extensions">Applications and extensions</a></h3>
 <div class="paragraph">
 <p>An <strong>application</strong> is an installable unit of XP code that can contribute content types, page controllers, parts, layouts, translations, and UI widgets. Applications are attached to a site via its Applications field; some (like Juke and Content Studio+) contribute UI across all sites.</p>
 </div>
 <div class="paragraph">
-<p>A <strong>widget</strong> is a small UI surface contributed by an application. The main host is the <a href="workbench/contextpanel.ahtml">Context panel</a>; applications can also contribute <a href="workbench/preview.ahtml">preview modes</a> and <a href="workbench.ahtml">menuitems</a>.</p>
+<p><strong>Extensions</strong> are typically small UI surfaces contributed by an application. The main host is the <a href="workbench/contextpanel.ahtml">Context panel</a>; applications can also contribute <a href="workbench/preview.ahtml">preview modes</a> and <a href="workbench.ahtml">menuitems</a>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -617,9 +625,6 @@ Content Studio can be installed from <a href="https://market.enonic.com/vendors/
 <div class="ulist">
 <ul>
 <li>
-<p><a href="ai.ahtml">AI Assistant (Juke)</a> — in-context AI help for editors, including field-level assistance, variants, and project-level instructions.</p>
-</li>
-<li>
 <p><a href="workbench/archive.ahtml">Archive browser</a> — the dedicated <strong>Archive</strong> menuitem for browsing, restoring, and permanently deleting archived content.</p>
 </li>
 <li>
@@ -635,6 +640,14 @@ Content Studio can be installed from <a href="https://market.enonic.com/vendors/
 </div>
 <div class="paragraph">
 <p>Without a valid license the Content Studio+ application can still be installed, but its UI contributions remain inactive. Pages that document a CS+ feature carry a <strong>Content Studio+ feature</strong> admonition at the top.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="artificial_intelligence"><a class="link" href="#artificial_intelligence">Artificial Intelligence</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Enonic offers a growing suite of AI-powered features to assist editors in their work. These features are available as for subscription customers under the <a href="ai.ahtml">Juke AI</a> brand, and can be installed from <a href="https://market.enonic.com/vendors/enonic/ai-content-operator">Enonic Market</a>.</p>
 </div>
 </div>
 </div>
@@ -657,7 +670,7 @@ Content Studio can be installed from <a href="https://market.enonic.com/vendors/
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-05-20 15:04:32 UTC
+Last updated 2026-05-29 18:47:00 UTC
 </div>
 </div>
 </body>
