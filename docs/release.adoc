@@ -106,7 +106,7 @@ the page editor and content grid.
 // Bugfixes intentionally omitted for 6.0.
 
 [#upgrade]
-=== Upgrade notes
+== Upgrade notes
 
 Content Studio 6 requires XP 8.0 or newer, which is a breaking release. In order to start using Content Studio 6 you must 
 
