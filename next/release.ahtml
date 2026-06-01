@@ -443,13 +443,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel1">
 <li><a href="#content_studio_6_0">Content Studio 6.0</a>
 <ul class="sectlevel2">
-<li><a href="#revamped_user_interface">Revamped User Interface</a></li>
+<li><a href="#revamped_ui">Revamped UI</a></li>
 <li><a href="#pluggable_preview">Pluggable preview</a></li>
-<li><a href="#page_editor">Page editor</a></li>
+<li><a href="#pluggable_page_editor">Pluggable page editor</a></li>
 <li><a href="#version_history">Version history</a></li>
 <li><a href="#modernized_technology">Modernized technology</a></li>
 <li><a href="#improvements">Improvements</a></li>
-<li><a href="#breaking-changes">Breaking changes</a></li>
+<li><a href="#upgrade">Upgrade notes</a></li>
 </ul>
 </li>
 </ul>
@@ -459,7 +459,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Release notes for Content Studio 6, released June 2026.</p>
+<p>Release notes for Content Studio 6 - June 2026.</p>
 </div>
 <div class="admonitionblock important">
 <table>
@@ -468,7 +468,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <i class="fa icon-important" title="Important"></i>
 </td>
 <td class="content">
-Content Studio 6.0 requires Enonic XP 8.0 or newer.
+Content Studio 6 requires Enonic XP 8.0 or newer.
 </td>
 </tr>
 </table>
@@ -478,22 +478,16 @@ Content Studio 6.0 requires Enonic XP 8.0 or newer.
 <div class="sect1">
 <h2 id="content_studio_6_0"><a class="link" href="#content_studio_6_0">Content Studio 6.0</a></h2>
 <div class="sectionbody">
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-This release contains <strong>breaking changes when upgrading from Content Studio 5</strong>. We have made every effort to minimize the impact of these, but please review the <a href="#breaking-changes">breaking changes</a> below before upgrading.
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p>This is a major release with significant improvements and new features. The release focuses on modernizing the user interface, improving the preview system, and rebuilding the underlying architecture for better performance and extensibility.</p>
 </div>
 <div class="sect2">
-<h3 id="revamped_user_interface"><a class="link" href="#revamped_user_interface">Revamped User Interface</a></h3>
+<h3 id="revamped_ui"><a class="link" href="#revamped_ui">Revamped UI</a></h3>
 <div class="paragraph">
-<p>Content Studio 6 features a completely redesigned user interface, built on the Enonic UI design system, with a modernized architecture and a compelling new look and feel. The new interface is more intuitive, responsive, and accessible, with improved workflows and a more consistent design across the application.</p>
+<p>Content Studio 6 features a completely redesigned and re-built - based on the <a href="https://enonic.github.io/npm-enonic-ui/">Enonic UI design system</a>, with a modernized architecture and a compelling new look and feel. The new interface is more intuitive, responsive, and accessible, with improved workflows and a more consistent design across the application.</p>
+</div>
+<div class="paragraph">
+<p>Here are some of the changes:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -556,9 +550,9 @@ This release contains <strong>breaking changes when upgrading from Content Studi
 </div>
 </div>
 <div class="sect2">
-<h3 id="page_editor"><a class="link" href="#page_editor">Page editor</a></h3>
+<h3 id="pluggable_page_editor"><a class="link" href="#pluggable_page_editor">Pluggable page editor</a></h3>
 <div class="paragraph">
-<p>While conceptually similar, the page editor has been completely redesigned and rebuilt to work seamlessly with the new pluggable preview panel, as well as improved usability.</p>
+<p>While conceptually similar, the page editor has been completely redesigned to work with any web-based front-end framework, and the new pluggable preview. Highlights are:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -645,9 +639,9 @@ the page editor and content grid.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="breaking-changes"><a class="link" href="#breaking-changes">Breaking changes</a></h3>
+<h3 id="upgrade"><a class="link" href="#upgrade">Upgrade notes</a></h3>
 <div class="paragraph">
-<p>Content Studio 6 requires XP 8.0 or newer, which . In order to start using Content Studio 6 you must</p>
+<p>Content Studio 6 requires XP 8.0 or newer, which is a breaking release. In order to start using Content Studio 6 you must</p>
 </div>
 <div class="ulist">
 <ul>
@@ -655,14 +649,25 @@ the page editor and content grid.</p>
 <p>Upgrade your XP installation</p>
 </li>
 <li>
-<p>Upgrade all Enonic apps running on your instance</p>
+<p>Upgrade all Enonic apps running on your instance to their latest versions, which are compatible with XP 8.0 and Content Studio 6.0.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Noteworty:
-* <strong>New URL pattern</strong> — Content Studio is now served without the <code>/tool/</code> prefix
-* <strong>Rich Text component is deprecated</strong> — and will be removed in a future release. Create your own rich text part and migrate at will. Existing components will continue to work, but insert is now disabled by default.</p>
+<p>Read more about the XP 8.0 upgrade process in the <a href="https://developer.enonic.com/docs/xp/stable/release/upgrade">XP upgrade guide</a>.</p>
+</div>
+<div class="paragraph">
+<p><strong>Noteworty:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Xdata is replaced by Mixins</strong> - Only the name changes, the functionality is the same. This is done to better reflect its purpose and use.</p>
+</li>
+<li>
+<p><strong>Rich Text component is deprecated</strong> — and will be removed in a future release. Create your own rich text part and migrate at will. Existing components will continue to work, but insert is now disabled by default.<br></p>
+</li>
+</ul>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -671,10 +676,17 @@ the page editor and content grid.</p>
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-Set <code>contentStudio.legacyRichText</code> to <code>true</code> in your configuration to re-enable the insert button for the legacy rich text component if you need more time to migrate.
+Full functionalilty may be re-activated via the <a href="config.ahtml">content studio configuration</a>
 </td>
 </tr>
 </table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>New URL pattern</strong> — Content Studio is now served without the <code>/tool/</code> prefix</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -682,7 +694,7 @@ Set <code>contentStudio.legacyRichText</code> to <code>true</code> in your confi
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-06-01 16:38:39 UTC
+Last updated 2026-06-01 16:59:25 UTC
 </div>
 </div>
 </body>
