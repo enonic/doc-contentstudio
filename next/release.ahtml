@@ -444,6 +444,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#content_studio_6_0">Content Studio 6.0</a>
 <ul class="sectlevel2">
 <li><a href="#revamped_ui">Revamped UI</a></li>
+<li><a href="#permissions">Permissions</a></li>
 <li><a href="#pluggable_preview">Pluggable preview</a></li>
 <li><a href="#pluggable_page_editor">Pluggable page editor</a></li>
 <li><a href="#version_history">Version history</a></li>
@@ -523,6 +524,28 @@ Content Studio 6 requires Enonic XP 8.0 or newer.
 </li>
 <li>
 <p><strong>Validation handling</strong> — improved validation feedback in forms, with clearer error indicators, as well as bubbling validation errors to the top of the form for better visibility.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="permissions"><a class="link" href="#permissions">Permissions</a></h3>
+<div class="paragraph">
+<p>Permissions wizard has been udpated to reflect the improvements for permissions handling in XP8, as well as new design and usability improvements:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Instantly effective</strong> — permission changes are now effective instantly across all branches, including draft and master (published) items, without the need for republishing.</p>
+</li>
+<li>
+<p><strong>Apply to</strong> — Apply permissions to (single item, children only, or both)</p>
+</li>
+<li>
+<p><strong>Overwrite</strong> - intuitive overwrite option for applying permissions, with clear indicators for what will be overwritten and what will be preserved.</p>
+</li>
+<li>
+<p><strong>Summary</strong> — Improved summary section that clearly shows the current permissions and the changes that will be made.</p>
 </li>
 </ul>
 </div>
@@ -694,7 +717,7 @@ Full functionalilty may be re-activated via the <a href="config.ahtml">content s
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-06-01 16:59:25 UTC
+Last updated 2026-06-01 17:14:09 UTC
 </div>
 </div>
 </body>
