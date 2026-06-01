@@ -2,33 +2,36 @@
 :imagesdir: release/images
 :toc: right
 
-Release notes for Content Studio 6, released June 2026.
+Release notes for Content Studio 6 - June 2026.
 
-IMPORTANT: Content Studio 6.0 requires Enonic XP 8.0 or newer.
+IMPORTANT: Content Studio 6 requires Enonic XP 8.0 or newer.
 
 ////
-Template for future patch releases — uncomment and fill in when a release ships.
+Template for future feature releases — uncomment and fill in when a release ships.
 Newest release goes at the TOP, directly below this comment and above "Content Studio 6.0".
 
 == Content Studio 6.1
+
+=== Feature X
 
 === Improvements
 
 * <improvement>
 
-=== Fixes
+=== Bugfixes
 
 * <fix>
 ////
 
 == Content Studio 6.0
 
-IMPORTANT: This release contains *breaking changes when upgrading from Content Studio 5*. We have made every effort to minimize the impact of these, but please review the <<breaking-changes,breaking changes>> below before upgrading.
+This is a major release with significant improvements and new features. The release focuses on modernizing the user interface, improving the preview system, and rebuilding the underlying architecture for better performance and extensibility.
 
+=== Revamped UI
 
-=== Revamped User Interface
+Content Studio 6 features a completely redesigned and re-built - based on the https://enonic.github.io/npm-enonic-ui/[Enonic UI design system], with a modernized architecture and a compelling new look and feel. The new interface is more intuitive, responsive, and accessible, with improved workflows and a more consistent design across the application.
 
-Content Studio 6 features a completely redesigned user interface, built on the Enonic UI design system, with a modernized architecture and a compelling new look and feel. The new interface is more intuitive, responsive, and accessible, with improved workflows and a more consistent design across the application.
+Here are some of the changes:
 
 * *Icons* — updated icons throughout the application, providing a more modern and cohesive look.
 * *Consistency* — a more consistent design across the application, with improved typography, spacing, and visual hierarchy
@@ -53,9 +56,9 @@ The preview has been redesigned and rebuilt as a pluggable system, allowing for 
 * *Secure by default* — previews are rendered in a secure sandboxed environment, using browser domain isolation to protect from potential security issues with untrusted content.
 
 
-=== Page editor
+=== Pluggable page editor
 
-While conceptually similar, the page editor has been completely redesigned and rebuilt to work seamlessly with the new pluggable preview panel, as well as improved usability.
+While conceptually similar, the page editor has been completely redesigned to work with any web-based front-end framework, and the new pluggable preview. Highlights are:
 
 * *New component view* — The component tree view has been redesigned for better visibility, interaction and use of real estate
 * *Redesigned Visual Editor* — for a cleaner interface with better drag-and-drop support, clearer component hierarchy, and more intuitive workflows.
@@ -92,17 +95,24 @@ the page editor and content grid.
 
 // Bugfixes intentionally omitted for 6.0.
 
-[#breaking-changes]
-=== Breaking changes
+[#upgrade]
+=== Upgrade notes
 
-Content Studio 6 requires XP 8.0 or newer, which . In order to start using Content Studio 6 you must 
+Content Studio 6 requires XP 8.0 or newer, which is a breaking release. In order to start using Content Studio 6 you must 
 
 * Upgrade your XP installation 
-* Upgrade all Enonic apps running on your instance
+* Upgrade all Enonic apps running on your instance to their latest versions, which are compatible with XP 8.0 and Content Studio 6.0.
 
-Noteworty:
+Read more about the XP 8.0 upgrade process in the https://developer.enonic.com/docs/xp/stable/release/upgrade[XP upgrade guide].
+
+*Noteworty:*
+
+* *Xdata is replaced by Mixins* - Only the name changes, the functionality is the same. This is done to better reflect its purpose and use.
+
+* *Rich Text component is deprecated* — and will be removed in a future release. Create your own rich text part and migrate at will. Existing components will continue to work, but insert is now disabled by default. +
+
+TIP: Full functionalilty may be re-activated via the <<config#, content studio configuration>> 
+
 * *New URL pattern* — Content Studio is now served without the `/tool/` prefix
-* *Rich Text component is deprecated* — and will be removed in a future release. Create your own rich text part and migrate at will. Existing components will continue to work, but insert is now disabled by default.
 
-TIP: Set `contentStudio.legacyRichText` to `true` in your configuration to re-enable the insert button for the legacy rich text component if you need more time to migrate.
 
