@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.26">
-<title>Release Notes</title>
+<title>Content Studio 6 Release Notes</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -437,52 +437,19 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article toc2 toc-right">
 <div id="header">
-<h1>Release Notes</h1>
+<h1>Content Studio 6 Release Notes</h1>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#content_studio_5_update_3">Content Studio 5 Update 3</a>
+<li><a href="#content_studio_6_0">Content Studio 6.0</a>
 <ul class="sectlevel2">
-<li><a href="#whats_new">What&#8217;s new</a></li>
-<li><a href="#juke_ai_support">Juke AI support</a></li>
-<li><a href="#preview_mode">Preview mode</a></li>
-<li><a href="#edit_text_in_the_inspect_panel">Edit text in the Inspect panel</a></li>
-<li><a href="#support_for_webp_and_avif">Support for webp and avif</a></li>
-<li><a href="#accessibility_improvements">Accessibility improvements</a></li>
-<li><a href="#other_improvements">Other improvements</a></li>
-</ul>
-</li>
-<li><a href="#content_studio_5_update_2">Content Studio 5 Update 2</a>
-<ul class="sectlevel2">
-<li><a href="#whats_new_2">What&#8217;s new</a></li>
-<li><a href="#project_graph">Project graph</a></li>
-<li><a href="#project_wizard_improvements">Project Wizard improvements</a></li>
-<li><a href="#reference_check_in_the_unpublish_wizard">Reference check in the Unpublish Wizard</a></li>
-<li><a href="#decorative_images">Decorative images</a></li>
-<li><a href="#default_online_from_time">Default Online From time</a></li>
-<li><a href="#page_components_view">Page Components view</a></li>
-<li><a href="#other_improvements_2">Other improvements</a></li>
-</ul>
-</li>
-<li><a href="#content_studio_5_update_1">Content Studio 5 Update 1</a>
-<ul class="sectlevel2">
-<li><a href="#whats_new_3">What&#8217;s new</a></li>
-<li><a href="#improved_move_operation">Improved move operation</a></li>
-<li><a href="#improved_auto_exclusion_of_optional_dependencies">Improved auto-exclusion of optional dependencies</a></li>
-<li><a href="#export_of_search_results">Export of search results</a></li>
-<li><a href="#new_findreplace_dialog_in_rich_text_editor">New Find/Replace dialog in Rich Text Editor</a></li>
-<li><a href="#locked_path_for_published_content">Locked path for published content</a></li>
-<li><a href="#other_improvements_3">Other improvements</a></li>
-</ul>
-</li>
-<li><a href="#content_studio_5">Content Studio 5</a>
-<ul class="sectlevel2">
-<li><a href="#whats_new_4">What&#8217;s new</a></li>
-<li><a href="#default_content_project_is_hidden_by_default">Default Content Project is hidden by default</a></li>
-<li><a href="#page_components_view_2">Page Components View</a></li>
-<li><a href="#publishing_wizard_improvements">Publishing Wizard improvements</a></li>
-<li><a href="#call_links_in_the_insert_link_dialog">Call links in the Insert Link dialog</a></li>
-<li><a href="#other_improvements_4">Other improvements</a></li>
+<li><a href="#revamped_user_interface">Revamped User Interface</a></li>
+<li><a href="#pluggable_preview">Pluggable preview</a></li>
+<li><a href="#page_editor">Page editor</a></li>
+<li><a href="#version_history">Version history</a></li>
+<li><a href="#modernized_technology">Modernized technology</a></li>
+<li><a href="#improvements">Improvements</a></li>
+<li><a href="#breaking-changes">Breaking changes</a></li>
 </ul>
 </li>
 </ul>
@@ -491,14 +458,17 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="content">
 <div id="preamble">
 <div class="sectionbody">
-<div class="admonitionblock tip">
+<div class="paragraph">
+<p>Release notes for Content Studio 6, released June 2026.</p>
+</div>
+<div class="admonitionblock important">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
+<i class="fa icon-important" title="Important"></i>
 </td>
 <td class="content">
-Release Notes for Content Studio 4.x can be found <a href="https://developer.enonic.com/docs/content-studio/4.x/release">here</a>
+Content Studio 6.0 requires Enonic XP 8.0 or newer.
 </td>
 </tr>
 </table>
@@ -506,7 +476,7 @@ Release Notes for Content Studio 4.x can be found <a href="https://developer.eno
 </div>
 </div>
 <div class="sect1">
-<h2 id="content_studio_5_update_3"><a class="link" href="#content_studio_5_update_3">Content Studio 5 Update 3</a></h2>
+<h2 id="content_studio_6_0"><a class="link" href="#content_studio_6_0">Content Studio 6.0</a></h2>
 <div class="sectionbody">
 <div class="admonitionblock important">
 <table>
@@ -515,73 +485,184 @@ Release Notes for Content Studio 4.x can be found <a href="https://developer.eno
 <i class="fa icon-important" title="Important"></i>
 </td>
 <td class="content">
-Content Studio 5.3 requires XP 7.15.0 or higher.
+This release contains <strong>breaking changes when upgrading from Content Studio 5</strong>. We have made every effort to minimize the impact of these, but please review the <a href="#breaking-changes">breaking changes</a> below before upgrading.
 </td>
 </tr>
 </table>
 </div>
 <div class="sect2">
-<h3 id="whats_new"><a class="link" href="#whats_new">What&#8217;s new</a></h3>
-<div class="videoblock">
-<div class="content">
-<iframe width="75%" src="https://www.youtube.com/embed/PG_OzKGDow8?rel=0" frameborder="0" allowfullscreen></iframe>
+<h3 id="revamped_user_interface"><a class="link" href="#revamped_user_interface">Revamped User Interface</a></h3>
+<div class="paragraph">
+<p>Content Studio 6 features a completely redesigned user interface, built on the Enonic UI design system, with a modernized architecture and a compelling new look and feel. The new interface is more intuitive, responsive, and accessible, with improved workflows and a more consistent design across the application.</p>
 </div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Icons</strong> — updated icons throughout the application, providing a more modern and cohesive look.</p>
+</li>
+<li>
+<p><strong>Consistency</strong> — a more consistent design across the application, with improved typography, spacing, and visual hierarchy</p>
+</li>
+<li>
+<p><strong>Less clutter</strong> — a cleaner interface with less visual clutter, making it easier to focus on the task at hand.</p>
+</li>
+<li>
+<p><strong>Dark mode</strong> — a new dark mode for the user interface, providing a more comfortable experience in low-light environments.</p>
+</li>
+<li>
+<p><strong>Accessibility</strong> — improved accessibility across the application, with better keyboard navigation, screen reader support, and color contrast for WCAG 2.1 compliance.</p>
+</li>
+<li>
+<p><strong>Status indicators</strong> — Simplified online/offline status indicators across the application</p>
+</li>
+<li>
+<p><strong>Diff status</strong> — clearer indicators for changes, used in publishing wizard and version history.</p>
+</li>
+<li>
+<p><strong>Polished dialogs</strong> — redesigned dialogs with improved layout and clearer actions, including multi-step wizards.</p>
+</li>
+<li>
+<p><strong>Improved drag-and-drop</strong> — improved drag-and-drop support across the application, including visual feedback and support for dragging content between different areas of the application.</p>
+</li>
+<li>
+<p><strong>Gallery mode</strong> — has been redesigned with a cleaner layout and larger thumbnails, making it easier to browse and find content items.</p>
+</li>
+<li>
+<p><strong>Validation handling</strong> — improved validation feedback in forms, with clearer error indicators, as well as bubbling validation errors to the top of the form for better visibility.</p>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="juke_ai_support"><a class="link" href="#juke_ai_support">Juke AI support</a></h3>
+<h3 id="pluggable_preview"><a class="link" href="#pluggable_preview">Pluggable preview</a></h3>
 <div class="paragraph">
-<p>Content Studio has been adapted to support ecosystem of Juke applications, new AI-powered extensions that enable high-level
-assistance for content editors. In this release Content Studio provides integration with Juke apps responsible for
-content localisation (<a href="layers.ahtml#_ai_translation">Juke Translator</a>) and content creation (<a href="ai.ahtml">Juke Content Operator</a>).</p>
+<p>The preview has been redesigned and rebuilt as a pluggable system, allowing for more flexible and customizable previews for different content types and use cases.</p>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Juke apps are not built into Content Studio and need to be installed and configured individually. Contact us if you want to enable Juke AI support in your Content Studio.
-</td>
-</tr>
-</table>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Bring your own preview</strong> — developers can now create custom preview components for any use-case using the extension system and Enonic apps.</p>
+</li>
+<li>
+<p><strong>Automatic detection</strong> — Content Studio will automatically detect and use the optimal preview for each content item, based on the content type and available preview components.</p>
+</li>
+<li>
+<p><strong>Image editor</strong> is now integrated with media preview, allowing for a more intuitive experience when previewing and editing images.</p>
+</li>
+<li>
+<p><strong>Secure by default</strong> — previews are rendered in a secure sandboxed environment, using browser domain isolation to protect from potential security issues with untrusted content.</p>
+</li>
+</ul>
 </div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-Enonic does not store any conversations or data processed by Juke AI. During conversations, the data is sent to the Google Vertex service and the response is displayed directly in Content Studio. Once the browser tab is closed or refreshed, the conversation thread will be gone.
-</td>
-</tr>
-</table>
 </div>
-<div class="sect3">
-<h4 id="juke_translator"><a class="link" href="#juke_translator">Juke Translator</a></h4>
+<div class="sect2">
+<h3 id="page_editor"><a class="link" href="#page_editor">Page editor</a></h3>
 <div class="paragraph">
-<p>With this application installed, Content Studio will suggest translating content localised in a layer, to the language of the layer. After clicking "Localise" for an inherited content in a layer, user will see a dialog suggesting automatic translation of all text fields in the localised content to the language of the layer.</p>
+<p>While conceptually similar, the page editor has been completely redesigned and rebuilt to work seamlessly with the new pluggable preview panel, as well as improved usability.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>New component view</strong> — The component tree view has been redesigned for better visibility, interaction and use of real estate</p>
+</li>
+<li>
+<p><strong>Redesigned Visual Editor</strong> — for a cleaner interface with better drag-and-drop support, clearer component hierarchy, and more intuitive workflows.</p>
+</li>
+<li>
+<p><strong>NPM module</strong> — Page editor is now available as a standalone NPM module, allowing developers to integrate it with any 3rd party framework or front-end.</p>
+</li>
+<li>
+<p><strong>Event-based</strong> — for secure communication between Content Studio and the visual editor, enabling cross-iframe drag and drop and other advanced interactions.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="version_history"><a class="link" href="#version_history">Version history</a></h3>
+<div class="paragraph">
+<p>The version history widget has been updated to take advantage of the new features in XP8.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Show only revertable versions</strong> — by default, only versions that can be reverted to are shown in the version history, reducing clutter and confusion for users.</p>
+</li>
+<li>
+<p><strong>Show all actions</strong> — users can choose to show all actions if they want to see the full history of changes and events for a content item.</p>
+</li>
+<li>
+<p><strong>Lazy loading</strong> — version history now loads versions on demand, improving performance for content items with many versions.</p>
+</li>
+<li>
+<p><strong>Improved diff dialog</strong> — the diff dialog now shows only the fields that can be reverted, with clearer indicators for changes and improved layout for better readability.</p>
+</li>
+<li>
+<p><strong>Patch handling</strong> — Version history widget informs users when a version is a patch, and prevents reverting to versions that may break content due to missing required fields or other issues.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="modernized_technology"><a class="link" href="#modernized_technology">Modernized technology</a></h3>
+<div class="paragraph">
+<p>The underlying architecture of Content Studio has been modernized and rebuilt, improving performance, maintainability, agility, and extensibility, and enabling new features and improvements moving forward.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>New tooling</strong> — built on a new architecture with React and TypeScript, improving maintainability and enabling faster development.</p>
+</li>
+<li>
+<p><strong>Improved pluggability</strong> — New Extension system with improved documentation and use of web components for better encapsulation and interoperability.</p>
+</li>
+<li>
+<p><strong>Improved performance</strong> — faster load times and improved responsiveness across the application, especially in
+the page editor and content grid.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="improvements"><a class="link" href="#improvements">Improvements</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Import content widget</strong> — import widget is now a native Content Studio feature.</p>
+</li>
+<li>
+<p><strong>Archive with a message</strong> — provide a reason/message when archiving content.</p>
+</li>
+<li>
+<p><strong>New-version notification</strong> — Content Studio notifies when a new version is available.</p>
+</li>
+<li>
+<p><strong>baseUrl support</strong> — support for configuring a base URL for your front-end directly in Content Studio.</p>
+</li>
+<li>
+<p><strong>Scheduled publishing defaults</strong> — "Online from" defaults to "Now", and the Publish button shows a distinct caption for scheduled publishing.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="breaking-changes"><a class="link" href="#breaking-changes">Breaking changes</a></h3>
+<div class="paragraph">
+<p>Content Studio 6 requires XP 8.0 or newer, which . In order to start using Content Studio 6 you must</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Upgrade your XP installation</p>
+</li>
+<li>
+<p>Upgrade all Enonic apps running on your instance</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>It&#8217;s possible to provide custom instructions for the Juke AI to follow when translating the content. If you need to provide some context on a regular basis, add "Juke Translator" to your site and set instructions via site config, then Juke will reuse them for every translation.</p>
-</div>
-<div class="imageblock text-center">
-<div class="content">
-<img src="release/images/cs53-juke-translator.png" alt="Juke Translator" width="75%">
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="juke_content_operator"><a class="link" href="#juke_content_operator">Juke Content Operator</a></h4>
-<div class="paragraph">
-<p>Help-text icons for inputs in the Content Form have been replaced with icons to require assistance from the Juke AI Content operator for this specific field. As of now, Content Operator provides assistance only for inputs of type TextLine, TextArea and HtmlArea.</p>
-</div>
-<div class="imageblock text-center">
-<div class="content">
-<img src="release/images/cs53-juke-icon.png" alt="Juke icon for input" width="75%">
-</div>
+<p>Noteworty:
+* <strong>New URL pattern</strong> — Content Studio is now served without the <code>/tool/</code> prefix
+* <strong>Rich Text component is deprecated</strong> — and will be removed in a future release. Create your own rich text part and migrate at will. Existing components will continue to work, but insert is now disabled by default.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -590,495 +671,10 @@ Enonic does not store any conversations or data processed by Juke AI. During con
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-Help-text for inputs can still be toggled by using the help-text icon in the content form toolbar.
+Set <code>contentStudio.legacyRichText</code> to <code>true</code> in your configuration to re-enable the insert button for the legacy rich text component if you need more time to migrate.
 </td>
 </tr>
 </table>
-</div>
-<div class="imageblock text-center">
-<div class="content">
-<img src="release/images/cs53-juke-operator-dialog.png" alt="Juke Content Operator" width="75%">
-</div>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-To provide custom instructions for the Juke AI to follow when assisting with content creation, add "Juke Content Operator" to your site and set instructions via site config.
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="preview_mode"><a class="link" href="#preview_mode">Preview mode</a></h3>
-<div class="sect3">
-<h4 id="mode_selector"><a class="link" href="#mode_selector">Mode selector</a></h4>
-<div class="paragraph">
-<p>It&#8217;s now possible to select preview mode inside the Preview panel. Currently available built-in modes are: Media, Enonic rendering and JSON. Default selection is "Automatic" which will automatically find and use the first mode that supports preview of current content.</p>
-</div>
-<div class="imageblock text-center">
-<div class="content">
-<img src="release/images/cs53-preview-mode.png" alt="Preview" width="75%">
-</div>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-In future versions it will be possible to add custom preview modes.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Read more about content preview modes in the <a href="workbench/preview.ahtml">Preview</a> documentation.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="emulator"><a class="link" href="#emulator">Emulator</a></h4>
-<div class="paragraph">
-<p>Device emulator selector - that used to be a widget inside Context Panel - has been turned into selector inside the Preview panel&#8217;s toolbar.</p>
-</div>
-<div class="imageblock text-center">
-<div class="content">
-<img src="release/images/cs53-preview-emulator.png" alt="Emulator" width="50%">
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="preview_button"><a class="link" href="#preview_button">Preview button</a></h4>
-<div class="paragraph">
-<p>Preview button was moved from the Content Navigator&#8217;s toolbar to the Preview panel&#8217;s toolbar. It will still open preview of currently selected content in a new browser tab, but preview in the new tab will use the currently selected mode (f.ex. JSON).</p>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="edit_text_in_the_inspect_panel"><a class="link" href="#edit_text_in_the_inspect_panel">Edit text in the Inspect panel</a></h3>
-<div class="paragraph">
-<p>It&#8217;s now possible to edit contents of a Text component directly in the Inspect panel on the right.</p>
-</div>
-<div class="imageblock text-center">
-<div class="content">
-<img src="release/images/cs53-inspect-text.png" alt="Emulator" width="75%">
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="support_for_webp_and_avif"><a class="link" href="#support_for_webp_and_avif">Support for webp and avif</a></h3>
-<div class="paragraph">
-<p>Content Studio now supports upload and preview of images in webp and avif format. Image modifications are not yet supported.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="accessibility_improvements"><a class="link" href="#accessibility_improvements">Accessibility improvements</a></h3>
-<div class="paragraph">
-<p>Several improvements have been made to make Content Studio more accessible and comply with WCAG 2.1 standards:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Focused elements are now highlighted with a blue border</p>
-</li>
-<li>
-<p>Keyboard navigation has been improved</p>
-</li>
-<li>
-<p>Toolbars and their child elements are now focusable and can be navigated with arrow keys, according to WCAG 2.1 standards</p>
-</li>
-<li>
-<p>Most of the elements received proper ARIA roles and labels</p>
-</li>
-</ul>
-</div>
-<div class="imageblock text-center">
-<div class="content">
-<img src="workbench/navigator/images/navigator-accessibility.png" alt="Toolbar accessibility" width="50%">
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="other_improvements"><a class="link" href="#other_improvements">Other improvements</a></h3>
-<div class="ulist">
-<ul>
-<li>
-<p>If a page component (part or layout) provides page contributions, Content Studio will automatically inject them into the page editor, so it&#8217;s no longer required to refresh the page for the contributions to start working.</p>
-</li>
-<li>
-<p>Tag input will now parse a string pasted into it and create tags from the parsed values.</p>
-</li>
-<li>
-<p>We have strengthened Content Security Policy (CSP) even more by disabling <code>unsafe-eval</code> in <code>script-src</code> (read more <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/script-src#unsafe_eval_expressions">here</a>). Please test and adapt your applications accordingly.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="content_studio_5_update_2"><a class="link" href="#content_studio_5_update_2">Content Studio 5 Update 2</a></h2>
-<div class="sectionbody">
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-Content Studio 5.2 requires XP 7.14.1 or higher.
-</td>
-</tr>
-</table>
-</div>
-<div class="sect2">
-<h3 id="whats_new_2"><a class="link" href="#whats_new_2">What&#8217;s new</a></h3>
-<div class="videoblock">
-<div class="content">
-<iframe width="75%" src="https://www.youtube.com/embed/MjWxNLDsUEc?rel=0" frameborder="0" allowfullscreen></iframe>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="project_graph"><a class="link" href="#project_graph">Project graph</a></h3>
-<div class="paragraph">
-<p>By selecting "Projects" in the Content Studio&#8217;s "Settings" module it&#8217;s now possible to see a visualised graph of existing content projects and their relations.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="settings/images/settings-grid.png" alt="Project graph" width="75%">
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="project_wizard_improvements"><a class="link" href="#project_wizard_improvements">Project Wizard improvements</a></h3>
-<div class="sect3">
-<h4 id="preset_parent_project"><a class="link" href="#preset_parent_project">Preset parent project</a></h4>
-<div class="paragraph">
-<p>If an existing project is selected in the Project tree when the "New" button is clicked, the Project Wizard will create a layer of the selected project and set up synhronisation of data in the layer with its parent project.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="removed_type_selection"><a class="link" href="#removed_type_selection">Removed type selection</a></h4>
-<div class="paragraph">
-<p>Before this release, users had to explicitly select whether they are about to create a project or a layer. This requirement has been removed. If a parent project is selected on the first step of the Wizard, a layer will be created and set up to inherit data from the selected project. Otherwise, a regular project will be created.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="settings/images/new-project-dialog-1.png" alt="Select parent project" width="75%">
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="parent_project_apps"><a class="link" href="#parent_project_apps">Parent project apps</a></h4>
-<div class="paragraph">
-<p>A layer will always inherit applications from its parent project, even though it was not obvious from the UI before this release. "Applications" step of the "Project Wizard" has been changed to automatically display applications inherited from the parent project (if any), with no option to remove them. Other applications can be added to the layer in addition to the inherited ones.</p>
-</div>
-<div class="paragraph">
-<p>The settings form of an existing layer has also been fixed accordingly.</p>
-</div>
-<div class="paragraph">
-<p>In the screenshot below, the top two applications were inherited from the parent project, while the bottom one was added manually.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="settings/images/new-project-dialog-5.png" alt="Apps inherited from parent project" width="75%">
-</div>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="reference_check_in_the_unpublish_wizard"><a class="link" href="#reference_check_in_the_unpublish_wizard">Reference check in the Unpublish Wizard</a></h3>
-<div class="paragraph">
-<p>The Unpublish Wizard will now check if any of the content items to be unpublished are referenced by other <em>published</em> content items. If there are inbound references, the user will be warned and asked to confirm the unpublish operation.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="actions/images/dialog-unpublish-references.png" alt="Reference check in the Unpublish Wizard" width="75%">
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="decorative_images"><a class="link" href="#decorative_images">Decorative images</a></h3>
-<div class="paragraph">
-<p>A new "Accessibility" section in the <a href="editor/rich-text-editor.ahtml#insertedit_image">Insert/Edit Image dialog</a> of Rich Text editor allows the setting of decorative images as such. Decorative images are used for styling purposes only and meant to be skipped by screen readers, as opposed to images with meaningful alt text.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="editor/images/rich-text-editor-image-dialog.png" alt="Insert Image dialog" width="75%">
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="default_online_from_time"><a class="link" href="#default_online_from_time">Default Online From time</a></h3>
-<div class="imageblock">
-<div class="content">
-<img src="config/images/pubwiz-online-from.png" alt="Default Online From time in the Publishing Wizard" width="75%">
-</div>
-</div>
-<div class="paragraph">
-<p>Default Online From time in the Publishing Wizard can now be configured in Content Studio&#8217;s <a href="config.ahtml#default_publish_from_time">config file</a>. If no config is set, the default time will be set to 12:00.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="page_components_view"><a class="link" href="#page_components_view">Page Components view</a></h3>
-<div class="paragraph">
-<p>Styling of regions inside the Page Components view has been changed to make regions take less space and attention away from the main page components. Region names are now capitalized.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="release/images/cs52-pcv-regions.png" alt="Regions in the Page Components view" width="75%">
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="other_improvements_2"><a class="link" href="#other_improvements_2">Other improvements</a></h3>
-<div class="sect3">
-<h4 id="performance"><a class="link" href="#performance">Performance</a></h4>
-<div class="paragraph">
-<p>Preview and Page Editor panels will no longer be refreshed whenever content is published or unpublished.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="soft_hyphen_in_the_rich_text_editor"><a class="link" href="#soft_hyphen_in_the_rich_text_editor">Soft-hyphen in the Rich Text Editor</a></h4>
-<div class="paragraph">
-<p>Soft-hyphen character <code>&amp;shy;</code> added to Rich Text Editor&#8217;s "Special chars" dialog.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="email_sender"><a class="link" href="#email_sender">Email sender</a></h4>
-<div class="paragraph">
-<p>Before this release, email notifications for <a href="issues.ahtml">issues</a> created in Content Studio used the current user&#8217;s email address in the sender field. A new <a href="https://developer.enonic.com/docs/xp/stable/deployment/config#mail">config property</a> is implemented in XP 7.14.1 which can be used to configure default email sender for emails sent by XP. If properly configured, the sender field in the email notifications sent for issues in Content Studio will be set to the configured email address.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="extra_data"><a class="link" href="#extra_data">eXtra Data</a></h4>
-<div class="paragraph">
-<p>Layout and behaviour of optional X-Data sections in the Content Form have been changed. <code>+</code> icon is now right-aligned and transforms to <code>x</code> icon whenever the X-Data is active.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="release/images/cs52-x-data.png" alt="x-data in the Content Editor form" width="75%">
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="content_studio_5_update_1"><a class="link" href="#content_studio_5_update_1">Content Studio 5 Update 1</a></h2>
-<div class="sectionbody">
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-Content Studio 5.1 requires XP 7.13.0 or higher.
-</td>
-</tr>
-</table>
-</div>
-<div class="sect2">
-<h3 id="whats_new_3"><a class="link" href="#whats_new_3">What&#8217;s new</a></h3>
-<div class="videoblock">
-<div class="content">
-<iframe width="75%" src="https://www.youtube.com/embed/Lc8GVT7V5cU?rel=0" frameborder="0" allowfullscreen></iframe>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="improved_move_operation"><a class="link" href="#improved_move_operation">Improved move operation</a></h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Move Content dialog: New "Project root" node on top of the content tree to make it more obvious how to move content to the root. Previously one had to click "Move" button with no target content selected.</p>
-</li>
-<li>
-<p>Move Content dialog: "Move" button is disabled until new parent node is selected.</p>
-</li>
-<li>
-<p>It&#8217;s now possible to move content from inside the Content Editor</p>
-</li>
-<li>
-<p>Notification about successful move includes the new parent&#8217;s path which can be clicked to locate and expand the new parent inside the Content Navigator.</p>
-</li>
-</ul>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="actions/images/dialog-move.png" alt="Move dialog" width="75%">
-</div>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="actions/images/notification-move.png" alt="Move notification" width="75%">
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="improved_auto_exclusion_of_optional_dependencies"><a class="link" href="#improved_auto_exclusion_of_optional_dependencies">Improved auto-exclusion of optional dependencies</a></h3>
-<div class="paragraph">
-<p>The new mode for auto-exclusion of optional dependencies in the Publishing Wizard, originally introduced in Content Studio 5.0, has been improved to not hide the auto-excluded dependencies but  keep them visible (while still excluded) in the list.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="actions/images/dialog-publish-auto-excluded.png" alt="Auto-excluded dependencies" width="75%">
-</div>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-This mode can be turned on in Content Studio&#8217;s <a href="config.ahtml#exclude_optional_dependencies">config file</a>
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect2">
-<h3 id="export_of_search_results"><a class="link" href="#export_of_search_results">Export of search results</a></h3>
-<div class="paragraph">
-<p>Search results produced by the Navigator&#8217;s <a href="workbench/navigator.ahtml#search_panel">Search panel</a> can now be exported into a CSV file using the download icon next to the Search Panel&#8217;s free-text search field. The file will contain the following fields: <strong>Id</strong>, <strong>Path</strong>, <strong>Creator</strong>, <strong>Modifier</strong>, <strong>Created</strong>, <strong>Modified</strong>, <strong>Owner</strong>, <strong>Content Type</strong>, <strong>Display Name</strong>, <strong>Language</strong>, <strong>Published From</strong>, <strong>Published Until</strong>, <strong>First Published</strong>.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="release/images/cs51-search-export.png" alt="Search export" width="75%">
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="new_findreplace_dialog_in_rich_text_editor"><a class="link" href="#new_findreplace_dialog_in_rich_text_editor">New Find/Replace dialog in Rich Text Editor</a></h3>
-<div class="paragraph">
-<p>The old <a href="editor/rich-text-editor.ahtml#findreplace">Find/Replace dialog</a> in the Rich Text Editor that used to cover the text it was searching inside, has been replaced with the new inline dialog that allows editor to use the search/replace functions without blocking the source text.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="editor/images/rich-text-editor-find-replace.png" alt="Insert Link dialog" width="75%">
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="locked_path_for_published_content"><a class="link" href="#locked_path_for_published_content">Locked path for published content</a></h3>
-<div class="paragraph">
-<p>Previously, the editor had to click the "lock" icon next to the locked path input inside the Content Editor, in order to rename a published content. That icon is now removed and the path itself has to be clicked to open the Rename content dialog.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="other_improvements_3"><a class="link" href="#other_improvements_3">Other improvements</a></h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Improved responsiveness in the Content Navigator</p>
-</li>
-<li>
-<p>Improved synchronisation between the Content Form&#8217;s <a href="editor/content-form.ahtml#page_components_tree">Page Components tree</a> and components inside the <a href="editor/page-editor.ahtml">Page editor</a></p>
-</li>
-<li>
-<p>When a published item has been first moved, then modified its status will be shown as <code>Moved, Modified</code> (previously just <code>Moved</code>)</p>
-</li>
-<li>
-<p>"Show changes" link for comparison of publishing modifications is replaced with an icon</p>
-</li>
-<li>
-<p>New icon for switching the project context</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="content_studio_5"><a class="link" href="#content_studio_5">Content Studio 5</a></h2>
-<div class="sectionbody">
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-Content Studio 5.0 requires XP 7.13.0 or higher.
-</td>
-</tr>
-</table>
-</div>
-<div class="sect2">
-<h3 id="whats_new_4"><a class="link" href="#whats_new_4">What&#8217;s new</a></h3>
-<div class="videoblock">
-<div class="content">
-<iframe width="75%" src="https://www.youtube.com/embed/hB8TOBjRxYc?rel=0" frameborder="0" allowfullscreen></iframe>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="default_content_project_is_hidden_by_default"><a class="link" href="#default_content_project_is_hidden_by_default">Default Content Project is hidden by default</a></h3>
-<div class="paragraph">
-<p>Default Content Project is no longer available in Content Studio without tweaking the config file.</p>
-</div>
-<div class="paragraph">
-<p>If you need the Default project (for example, you already have content in it and want to continue working with it after
-upgrading to Content Studio 5), enable it via Content Studio&#8217;s <a href="config.ahtml#enable_default_content_project">config file</a>.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="page_components_view_2"><a class="link" href="#page_components_view_2">Page Components View</a></h3>
-<div class="paragraph">
-<p>Page Components View, which used to be a floating modal window inside Page Editor, is now made a part
-of the <a href="editor/content-form.ahtml#page_components_tree">Content Editor form</a>. It will be automatically undocked whenever the Content Form is collapsed.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="editor/images/wizard-component-view-collapsed.png" alt="Page Components view - Docked" width="75%">
-</div>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="editor/images/wizard-component-view-floating.png" alt="Page Components view - Floating" width="75%">
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="publishing_wizard_improvements"><a class="link" href="#publishing_wizard_improvements">Publishing Wizard improvements</a></h3>
-<div class="paragraph">
-<p>It&#8217;s now possible to auto-exclude optional dependencies of selected content from publishing batch via Content Studio&#8217;s <a href="config.ahtml#exclude_optional_dependencies">config file</a>.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="call_links_in_the_insert_link_dialog"><a class="link" href="#call_links_in_the_insert_link_dialog">Call links in the Insert Link dialog</a></h3>
-<div class="paragraph">
-<p>A new URL type option <code>Tel</code> in the Rich Editor&#8217;s "Insert Link" dialog enables adding call links.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="release/images/cs50-call-links.png" alt="Page Components view - Docked" width="75%">
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="other_improvements_4"><a class="link" href="#other_improvements_4">Other improvements</a></h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Preview panel won&#8217;t be auto-expanded for a site until there&#8217;s at least one controller from apps assigned to the site.</p>
-</li>
-<li>
-<p>Content Selector displays status of selected content items.</p>
-</li>
-<li>
-<p>Widgets inside Content Studio have been localised to other languages than English</p>
-</li>
-</ul>
 </div>
 </div>
 </div>
@@ -1086,7 +682,7 @@ of the <a href="editor/content-form.ahtml#page_components_tree">Content Editor f
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-05-29 18:47:00 UTC
+Last updated 2026-06-01 16:38:39 UTC
 </div>
 </div>
 </body>
