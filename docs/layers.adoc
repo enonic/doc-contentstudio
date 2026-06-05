@@ -121,7 +121,7 @@ image::layer-modal-dialog.png[Layers Widget, 375]
 Just like with the Layers widget, you can expand layer boxes in this dialog to either localize or edit the content in the current layer,
 or open it in other layers (given your user has sufficient permissions to access the layer).
 
-TIP: Read about the high-level concept of Content Layers https://developer.enonic.com/docs/xp/stable/cms/layers[here].
+TIP: Read about the high-level concept of Content Layers https://developer.enonic.com/docs/cms/stable/content/layering[here].
 
 
 == Management

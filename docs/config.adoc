@@ -18,7 +18,7 @@ contentTypePatternMode = MATCH
 ----
 
 Defines matching mode for content type patterns. Can be `MATCH` or `LEGACY`. Default: `MATCH`.
-See https://developer.enonic.com/docs/xp/stable/cms/schemas/input-types/contentselector#allowContentType[description].
+See https://developer.enonic.com/docs/cms/stable/schemas/form-items/contentselector#allowContentType[description].
 
 
 

@@ -10,7 +10,7 @@ image::../workbench/images/navigator.png[Content Studio Navigator view showing t
 
 TIP: A collection of short videos demonstrating Content Studio's features and capabilities is available on the https://www.enonic.com/resources/content-studio-videos[Enonic site].
 
-*For content modelling* and schema references, go to the https://developer.enonic.com/docs/xp/stable/cms[Enonic CMS docs].
+*For content modelling* and schema references, go to the https://developer.enonic.com/docs/cms[Enonic CMS docs].
 
 == Installation
 Content Studio is a standalone Enonic XP application that can be installed from https://market.enonic.com/vendors/enonic/content-studio[Enonic Market].

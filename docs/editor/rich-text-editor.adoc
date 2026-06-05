@@ -2,7 +2,7 @@
 :toc: right
 :imagesdir: images
 
-Rich Text Editor is used by the https://developer.enonic.com/docs/xp/stable/cms/schemas/input-types/htmlarea[HTMLArea input type]
+Rich Text Editor is used by the https://developer.enonic.com/docs/cms/stable/schemas/form-items/htmlarea[HTMLArea input type]
 and for editing <<page-editor#text,Text components>> inside the Page editor.
 It's capable of formatting the text in many ways, pasting from Word and Google Docs, using macros to insert code snippets
 and iFrames, inserting tables, images and content links etc.
@@ -106,7 +106,7 @@ This button will open the editor in the full screen mode for more convenient use
 By default, XP comes with one built-in image style called “_Original (no image processing)_”. By applying this style to the image, you'll make sure
 that the image won't undergo any processing on the server and will be rendered “as is”.
 
-Custom Image Styles can be defined in your application as https://developer.enonic.com/docs/xp/stable/cms/styles[described] in the CMS section of XP docs.
+Custom Image Styles can be defined in your application as https://developer.enonic.com/docs/cms/stable/richtext/styles[described] in the CMS section of XP docs.
 
 Custom styles from all the applications added to the site (plus the "_Original_" style) will be combined into one list inside the dropdown of the Image modal dialog.
 

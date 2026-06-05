@@ -86,7 +86,7 @@ A single part can be added to many pages — or several times on one page — an
 
 image::component-types-part-insert.png[]
 
-TIP: Applications can restrict a part to specific content types. See the https://developer.enonic.com/docs/xp/stable/cms/schemas#part[XP part descriptor reference] for details.
+TIP: Applications can restrict a part to specific content types. See the https://developer.enonic.com/docs/cms/stable/pages/filtering[component filtering reference] for details.
 
 === Layout
 

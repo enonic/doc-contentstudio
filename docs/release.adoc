@@ -117,6 +117,7 @@ There are some known issues in Content Studio 6.0.0 that we are working to resol
 * *Validation on rename* - The rename dialog does not properly validate the input.
 * *Version history* — Some imported content shows wrong dates in version history.
 * *Arrow keys* - for some input fields, the arrow keys do not work as expected.
+* *Content icons* - it is not currently possible to upload custom icons for content items.
 
 
 [#upgrade]

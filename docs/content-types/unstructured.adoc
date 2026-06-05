@@ -10,4 +10,4 @@ The data is not editable through Content Studio: only display name, path, settin
 
 Unstructured is the right choice when an application needs the standard content envelope (path, permissions, lifecycle, search indexing) but the payload is dynamic or evolving, and defining a fixed content type would be premature or awkward.
 
-For data that has a known shape and is edited by humans, a custom content type is the better choice — see the https://developer.enonic.com/docs/xp/stable/cms/schemas[XP content type schema reference].
+For data that has a known shape and is edited by humans, a custom content type is the better choice — see the https://developer.enonic.com/docs/cms/stable/content/content-types[CMS content type reference].

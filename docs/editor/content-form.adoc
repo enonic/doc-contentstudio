@@ -13,8 +13,8 @@ image::editor-form.png[Editor form, 75%]
 The top of the content form has the content type icon, the Display Name, and the content path name.
 The default icon can be replaced with a thumbnail image by clicking on it and uploading an image file.
 When the Display Name is being changed, the path name will change accordingly, to a URL-friendly version.
-It is also possible for the Display Name to be generated dynamically using values from other form
-fields by using a https://developer.enonic.com/docs/xp/stable/cms/content-types#display_name_expressions[Display Name expression].
+It is also possible for the Display Name to be generated dynamically from the values of other form
+fields, if the application's content type defines a Display Name expression.
 
 NOTE: Value of the Path field must be unique and will be validated against existing content every time the field is changed.
 
