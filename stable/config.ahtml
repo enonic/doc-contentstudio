@@ -457,7 +457,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#exclude_optional_dependencies">Exclude optional dependencies</a></li>
 </ul>
 </li>
-<li><a href="#enable_default_content_project">Enable Default Content Project</a></li>
 </ul>
 </div>
 </div>
@@ -535,7 +534,7 @@ See <a href="https://developer.enonic.com/docs/xp/stable/cms/schemas/input-types
 <div class="sect3">
 <h4 id="example_google_analytics_widget"><a class="link" href="#example_google_analytics_widget">Example: Google Analytics Widget</a></h4>
 <div class="paragraph">
-<p>The <a href="https://market.enonic.com/vendors/enonic/google-analytics" target="_blank" rel="noopener">Google analytics app</a> injects its own scripts referring to an external domains. See CSP example in the <a href="https://developer.enonic.com/docs/google-analytics/stable#content_security_policy" target="_blank" rel="noopener">GA app documentation</a>.</p>
+<p>The <a href="https://market.enonic.com/vendors/enonic/google-analytics">Google analytics app</a> injects its own scripts referring to an external domains. See CSP example in the <a href="https://developer.enonic.com/docs/google-analytics/stable#content_security_policy">GA app documentation</a>.</p>
 </div>
 </div>
 <div class="sect3">
@@ -559,7 +558,7 @@ See <a href="https://developer.enonic.com/docs/xp/stable/cms/schemas/input-types
 <p>In production, front-ends built with the Enonic site engine deployed on custom domains. In preview mode however, the site engine is accessed in the same domain and URL context as Content Studio. To mitigate this Site Engine has a standard preview CSP to protect Content Studio and the XP admin.</p>
 </div>
 <div class="paragraph">
-<p>If your site is not working properly in preview mode, consider improving the implementation. Details on tuning the Site Engine CSP are described in the  <a href="https://developer.enonic.com/docs/xp/stable/deployment/config#admin" target="_blank" rel="noopener">XP configuration documentation</a>.</p>
+<p>If your site is not working properly in preview mode, consider improving the implementation. Details on tuning the Site Engine CSP are described in the  <a href="https://developer.enonic.com/docs/xp/stable/deployment/config#admin">XP configuration documentation</a>.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -663,41 +662,10 @@ Use this flag with caution. It makes it very simple to publish a content without
 </div>
 </div>
 </div>
-<div class="sect1">
-<h2 id="enable_default_content_project"><a class="link" href="#enable_default_content_project">Enable Default Content Project</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><a href="projects.ahtml#default_project">Default Content Project</a> is not shown in Content Studio by default.</p>
-</div>
-<div class="paragraph">
-<p>If you need the Default project (for example, you already have content in it and want to continue working with it after
-upgrading to Content Studio 5), enable it by setting <code>settings.hideDefaultProject</code> property to <code>false</code>.</p>
-</div>
-<div class="listingblock">
-<div class="title">com.enonic.app.contentstudio.cfg</div>
-<div class="content">
-<pre class="highlight"><code class="language-properties" data-lang="properties">settings.hideDefaultProject=false</code></pre>
-</div>
-</div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-If the Default project is hidden (default behaviour) and a logged-in user doesn&#8217;t have access to any projects and has necessary permissions,
-he/she will be asked to create a new content project using <a href="settings.ahtml#new_project_wizard">multistep wizard</a>.
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-06-01 17:26:38 UTC
+Last updated 2026-06-05 13:11:37 UTC
 </div>
 </div>
 </body>

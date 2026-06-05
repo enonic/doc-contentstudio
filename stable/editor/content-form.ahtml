@@ -492,7 +492,7 @@ Value of the Path field must be unique and will be validated against existing co
 </td>
 <td class="content">
 For a new content, Path will be auto-generated as you type into the Display Name field. International letters will be automatically
-transliterated into their english equivalents. It&#8217;s possible to turn off this behaviour in the Content Studio&#8217;s <a href="../config.ahtml#content_path_transliteration">config file</a>.
+transliterated into their english equivalents. It&#8217;s possible to turn off this behaviour in the Content Studio&#8217;s <a href="../config.ahtml#disable_path_name_transliteration">config file</a>.
 </td>
 </tr>
 </table>
@@ -541,9 +541,9 @@ If you collapse the tree, your browser will remember this selection and won&#821
 of all the components and regions on the page, including the page itself. This tree makes it very easy to manage content structure without having to use the Page Editor.</p>
 </div>
 <div class="paragraph">
-<p>Selecting a component in the tree will highlight the component in the Page Editor and display its configuration in the <a href="../widgets.ahtml#insert-tab">Components</a> widget.
+<p>Selecting a component in the tree will highlight the component in the Page editor and display its configuration in the <a href="page-editor.ahtml#_components_widget">Components widget</a>.
 The triple dot icon on the right of each component will open a context menu. This menu is the same as the one that would open for the same component
-in the <a href="page-editor.ahtml#editing-page">Page Editor</a>.</p>
+in the <a href="page-editor.ahtml#editing-page">Page editor</a>.</p>
 </div>
 <div class="paragraph">
 <p>Components can be rearranged directly in the tree with drag’n’drop function.</p>
@@ -573,7 +573,7 @@ For fragments and page templates the Page Components tree will be inside the fir
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-06-01 17:26:38 UTC
+Last updated 2026-06-05 13:11:37 UTC
 </div>
 </div>
 </body>

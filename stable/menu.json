@@ -1,16 +1,120 @@
 {
   "menuItems": [
     {
+      "title": "Overview",
+      "document": "index"
+    },
+    {
       "title": "Projects",
       "document": "projects",
       "menuItems": [
         {
           "title": "Settings",
-          "document" : "settings"
+          "document": "settings"
         },
         {
-          "title": "Layers",
-          "document" : "layers"
+          "title": "Layers & localization",
+          "document": "layers"
+        }
+      ]
+    },
+    {
+      "title": "Workbench",
+      "document": "workbench",
+      "menuItems": [
+        {
+          "title": "Navigator",
+          "document": "workbench/navigator"
+        },
+        {
+          "title": "Archive",
+          "document": "workbench/archive"
+        },
+        {
+          "title": "Preview",
+          "document": "workbench/preview"
+        },
+        {
+          "title": "Context panel",
+          "document": "workbench/contextpanel",
+          "menuItems": [
+            {
+              "title": "Details",
+              "document": "workbench/contextpanel/details"
+            },
+            {
+              "title": "Dependencies",
+              "document": "workbench/contextpanel/dependencies"
+            },
+            {
+              "title": "Versions",
+              "document": "workbench/contextpanel/versions"
+            },
+            {
+              "title": "Variants",
+              "document": "workbench/contextpanel/variants"
+            }
+          ]
+        },
+        {
+          "title": "Permissions",
+          "document": "workbench/permissions"
+        }
+      ]
+    },
+    {
+      "title": "Content Editor",
+      "document": "editor",
+      "menuItems": [
+        {
+          "title": "Content form",
+          "document": "editor/content-form"
+        },
+        {
+          "title": "Rich text",
+          "document": "editor/rich-text-editor"
+        },
+        {
+          "title": "Page editor",
+          "document": "editor/page-editor"
+        }
+      ]
+    },
+    {
+      "title": "Content types",
+      "document": "content-types",
+      "menuItems": [
+        {
+          "title": "Folder",
+          "document": "content-types/folder"
+        },
+        {
+          "title": "Shortcut",
+          "document": "content-types/shortcut"
+        },
+        {
+          "title": "Site",
+          "document": "content-types/site"
+        },
+        {
+          "title": "Page template",
+          "document": "content-types/page-template"
+        },
+        {
+          "title": "Media",
+          "document": "content-types/media"
+        },
+        {
+          "title": "Image",
+          "document": "content-types/image"
+        },
+        {
+          "title": "Fragment",
+          "document": "content-types/fragment"
+        },
+        {
+          "title": "Unstructured",
+          "document": "content-types/unstructured"
         }
       ]
     },
@@ -19,88 +123,72 @@
       "document": "actions",
       "menuItems": [
         {
-          "title": "Keyboard Shortcuts",
-          "document": "keyboard-shortcuts"
+          "title": "New",
+          "document": "actions/new"
         },
         {
-          "title": "Permissions",
-          "document": "permissions"
-        }
-      ]
-    },
-    {
-      "title": "Built-in types",
-      "document": "content-types",
-      "menuItems": [
-        {
-          "title": "Content Variants",
-          "document": "variants"
-        }
-      ]
-    },
-    {
-      "title": "Navigator",
-      "document": "navigator"
-    },
-    {
-      "title": "Editor",
-      "document": "editor",
-      "menuItems": [
-        {
-            "title": "Content Form",
-            "document" : "editor/content-form"
+          "title": "Edit",
+          "document": "actions/edit"
         },
         {
-          "title": "AI Assistant",
-          "document": "ai"
+          "title": "Duplicate",
+          "document": "actions/duplicate"
         },
         {
-            "title": "Visual Editor",
-            "document" : "editor/page-editor"
+          "title": "Move",
+          "document": "actions/move"
         },
         {
-          "title": "Context Panel",
-          "document": "editor/context-panel"
+          "title": "Sort",
+          "document": "actions/sort"
         },
         {
-          "title": "Component Types",
-          "document" : "editor/component-types"
+          "title": "Preview",
+          "document": "actions/preview"
         },
         {
-            "title": "Rich Text Editor",
-            "document" : "editor/rich-text-editor"
+          "title": "Publish",
+          "document": "actions/publish"
         },
         {
-          "title": "Workflow",
-          "document": "workflow"
+          "title": "Unpublish",
+          "document": "actions/unpublish"
+        },
+        {
+          "title": "Delete",
+          "document": "actions/delete"
         }
       ]
     },
     {
       "title": "Issues",
-      "document": "issues"
+      "document": "issues",
+      "menuItems": [
+        {
+          "title": "Publish request",
+          "document": "issues/publish-request"
+        }
+      ]
     },
     {
-      "title": "Archive",
-      "document": "archive"
+      "title": "Workflow",
+      "document": "workflow"
     },
     {
-      "title": "Widgets",
-      "document": "widgets"
+      "title": "AI Assistant",
+      "document": "ai"
+    },
+    {
+      "title": "Keyboard shortcuts",
+      "document": "keyboard-shortcuts"
     },
     {
       "title": "Configuration",
       "document": "config"
     },
     {
-      "title": "Release Notes",
-      "document" : "release",
-      "menuItems" : [
-        {
-          "title": "Upgrade Notes",
-          "document" : "release/upgrade"
-        }
-      ]
+      "title": "Release notes",
+      "document": "release"
     }
   ]
 }

@@ -441,9 +441,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#first_project">First project</a></li>
-<li><a href="#project_selector">Project selector</a></li>
-<li><a href="#project_context">Project context</a></li>
+<li><a href="#what_is_a_project">What is a project?</a></li>
+<li><a href="#getting_started">Getting started</a></li>
+<li><a href="#project-wizard">Project wizard</a></li>
 <li><a href="#project_layering">Project layering</a></li>
 </ul>
 </div>
@@ -452,52 +452,112 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Content Studio allows you to organize your content in multiple independent repositories aka Projects.</p>
+<p>Content Studio allows you to organize your content in multiple independent repositories aka projects.</p>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="what_is_a_project"><a class="link" href="#what_is_a_project">What is a project?</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>Content Projects also offer individual access control and permissions, as well as other settings to toggle features and language(s) for the project.</p>
+<p>Each project provides a dedicated repository for content. It provides individual access control and permissions, as well as other settings to toggle features and language(s) for the project.</p>
 </div>
 <div class="paragraph">
 <p>Privileged users can create and manage projects via <a href="settings.ahtml">Content Studio settings</a>.</p>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="first_project"><a class="link" href="#first_project">First project</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>For new Enonic installations, you will have to <a href="settings.ahtml#new_project_wizard">create an project</a> to get started.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="projects/images/context-no-projects.png" alt="No projects" width="987w">
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="project_selector"><a class="link" href="#project_selector">Project selector</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>If you have access to multiple projects, you can easily swich to a different project in the context selector</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="projects/images/project-switcher.png" alt="Project switcher" width="1226w">
-</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Content items cannot be moved or copied between projects. For reusing content across projects, see <a href="layers.ahtml">content layering</a>.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="project_context"><a class="link" href="#project_context">Project context</a></h2>
+<h2 id="getting_started"><a class="link" href="#getting_started">Getting started</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The project context is always visible in the Content Studio header, including when you are editing a single content item:</p>
+<p>A fresh Enonic installations contains no projects, meaning you will have to create a project before you can start authoring.</p>
+</div>
+<div class="paragraph">
+<p>You should see the following dialog when starting Content Studio for the first time:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="projects/images/content-wizard-context.png" alt="Context in Content Wizard" width="789w">
+<img src="projects/images/project-first.png" alt="Dialog showing a button to start project wizard" width="839w">
 </div>
+</div>
+<div class="paragraph">
+<p>Clicking btn…[Start Project wizard] will launch the <a href="#project-wizard">project wizard</a>, which will guide you through the steps of creating a new project.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="project-wizard"><a class="link" href="#project-wizard">Project wizard</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Follow these steps to create a new project. You can click the "Back" button at any time to review or change your choices, and the "Cancel" button to exit without creating a project.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Language and layering</p>
+<div class="paragraph">
+<p>Select the parent layer to inherit content from (optional) and the default language for the project. The parent layer cannot be changed later, but the default language can.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="projects/images/project-step1.png" alt="Dialog for selecting parent layer and default language" width="839w">
+</div>
+</div>
+</li>
+<li>
+<p>Name and ID</p>
+<div class="imageblock">
+<div class="content">
+<img src="projects/images/project-step2.png" alt="Dialog for setting project name and unique ID" width="920w">
+</div>
+</div>
+</li>
+<li>
+<p>Public or private</p>
+<div class="imageblock">
+<div class="content">
+<img src="projects/images/project-step3.png" alt="Select default content visibility" width="920w">
+</div>
+</div>
+</li>
+<li>
+<p>Roles and permissions</p>
+<div class="imageblock">
+<div class="content">
+<img src="projects/images/project-step4.png" alt="Configure authoring access" width="920w">
+</div>
+</div>
+</li>
+<li>
+<p>Applications and features</p>
+<div class="imageblock">
+<div class="content">
+<img src="projects/images/project-step5.png" alt="Configure applications for project" width="920w">
+</div>
+</div>
+</li>
+<li>
+<p>Summary</p>
+<div class="imageblock">
+<div class="content">
+<img src="projects/images/project-summary.png" alt="Summary of project settings" width="920w">
+</div>
+</div>
+</li>
+</ol>
 </div>
 </div>
 </div>
@@ -512,7 +572,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-06-01 17:26:38 UTC
+Last updated 2026-06-05 13:11:37 UTC
 </div>
 </div>
 </body>
