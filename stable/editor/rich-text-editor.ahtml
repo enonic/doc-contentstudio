@@ -469,7 +469,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Rich Text Editor is used by the <a href="https://developer.enonic.com/docs/xp/stable/cms/schemas/input-types/htmlarea">HTMLArea input type</a>
+<p>Rich Text Editor is used by the <a href="https://developer.enonic.com/docs/cms/stable/schemas/form-items/htmlarea">HTMLArea input type</a>
 and for editing <a href="page-editor.ahtml#text">Text components</a> inside the Page editor.
 It&#8217;s capable of formatting the text in many ways, pasting from Word and Google Docs, using macros to insert code snippets
 and iFrames, inserting tables, images and content links etc.</p>
@@ -656,7 +656,7 @@ placed in the footer of the editor, while for a Text component inside the Page E
 that the image won&#8217;t undergo any processing on the server and will be rendered “as is”.</p>
 </div>
 <div class="paragraph">
-<p>Custom Image Styles can be defined in your application as <a href="https://developer.enonic.com/docs/xp/stable/cms/styles">described</a> in the CMS section of XP docs.</p>
+<p>Custom Image Styles can be defined in your application as <a href="https://developer.enonic.com/docs/cms/stable/richtext/styles">described</a> in the CMS section of XP docs.</p>
 </div>
 <div class="paragraph">
 <p>Custom styles from all the applications added to the site (plus the "<em>Original</em>" style) will be combined into one list inside the dropdown of the Image modal dialog.</p>
@@ -671,7 +671,7 @@ that the image won&#8217;t undergo any processing on the server and will be rend
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-06-05 13:19:57 UTC
+Last updated 2026-06-05 13:35:22 UTC
 </div>
 </div>
 </body>

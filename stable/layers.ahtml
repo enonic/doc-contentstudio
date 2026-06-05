@@ -746,7 +746,7 @@ or open it in other layers (given your user has sufficient permissions to access
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-Read about the high-level concept of Content Layers <a href="https://developer.enonic.com/docs/xp/stable/cms/layers">here</a>.
+Read about the high-level concept of Content Layers <a href="https://developer.enonic.com/docs/cms/stable/content/layering">here</a>.
 </td>
 </tr>
 </table>
@@ -762,7 +762,7 @@ Read about the high-level concept of Content Layers <a href="https://developer.e
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-06-05 13:19:57 UTC
+Last updated 2026-06-05 13:35:22 UTC
 </div>
 </div>
 </body>

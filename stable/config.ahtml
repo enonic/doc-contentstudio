@@ -484,7 +484,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="paragraph">
 <p>Defines matching mode for content type patterns. Can be <code>MATCH</code> or <code>LEGACY</code>. Default: <code>MATCH</code>.
-See <a href="https://developer.enonic.com/docs/xp/stable/cms/schemas/input-types/contentselector#allowContentType">description</a>.</p>
+See <a href="https://developer.enonic.com/docs/cms/stable/schemas/form-items/contentselector#allowContentType">description</a>.</p>
 </div>
 </div>
 </div>
@@ -665,7 +665,7 @@ Use this flag with caution. It makes it very simple to publish a content without
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-06-05 13:19:57 UTC
+Last updated 2026-06-05 13:35:22 UTC
 </div>
 </div>
 </body>

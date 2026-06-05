@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.26">
-<title>Content types</title>
+<title>Built-in and custom Content Types</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -437,12 +437,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article toc2 toc-right">
 <div id="header">
-<h1>Content types</h1>
+<h1>Built-in and custom Content Types</h1>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#custom_content_types">Custom content types</a></li>
-<li><a href="#built_in_content_types">Built-in content types</a></li>
+<li><a href="#overview">Overview</a></li>
 </ul>
 </div>
 </div>
@@ -450,26 +449,18 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>A <strong>content type</strong> defines the fields of a content form.</p>
+<p>Every content item in Enonic XP has a content type — it defines the item&#8217;s form and behavior</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="custom_content_types"><a class="link" href="#custom_content_types">Custom content types</a></h2>
+<h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Developers may define and deploy custom content types to your project or site, tailored to your specific needs.</p>
+<p>Content types come from two sources: a set of <strong>built-in</strong> types that ship with Enonic XP, and <strong>custom</strong> types defined by the applications available in your project.</p>
 </div>
 <div class="paragraph">
-<p>For the developer reference on defining custom content types, see the <a href="https://developer.enonic.com/docs/xp/stable/cms/schemas">XP content type schema reference</a>.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="built_in_content_types"><a class="link" href="#built_in_content_types">Built-in content types</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>A handful of <strong>built-in</strong> types ship with Enonic XP and have special behaviour in Content Studio; those are documented here.</p>
+<p>Custom types simply render the form their application defines. The built-in types, however, have special behaviour and dedicated tooling in Content Studio — those are documented in this chapter:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -499,12 +490,24 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+For defining your own content types and content modelling in general, see the <a href="https://developer.enonic.com/docs/cms/stable/content/content-types">Enonic CMS docs</a>.
+</td>
+</tr>
+</table>
+</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-06-05 13:19:57 UTC
+Last updated 2026-06-05 13:35:22 UTC
 </div>
 </div>
 </body>

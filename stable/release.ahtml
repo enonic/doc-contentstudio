@@ -696,6 +696,9 @@ the page editor and content grid.</p>
 <li>
 <p><strong>Arrow keys</strong> - for some input fields, the arrow keys do not work as expected.</p>
 </li>
+<li>
+<p><strong>Content icons</strong> - it is not currently possible to upload custom icons for content items.</p>
+</li>
 </ul>
 </div>
 </div>
@@ -756,7 +759,7 @@ Full functionalilty may be re-activated via the <a href="config.ahtml">content s
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-06-05 13:19:57 UTC
+Last updated 2026-06-05 13:35:22 UTC
 </div>
 </div>
 </body>

@@ -469,8 +469,8 @@ The content editor panel can be collapsed to give the page editor more room by c
 <p>The top of the content form has the content type icon, the Display Name, and the content path name.
 The default icon can be replaced with a thumbnail image by clicking on it and uploading an image file.
 When the Display Name is being changed, the path name will change accordingly, to a URL-friendly version.
-It is also possible for the Display Name to be generated dynamically using values from other form
-fields by using a <a href="https://developer.enonic.com/docs/xp/stable/cms/content-types#display_name_expressions">Display Name expression</a>.</p>
+It is also possible for the Display Name to be generated dynamically from the values of other form
+fields, if the application&#8217;s content type defines a Display Name expression.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -573,7 +573,7 @@ For fragments and page templates the Page Components tree will be inside the fir
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-06-05 13:19:57 UTC
+Last updated 2026-06-05 13:35:22 UTC
 </div>
 </div>
 </body>
