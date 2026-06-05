@@ -63,7 +63,7 @@
       ]
     },
     {
-      "title": "Content Editor",
+      "title": "Content editor",
       "document": "editor",
       "menuItems": [
         {
@@ -81,7 +81,7 @@
       ]
     },
     {
-      "title": "Content types",
+      "title": "Built-in types",
       "document": "content-types",
       "menuItems": [
         {
