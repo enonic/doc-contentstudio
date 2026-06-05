@@ -139,5 +139,3 @@ for a new content which will be created in this repository and replace the icon 
 NOTE: Default project doesn't support project roles or customization of read permissions.
 
 image::default-project.png[Default project, 825]
-
-TIP: You can enable the Default Project in Content Studio via a <<config#enable_default_content_project,configuration file>>.

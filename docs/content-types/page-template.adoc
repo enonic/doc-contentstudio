@@ -2,7 +2,7 @@
 :toc: right
 :imagesdir: images
 
-A *Page template* is a reusable page definition that renders one or more content types as pages. Templates live inside a site's automatically-provisioned <<site#_templates_folder,Templates folder>>, and each one pairs a page controller (the HTML skeleton from an application) with one or more content types that will use it.
+A *Page template* is a reusable page definition that renders one or more content types as pages. Templates live inside a site's automatically-provisioned <<site#templates_folder,Templates folder>>, and each one pairs a page controller (the HTML skeleton from an application) with one or more content types that will use it.
 
 image::browse-templates-list.png[List of page templates in the Templates folder]
 
@@ -15,7 +15,7 @@ Create a new *Page template* content inside the Templates folder. Two fields dri
 
 == Which template is used
 
-When several templates support the same content type, the one that appears _first_ in the Templates folder is used by default. Individual content items can override the default via the *Page template* dropdown in the <<../editor/page-editor#_inspect_tab,Inspect tab>> of the Components widget.
+When several templates support the same content type, the one that appears _first_ in the Templates folder is used by default. Individual content items can override the default via the *Page template* dropdown in the <<../editor/page-editor#inspect_tab,Inspect tab>> of the Components widget.
 
 image::wizard-template.png[Choosing a template for a content item]
 

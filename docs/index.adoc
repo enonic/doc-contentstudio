@@ -4,6 +4,8 @@
 
 Content Studio is Enonic XP's content-management UI — the editor-facing application for creating, organising, and publishing content.
 
+IMPORTANT: We are still working to update all the screenshots in the Content Studio 6 documentation. Expect some outdated images until we finish this work.
+
 image::../workbench/images/navigator.png[Content Studio Navigator view showing the content tree and preview, width=1440px]
 
 TIP: A collection of short videos demonstrating Content Studio's features and capabilities is available on the https://www.enonic.com/resources/content-studio-videos[Enonic site].

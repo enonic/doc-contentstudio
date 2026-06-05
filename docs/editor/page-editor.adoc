@@ -55,7 +55,7 @@ Configuration changes take effect on save, or immediately when you click the *Ap
 [[editing-page]]
 == Working with components
 
-Click a component in the page to select it — the selection is highlighted and its configuration appears in the <<#_inspect_tab,Inspect tab>> of the Components widget. Right-clicking a component opens a menu with the available actions:
+Click a component in the page to select it — the selection is highlighted and its configuration appears in the <<#inspect_tab,Inspect tab>> of the Components widget. Right-clicking a component opens a menu with the available actions:
 
 * *Select parent* — move the selection up the component tree.
 * *Insert* — add another component.
@@ -72,7 +72,7 @@ image::page-editor-menu.png[]
 [[_component_categories]]
 == Component categories
 
-Enonic XP has five categories of components that can be placed in page regions. All are available from the <<#_insert_tab,Insert tab>> of the Components widget.
+Enonic XP has five categories of components that can be placed in page regions. All are available from the <<#insert_tab,Insert tab>> of the Components widget.
 
 === Part
 

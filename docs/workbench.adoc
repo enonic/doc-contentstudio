@@ -17,7 +17,7 @@ The horizontal bar across the top of the window. It carries application-wide con
 [[menuitems]]
 == Menu bar
 
-The vertical strip on the left lists the available *menuitems*: top-level views contributed by Content Studio or by an installed application. Clicking an icon swaps the <<#_main_panel,main panel>> to that menuitem's view.
+The vertical strip on the left lists the available *menuitems*: top-level views contributed by Content Studio or by an installed application. Clicking an icon swaps the <<#main_panel,main panel>> to that menuitem's view.
 
 * *Navigator* — the built-in default, anchored at the top of the menu bar. The content tree, search, and per-content actions. See <<workbench/navigator#,Navigator>>.
 * *Settings* — anchored at the bottom-left, set apart from the regular menuitem stack. Unlike the others, Settings is *not* scoped to the currently selected project — it manages all projects and layers. See <<settings#,Settings>>.

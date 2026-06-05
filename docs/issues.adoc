@@ -4,7 +4,7 @@
 
 There are two types of issues in Content Studio: *tasks* and *publish requests*. Both are lightweight work items with assignees, comments, and an Open/Closed state — the *Open Issues* dialog lists both together on separate tabs.
 
-*Tasks* are general editorial work items — "spellcheck this article", "add new content to this section". See <<#_tasks,Tasks>> below.
+*Tasks* are general editorial work items — "spellcheck this article", "add new content to this section". See <<#tasks,Tasks>> below.
 
 *Publish requests* ask another user to review and publish content. Because they have their own wizard and dialog, they are documented on a dedicated page — see <<issues/publish-request#,Publish request>>.
 

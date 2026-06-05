@@ -18,7 +18,7 @@ The Publish button's dropdown in the toolbar carries several related actions:
 
 * *<<../workflow#_ready_for_publishing,Mark as ready>>* — for in-progress content. After marking, automatically opens the Publishing wizard.
 * *Publish* — opens the Publishing wizard for the selected items.
-* *<<#_publish_tree,Publish tree>>* — same wizard, including all descendants and dependencies.
+* *<<#publish_tree,Publish tree>>* — same wizard, including all descendants and dependencies.
 * *<<unpublish#,Unpublish>>* — available only for published items.
 * *<<../issues/publish-request#,Request publishing>>* — available only for unpublished items.
 * *<<../issues#,Create task>>* — opens the *New Task* dialog.
@@ -48,7 +48,7 @@ The *Publishing wizard* opens when *Publish* is invoked. The selected content's 
 
 In the example below, the post "_March madness_" was selected for publishing. It has two related *Category* items (_/parent_ and _/parent/first-child-category_) and one related *Author* item (_/authors/michael-lazell_) — those are automatically added to the batch, together with all their ascendants. The total count of items to be published appears on the *Publish Now* button.
 
-TIP: The calendar icon next to *Publish Now* enables <<#_scheduled_publishing,scheduled publishing>>.
+TIP: The calendar icon next to *Publish Now* enables <<#scheduled_publishing,scheduled publishing>>.
 
 NOTE: If the current user lacks publish permission for any of the batched items, *Publish All* is replaced by *<<../issues/publish-request#,Request Publishing>>*.
 

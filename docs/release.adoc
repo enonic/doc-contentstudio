@@ -105,6 +105,20 @@ the page editor and content grid.
 
 // Bugfixes intentionally omitted for 6.0.
 
+== Known issues
+
+There are some known issues in Content Studio 6.0.0 that we are working to resolve ASAP. These include:
+
+* *Publishing wizard* - Dependencies are not always showing up in the publishing wizard, and the "select all" option is missing for dependencies. This may lead to publishing content with missing dependencies, which can cause issues on the live site.
+* *Image editor* — the image editor is now integrated with media preview, but cropping feature is not fully working yet.
+* *Image selector* — Drag and drop functionality is not working.
+* *Stale data* - for some changes to data the UI does not update immediately, but requires a manual refresh.
+* *Fragments* — there are incorrect menu items and preview rendering for fragments.
+* *Validation on rename* - The rename dialog does not properly validate the input.
+* *Version history* — Some imported content shows wrong dates in version history.
+* *Arrow keys* - for some input fields, the arrow keys do not work as expected.
+
+
 [#upgrade]
 == Upgrade notes
 
