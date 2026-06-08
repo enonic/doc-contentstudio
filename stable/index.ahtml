@@ -643,10 +643,10 @@ A collection of short videos demonstrating Content Studio&#8217;s features and c
 <p><a href="workbench/contextpanel/variants.ahtml">Content Variants</a> — create and manage variant copies of a content item for A/B testing.</p>
 </li>
 <li>
-<p><a href="layers.ahtml#ai_translation">AI translation</a> — automatic translation of inherited content when localising in a layer.</p>
+<p><a href="./layers.ahtml#ai_translation">AI translation</a> — automatic translation of inherited content when localizing in a layer.</p>
 </li>
 <li>
-<p><a href="layers.ahtml#layers_panel">Layers widget</a> — see the status of a content item across every layer in the system.</p>
+<p><a href="layers.ahtml">Layers widget</a> — see the status of a content item across every layer in the system.</p>
 </li>
 </ul>
 </div>
@@ -682,7 +682,7 @@ A collection of short videos demonstrating Content Studio&#8217;s features and c
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-06-05 13:35:22 UTC
+Last updated 2026-06-08 12:30:41 UTC
 </div>
 </div>
 </body>
