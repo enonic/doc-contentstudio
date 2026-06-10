@@ -10,6 +10,15 @@ This section describes how to configure Content Studio via the config file.
 $XP_HOME/config/com.enonic.app.contentstudio.cfg
 ----
 
+== Enable Rich Text component
+
+[source,properties]
+----
+settings.enableTextComponent=true
+----
+
+Rich Text component was deprecated in Content Studio 6.0. The setting above will enable it.
+
 == Matching mode for content type patterns
 
 [source,properties]
@@ -49,7 +58,7 @@ Enonic XP and Content Studio enforces several layers of Content Security Policy 
 You may override the default CSP header via the `contentSecurityPolicy.header` property.
 
 === Widgets
-Content Studio uses widgets from other applications extensively. As widgets are loaded into Content Studio's context, they must apply with the Content Studio CSP.
+Content Studio uses widgets from other applications extensively. As widgets are loaded into Content Studio's context, they must comply with the Content Studio CSP.
 
 By default, widgets with inline scripts/styles or scripts loaded from external domains will be blocked.
 
@@ -67,9 +76,9 @@ contentSecurityPolicy.enabled=false
 ----
 
 === Site Engine Preview
-Content Studio's preview uses an Iframe to isolate the front-end.
+Content Studio's preview uses an iFrame to isolate the client-side assets from interfering with the Content Studio's own.
 
-In production, front-ends built with the Enonic site engine deployed on custom domains. In preview mode however, the site engine is accessed in the same domain and URL context as Content Studio. To mitigate this Site Engine has a standard preview CSP to protect Content Studio and the XP admin.
+In production, front-ends built with the Enonic site engine deployed on custom domains. In preview mode however, the site engine is accessed in the same domain and URL context as Content Studio. To mitigate this, Site Engine has a standard preview CSP to protect Content Studio and the XP admin.
 
 If your site is not working properly in preview mode, consider improving the implementation. Details on tuning the Site Engine CSP are described in the  https://developer.enonic.com/docs/xp/stable/deployment/config#admin[XP configuration documentation].
 
@@ -93,7 +102,7 @@ To add another level of restriction and prevent accidental publishing of items t
 can be disabled by adding the parameter above to the config file.
 
 
-=== Default publish from time
+=== Default "Online from" time
 
 [source,properties]
 ----
@@ -105,24 +114,31 @@ The default value can be changed by setting the `publishingWizard.defaultPublish
 image::pubwiz-online-from.png[Default Online From time in the Publishing Wizard, 754w]
 
 
+=== Required "Online from"
+
+By default, when scheduling new publishing the "Online from" field will be preset to "Now", which means that the content will go online immediately. It's possible to make this field mandatory to make sure the user explicitly sets the date/time when the content will go online.
+
+[source,properties]
+----
+publishingWizard.requiredPublishFrom = true
+----
+
+image::pubwiz-required-publish-from.png[Publishing Wizard - Required "Online from", 821w]
+
+
 === Exclude optional dependencies
 
 [source,properties]
 ----
-publishingWizard.excludeDependencies = true
+publishingWizard.excludeDependencies = false
 ----
 
-By default, all dependencies of content items staged for publishing will also be included to ensure no broken
-references will appear online. Some of these (for example, all the ascendants of selected items or their inbound dependencies) are required for publishing and cannot be excluded from the publishing batch, while others (like outbound dependencies) are optional.
+By default, only mandatory dependencies (ascendant items and inbound references) of the content staged for publishing will be automatically loaded and displayed in the list of dependencies in the Publishing Wizard with checkboxes selected and disabled. Optional dependencies (like outbound references) will be loaded as well, but they will *not* be preselected and can be added to the publishing batch manually by the user.
 
-image::pubwiz-dependencies-all.png[Publishing Wizard - all dependencies, 822w]
+It's possible to overrule this behavior and preselect all the dependencies – both mandatory and optional – by setting the `publishingWizard.excludeDependencies` config property to `false`. This will ensure that the content will be published with no broken references.
 
-It's possible to overrule the default behaviour of including all the dependencies by setting the `publishingWizard.excludeDependencies` config property to `true`.
-
-With this flag turned on, only mandatory dependencies will be included, while optional can be added from the "*Show excluded*" mode.
-
+.Only mandatory dependencies (default behaviour)
 image::pubwiz-dependencies-mandatory.png[Publishing Wizard - mandatory dependencies, 822w]
 
-image::pubwiz-dependencies-optional.png[Publishing Wizard - optional dependencies, 821w]
-
-IMPORTANT: Use this flag with caution. It makes it very simple to publish a content without its outgoing dependencies which may result in broken references, missing images etc.
+.All dependencies
+image::pubwiz-dependencies-all.png[Publishing Wizard - all dependencies, 821w]
