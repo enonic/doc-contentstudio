@@ -441,6 +441,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
+<li><a href="#enable_rich_text_component">Enable Rich Text component</a></li>
 <li><a href="#matching_mode_for_content_type_patterns">Matching mode for content type patterns</a></li>
 <li><a href="#max_file_upload_size">Max file upload size</a></li>
 <li><a href="#disable_path_name_transliteration">Disable path name transliteration</a></li>
@@ -453,7 +454,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#publishing_wizard">Publishing Wizard</a>
 <ul class="sectlevel2">
 <li><a href="#disable_mark_as_ready_action">Disable "Mark as Ready" action</a></li>
-<li><a href="#default_publish_from_time">Default publish from time</a></li>
+<li><a href="#default_online_from_time">Default "Online from" time</a></li>
+<li><a href="#required_online_from">Required "Online from"</a></li>
 <li><a href="#exclude_optional_dependencies">Exclude optional dependencies</a></li>
 </ul>
 </li>
@@ -471,6 +473,19 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="content">
 <pre class="highlight"><code class="language-filename" data-lang="filename">$XP_HOME/config/com.enonic.app.contentstudio.cfg</code></pre>
 </div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="enable_rich_text_component"><a class="link" href="#enable_rich_text_component">Enable Rich Text component</a></h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-properties" data-lang="properties">settings.enableTextComponent=true</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Rich Text component was deprecated in Content Studio 6.0. The setting above will enable it.</p>
 </div>
 </div>
 </div>
@@ -526,7 +541,7 @@ See <a href="https://developer.enonic.com/docs/cms/stable/schemas/form-items/con
 <div class="sect2">
 <h3 id="widgets"><a class="link" href="#widgets">Widgets</a></h3>
 <div class="paragraph">
-<p>Content Studio uses widgets from other applications extensively. As widgets are loaded into Content Studio&#8217;s context, they must apply with the Content Studio CSP.</p>
+<p>Content Studio uses widgets from other applications extensively. As widgets are loaded into Content Studio&#8217;s context, they must comply with the Content Studio CSP.</p>
 </div>
 <div class="paragraph">
 <p>By default, widgets with inline scripts/styles or scripts loaded from external domains will be blocked.</p>
@@ -552,10 +567,10 @@ See <a href="https://developer.enonic.com/docs/cms/stable/schemas/form-items/con
 <div class="sect2">
 <h3 id="site_engine_preview"><a class="link" href="#site_engine_preview">Site Engine Preview</a></h3>
 <div class="paragraph">
-<p>Content Studio&#8217;s preview uses an Iframe to isolate the front-end.</p>
+<p>Content Studio&#8217;s preview uses an iFrame to isolate the client-side assets from interfering with the Content Studio&#8217;s own.</p>
 </div>
 <div class="paragraph">
-<p>In production, front-ends built with the Enonic site engine deployed on custom domains. In preview mode however, the site engine is accessed in the same domain and URL context as Content Studio. To mitigate this Site Engine has a standard preview CSP to protect Content Studio and the XP admin.</p>
+<p>In production, front-ends built with the Enonic site engine deployed on custom domains. In preview mode however, the site engine is accessed in the same domain and URL context as Content Studio. To mitigate this, Site Engine has a standard preview CSP to protect Content Studio and the XP admin.</p>
 </div>
 <div class="paragraph">
 <p>If your site is not working properly in preview mode, consider improving the implementation. Details on tuning the Site Engine CSP are described in the  <a href="https://developer.enonic.com/docs/xp/stable/deployment/config#admin">XP configuration documentation</a>.</p>
@@ -600,7 +615,7 @@ can be disabled by adding the parameter above to the config file.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="default_publish_from_time"><a class="link" href="#default_publish_from_time">Default publish from time</a></h3>
+<h3 id="default_online_from_time"><a class="link" href="#default_online_from_time">Default "Online from" time</a></h3>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-properties" data-lang="properties">publishingWizard.defaultPublishFromTime = 12:00</code></pre>
@@ -616,48 +631,45 @@ can be disabled by adding the parameter above to the config file.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="exclude_optional_dependencies"><a class="link" href="#exclude_optional_dependencies">Exclude optional dependencies</a></h3>
+<h3 id="required_online_from"><a class="link" href="#required_online_from">Required "Online from"</a></h3>
+<div class="paragraph">
+<p>By default, when scheduling new publishing the "Online from" field will be preset to "Now", which means that the content will go online immediately. It&#8217;s possible to make this field mandatory to make sure the user explicitly sets the date/time when the content will go online.</p>
+</div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-properties" data-lang="properties">publishingWizard.excludeDependencies = true</code></pre>
+<pre class="highlight"><code class="language-properties" data-lang="properties">publishingWizard.requiredPublishFrom = true</code></pre>
 </div>
-</div>
-<div class="paragraph">
-<p>By default, all dependencies of content items staged for publishing will also be included to ensure no broken
-references will appear online. Some of these (for example, all the ascendants of selected items or their inbound dependencies) are required for publishing and cannot be excluded from the publishing batch, while others (like outbound dependencies) are optional.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="config/images/pubwiz-dependencies-all.png" alt="Publishing Wizard - all dependencies" width="822w">
+<img src="config/images/pubwiz-required-publish-from.png" alt="Publishing Wizard - Required &quot;Online from&quot;" width="821w">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="exclude_optional_dependencies"><a class="link" href="#exclude_optional_dependencies">Exclude optional dependencies</a></h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-properties" data-lang="properties">publishingWizard.excludeDependencies = false</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>It&#8217;s possible to overrule the default behaviour of including all the dependencies by setting the <code>publishingWizard.excludeDependencies</code> config property to <code>true</code>.</p>
+<p>By default, only mandatory dependencies (ascendant items and inbound references) of the content staged for publishing will be automatically loaded and displayed in the list of dependencies in the Publishing Wizard with checkboxes selected and disabled. Optional dependencies (like outbound references) will be loaded as well, but they will <strong>not</strong> be preselected and can be added to the publishing batch manually by the user.</p>
 </div>
 <div class="paragraph">
-<p>With this flag turned on, only mandatory dependencies will be included, while optional can be added from the "<strong>Show excluded</strong>" mode.</p>
+<p>It&#8217;s possible to overrule this behavior and preselect all the dependencies – both mandatory and optional – by setting the <code>publishingWizard.excludeDependencies</code> config property to <code>false</code>. This will ensure that the content will be published with no broken references.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="config/images/pubwiz-dependencies-mandatory.png" alt="Publishing Wizard - mandatory dependencies" width="822w">
 </div>
+<div class="title">Figure 1. Only mandatory dependencies (default behaviour)</div>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="config/images/pubwiz-dependencies-optional.png" alt="Publishing Wizard - optional dependencies" width="821w">
+<img src="config/images/pubwiz-dependencies-all.png" alt="Publishing Wizard - all dependencies" width="821w">
 </div>
-</div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-Use this flag with caution. It makes it very simple to publish a content without its outgoing dependencies which may result in broken references, missing images etc.
-</td>
-</tr>
-</table>
+<div class="title">Figure 2. All dependencies</div>
 </div>
 </div>
 </div>
@@ -665,7 +677,7 @@ Use this flag with caution. It makes it very simple to publish a content without
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-06-08 19:42:45 UTC
+Last updated 2026-06-10 14:11:11 UTC
 </div>
 </div>
 </body>
