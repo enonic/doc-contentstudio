@@ -7,6 +7,7 @@
     {
       "label": "stable",
       "checkout": "master",
+      "displayName": "6.x",
       "latest": true
     }
   ]
