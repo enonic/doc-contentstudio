@@ -11,4 +11,4 @@ There are four ways to invoke Edit:
 * Double-clicking an item in the Navigator grid.
 * The *Edit* entry in the context menu (right-click an item).
 
-For inherited content in a <<../layers#,layer>>, *Edit* is replaced with *Localize* — the same effect, but the action also severs data inheritance from the parent project for that item.
+For inherited content in a <<../projects/layers#,layer>>, *Edit* is replaced with *Localize* — the same effect, but the action also severs data inheritance from the parent project for that item.

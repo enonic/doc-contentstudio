@@ -27,7 +27,7 @@ A few recurring concepts surface everywhere in the UI — in dialogs, widgets, t
 
 === Projects and layers
 
-Content lives in <<projects#,projects>>. Each project has a repository with its own content tree, optional applications, and settings. <<layers#,Layers>> inherit content for reuse or adaptation for other markets or languages.
+Content lives in <<projects#,projects>>. Each project has a repository with its own content tree, optional applications, and settings. <<projects/layers#,Layers>> inherit content for reuse or adaptation for other markets or languages.
 
 === Content items and content types
 
@@ -86,8 +86,8 @@ Content Studio itself is free and open source. An Enonic subscription unlocks *C
 
 * <<workbench/archive#,Archive browser>> — the dedicated *Archive* menuitem for browsing, restoring, and permanently deleting archived content.
 * <<workbench/contextpanel/variants#,Content Variants>> — create and manage variant copies of a content item for A/B testing.
-* <<layers#ai_translation,AI translation>> — automatic translation of inherited content when localizing in a layer.
-* <<layers#layers_panel,Layers widget>> — see the status of a content item across every layer in the system.
+* <<projects/layers#ai_translation,AI translation>> — automatic translation of inherited content when localizing in a layer.
+* <<projects/layers#layers_panel,Layers widget>> — see the status of a content item across every layer in the system.
 
 Without a valid license the Content Studio+ application can still be installed, but its UI contributions remain inactive. Pages that document a CS+ feature carry a *Content Studio+ feature* admonition at the top.
 

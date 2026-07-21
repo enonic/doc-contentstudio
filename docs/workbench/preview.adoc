@@ -54,4 +54,4 @@ For content that cannot be rendered (folders, shortcuts, unstructured content wi
 
 Applications can contribute their own preview modes. Custom modes appear in the preview-mode dropdown alongside the built-ins.
 
-See the https://developer.enonic.com/docs/code/stable/extensions/liveview[Live view extension reference] for the descriptor format, lifecycle, and implementation details.
+See the https://developer.enonic.com/docs/code/stable/web/extensions/liveview[Live view extension reference] for the descriptor format, lifecycle, and implementation details.

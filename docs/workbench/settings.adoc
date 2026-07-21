@@ -1,0 +1,31 @@
+= Settings
+:toc: right
+:imagesdir: images
+:experimental:
+
+Settings is where you manage your Content Projects
+
+image::settings.png[Settings section, 684px]
+
+== Introduction
+Unlike the other Content Studio menu items, Settings is not scoped to the currently selected project — it manages all <<../projects#,projects>> and <<../projects/layers#,layers>> in the system.
+
+
+== Toolbar
+
+The toolbar above the grid offers the following actions:
+
+* btn:[New] — launches the <<../projects#project-wizard,project wizard>> to create a new project or layer.
+* btn:[Edit] — opens the selected project(s) for editing. Double-clicking a project does the same.
+* btn:[Delete] — deletes the selected project after confirmation.
+
+For details on creating, editing and deleting projects — including important caveats — see <<../projects#managing-projects,Managing projects>>.
+
+== Projects
+
+The Settings section displays all projects the current user has permissions for, in the form of a tree — layers appear as children of their parent project. Users with the roles _Content Manager Administrator_ and _System Administrator_ always have full access to all projects.
+
+TIP: By selecting the top node called "Projects", you will display a graph of all projects and their relations in the panel on the right.
+
+
+

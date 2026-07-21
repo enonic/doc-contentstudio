@@ -1,13 +1,13 @@
 = Layers and localization
 :toc: right
-:imagesdir: layers/images
+:imagesdir: images
 :experimental:
 
 Content Studio offers an advanced concept for localization called Layering
 
 == Concept
 
-Layers are essentially a <<projects#, Content project>> that inherits content from a different project.
+Layers are essentially a <<../projects#, Content project>> that inherits content from a different project.
 
 Inherited content can be edited (localized), renamed, re-organized, published or even archived within a single layer. You may also create new content, just like you would in a regular project.
 
@@ -81,7 +81,7 @@ Often, it can be useful to provide standard translation instructions for your co
 
 image::juke-translator-settings.png[Form to configure general translation instructions, 744]
 
-NOTE: Changing these settings require `Project Owner` role or higher.
+NOTE: Changing these settings requires the <<../projects#project-roles,Owner>> project role or higher.
 
 == Reset
 

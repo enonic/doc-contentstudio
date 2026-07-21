@@ -8,7 +8,7 @@ Content ends up in the Archive via the <<../actions/delete#,Delete>> action from
 
 == Archive in layers
 
-When <<../layers#,layers>> are involved:
+When <<../projects/layers#,layers>> are involved:
 
 * Deleting a content item in a parent project automatically archives it in all child layers where it is not localised.
 * Creating a new layer automatically inherits the archive of its parent project/layer.

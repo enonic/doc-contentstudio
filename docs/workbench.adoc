@@ -22,18 +22,18 @@ The horizontal bar across the top of the window. It carries application-wide con
 The vertical strip on the left lists the available *menuitems*: top-level views contributed by Content Studio or by an installed application. Clicking an icon swaps the <<#main_panel,main panel>> to that menuitem's view.
 
 * *Navigator* — the built-in default, anchored at the top of the menu bar. The content tree, search, and per-content actions. See <<workbench/navigator#,Navigator>>.
-* *Settings* — anchored at the bottom-left, set apart from the regular menuitem stack. Unlike the others, Settings is *not* scoped to the currently selected project — it manages all projects and layers. See <<settings#,Settings>>.
+* *Settings* — anchored at the bottom-left, set apart from the regular menuitem stack. Unlike the others, Settings is *not* scoped to the currently selected project — it manages all projects and layers. See <<workbench/settings#,Settings>>.
 
 Additional menuitems are contributed by installed applications and appear in the stack between Navigator and Settings. The two most common:
 
 * *Archive* — browse, restore, and permanently delete archived content. Contributed by https://market.enonic.com/vendors/enonic/content-studio-plus[Content Studio+]. See <<workbench/archive#,Archive>>.
-* *GraphQL Playground* — interactive query console for the Guillotine API. Contributed by https://market.enonic.com/apps/guillotine[Guillotine].
+* *GraphQL Playground* — interactive query console for the Guillotine API. Contributed by https://market.enonic.com/vendors/enonic/guillotine[Guillotine].
 
 === Contributing a menuitem
 
 Any installed application can add a menuitem to the menu bar. The icon and view appear when the app is installed in the current project.
 
-See the https://developer.enonic.com/docs/code/stable/extensions/menuitem[menuitems extension reference] for the descriptor format, lifecycle, and implementation details.
+See the https://developer.enonic.com/docs/code/stable/web/extensions/menuitem[menuitems extension reference] for the descriptor format, lifecycle, and implementation details.
 
 == Main panel
 

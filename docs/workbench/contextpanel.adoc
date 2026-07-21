@@ -28,13 +28,13 @@ image::navigator-widget-selector.png[Widget selector, 25%,align="center"]
 
 The following widgets are contributed by https://market.enonic.com/vendors/enonic/content-studio-plus[Content Studio+]:
 
-* <<../layers#layers_panel,Layers>> — shows the status of a content item across every layer in the system.
+* <<../projects/layers#layers_panel,Layers>> — shows the status of a content item across every layer in the system.
 * <<contextpanel/variants#,Variants>> — creates and manages A/B variants of the selected item.
 
 == Contributing a widget
 
 The Context panel is *pluggable*: any installed application can contribute a widget that appears in the widget selector.
 
-See the https://developer.enonic.com/docs/code/stable/extensions/contextpanel[Context panel extension reference] for the descriptor format, lifecycle, and implementation details.
+See the https://developer.enonic.com/docs/code/stable/web/extensions/contextpanel[Context panel extension reference] for the descriptor format, lifecycle, and implementation details.
 
 image::widgets-context-panel.png[Custom widget in the Context panel, 207]

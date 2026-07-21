@@ -76,7 +76,7 @@ By adding the `Juke AI Content Operator` application to your project or site, yo
 
 image::juke-instructions.png[Provide general instructions via app settings, 733w]
 
-NOTE: Working with application settings requires "Project owner" roles or higher.
+NOTE: Working with application settings requires the <<projects#project-roles,Owner>> project role or higher.
 
 == Known issues
 
@@ -88,4 +88,4 @@ Known limitations in current version
 * Only works with fields in the main content type form
 * Only availabe in "Edit" context
 * Initial greeting is hardcoded (not AI generated)
-* <<layers#, AI localization>> can't be invoked from chat
+* <<projects/layers#, AI localization>> can't be invoked from chat

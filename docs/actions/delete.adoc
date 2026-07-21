@@ -33,7 +33,7 @@ image::archive-delete-dropdown.png[Permanent delete from the Archive dropdown, 3
 
 == Delete in layers
 
-Delete behaves specifically when <<../layers#,layers>> are involved:
+Delete behaves specifically when <<../projects/layers#,layers>> are involved:
 
 * An item deleted in a parent project is deleted in all child layers where it is not localised.
 * Deleting an _inherited_ (non-localised) item in a layer removes it from that layer without touching the parent — a useful way to prune inherited content from a layer.
