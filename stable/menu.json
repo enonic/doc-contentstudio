@@ -9,12 +9,8 @@
       "document": "projects",
       "menuItems": [
         {
-          "title": "Settings",
-          "document": "settings"
-        },
-        {
           "title": "Layers & localization",
-          "document": "layers"
+          "document": "projects/layers"
         }
       ]
     },
@@ -29,6 +25,10 @@
         {
           "title": "Archive",
           "document": "workbench/archive"
+        },
+        {
+          "title": "Settings",
+          "document": "workbench/settings"
         },
         {
           "title": "Preview",

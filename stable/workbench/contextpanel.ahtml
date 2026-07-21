@@ -517,7 +517,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="ulist">
 <ul>
 <li>
-<p><a href="../layers.ahtml#layers_panel">Layers</a> — shows the status of a content item across every layer in the system.</p>
+<p><a href="../projects/layers.ahtml#layers_panel">Layers</a> — shows the status of a content item across every layer in the system.</p>
 </li>
 <li>
 <p><a href="contextpanel/variants.ahtml">Variants</a> — creates and manages A/B variants of the selected item.</p>
@@ -533,7 +533,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>The Context panel is <strong>pluggable</strong>: any installed application can contribute a widget that appears in the widget selector.</p>
 </div>
 <div class="paragraph">
-<p>See the <a href="https://developer.enonic.com/docs/code/stable/extensions/contextpanel">Context panel extension reference</a> for the descriptor format, lifecycle, and implementation details.</p>
+<p>See the <a href="https://developer.enonic.com/docs/code/stable/web/extensions/contextpanel">Context panel extension reference</a> for the descriptor format, lifecycle, and implementation details.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -545,7 +545,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-07-21 08:01:52 UTC
+Last updated 2026-07-21 13:04:22 UTC
 </div>
 </div>
 </body>

@@ -509,7 +509,7 @@ The <a href="editor.ahtml">Editor</a> is not part of the Workbench — it opens 
 <p><strong>Navigator</strong> — the built-in default, anchored at the top of the menu bar. The content tree, search, and per-content actions. See <a href="workbench/navigator.ahtml">Navigator</a>.</p>
 </li>
 <li>
-<p><strong>Settings</strong> — anchored at the bottom-left, set apart from the regular menuitem stack. Unlike the others, Settings is <strong>not</strong> scoped to the currently selected project — it manages all projects and layers. See <a href="settings.ahtml">Settings</a>.</p>
+<p><strong>Settings</strong> — anchored at the bottom-left, set apart from the regular menuitem stack. Unlike the others, Settings is <strong>not</strong> scoped to the currently selected project — it manages all projects and layers. See <a href="workbench/settings.ahtml">Settings</a>.</p>
 </li>
 </ul>
 </div>
@@ -522,7 +522,7 @@ The <a href="editor.ahtml">Editor</a> is not part of the Workbench — it opens 
 <p><strong>Archive</strong> — browse, restore, and permanently delete archived content. Contributed by <a href="https://market.enonic.com/vendors/enonic/content-studio-plus">Content Studio+</a>. See <a href="workbench/archive.ahtml">Archive</a>.</p>
 </li>
 <li>
-<p><strong>GraphQL Playground</strong> — interactive query console for the Guillotine API. Contributed by <a href="https://market.enonic.com/apps/guillotine">Guillotine</a>.</p>
+<p><strong>GraphQL Playground</strong> — interactive query console for the Guillotine API. Contributed by <a href="https://market.enonic.com/vendors/enonic/guillotine">Guillotine</a>.</p>
 </li>
 </ul>
 </div>
@@ -532,7 +532,7 @@ The <a href="editor.ahtml">Editor</a> is not part of the Workbench — it opens 
 <p>Any installed application can add a menuitem to the menu bar. The icon and view appear when the app is installed in the current project.</p>
 </div>
 <div class="paragraph">
-<p>See the <a href="https://developer.enonic.com/docs/code/stable/extensions/menuitem">menuitems extension reference</a> for the descriptor format, lifecycle, and implementation details.</p>
+<p>See the <a href="https://developer.enonic.com/docs/code/stable/web/extensions/menuitem">menuitems extension reference</a> for the descriptor format, lifecycle, and implementation details.</p>
 </div>
 </div>
 </div>
@@ -551,7 +551,7 @@ The <a href="editor.ahtml">Editor</a> is not part of the Workbench — it opens 
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-07-21 08:01:52 UTC
+Last updated 2026-07-21 13:04:22 UTC
 </div>
 </div>
 </body>

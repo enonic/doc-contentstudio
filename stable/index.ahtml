@@ -532,7 +532,7 @@ A collection of short videos demonstrating Content Studio&#8217;s features and c
 <div class="sect2">
 <h3 id="projects_and_layers"><a class="link" href="#projects_and_layers">Projects and layers</a></h3>
 <div class="paragraph">
-<p>Content lives in <a href="projects.ahtml">projects</a>. Each project has a repository with its own content tree, optional applications, and settings. <a href="layers.ahtml">Layers</a> inherit content for reuse or adaptation for other markets or languages.</p>
+<p>Content lives in <a href="projects.ahtml">projects</a>. Each project has a repository with its own content tree, optional applications, and settings. <a href="projects/layers.ahtml">Layers</a> inherit content for reuse or adaptation for other markets or languages.</p>
 </div>
 </div>
 <div class="sect2">
@@ -643,10 +643,10 @@ A collection of short videos demonstrating Content Studio&#8217;s features and c
 <p><a href="workbench/contextpanel/variants.ahtml">Content Variants</a> — create and manage variant copies of a content item for A/B testing.</p>
 </li>
 <li>
-<p><a href="layers.ahtml#ai_translation">AI translation</a> — automatic translation of inherited content when localizing in a layer.</p>
+<p><a href="projects/layers.ahtml#ai_translation">AI translation</a> — automatic translation of inherited content when localizing in a layer.</p>
 </li>
 <li>
-<p><a href="layers.ahtml#layers_panel">Layers widget</a> — see the status of a content item across every layer in the system.</p>
+<p><a href="projects/layers.ahtml#layers_panel">Layers widget</a> — see the status of a content item across every layer in the system.</p>
 </li>
 </ul>
 </div>
@@ -682,7 +682,7 @@ A collection of short videos demonstrating Content Studio&#8217;s features and c
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-07-21 08:01:52 UTC
+Last updated 2026-07-21 13:04:22 UTC
 </div>
 </div>
 </body>

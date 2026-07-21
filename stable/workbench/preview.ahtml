@@ -556,14 +556,14 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Applications can contribute their own preview modes. Custom modes appear in the preview-mode dropdown alongside the built-ins.</p>
 </div>
 <div class="paragraph">
-<p>See the <a href="https://developer.enonic.com/docs/code/stable/extensions/liveview">Live view extension reference</a> for the descriptor format, lifecycle, and implementation details.</p>
+<p>See the <a href="https://developer.enonic.com/docs/code/stable/web/extensions/liveview">Live view extension reference</a> for the descriptor format, lifecycle, and implementation details.</p>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-07-21 08:01:52 UTC
+Last updated 2026-07-21 13:04:22 UTC
 </div>
 </div>
 </body>

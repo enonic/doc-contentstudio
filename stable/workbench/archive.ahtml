@@ -464,7 +464,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="archive_in_layers"><a class="link" href="#archive_in_layers">Archive in layers</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>When <a href="../layers.ahtml">layers</a> are involved:</p>
+<p>When <a href="../projects/layers.ahtml">layers</a> are involved:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -589,7 +589,7 @@ If the original location is no longer available (for example, another item now o
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-07-21 08:01:52 UTC
+Last updated 2026-07-21 13:04:22 UTC
 </div>
 </div>
 </body>

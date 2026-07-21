@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.26">
-<title>Settings</title>
+<title>Layers and localization</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -437,23 +437,24 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article toc2 toc-right">
 <div id="header">
-<h1>Settings</h1>
+<h1>Layers and localization</h1>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#projects">Projects</a></li>
-<li><a href="#new_project_wizard">New Project wizard</a>
+<li><a href="#concept">Concept</a></li>
+<li><a href="#how_it_works">How it works</a></li>
+<li><a href="#inheritance_model">Inheritance model</a></li>
+<li><a href="#listing_view">Listing view</a></li>
+<li><a href="#inheritance_types">Inheritance types</a></li>
+<li><a href="#localizing">Localizing</a></li>
+<li><a href="#ai_translation">AI translation</a>
 <ul class="sectlevel2">
-<li><a href="#parent_project">Parent Project</a></li>
-<li><a href="#default_language">Default Language</a></li>
-<li><a href="#access_mode">Access Mode</a></li>
-<li><a href="#project_roles">Project Roles</a></li>
-<li><a href="#applications">Applications</a></li>
-<li><a href="#base_properties">Base Properties</a></li>
-<li><a href="#summary">Summary</a></li>
+<li><a href="#general_instructions">General instructions</a></li>
 </ul>
 </li>
-<li><a href="#the_default_project">The default Project</a></li>
+<li><a href="#reset">Reset</a></li>
+<li><a href="#layers_panel">Layers Panel</a></li>
+<li><a href="#management">Management</a></li>
 </ul>
 </div>
 </div>
@@ -461,44 +462,83 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Management of projects and layers in Content Studio is done from the "<em>Settings</em>" section, which can be accessed by clicking the cog icon in
-the left-side menu.</p>
+<p>Content Studio offers an advanced concept for localization called Layering</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="projects"><a class="link" href="#projects">Projects</a></h2>
+<h2 id="concept"><a class="link" href="#concept">Concept</a></h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>Layers are essentially a <a href="../projects.ahtml">Content project</a> that inherits content from a different project.</p>
+</div>
+<div class="paragraph">
+<p>Inherited content can be edited (localized), renamed, re-organized, published or even archived within a single layer. You may also create new content, just like you would in a regular project.</p>
+</div>
+<div class="paragraph">
+<p>Layers are created and managed just like any other project, but you must specify a parent project, from where it will inherit content.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="how_it_works"><a class="link" href="#how_it_works">How it works</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You may have any number of layers, organized in different ways based on your requirements. Here are some examples</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Nested layers</dt>
+<dd>
+<p>Project <strong>A</strong> has a child project <strong>B</strong> which has a child
+project <strong>C</strong> (and so on).</p>
+</dd>
+<dt class="hdlist1">Siblings</dt>
+<dd>
+<p>You may have multiple children, so both <strong>B</strong> and <strong>B'</strong> inherit from project <strong>A</strong>.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="inheritance_model"><a class="link" href="#inheritance_model">Inheritance model</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Changes to content in a parent layer automatically propagate to child layers unless the item has been localized in the specific layer.</p>
+</div>
+<div class="paragraph">
+<p>Example from the above structure:</p>
+</div>
+<div class="paragraph">
+<p>Content in project <strong>A</strong> will be automatically propagated to <strong>B</strong>, and from there to <strong>C</strong>. If <strong>B</strong> gets localized, it will no longer receive updates from <strong>A</strong>. The modified content from <strong>B</strong> will, however, still trickle down to <strong>C</strong>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="listing_view"><a class="link" href="#listing_view">Listing view</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Inherited content in the navigator list will appear as dimmed, providing a visual difference from content that has been localized or created directly in this layer.</p>
+</div>
+<div class="paragraph">
+<p>Also, all inherited items will have a small blue cloud icon next to it — regardless of whether it has been localized or not.</p>
+</div>
 <div class="imageblock">
 <div class="content">
-<img src="settings/images/top-level-menu.png" alt="Top Level Menu" width="642">
+<img src="images/layer-localisation.png" alt="Locally created item is not dimmed" width="457">
 </div>
 </div>
 <div class="paragraph">
-<p>The Settings section displays all Content Projects that current user has permissions for in the form of a tree. Users with roles
-<em>Content Manager Administrator</em> and <em>System Administrator</em> will always have full access to all projects. By selecting the top node called "Projects" you will display a graph of all content projects and their relations in the panel on the right.</p>
+<p>Sample structure with a single local item</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="settings/images/settings-grid.png" alt="Settings section" width="600">
+<img src="images/layer-localisation-2.png" alt="Content localisation" width="457">
 </div>
 </div>
 <div class="paragraph">
-<p>You can modify one or multiple projects by selecting them in the Settings grid and clicking the Edit button in the toolbar.
-You can also double-click a project to open the Project wizard.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Changing a project&#8217;s default language will not change language of existing content items in this project, it will only affect
-new items created after the project has been saved.
-</td>
-</tr>
-</table>
+<p>Here the "Search" item is localized to "Søk". The content name has also been localized to "sok".</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -507,35 +547,7 @@ new items created after the project has been saved.
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-Click the project thumbnail to replace the default icon with a custom one.
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock caution">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-caution" title="Caution"></i>
-</td>
-<td class="content">
-If you change Access mode of an <strong>existing project</strong> to or from Public, you will have to confirm the change since
-this will update permissions on every single content item inside the project repository once the project is updated.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>You can delete a project by selecting it in the Settings grid and clicking the Delete button in the toolbar.</p>
-</div>
-<div class="admonitionblock caution">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-caution" title="Caution"></i>
-</td>
-<td class="content">
-Deleting a project will delete its repository and all the data inside. This action has to be confirmed and cannot be undone.
+Language shown in brackets after the content&#8217;s display name means shows that the language of this content is different from the language of the current layer.
 </td>
 </tr>
 </table>
@@ -543,274 +555,62 @@ Deleting a project will delete its repository and all the data inside. This acti
 </div>
 </div>
 <div class="sect1">
-<h2 id="new_project_wizard"><a class="link" href="#new_project_wizard">New Project wizard</a></h2>
+<h2 id="inheritance_types"><a class="link" href="#inheritance_types">Inheritance types</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Click "<em>New</em>" button in the toolbar to start the multi-step New Project wizard dialog.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Upload of project icon is not possible until after the project is created.
-</td>
-</tr>
-</table>
-</div>
-<div class="sect2">
-<h3 id="parent_project"><a class="link" href="#parent_project">Parent Project</a></h3>
-<div class="paragraph">
-<p>The first step of the Wizard determines whether you want to create a regular content project or a layer - a special kind of project which will inherit its data from the parent project. If you want to select a layer, select one of the existing projects from the dropdown list to be a parent of the new layer.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="settings/images/new-project-dialog-1.png" alt="Project type" width="470">
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="default_language"><a class="link" href="#default_language">Default Language</a></h3>
-<div class="paragraph">
-<p>Optional "Default Language" setting will determine default language for a new content that will be created in the root of this project.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="settings/images/new-project-dialog-2.png" alt="Default Language" width="470">
-</div>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-If an upstream project is selected, you can use "Copy from parent" button to quickly select this setting from the upstream project.
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect2">
-<h3 id="access_mode"><a class="link" href="#access_mode">Access Mode</a></h3>
-<div class="paragraph">
-<p>On the <strong>Access mode</strong> step you can configure READ access to content items inside the project.</p>
+<p>To make the inheritance flexible, there are four different kinds of inhertance:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Items inside a <strong>Public</strong> project will by default be visible to Everyone.</p>
+<p>data (your content)</p>
 </li>
 <li>
-<p>Items inside a <strong>Private</strong> project will NOT be visible to Everyone. Only principals with project roles (see below) or administrators will
-be able to access the content.</p>
+<p>sorting (of child items)</p>
 </li>
 <li>
-<p>By choosing <strong>Custom</strong> access you will limit READ access to specific principals in the system (in addition to project roles and administrators).
-This is useful if you want to give READ access for content inside the project to users from other projects.</p>
+<p>parent (location in tree structure)</p>
+</li>
+<li>
+<p>and name (name in tree)</p>
 </li>
 </ul>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Principals that were given Custom access will be added to a special project role called "<em>Viewer</em>".
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p>An example of how this works is that you can move a content to a different location in the tree (change parent), but its <em>data</em>, <em>name</em> and <em>sorting</em> will still be inherited from the parent</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="settings/images/new-project-dialog-3.png" alt="Access Mode" width="470">
-</div>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-If an upstream project is selected, you can use "Copy from parent" button to quickly select this setting from the upstream project.
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect2">
-<h3 id="project_roles"><a class="link" href="#project_roles">Project Roles</a></h3>
-<div class="paragraph">
-<p>Every project has a fixed set of roles that can be used to assign different levels of permissions inside a project to users or groups.
-A principal must have at least one of these roles to be able to access the project in the Content Studio.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="settings/images/new-project-dialog-4.png" alt="Roles" width="470">
-</div>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Contributor</strong> has access to the project in Content Studio but can only view the content inside.</p>
-</li>
-<li>
-<p><strong>Author</strong>: same as <strong>Contributor</strong> + create, modify and delete content. <strong>Author</strong> is not allowed to publish content, create sites
-or change their configuration.</p>
-</li>
-<li>
-<p><strong>Editor</strong>: same as <strong>Author</strong> + publish content and modify content permissions.</p>
-</li>
-<li>
-<p><strong>Owner</strong>: same as <strong>Editor</strong> + create and configure sites, and modify project settings.</p>
-</li>
-</ul>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-If an upstream project is selected, you can use "Copy from parent" button to quickly select this setting from the upstream project.
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Project roles set the <strong>default</strong> permissions that every new content item in the project inherits. Per-item overrides are managed through the <strong>Edit Permissions</strong> dialog opened from the <a href="workbench/contextpanel/details.ahtml">Details widget</a> in the Context panel. See <a href="workbench/permissions.ahtml">Permissions</a> for the full model.
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect2">
-<h3 id="applications"><a class="link" href="#applications">Applications</a></h3>
-<div class="paragraph">
-<p>You may assign applications to the project. This will enable usage of content types and controller mappings defined in
-the assigned applications when creating or rendering content outside of sites. This is especially useful for management of headless content
-as opposed to site-oriented approach.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Only applications containing <code>site.xml</code> can be assigned to content projects.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>A layer will always inherit applications from its parent project. Apps inherited from the parent cannot be unselected, but other apps can be added to the layer in addition to the inherited ones.</p>
-</div>
-<div class="paragraph">
-<p>In the screenshot below, the top two applications were inherited from the parent project, while the bottom one was added manually.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="settings/images/new-project-dialog-5.png" alt="Applications" width="470">
-</div>
-</div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-Applications assigned to projects will not work for a site or content items inside a site. Assign applications
-directly to the site if you want to use them for contents of a site.
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect2">
-<h3 id="base_properties"><a class="link" href="#base_properties">Base Properties</a></h3>
-<div class="paragraph">
-<p>Fill in display name and - optionally - description for your new project. Value in the <strong>Identifier</strong> field will be auto-generated
-based on the display name. This value will be used in the repository name of the project and therefore cannot be changed
-after the project has been created. For example, if you enter "<em>My cool project</em>" into the <strong>Display name</strong> field, the system will auto
-generate "<em>my-cool-project</em>" in the <strong>Identifier</strong> field and upon save the new repository will be called <em>com.enonic.cms.my-cool-project</em>.</p>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-You can only use alphanumeric characters and "-" in the <strong>Identifier</strong> field. Value of the field will be validated for uniqueness.
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-If you are creating a layer (an upstream project is selected) and have selected Default Language on a previous
-step, the system will try to predict/preset values in the Display Name and Description fields based on combination of the
-upstream project&#8217;s display name/description and the new layer&#8217;s language.
-</td>
-</tr>
-</table>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="settings/images/new-project-dialog-6.png" alt="Base Properties" width="470">
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="summary"><a class="link" href="#summary">Summary</a></h3>
-<div class="paragraph">
-<p>Last step of the Wizard allows you to verify settings of the new project you are about to create.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="settings/images/new-project-dialog-7.png" alt="Summary" width="470">
-</div>
-</div>
-<div class="paragraph">
-<p>Click the "Create" button to create a new project or layer.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-If you have created a new layer, the synchronisation job will kick in and inherit content from the upstream project/layer.
-</td>
-</tr>
-</table>
+<img src="images/layer-localisation-3.png" alt="Content localisation" width="457">
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="the_default_project"><a class="link" href="#the_default_project">The default Project</a></h2>
+<h2 id="localizing"><a class="link" href="#localizing">Localizing</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To localize an inherited item, select it and click <b class="button">Localize</b>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+For inherited items <b class="button">Edit</b> is replaced with <b class="button">Localize</b>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>This should open the Content Editor. You may now edit and publish the item as if it was created locally. This process effectively terminates further inheritance from the parent item.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="ai_translation"><a class="link" href="#ai_translation">AI translation</a></h2>
 <div class="sectionbody">
 <div class="admonitionblock note">
 <table>
@@ -819,18 +619,28 @@ If you have created a new layer, the synchronisation job will kick in and inheri
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-The <code>default</code> project is a legacy project structure which does not support modern features such as project roles and layering.
+<strong>Content Studio+ feature.</strong> AI translation is part of the <a href="https://market.enonic.com/vendors/enonic/content-studio-plus">Content Studio+</a> subscription. It also requires the <a href="https://market.enonic.com/vendors/enonic/juke-ai-content-translator">Juke AI Content Translator</a> application.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>This project cannot be deleted and is by default hidden
-in Content Studio.</p>
+<p>With the Juke AI translator enabled, clicking <b class="button">Localize</b> will instantly reveal the translation dialog. Here you may optionally provide detailed instructions or simply hit <b class="button">Translate</b>. This will automatically translate all text fields within your content - just watch it go.</p>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="images/juke-translator.png" alt="Juke AI translator dialog" width="907">
+</div>
+</div>
+<div class="sect2">
+<h3 id="general_instructions"><a class="link" href="#general_instructions">General instructions</a></h3>
 <div class="paragraph">
-<p>You can modify its display name and description, set default language
-for a new content which will be created in this repository and replace the icon in the "Settings" section.</p>
+<p>Often, it can be useful to provide standard translation instructions for your content. By adding the application to your project or site, you may configure standard translation instructions that will be used throughout the scope of your content.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/juke-translator-settings.png" alt="Form to configure general translation instructions" width="744">
+</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -839,22 +649,120 @@ for a new content which will be created in this repository and replace the icon 
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Default project doesn&#8217;t support project roles or customization of read permissions.
+Changing these settings requires the <a href="../projects.ahtml#project-roles">Owner</a> project role or higher.
 </td>
 </tr>
 </table>
 </div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="reset"><a class="link" href="#reset">Reset</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You may reset a localized item by clicking <b class="button">Reset</b> from within the content editor. This will effectively return the item to its original inherited state.</p>
+</div>
 <div class="imageblock">
 <div class="content">
-<img src="settings/images/default-project.png" alt="Default project" width="825">
+<img src="images/layer-content-reset.png" alt="Reset localisation" width="617">
 </div>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="layers_panel"><a class="link" href="#layers_panel">Layers Panel</a></h2>
+<div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<strong>Content Studio+ feature.</strong> The Layers widget is part of the <a href="https://market.enonic.com/vendors/enonic/content-studio-plus">Content Studio+</a> subscription.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The Layers widget enables the user to see the status of a specific content item in all existing layers in the system.</p>
+</div>
+<div class="paragraph">
+<p>The current layer is highlighted with a blue border. You can also see how many parents (<em>Ascendants</em>)
+and children (<em>Descendants</em>) the current item has.</p>
+</div>
+<div class="paragraph">
+<p>By clicking an item, a related action button will appear.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/layer-widget-1.png" alt="Layers Widget" width="275">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/layer-widget-3.png" alt="Layers Widget" width="274">
+</div>
+</div>
+<div class="paragraph">
+<p>Boxes of parent layers where the content item is not localized are hidden by default and can be displayed by clicking on the Ascendants link.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/layer-widget-2.png" alt="Layers Widget" width="274">
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+You can localize content in the current layer directly from the widget.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Show all</strong> button at the bottom of the widget displays the total number of layers where this item exists. This number can be different from tbe number
+of boxes displayed in the widget, since the widget only displays the branch of the current layer. To see status of the content item in the entire tree of layers
+click the button to open the modal dialog.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/layer-modal-dialog.png" alt="Layers Widget" width="375">
+</div>
+</div>
+<div class="paragraph">
+<p>Just like with the Layers widget, you can expand layer boxes in this dialog to either localize or edit the content in the current layer,
+or open it in other layers (given your user has sufficient permissions to access the layer).</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Read about the high-level concept of Content Layers <a href="https://developer.enonic.com/docs/cms/stable/content/layering">here</a>.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="management"><a class="link" href="#management">Management</a></h2>
+<div class="sectionbody">
+
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-07-21 08:01:52 UTC
+Last updated 2026-07-21 13:04:22 UTC
 </div>
 </div>
 </body>

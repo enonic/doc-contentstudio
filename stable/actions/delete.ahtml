@@ -529,7 +529,7 @@ Online content (published items) is taken offline immediately when deleted. The 
 <h2 id="delete_in_layers"><a class="link" href="#delete_in_layers">Delete in layers</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Delete behaves specifically when <a href="../layers.ahtml">layers</a> are involved:</p>
+<p>Delete behaves specifically when <a href="../projects/layers.ahtml">layers</a> are involved:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -549,7 +549,7 @@ Online content (published items) is taken offline immediately when deleted. The 
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-07-21 08:01:52 UTC
+Last updated 2026-07-21 13:04:22 UTC
 </div>
 </div>
 </body>

@@ -441,9 +441,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#what_is_a_project">What is a project?</a></li>
+<li><a href="#what-is-a-project">What is a project?</a></li>
+<li><a href="#access-mode">Access mode</a></li>
+<li><a href="#project-roles">Project roles</a></li>
+<li><a href="#project-applications">Applications</a></li>
 <li><a href="#getting_started">Getting started</a></li>
 <li><a href="#project-wizard">Project wizard</a></li>
+<li><a href="#managing-projects">Managing projects</a></li>
 <li><a href="#project_layering">Project layering</a></li>
 </ul>
 </div>
@@ -457,13 +461,19 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="what_is_a_project"><a class="link" href="#what_is_a_project">What is a project?</a></h2>
+<h2 id="what-is-a-project"><a class="link" href="#what-is-a-project">What is a project?</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Each project provides a dedicated repository for content. It provides individual access control and permissions, as well as other settings to toggle features and language(s) for the project.</p>
+<p>Each project provides a dedicated repository for content, with its own access control, project roles, features, and language settings. Content in one project is managed independently of other projects.</p>
 </div>
 <div class="paragraph">
-<p>Privileged users can create and manage projects via <a href="settings.ahtml">Content Studio settings</a>.</p>
+<p>Each project&#8217;s repository also contains its own <em>draft</em> and <em>master</em> branches, meaning content is edited and published independently per project — see <a href="actions/publish.ahtml">Publish</a> for how content moves between the branches.</p>
+</div>
+<div class="paragraph">
+<p>Each project has a unique <strong>identifier</strong>, which is set when the project is created and cannot be changed later.</p>
+</div>
+<div class="paragraph">
+<p>Privileged users can create and manage projects via <a href="workbench/settings.ahtml">Content Studio settings</a>.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -472,7 +482,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Content items cannot be moved or copied between projects. For reusing content across projects, see <a href="layers.ahtml">content layering</a>.
+Content items cannot be moved or copied between projects. For reusing content across projects, see <a href="projects/layers.ahtml">content layering</a>.
 </td>
 </tr>
 </table>
@@ -480,10 +490,115 @@ Content items cannot be moved or copied between projects. For reusing content ac
 </div>
 </div>
 <div class="sect1">
+<h2 id="access-mode"><a class="link" href="#access-mode">Access mode</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A project&#8217;s access mode controls the default READ permission for content items inside the project — in practice, whether the role <em>Everyone</em> is granted READ access:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Public</strong> — the <em>Everyone</em> role is granted READ access by default, making published items visible to anyone, including users that are not logged in.</p>
+</li>
+<li>
+<p><strong>Private</strong> — no READ access for <em>Everyone</em>. Only principals with <a href="#project-roles">project roles</a> or administrators can access the content.</p>
+</li>
+<li>
+<p><strong>Custom</strong> — like Private, but READ access is additionally granted to specific principals in the system. This is useful if you want to give users from other projects READ access to content inside this project.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Principals that are given Custom access will be added to a special project role called "<em>Viewer</em>".
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+The access mode only affects <strong>published</strong> content (the <em>master</em> branch). Regardless of access mode, the <em>draft</em> branch is only accessible to users with a <a href="#project-roles">project role</a> — a public project never exposes unpublished work. See <a href="workbench/permissions.ahtml">Permissions</a> for the full permission model.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="project-roles"><a class="link" href="#project-roles">Project roles</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Every project has a fixed set of roles that can be used to assign different levels of permissions inside a project to users or groups. A principal must have at least one of these roles to be able to access the project in Content Studio:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Contributor</strong> — has access to the project in Content Studio, but can only view the content inside.</p>
+</li>
+<li>
+<p><strong>Author</strong> — same as <strong>Contributor</strong> + create, modify and delete content. <strong>Author</strong> is not allowed to publish content, create sites or change their configuration.</p>
+</li>
+<li>
+<p><strong>Editor</strong> — same as <strong>Author</strong> + publish content and modify content permissions.</p>
+</li>
+<li>
+<p><strong>Owner</strong> — same as <strong>Editor</strong> + create and configure sites, and modify project settings.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Project roles set the <strong>default</strong> permissions that every new content item in the project inherits. Per-item overrides are managed through the <strong>Edit Permissions</strong> dialog opened from the <a href="workbench/contextpanel/details.ahtml">Details widget</a> in the Context panel. See <a href="workbench/permissions.ahtml">Permissions</a> for the full model.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="project-applications"><a class="link" href="#project-applications">Applications</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Applications may be assigned to a project. This enables usage of content types and controller mappings defined in the assigned applications when creating or rendering content outside of sites. This is especially useful for management of headless content, as opposed to a site-oriented approach.</p>
+</div>
+<div class="paragraph">
+<p>Application assignment follows these rules:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Only applications containing CMS features can be assigned to a project — the application must include a <code>cms.yaml</code> descriptor.</p>
+</li>
+<li>
+<p>Project applications do not apply to sites or content items within a site. To use an application for the contents of a site, assign it directly to the site.</p>
+</li>
+<li>
+<p>A layer always inherits the applications of its parent project. Inherited apps cannot be removed from the layer, but additional apps may be assigned.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="getting_started"><a class="link" href="#getting_started">Getting started</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>A fresh Enonic installations contains no projects, meaning you will have to create a project before you can start authoring.</p>
+<p>A fresh Enonic installation contains no projects, meaning you will have to create a project before you can start authoring.</p>
 </div>
 <div class="paragraph">
 <p>You should see the following dialog when starting Content Studio for the first time:</p>
@@ -494,7 +609,7 @@ Content items cannot be moved or copied between projects. For reusing content ac
 </div>
 </div>
 <div class="paragraph">
-<p>Clicking btn…[Start Project wizard] will launch the <a href="#project-wizard">project wizard</a>, which will guide you through the steps of creating a new project.</p>
+<p>Clicking <b class="button">Start Project wizard</b> will launch the <a href="#project-wizard">project wizard</a>, which will guide you through the steps of creating a new project.</p>
 </div>
 </div>
 </div>
@@ -502,31 +617,61 @@ Content items cannot be moved or copied between projects. For reusing content ac
 <h2 id="project-wizard"><a class="link" href="#project-wizard">Project wizard</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Follow these steps to create a new project. You can click the "Back" button at any time to review or change your choices, and the "Cancel" button to exit without creating a project.</p>
+<p>New projects are created with the project wizard. It launches from the first-run dialog above, or from the <b class="button">New</b> button in the <a href="workbench/settings.ahtml">Settings section</a>. You can click the <b class="button">Previous</b> button at any time to review or change your choices, and the X icon to exit without creating a project.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Language and layering</p>
+<p>Language and content layering</p>
 <div class="paragraph">
-<p>Select the parent layer to inherit content from (optional) and the default language for the project. The parent layer cannot be changed later, but the default language can.</p>
+<p>Optionally select a <strong>parent project</strong> — this makes the new project a <a href="projects/layers.ahtml">layer</a>, inheriting content from the parent. Then select the <strong>default language</strong>, which will be applied to new content created in the root of the project.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="projects/images/project-step1.png" alt="Dialog for selecting parent layer and default language" width="839w">
+<img src="projects/images/project-step1.png" alt="Dialog for selecting parent project and default language" width="839w">
 </div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+The parent project cannot be changed after the project is created. The default language can.
+</td>
+</tr>
+</table>
 </div>
 </li>
 <li>
-<p>Name and ID</p>
+<p>Name your project</p>
+<div class="paragraph">
+<p>Give the project a <strong>display name</strong>. The <strong>identifier</strong> is auto-generated from the display name, but can be overridden. Only alphanumeric characters and "-" are allowed, the value is validated for uniqueness, and it cannot be changed later. Optionally, add a description.</p>
+</div>
 <div class="imageblock">
 <div class="content">
-<img src="projects/images/project-step2.png" alt="Dialog for setting project name and unique ID" width="920w">
+<img src="projects/images/project-step2.png" alt="Dialog for setting project name and unique identifier" width="920w">
 </div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+When creating a layer, the wizard will suggest display name and description based on the parent project and the selected language.
+</td>
+</tr>
+</table>
 </div>
 </li>
 <li>
 <p>Public or private</p>
+<div class="paragraph">
+<p>Select the <a href="#access-mode">access mode</a> — the default READ permissions for content in the project.</p>
+</div>
 <div class="imageblock">
 <div class="content">
 <img src="projects/images/project-step3.png" alt="Select default content visibility" width="920w">
@@ -534,7 +679,10 @@ Content items cannot be moved or copied between projects. For reusing content ac
 </div>
 </li>
 <li>
-<p>Roles and permissions</p>
+<p>Grant project roles</p>
+<div class="paragraph">
+<p>Give users or groups access to the project by assigning <a href="#project-roles">project roles</a>.</p>
+</div>
 <div class="imageblock">
 <div class="content">
 <img src="projects/images/project-step4.png" alt="Configure authoring access" width="920w">
@@ -542,7 +690,10 @@ Content items cannot be moved or copied between projects. For reusing content ac
 </div>
 </li>
 <li>
-<p>Applications and features</p>
+<p>Project scope applications</p>
+<div class="paragraph">
+<p>Select the <a href="#project-applications">applications</a> that should be available for the project&#8217;s content.</p>
+</div>
 <div class="imageblock">
 <div class="content">
 <img src="projects/images/project-step5.png" alt="Configure applications for project" width="920w">
@@ -551,6 +702,9 @@ Content items cannot be moved or copied between projects. For reusing content ac
 </li>
 <li>
 <p>Summary</p>
+<div class="paragraph">
+<p>Verify the settings of the project you are about to create, then click <b class="button">Create Project</b>.</p>
+</div>
 <div class="imageblock">
 <div class="content">
 <img src="projects/images/project-summary.png" alt="Summary of project settings" width="920w">
@@ -559,20 +713,71 @@ Content items cannot be moved or copied between projects. For reusing content ac
 </li>
 </ol>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If you created a layer, a synchronization job will kick in and inherit content from the parent project.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="managing-projects"><a class="link" href="#managing-projects">Managing projects</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Existing projects are managed from the <a href="workbench/settings.ahtml">Settings section</a>: select one or more projects and click <b class="button">Edit</b> in the toolbar, or simply double-click a project. Most of the wizard&#8217;s settings can also be changed on an existing project. Things to be aware of:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Icon</strong> — click the project thumbnail to upload a custom icon. This can only be done after creation, as the wizard has no icon step.</p>
+</li>
+<li>
+<p><strong>Default language</strong> — changing it only affects new items created after the project is saved; existing content items keep their language.</p>
+</li>
+<li>
+<p><strong>Access mode</strong> — changing to or from <strong>Public</strong> must be confirmed, since it updates permissions on every single content item inside the project.</p>
+</li>
+<li>
+<p>The <strong>identifier</strong> and <strong>parent project</strong> can never be changed.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>To delete a project, select it in the Settings grid and click <b class="button">Delete</b> in the toolbar.</p>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+Deleting a project will delete its repository and all the data inside. This action has to be confirmed and cannot be undone.
+</td>
+</tr>
+</table>
+</div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="project_layering"><a class="link" href="#project_layering">Project layering</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Content Studio also offers an advanced feature for reusing and augmenting content across multiple projects. This is called <a href="layers.ahtml">content layering</a>.</p>
+<p>Content Studio also offers an advanced feature for reusing and augmenting content across multiple projects. This is called <a href="projects/layers.ahtml">content layering</a>.</p>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-07-21 08:01:52 UTC
+Last updated 2026-07-21 13:04:22 UTC
 </div>
 </div>
 </body>
