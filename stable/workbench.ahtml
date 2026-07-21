@@ -457,8 +457,22 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="paragraph">
 <p>The <strong>Workbench</strong> is the application shell of Content Studio. It has three parts: a <strong>project bar</strong> across the top, a <strong>menu bar</strong> on the left, and a <strong>main panel</strong> that fills the rest.</p>
 </div>
-<div class="paragraph">
-<p>The <a href="editor.ahtml">Editor</a> is not part of the Workbench — it opens in a separate browser tab.</p>
+<div class="imageblock">
+<div class="content">
+<img src="workbench/images/workbench.png" alt="The application shell with project bar at top and menu bar on the right" width="1024px">
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+The <a href="editor.ahtml">Editor</a> is not part of the Workbench — it opens in a separate browser tab.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -537,7 +551,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-07-20 15:45:08 UTC
+Last updated 2026-07-21 08:01:52 UTC
 </div>
 </div>
 </body>

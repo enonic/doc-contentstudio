@@ -484,7 +484,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="workbench/images/navigator.png" alt="Content Studio Navigator view showing the content tree and preview" width="1440px">
+<img src="images/content-studio.png" alt="Content Studio screenshot showing the content tree and preview of an enonic web page saying &quot;This is Enonic&quot;" width="1440px">
 </div>
 </div>
 <div class="admonitionblock tip">
@@ -682,7 +682,7 @@ A collection of short videos demonstrating Content Studio&#8217;s features and c
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-07-20 15:45:08 UTC
+Last updated 2026-07-21 08:01:52 UTC
 </div>
 </div>
 </body>

@@ -461,9 +461,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="paragraph">
 <p>The view consists of the <a href="#toolbar">action toolbar</a> on top, followed by the main view divided in four vertical responsive panels, from left to right: <a href="#search_panel">Search panel</a>, <a href="#content_tree">Content tree</a>, <a href="preview.ahtml">Preview panel</a> and <a href="contextpanel.ahtml">Context panel</a>.</p>
 </div>
-<div class="imageblock text-center">
+<div class="imageblock">
 <div class="content">
-<img src="navigator/images/navigator.png" alt="Navigator" width="90%">
+<img src="navigator/images/navigator.png" alt="Content Studio navigator showing content content list" width="preview and detail view" height="1440px">
 </div>
 </div>
 </div>
@@ -707,7 +707,7 @@ Search results remain in the tree grid when the search panel is collapsed. Donâ€
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-07-20 15:45:08 UTC
+Last updated 2026-07-21 08:01:52 UTC
 </div>
 </div>
 </body>
