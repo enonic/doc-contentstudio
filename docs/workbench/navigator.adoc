@@ -6,7 +6,7 @@ The *Navigator* is the default menuitem of Content Studio — what you see when 
 
 The view consists of the <<#toolbar, action toolbar>> on top, followed by the main view divided in four vertical responsive panels, from left to right: <<#search_panel, Search panel>>, <<#content_tree, Content tree>>, <<preview#,Preview panel>> and <<contextpanel#,Context panel>>.
 
-image::navigator.png[Navigator, 90%,align="center"]
+image::navigator.png[Content Studio navigator showing content content list, preview and detail view, 1440px]
 
 
 == Toolbar
