@@ -2,20 +2,25 @@
 :toc: right
 :imagesdir: images
 
-Accessibility is a firm product requirement in Content Studio, not an add-on. Content teams should not have to choose between advanced content management and an inclusive authoring environment. Keyboard operation, screen-reader support, visible focus, responsive layouts, and accessible color contrast are therefore built into the standard interface rather than confined to a separate mode.
-
-Content Studio 6 is built on the https://enonic.github.io/npm-enonic-ui/[Enonic UI design system]. Shared controls and interaction patterns make navigation more predictable across the Navigator, Content Editor, dialogs, selectors, and project-management tools.
+Accessibility is a firm product requirement in Content Studio, not an add-on.
 
 NOTE: This page covers the accessibility of the Content Studio application. The accessibility of a published website also depends on its templates, applications, media, and authored content.
+
+
+== Introduction
+
+Content teams should not have to choose between advanced content management and an inclusive authoring environment. Keyboard operation, screen-reader support, visible focus, responsive layouts, and accessible color contrast are therefore built into the standard interface rather than confined to a separate mode.
+
+Content Studio 6 is built on the https://enonic.github.io/npm-enonic-ui/[Enonic UI design system]. Shared controls and interaction patterns make navigation more predictable across the Navigator, Content Editor, dialogs, selectors, and project-management tools.
 
 
 == Standards and evidence
 
 Content Studio is engineered and evaluated against the https://www.w3.org/TR/WCAG21/[Web Content Accessibility Guidelines (WCAG) 2.1]. It meets nearly all evaluated requirements and is close to full conformance, with only a small number of known exceptions remaining. Accessibility is considered across complete editorial workflows, including finding content, editing forms, selecting related items, resolving validation errors, and publishing.
 
-The tested Content Studio 6 interface achieved a perfect *100/100 accessibility score in Lighthouse*. This means that it passed every automated accessibility audit contributing to the score, providing a strong, repeatable benchmark for accessible names, element roles, color contrast, and other machine-testable qualities.
+image::accessibility-lighthouse.png[Lighthouse report showing an accessibility and best practices score of 100 of 100 for Content Studio, 420px]
 
-image::accessibility-lighthouse.png[Lighthouse report showing an accessibility score of 100 for Content Studio, 760px]
+The tested Content Studio 6 interface achieved a perfect *100/100 accessibility score in Lighthouse*. This means that it passed every automated accessibility audit contributing to the score, providing a strong, repeatable benchmark for accessible names, element roles, color contrast, and other machine-testable qualities.
 
 Enonic's detailed accessibility assessment complements this automated benchmark with evaluation of real interaction patterns: keyboard navigation, focus management, screen-reader semantics, validation, dialogs, and responsive layouts. Together, automated and manual evaluation provide stronger evidence than either method alone and help prevent regressions as Content Studio evolves. The https://developer.chrome.com/docs/lighthouse/accessibility/scoring/[Lighthouse accessibility scoring reference] describes which automated audits contribute to its score.
 
