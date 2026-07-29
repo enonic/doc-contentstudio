@@ -42,6 +42,7 @@ When a published content is edited and saved, the new version becomes active in 
 
 Content can either be archived or instantly deleted via the <<../workbench/archive#,Archive>> dialog. Both take the content offline (remove it from `master`) if it was published. Instant deletion removes it from both branches; archived items move under the `/archive` node and can be restored.
 
+[[publishing_wizard]]
 == Publishing wizard
 
 The *Publishing wizard* opens when *Publish* is invoked. The selected content's ascendants and dependencies are automatically included so the published page will not have missing references.
@@ -80,10 +81,12 @@ TIP: Use the *Mark as ready* link in the status bar to bulk-mark all in-progress
 
 NOTE: Some items are required for the batch and cannot be excluded — typically parents and mandatory inbound dependencies.
 
+[[publish_tree]]
 == Publish tree
 
 *Publish tree* runs the same wizard as *Publish*, but pre-includes the selection together with all its descendants and their dependencies. Use this when bringing a whole subtree online at once (for example, publishing a freshly-imported section of a site).
 
+[[scheduled_publishing]]
 == Scheduled publishing
 
 The calendar icon in the *Publishing wizard* opens a scheduling panel at the top of the dialog where you can set the online-from and online-to dates. The *Publish Now* button relabels to *Schedule*.

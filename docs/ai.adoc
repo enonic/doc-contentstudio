@@ -78,6 +78,7 @@ image::juke-instructions.png[Provide general instructions via app settings, 733w
 
 NOTE: Working with application settings requires the <<projects#project-roles,Owner>> project role or higher.
 
+[[known_issues]]
 == Known issues
 
 Known limitations in current version

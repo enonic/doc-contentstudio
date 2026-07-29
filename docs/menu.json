@@ -9,6 +9,10 @@
       "document": "projects",
       "menuItems": [
         {
+          "title": "Manage projects",
+          "document": "projects/manage"
+        },
+        {
           "title": "Layers & localization",
           "document": "projects/layers"
         }
@@ -179,8 +183,14 @@
       "document": "ai"
     },
     {
-      "title": "Keyboard shortcuts",
-      "document": "keyboard-shortcuts"
+      "title": "Accessibility",
+      "document": "accessibility",
+      "menuItems": [
+        {
+          "title": "Keyboard shortcuts",
+          "document": "keyboard-shortcuts"
+        }
+      ]
     },
     {
       "title": "Configuration",

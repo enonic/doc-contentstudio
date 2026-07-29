@@ -21,7 +21,7 @@ The horizontal bar across the top of the window. It carries application-wide con
 
 The vertical strip on the left lists the available *menuitems*: top-level views contributed by Content Studio or by an installed application. Clicking an icon swaps the <<#main_panel,main panel>> to that menuitem's view.
 
-* *Navigator* — the built-in default, anchored at the top of the menu bar. The content tree, search, and per-content actions. See <<workbench/navigator#,Navigator>>.
+* *Navigator* — the built-in default, anchored at the top of the menu bar. The content list, search, and per-content actions. See <<workbench/navigator#,Navigator>>.
 * *Settings* — anchored at the bottom-left, set apart from the regular menuitem stack. Unlike the others, Settings is *not* scoped to the currently selected project — it manages all projects and layers. See <<workbench/settings#,Settings>>.
 
 Additional menuitems are contributed by installed applications and appear in the stack between Navigator and Settings. The two most common:
@@ -35,8 +35,9 @@ Any installed application can add a menuitem to the menu bar. The icon and view 
 
 See the https://developer.enonic.com/docs/code/stable/web/extensions/menuitem[menuitems extension reference] for the descriptor format, lifecycle, and implementation details.
 
+[[main_panel]]
 == Main panel
 
-The remaining space is the main panel — the surface controlled by the active menuitem. The Navigator splits it into a toolbar, search panel, content tree, <<workbench/preview#,Preview>>, and <<workbench/contextpanel#,Context panel>>; other menuitems arrange the panel differently.
+The remaining space is the main panel — the surface controlled by the active menuitem. The Navigator splits it into a toolbar, search panel, content list, <<workbench/preview#,Preview>>, and <<workbench/contextpanel#,Context panel>>; other menuitems arrange the panel differently.
 
 Two of those panels — <<workbench/preview#,Preview>> and <<workbench/contextpanel#,Context panel>> — appear inside multiple menuitem views (Navigator, Archive) and also inside the <<editor#,Editor>>. Their behaviour and extension models are shared across surfaces, which is why they are documented on their own pages.

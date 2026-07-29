@@ -4,14 +4,14 @@
 
 The *Preview panel* shows how the selected content will appear to an end user. It sits in two places:
 
-* In the <<navigator#,Navigator>>, to the right of the content tree.
+* In the <<navigator#,Navigator>>, to the right of the content list.
 * In the <<../editor#,Editor>>, in the middle, when the content is _not_ renderable. For renderable content (sites, pages, page templates, and any content type with a supporting template) the middle panel is replaced with the <<../editor/page-editor#,Page editor>> — a drag-and-drop page-building surface rather than a read-only preview.
 
 Preview is *pluggable*: the actual view that appears depends on the content item, the applications installed on its site, and any preview contributions from those applications.
 
 image::navigator-preview.png[Showing content preview, 75%, align="center"]
 
-In the Navigator the preview is dynamic — clicking a link will navigate you to the target page, both inside the preview panel and the content tree. Only the *Draft* version of content is visible.
+In the Navigator the preview is dynamic — clicking a link will navigate you to the target page, both inside the preview panel and the content list. Only the *Draft* version of content is visible.
 
 == Toolbar
 

@@ -37,6 +37,7 @@ The available configuration options vary per application. Only *Administrator* o
 
 image::wizard-config.png[Application configuration dialog]
 
+[[templates_folder]]
 == Templates folder
 
 Every site has a *Templates* folder automatically created as a direct child. It behaves like a regular folder except that:

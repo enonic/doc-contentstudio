@@ -51,6 +51,7 @@ This button opens a menu with special characters. Selecting one will insert it a
 
 Anchors enable pointing to a specific position on a page via context link. If a link references an anchor on the same page then the page will scroll up or down to the location of the anchor. The anchor button in the toolbar opens the Insert Anchor dialog where the name of the anchor is entered. The anchor name will be used as the value of the “id” attribute, so it should be lower case without spaces.
 
+[[insert-image]]
 === Insert/Edit image
 
 This button (or a double click on the image) opens the Insert Image dialog. An existing image content can be selected from the “Image” selector, or a new image can be uploaded using the upload button.
@@ -62,7 +63,7 @@ Additionally, there's an option to apply <<#custom_image_styles,custom image sty
 
 "Caption" field allows to enter a caption/title for the image and will be displayed under the image as a part of the `figure` element.
 
-"Accessibility" section at the bottom allows to either set the image as decorative (meant to be discoverable only by screen readers, not actual users), or apply an alternative text for the image.
+The *Accessibility* section at the bottom lets you mark the image as decorative, so assistive technologies can ignore it, or provide alternative text that describes the image's meaning or purpose.
 
 image::rich-text-editor-image-dialog.png[Insert Image dialog, 75%]
 
@@ -101,6 +102,7 @@ placed in the footer of the editor, while for a Text component inside the Page E
 This button will open the editor in the full screen mode for more convenient user experience. Not available inside the text component editor.
 
 
+[[custom_image_styles]]
 == Custom Image Styles
 
 By default, XP comes with one built-in image style called “_Original (no image processing)_”. By applying this style to the image, you'll make sure

@@ -27,6 +27,7 @@ image::page-editor-lock.png[]
 
 The *Components* widget appears in the <<../workbench/contextpanel#,Context panel>> whenever the Page editor is available. It has two tabs: *Insert* for adding new components to the page, and a per-component *Inspect* tab for configuring the currently selected component.
 
+[[insert_tab]]
 === Insert tab
 
 The Insert tab lets you drag and drop component placeholders onto the page.
@@ -40,6 +41,7 @@ image::context-panel_insert2.png[Selecting the specific part, 440]
 
 The five available component categories are documented under <<#_component_categories,Component categories>> below.
 
+[[inspect_tab]]
 === Inspect tab
 
 The Inspect tab configures whichever component is currently selected in the page. The tab header changes to match the selected component's type (*Page*, *Part*, *Layout*, etc.). When nothing is selected, it defaults to *Page*.
@@ -99,6 +101,7 @@ image::component-types-layout-edit.png[]
 
 NOTE: Layouts cannot be nested inside other layouts. If a layout is hard to click in the rendered page, use the Page Components tree (see below) or right-click a child component and use *Select parent*.
 
+[[text]]
 === Text
 
 The Text component is a formatted text block — it places a rich-text surface directly into a page region. Text components support images, videos, links, and macros, all edited via the <<rich-text-editor#,Rich Text Editor>>.

@@ -6,7 +6,7 @@ Content Studio is Enonic XP's content-management UI — the editor-facing applic
 
 IMPORTANT: *Work in progress* We are still working to complete the documentation. Expect some outdated screenshots until we finish this work.
 
-image::content-studio.png[Content Studio screenshot showing the content tree and preview of an enonic web page saying "This is Enonic", width=1440px]
+image::content-studio.png[Content Studio screenshot showing the content list and preview of an Enonic web page saying "This is Enonic", width=1440px]
 
 TIP: A collection of short videos demonstrating Content Studio's features and capabilities is available on the https://www.enonic.com/resources/content-studio-videos[Enonic site].
 
@@ -17,7 +17,7 @@ Content Studio is a standalone Enonic XP application that can be installed from 
 
 == User interface
 
-The <<workbench#,Workbench>> is the application shell: a project bar on top, a menu bar on the left, and a main panel filling the rest. The default menuitem is the <<workbench/navigator#,Navigator>> — the content tree, search, and per-content actions.
+The <<workbench#,Workbench>> is the application shell: a project bar on top, a menu bar on the left, and a main panel filling the rest. The default menuitem is the <<workbench/navigator#,Navigator>> — the content list, search, and per-content actions.
 
 Autoring happesn in the <<editor#,Content Editor>>, which launches in a separate browser tab (Google Docs style) and provides a consistent interface for editing and previewing.
 

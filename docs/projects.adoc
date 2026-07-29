@@ -67,70 +67,12 @@ You should see the following dialog when starting Content Studio for the first t
 
 image::project-first.png[Dialog showing a button to start project wizard, 839w]
 
-Clicking btn:[Start Project wizard] will launch the <<#project-wizard, project wizard>>, which will guide you through the steps of creating a new project.
-
-
 [[project-wizard]]
-== Project wizard
-
-New projects are created with the project wizard. It launches from the first-run dialog above, or from the btn:[New] button in the <<workbench/settings#,Settings section>>. You can click the btn:[Previous] button at any time to review or change your choices, and the X icon to exit without creating a project.
-
-. Language and content layering
-+
-Optionally select a *parent project* — this makes the new project a <<projects/layers#,layer>>, inheriting content from the parent. Then select the *default language*, which will be applied to new content created in the root of the project.
-+
-image::project-step1.png[Dialog for selecting parent project and default language, 839w]
-+
-IMPORTANT: The parent project cannot be changed after the project is created. The default language can.
-+
-. Name your project
-+
-Give the project a *display name*. The *identifier* is auto-generated from the display name, but can be overridden. Only alphanumeric characters and "-" are allowed, the value is validated for uniqueness, and it cannot be changed later. Optionally, add a description.
-+
-image::project-step2.png[Dialog for setting project name and unique identifier, 920w]
-+
-NOTE: When creating a layer, the wizard will suggest display name and description based on the parent project and the selected language.
-+
-. Public or private
-+
-Select the <<#access-mode,access mode>> — the default READ permissions for content in the project.
-+
-image::project-step3.png[Select default content visibility, 920w]
-+
-. Grant project roles
-+
-Give users or groups access to the project by assigning <<#project-roles,project roles>>.
-+
-image::project-step4.png[Configure authoring access, 920w]
-+
-. Project scope applications
-+
-Select the <<#project-applications,applications>> that should be available for the project's content.
-+
-image::project-step5.png[Configure applications for project, 920w]
-+
-. Summary
-+
-Verify the settings of the project you are about to create, then click btn:[Create Project].
-+
-image::project-summary.png[Summary of project settings, 920w]
-
-NOTE: If you created a layer, a synchronization job will kick in and inherit content from the parent project.
+Clicking btn:[Start Project wizard] will launch the <<projects/manage#project-wizard,project wizard>>, which guides you through the steps of creating a new project.
 
 
 [[managing-projects]]
-== Managing projects
-
-Existing projects are managed from the <<workbench/settings#,Settings section>>: select one or more projects and click btn:[Edit] in the toolbar, or simply double-click a project. Most of the wizard's settings can also be changed on an existing project. Things to be aware of:
-
-* *Icon* — click the project thumbnail to upload a custom icon. This can only be done after creation, as the wizard has no icon step.
-* *Default language* — changing it only affects new items created after the project is saved; existing content items keep their language.
-* *Access mode* — changing to or from *Public* must be confirmed, since it updates permissions on every single content item inside the project.
-* The *identifier* and *parent project* can never be changed.
-
-To delete a project, select it in the Settings grid and click btn:[Delete] in the toolbar.
-
-CAUTION: Deleting a project will delete its repository and all the data inside. This action has to be confirmed and cannot be undone.
+Existing projects can be edited or deleted from the Settings section. See <<projects/manage#,Manage projects>> for the available operations and important caveats.
 
 
 == Project layering

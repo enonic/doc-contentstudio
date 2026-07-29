@@ -41,6 +41,7 @@ uploadMaxFileSize = 100mb
 Used for setting size limit on attachments, media content and both project and content thumbnail uploads
 
 
+[[disable_path_name_transliteration]]
 == Disable path name transliteration
 
 [source,properties]
@@ -126,6 +127,7 @@ publishingWizard.requiredPublishFrom = true
 image::pubwiz-required-publish-from.png[Publishing Wizard - Required "Online from", 821w]
 
 
+[[exclude_optional_dependencies]]
 === Exclude optional dependencies
 
 [source,properties]

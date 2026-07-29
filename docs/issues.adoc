@@ -8,6 +8,7 @@ There are two types of issues in Content Studio: *tasks* and *publish requests*.
 
 *Publish requests* ask another user to review and publish content. Because they have their own wizard and dialog, they are documented on a dedicated page — see <<issues/publish-request#,Publish request>>.
 
+[[issues_list]]
 == Issues list
 
 "*Open Issues"* button in the Content Studio header opens the modal dialog with the list of issues (both tasks and publish requests).
@@ -30,8 +31,10 @@ To create a new task, click the <<#create_a_task,`New Task…`>> button.
 
 Clicking on an issue from the list will open the <<#update_an_issue,issue details dialog>>.
 
+[[tasks]]
 == Tasks
 
+[[create_a_task]]
 === Create a task
 
 To create a new task, click "Create Task..." button in the Content Studio toolbar.
@@ -51,6 +54,7 @@ image::dialog-issue-1.png[New task, 708]
 
 You can read about creating a new Publishing Request on the <<issues/publish-request#,Publish request>> page.
 
+[[update_an_issue]]
 === Update an issue
 
 To modify an issue, click on it in the <<#issues_list,*Issue list*>> dialog. It will open the dialog with three tabs.
