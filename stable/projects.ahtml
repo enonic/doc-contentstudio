@@ -446,8 +446,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#project-roles">Project roles</a></li>
 <li><a href="#project-applications">Applications</a></li>
 <li><a href="#getting_started">Getting started</a></li>
-<li><a href="#project-wizard">Project wizard</a></li>
-<li><a href="#managing-projects">Managing projects</a></li>
 <li><a href="#project_layering">Project layering</a></li>
 </ul>
 </div>
@@ -608,161 +606,11 @@ Project roles set the <strong>default</strong> permissions that every new conten
 <img src="projects/images/project-first.png" alt="Dialog showing a button to start project wizard" width="839w">
 </div>
 </div>
-<div class="paragraph">
-<p>Clicking <b class="button">Start Project wizard</b> will launch the <a href="#project-wizard">project wizard</a>, which will guide you through the steps of creating a new project.</p>
+<div id="project-wizard" class="paragraph">
+<p>Clicking <b class="button">Start Project wizard</b> will launch the <a href="projects/manage.ahtml#project-wizard">project wizard</a>, which guides you through the steps of creating a new project.</p>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="project-wizard"><a class="link" href="#project-wizard">Project wizard</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>New projects are created with the project wizard. It launches from the first-run dialog above, or from the <b class="button">New</b> button in the <a href="workbench/settings.ahtml">Settings section</a>. You can click the <b class="button">Previous</b> button at any time to review or change your choices, and the X icon to exit without creating a project.</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Language and content layering</p>
-<div class="paragraph">
-<p>Optionally select a <strong>parent project</strong> — this makes the new project a <a href="projects/layers.ahtml">layer</a>, inheriting content from the parent. Then select the <strong>default language</strong>, which will be applied to new content created in the root of the project.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="projects/images/project-step1.png" alt="Dialog for selecting parent project and default language" width="839w">
-</div>
-</div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-The parent project cannot be changed after the project is created. The default language can.
-</td>
-</tr>
-</table>
-</div>
-</li>
-<li>
-<p>Name your project</p>
-<div class="paragraph">
-<p>Give the project a <strong>display name</strong>. The <strong>identifier</strong> is auto-generated from the display name, but can be overridden. Only alphanumeric characters and "-" are allowed, the value is validated for uniqueness, and it cannot be changed later. Optionally, add a description.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="projects/images/project-step2.png" alt="Dialog for setting project name and unique identifier" width="920w">
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-When creating a layer, the wizard will suggest display name and description based on the parent project and the selected language.
-</td>
-</tr>
-</table>
-</div>
-</li>
-<li>
-<p>Public or private</p>
-<div class="paragraph">
-<p>Select the <a href="#access-mode">access mode</a> — the default READ permissions for content in the project.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="projects/images/project-step3.png" alt="Select default content visibility" width="920w">
-</div>
-</div>
-</li>
-<li>
-<p>Grant project roles</p>
-<div class="paragraph">
-<p>Give users or groups access to the project by assigning <a href="#project-roles">project roles</a>.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="projects/images/project-step4.png" alt="Configure authoring access" width="920w">
-</div>
-</div>
-</li>
-<li>
-<p>Project scope applications</p>
-<div class="paragraph">
-<p>Select the <a href="#project-applications">applications</a> that should be available for the project&#8217;s content.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="projects/images/project-step5.png" alt="Configure applications for project" width="920w">
-</div>
-</div>
-</li>
-<li>
-<p>Summary</p>
-<div class="paragraph">
-<p>Verify the settings of the project you are about to create, then click <b class="button">Create Project</b>.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="projects/images/project-summary.png" alt="Summary of project settings" width="920w">
-</div>
-</div>
-</li>
-</ol>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-If you created a layer, a synchronization job will kick in and inherit content from the parent project.
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="managing-projects"><a class="link" href="#managing-projects">Managing projects</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Existing projects are managed from the <a href="workbench/settings.ahtml">Settings section</a>: select one or more projects and click <b class="button">Edit</b> in the toolbar, or simply double-click a project. Most of the wizard&#8217;s settings can also be changed on an existing project. Things to be aware of:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Icon</strong> — click the project thumbnail to upload a custom icon. This can only be done after creation, as the wizard has no icon step.</p>
-</li>
-<li>
-<p><strong>Default language</strong> — changing it only affects new items created after the project is saved; existing content items keep their language.</p>
-</li>
-<li>
-<p><strong>Access mode</strong> — changing to or from <strong>Public</strong> must be confirmed, since it updates permissions on every single content item inside the project.</p>
-</li>
-<li>
-<p>The <strong>identifier</strong> and <strong>parent project</strong> can never be changed.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>To delete a project, select it in the Settings grid and click <b class="button">Delete</b> in the toolbar.</p>
-</div>
-<div class="admonitionblock caution">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-caution" title="Caution"></i>
-</td>
-<td class="content">
-Deleting a project will delete its repository and all the data inside. This action has to be confirmed and cannot be undone.
-</td>
-</tr>
-</table>
+<div id="managing-projects" class="paragraph">
+<p>Existing projects can be edited or deleted from the Settings section. See <a href="projects/manage.ahtml">Manage projects</a> for the available operations and important caveats.</p>
 </div>
 </div>
 </div>
@@ -777,7 +625,7 @@ Deleting a project will delete its repository and all the data inside. This acti
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-07-21 13:04:22 UTC
+Last updated 2026-07-29 14:38:20 UTC
 </div>
 </div>
 </body>

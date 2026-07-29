@@ -456,7 +456,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="ulist">
 <ul>
 <li>
-<p>In the <a href="navigator.ahtml">Navigator</a>, to the right of the content tree.</p>
+<p>In the <a href="navigator.ahtml">Navigator</a>, to the right of the content list.</p>
 </li>
 <li>
 <p>In the <a href="../editor.ahtml">Editor</a>, in the middle, when the content is <em>not</em> renderable. For renderable content (sites, pages, page templates, and any content type with a supporting template) the middle panel is replaced with the <a href="../editor/page-editor.ahtml">Page editor</a> — a drag-and-drop page-building surface rather than a read-only preview.</p>
@@ -472,7 +472,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="paragraph">
-<p>In the Navigator the preview is dynamic — clicking a link will navigate you to the target page, both inside the preview panel and the content tree. Only the <strong>Draft</strong> version of content is visible.</p>
+<p>In the Navigator the preview is dynamic — clicking a link will navigate you to the target page, both inside the preview panel and the content list. Only the <strong>Draft</strong> version of content is visible.</p>
 </div>
 </div>
 </div>
@@ -563,7 +563,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-07-21 13:04:22 UTC
+Last updated 2026-07-29 14:38:20 UTC
 </div>
 </div>
 </body>

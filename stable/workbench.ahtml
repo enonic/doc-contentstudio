@@ -506,7 +506,7 @@ The <a href="editor.ahtml">Editor</a> is not part of the Workbench — it opens 
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Navigator</strong> — the built-in default, anchored at the top of the menu bar. The content tree, search, and per-content actions. See <a href="workbench/navigator.ahtml">Navigator</a>.</p>
+<p><strong>Navigator</strong> — the built-in default, anchored at the top of the menu bar. The content list, search, and per-content actions. See <a href="workbench/navigator.ahtml">Navigator</a>.</p>
 </li>
 <li>
 <p><strong>Settings</strong> — anchored at the bottom-left, set apart from the regular menuitem stack. Unlike the others, Settings is <strong>not</strong> scoped to the currently selected project — it manages all projects and layers. See <a href="workbench/settings.ahtml">Settings</a>.</p>
@@ -541,7 +541,7 @@ The <a href="editor.ahtml">Editor</a> is not part of the Workbench — it opens 
 <h2 id="main_panel"><a class="link" href="#main_panel">Main panel</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The remaining space is the main panel — the surface controlled by the active menuitem. The Navigator splits it into a toolbar, search panel, content tree, <a href="workbench/preview.ahtml">Preview</a>, and <a href="workbench/contextpanel.ahtml">Context panel</a>; other menuitems arrange the panel differently.</p>
+<p>The remaining space is the main panel — the surface controlled by the active menuitem. The Navigator splits it into a toolbar, search panel, content list, <a href="workbench/preview.ahtml">Preview</a>, and <a href="workbench/contextpanel.ahtml">Context panel</a>; other menuitems arrange the panel differently.</p>
 </div>
 <div class="paragraph">
 <p>Two of those panels — <a href="workbench/preview.ahtml">Preview</a> and <a href="workbench/contextpanel.ahtml">Context panel</a> — appear inside multiple menuitem views (Navigator, Archive) and also inside the <a href="editor.ahtml">Editor</a>. Their behaviour and extension models are shared across surfaces, which is why they are documented on their own pages.</p>
@@ -551,7 +551,7 @@ The <a href="editor.ahtml">Editor</a> is not part of the Workbench — it opens 
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-07-21 13:04:22 UTC
+Last updated 2026-07-29 14:38:20 UTC
 </div>
 </div>
 </body>

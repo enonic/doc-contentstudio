@@ -484,7 +484,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/content-studio.png" alt="Content Studio screenshot showing the content tree and preview of an enonic web page saying &quot;This is Enonic&quot;" width="1440px">
+<img src="images/content-studio.png" alt="Content Studio screenshot showing the content list and preview of an Enonic web page saying &quot;This is Enonic&quot;" width="1440px">
 </div>
 </div>
 <div class="admonitionblock tip">
@@ -516,7 +516,7 @@ A collection of short videos demonstrating Content Studio&#8217;s features and c
 <h2 id="user_interface"><a class="link" href="#user_interface">User interface</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The <a href="workbench.ahtml">Workbench</a> is the application shell: a project bar on top, a menu bar on the left, and a main panel filling the rest. The default menuitem is the <a href="workbench/navigator.ahtml">Navigator</a> — the content tree, search, and per-content actions.</p>
+<p>The <a href="workbench.ahtml">Workbench</a> is the application shell: a project bar on top, a menu bar on the left, and a main panel filling the rest. The default menuitem is the <a href="workbench/navigator.ahtml">Navigator</a> — the content list, search, and per-content actions.</p>
 </div>
 <div class="paragraph">
 <p>Autoring happesn in the <a href="editor.ahtml">Content Editor</a>, which launches in a separate browser tab (Google Docs style) and provides a consistent interface for editing and previewing.</p>
@@ -682,7 +682,7 @@ A collection of short videos demonstrating Content Studio&#8217;s features and c
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-07-21 13:04:22 UTC
+Last updated 2026-07-29 14:38:20 UTC
 </div>
 </div>
 </body>

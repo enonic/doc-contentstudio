@@ -477,7 +477,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="ulist">
 <ul>
 <li>
-<p><b class="button">New</b> — launches the <a href="../projects.ahtml#project-wizard">project wizard</a> to create a new project or layer.</p>
+<p><b class="button">New</b> — launches the <a href="../projects/manage.ahtml#project-wizard">project wizard</a> to create a new project or layer.</p>
 </li>
 <li>
 <p><b class="button">Edit</b> — opens the selected project(s) for editing. Double-clicking a project does the same.</p>
@@ -488,7 +488,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ul>
 </div>
 <div class="paragraph">
-<p>For details on creating, editing and deleting projects — including important caveats — see <a href="../projects.ahtml#managing-projects">Managing projects</a>.</p>
+<p>For details on creating, editing and deleting projects — including important caveats — see <a href="../projects/manage.ahtml">Manage projects</a>.</p>
 </div>
 </div>
 </div>
@@ -515,7 +515,7 @@ By selecting the top node called "Projects", you will display a graph of all pro
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-07-21 13:04:22 UTC
+Last updated 2026-07-29 14:38:20 UTC
 </div>
 </div>
 </body>

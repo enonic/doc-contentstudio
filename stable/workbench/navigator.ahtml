@@ -441,13 +441,19 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#toolbar">Toolbar</a>
+<li><a href="#toolbar">Toolbar</a></li>
+<li><a href="#content_list">Content list</a>
 <ul class="sectlevel2">
-<li><a href="#accessibility">Accessibility</a></li>
+<li><a href="#columns">Columns</a></li>
+<li><a href="#bulk_selection">Bulk selection</a></li>
 </ul>
 </li>
-<li><a href="#search_panel">Search panel</a></li>
-<li><a href="#content_tree">Content tree</a></li>
+<li><a href="#search_panel">Search</a>
+<ul class="sectlevel2">
+<li><a href="#filtering">Filtering</a></li>
+<li><a href="#search_report">Search report</a></li>
+</ul>
+</li>
 <li><a href="#preview_and_context_panels">Preview and Context panels</a></li>
 </ul>
 </div>
@@ -456,14 +462,14 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>The <strong>Navigator</strong> is the default menuitem of Content Studio — what you see when you open the application. It is built around the project&#8217;s content tree and the actions you can perform on it.</p>
+<p>The <strong>Navigator</strong> is the default menu item in Content Studio — what you see when you open the application. It is built around the current project&#8217;s content list and the actions you can perform on it.</p>
 </div>
 <div class="paragraph">
-<p>The view consists of the <a href="#toolbar">action toolbar</a> on top, followed by the main view divided in four vertical responsive panels, from left to right: <a href="#search_panel">Search panel</a>, <a href="#content_tree">Content tree</a>, <a href="preview.ahtml">Preview panel</a> and <a href="contextpanel.ahtml">Context panel</a>.</p>
+<p>The action toolbar runs across the top. Below it, the <a href="#content_list">Content list</a> is the primary panel. The <a href="#search_panel">Search panel</a> opens to its left, while the <a href="preview.ahtml">Preview panel</a> and <a href="contextpanel.ahtml">Context panel</a> appear to its right. The layout adapts to the available width, so fewer panels and columns may be visible in a narrow window.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="navigator/images/navigator.png" alt="Content Studio navigator showing content content list" width="preview and detail view" height="1440px">
+<img src="images/navigator.png" alt="Content Studio Navigator showing the content list" width="preview" height="and Details widget">
 </div>
 </div>
 </div>
@@ -473,104 +479,160 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sectionbody">
 <div class="imageblock">
 <div class="content">
-<img src="navigator/images/navigator-toolbar.png" alt="Toolbar" width="75%">
+<img src="images/navigator-toolbar.png" alt="Navigator toolbar showing search icon" width="buttons new edit delete duplicate move sort preview and the main workflow action button with dropdown" height="961px">
 </div>
 </div>
 <div class="paragraph">
-<p>The toolbar in the Navigator has buttons for the following actions:</p>
+<p>The toolbar contains the following content actions. Buttons are enabled or disabled according to the selection and the current user&#8217;s permissions:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>New:</strong> Opens the <a href="../actions/new.ahtml">New content</a> dialog for creating new content;</p>
+<p><strong>New</strong> — opens the <a href="../actions/new.ahtml">New content</a> dialog.</p>
 </li>
 <li>
-<p><strong>Edit:</strong> Opens the content for <a href="../actions/edit.ahtml">editing</a> in a new browser tab;</p>
+<p><strong>Edit</strong> — opens the selected content for <a href="../actions/edit.ahtml">editing</a> in a new browser tab.</p>
 </li>
 <li>
-<p><strong>Delete:</strong> Opens the <a href="../actions/delete.ahtml">Delete</a> dialog for the selected content. Deleted items are moved to the <a href="archive.ahtml">Archive</a>.</p>
+<p><strong>Delete</strong> — opens the <a href="../actions/delete.ahtml">Delete</a> dialog. Deleted items are moved to the <a href="archive.ahtml">Archive</a>.</p>
 </li>
 <li>
-<p><strong>Duplicate:</strong> Makes a <a href="../actions/duplicate.ahtml">copy</a> of the selected content;</p>
+<p><strong>Duplicate</strong> — makes a <a href="../actions/duplicate.ahtml">copy</a> of the selected content.</p>
 </li>
 <li>
-<p><strong>Move:</strong> Opens the <a href="../actions/move.ahtml">Move item(s) with children</a> dialog;</p>
+<p><strong>Move</strong> — opens the <a href="../actions/move.ahtml">Move item(s) with children</a> dialog.</p>
 </li>
 <li>
-<p><strong>Sort:</strong> Opens the <a href="../actions/sort.ahtml">Sort items</a> dialog where child items of the selected content can be sorted;</p>
+<p><strong>Sort</strong> — opens the <a href="../actions/sort.ahtml">Sort items</a> dialog for ordering the selected item&#8217;s children.</p>
+</li>
+<li>
+<p><strong>Preview</strong> — opens renderable content in a new browser tab; see the <a href="../actions/preview.ahtml">Preview action</a>.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>The dropdown action button on the right of the toolbar is context-dependent and will have a different main action preset, depending on if a content is selected, what state content has, current user permissions etc.:</p>
+<p>The action button on the right is context-dependent. Its main action and dropdown options vary with the selection, content status, workflow state, and current user&#8217;s permissions. Typical actions include:</p>
 </div>
-<div class="imageblock text-center">
+<div class="imageblock">
 <div class="content">
-<img src="navigator/images/navigator-action-menu.png" alt="Toolbar" width="25%">
+<img src="images/navigator-workflow-menu.png" alt="Toolbar" width="181px">
 </div>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>If selected content is not published: <strong>Publish</strong> (opens the <a href="../actions/publish.ahtml#publishing_wizard">Publishing wizard</a> dialog)</p>
+<p><strong>Publish</strong> — opens the <a href="../actions/publish.ahtml#publishing_wizard">Publishing wizard</a> for content that is not online.</p>
 </li>
 <li>
-<p>If selected content is published: <strong>Unpublish</strong> (opens the <a href="../actions/unpublish.ahtml">Unpublish Wizard</a> dialog for taking the content offline)</p>
+<p><strong>Mark as ready</strong> — changes selected in-progress content to the <a href="../workflow.ahtml#_ready_for_publishing">ready for publishing</a> workflow state.</p>
 </li>
 <li>
-<p>If selected content is published but has child items that are not published: <strong>Publish Tree</strong> (opens the <a href="../actions/publish.ahtml#publish_tree">Publishing wizard</a> dialog with selected content and all descendants)</p>
+<p><strong>Publish Tree</strong> — opens the <a href="../actions/publish.ahtml#publish_tree">Publishing wizard</a> with the selected content, its descendants, and their dependencies.</p>
 </li>
 <li>
-<p>If selected content has workflow state "In progress": <strong>Mark as Ready</strong> (to mark selected content item(s) as ready for publishing)</p>
+<p><strong>Unpublish</strong> — opens the <a href="../actions/unpublish.ahtml">Unpublish wizard</a> for content that is online.</p>
 </li>
 <li>
-<p>If selected content is not published and current user doesn&#8217;t have publishing permissions: <strong>Request Publishing</strong> (opens the <a href="../issues/publish-request.ahtml">Publish Request</a> wizard)</p>
+<p><strong>Request Publishing</strong> — opens the <a href="../issues/publish-request.ahtml">Publish Request</a> wizard when the current user cannot publish the selected content.</p>
 </li>
 <li>
-<p>If no content is selected: <strong>Create Task</strong> opens the <a href="../issues.ahtml#create_a_task">New Task</a> dialog</p>
+<p><strong>Create Task</strong> — opens the <a href="../issues.ahtml#create_a_task">New Task</a> dialog. It is available without a content selection; selected items are attached to the new task automatically.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>These options are also available in the context menu that appears when right-clicking on a content item in the tree grid panel.</p>
+<p>Applicable actions are also available from the context menu that appears when you right-click a content item in the list.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="content_list"><a class="link" href="#content_list">Content list</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The main panel displays the content list for the current project.</p>
+</div>
+<div class="paragraph">
+<p>By default, it shows the items in their native tree structure, with the root content at the top and children nested beneath their parents. Items with children will have an expand icon to the left, which can be clicked to expand or collapse that structure.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/navigator-list.png" alt="The default content listing including tree structure and online state column" width="772px">
+</div>
+</div>
+<div class="paragraph">
+<p>The content list has its own toolbar with an icon to refresh the list and a checkbox to select or deselect all displayed items.</p>
+</div>
+<div class="paragraph">
+<p>Double-click a content item to open it for <a href="../editor.ahtml">editing</a> in a new browser tab, or right-click a content item to open its context menu.</p>
 </div>
 <div class="sect2">
-<h3 id="accessibility"><a class="link" href="#accessibility">Accessibility</a></h3>
+<h3 id="columns"><a class="link" href="#columns">Columns</a></h3>
 <div class="paragraph">
-<p>The toolbar supports keyboard navigation. When focused, the toolbar itself and its every interactable child element will be highlighted with a border. When the toolbar is focused, the following keys can be used to navigate and activate its elements:</p>
+<p>The content list contains two main columns. Columns may be hidden as the panel narrows:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Arrow buttons to navigate between action buttons</p>
+<p>Column 1 contains the content type icon, display name, and path. An expand icon appears when the content has children. Additionally, a workflow state icon may appear on top of the content icon, indicating invalid, in progress or ready.</p>
 </li>
 <li>
-<p><code>Enter</code> or <code>Space</code> to activate the focused action button or expand the dropdown</p>
+<p>Column 2 shows an icon representing publishing status: <code>Online</code>, <code>Offline</code>, <code>Scheduled</code>, or <code>Expired</code>, telling you whether the content is currently published, unpublished or not.</p>
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>Additionally, some action buttons have keyboard shortcuts that are displayed on cursor hover.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If you are working in a layer, a third column will appear, showing the content&#8217;s layering status. It will indicate if it is an original item, inherited from the parent project, or inherited and localized. See <a href="../projects/layers.ahtml">layering</a> for details.
+</td>
+</tr>
+</table>
 </div>
-<div class="imageblock text-center">
+</div>
+<div class="sect2">
+<h3 id="bulk_selection"><a class="link" href="#bulk_selection">Bulk selection</a></h3>
+<div class="paragraph">
+<p>Use the checkboxes to select one or multiple items. Applicable toolbar and context-menu actions then operate on the complete selection; actions that require a single item are disabled.</p>
+</div>
+<div class="imageblock">
 <div class="content">
-<img src="navigator/images/navigator-accessibility.png" alt="Toolbar accessibility" width="50%">
+<img src="images/navigator-bulk.png" alt="Bulk selection mode demonstrated along with right click for context menu" width="771px">
 </div>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="search_panel"><a class="link" href="#search_panel">Search panel</a></h2>
+<h2 id="search_panel"><a class="link" href="#search_panel">Search</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The search panel can be toggled with the <span class="image"><img src="navigator/images/navigator-m-glass.png" alt="navigator m glass" width="24px" title="Search icon"></span> icon at the far left of the menu bar. It contains a free-text search field and several parameters to filter the content list by:</p>
+<p>Open the search panel with the 🔍 (magnifying glass) button on the toolbars left hand side to open the search panel.</p>
+</div>
+<div class="paragraph">
+<p>Use the Free-text search to find content by content, content ID, or path.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/navigator-search.png" alt="Search panel with a text query and content type filter" width="matching content list" height="and selected-item preview">
+</div>
+</div>
+<div class="paragraph">
+<p>The hit count appears below the search field. Click <strong>Clear</strong> to reset all search terms and filters.</p>
+</div>
+<div class="paragraph">
+<p>Results update in the content list as search terms and filters change. Children of matching content items are also included, but remain hidden until their parent is expanded.</p>
+</div>
+<div class="sect2">
+<h3 id="filtering"><a class="link" href="#filtering">Filtering</a></h3>
+<div class="paragraph">
+<p>In addition to free text, the search panel provides the following faceting filters, to help you drill down to the content you want:</p>
 </div>
 <div class="ulist">
 <ul>
-<li>
-<p>Free-text search (by content Id, display name or path)</p>
-</li>
 <li>
 <p>Content type</p>
 </li>
@@ -578,7 +640,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Last modification date</p>
 </li>
 <li>
-<p>Last modifier</p>
+<p>Last modified by</p>
 </li>
 <li>
 <p>Owner</p>
@@ -588,111 +650,15 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </div>
-<div class="imageblock text-center">
-<div class="content">
-<img src="navigator/images/navigator-search.png" alt="Search and filtering" width="75%">
-</div>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-Search results can at any time (except for when there are no hits) be exported to a CSV file using the download icon underneath the free-text search field. The file will contain basic meta fields (id, display-name, path etc.), not custom input fields from the content type schema.
-</td>
-</tr>
-</table>
-</div>
 <div class="paragraph">
-<p>Search results are instantly updated in the tree grid as search parameters are changed. Children of matching content items will also be displayed in the tree grid but won’t be visible unless the parent node is expanded.</p>
+<p>Each content type with at least one match appears in the <strong>Content type</strong> filter, with the number of matches in parentheses. Select one or more content types to limit the results. By default, the five most common matching types are shown; click <strong>Show more</strong> to display the complete list.</p>
 </div>
+</div>
+<div class="sect2">
+<h3 id="search_report"><a class="link" href="#search_report">Search report</a></h3>
 <div class="paragraph">
-<p>The number of hits will appear below the search field, along with a <code>Clear</code> button that will reset the filter.</p>
+<p>Use the <strong>Export</strong> button next to the hit count to download the search result as CSV. The export contains basic metadata such as ID, display name, and path, but not custom fields from the content type.</p>
 </div>
-<div class="paragraph">
-<p>Each content type that has at least one matching content will appear in the <strong>Content type</strong> filter list with the number of matches in brackets <code>()</code>. Checking the box next to a content type will hide the results that do not match that type. Multiple content types can be selected. By default, only the 5 most popular content types will be shown, followed by "Show more" link to expand the entire list.</p>
-</div>
-<div class="imageblock text-center">
-<div class="content">
-<img src="navigator/images/navigator-search-expanded.png" alt="Full content type list" width="75%">
-</div>
-</div>
-<div class="paragraph">
-<p>The <strong>Last Modified</strong> list works in a similar manner. It is used to limit results to content that has been modified in the last month, week, day or hour. This list may not appear if other search parameters have limited results to content that was modified more than a month ago.</p>
-</div>
-<div class="paragraph">
-<p>Filter aggregations for <strong>Last modified by</strong> and <strong>Owner</strong> are dropdowns with the list of users who last modified content or are content owners. To simplify search for the current user, there&#8217;s <strong>Me</strong> checkbox in both aggregations which serves as an alias for the current user. Selected users will be displayed as checkboxes above the dropdown.</p>
-</div>
-<div class="imageblock text-center">
-<div class="content">
-<img src="navigator/images/navigator-search-modifier-expanded.png" alt="Listing all modifiers" width="75%">
-</div>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-Search results remain in the tree grid when the search panel is collapsed. Don’t forget to clear the search when you are done with your search.
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="content_tree"><a class="link" href="#content_tree">Content tree</a></h2>
-<div class="sectionbody">
-<div class="imageblock text-center">
-<div class="content">
-<img src="navigator/images/navigator-grid.png" alt="Listing content items" width="75%">
-</div>
-</div>
-<div class="paragraph">
-<p>Content items can be organized and stored in a tree hierarchy with child items collapsed under parent content. Parent content will have a gray triangle to the left of the content icon that can be clicked to expand or collapse the list of its children.</p>
-</div>
-<div class="paragraph">
-<p>The content tree can also be navigated with the keyboard arrow keys.</p>
-</div>
-<div class="paragraph">
-<p>Content tree has its own toolbar with an icon to refresh the content list and a checkbox to select or deselect all the content items in the grid.</p>
-</div>
-<div class="imageblock text-center">
-<div class="content">
-<img src="navigator/images/navigator-selector.png" alt="Listing content items" width="25%">
-</div>
-</div>
-<div class="paragraph">
-<p>Information in the content list is displayed in four columns. The number of columns may vary, depending on the content tree width.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>The first column contains a content type icon, a display name and a path. A gray expand icon will appear to the left of the icon if the content has child content.</p>
-</li>
-<li>
-<p>The second column shows the icon, representing the current <a href="../actions/sort.ahtml">sorting</a> order of the content&#8217;s children.</p>
-</li>
-<li>
-<p>The third column shows status of the content: <code>New</code>, <code>Published</code>, <code>Unpublished</code> or <code>Modified</code>.</p>
-</li>
-<li>
-<p>The fourth column shows the date when content was last modified.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Checkboxes to the left of each content in the tree can be used to select more than one content. Group actions available in the menu bar will be performed on all the selected content. Some actions can only be performed on one content at a time.</p>
-</div>
-<div class="paragraph">
-<p>Double-click on a content item will open it for <a href="../editor.ahtml">edit</a> in a new browser tab.</p>
-</div>
-<div class="paragraph">
-<p>Right-click on a content item will expand its context menu.</p>
 </div>
 </div>
 </div>
@@ -700,14 +666,27 @@ Search results remain in the tree grid when the search panel is collapsed. Don�
 <h2 id="preview_and_context_panels"><a class="link" href="#preview_and_context_panels">Preview and Context panels</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The two right-hand panels — <strong>Preview</strong> and <strong>Context panel</strong> — are shared with the <a href="../editor.ahtml">Editor</a> and documented on their own pages: <a href="preview.ahtml">Preview</a> and <a href="contextpanel.ahtml">Context panel</a>.</p>
+<p>Selecting a single content item updates both right-hand panels:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The <a href="preview.ahtml">Preview panel</a> shows the selected item&#8217;s draft rendition. Its toolbar displays status and offers preview modes and device-size emulation. If the item cannot be rendered, the preview is unavailable or replaced by a placeholder.</p>
+</li>
+<li>
+<p>The <a href="contextpanel.ahtml">Context panel</a> hosts widgets for the selected item. Built-in widgets provide details, dependencies, and version history; installed applications may contribute additional widgets.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Both panels are also used in the <a href="../editor.ahtml">Editor</a>. Their dedicated pages describe all controls and available modes.</p>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-07-21 13:04:22 UTC
+Last updated 2026-07-29 14:38:20 UTC
 </div>
 </div>
 </body>

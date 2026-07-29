@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.26">
-<title>Variants</title>
+<title>Accessibility</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -435,11 +435,31 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body class="article">
+<body class="article toc2 toc-right">
 <div id="header">
-<h1>Variants</h1>
+<h1>Accessibility</h1>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#standards_and_evidence">Standards and evidence</a></li>
+<li><a href="#keyboard_operation">Keyboard operation</a></li>
+<li><a href="#screen_readers">Screen readers</a></li>
+<li><a href="#focus_and_validation">Focus and validation</a></li>
+<li><a href="#visual_presentation">Visual presentation</a></li>
+<li><a href="#authoring_accessible_content">Authoring accessible content</a></li>
+<li><a href="#reporting_accessibility_problems">Reporting accessibility problems</a></li>
+</ul>
+</div>
 </div>
 <div id="content">
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Accessibility is a firm product requirement in Content Studio, not an add-on. Content teams should not have to choose between advanced content management and an inclusive authoring environment. Keyboard operation, screen-reader support, visible focus, responsive layouts, and accessible color contrast are therefore built into the standard interface rather than confined to a separate mode.</p>
+</div>
+<div class="paragraph">
+<p>Content Studio 6 is built on the <a href="https://enonic.github.io/npm-enonic-ui/">Enonic UI design system</a>. Shared controls and interaction patterns make navigation more predictable across the Navigator, Content Editor, dialogs, selectors, and project-management tools.</p>
+</div>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -447,44 +467,192 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-<strong>Content Studio+ feature.</strong> The Variants widget is part of the <a href="https://market.enonic.com/vendors/enonic/content-studio-plus">Content Studio+</a> subscription.
+This page covers the accessibility of the Content Studio application. The accessibility of a published website also depends on its templates, applications, media, and authored content.
 </td>
 </tr>
 </table>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="standards_and_evidence"><a class="link" href="#standards_and_evidence">Standards and evidence</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>Variants are essentially slightly modified copies of a content item used for comparing them against each other to determine
-which one performs better for end user (A/B Testing).</p>
+<p>Content Studio is engineered and evaluated against the <a href="https://www.w3.org/TR/WCAG21/">Web Content Accessibility Guidelines (WCAG) 2.1</a>. It meets nearly all evaluated requirements and is close to full conformance, with only a small number of known exceptions remaining. Accessibility is considered across complete editorial workflows, including finding content, editing forms, selecting related items, resolving validation errors, and publishing.</p>
 </div>
 <div class="paragraph">
-<p>Using "Variants" widget provided by <strong>Content Studio+</strong>, user can create variants of a specific content item, duplicate them (make copies of variants),
-then use URLs of variants in a 3rd party A/B Testing tool. Variants can be managed (modified, published, duplicated, deleted etc.) just as regular
-content items.</p>
-</div>
-<div class="paragraph">
-<p>To create a new variant, select a content item in the <a href="../navigator.ahtml">Navigator</a> grid, then open the "Variants" widget in the <a href="../contextpanel.ahtml">Context panel</a> on the right-hand side (if you cannot find it then you probably don&#8217;t have <strong>Content Studio+</strong> installed) and click "<strong>Create Variant</strong>" button.</p>
-</div>
-<div class="paragraph">
-<p>This will open a new modal dialog for specifying name of a variant, suggesting "<em>variant-1</em>", "<em>variant-2</em>" etc., based on how many variants of the item
-already exist. A new name will be verified for uniqueness. The rest of the properties will be copied from the original item.</p>
+<p>The tested Content Studio 6 interface achieved a perfect <strong>100/100 accessibility score in Lighthouse</strong>. This means that it passed every automated accessibility audit contributing to the score, providing a strong, repeatable benchmark for accessible names, element roles, color contrast, and other machine-testable qualities.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/variants-dialog.png" alt="New variant dialog" width="400px">
+<img src="images/accessibility-lighthouse.png" alt="Lighthouse report showing an accessibility score of 100 for Content Studio" width="760px">
 </div>
 </div>
 <div class="paragraph">
-<p>After a new variant is created, it will be placed under the original item in the Navigator grid and displayed in the "Variants" widget under
-the original item. Each variant has a context menu with "<strong>Edit</strong>" and "<strong>Duplicate</strong>" options.</p>
+<p>Enonic&#8217;s detailed accessibility assessment complements this automated benchmark with evaluation of real interaction patterns: keyboard navigation, focus management, screen-reader semantics, validation, dialogs, and responsive layouts. Together, automated and manual evaluation provide stronger evidence than either method alone and help prevent regressions as Content Studio evolves. The <a href="https://developer.chrome.com/docs/lighthouse/accessibility/scoring/">Lighthouse accessibility scoring reference</a> describes which automated audits contribute to its score.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="keyboard_operation"><a class="link" href="#keyboard_operation">Keyboard operation</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Content Studio supports keyboard navigation throughout its main work surfaces. Standard interaction patterns include:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Tab</code> and <code>Shift+Tab</code> move focus between controls.</p>
+</li>
+<li>
+<p>Arrow keys move within toolbars, menus, selectors, and content lists.</p>
+</li>
+<li>
+<p><code>Enter</code> or <code>Space</code> activates the focused control.</p>
+</li>
+<li>
+<p>Clearly visible focus indicators show which control will receive the next action.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The <a href="workbench/navigator.ahtml">Navigator toolbar and content list</a> can be operated from the keyboard. Content Editor and Rich Text Editor actions also have direct shortcuts for frequent operations such as saving, publishing, formatting text, and inserting links.</p>
+</div>
+<div class="paragraph">
+<p>Press <code>F2</code> to display the shortcuts available in the current view. See <a href="keyboard-shortcuts.ahtml">Keyboard shortcuts</a> for the complete reference.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="screen_readers"><a class="link" href="#screen_readers">Screen readers</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Content Studio&#8217;s controls are designed to expose their accessible name, role, and current state to assistive technologies. This is particularly important for controls whose visual presentation is primarily an icon, as well as for dynamic components such as:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Action toolbars and dropdown menus</p>
+</li>
+<li>
+<p>Content lists and item selectors</p>
+</li>
+<li>
+<p>Tabs, expandable panels, and context menus</p>
+</li>
+<li>
+<p>Modal dialogs and multi-step wizards</p>
+</li>
+<li>
+<p>Form validation and status messages</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Text labels accompany important states and actions so that meaning does not depend on an icon, position, or color alone. Consistent control patterns also reduce the amount of interface-specific behavior a screen-reader user must learn.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="focus_and_validation"><a class="link" href="#focus_and_validation">Focus and validation</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Keyboard focus is visually highlighted as it moves through interactive controls. Within toolbars and other composite controls, focus can move between individual actions without requiring pointer input.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/variants-grid.png" alt="Variants in Content Navigator" width="400px">
+<img src="images/accessibility-toolbar.png" alt="Toolbar screenshot showing composite control and focus on the edit button" width="970px">
 </div>
+</div>
+<div class="paragraph">
+<p>Forms identify invalid fields and surface validation feedback so that errors are not hidden inside collapsed sections or long forms. This is especially useful in the Content Editor, where a content type may contain many inputs and nested field sets.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/variants-widget.png" alt="Variants widget" width="400px">
+<img src="images/accessibility-forms.png" alt="Content Editor screenshot showing error reporting and propagation" width="884px">
+</div>
+</div>
+<div class="paragraph">
+<p>Dialogs and wizards use the same keyboard and focus conventions as the main interface. Primary and secondary actions have text labels, and multi-step flows identify the choices that must be completed before continuing.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/accessibility-wizard.png" alt="Wizard screenshot showing keyboard focus and multi-step flow" width="917px">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="visual_presentation"><a class="link" href="#visual_presentation">Visual presentation</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The interface uses a consistent visual hierarchy, accessible color contrast, and clear focus styling. Statuses are communicated with text and icons in addition to color.</p>
+</div>
+<div class="paragraph">
+<p>Content Studio&#8217;s responsive panels adapt to the available space. This supports different screen sizes and browser zoom levels while keeping the active work surface usable. Dark mode provides an alternative presentation for users who prefer a darker interface or work in low-light environments.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/accessibility-responsive.png" alt="Responsive panels in dark mode screenshot showing content editor" width="400px">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="authoring_accessible_content"><a class="link" href="#authoring_accessible_content">Authoring accessible content</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Content Studio also provides tools that help editors improve the accessibility of the content they publish:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The <a href="editor/rich-text-editor.ahtml#insert-image">Insert Image dialog</a> supports alternative text and lets editors mark decorative images appropriately.</p>
+</li>
+<li>
+<p>Rich text supports semantic heading levels, links, lists, tables, and other structured elements.</p>
+</li>
+<li>
+<p>Image captions can provide visible context in addition to alternative text.</p>
+</li>
+<li>
+<p>Field-level validation can require accessibility-related metadata when the content type is configured accordingly.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>These tools support accessible authoring, but cannot guarantee that the finished website is accessible. Site developers remain responsible for accessible templates and application output, while content managers remain responsible for meaningful text alternatives, headings, links, and media.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="reporting_accessibility_problems"><a class="link" href="#reporting_accessibility_problems">Reporting accessibility problems</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Accessibility problems should be reported with enough context to reproduce them:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Content Studio and Enonic XP versions</p>
+</li>
+<li>
+<p>Browser and operating-system versions</p>
+</li>
+<li>
+<p>Assistive technology and version, when applicable</p>
+</li>
+<li>
+<p>The view, content type, and sequence of actions involved</p>
+</li>
+<li>
+<p>The expected and observed keyboard or screen-reader behavior</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Screenshots are useful for visual issues, while a short screen recording or screen-reader transcript may better explain focus order, announcements, or other interaction problems.</p>
+</div>
 </div>
 </div>
 </div>

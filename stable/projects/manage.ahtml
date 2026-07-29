@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.26">
-<title>Variants</title>
+<title>Manage projects</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -435,11 +435,67 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body class="article">
+<body class="article toc2 toc-right">
 <div id="header">
-<h1>Variants</h1>
+<h1>Manage projects</h1>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#project-wizard">Create a project</a></li>
+<li><a href="#edit-project">Edit a project</a></li>
+<li><a href="#delete-project">Delete a project</a></li>
+</ul>
+</div>
 </div>
 <div id="content">
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Projects are created, edited, and deleted from the <a href="../workbench/settings.ahtml">Settings section</a> of Content Studio.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="project-wizard"><a class="link" href="#project-wizard">Create a project</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>New projects are created with the project wizard. It launches from the first-run dialog on the <a href="../projects.ahtml#project-wizard">Projects page</a>, or from the <b class="button">New</b> button in Settings. You can click the <b class="button">Previous</b> button at any time to review or change your choices, and the X icon to exit without creating a project.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Language and content layering</p>
+<div class="paragraph">
+<p>Optionally select a <strong>parent project</strong> — this makes the new project a <a href="layers.ahtml">layer</a>, inheriting content from the parent. Then select the <strong>default language</strong>, which will be applied to new content created in the root of the project.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/project-step1.png" alt="Dialog for selecting parent project and default language" width="839w">
+</div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+The parent project cannot be changed after the project is created. The default language can.
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Name your project</p>
+<div class="paragraph">
+<p>Give the project a <strong>display name</strong>. The <strong>identifier</strong> is auto-generated from the display name, but can be overridden. Only alphanumeric characters and "-" are allowed, the value is validated for uniqueness, and it cannot be changed later. Optionally, add a description.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/project-step2.png" alt="Dialog for setting project name and unique identifier" width="920w">
+</div>
+</div>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -447,44 +503,114 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-<strong>Content Studio+ feature.</strong> The Variants widget is part of the <a href="https://market.enonic.com/vendors/enonic/content-studio-plus">Content Studio+</a> subscription.
+When creating a layer, the wizard will suggest display name and description based on the parent project and the selected language.
 </td>
 </tr>
 </table>
 </div>
+</li>
+<li>
+<p>Public or private</p>
 <div class="paragraph">
-<p>Variants are essentially slightly modified copies of a content item used for comparing them against each other to determine
-which one performs better for end user (A/B Testing).</p>
-</div>
-<div class="paragraph">
-<p>Using "Variants" widget provided by <strong>Content Studio+</strong>, user can create variants of a specific content item, duplicate them (make copies of variants),
-then use URLs of variants in a 3rd party A/B Testing tool. Variants can be managed (modified, published, duplicated, deleted etc.) just as regular
-content items.</p>
-</div>
-<div class="paragraph">
-<p>To create a new variant, select a content item in the <a href="../navigator.ahtml">Navigator</a> grid, then open the "Variants" widget in the <a href="../contextpanel.ahtml">Context panel</a> on the right-hand side (if you cannot find it then you probably don&#8217;t have <strong>Content Studio+</strong> installed) and click "<strong>Create Variant</strong>" button.</p>
-</div>
-<div class="paragraph">
-<p>This will open a new modal dialog for specifying name of a variant, suggesting "<em>variant-1</em>", "<em>variant-2</em>" etc., based on how many variants of the item
-already exist. A new name will be verified for uniqueness. The rest of the properties will be copied from the original item.</p>
+<p>Select the <a href="../projects.ahtml#access-mode">access mode</a> — the default READ permissions for content in the project.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/variants-dialog.png" alt="New variant dialog" width="400px">
+<img src="images/project-step3.png" alt="Select default content visibility" width="920w">
 </div>
 </div>
+</li>
+<li>
+<p>Grant project roles</p>
 <div class="paragraph">
-<p>After a new variant is created, it will be placed under the original item in the Navigator grid and displayed in the "Variants" widget under
-the original item. Each variant has a context menu with "<strong>Edit</strong>" and "<strong>Duplicate</strong>" options.</p>
+<p>Give users or groups access to the project by assigning <a href="../projects.ahtml#project-roles">project roles</a>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/variants-grid.png" alt="Variants in Content Navigator" width="400px">
+<img src="images/project-step4.png" alt="Configure authoring access" width="920w">
 </div>
+</div>
+</li>
+<li>
+<p>Project scope applications</p>
+<div class="paragraph">
+<p>Select the <a href="../projects.ahtml#project-applications">applications</a> that should be available for the project&#8217;s content.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/variants-widget.png" alt="Variants widget" width="400px">
+<img src="images/project-step5.png" alt="Configure applications for project" width="920w">
+</div>
+</div>
+</li>
+<li>
+<p>Summary</p>
+<div class="paragraph">
+<p>Verify the settings of the project you are about to create, then click <b class="button">Create Project</b>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/project-summary.png" alt="Summary of project settings" width="920w">
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If you created a layer, a synchronization job will kick in and inherit content from the parent project.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="edit-project"><a class="link" href="#edit-project">Edit a project</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To edit existing projects, select a project and click <b class="button">Edit</b> in the Settings toolbar, or simply double-click a project. Most of the wizard&#8217;s settings can also be changed on an existing project. Things to be aware of:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Icon</strong> — click the project thumbnail to upload a custom icon. This can only be done after creation, as the wizard has no icon step.</p>
+</li>
+<li>
+<p><strong>Default language</strong> — changing it only affects new items created after the project is saved; existing content items keep their language.</p>
+</li>
+<li>
+<p><strong>Access mode</strong> — changing to or from <strong>Public</strong> must be confirmed, since it updates permissions on every single content item inside the project.</p>
+</li>
+<li>
+<p>The <strong>identifier</strong> and <strong>parent project</strong> can never be changed.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="delete-project"><a class="link" href="#delete-project">Delete a project</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To delete a project, select it in the Settings grid and click <b class="button">Delete</b> in the toolbar.</p>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+Deleting a project will delete its repository and all the data inside. This action has to be confirmed and cannot be undone.
+</td>
+</tr>
+</table>
+</div>
 </div>
 </div>
 </div>
