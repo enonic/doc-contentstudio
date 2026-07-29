@@ -441,6 +441,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
+<li><a href="#introduction">Introduction</a></li>
 <li><a href="#standards_and_evidence">Standards and evidence</a></li>
 <li><a href="#keyboard_operation">Keyboard operation</a></li>
 <li><a href="#screen_readers">Screen readers</a></li>
@@ -455,10 +456,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Accessibility is a firm product requirement in Content Studio, not an add-on. Content teams should not have to choose between advanced content management and an inclusive authoring environment. Keyboard operation, screen-reader support, visible focus, responsive layouts, and accessible color contrast are therefore built into the standard interface rather than confined to a separate mode.</p>
-</div>
-<div class="paragraph">
-<p>Content Studio 6 is built on the <a href="https://enonic.github.io/npm-enonic-ui/">Enonic UI design system</a>. Shared controls and interaction patterns make navigation more predictable across the Navigator, Content Editor, dialogs, selectors, and project-management tools.</p>
+<p>Accessibility is a firm product requirement in Content Studio, not an add-on.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -475,18 +473,29 @@ This page covers the accessibility of the Content Studio application. The access
 </div>
 </div>
 <div class="sect1">
+<h2 id="introduction"><a class="link" href="#introduction">Introduction</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Content teams should not have to choose between advanced content management and an inclusive authoring environment. Keyboard operation, screen-reader support, visible focus, responsive layouts, and accessible color contrast are therefore built into the standard interface rather than confined to a separate mode.</p>
+</div>
+<div class="paragraph">
+<p>Content Studio 6 is built on the <a href="https://enonic.github.io/npm-enonic-ui/">Enonic UI design system</a>. Shared controls and interaction patterns make navigation more predictable across the Navigator, Content Editor, dialogs, selectors, and project-management tools.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="standards_and_evidence"><a class="link" href="#standards_and_evidence">Standards and evidence</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Content Studio is engineered and evaluated against the <a href="https://www.w3.org/TR/WCAG21/">Web Content Accessibility Guidelines (WCAG) 2.1</a>. It meets nearly all evaluated requirements and is close to full conformance, with only a small number of known exceptions remaining. Accessibility is considered across complete editorial workflows, including finding content, editing forms, selecting related items, resolving validation errors, and publishing.</p>
 </div>
-<div class="paragraph">
-<p>The tested Content Studio 6 interface achieved a perfect <strong>100/100 accessibility score in Lighthouse</strong>. This means that it passed every automated accessibility audit contributing to the score, providing a strong, repeatable benchmark for accessible names, element roles, color contrast, and other machine-testable qualities.</p>
-</div>
 <div class="imageblock">
 <div class="content">
-<img src="images/accessibility-lighthouse.png" alt="Lighthouse report showing an accessibility score of 100 for Content Studio" width="760px">
+<img src="images/accessibility-lighthouse.png" alt="Lighthouse report showing an accessibility and best practices score of 100 of 100 for Content Studio" width="420px">
 </div>
+</div>
+<div class="paragraph">
+<p>The tested Content Studio 6 interface achieved a perfect <strong>100/100 accessibility score in Lighthouse</strong>. This means that it passed every automated accessibility audit contributing to the score, providing a strong, repeatable benchmark for accessible names, element roles, color contrast, and other machine-testable qualities.</p>
 </div>
 <div class="paragraph">
 <p>Enonic&#8217;s detailed accessibility assessment complements this automated benchmark with evaluation of real interaction patterns: keyboard navigation, focus management, screen-reader semantics, validation, dialogs, and responsive layouts. Together, automated and manual evaluation provide stronger evidence than either method alone and help prevent regressions as Content Studio evolves. The <a href="https://developer.chrome.com/docs/lighthouse/accessibility/scoring/">Lighthouse accessibility scoring reference</a> describes which automated audits contribute to its score.</p>
@@ -658,7 +667,7 @@ This page covers the accessibility of the Content Studio application. The access
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-07-29 14:38:20 UTC
+Last updated 2026-07-29 14:54:35 UTC
 </div>
 </div>
 </body>
