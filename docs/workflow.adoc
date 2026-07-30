@@ -2,22 +2,54 @@
 :toc: right
 :imagesdir: workflow/images
 
-Workflow is the state machine a content item moves through on its way to being published. The state is shown as an icon next to the content-type icon throughout the UI (a red icon indicates the content is invalid — for example, required fields are missing).
+Workflow is the state machine a content item moves through on its way to being published. 
+
+== Workflow state
+The general workflow state is presented as an icon next to the content-type throughout the UI (a red icon indicates the content is invalid — for example, required fields are missing).
 
 image::invalid-content.png[Invalid content with red icon, 484]
 
-The states:
+The workflow state icons:
 
+* *<<#_invalid,Invalid>>* — if a mandatory field is missing, or a validation test fails.
 * *<<#_in_progress,In progress>>* — default state for a new or modified content item. Cannot be published.
 * *<<#_ready_for_publishing,Ready for publishing>>* — the editor has explicitly flagged the content as done.
-* *<<#_publish_request,Publish request>>* — a review/approval has been requested from another user.
-* *<<#_published,Published>>* — the active version in the `draft` branch matches what is live on `master`.
-* *<<#_unpublished,Unpublished>>* — previously published content that has been taken offline.
 
-Transitions are driven by four actions: *Mark as ready*, *<<actions/publish#,Publish>>*, *<<actions/unpublish#,Unpublish>>*, and *<<issues/publish-request#,Request publishing>>* (documented under Issues because a publish request is an issue type with assignees, comments, and a shared Open-Issues list).
+Finally, if an item has been published, the workflow state is no longer displayed - as there are changes to publishing. If a published item is modified, it reverts to *In progress*.
+
+Additionally, items can be added to a <<issues/publish-request#,Publish request>>, before they are eventually published.
+
+Transitions between the states are driven by four actions: *Mark as ready*, *<<actions/publish#,Publish>>*, *<<actions/unpublish#,Unpublish>>*, and general creation and editing.
+
+
+[[_invalid]]
+=== Invalid (blocking publishing)
+
+Set whenever the content fails validation. Invalid content is marked with a red icon, and invalidity *takes priority over the other state icons* — an invalid item is shown as invalid whether it is in progress or ready.
+
+Typical causes:
+
+* a required field is empty — including the display name
+* an input has fewer or more entries than its allowed number of occurrences
+* a value fails the validation of its input type — a regular expression on a text line, a malformed rich text field, an invalid attachment
+* a required field is missing in a mixin, or in the app configuration of a site
+* a custom validator on the server rejects the content
+
+Validation runs when the content is opened and re-runs continuously while editing, so the state updates as the form is filled in. Invalid inputs are highlighted where they occur, and the errors are also summarized at the top of the form, so problems inside collapsed or nested sets are not missed. In the Content Editor, the state icon sits next to the *Publish* button in the toolbar.
+
+Invalid content can still be *saved* — validity never blocks saving work in progress. What it blocks is progress through the workflow:
+
+* *Mark as ready* is disabled for invalid content — an invalid item cannot reach <<#_ready_for_publishing,Ready>>, and therefore cannot be published the normal way.
+* In the <<actions/publish#,Publishing wizard>> invalid items block the batch, just like in-progress items do, but the bulk *Mark as ready* link will not clear them. They must either be fixed or excluded from the batch.
+
+Editing a published item into an invalid state is allowed: the red icon appears for the `draft` version, while the version already live on `master` is untouched.
+
+NOTE: Validity is not a stored state — unlike *In progress* and *Ready* it is derived, by validating the content every time it is loaded or changed.
+
+
 
 [[_in_progress]]
-== In progress
+=== In progress (blocking publishing)
 
 The default state of a new content item. Signals that the content is being worked on; it will stay in this state until the editor explicitly marks it as ready, or until a publisher overrides and publishes it directly.
 
@@ -40,8 +72,10 @@ The default toolbar action for in-progress content is *Mark as ready*.
 
 NOTE: A user with publish permission can invoke *Publish...* directly on in-progress content from the Content Editor — the item is automatically marked as ready first, on the assumption that invoking publish signals the work is finished.
 
+IMPORTANT: The auto-marking above is a Content Studio convenience, not a platform rule. Publishing through the API is stricter: https://developer.enonic.com/docs/xp/stable/api/lib-content#publish[`contentLib.publish()`] does not mark anything as ready, and content that is still in progress is not published. Code that publishes on behalf of an editor must set the workflow state to `READY` itself, via the `workflow` parameter of https://developer.enonic.com/docs/xp/stable/api/lib-content#update[`contentLib.update()`].
+
 [[_ready_for_publishing]]
-== Ready for publishing
+=== Ready (for publishing)
 
 Set by the *Mark as ready* action from the Content Editor or Content Navigator. The yellow `!` icon is replaced with a green `✓`, and the item becomes eligible for publishing.
 
@@ -53,13 +87,26 @@ TIP: Editors with publish permission may still use *Request publishing* when con
 
 Any edit to a *Ready for publishing* item immediately resets it to *In progress* — the editor must mark it ready again once the edits are finished.
 
+
 [[_publish_request]]
 == Publish request
 
 Set when another user has been asked to review and publish the item via the *Request publishing* action. The full wizard, the request dialog, and how requests are managed are documented on the <<issues/publish-request#,Publish request>> page.
 
+
+== Publish state
+
+In addition to the workflow state, the UI displays the publishing state of each content item. This is shown as a text element in the second column of the content list, and in the Content Editor toolbar.
+
+There are four publishing states:
+
+=== Offline (not published)
+
+The default state of a new content item. Signals that the content is not published, and will not be visible on the website. <<actions/unpublish#, Unpublishing>> an item returns it to this state as well.
+
+
 [[_published]]
-== Published
+=== Online (published)
 
 Set when the active version has been pushed from `draft` to `master`. No icon is shown — published is the default, quiet state.
 
@@ -67,7 +114,13 @@ Editing a published item resets the workflow state to *In progress*; the `master
 
 image::modified-content.png[Modified (published + in-progress) content, 500]
 
-[[_unpublished]]
-== Unpublished
+[[_scheduled]]
+=== Scheduled (not yet published)
 
-Set when a previously-published item is removed from `master` via the <<actions/unpublish#,Unpublish>> action. Unpublishing an item automatically unpublishes all of its descendants.
+When the editor has set a future date and time for the content to be published, the item is in the *Scheduled* state.
+
+
+[[_expired]]
+=== Expired (previously published)
+
+When the editor has set a future date and time for the content to be unpublished, and this time is reached, the item enters the *Expired* state.
