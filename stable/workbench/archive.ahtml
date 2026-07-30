@@ -441,11 +441,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#archive_in_layers">Archive in layers</a></li>
-<li><a href="#archive_view">Archive view</a></li>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#archive_browser">Archive browser</a></li>
 <li><a href="#restore">Restore</a></li>
 <li><a href="#permanent_deletion">Permanent deletion</a></li>
 <li><a href="#version_history">Version history</a></li>
+<li><a href="#archive_layers">Archive and layers</a></li>
 </ul>
 </div>
 </div>
@@ -453,40 +454,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>The <strong>Archive</strong> is a separate storage area where deleted content is held before it is permanently removed. It preserves the structure of removed items (descendants, attachments, version history) so content can be restored if it is deleted by mistake.</p>
+<p>The <strong>Archive</strong> is a separate storage area where deleted content is held before it is permanently removed.</p>
 </div>
-<div class="paragraph">
-<p>Content ends up in the Archive via the <a href="../actions/delete.ahtml">Delete</a> action from the Navigator or Editor. From the Archive, items can be <strong>restored</strong> to their original location or permanently deleted.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="archive_in_layers"><a class="link" href="#archive_in_layers">Archive in layers</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>When <a href="../projects/layers.ahtml">layers</a> are involved:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Deleting a content item in a parent project automatically archives it in all child layers where it is not localised.</p>
-</li>
-<li>
-<p>Creating a new layer automatically inherits the archive of its parent project/layer.</p>
-</li>
-<li>
-<p>Deleting an inherited (non-localised) item directly in a layer does not recreate it in the "main" storage — this is the intended way to prune unwanted inherited items from a layer.</p>
-</li>
-<li>
-<p>Permanently deleting a content item from a layer&#8217;s archive can recreate it in that layer&#8217;s main storage if it still exists in the parent (unless it was originally localised in the layer).</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="archive_view"><a class="link" href="#archive_view">Archive view</a></h2>
-<div class="sectionbody">
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -494,26 +463,42 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-<strong>Content Studio+ feature.</strong> The dedicated <strong>Archive</strong> section in the main menu is part of the <a href="https://market.enonic.com/vendors/enonic/content-studio-plus">Content Studio+</a> subscription. The <strong>Delete</strong> action itself (moving content to the archive) is available in all installations.
+Archiving is available in all Content Studio installations: the <strong>Delete</strong> action moves content to the Archive. The dedicated Archive browser—including browsing, restoring, and permanently deleting archived content—requires a <a href="https://market.enonic.com/vendors/enonic/content-studio-plus">Content Studio+</a> subscription.
 </td>
 </tr>
 </table>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="introduction"><a class="link" href="#introduction">Introduction</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Archive preserves the structure of removed items (descendants, attachments, version history) so content can easily be restored if it is deleted by mistake.</p>
+</div>
+<div class="paragraph">
+<p>When a user performs the <a href="../actions/delete.ahtml">Delete</a> action from the Navigator or Editor, the item is moved to the Archive. From the Archive, items can be <strong>Restored</strong> to their original location when possible, or to the project root when the original location is unavailable. They can also be permanently deleted.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="archive_browser"><a class="link" href="#archive_browser">Archive browser</a></h2>
+<div class="sectionbody">
 <div class="imageblock">
 <div class="content">
-<img src="archive/images/archived-content.png" alt="Archived contents" width="600">
+<img src="images/archive-browse.png" alt="View of the archive browser with list" width="preview and details panel" height="1440px">
 </div>
 </div>
 <div class="paragraph">
-<p>Click the <strong>Archive</strong> icon in the vertical main menu on the left to open the Archive view. It looks much like the <a href="navigator.ahtml">Navigator</a> with a few differences:</p>
+<p>Click the <strong>Archive</strong> icon in the Content Studio main menu to open the Archive view. It is similar to the <a href="navigator.ahtml">Navigator</a> with a few differences:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Only two actions are available: <strong>Restore</strong> and <strong>Delete</strong>. <strong>Restore</strong> returns the selected content to its original location. <strong>Delete</strong> physically removes the selected content from storage.</p>
+<p>Only two actions are available: <strong>Restore</strong> and <strong>Delete</strong>. <strong>Restore</strong> returns the selected content to its original location when possible, falling back to the project root when necessary. <strong>Delete</strong> permanently removes the selected content from storage.</p>
 </li>
 <li>
-<p>Preview works only for media items (images, videos, etc.).</p>
+<p>Preview only works for media items (images, videos, etc.).</p>
 </li>
 <li>
 <p>The widget selector has only two choices: <strong>Details</strong> and <strong>Version history</strong>.</p>
@@ -521,7 +506,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ul>
 </div>
 <div class="paragraph">
-<p>The preview panel on the right shows who archived each item, when, and what its original path was.</p>
+<p>The preview panel on the right shows who archived each item, when, and the original location of the item.</p>
 </div>
 </div>
 </div>
@@ -541,14 +526,14 @@ Archived content can only be restored from the Archive view, which requires <a h
 </table>
 </div>
 <div class="paragraph">
-<p>The <strong>Restore</strong> action in the Archive view opens the <strong>Restore from Archive</strong> dialog. Content is always restored together with all of its descendants, preserving structure.</p>
+<p>The <strong>Restore</strong> action in the Archive view opens the <strong>Restore from Archive</strong> dialog. Content is always restored together with all of its descendants, preserving structure. Content returns to its original location when that location is available; otherwise, it is restored to the project root.</p>
 </div>
 <div class="paragraph">
 <p>If an item is restored directly from a layer&#8217;s archive, it is automatically localised (unlinked from the corresponding content in the parent project/layer).</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="archive/images/restore-content.png" alt="Restore-from-archive dialog" width="600">
+<img src="images/archive-restore.png" alt="Restore dialog showing the items that will be restored" width="912px">
 </div>
 </div>
 <div class="admonitionblock tip">
@@ -558,7 +543,7 @@ Archived content can only be restored from the Archive view, which requires <a h
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-If the original location is no longer available (for example, another item now occupies the path), the system appends <code>-1</code>, <code>-2</code>, etc. to the restored item&#8217;s path.
+If an item with the same path already exists at the restore location, the system appends <code>-1</code>, <code>-2</code>, etc. to the restored item&#8217;s path.
 </td>
 </tr>
 </table>
@@ -569,7 +554,46 @@ If the original location is no longer available (for example, another item now o
 <h2 id="permanent_deletion"><a class="link" href="#permanent_deletion">Permanent deletion</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The <strong>Delete</strong> action inside the Archive view physically removes the selected content from storage. This is not reversible from the UI — recovery requires a snapshot restore.</p>
+<p>The <strong>Delete</strong> action in the Archive view permanently removes the selected items from the Archive. This is a separate operation from the <a href="../actions/delete.ahtml">Delete</a> action in the Navigator and Editor, which only moves content into the Archive.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/archive-delete.png" alt="Permanently delete dialog" width="912px">
+</div>
+</div>
+<div class="paragraph">
+<p>Select one or more items and click <strong>Delete</strong> to open the <strong>Delete from Archive</strong> dialog. The dialog lists:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The items selected for deletion.</p>
+</li>
+<li>
+<p>Any descendants and other content items that will be deleted with them.</p>
+</li>
+<li>
+<p>The total number of affected items on the confirmation button.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Deleting a parent item also deletes all of its descendants. Review the complete list before confirming the operation.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Permanent deletion removes the archived content, its attachments, and its stored version history. It cannot be undone or restored through Content Studio. Recovery requires an applicable repository snapshot or backup and must be performed outside Content Studio by an administrator.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Permanent deletion applies to the current project or layer. In a layered project, inherited content may reappear after its archived copy is permanently deleted; see <a href="#archive_layers">Archive and layers</a>.</p>
 </div>
 </div>
 </div>
@@ -577,19 +601,52 @@ If the original location is no longer available (for example, another item now o
 <h2 id="version_history"><a class="link" href="#version_history">Version history</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Delete and restore operations appear as entries in the <a href="contextpanel/versions.ahtml">Version history</a> widget for each content item.</p>
+<p>Delete and restore operations will appear as entries in the version history for the content item, making it possible to see when the item was archived and restored, and by whom.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="archive/images/version-history.png" alt="Version history of a restored item" width="394">
+<img src="images/archive-history.png" alt="Version history showing archive and restore actions" width="359px">
 </div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="archive_layers"><a class="link" href="#archive_layers">Archive and layers</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When working with <a href="../projects/layers.ahtml">layers</a>, there are some details to note about how things behave.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Deleting a content item in a parent project automatically archives it in all child layers (cascade style), unless the item has been localized.</p>
+</li>
+<li>
+<p>Creating a new layer automatically inherits the archive states of its parent project/layer. So once an item is archived in a parent layer it will also be archived in the child layer.</p>
+</li>
+<li>
+<p>Permanently deleting a content item from a layer&#8217;s archive will automatically recreate it in the branch content (if it still exists in the parent layer).</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+When permanently deleting a localized item, these changes will be lost and cannot be recovered, even if the item is recreated from the parent layer.
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ul>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-07-29 14:54:35 UTC
+Last updated 2026-07-30 13:11:09 UTC
 </div>
 </div>
 </body>
