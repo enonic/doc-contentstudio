@@ -30,6 +30,9 @@ Configure how child items of the selected content are ordered in the Navigator a
 <<actions/preview#,Preview>>::
 Open the rendered page for a site or page content in a new browser tab.
 
+<<workflow#_in_progress,Mark as ready>>::
+Flag in-progress content as done, making it eligible for publishing. Part of the publishing state machine, and documented under <<workflow#,Workflow>>.
+
 <<actions/publish#,Publish>>::
 Push content from the _draft_ branch to _master_ so it becomes available online. Covers the publishing wizard, scheduled publishing, and publishing with dependencies.
 
@@ -41,4 +44,4 @@ Remove content from the active tree. Deleted items are moved to the <<workbench/
 
 == Related reference
 
-*Mark as ready* and the publishing state machine are documented under <<workflow#,Workflow>>. *Request publishing* (the review/approval handoff variant of Publish) is a kind of issue — see <<issues/publish-request#,Publish request>>. *Permanent delete* (from the archive) and restoring archived items are on the <<workbench/archive#,Archive>> page. The *Create task* entry point is documented under <<issues#,Issues>>.
+The publishing state machine — invalid, in progress, ready, and the publish states — is documented under <<workflow#,Workflow>>. *Request publishing* (the review/approval handoff variant of Publish) is a kind of issue — see <<issues/publish-request#,Publish request>>. *Permanent delete* (from the archive) and restoring archived items are on the <<workbench/archive#,Archive>> page. The *Create task* entry point is documented under <<issues#,Issues>>.
