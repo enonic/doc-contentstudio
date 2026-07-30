@@ -1,52 +1,70 @@
 = Archive
 :toc: right
-:imagesdir: archive/images
+:imagesdir: images
 
-The *Archive* is a separate storage area where deleted content is held before it is permanently removed. It preserves the structure of removed items (descendants, attachments, version history) so content can be restored if it is deleted by mistake.
+The *Archive* is a separate storage area where deleted content is held before it is permanently removed.
 
-Content ends up in the Archive via the <<../actions/delete#,Delete>> action from the Navigator or Editor. From the Archive, items can be *restored* to their original location or permanently deleted.
+NOTE: Archiving is available in all Content Studio installations: the *Delete* action moves content to the Archive. The dedicated Archive browser—including browsing, restoring, and permanently deleting archived content—requires a https://market.enonic.com/vendors/enonic/content-studio-plus[Content Studio+] subscription.
 
-== Archive in layers
+== Introduction
+The Archive preserves the structure of removed items (descendants, attachments, version history) so content can easily be restored if it is deleted by mistake.
 
-When <<../projects/layers#,layers>> are involved:
+When a user performs the <<../actions/delete#,Delete>> action from the Navigator or Editor, the item is moved to the Archive. From the Archive, items can be *Restored* to their original location when possible, or to the project root when the original location is unavailable. They can also be permanently deleted.
 
-* Deleting a content item in a parent project automatically archives it in all child layers where it is not localised.
-* Creating a new layer automatically inherits the archive of its parent project/layer.
-* Deleting an inherited (non-localised) item directly in a layer does not recreate it in the "main" storage — this is the intended way to prune unwanted inherited items from a layer.
-* Permanently deleting a content item from a layer's archive can recreate it in that layer's main storage if it still exists in the parent (unless it was originally localised in the layer).
+== Archive browser
 
-== Archive view
+image::archive-browse.png[View of the archive browser with list, preview and details panel, 1440px]
 
-NOTE: *Content Studio+ feature.* The dedicated *Archive* section in the main menu is part of the https://market.enonic.com/vendors/enonic/content-studio-plus[Content Studio+] subscription. The *Delete* action itself (moving content to the archive) is available in all installations.
+Click the *Archive* icon in the Content Studio main menu to open the Archive view. It is similar to the <<navigator#,Navigator>> with a few differences:
 
-image::archived-content.png[Archived contents, 600]
-
-Click the *Archive* icon in the vertical main menu on the left to open the Archive view. It looks much like the <<navigator#,Navigator>> with a few differences:
-
-* Only two actions are available: *Restore* and *Delete*. *Restore* returns the selected content to its original location. *Delete* physically removes the selected content from storage.
-* Preview works only for media items (images, videos, etc.).
+* Only two actions are available: *Restore* and *Delete*. *Restore* returns the selected content to its original location when possible, falling back to the project root when necessary. *Delete* permanently removes the selected content from storage.
+* Preview only works for media items (images, videos, etc.).
 * The widget selector has only two choices: *Details* and *Version history*.
 
-The preview panel on the right shows who archived each item, when, and what its original path was.
+The preview panel on the right shows who archived each item, when, and the original location of the item.
 
 == Restore
 
 NOTE: Archived content can only be restored from the Archive view, which requires https://market.enonic.com/vendors/enonic/content-studio-plus[Content Studio+].
 
-The *Restore* action in the Archive view opens the *Restore from Archive* dialog. Content is always restored together with all of its descendants, preserving structure.
+The *Restore* action in the Archive view opens the *Restore from Archive* dialog. Content is always restored together with all of its descendants, preserving structure. Content returns to its original location when that location is available; otherwise, it is restored to the project root.
 
 If an item is restored directly from a layer's archive, it is automatically localised (unlinked from the corresponding content in the parent project/layer).
 
-image::restore-content.png[Restore-from-archive dialog, 600]
+image::archive-restore.png[Restore dialog showing the items that will be restored, 912px]
 
-TIP: If the original location is no longer available (for example, another item now occupies the path), the system appends `-1`, `-2`, etc. to the restored item's path.
+TIP: If an item with the same path already exists at the restore location, the system appends `-1`, `-2`, etc. to the restored item's path.
 
 == Permanent deletion
 
-The *Delete* action inside the Archive view physically removes the selected content from storage. This is not reversible from the UI — recovery requires a snapshot restore.
+The *Delete* action in the Archive view permanently removes the selected items from the Archive. This is a separate operation from the <<../actions/delete#,Delete>> action in the Navigator and Editor, which only moves content into the Archive.
+
+image::archive-delete.png[Permanently delete dialog, 912px]
+
+Select one or more items and click *Delete* to open the *Delete from Archive* dialog. The dialog lists:
+
+* The items selected for deletion.
+* Any descendants and other content items that will be deleted with them.
+* The total number of affected items on the confirmation button.
+
+Deleting a parent item also deletes all of its descendants. Review the complete list before confirming the operation.
+
+IMPORTANT: Permanent deletion removes the archived content, its attachments, and its stored version history. It cannot be undone or restored through Content Studio. Recovery requires an applicable repository snapshot or backup and must be performed outside Content Studio by an administrator.
+
+Permanent deletion applies to the current project or layer. In a layered project, inherited content may reappear after its archived copy is permanently deleted; see <<archive_layers,Archive and layers>>.
 
 == Version history
+Delete and restore operations will appear as entries in the version history for the content item, making it possible to see when the item was archived and restored, and by whom.
 
-Delete and restore operations appear as entries in the <<contextpanel/versions#,Version history>> widget for each content item.
+image::archive-history.png[Version history showing archive and restore actions, 359px]
 
-image::version-history.png[Version history of a restored item, 394]
+[#archive_layers]
+== Archive and layers
+
+When working with <<../projects/layers#,layers>>, there are some details to note about how things behave.
+
+* Deleting a content item in a parent project automatically archives it in all child layers (cascade style), unless the item has been localized.
+* Creating a new layer automatically inherits the archive states of its parent project/layer. So once an item is archived in a parent layer it will also be archived in the child layer.
+* Permanently deleting a content item from a layer's archive will automatically recreate it in the branch content (if it still exists in the parent layer).
++
+NOTE: When permanently deleting a localized item, these changes will be lost and cannot be recovered, even if the item is recreated from the parent layer.
