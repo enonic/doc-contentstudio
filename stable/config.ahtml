@@ -453,7 +453,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li><a href="#publishing_wizard">Publishing Wizard</a>
 <ul class="sectlevel2">
-<li><a href="#disable_mark_as_ready_action">Disable "Mark as Ready" action</a></li>
+<li><a href="#disable_mark_as_ready">Disable "Mark as Ready" action</a></li>
 <li><a href="#default_online_from_time">Default "Online from" time</a></li>
 <li><a href="#required_online_from">Required "Online from"</a></li>
 <li><a href="#exclude_optional_dependencies">Exclude optional dependencies</a></li>
@@ -594,7 +594,7 @@ While using Site Engine in visual edit mode, the CSP is strictly enforced, and i
 <h2 id="publishing_wizard"><a class="link" href="#publishing_wizard">Publishing Wizard</a></h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="disable_mark_as_ready_action"><a class="link" href="#disable_mark_as_ready_action">Disable "Mark as Ready" action</a></h3>
+<h3 id="disable_mark_as_ready"><a class="link" href="#disable_mark_as_ready">Disable "Mark as Ready" action</a></h3>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-properties" data-lang="properties">publishingWizard.allowContentUpdate = false</code></pre>
@@ -677,7 +677,7 @@ can be disabled by adding the parameter above to the config file.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-07-30 13:11:09 UTC
+Last updated 2026-07-30 14:15:36 UTC
 </div>
 </div>
 </body>

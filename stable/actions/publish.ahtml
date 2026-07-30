@@ -663,7 +663,7 @@ The default inclusion behaviour can be inverted via the <a href="../config.ahtml
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-Use the <strong>Mark as ready</strong> link in the status bar to bulk-mark all in-progress items as ready.
+Use the <strong>Mark as ready</strong> link in the status bar to bulk-mark all in-progress items as ready, or click an individual item&#8217;s link to open it in the Content Editor and mark it ready there. The bulk action can be disabled via the <a href="../config.ahtml#disable_mark_as_ready">Content Studio config file</a> — see <a href="../workflow.ahtml#_in_progress">Workflow</a>.
 </td>
 </tr>
 </table>
@@ -739,7 +739,7 @@ Users with publish permission can use <strong>Publish&#8230;&#8203;</strong> on 
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-07-30 13:11:09 UTC
+Last updated 2026-07-30 14:15:36 UTC
 </div>
 </div>
 </body>

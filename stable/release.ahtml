@@ -648,9 +648,6 @@ the page editor and content grid.</p>
 <p><strong>Import content widget</strong> — import widget is now a native Content Studio feature.</p>
 </li>
 <li>
-<p><strong>Archive with a message</strong> — provide a reason/message when archiving content.</p>
-</li>
-<li>
 <p><strong>New-version notification</strong> — Content Studio notifies when a new version is available.</p>
 </li>
 <li>
@@ -668,36 +665,52 @@ the page editor and content grid.</p>
 <h2 id="known_issues"><a class="link" href="#known_issues">Known issues</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>There are some known issues in Content Studio 6.0.0 that we are working to resolve ASAP. These include:</p>
+<p>The list below reflects Content Studio 6.0.3. Several issues reported for 6.0.0 have been resolved in the 6.0.x patch releases — see the <a href="https://github.com/enonic/app-contentstudio/releases">release changelogs</a> for the full list. Remaining known issues that we are working to resolve ASAP:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Publishing wizard</strong> - Dependencies are not always showing up in the publishing wizard, and the "select all" option is missing for dependencies. This may lead to publishing content with missing dependencies, which can cause issues on the live site.</p>
+<p><strong>Archive log message</strong> — the Delete/Archive dialog is missing the input for providing a log message for the archived version. Archiving with a message is therefore not available in 6.0.</p>
 </li>
 <li>
-<p><strong>Image editor</strong> — the image editor is now integrated with media preview, but cropping feature is not fully working yet.</p>
-</li>
-<li>
-<p><strong>Image selector</strong> — Drag and drop functionality is not working.</p>
+<p><strong>Publishing wizard</strong> — a parent item is not automatically checked when one of its children is selected in the dependencies list.</p>
 </li>
 <li>
 <p><strong>Stale data</strong> - for some changes to data the UI does not update immediately, but requires a manual refresh.</p>
 </li>
 <li>
-<p><strong>Fragments</strong> — there are incorrect menu items and preview rendering for fragments.</p>
+<p><strong>Fragments</strong> — preview rendering for fragments is not always correct.</p>
 </li>
 <li>
-<p><strong>Validation on rename</strong> - The rename dialog does not properly validate the input.</p>
+<p><strong>Arrow keys</strong> - for some input fields and lists, the arrow keys do not work as expected.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Resolved in the 6.0.x patch releases:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Publishing wizard</strong> — missing dependencies and the missing "select all" option for dependencies (6.0.1, 6.0.2).</p>
 </li>
 <li>
-<p><strong>Version history</strong> — Some imported content shows wrong dates in version history.</p>
+<p><strong>Image editor</strong> — cropping (6.0.1, 6.0.2).</p>
 </li>
 <li>
-<p><strong>Arrow keys</strong> - for some input fields, the arrow keys do not work as expected.</p>
+<p><strong>Image selector</strong> — drag and drop (6.0.2).</p>
 </li>
 <li>
-<p><strong>Content icons</strong> - it is not currently possible to upload custom icons for content items.</p>
+<p><strong>Fragments</strong> — incorrect menu items (6.0.2, 6.0.3).</p>
+</li>
+<li>
+<p><strong>Validation on rename</strong> — the rename dialog now validates the input (6.0.2, 6.0.3).</p>
+</li>
+<li>
+<p><strong>Version history</strong> — wrong dates for imported content (6.0.1).</p>
+</li>
+<li>
+<p><strong>Content icons</strong> — custom icons can be uploaded for content items and projects (6.0.3).</p>
 </li>
 </ul>
 </div>
@@ -759,7 +772,7 @@ Full functionalilty may be re-activated via the <a href="config.ahtml">content s
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-07-30 13:11:09 UTC
+Last updated 2026-07-30 14:15:36 UTC
 </div>
 </div>
 </body>

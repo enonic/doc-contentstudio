@@ -499,12 +499,40 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="paragraph">
-<p>In-progress content is <strong>not eligible for publishing</strong> — this is deliberate, to keep unfinished content from being published by accident. The <a href="actions/publish.ahtml">Publishing wizard</a> will block the batch and highlight the offending items:</p>
+<p>In-progress content is <strong>not eligible for publishing</strong> — this is deliberate, to keep unfinished content from being published by accident. Whenever a batch contains at least one in-progress item, the <a href="actions/publish.ahtml">Publishing wizard</a> disables <strong>Publish</strong>, shows a warning, and pins the offending items to the top of the list:</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="workflow/images/publish-wizard-in-progress.png" alt="In-progress content blocked in the Publishing wizard" width="655">
 </div>
+</div>
+<div class="paragraph">
+<p>There are two ways to resolve this from inside the dialog:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Mark all as ready at once</strong> — click the <strong>Mark as ready</strong> link in the warning at the top of the dialog. Every in-progress item in the batch is marked ready in one operation, the warning clears, and <strong>Publish</strong> becomes enabled.</p>
+</li>
+<li>
+<p><strong>Handle items one at a time</strong> — click an item&#8217;s link in the list to open it in the Content Editor, finish the work, and mark it ready there. Validation re-runs when the wizard is updated, so the item drops off the warning list as soon as it is ready.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The in-progress items can also simply be excluded from the batch, so the rest can be published.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The bulk <strong>Mark as ready</strong> link can be turned off in the <a href="config.ahtml#disable_mark_as_ready">Content Studio configuration</a>. With bulk readiness disabled, each item must be opened and marked ready individually — useful when a stricter approval process is required.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>The default toolbar action for in-progress content is <strong>Mark as ready</strong>.</p>
@@ -589,7 +617,7 @@ Editors with publish permission may still use <strong>Request publishing</strong
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-07-30 13:11:09 UTC
+Last updated 2026-07-30 14:15:36 UTC
 </div>
 </div>
 </body>
