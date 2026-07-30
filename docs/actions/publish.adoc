@@ -77,7 +77,7 @@ Each validation check has a link that excludes the offending items from the batc
 
 image::dialog-publish-valid.png[Ready to publish, 940]
 
-TIP: Use the *Mark as ready* link in the status bar to bulk-mark all in-progress items as ready.
+TIP: Use the *Mark as ready* link in the status bar to bulk-mark all in-progress items as ready, or click an individual item's link to open it in the Content Editor and mark it ready there. The bulk action can be disabled via the <<../config#disable_mark_as_ready,Content Studio config file>> — see <<../workflow#_in_progress,Workflow>>.
 
 NOTE: Some items are required for the batch and cannot be excluded — typically parents and mandatory inbound dependencies.
 

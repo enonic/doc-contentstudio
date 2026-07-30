@@ -87,6 +87,7 @@ NOTE: While using Site Engine in visual edit mode, the CSP is strictly enforced,
 
 == Publishing Wizard
 
+[[disable_mark_as_ready]]
 === Disable "Mark as Ready" action
 
 [source,properties]

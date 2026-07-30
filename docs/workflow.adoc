@@ -23,9 +23,18 @@ The default state of a new content item. Signals that the content is being worke
 
 image::content-in-progress.png[In-progress content in the editor, 484]
 
-In-progress content is *not eligible for publishing* — this is deliberate, to keep unfinished content from being published by accident. The <<actions/publish#,Publishing wizard>> will block the batch and highlight the offending items:
+In-progress content is *not eligible for publishing* — this is deliberate, to keep unfinished content from being published by accident. Whenever a batch contains at least one in-progress item, the <<actions/publish#,Publishing wizard>> disables *Publish*, shows a warning, and pins the offending items to the top of the list:
 
 image::publish-wizard-in-progress.png[In-progress content blocked in the Publishing wizard, 655]
+
+There are two ways to resolve this from inside the dialog:
+
+* *Mark all as ready at once* — click the *Mark as ready* link in the warning at the top of the dialog. Every in-progress item in the batch is marked ready in one operation, the warning clears, and *Publish* becomes enabled.
+* *Handle items one at a time* — click an item's link in the list to open it in the Content Editor, finish the work, and mark it ready there. Validation re-runs when the wizard is updated, so the item drops off the warning list as soon as it is ready.
+
+The in-progress items can also simply be excluded from the batch, so the rest can be published.
+
+NOTE: The bulk *Mark as ready* link can be turned off in the <<config#disable_mark_as_ready,Content Studio configuration>>. With bulk readiness disabled, each item must be opened and marked ready individually — useful when a stricter approval process is required.
 
 The default toolbar action for in-progress content is *Mark as ready*.
 

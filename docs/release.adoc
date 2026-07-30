@@ -98,7 +98,6 @@ the page editor and content grid.
 === Improvements
 
 * *Import content widget* — import widget is now a native Content Studio feature.
-* *Archive with a message* — provide a reason/message when archiving content.
 * *New-version notification* — Content Studio notifies when a new version is available.
 * *baseUrl support* — support for configuring a base URL for your front-end directly in Content Studio.
 * *Scheduled publishing defaults* — "Online from" defaults to "Now", and the Publish button shows a distinct caption for scheduled publishing.
@@ -107,17 +106,23 @@ the page editor and content grid.
 
 == Known issues
 
-There are some known issues in Content Studio 6.0.0 that we are working to resolve ASAP. These include:
+The list below reflects Content Studio 6.0.3. Several issues reported for 6.0.0 have been resolved in the 6.0.x patch releases — see the https://github.com/enonic/app-contentstudio/releases[release changelogs] for the full list. Remaining known issues that we are working to resolve ASAP:
 
-* *Publishing wizard* - Dependencies are not always showing up in the publishing wizard, and the "select all" option is missing for dependencies. This may lead to publishing content with missing dependencies, which can cause issues on the live site.
-* *Image editor* — the image editor is now integrated with media preview, but cropping feature is not fully working yet.
-* *Image selector* — Drag and drop functionality is not working.
+* *Archive log message* — the Delete/Archive dialog is missing the input for providing a log message for the archived version. Archiving with a message is therefore not available in 6.0.
+* *Publishing wizard* — a parent item is not automatically checked when one of its children is selected in the dependencies list.
 * *Stale data* - for some changes to data the UI does not update immediately, but requires a manual refresh.
-* *Fragments* — there are incorrect menu items and preview rendering for fragments.
-* *Validation on rename* - The rename dialog does not properly validate the input.
-* *Version history* — Some imported content shows wrong dates in version history.
-* *Arrow keys* - for some input fields, the arrow keys do not work as expected.
-* *Content icons* - it is not currently possible to upload custom icons for content items.
+* *Fragments* — preview rendering for fragments is not always correct.
+* *Arrow keys* - for some input fields and lists, the arrow keys do not work as expected.
+
+Resolved in the 6.0.x patch releases:
+
+* *Publishing wizard* — missing dependencies and the missing "select all" option for dependencies (6.0.1, 6.0.2).
+* *Image editor* — cropping (6.0.1, 6.0.2).
+* *Image selector* — drag and drop (6.0.2).
+* *Fragments* — incorrect menu items (6.0.2, 6.0.3).
+* *Validation on rename* — the rename dialog now validates the input (6.0.2, 6.0.3).
+* *Version history* — wrong dates for imported content (6.0.1).
+* *Content icons* — custom icons can be uploaded for content items and projects (6.0.3).
 
 
 [#upgrade]
