@@ -532,13 +532,32 @@ The preview mode selected in the panel is also used in the new tab.
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>Automatic mode is the default, and will pick the first mode that supports the current content.</p>
+</div>
 <div class="imageblock">
 <div class="content">
-<img src="images/preview-modes.png" alt="Preview panel showing the preview mode selector" width="904px">
+<img src="images/preview-modes.png" alt="Preview panel in Automatic mode showing the preview mode selector" width="904px">
 </div>
+<div class="title">Figure 1. Automatic preview mode</div>
 </div>
 <div class="paragraph">
 <p>For content that cannot be rendered by any of the available preview modes, the Preview panel shows a placeholder saying "No preview available". However, you may still manually select the JSON preview mode to see the content in raw JSON format.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/preview-none.png" alt="Preview panel showing &quot;No preview available&quot;" width="918px">
+</div>
+<div class="title">Figure 2. No preview available</div>
+</div>
+<div class="paragraph">
+<p>Users may manually select the JSON preview mode to see the content in raw JSON format, even if no other preview is available.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/preview-json.png" alt="Preview panel in JSON mode" width="949px">
+</div>
+<div class="title">Figure 3. JSON preview mode</div>
 </div>
 </div>
 </div>
@@ -556,7 +575,7 @@ The preview mode selected in the panel is also used in the new tab.
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-07-31 08:17:31 UTC
+Last updated 2026-07-31 08:40:22 UTC
 </div>
 </div>
 </body>

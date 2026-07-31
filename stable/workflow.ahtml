@@ -654,7 +654,7 @@ Editors with publish permission may still use <strong>Request publishing</strong
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/workflow-publish-state.png" alt="Publishing state is listed in the priority two column as text (Online" width="Offline etc)" height="565px">
+<img src="images/workflow-publish-state.png" alt="Publishing state is listed in the priority two column as text (Online Offline etc)" width="565px">
 </div>
 </div>
 <div class="sect2">
@@ -703,7 +703,7 @@ The <code>master</code> branch is unaffected by your edits in the <code>draft</c
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/workflow-combined.png" alt="All statuses combined" width="as seen in the publishing wizard" height="797px">
+<img src="images/workflow-change-state.png" alt="Change state to the right as seen in the publishing wizard together with the workflow and publishing state" width="797px">
 </div>
 </div>
 <div class="paragraph">
@@ -772,7 +772,7 @@ The <code>master</code> branch is unaffected by your edits in the <code>draft</c
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-07-31 08:17:31 UTC
+Last updated 2026-07-31 08:40:22 UTC
 </div>
 </div>
 </body>
