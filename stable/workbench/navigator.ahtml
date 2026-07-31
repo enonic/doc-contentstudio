@@ -576,7 +576,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Column 1 contains the content type icon, display name, and path. An expand icon appears when the content has children. Additionally, a workflow state icon may appear on top of the content icon, indicating invalid, in progress or ready.</p>
 </li>
 <li>
-<p>Column 2 shows an icon representing publishing status: <code>Online</code>, <code>Offline</code>, <code>Scheduled</code>, or <code>Expired</code>, telling you whether the content is currently published, unpublished or not.</p>
+<p>Column 2 shows the <a href="../workflow.ahtml#publish_state">publish state</a> as text: <code>Online</code>, <code>Offline</code>, <code>Scheduled</code>, or <code>Expired</code>, telling you whether the content is currently published, unpublished or not.</p>
 </li>
 </ul>
 </div>
@@ -686,7 +686,7 @@ If you are working in a layer, a third column will appear, showing the content&#
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-07-30 19:01:43 UTC
+Last updated 2026-07-31 08:17:31 UTC
 </div>
 </div>
 </body>

@@ -459,7 +459,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </dd>
 <dt class="hdlist1">Status</dt>
 <dd>
-<p>Current content status: <em>New</em>, <em>Modified</em>, <em>Published</em>, <em>Unpublished</em>, or <em>Archived</em>. See <a href="../../workflow.ahtml">Workflow</a> for the state model.</p>
+<p>Current <a href="../../workflow.ahtml#change_status">change status</a>: <em>New</em>, <em>Modified</em>, <em>Moved</em>, <em>Published</em>, <em>Unpublished</em>, or <em>Archived</em>. See <a href="../../workflow.ahtml">Workflow</a> for the full state model.</p>
 </dd>
 <dt class="hdlist1">User access</dt>
 <dd>
@@ -486,7 +486,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-07-30 19:01:43 UTC
+Last updated 2026-07-31 08:17:31 UTC
 </div>
 </div>
 </body>
