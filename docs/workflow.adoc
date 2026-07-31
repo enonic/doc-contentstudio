@@ -19,9 +19,9 @@ Workflow is the state machine a content item moves through on its way to being p
 image::workflow-state.png[List of content items demonstrating different workflow states via icons red (x) invalid - yellow (!) in progress - green (✓) ready as well as publish states ONLINE and OFFLINE, 565px]
 
 
-* *<<#_invalid,Invalid>>* — if a mandatory field is missing, or a validation test fails.
-* *<<#_in_progress,In progress>>* — default state for a new or modified content item. Cannot be published.
-* *<<#_ready_for_publishing,Ready for publishing>>* — the editor has explicitly flagged the content as done.
+<<#_invalid,Invalid>>:: A mandatory field is missing, or a validation test fails. Blocks publishing.
+<<#_in_progress,In progress>>:: Default state for a new or modified content item. Blocks publishing.
+<<#_ready_for_publishing,Ready for publishing>>:: The editor has explicitly flagged the content as done, making it eligible for publishing.
 
 When an item has been published, the workflow state is no longer displayed - as there are no changes to publishing. If a published item is modified, it immediately reverts back to *In progress*.
 
@@ -30,7 +30,7 @@ Transitions between the states are driven by four actions: *Mark as ready*, *<<a
 
 
 [[_invalid]]
-=== Invalid (blocking publishing)
+=== Invalid (blocking)
 
 Set whenever the content fails validation. Invalid content is marked with a red icon, and invalidity *takes priority over the other state icons* — an invalid item is shown as invalid whether it is in progress or ready.
 
@@ -55,7 +55,7 @@ NOTE: Validity is not a stored state — unlike *In progress* and *Ready* it is 
 
 
 [[_in_progress]]
-=== In progress (blocking publishing)
+=== In progress (blocking)
 
 The default state of a new content item. Signals that the content is being worked on; it will stay in this state until the editor explicitly marks it as ready, or until a publisher overrides and publishes it directly.
 
@@ -94,27 +94,12 @@ There are four publishing states:
 
 image::workflow-publish-state.png[Publishing state is listed in the priority two column as text (Online Offline etc), 565px]
 
-=== Offline (not published)
-
-The default state of a new content item. Signals that the content is not published, and will not be visible on the website. <<actions/unpublish#,Unpublishing>> an item returns it to this state as well.
-
-
-[[_published]]
-=== Online (item is published and live)
-
-Set when the active version has been pushed from `draft` to `master`. For a published item with no changes, the workflow state icon is hidden (indicating no pending changes). Editing a published item resets the workflow state to *In progress*. Unpublishing an item returns the publishing state to *Offline*.
+Offline:: The item is not published, and is not visible on the website. This is the default state of a new content item, and <<actions/unpublish#,Unpublishing>> an item returns it to this state as well.
+Online:: The active version has been pushed from `draft` to `master`, and the item is live. For a published item with no changes, the workflow state icon is hidden. Editing a published item resets the workflow state to *In progress*.
+Scheduled:: The editor has set a future date and time for the content to be published. It is not live yet.
+Expired:: The editor set a date and time for the content to be unpublished, and that time has been reached. The item was previously online.
 
 NOTE: The `master` branch is unaffected by your edits in the `draft` branch until the item is published again.
-
-[[_scheduled]]
-=== Scheduled (not published yet)
-
-When the editor has set a future date and time for the content to be published, the item is in the *Scheduled* state.
-
-[[_expired]]
-=== Expired (previously published)
-
-When the editor has set a future date and time for the content to be unpublished, and this time is reached, the item enters the *Expired* state.
 
 
 [[change_status]]
@@ -145,7 +130,7 @@ Items with change status *Published* never appear in the Publishing wizard — t
 [[_publish_request]]
 == Publish request
 
-Publish requests are part of the effective workflow, but are not a workflow state by itself, as they operate across multiple items.
+Publish requests are part of the effective workflow, but not a workflow state in themselves, as they operate across multiple items. They exist so work can be handed to someone else for review and publishing — typically when the editor lacks publish permission, or wants sign-off before going live. The full wizard, the request dialog, and how requests are managed are documented on the <<issues/publish-request#,Publish request>> page.
 
-Items can be added to issues, or publish requests to aid the communication between users, or in the case where a user does not have publish permissions. The full wizard, the request dialog, and how requests are managed are documented on the <<issues/publish-request#,Publish request>> page.
+NOTE: Content items can also be attached to *tasks*, the other issue type. Unlike publish requests, tasks are purely editorial work items — they have no effect on an item's workflow or publish state. See <<issues#,Issues>>.
 

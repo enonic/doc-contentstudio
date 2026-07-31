@@ -27,23 +27,17 @@ NOTE: The default action shown on the toolbar button is the first available acti
 
 == Draft and Master branches
 
-Content created in Content Studio lands in the *draft* branch with status `New` and workflow state `In progress`. Saves in the draft branch create new versions; the draft can be edited and previewed until it is ready to publish.
+Content created in Content Studio lands in the *draft* branch with change status *New* and workflow state *In progress*. Saves in the draft branch create new versions; the draft can be edited and previewed until it is ready to publish.
 
 When published, the active draft version is copied into the *master* branch. Only content in the *master* branch is visible outside Content Studio (subject to the content's <<../workbench/permissions#,security settings>>).
 
 == Change status
 
-Every item carries a <<../workflow#change_status,change status>> describing what has happened to it since it was last published:
+Every item carries a <<../workflow#change_status,change status>> — *New*, *Modified*, *Moved*, *Published* or *Unpublished* — describing what has happened to it since it was last published.
 
-* `New` — never published.
-* `Modified` — previously published, then changed in the draft branch. The master version is still live.
-* `Moved` — renamed or moved to another parent since it was published. Combines with the others, as in `Modified, Moved`.
-* `Published` — the active draft version matches what is in master.
-* `Unpublished` — was published, then taken offline.
+In the Publishing wizard the change status is listed per item, next to the item's <<../workflow#publish_state,publish state>> — for example `ONLINE | Modified, Moved`. Items with status *Published* are not listed, as they have nothing to publish.
 
-In the Publishing wizard the change status is listed per item, next to the item's <<../workflow#publish_state,publish state>> — for example `ONLINE | Modified, Moved`. Items with status `Published` are not listed, as they have nothing to publish.
-
-When a published content is edited and saved, the new version becomes active in `draft`, but `master` is unchanged. Status flips to `Modified`, and the content must be re-published for changes to go live.
+When a published content is edited and saved, the new version becomes active in `draft`, but `master` is unchanged. Change status flips to *Modified*, and the content must be re-published for changes to go live.
 
 Content can either be archived or instantly deleted via the <<../workbench/archive#,Archive>> dialog. Both take the content offline (remove it from `master`) if it was published. Instant deletion removes it from both branches; archived items move under the `/archive` node and can be restored.
 
