@@ -35,9 +35,22 @@ By default, the panel offers the following preview modes:
 * *Standard* — uses Enonic's built-in framework to render the content.
 * *JSON* — displays the current content in JSON format. Available for any content, but not used as a fallback by *Automatic*.
 
-image::preview-modes.png[Preview panel showing the preview mode selector, 904px]
+
+Automatic mode is the default, and will pick the first mode that supports the current content.
+
+.Automatic preview mode
+image::preview-modes.png[Preview panel in Automatic mode showing the preview mode selector, 904px]
 
 For content that cannot be rendered by any of the available preview modes, the Preview panel shows a placeholder saying "No preview available". However, you may still manually select the JSON preview mode to see the content in raw JSON format.
+
+.No preview available
+image::preview-none.png[Preview panel showing "No preview available", 918px]
+
+Users may manually select the JSON preview mode to see the content in raw JSON format, even if no other preview is available.
+
+.JSON preview mode
+image::preview-json.png[Preview panel in JSON mode, 949px]
+
 
 == Pluggability
 

@@ -92,7 +92,7 @@ In addition to the workflow state, the UI displays the publishing state of each 
 
 There are four publishing states:
 
-image::workflow-publish-state.png[Publishing state is listed in the priority two column as text (Online, Offline etc), 565px]
+image::workflow-publish-state.png[Publishing state is listed in the priority two column as text (Online Offline etc), 565px]
 
 === Offline (not published)
 
@@ -122,7 +122,7 @@ When the editor has set a future date and time for the content to be unpublished
 
 The third state tells you *what has happened to the item since it was last published* — the same service `git status` performs for a working copy, one line per item.
 
-image::workflow-combined.png[All statuses combined, as seen in the publishing wizard, 797px]
+image::workflow-change-state.png[Change state to the right as seen in the publishing wizard together with the workflow and publishing state, 797px]
 
 
 The values are:
