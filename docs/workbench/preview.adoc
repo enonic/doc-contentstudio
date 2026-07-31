@@ -1,57 +1,46 @@
 = Preview
 :toc: right
-:imagesdir: preview/images
+:imagesdir: images
 
-The *Preview panel* shows how the selected content will appear to an end user. It sits in two places:
+The *Preview panel* delivers pluggable visualization of the selected content item.
 
-* In the <<navigator#,Navigator>>, to the right of the content list.
-* In the <<../editor#,Editor>>, in the middle, when the content is _not_ renderable. For renderable content (sites, pages, page templates, and any content type with a supporting template) the middle panel is replaced with the <<../editor/page-editor#,Page editor>> — a drag-and-drop page-building surface rather than a read-only preview.
-
-Preview is *pluggable*: the actual view that appears depends on the content item, the applications installed on its site, and any preview contributions from those applications.
-
-image::navigator-preview.png[Showing content preview, 75%, align="center"]
+The preview panel appears in the <<navigator#,Navigator>> and the <<archive#,Archive>>, to the right of the content list, and in the <<../editor#,Editor>>, to the right of the content form. For smaller screens, the preview panel will only appear when a user select an item, or manually activates it.
 
 In the Navigator the preview is dynamic — clicking a link will navigate you to the target page, both inside the preview panel and the content list. Only the *Draft* version of content is visible.
 
+The btn:[Preview] button in the Navigator and Editor toolbars opens the content full screen, in a new browser tab — see the <<../actions/preview#,Preview action>>.
+
+NOTE: The preview mode selected in the panel is also used in the new tab.
+
 == Toolbar
 
-The preview-panel toolbar contains:
+The preview-panel toolbar contains the following controls:
 
-* Current *status* of the selected content item (e.g. `New`, `Published`, `Unpublished`, `Modified`). For items that have been published and then modified, an icon (image:navigator-compare.png[title=Show changes, width=24px]) lets you compare current with published.
+image::preview-toolbar.png[Preview toolbar with change state, emulator selector, preview mode selector and a refresh button, 949px]
+
+* *Change status* — shows the <<../workflow#change_status,change status>> of the selected content item — `New`, `Modified`, `Moved`, `Unpublished` or `Published` — telling you what has happened to the item since it was last published. Clicking it opens the <<contextpanel/versions#,Version history>> widget, where the changes can be inspected and reverted.
 * *Emulator* dropdown to emulate screen resolutions of various device types (monitor, tablet, mobile).
 +
-image::navigator-preview-emulator.png[Preview emulator, 25%,align="center"]
-* *Preview mode* dropdown. The default is *Automatic*, which finds and uses the first mode that supports preview of the current content. You can explicitly pick a mode from the list.
-+
-image::navigator-preview-mode.png[Preview mode selector, 25%,align="center"]
-* image:navigator-preview-button.png[title=Preview button, width=90px] button — opens the preview in a new browser tab. The currently selected preview mode is used in the new tab.
+image::preview-emulator.png[Preview emulator letting you select between different devices and screen sizes, 915px]
+* *Preview mode* dropdown — explicitly select one of the <<#preview_modes,preview modes>> instead of letting *Automatic* choose.
+* *Refresh* — reloads the rendered preview.
 
-If currently selected content cannot be rendered by any of the available preview modes, the preview panel displays an error message.
-
+[[preview_modes]]
 == Preview modes
 
-Content Studio ships with a handful of built-in preview modes. *Automatic* is the default; the others can be selected explicitly from the preview-mode dropdown.
+By default, the panel offers the following preview modes:
 
-Automatic::
-Picks the first mode that supports the current content. This is the default.
+* *Automatic* — picks the first mode that supports the current content. This is the default.
+* *Media* — for image, video and other media content types. Shows the media itself at its original resolution, with basic metadata.
+* *Standard* — uses Enonic's built-in framework to render the content.
+* *JSON* — displays the current content in JSON format. Available for any content, but not used as a fallback by *Automatic*.
 
-Media::
-For image, video and other media content types. Shows the media itself at its original resolution, with basic metadata.
+image::preview-modes.png[Preview panel showing the preview mode selector, 904px]
 
-Enonic rendering::
-Uses Enonic's Site Engine to render the content, typically the same renderer used in production.
+For content that cannot be rendered by any of the available preview modes, the Preview panel shows a placeholder saying "No preview available". However, you may still manually select the JSON preview mode to see the content in raw JSON format.
 
-Plain preview::
-For content that has a page controller but no editable regions — shows the rendered output without the page-editor chrome.
+== Pluggability
 
-JSON::
-Displays the current content in JSON format. Available for any content, but not used as a fallback by *Automatic*.
+In order to facilitate previewing of content that is not supported by the built-in modes, applications may contribute their own preview modes. Custom modes appear in the preview-mode dropdown alongside the built-ins.
 
-Unavailable::
-For content that cannot be rendered (folders, shortcuts, unstructured content without a supporting template), the Preview panel is hidden or shows a placeholder. The <<contextpanel#,Context panel>> remains available for these items.
-
-== Contributing a preview mode
-
-Applications can contribute their own preview modes. Custom modes appear in the preview-mode dropdown alongside the built-ins.
-
-See the https://developer.enonic.com/docs/code/stable/web/extensions/liveview[Live view extension reference] for the descriptor format, lifecycle, and implementation details.
+The order of the previews matter, as the *Automatic* mode will pick the first mode that supports the current content. See the https://developer.enonic.com/docs/code/stable/web/extensions/liveview[Live view extension reference] for implementation details.

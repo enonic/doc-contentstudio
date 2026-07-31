@@ -12,7 +12,7 @@ Content::
 Icon, display name, and full content path.
 
 Status::
-Current content status: _New_, _Modified_, _Published_, _Unpublished_, or _Archived_. See <<../../workflow#,Workflow>> for the state model.
+Current <<../../workflow#change_status,change status>>: _New_, _Modified_, _Moved_, _Published_, _Unpublished_, or _Archived_. See <<../../workflow#,Workflow>> for the full state model.
 
 User access::
 The effective <<../permissions#,permissions>> for the current user. The *Edit Permissions* link opens the permissions dialog.

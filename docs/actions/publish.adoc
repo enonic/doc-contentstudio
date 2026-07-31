@@ -31,12 +31,17 @@ Content created in Content Studio lands in the *draft* branch with status `New` 
 
 When published, the active draft version is copied into the *master* branch. Only content in the *master* branch is visible outside Content Studio (subject to the content's <<../workbench/permissions#,security settings>>).
 
-== Content status
+== Change status
+
+Every item carries a <<../workflow#change_status,change status>> describing what has happened to it since it was last published:
 
 * `New` — never published.
 * `Modified` — previously published, then changed in the draft branch. The master version is still live.
+* `Moved` — renamed or moved to another parent since it was published. Combines with the others, as in `Modified, Moved`.
 * `Published` — the active draft version matches what is in master.
 * `Unpublished` — was published, then taken offline.
+
+In the Publishing wizard the change status is listed per item, next to the item's <<../workflow#publish_state,publish state>> — for example `ONLINE | Modified, Moved`. Items with status `Published` are not listed, as they have nothing to publish.
 
 When a published content is edited and saved, the new version becomes active in `draft`, but `master` is unchanged. Status flips to `Modified`, and the content must be re-published for changes to go live.
 
