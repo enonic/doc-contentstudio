@@ -448,6 +448,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#update_an_issue">Update an issue</a></li>
 </ul>
 </li>
+<li><a href="#publish_requests">Publish requests</a>
+<ul class="sectlevel2">
+<li><a href="#create_a_publish_request">Create a publish request</a></li>
+<li><a href="#the_publish_request_dialog">The publish request dialog</a></li>
+<li><a href="#find_a_publish_request">Find a publish request</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -458,10 +465,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>There are two types of issues in Content Studio: <strong>tasks</strong> and <strong>publish requests</strong>. Both are lightweight work items with assignees, comments, and an Open/Closed state — the <strong>Open Issues</strong> dialog lists both together on separate tabs.</p>
 </div>
 <div class="paragraph">
-<p><strong>Tasks</strong> are general editorial work items — "spellcheck this article", "add new content to this section". See <a href="#tasks">Tasks</a> below.</p>
+<p><strong><a href="#tasks">Tasks</a></strong> are general editorial work items — "spellcheck this article", "add new content to this section". They carry no workflow meaning: attaching content to a task does not affect the item&#8217;s <a href="../workflow.ahtml">workflow or publish state</a>.</p>
 </div>
 <div class="paragraph">
-<p><strong>Publish requests</strong> ask another user to review and publish content. Because they have their own wizard and dialog, they are documented on a dedicated page — see <a href="issues/publish-request.ahtml">Publish request</a>.</p>
+<p><strong><a href="#publish_requests">Publish requests</a></strong> ask another user to review and publish content. They are the standard path for an editor who lacks publish permission, and are also useful when the editor has permission but wants a reviewer to sign off before content goes live.</p>
 </div>
 </div>
 </div>
@@ -474,7 +481,7 @@ If there are no active issues, the button will say "<strong>No Open Issues</stro
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="issues/images/issues-header.png" alt="Issues button" width="478">
+<img src="images/issues-header.png" alt="Issues button" width="478">
 </div>
 </div>
 <div class="paragraph">
@@ -482,7 +489,7 @@ If there are no active issues, the button will say "<strong>No Open Issues</stro
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="issues/images/issues-list.png" alt="Issues list" width="719">
+<img src="images/issues-list.png" alt="Issues list" width="719">
 </div>
 </div>
 <div class="admonitionblock tip">
@@ -503,7 +510,7 @@ only Publish Requests or only task. By default, if you have any active issues as
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="issues/images/issues-list-filter.png" alt="Filter in the Issues list" width="716">
+<img src="images/issues-list-filter.png" alt="Filter in the Issues list" width="716">
 </div>
 </div>
 <div class="paragraph">
@@ -524,7 +531,7 @@ only Publish Requests or only task. By default, if you have any active issues as
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="issues/images/create-task-1.png" alt="Create Task" width="372">
+<img src="images/create-task-1.png" alt="Create Task" width="372">
 </div>
 </div>
 <div class="paragraph">
@@ -533,7 +540,7 @@ In this case selected items will be automatically added to a new issue you are a
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="issues/images/create-task-2.png" alt="Create Task" width="372">
+<img src="images/create-task-2.png" alt="Create Task" width="372">
 </div>
 </div>
 <div class="paragraph">
@@ -544,11 +551,8 @@ In this case selected items will be automatically added to a new issue you are a
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="issues/images/dialog-issue-1.png" alt="New task" width="708">
+<img src="images/dialog-issue-1.png" alt="New task" width="708">
 </div>
-</div>
-<div class="paragraph">
-<p>You can read about creating a new Publishing Request on the <a href="issues/publish-request.ahtml">Publish request</a> page.</p>
 </div>
 </div>
 <div class="sect2">
@@ -565,7 +569,7 @@ Altenatively, you can use <code>Close Task</code> button (for an active issue) o
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="issues/images/dialog-issue-edit-1.png" alt="Issue title and comments" width="714">
+<img src="images/dialog-issue-edit-1.png" alt="Issue title and comments" width="714">
 </div>
 </div>
 <div class="sect3">
@@ -607,7 +611,7 @@ For a <em>Publish Request</em> you can publish items or schedule publish directl
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="issues/images/dialog-issue-edit-2.png" alt="Issue content" width="700">
+<img src="images/dialog-issue-edit-2.png" alt="Issue content" width="700">
 </div>
 </div>
 </div>
@@ -618,8 +622,107 @@ For a <em>Publish Request</em> you can publish items or schedule publish directl
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="issues/images/dialog-issue-edit-3.png" alt="Issue assignees" width="700">
+<img src="images/dialog-issue-edit-3.png" alt="Issue assignees" width="700">
 </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="publish_requests"><a class="link" href="#publish_requests">Publish requests</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A <strong>publish request</strong> asks another user to review and publish one or more content items.</p>
+</div>
+<div class="sect2">
+<h3 id="create_a_publish_request"><a class="link" href="#create_a_publish_request">Create a publish request</a></h3>
+<div class="paragraph">
+<p>The <strong>Request publishing</strong> action is available from the same places as <a href="../actions/publish.ahtml">Publish</a> — the toolbar, the context menu, and the Content Editor — but it replaces the <strong>Publish</strong> button for users without publish permission.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+When <strong>Request publishing</strong> is invoked on a single item that is currently <strong>In progress</strong>, the item is automatically marked <strong>Ready for publishing</strong>, on the assumption that requesting a publish signals the work is finished.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The Publish Request wizard has two steps.</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 1.</strong> Review the items to be published together with their dependencies — the same tree the Publishing wizard would show.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/request-publishing-wizard-1.png" alt="Publish Request wizard — step 1" width="660">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Step 2.</strong> Describe the changes (required) and pick one or more assignees who will receive the request.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/request-publishing-wizard-2.png" alt="Publish Request wizard — step 2" width="671">
+</div>
+</div>
+<div class="paragraph">
+<p>Clicking <strong>Create request</strong> creates the publish request and opens its detail dialog.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="the_publish_request_dialog"><a class="link" href="#the_publish_request_dialog">The publish request dialog</a></h3>
+<div class="paragraph">
+<p>The publish request dialog looks much like an Issue dialog, with one important difference: the <strong>Items</strong> tab includes a <strong>Publish now</strong> button so a reviewer can publish directly from the dialog. The calendar icon at the bottom toggles a scheduling form to set online-from/online-to dates.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/publishing-request-1.png" alt="Publish request dialog" width="673">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/publishing-request-2.png" alt="Publish request with scheduling" width="673">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="find_a_publish_request"><a class="link" href="#find_a_publish_request">Find a publish request</a></h3>
+<div class="paragraph">
+<p>Publish requests appear in the same <a href="#issues_list"><strong>Open Issues</strong></a> dialog as tasks, on a dedicated <strong>Publish requests</strong> tab.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/publishing-request-list.png" alt="Publish request list" width="701">
+</div>
+</div>
+<div class="paragraph">
+<p>When the currently-edited content is part of an open publish request, the default toolbar action in the Content Editor becomes <strong>Open request</strong> — clicking it jumps to the most recent open request containing the item.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/publishing-request-toolbar.png" alt="Open request toolbar button" width="494">
+</div>
+</div>
+<div class="paragraph">
+<p>The full list of open issues and publish requests containing this item is available from the dropdown next to the main button.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/publish-button-menu.png" alt="Issues and publish requests menu">
+</div>
+</div>
+<div class="paragraph">
+<p>The same list is also shown in the Preview-panel toolbar in the <a href="../workbench/navigator.ahtml">Navigator</a>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/issues-toolbar.png" alt="Issues menu in the Preview toolbar">
 </div>
 </div>
 </div>
@@ -628,7 +731,7 @@ For a <em>Publish Request</em> you can publish items or schedule publish directl
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-07-31 09:00:54 UTC
+Last updated 2026-08-03 12:33:04 UTC
 </div>
 </div>
 </body>

@@ -533,10 +533,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p><strong>Unpublish</strong> — opens the <a href="../actions/unpublish.ahtml">Unpublish wizard</a> for content that is online.</p>
 </li>
 <li>
-<p><strong>Request Publishing</strong> — opens the <a href="../issues/publish-request.ahtml">Publish Request</a> wizard when the current user cannot publish the selected content.</p>
+<p><strong>Request Publishing</strong> — opens the <a href="../workflow/issues.ahtml#publish_requests">Publish Request</a> wizard when the current user cannot publish the selected content.</p>
 </li>
 <li>
-<p><strong>Create Task</strong> — opens the <a href="../issues.ahtml#create_a_task">New Task</a> dialog. It is available without a content selection; selected items are attached to the new task automatically.</p>
+<p><strong>Create Task</strong> — opens the <a href="../workflow/issues.ahtml#create_a_task">New Task</a> dialog. It is available without a content selection; selected items are attached to the new task automatically.</p>
 </li>
 </ul>
 </div>
@@ -686,7 +686,7 @@ If you are working in a layer, a third column will appear, showing the content&#
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-07-31 09:00:54 UTC
+Last updated 2026-08-03 12:33:04 UTC
 </div>
 </div>
 </body>

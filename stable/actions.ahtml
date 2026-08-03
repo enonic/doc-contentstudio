@@ -523,14 +523,14 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="related_reference"><a class="link" href="#related_reference">Related reference</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The publishing state machine — invalid, in progress, ready, and the publish states — is documented under <a href="workflow.ahtml">Workflow</a>. <strong>Request publishing</strong> (the review/approval handoff variant of Publish) is a kind of issue — see <a href="issues/publish-request.ahtml">Publish request</a>. <strong>Permanent delete</strong> (from the archive) and restoring archived items are on the <a href="workbench/archive.ahtml">Archive</a> page. The <strong>Create task</strong> entry point is documented under <a href="issues.ahtml">Issues</a>.</p>
+<p>The publishing state machine — invalid, in progress, ready, and the publish states — is documented under <a href="workflow.ahtml">Workflow</a>. <strong>Request publishing</strong> (the review/approval handoff variant of Publish) is a kind of issue — see <a href="workflow/issues.ahtml#publish_requests">Publish requests</a>. <strong>Permanent delete</strong> (from the archive) and restoring archived items are on the <a href="workbench/archive.ahtml">Archive</a> page. The <strong>Create task</strong> entry point is documented under <a href="workflow/issues.ahtml">Issues</a>.</p>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-07-31 09:00:54 UTC
+Last updated 2026-08-03 12:33:04 UTC
 </div>
 </div>
 </body>

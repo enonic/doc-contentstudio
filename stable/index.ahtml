@@ -623,7 +623,7 @@ A collection of short videos demonstrating Content Studio&#8217;s features and c
 <div class="sect2">
 <h3 id="issues_and_publish_requests"><a class="link" href="#issues_and_publish_requests">Issues and publish requests</a></h3>
 <div class="paragraph">
-<p><strong>Issues</strong> are lightweight work items used to coordinate between editors — either a <strong>task</strong> (e.g. "spellcheck this article") or a <strong>publish request</strong> (review-and-publish handoff for users without publish permission, or for an approval flow). See <a href="issues.ahtml">Issues</a> and <a href="issues/publish-request.ahtml">Publish request</a>.</p>
+<p><strong>Issues</strong> are lightweight work items used to coordinate between editors — either a <strong>task</strong> (e.g. "spellcheck this article") or a <strong>publish request</strong> (review-and-publish handoff for users without publish permission, or for an approval flow). See <a href="workflow/issues.ahtml">Issues</a>.</p>
 </div>
 </div>
 </div>
@@ -682,7 +682,7 @@ A collection of short videos demonstrating Content Studio&#8217;s features and c
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-07-31 09:00:54 UTC
+Last updated 2026-08-03 12:33:04 UTC
 </div>
 </div>
 </body>

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.26">
-<title>Workflow and content life cycle</title>
+<title>Content life cycle and workflow</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -437,7 +437,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article toc2 toc-right">
 <div id="header">
-<h1>Workflow and content life cycle</h1>
+<h1>Content life cycle and workflow</h1>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
@@ -483,7 +483,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/workflow-state.png" alt="List of content items demonstrating different workflow states via icons red (x) invalid - yellow (!) in progress - green (✓) ready as well as publish states ONLINE and OFFLINE" width="565px">
+<img src="workflow/images/workflow-state.png" alt="List of content items demonstrating different workflow states via icons red (x) invalid - yellow (!) in progress - green (✓) ready as well as publish states ONLINE and OFFLINE" width="565px">
 </div>
 <div class="title">Figure 1. Workflow state icons:</div>
 </div>
@@ -578,7 +578,7 @@ Validity is not a stored state — unlike <strong>In progress</strong> and <stro
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/workflow-in-progress.png" alt="In-progress content is blocked in the Publishing wizard" width="913px">
+<img src="workflow/images/workflow-in-progress.png" alt="In-progress content is blocked in the Publishing wizard" width="913px">
 </div>
 </div>
 <div class="paragraph">
@@ -619,7 +619,7 @@ The bulk <strong>Mark as ready</strong> link can be disabled in the <a href="con
 <p>Set by the <strong>Mark as ready</strong> action from the Content Editor or Content Navigator. The yellow <code>!</code> icon is replaced with a green <code>✓</code>, and the item becomes eligible for publishing.</p>
 </div>
 <div class="paragraph">
-<p>The default toolbar action changes to <strong><a href="actions/publish.ahtml">Publish</a></strong> (if the user has publish permission) or <strong><a href="issues/publish-request.ahtml">Request publishing</a></strong> (if not).</p>
+<p>The default toolbar action changes to <strong><a href="actions/publish.ahtml">Publish</a></strong> (if the user has publish permission) or <strong><a href="workflow/issues.ahtml#publish_requests">Request publishing</a></strong> (if not).</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -650,7 +650,7 @@ Editors with publish permission may still use <strong>Request publishing</strong
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/workflow-publish-state.png" alt="Publishing state is listed in the priority two column as text (Online Offline etc)" width="565px">
+<img src="workflow/images/workflow-publish-state.png" alt="Publishing state is listed in the priority two column as text (Online Offline etc)" width="565px">
 </div>
 </div>
 <div class="dlist">
@@ -695,7 +695,7 @@ The <code>master</code> branch is unaffected by your edits in the <code>draft</c
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/workflow-change-state.png" alt="Change state to the right as seen in the publishing wizard together with the workflow and publishing state" width="797px">
+<img src="workflow/images/workflow-change-state.png" alt="Change state to the right as seen in the publishing wizard together with the workflow and publishing state" width="797px">
 </div>
 </div>
 <div class="paragraph">
@@ -754,7 +754,7 @@ The <code>master</code> branch is unaffected by your edits in the <code>draft</c
 <h2 id="_publish_request"><a class="link" href="#_publish_request">Publish request</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Publish requests are part of the effective workflow, but not a workflow state in themselves, as they operate across multiple items. They exist so work can be handed to someone else for review and publishing — typically when the editor lacks publish permission, or wants sign-off before going live. The full wizard, the request dialog, and how requests are managed are documented on the <a href="issues/publish-request.ahtml">Publish request</a> page.</p>
+<p>Publish requests are part of the effective workflow, but not a workflow state in themselves, as they operate across multiple items. They exist so work can be handed to someone else for review and publishing — typically when the editor lacks publish permission, or wants sign-off before going live. The full wizard, the request dialog, and how requests are managed are documented under <a href="workflow/issues.ahtml#publish_requests">Publish requests</a>.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -763,7 +763,7 @@ The <code>master</code> branch is unaffected by your edits in the <code>draft</c
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Content items can also be attached to <strong>tasks</strong>, the other issue type. Unlike publish requests, tasks are purely editorial work items — they have no effect on an item&#8217;s workflow or publish state. See <a href="issues.ahtml">Issues</a>.
+Content items can also be attached to <strong>tasks</strong>, the other issue type. Unlike publish requests, tasks are purely editorial work items — they have no effect on an item&#8217;s workflow or publish state. See <a href="workflow/issues.ahtml">Issues</a>.
 </td>
 </tr>
 </table>
@@ -773,7 +773,7 @@ Content items can also be attached to <strong>tasks</strong>, the other issue ty
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-07-31 09:00:54 UTC
+Last updated 2026-08-03 12:33:04 UTC
 </div>
 </div>
 </body>

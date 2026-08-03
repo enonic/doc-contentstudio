@@ -503,10 +503,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p><strong><a href="unpublish.ahtml">Unpublish</a></strong> — available only for published items.</p>
 </li>
 <li>
-<p><strong><a href="../issues/publish-request.ahtml">Request publishing</a></strong> — available only for unpublished items.</p>
+<p><strong><a href="../workflow/issues.ahtml#publish_requests">Request publishing</a></strong> — available only for unpublished items.</p>
 </li>
 <li>
-<p><strong><a href="../issues.ahtml">Create task</a></strong> — opens the <strong>New Task</strong> dialog.</p>
+<p><strong><a href="../workflow/issues.ahtml#create_a_task">Create task</a></strong> — opens the <strong>New Task</strong> dialog.</p>
 </li>
 </ul>
 </div>
@@ -580,7 +580,7 @@ The calendar icon next to <strong>Publish Now</strong> enables <a href="#schedul
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-If the current user lacks publish permission for any of the batched items, <strong>Publish All</strong> is replaced by <strong><a href="../issues/publish-request.ahtml">Request Publishing</a></strong>.
+If the current user lacks publish permission for any of the batched items, <strong>Publish All</strong> is replaced by <strong><a href="../workflow/issues.ahtml#publish_requests">Request Publishing</a></strong>.
 </td>
 </tr>
 </table>
@@ -729,7 +729,7 @@ Users with publish permission can use <strong>Publish&#8230;&#8203;</strong> on 
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-07-31 09:00:54 UTC
+Last updated 2026-08-03 12:33:04 UTC
 </div>
 </div>
 </body>

@@ -488,7 +488,7 @@ The <a href="editor.ahtml">Editor</a> is not part of the Workbench — it opens 
 <p>The <strong>project context selector</strong> on the left — switches between the projects and layers the current user has access to. Every menuitem (except Settings, see below) inherits the selected project as its context.</p>
 </li>
 <li>
-<p>An <strong>open issues</strong> indicator showing the number of unresolved <a href="issues.ahtml">issues</a> in the current project, with a dropdown to jump into them.</p>
+<p>An <strong>open issues</strong> indicator showing the number of unresolved <a href="workflow/issues.ahtml">issues</a> in the current project, with a dropdown to jump into them.</p>
 </li>
 <li>
 <p>The current user&#8217;s avatar and the XP admin menu on the right.</p>
@@ -551,7 +551,7 @@ The <a href="editor.ahtml">Editor</a> is not part of the Workbench — it opens 
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-07-31 09:00:54 UTC
+Last updated 2026-08-03 12:33:04 UTC
 </div>
 </div>
 </body>
