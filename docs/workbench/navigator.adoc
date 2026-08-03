@@ -32,8 +32,8 @@ image::navigator-workflow-menu.png[Toolbar, 181px]
 * *Mark as ready* — changes selected in-progress content to the <<../workflow#_ready_for_publishing,ready for publishing>> workflow state.
 * *Publish Tree* — opens the <<../actions/publish#publish_tree,Publishing wizard>> with the selected content, its descendants, and their dependencies.
 * *Unpublish* — opens the <<../actions/unpublish#,Unpublish wizard>> for content that is online.
-* *Request Publishing* — opens the <<../issues/publish-request#,Publish Request>> wizard when the current user cannot publish the selected content.
-* *Create Task* — opens the <<../issues#create_a_task,New Task>> dialog. It is available without a content selection; selected items are attached to the new task automatically.
+* *Request Publishing* — opens the <<../workflow/issues#publish_requests,Publish Request>> wizard when the current user cannot publish the selected content.
+* *Create Task* — opens the <<../workflow/issues#create_a_task,New Task>> dialog. It is available without a content selection; selected items are attached to the new task automatically.
 
 Applicable actions are also available from the context menu that appears when you right-click a content item in the list.
 

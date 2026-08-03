@@ -1,6 +1,6 @@
-= Workflow and content life cycle
+= Content life cycle and workflow
 :toc: right
-:imagesdir: images
+:imagesdir: workflow/images
 
 A content item's life cycle is described by three independent states:
 
@@ -78,7 +78,7 @@ The default toolbar action for in-progress content is *Mark as ready*.
 
 Set by the *Mark as ready* action from the Content Editor or Content Navigator. The yellow `!` icon is replaced with a green `✓`, and the item becomes eligible for publishing.
 
-The default toolbar action changes to *<<actions/publish#,Publish>>* (if the user has publish permission) or *<<issues/publish-request#,Request publishing>>* (if not).
+The default toolbar action changes to *<<actions/publish#,Publish>>* (if the user has publish permission) or *<<workflow/issues#publish_requests,Request publishing>>* (if not).
 
 TIP: Editors with publish permission may still use *Request publishing* when content needs sign-off or additional input from another user.
 
@@ -130,7 +130,7 @@ Items with change status *Published* never appear in the Publishing wizard — t
 [[_publish_request]]
 == Publish request
 
-Publish requests are part of the effective workflow, but not a workflow state in themselves, as they operate across multiple items. They exist so work can be handed to someone else for review and publishing — typically when the editor lacks publish permission, or wants sign-off before going live. The full wizard, the request dialog, and how requests are managed are documented on the <<issues/publish-request#,Publish request>> page.
+Publish requests are part of the effective workflow, but not a workflow state in themselves, as they operate across multiple items. They exist so work can be handed to someone else for review and publishing — typically when the editor lacks publish permission, or wants sign-off before going live. The full wizard, the request dialog, and how requests are managed are documented under <<workflow/issues#publish_requests,Publish requests>>.
 
-NOTE: Content items can also be attached to *tasks*, the other issue type. Unlike publish requests, tasks are purely editorial work items — they have no effect on an item's workflow or publish state. See <<issues#,Issues>>.
+NOTE: Content items can also be attached to *tasks*, the other issue type. Unlike publish requests, tasks are purely editorial work items — they have no effect on an item's workflow or publish state. See <<workflow/issues#,Issues>>.
 

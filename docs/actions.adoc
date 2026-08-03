@@ -44,4 +44,4 @@ Remove content from the active tree. Deleted items are moved to the <<workbench/
 
 == Related reference
 
-The publishing state machine — invalid, in progress, ready, and the publish states — is documented under <<workflow#,Workflow>>. *Request publishing* (the review/approval handoff variant of Publish) is a kind of issue — see <<issues/publish-request#,Publish request>>. *Permanent delete* (from the archive) and restoring archived items are on the <<workbench/archive#,Archive>> page. The *Create task* entry point is documented under <<issues#,Issues>>.
+The publishing state machine — invalid, in progress, ready, and the publish states — is documented under <<workflow#,Workflow>>. *Request publishing* (the review/approval handoff variant of Publish) is a kind of issue — see <<workflow/issues#publish_requests,Publish requests>>. *Permanent delete* (from the archive) and restoring archived items are on the <<workbench/archive#,Archive>> page. The *Create task* entry point is documented under <<workflow/issues#,Issues>>.

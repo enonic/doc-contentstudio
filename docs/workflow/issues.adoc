@@ -1,12 +1,12 @@
 = Issues
 :toc: right
-:imagesdir: issues/images
+:imagesdir: images
 
 There are two types of issues in Content Studio: *tasks* and *publish requests*. Both are lightweight work items with assignees, comments, and an Open/Closed state — the *Open Issues* dialog lists both together on separate tabs.
 
-*Tasks* are general editorial work items — "spellcheck this article", "add new content to this section". See <<#tasks,Tasks>> below.
+*<<#tasks,Tasks>>* are general editorial work items — "spellcheck this article", "add new content to this section". They carry no workflow meaning: attaching content to a task does not affect the item's <<../workflow#,workflow or publish state>>.
 
-*Publish requests* ask another user to review and publish content. Because they have their own wizard and dialog, they are documented on a dedicated page — see <<issues/publish-request#,Publish request>>.
+*<<#publish_requests,Publish requests>>* ask another user to review and publish content. They are the standard path for an editor who lacks publish permission, and are also useful when the editor has permission but wants a reviewer to sign off before content goes live.
 
 [[issues_list]]
 == Issues list
@@ -52,8 +52,6 @@ To add specific content to an issue, click on the `Add items` button. The *Items
 
 image::dialog-issue-1.png[New task, 708]
 
-You can read about creating a new Publishing Request on the <<issues/publish-request#,Publish request>> page.
-
 [[update_an_issue]]
 === Update an issue
 
@@ -94,3 +92,52 @@ image::dialog-issue-edit-2.png[Issue content, 700]
 On the third tab, assignees can be added and removed from this issue. The number next to the tab title shows the total number of assignees.
 
 image::dialog-issue-edit-3.png[Issue assignees, 700]
+
+[[publish_requests]]
+== Publish requests
+
+A *publish request* asks another user to review and publish one or more content items.
+
+[[create_a_publish_request]]
+=== Create a publish request
+
+The *Request publishing* action is available from the same places as <<../actions/publish#,Publish>> — the toolbar, the context menu, and the Content Editor — but it replaces the *Publish* button for users without publish permission.
+
+TIP: When *Request publishing* is invoked on a single item that is currently *In progress*, the item is automatically marked *Ready for publishing*, on the assumption that requesting a publish signals the work is finished.
+
+The Publish Request wizard has two steps.
+
+*Step 1.* Review the items to be published together with their dependencies — the same tree the Publishing wizard would show.
+
+image::request-publishing-wizard-1.png[Publish Request wizard — step 1, 660]
+
+*Step 2.* Describe the changes (required) and pick one or more assignees who will receive the request.
+
+image::request-publishing-wizard-2.png[Publish Request wizard — step 2, 671]
+
+Clicking *Create request* creates the publish request and opens its detail dialog.
+
+=== The publish request dialog
+
+The publish request dialog looks much like an Issue dialog, with one important difference: the *Items* tab includes a *Publish now* button so a reviewer can publish directly from the dialog. The calendar icon at the bottom toggles a scheduling form to set online-from/online-to dates.
+
+image::publishing-request-1.png[Publish request dialog, 673]
+image::publishing-request-2.png[Publish request with scheduling, 673]
+
+=== Find a publish request
+
+Publish requests appear in the same <<#issues_list,*Open Issues*>> dialog as tasks, on a dedicated *Publish requests* tab.
+
+image::publishing-request-list.png[Publish request list, 701]
+
+When the currently-edited content is part of an open publish request, the default toolbar action in the Content Editor becomes *Open request* — clicking it jumps to the most recent open request containing the item.
+
+image::publishing-request-toolbar.png[Open request toolbar button, 494]
+
+The full list of open issues and publish requests containing this item is available from the dropdown next to the main button.
+
+image::publish-button-menu.png[Issues and publish requests menu]
+
+The same list is also shown in the Preview-panel toolbar in the <<../workbench/navigator#,Navigator>>.
+
+image::issues-toolbar.png[Issues menu in the Preview toolbar]

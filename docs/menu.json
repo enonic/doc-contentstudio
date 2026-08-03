@@ -165,18 +165,14 @@
       ]
     },
     {
-      "title": "Issues",
-      "document": "issues",
+      "title": "Workflow",
+      "document": "workflow",
       "menuItems": [
         {
-          "title": "Publish request",
-          "document": "issues/publish-request"
+          "title": "Issues",
+          "document": "workflow/issues"
         }
       ]
-    },
-    {
-      "title": "Workflow",
-      "document": "workflow"
     },
     {
       "title": "AI Assistant",

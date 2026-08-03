@@ -78,7 +78,7 @@ An *application* is an installable unit of XP code that can contribute content t
 
 === Issues and publish requests
 
-*Issues* are lightweight work items used to coordinate between editors — either a *task* (e.g. "spellcheck this article") or a *publish request* (review-and-publish handoff for users without publish permission, or for an approval flow). See <<issues#,Issues>> and <<issues/publish-request#,Publish request>>.
+*Issues* are lightweight work items used to coordinate between editors — either a *task* (e.g. "spellcheck this article") or a *publish request* (review-and-publish handoff for users without publish permission, or for an approval flow). See <<workflow/issues#,Issues>>.
 
 == Content Studio+
 
