@@ -466,7 +466,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li>
 <p>Language and content layering</p>
 <div class="paragraph">
-<p>Optionally select a <strong>parent project</strong> — this makes the new project a <a href="layers.ahtml">layer</a>, inheriting content from the parent. Then select the <strong>default language</strong>, which will be applied to new content created in the root of the project.</p>
+<p>Optionally select a <strong>parent project</strong> — this makes the new project a <a href="layering.ahtml">layer</a>, inheriting content from the parent. Then select the <strong>default language</strong>, which will be applied to new content created in the root of the project.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -616,7 +616,7 @@ Deleting a project will delete its repository and all the data inside. This acti
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-08-25 07:17:39 UTC
+Last updated 2026-08-25 15:51:41 UTC
 </div>
 </div>
 </body>

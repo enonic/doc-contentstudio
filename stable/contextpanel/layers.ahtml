@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.26">
-<title>Content exports</title>
+<title>Layers context panel</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -437,13 +437,15 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article toc2 toc-right">
 <div id="header">
-<h1>Content exports</h1>
+<h1>Layers context panel</h1>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
 <li><a href="#overview">Overview</a></li>
-<li><a href="#creating_an_export">Creating an export</a></li>
-<li><a href="#importing_an_export">Importing an export</a></li>
+<li><a href="#layer_branch">Layer branch</a></li>
+<li><a href="#available_actions">Available actions</a></li>
+<li><a href="#all_layers">All layers</a></li>
+<li><a href="#understanding_localization_state">Understanding localization state</a></li>
 </ul>
 </div>
 </div>
@@ -451,7 +453,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>The <strong>Content Exports</strong> panel creates and imports portable copies of content trees. Use it to transfer selected content between Enonic XP installations or to re-import an exported tree into a project.</p>
+<p>The Layers context panel provides an instant overview of the selected content across its project layer tree.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -460,7 +462,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-This panel is only available to Content Administrators and System Administrators.
+<strong>Content Studio+ feature.</strong> The Layers panel requires a valid <a href="https://market.enonic.com/vendors/enonic/content-studio-plus">Content Studio+</a> subscription.
 </td>
 </tr>
 </table>
@@ -471,105 +473,46 @@ This panel is only available to Content Administrators and System Administrators
 <h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>An export contains the selected item, its descendants, and associated binary files such as images and attachments. It represents the current version in the project&#8217;s <em>draft</em> branch; it is not a backup of the project&#8217;s complete publishing or version history.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/exports.png" alt="Content Exports context panel showing selected item and available actions" width="355px">
-</div>
+<p>The panel shows the localization and publishing status of the selected item in relevant layers. It also provides shortcuts for opening the item in another project or editing it in the current project.</p>
 </div>
 <div class="paragraph">
-<p>Exports are stored on the Enonic XP server rather than downloaded through the browser. The panel lists the exports available to the current installation and provides a name filter and a refresh button. Moving an export to another installation requires an administrator to transfer the named export between the servers.</p>
+<p>The panel is available for content in any project that belongs to a layer tree, including the root project. Open it from the <a href="../contextpanel.ahtml">Context panel</a> selector, or select the Layers indicator shown on an inherited or localized item in the <a href="../workbench/navigator.ahtml">Navigator</a>.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="creating_an_export"><a class="link" href="#creating_an_export">Creating an export</a></h2>
+<h2 id="layer_branch"><a class="link" href="#layer_branch">Layer branch</a></h2>
 <div class="sectionbody">
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Select the root item of the tree you want to export in the <a href="../workbench/navigator.ahtml">Navigator</a>.</p>
-</li>
-<li>
-<p>Open <strong>Content Exports</strong> from the <a href="../contextpanel.ahtml">Context panel</a> selector.</p>
-</li>
-<li>
-<p>Click <b class="button">Export</b>.</p>
-</li>
-<li>
-<p>In the <strong>Export options</strong> dialog, review the selected item and enter an <strong>Export name</strong>. The content name is suggested by default.</p>
-</li>
-<li>
-<p>Click <b class="button">Export</b> to create the export.</p>
-</li>
-</ol>
+<div class="paragraph">
+<p>The panel initially shows the branch of the layer tree that contains the current project. The current project is identified by the <strong>CURRENT LAYER</strong> label, with its <strong>Ascendants</strong> listed above and its <strong>Descendants</strong> below.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/exports-dialog.png" alt="Export options dialog showing the selected item and suggested export name" width="461px">
+<img src="images/layers-branch.png" alt="Layers context panel showing the current layer, ascendants, and descendants" width="350px">
 </div>
 </div>
 <div class="paragraph">
-<p>Content Studio combines the installation, project, supplied name, and creation time into the final server-side export name. When the operation completes, the dialog shows this name and the number of exported nodes. Use the copy button to copy the final name.</p>
-</div>
-<div class="paragraph">
-<p>The new export is selected in the panel automatically. If an export created elsewhere does not appear, click the refresh button above the list.</p>
+<p>Each layer card identifies the project and its default language together with the corresponding content item&#8217;s display name, path, publishing status, and localization state. Because inherited items retain the same content ID, the panel can follow an item even when it has been renamed or moved in an individual layer.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="importing_an_export"><a class="link" href="#importing_an_export">Importing an export</a></h2>
+<h2 id="available_actions"><a class="link" href="#available_actions">Available actions</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Importing adds the exported content tree beneath a target item.</p>
+<p>Select a layer card to reveal the actions available for that representation of the item:</p>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="images/exports-list.png" alt="The panel dialog showing the exports available for importing" width="351px">
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Existing items with the same IDs are updated, while new items are created. The import does not delete any content.
-</td>
-</tr>
-</table>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Open the <strong>Content Exports</strong> panel and select an export from the <strong>Imports</strong> list. Use <strong>Filter by name</strong> to narrow a long list.</p>
-</li>
-<li>
-<p>Click <b class="button">Import</b>.</p>
-</li>
-<li>
-<p>In the <strong>Import options</strong> dialog, verify the export shown under <strong>Import from</strong>.</p>
-</li>
-<li>
-<p>Under <strong>Import into</strong>, select the target content item. The item currently selected in Content Studio is used by default; select the project root to import at the top level.</p>
-</li>
-<li>
-<p>Leave <strong>Preserve original first-published timestamp</strong> selected to retain that metadata from the source, or clear it to discard the imported value.</p>
-</li>
-<li>
-<p>Click <b class="button">Import</b>.</p>
-</li>
-</ol>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/exports-import-dialog.png" alt="Import options dialog showing the selected export and target location" width="698px">
-</div>
-</div>
-<div class="paragraph">
-<p>After completing the import, the result reports how many nodes were added and updated. Imported content is placed in the target project&#8217;s <em>draft</em> branch. Review it in the Navigator and use the normal <a href="../actions/publish.ahtml">publishing flow</a> when it is ready to go online.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Open</dt>
+<dd>
+<p>Opens the item in the selected layer in a new browser tab.</p>
+</dd>
+<dt class="hdlist1">Edit</dt>
+<dd>
+<p>Appears only for the current layer and opens the item for editing in a new browser tab.</p>
+</dd>
+</dl>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -578,10 +521,43 @@ Existing items with the same IDs are updated, while new items are created. The i
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-Developers may programmatically create their own export and import operations using the <a href="https://developer.enonic.com/docs/code/xp8/libraries/lib-export">Enonic XP Export library</a>.
+Opening an item in another layer does not move or copy it between projects. It opens the representation that already exists in that layer.
 </td>
 </tr>
 </table>
+</div>
+<div class="paragraph">
+<p>A user must have access to the selected project and the required content permissions to open or modify the item there.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="all_layers"><a class="link" href="#all_layers">All layers</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The branch shown in the panel is only one route through a layer tree. Sibling layers and their descendants may contain other representations of the same item.</p>
+</div>
+<div class="paragraph">
+<p>Click <b class="button">Show all</b> to open a dialog containing the complete layer tree for the item. The number on the button is the total number of layers in which the item exists and can therefore be greater than the number of cards currently displayed in the panel.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/layers-all.png" alt="Dialog showing the complete layer tree for the selected item" width="866px">
+</div>
+</div>
+<div class="paragraph">
+<p>As in the branch view, select a card in the dialog to open the item in the corresponding layer. Close the dialog to return to the branch view.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="understanding_localization_state"><a class="link" href="#understanding_localization_state">Understanding localization state</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The panel&#8217;s localized state refers primarily to the item&#8217;s <strong>Content</strong> data. A localized item may still inherit its name, tree location, or child sort order. Conversely, an inherited item can have a local name or location while continuing to inherit its content form.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="../projects/layering.ahtml#content_inheritance">Content inheritance</a> for the four independent inheritance dimensions, propagation rules, Reset behavior, and publishing model.</p>
 </div>
 </div>
 </div>

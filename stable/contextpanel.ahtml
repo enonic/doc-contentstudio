@@ -542,13 +542,13 @@ The list of available panels depends on the user&#8217;s permissions and the cur
 <div class="ulist">
 <ul>
 <li>
-<p><a href="projects/layers.ahtml#layers_panel">Layers</a> — shows the status of a content item across every layer in the system.</p>
+<p><a href="contextpanel/layers.ahtml">Layers</a> — shows the status of a content item across its project layer tree.</p>
 </li>
 <li>
 <p><a href="contextpanel/variants.ahtml">Variants</a> — creates and manages A/B variants of the selected item.</p>
 </li>
 <li>
-<p><a href="contextpanel/publish-report.ahtml">Publishing report</a> — generate a report that compares published versions of a content item.</p>
+<p><a href="contextpanel/publish-report.ahtml">Publishing report</a> — generates a report that compares published versions of a content item.</p>
 </li>
 </ul>
 </div>
@@ -577,7 +577,7 @@ The list of available panels depends on the user&#8217;s permissions and the cur
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-08-25 07:17:39 UTC
+Last updated 2026-08-25 15:51:41 UTC
 </div>
 </div>
 </body>

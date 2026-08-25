@@ -529,7 +529,7 @@ Archived content can only be restored from the Archive view, which requires <a h
 <p>The <strong>Restore</strong> action in the Archive view opens the <strong>Restore from Archive</strong> dialog. Content is always restored together with all of its descendants, preserving structure. Content returns to its original location when that location is available; otherwise, it is restored to the project root.</p>
 </div>
 <div class="paragraph">
-<p>If an item is restored directly from a layer&#8217;s archive, it is automatically localised (unlinked from the corresponding content in the parent project/layer).</p>
+<p>If an item is restored directly from a layer&#8217;s Archive, it becomes local and is no longer linked to the corresponding content in the parent layer.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -614,18 +614,21 @@ Permanent deletion removes the archived content, its attachments, and its stored
 <h2 id="archive_layers"><a class="link" href="#archive_layers">Archive and layers</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>When working with <a href="../projects/layers.ahtml">layers</a>, there are some details to note about how things behave.</p>
+<p>Archive operations in <a href="../projects/layering.ahtml">layers</a> follow the content inheritance model:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Deleting a content item in a parent project automatically archives it in all child layers (cascade style), unless the item has been localized.</p>
+<p>Archiving an item in a parent layer also archives corresponding items in descendants that still inherit both their <strong>Content</strong> and <strong>Parent</strong> dimensions. A descendant remains active if either dimension is local or if inbound references from outside the archived selection prevent it from being archived.</p>
 </li>
 <li>
-<p>Creating a new layer automatically inherits the archive states of its parent project/layer. So once an item is archived in a parent layer it will also be archived in the child layer.</p>
+<p>Archiving an inherited item directly in a child layer does not affect the parent. The archived copy becomes local and stops receiving inherited changes.</p>
 </li>
 <li>
-<p>Permanently deleting a content item from a layer&#8217;s archive will automatically recreate it in the branch content (if it still exists in the parent layer).</p>
+<p>A new layer inherits the archive state of its parent. Content already archived in the parent is therefore also archived in the new child layer.</p>
+</li>
+<li>
+<p>Permanently deleting inherited content from a layer&#8217;s Archive can cause synchronization to create a fresh inherited copy if the item still exists in the parent layer.</p>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -641,12 +644,15 @@ When permanently deleting a localized item, these changes will be lost and canno
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>See <a href="../projects/layering.ahtml#archive_and_delete">Archive and delete</a> for the relationship between Archive operations and inheritance.</p>
+</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-08-25 07:17:39 UTC
+Last updated 2026-08-25 15:51:41 UTC
 </div>
 </div>
 </body>

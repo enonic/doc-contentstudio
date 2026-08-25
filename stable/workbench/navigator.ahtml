@@ -587,7 +587,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-If you are working in a layer, a third column will appear, showing the content&#8217;s layering status. It will indicate if it is an original item, inherited from the parent project, or inherited and localized. See <a href="../projects/layers.ahtml">layering</a> for details.
+If you are working in a layer, a third column will appear, showing the content&#8217;s layering status. It will indicate if it is an original item, inherited from the parent project, or inherited and localized. See <a href="../projects/layering.ahtml">layering</a> for details.
 </td>
 </tr>
 </table>
@@ -686,7 +686,7 @@ If you are working in a layer, a third column will appear, showing the content&#
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-08-25 07:17:39 UTC
+Last updated 2026-08-25 15:51:41 UTC
 </div>
 </div>
 </body>

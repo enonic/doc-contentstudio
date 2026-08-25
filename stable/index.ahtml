@@ -532,7 +532,7 @@ A collection of short videos demonstrating Content Studio&#8217;s features and c
 <div class="sect2">
 <h3 id="projects_and_layers"><a class="link" href="#projects_and_layers">Projects and layers</a></h3>
 <div class="paragraph">
-<p>Content lives in <a href="projects.ahtml">projects</a>. Each project has a repository with its own content tree, optional applications, and settings. <a href="projects/layers.ahtml">Layers</a> inherit content for reuse or adaptation for other markets or languages.</p>
+<p>Content lives in <a href="projects.ahtml">projects</a>. Each project has a repository with its own content tree, optional applications, and settings. <a href="projects/layering.ahtml">Layers</a> inherit content for reuse or adaptation for other markets or languages.</p>
 </div>
 </div>
 <div class="sect2">
@@ -643,10 +643,10 @@ A collection of short videos demonstrating Content Studio&#8217;s features and c
 <p><a href="contextpanel/variants.ahtml">Content Variants</a> — create and manage variant copies of a content item for A/B testing.</p>
 </li>
 <li>
-<p><a href="projects/layers.ahtml#ai_translation">AI translation</a> — automatic translation of inherited content when localizing in a layer.</p>
+<p><a href="ai.ahtml#ai_translator">AI translation</a> — translate inherited content into a layer&#8217;s language while localizing it.</p>
 </li>
 <li>
-<p><a href="projects/layers.ahtml#layers_panel">Layers widget</a> — see the status of a content item across every layer in the system.</p>
+<p><a href="contextpanel/layers.ahtml">Layers panel</a> — inspect an item across a project layer tree and open it in any accessible layer where it exists.</p>
 </li>
 </ul>
 </div>
@@ -659,7 +659,7 @@ A collection of short videos demonstrating Content Studio&#8217;s features and c
 <h2 id="artificial_intelligence"><a class="link" href="#artificial_intelligence">Artificial Intelligence</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Enonic offers a growing suite of AI-powered features to assist editors in their work. These features are available as for subscription customers under the <a href="ai.ahtml">Juke AI</a> brand, and can be installed from <a href="https://market.enonic.com/vendors/enonic/ai-content-operator">Enonic Market</a>.</p>
+<p>Enonic offers a growing suite of AI-powered features to assist editors in their work. These features are available to subscription customers under the <a href="ai.ahtml">Juke AI</a> brand. Install the application for each skill that editors will use.</p>
 </div>
 </div>
 </div>
@@ -682,7 +682,7 @@ A collection of short videos demonstrating Content Studio&#8217;s features and c
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-08-25 07:17:39 UTC
+Last updated 2026-08-25 15:51:41 UTC
 </div>
 </div>
 </body>

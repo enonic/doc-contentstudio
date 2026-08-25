@@ -487,7 +487,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ul>
 </div>
 <div class="paragraph">
-<p>Variants do not provide language inheritance, automatic propagation, or a separate content tree per language. For a multilingual site or any setup where translations should remain connected to source content, use <a href="../projects/layers.ahtml">layers and localization</a> instead.</p>
+<p>Variants do not provide language inheritance, automatic propagation, or a separate content tree per language. For a multilingual site or any setup where translations should remain connected to source content, use <a href="../projects/layering.ahtml">layers and localization</a> instead.</p>
 </div>
 <div class="paragraph">
 <p>Each variant remains associated with its <strong>original</strong> item, but is otherwise managed as a regular content item. Content Studio creates and manages the variants; it does not run the A/B test or select a winning version.</p>
@@ -587,14 +587,14 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Because each variant has its own path and publishing state, an external A/B-testing or delivery system can address the variants separately.</p>
 </div>
 <div class="paragraph">
-<p>Each variant also maintains its own <a href="../contextpanel/version-history.ahtml">Version history</a>, so you can track changes and publishing history, as well as restoring previous versions independently of the original item or other variants.</p>
+<p>Each variant also maintains its own <a href="../contextpanel/version-history.ahtml">Version history</a>, so you can track changes and publishing activity or restore a previous version independently of the original item and other variants.</p>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-08-25 07:17:39 UTC
+Last updated 2026-08-25 15:51:41 UTC
 </div>
 </div>
 </body>

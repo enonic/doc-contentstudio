@@ -464,7 +464,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="introduction"><a class="link" href="#introduction">Introduction</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Unlike the other Content Studio menu items, Settings is not scoped to the currently selected project — it manages all <a href="../projects.ahtml">projects</a> and <a href="../projects/layers.ahtml">layers</a> in the system.</p>
+<p>Unlike the other Content Studio menu items, Settings is not scoped to the currently selected project — it manages all <a href="../projects.ahtml">projects</a> and <a href="../projects/layering.ahtml">layers</a> in the system.</p>
 </div>
 </div>
 </div>
@@ -515,7 +515,7 @@ By selecting the top node called "Projects", you will display a graph of all pro
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-08-25 07:17:39 UTC
+Last updated 2026-08-25 15:51:41 UTC
 </div>
 </div>
 </body>

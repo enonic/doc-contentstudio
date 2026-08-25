@@ -463,12 +463,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ul>
 </div>
 <div class="paragraph">
-<p>For inherited content in a <a href="../projects/layers.ahtml">layer</a>, <strong>Edit</strong> is replaced with <strong>Localize</strong> — the same effect, but the action also severs data inheritance from the parent project for that item.</p>
+<p>For inherited content in a <a href="../projects/layering.ahtml">layer</a>, <strong>Edit</strong> is replaced with <strong>Localize</strong> — the same effect, but the action also severs data inheritance from the parent project for that item.</p>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-08-25 07:17:39 UTC
+Last updated 2026-08-25 15:51:41 UTC
 </div>
 </div>
 </body>

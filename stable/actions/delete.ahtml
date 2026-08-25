@@ -529,27 +529,33 @@ Online content (published items) is taken offline immediately when deleted. The 
 <h2 id="delete_in_layers"><a class="link" href="#delete_in_layers">Delete in layers</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Delete behaves specifically when <a href="../projects/layers.ahtml">layers</a> are involved:</p>
+<p>Delete behaves specifically when <a href="../projects/layering.ahtml">layers</a> are involved:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>An item deleted in a parent project is deleted in all child layers where it is not localised.</p>
+<p>Archiving an item in a parent layer also archives corresponding items in descendant layers that still inherit both its content and location. A descendant with either dimension made local, or with an external reference that prevents archiving, remains in place.</p>
 </li>
 <li>
-<p>Deleting an <em>inherited</em> (non-localised) item in a layer removes it from that layer without touching the parent — a useful way to prune inherited content from a layer.</p>
+<p>Archiving an inherited item directly in a child layer does not affect its parent. The archived copy becomes local and stops receiving inherited changes.</p>
 </li>
 <li>
-<p>Restoring from a layer&#8217;s archive may recreate the item in the layer if the original still exists in the parent.</p>
+<p>Restoring that copy from the layer&#8217;s Archive restores it as local content.</p>
+</li>
+<li>
+<p>Permanently deleting an inherited item while its origin still exists in the parent can cause synchronization to create a fresh inherited copy. To keep inherited content out of the active tree, leave it in the Archive instead of permanently deleting it.</p>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>See <a href="../projects/layering.ahtml#archive_and_delete">Layers and localization</a> for how this behavior relates to inheritance.</p>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-08-25 07:17:39 UTC
+Last updated 2026-08-25 15:51:41 UTC
 </div>
 </div>
 </body>
