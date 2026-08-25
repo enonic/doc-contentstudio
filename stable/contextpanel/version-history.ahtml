@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.26">
-<title>Dependencies</title>
+<title>Version history</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -437,11 +437,14 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article toc2 toc-right">
 <div id="header">
-<h1>Dependencies</h1>
+<h1>Version history</h1>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#dependencies_and_publishing">Dependencies and publishing</a></li>
+<li><a href="#version_list">Version list</a></li>
+<li><a href="#show_all_activities">Show all activities</a></li>
+<li><a href="#comparing_versions">Comparing versions</a></li>
+<li><a href="#restoring_an_older_version">Restoring an older version</a></li>
 </ul>
 </div>
 </div>
@@ -449,61 +452,117 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Content items reference each other — pages embed images, shortcuts target content, text fields link to other items. Those references are <strong>dependencies</strong>. Content Studio tracks them in both directions, and makes them inspectable via the <strong>Dependencies</strong> widget in the <a href="../contextpanel.ahtml">Context panel</a>.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>An <strong>inbound</strong> dependency is content that <em>uses</em> the selected item — for example, a page that embeds it, or a shortcut that points at it.</p>
-</li>
-<li>
-<p>An <strong>outbound</strong> dependency is content that the selected item <em>uses</em> — for example, images referenced in its rich-text fields, or targets of content selectors.</p>
-</li>
-</ul>
+<p>The <strong>Version history</strong> panel records changes and other activities for the selected content item. Use it to inspect the item&#8217;s history, compare content versions, or restore an older version.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/widgets-dependencies.png" alt="Dependencies widget" width="207">
-</div>
-</div>
-<div class="paragraph">
-<p>Inbound dependencies are listed above the content box, outbound below. When there are no dependencies of a kind, the widget shows a placeholder (<em>No incoming dependencies</em>, etc.). When there are dependencies, a button displays the total count, with icons and counts broken out per content type.</p>
-</div>
-<div class="paragraph">
-<p>Clicking the count button opens a new browser tab listing all dependencies of that direction. Clicking a per-type icon opens the same view, pre-filtered to that type.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/widgets-dependencies-filter.png" alt="Dependencies filtered by type" width="370">
+<img src="images/version-history.png" alt="Version history panel showing recent content versions" width="358px">
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="dependencies_and_publishing"><a class="link" href="#dependencies_and_publishing">Dependencies and publishing</a></h2>
+<h2 id="version_list"><a class="link" href="#version_list">Version list</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Dependencies are checked throughout the publishing lifecycle:</p>
+<p>Entries are grouped by date and ordered from newest to oldest. Each entry shows the time, the activity that created it, and the user responsible for the change.</p>
+</div>
+<div class="paragraph">
+<p>The indicator on the right describes the entry&#8217;s publishing status:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Online</dt>
+<dd>
+<p>The version is currently published.</p>
+</dd>
+<dt class="hdlist1">Cloud icon</dt>
+<dd>
+<p>The version was published previously, but is no longer the version that is online.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>Checkboxes on the left are used to select entries for comparison. They do not indicate whether a version can be restored.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="show_all_activities"><a class="link" href="#show_all_activities">Show all activities</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The panel shows editorial changes by default. Select <b class="button">Show all activities</b> to include additional recorded activities, such as:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="../../actions/publish.ahtml">Publishing</a> automatically includes required inbound dependencies in the batch so the published page does not end up with missing references.</p>
+<p>Publishing and unpublishing</p>
 </li>
 <li>
-<p><a href="../../actions/delete.ahtml">Delete</a> warns if another content depends on the item being deleted.</p>
+<p>Marking the item as ready</p>
 </li>
 <li>
-<p><a href="../../actions/unpublish.ahtml">Unpublish</a> warns if a <em>published</em> content depends on the item being taken offline.</p>
+<p>Permission changes</p>
+</li>
+<li>
+<p>Patches applied through an API</p>
 </li>
 </ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/version-history-all.png" alt="Non-editorial changes are listed without the ability to compare changes directly" width="358px">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="comparing_versions"><a class="link" href="#comparing_versions">Comparing versions</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Use the checkboxes to select two entries, then click <b class="button">Show changes</b>. Select <b class="button">Cancel</b> to clear the selection without opening the comparison.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/version-history-compare.png" alt="Two historical versions selected and a show changes button" width="351px">
+</div>
+</div>
+<div class="paragraph">
+<p>The <strong>Compare versions</strong> dialog places the older version on the left and the newer version on the right. It presents the differences as a text diff: red marks content present in the older version but removed in the newer version, while green marks content added in the newer version.</p>
+</div>
+<div class="paragraph">
+<p>Select <strong>Show the entire content</strong> to include unchanged content in the comparison.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/version-history-changes.png" alt="Compare versions dialog showing removed content in red and added content in green" width="838px">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="restoring_an_older_version"><a class="link" href="#restoring_an_older_version">Restoring an older version</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Select an entry to expand it. If the version can be restored, the expanded entry displays a <b class="button">Restore</b> button.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/version-history-restore.png" alt="Expanded historical version with the Restore button" width="353px">
+</div>
+</div>
+<div class="paragraph">
+<p>Not every activity contains a restorable content version. When an entry cannot be restored, the panel does not offer the <strong>Restore</strong> action.</p>
+</div>
+<div class="paragraph">
+<p>Restoring makes the selected version the active draft and adds a new entry to the history; it does not remove the versions created after it. If the content is online, publish the restored draft to make that version live.</p>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-08-03 12:33:04 UTC
+Last updated 2026-08-25 07:17:39 UTC
 </div>
 </div>
 </body>

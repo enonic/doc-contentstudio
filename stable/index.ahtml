@@ -449,7 +449,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#content_items_and_content_types">Content items and content types</a></li>
 <li><a href="#pages_and_rendering">Pages and rendering</a></li>
 <li><a href="#draft_master_and_publishing">Draft, master, and publishing</a></li>
-<li><a href="#versions">Versions</a></li>
+<li><a href="#version_history">Version history</a></li>
 <li><a href="#dependencies">Dependencies</a></li>
 <li><a href="#permissions">Permissions</a></li>
 <li><a href="#archive">Archive</a></li>
@@ -519,7 +519,7 @@ A collection of short videos demonstrating Content Studio&#8217;s features and c
 <p>The <a href="workbench.ahtml">Workbench</a> is the application shell: a project bar on top, a menu bar on the left, and a main panel filling the rest. The default menuitem is the <a href="workbench/navigator.ahtml">Navigator</a> — the content list, search, and per-content actions.</p>
 </div>
 <div class="paragraph">
-<p>Autoring happesn in the <a href="editor.ahtml">Content Editor</a>, which launches in a separate browser tab (Google Docs style) and provides a consistent interface for editing and previewing.</p>
+<p>Authoring happens in the <a href="editor.ahtml">Content Editor</a>, which launches in a separate browser tab (Google Docs style) and provides a consistent interface for editing and previewing.</p>
 </div>
 </div>
 </div>
@@ -588,15 +588,15 @@ A collection of short videos demonstrating Content Studio&#8217;s features and c
 </div>
 </div>
 <div class="sect2">
-<h3 id="versions"><a class="link" href="#versions">Versions</a></h3>
+<h3 id="version_history"><a class="link" href="#version_history">Version history</a></h3>
 <div class="paragraph">
-<p>Every save, publish, unpublish, rename, or permissions change creates a new <strong>version</strong>. Versions can be compared and reverted from the Version history widget — see <a href="workbench/contextpanel/versions.ahtml">Versions</a>.</p>
+<p>Every save, publish, unpublish, rename, or permissions change creates a new <strong>version</strong>. Versions can be compared and reverted from the Version history widget — see <a href="contextpanel/version-history.ahtml">Version history</a>.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="dependencies"><a class="link" href="#dependencies">Dependencies</a></h3>
 <div class="paragraph">
-<p>Content items reference each other — pages embed images, shortcuts target content, text fields link to other items. <strong>Dependencies</strong> are tracked in both directions (inbound: who uses this; outbound: what does this use). Publishing, archiving, and unpublishing all check dependencies — see <a href="workbench/contextpanel/dependencies.ahtml">Dependencies</a>.</p>
+<p>Content items reference each other — pages embed images, shortcuts target content, text fields link to other items. <strong>Dependencies</strong> are tracked in both directions (inbound: who uses this; outbound: what does this use). Publishing, archiving, and unpublishing all check dependencies — see <a href="contextpanel/dependencies.ahtml">Dependencies</a>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -617,7 +617,7 @@ A collection of short videos demonstrating Content Studio&#8217;s features and c
 <p>An <strong>application</strong> is an installable unit of XP code that can contribute content types, page controllers, parts, layouts, translations, and UI widgets. Applications are attached to a site via its Applications field; some (like Juke and Content Studio+) contribute UI across all sites.</p>
 </div>
 <div class="paragraph">
-<p><strong>Extensions</strong> are typically small UI surfaces contributed by an application. The main host is the <a href="workbench/contextpanel.ahtml">Context panel</a>; applications can also contribute <a href="workbench/preview.ahtml">preview modes</a> and <a href="workbench.ahtml">menuitems</a>.</p>
+<p><strong>Extensions</strong> are typically small UI surfaces contributed by an application. The main host is the <a href="contextpanel.ahtml">Context panel</a>; applications can also contribute <a href="workbench/preview.ahtml">preview modes</a> and <a href="workbench.ahtml">menuitems</a>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -640,7 +640,7 @@ A collection of short videos demonstrating Content Studio&#8217;s features and c
 <p><a href="workbench/archive.ahtml">Archive browser</a> — the dedicated <strong>Archive</strong> menuitem for browsing, restoring, and permanently deleting archived content.</p>
 </li>
 <li>
-<p><a href="workbench/contextpanel/variants.ahtml">Content Variants</a> — create and manage variant copies of a content item for A/B testing.</p>
+<p><a href="contextpanel/variants.ahtml">Content Variants</a> — create and manage variant copies of a content item for A/B testing.</p>
 </li>
 <li>
 <p><a href="projects/layers.ahtml#ai_translation">AI translation</a> — automatic translation of inherited content when localizing in a layer.</p>
@@ -682,7 +682,7 @@ A collection of short videos demonstrating Content Studio&#8217;s features and c
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-08-03 12:33:04 UTC
+Last updated 2026-08-25 07:17:39 UTC
 </div>
 </div>
 </body>

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.26">
-<title>Details</title>
+<title>Content exports</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -435,58 +435,160 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body class="article">
+<body class="article toc2 toc-right">
 <div id="header">
-<h1>Details</h1>
+<h1>Content exports</h1>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#overview">Overview</a></li>
+<li><a href="#creating_an_export">Creating an export</a></li>
+<li><a href="#importing_an_export">Importing an export</a></li>
+</ul>
+</div>
 </div>
 <div id="content">
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph">
-<p>The <strong>Details</strong> widget shows the basic properties of the selected content item — the core metadata an editor typically needs to know without opening the item. It is the default widget shown in the <a href="../contextpanel.ahtml">Context panel</a>.</p>
+<p>The <strong>Content Exports</strong> panel creates and imports portable copies of content trees. Use it to transfer selected content between Enonic XP installations or to re-import an exported tree into a project.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This panel is only available to Content Administrators and System Administrators.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>An export contains the selected item, its descendants, and associated binary files such as images and attachments. It represents the current version in the project&#8217;s <em>draft</em> branch; it is not a backup of the project&#8217;s complete publishing or version history.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/widgets-details.png" alt="Details widget" width="450">
+<img src="images/exports.png" alt="Content Exports context panel showing selected item and available actions" width="355px">
 </div>
 </div>
 <div class="paragraph">
-<p>The widget is organised into sections:</p>
+<p>Exports are stored on the Enonic XP server rather than downloaded through the browser. The panel lists the exports available to the current installation and provides a name filter and a refresh button. Moving an export to another installation requires an administrator to transfer the named export between the servers.</p>
 </div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Content</dt>
-<dd>
-<p>Icon, display name, and full content path.</p>
-</dd>
-<dt class="hdlist1">Status</dt>
-<dd>
-<p>Current <a href="../../workflow.ahtml#change_status">change status</a>: <strong>New</strong>, <strong>Modified</strong>, <strong>Moved</strong>, <strong>Published</strong>, <strong>Unpublished</strong>, or <strong>Archived</strong>. See <a href="../../workflow.ahtml">Workflow</a> for the full state model.</p>
-</dd>
-<dt class="hdlist1">User access</dt>
-<dd>
-<p>The effective <a href="../permissions.ahtml">permissions</a> for the current user. The <strong>Edit Permissions</strong> link opens the permissions dialog.</p>
-</dd>
-<dt class="hdlist1">Properties</dt>
-<dd>
-<p>Metadata about the content — its type, owner, and created/modified timestamps.</p>
-</dd>
-<dt class="hdlist1">Schedule</dt>
-<dd>
-<p>The from/to dates the content is scheduled to be online. Only shown for published content that has a schedule configured.</p>
-</dd>
-<dt class="hdlist1">Page template</dt>
-<dd>
-<p>The <a href="../../content-types/page-template.ahtml">page template</a> used to render the content, if any.</p>
-</dd>
-<dt class="hdlist1">Attachments</dt>
-<dd>
-<p>Downloadable binary attachments on the content item.</p>
-</dd>
-</dl>
+</div>
+</div>
+<div class="sect1">
+<h2 id="creating_an_export"><a class="link" href="#creating_an_export">Creating an export</a></h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Select the root item of the tree you want to export in the <a href="../workbench/navigator.ahtml">Navigator</a>.</p>
+</li>
+<li>
+<p>Open <strong>Content Exports</strong> from the <a href="../contextpanel.ahtml">Context panel</a> selector.</p>
+</li>
+<li>
+<p>Click <b class="button">Export</b>.</p>
+</li>
+<li>
+<p>In the <strong>Export options</strong> dialog, review the selected item and enter an <strong>Export name</strong>. The content name is suggested by default.</p>
+</li>
+<li>
+<p>Click <b class="button">Export</b> to create the export.</p>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/exports-dialog.png" alt="Export options dialog showing the selected item and suggested export name" width="461px">
+</div>
+</div>
+<div class="paragraph">
+<p>Content Studio combines the installation, project, supplied name, and creation time into the final server-side export name. When the operation completes, the dialog shows this name and the number of exported nodes. Use the copy button to copy the final name.</p>
+</div>
+<div class="paragraph">
+<p>The new export is selected in the panel automatically. If an export created elsewhere does not appear, click the refresh button above the list.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="importing_an_export"><a class="link" href="#importing_an_export">Importing an export</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Importing adds the exported content tree beneath a target item.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/exports-list.png" alt="The panel dialog showing the exports available for importing" width="351px">
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Existing items with the same IDs are updated, while new items are created. The import does not delete any content.
+</td>
+</tr>
+</table>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open the <strong>Content Exports</strong> panel and select an export from the <strong>Imports</strong> list. Use <strong>Filter by name</strong> to narrow a long list.</p>
+</li>
+<li>
+<p>Click <b class="button">Import</b>.</p>
+</li>
+<li>
+<p>In the <strong>Import options</strong> dialog, verify the export shown under <strong>Import from</strong>.</p>
+</li>
+<li>
+<p>Under <strong>Import into</strong>, select the target content item. The item currently selected in Content Studio is used by default; select the project root to import at the top level.</p>
+</li>
+<li>
+<p>Leave <strong>Preserve original first-published timestamp</strong> selected to retain that metadata from the source, or clear it to discard the imported value.</p>
+</li>
+<li>
+<p>Click <b class="button">Import</b>.</p>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/exports-import-dialog.png" alt="Import options dialog showing the selected export and target location" width="698px">
+</div>
+</div>
+<div class="paragraph">
+<p>After completing the import, the result reports how many nodes were added and updated. Imported content is placed in the target project&#8217;s <em>draft</em> branch. Review it in the Navigator and use the normal <a href="../actions/publish.ahtml">publishing flow</a> when it is ready to go online.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Developers may programmatically create their own export and import operations using the <a href="https://developer.enonic.com/docs/code/xp8/libraries/lib-export">Enonic XP Export library</a>.
+</td>
+</tr>
+</table>
+</div>
+</div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-08-03 12:33:04 UTC
+Last updated 2026-08-25 07:17:39 UTC
 </div>
 </div>
 </body>

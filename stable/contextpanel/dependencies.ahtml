@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.26">
-<title>Context panel</title>
+<title>Dependencies</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -437,14 +437,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article toc2 toc-right">
 <div id="header">
-<h1>Context panel</h1>
+<h1>Dependencies</h1>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#widget_selector">Widget selector</a></li>
-<li><a href="#built_in_widgets">Built-in widgets</a></li>
-<li><a href="#content_studio_widgets">Content Studio+ widgets</a></li>
-<li><a href="#contributing_a_widget">Contributing a widget</a></li>
+<li><a href="#dependency_search">Dependency search</a></li>
+<li><a href="#dependencies_in_content_actions">Dependencies in content actions</a></li>
 </ul>
 </div>
 </div>
@@ -452,100 +450,72 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>The <strong>Context panel</strong> is the multi-function column on the right of the <a href="navigator.ahtml">Navigator</a> and the <a href="../editor.ahtml">Editor</a>. It hosts a set of <strong>widgets</strong> — small tools that act on the currently selected content item. Widgets can be built-in, shipped by <a href="https://market.enonic.com/vendors/enonic/content-studio-plus">Content Studio+</a>, or contributed by any installed application.</p>
-</div>
-<div class="imageblock text-center">
-<div class="content">
-<img src="contextpanel/images/navigator-context-panel.png" alt="Context panel" width="50%">
-</div>
-</div>
-<div class="paragraph">
-<p>The panel is toggled open and closed with the <span class="image"><img src="contextpanel/images/navigator-context-panel-icon.png" alt="navigator context panel icon" width="24px" title="Context panel toggle"></span> icon next to the Action-menu button in the Navigator, or with the cog icon on the right of the editor toolbar in the Editor.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="contextpanel/images/widgets-panel-button.png" alt="Context panel toggle" width="209">
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="widget_selector"><a class="link" href="#widget_selector">Widget selector</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The dropdown at the top of the panel lists the available widgets: the built-ins appear first, followed by widgets from installed applications. A filter field at the top narrows the list by keyword.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="contextpanel/images/widgets-search.png" alt="Widget selector with filter" width="206">
-</div>
-</div>
-<div class="imageblock text-center">
-<div class="content">
-<img src="contextpanel/images/navigator-widget-selector.png" alt="Widget selector" width="25%">
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="built_in_widgets"><a class="link" href="#built_in_widgets">Built-in widgets</a></h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p><a href="contextpanel/details.ahtml">Details</a> — basic properties of the selected content item (display name, path, status, permissions, properties, schedule, attachments).</p>
-</li>
-<li>
-<p><a href="contextpanel/dependencies.ahtml">Dependencies</a> — inbound and outbound references between the item and other content.</p>
-</li>
-<li>
-<p><a href="contextpanel/versions.ahtml">Version history</a> — every version of the selected item; lets you compare or revert.</p>
-</li>
-<li>
-<p><a href="../editor/page-editor.ahtml#_components_widget">Components</a> — the page-building tool that appears in the Editor for renderable content.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="content_studio_widgets"><a class="link" href="#content_studio_widgets">Content Studio+ widgets</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The following widgets are contributed by <a href="https://market.enonic.com/vendors/enonic/content-studio-plus">Content Studio+</a>:</p>
+<p>Content items reference each other — pages embed images, shortcuts target content, text fields link to other items. Those references are <strong>dependencies</strong>. Content Studio tracks them in both directions, and makes them inspectable via the <strong>Dependencies</strong> widget in the <a href="../contextpanel.ahtml">Context panel</a>.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="../projects/layers.ahtml#layers_panel">Layers</a> — shows the status of a content item across every layer in the system.</p>
+<p>An <strong>inbound</strong> dependency is content that <em>uses</em> the selected item — for example, a page that embeds it, or a shortcut that points at it.</p>
 </li>
 <li>
-<p><a href="contextpanel/variants.ahtml">Variants</a> — creates and manages A/B variants of the selected item.</p>
+<p>An <strong>outbound</strong> dependency is content that the selected item <em>uses</em> — for example, images referenced in its rich-text fields, or targets of content selectors.</p>
 </li>
 </ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/dependencies.png" alt="Dependencies context panel showing inbound and outbound dependencies to a content item" width="353px">
+</div>
+</div>
+<div class="paragraph">
+<p>Inbound dependencies are listed above the content box, outbound below. When there are no dependencies of a kind, the widget shows a placeholder (<em>No incoming dependencies</em>, etc.). When there are dependencies, a button displays the total count, with icons and counts broken out per content type.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="contributing_a_widget"><a class="link" href="#contributing_a_widget">Contributing a widget</a></h2>
+<h2 id="dependency_search"><a class="link" href="#dependency_search">Dependency search</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The Context panel is <strong>pluggable</strong>: any installed application can contribute a widget that appears in the widget selector.</p>
-</div>
-<div class="paragraph">
-<p>See the <a href="https://developer.enonic.com/docs/code/stable/web/extensions/contextpanel">Context panel extension reference</a> for the descriptor format, lifecycle, and implementation details.</p>
+<p>Click <b class="button">Show all incoming</b> or <b class="button">Show all outgoing</b> to open the dependency search in a new browser tab. Selecting a content-type icon opens the same view with that content type preselected.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="contextpanel/images/widgets-context-panel.png" alt="Custom widget in the Context panel" width="207">
+<img src="images/dependencies-search.png" alt="Dependencies search panel showing the special filter activated and matching results" width="1001px">
 </div>
+</div>
+<div class="paragraph">
+<p>The selected content item remains fixed as a filter in the search panel. The results list shows dependencies in the chosen direction, including each item&#8217;s display name, path, content type, and publishing status.</p>
+</div>
+<div class="paragraph">
+<p>Use the search field to filter the results by text, or the <strong>Content Types</strong> checkboxes to include only specific content types. Select individual results with their checkboxes, or use <strong>Select all</strong>. Click the refresh button to update the results. The <b class="button">Export</b> action downloads the dependency search results.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="dependencies_in_content_actions"><a class="link" href="#dependencies_in_content_actions">Dependencies in content actions</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Content Studio checks dependencies when performing actions that could affect related content:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="../actions/publish.ahtml">Publishing</a> loads related dependencies into the publishing batch. Required dependencies cannot be excluded; optional dependencies can be included or excluded before publishing.</p>
+</li>
+<li>
+<p><a href="../actions/delete.ahtml">Delete</a> warns when other content depends on the item being deleted.</p>
+</li>
+<li>
+<p><a href="../actions/unpublish.ahtml">Unpublish</a> warns when published content depends on the item being taken offline.</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-08-03 12:33:04 UTC
+Last updated 2026-08-25 07:17:39 UTC
 </div>
 </div>
 </body>

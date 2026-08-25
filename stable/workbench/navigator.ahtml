@@ -465,7 +465,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>The <strong>Navigator</strong> is the default menu item in Content Studio — what you see when you open the application. It is built around the current project&#8217;s content list and the actions you can perform on it.</p>
 </div>
 <div class="paragraph">
-<p>The action toolbar runs across the top. Below it, the <a href="#content_list">Content list</a> is the primary panel. The <a href="#search_panel">Search panel</a> opens to its left, while the <a href="preview.ahtml">Preview panel</a> and <a href="contextpanel.ahtml">Context panel</a> appear to its right. The layout adapts to the available width, so fewer panels and columns may be visible in a narrow window.</p>
+<p>The action toolbar runs across the top. Below it, the <a href="#content_list">Content list</a> is the primary panel. The <a href="#search_panel">Search panel</a> opens to its left, while the <a href="preview.ahtml">Preview panel</a> and <a href="../contextpanel.ahtml">Context panel</a> appear to its right. The layout adapts to the available width, so fewer panels and columns may be visible in a narrow window.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -674,7 +674,7 @@ If you are working in a layer, a third column will appear, showing the content&#
 <p>The <a href="preview.ahtml">Preview panel</a> shows the selected item&#8217;s draft rendition. Its toolbar displays status and offers preview modes and device-size emulation. If the item cannot be rendered, the preview is unavailable or replaced by a placeholder.</p>
 </li>
 <li>
-<p>The <a href="contextpanel.ahtml">Context panel</a> hosts widgets for the selected item. Built-in widgets provide details, dependencies, and version history; installed applications may contribute additional widgets.</p>
+<p>The <a href="../contextpanel.ahtml">Context panel</a> hosts widgets for the selected item. Built-in widgets provide details, dependencies, and version history; installed applications may contribute additional widgets.</p>
 </li>
 </ul>
 </div>
@@ -686,7 +686,7 @@ If you are working in a layer, a third column will appear, showing the content&#
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-08-03 12:33:04 UTC
+Last updated 2026-08-25 07:17:39 UTC
 </div>
 </div>
 </body>

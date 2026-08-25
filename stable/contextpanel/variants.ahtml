@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.26">
-<title>Versions</title>
+<title>Variants</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -437,12 +437,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article toc2 toc-right">
 <div id="header">
-<h1>Versions</h1>
+<h1>Variants</h1>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#reverting_to_a_version">Reverting to a version</a></li>
-<li><a href="#comparing_versions">Comparing versions</a></li>
+<li><a href="#use_cases">Use cases</a></li>
+<li><a href="#creating_a_variant">Creating a variant</a></li>
+<li><a href="#managing_variants">Managing variants</a></li>
 </ul>
 </div>
 </div>
@@ -450,23 +451,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Every save, publish, unpublish, rename, or permissions change on a content item creates a new <strong>version</strong>. The full history is available via the <strong>Version history</strong> widget in the <a href="../contextpanel.ahtml">Context panel</a>: you can see every change, compare any two versions, and revert to an older one.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/widgets-version-history.png" alt="Version history widget" width="283">
-</div>
-</div>
-<div class="paragraph">
-<p>The current workflow status is shown in the widget header. Versions created by publish and unpublish events are listed alongside content versions so the full audit trail is visible in one place.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="reverting_to_a_version"><a class="link" href="#reverting_to_a_version">Reverting to a version</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Click a version box to expand it, then click <strong>Revert</strong>. The current (active) version cannot be reverted to itself, so it does not expand. Publish and unpublish markers are also non-expandable.</p>
+<p>Variants are linked copies of a content item that can be edited and published independently. They are primarily intended for A/B testing, where an external testing tool serves the variants through their separate IDs or path and measures their performance.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -475,7 +460,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Some versions cannot be reverted — typically those created by permissions updates, renames, or moves. The widget disables the action for these.
+<strong>Content Studio+ feature.</strong> The Variants widget is part of the <a href="https://market.enonic.com/vendors/enonic/content-studio-plus">Content Studio+</a> subscription.
 </td>
 </tr>
 </table>
@@ -483,36 +468,133 @@ Some versions cannot be reverted — typically those created by permissions upda
 </div>
 </div>
 <div class="sect1">
-<h2 id="comparing_versions"><a class="link" href="#comparing_versions">Comparing versions</a></h2>
+<h2 id="use_cases"><a class="link" href="#use_cases">Use cases</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Click the <span class="image"><img src="images/widgets-version-compare-icon.png" alt="widgets version compare icon" width="24"></span> icon on any version to open the <strong>Compare versions</strong> dialog. The two dropdowns at the top select the pair of versions being compared: the left one is <em>older</em>, the right one <em>newer</em>.</p>
+<p>Create variants when you need multiple versions of selected content without changing the original. Common uses include:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Testing alternative headings, images, layouts, or calls to action.</p>
+</li>
+<li>
+<p>Preparing campaign-specific versions of a page or content item.</p>
+</li>
+<li>
+<p>Translating a small number of selected items when a complete localization structure is unnecessary.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Variants do not provide language inheritance, automatic propagation, or a separate content tree per language. For a multilingual site or any setup where translations should remain connected to source content, use <a href="../projects/layers.ahtml">layers and localization</a> instead.</p>
+</div>
+<div class="paragraph">
+<p>Each variant remains associated with its <strong>original</strong> item, but is otherwise managed as a regular content item. Content Studio creates and manages the variants; it does not run the A/B test or select a winning version.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="creating_a_variant"><a class="link" href="#creating_a_variant">Creating a variant</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Select the original content item in the <a href="../workbench/navigator.ahtml">Navigator</a>, open <strong>Variants</strong> from the <a href="../contextpanel.ahtml">Context panel</a> selector, and click <b class="button">Create Variant</b>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/widgets-version-compare-dialog.png" alt="Version compare dialog" width="909">
+<img src="images/variants-create.png" alt="Click Create Variant button to get started" width="355px">
 </div>
 </div>
 <div class="paragraph">
-<p>By default the dialog shows only the differences between the two versions. Toggle <strong>Show entire content</strong> to see the full content JSON side-by-side.</p>
-</div>
-<div class="paragraph">
-<p>Both dropdowns have aliases at the top of the list — <em>previous</em>, <em>next</em>, <em>published</em>, <em>current</em> — so you can compare against those without scrolling through the full version list.</p>
+<p>The <strong>Create Variant</strong> dialog shows the original item and suggests an available variant name, such as <code>variant-1</code> or <code>variant-2</code>. The name becomes the variant&#8217;s path segment and must be unique beneath the original item. Change the suggested name if necessary, then click <b class="button">Create Variant</b>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/widgets-version-compare-dialog-aliases.png" alt="Version aliases" width="456">
+<img src="images/variants-dialog.png" alt="New variant dialog" width="699px">
 </div>
 </div>
 <div class="paragraph">
-<p>The kebab menu on the right of each dropdown has one option, <strong>Revert</strong>, which reverts to the version currently selected in that dropdown.</p>
+<p>The new variant copies the original item&#8217;s content, including its display name, and appears directly beneath the original in the content tree.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/variants-tree.png" alt="Variants are by default placed under the original item" width="759px">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="managing_variants"><a class="link" href="#managing_variants">Managing variants</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The variants panel groups the related items into <strong>Original</strong> and <strong>Variants</strong>. Each card shows the item&#8217;s display name, path, content type, and publishing status. The <strong>Current</strong> marker identifies the item currently selected in Content Studio.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/variants-list.png" alt="The variants context panel listing original item and variant-1 and variant-2" width="354px">
+</div>
+</div>
+<div class="paragraph">
+<p>The original item&#8217;s card provides these actions:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Edit</dt>
+<dd>
+<p>Opens the original item in the Content Editor.</p>
+</dd>
+<dt class="hdlist1">Create Variant</dt>
+<dd>
+<p>Creates another variant from the original item.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>Variants provide these actions:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Edit</dt>
+<dd>
+<p>Opens the variant in the Content Editor.</p>
+</dd>
+<dt class="hdlist1">Duplicate</dt>
+<dd>
+<p>Creates another variant from the selected variant.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>Variants also appear as children of the original item in the Navigator. Use the standard content actions to manage them:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Use <strong>Edit</strong> to change a variant without changing the original or its other variants.</p>
+</li>
+<li>
+<p>Use <strong>Duplicate</strong> from a variant&#8217;s context menu to create another variant associated with the same original.</p>
+</li>
+<li>
+<p>Use <a href="../actions/publish.ahtml">Publish</a> and <a href="../actions/unpublish.ahtml">Unpublish</a> to control whether each variant is online.</p>
+</li>
+<li>
+<p>Use <a href="../actions/delete.ahtml">Delete</a> to move a variant to the Archive.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Because each variant has its own path and publishing state, an external A/B-testing or delivery system can address the variants separately.</p>
+</div>
+<div class="paragraph">
+<p>Each variant also maintains its own <a href="../contextpanel/version-history.ahtml">Version history</a>, so you can track changes and publishing history, as well as restoring previous versions independently of the original item or other variants.</p>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-08-03 12:33:04 UTC
+Last updated 2026-08-25 07:17:39 UTC
 </div>
 </div>
 </body>

@@ -738,7 +738,7 @@ The <code>master</code> branch is unaffected by your edits in the <code>draft</c
 </table>
 </div>
 <div class="paragraph">
-<p>The change status is shown in the toolbar of the <a href="workbench/preview.ahtml">Preview panel</a>, in the <a href="workbench/contextpanel/details.ahtml">Details</a> widget, and per item in the <a href="actions/publish.ahtml">Publishing wizard</a>. In the wizard it appears next to the <a href="#publish_state">publish state</a>, so a single line tells you both where the item stands today and what publishing will change:</p>
+<p>The change status is shown in the toolbar of the <a href="workbench/preview.ahtml">Preview panel</a>, in the <a href="contextpanel/details.ahtml">Details</a> widget, and per item in the <a href="actions/publish.ahtml">Publishing wizard</a>. In the wizard it appears next to the <a href="#publish_state">publish state</a>, so a single line tells you both where the item stands today and what publishing will change:</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -773,7 +773,7 @@ Content items can also be attached to <strong>tasks</strong>, the other issue ty
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-08-03 12:33:04 UTC
+Last updated 2026-08-25 07:17:39 UTC
 </div>
 </div>
 </body>

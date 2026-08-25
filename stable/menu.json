@@ -39,30 +39,38 @@
           "document": "workbench/preview"
         },
         {
-          "title": "Context panel",
-          "document": "workbench/contextpanel",
-          "menuItems": [
-            {
-              "title": "Details",
-              "document": "workbench/contextpanel/details"
-            },
-            {
-              "title": "Dependencies",
-              "document": "workbench/contextpanel/dependencies"
-            },
-            {
-              "title": "Versions",
-              "document": "workbench/contextpanel/versions"
-            },
-            {
-              "title": "Variants",
-              "document": "workbench/contextpanel/variants"
-            }
-          ]
-        },
-        {
           "title": "Permissions",
           "document": "workbench/permissions"
+        }
+      ]
+    },
+    {
+      "title": "Context panel",
+      "document": "contextpanel",
+      "menuItems": [
+        {
+          "title": "Details",
+          "document": "contextpanel/details"
+        },
+        {
+          "title": "Dependencies",
+          "document": "contextpanel/dependencies"
+        },
+        {
+          "title": "Version history",
+          "document": "contextpanel/version-history"
+        },
+        {
+          "title": "Content exports",
+          "document": "contextpanel/export"
+        },
+        {
+          "title": "Variants",
+          "document": "contextpanel/variants"
+        },
+        {
+          "title": "Publishing report",
+          "document": "contextpanel/publish-report"
         }
       ]
     },

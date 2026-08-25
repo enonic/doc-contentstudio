@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.26">
-<title>Variants</title>
+<title>Details</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -435,11 +435,108 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body class="article">
+<body class="article toc2 toc-right">
 <div id="header">
-<h1>Variants</h1>
+<h1>Details</h1>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#overview">Overview</a></li>
+<li><a href="#main_section">Main section</a></li>
+<li><a href="#permissions">Permissions</a></li>
+<li><a href="#info_section">Info section</a></li>
+<li><a href="#schedule">Schedule</a></li>
+<li><a href="#template">Template</a></li>
+<li><a href="#attachments">Attachments</a></li>
+</ul>
+</div>
 </div>
 <div id="content">
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <strong>Details</strong> context panel is the default panel that shows the basic properties of the selected content item.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The details panel shows the core metadata an editor typically needs to know without opening the item. It is the default widget shown in the <a href="../contextpanel.ahtml">Context panel</a>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/details.png" alt="Details context panel including icon status path permissions content id metadata and more" width="357px">
+</div>
+</div>
+<div class="paragraph">
+<p>The panel is organised into sections:</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="main_section"><a class="link" href="#main_section">Main section</a></h2>
+<div class="sectionbody">
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Icon</dt>
+<dd>
+<p>Shows the content icon. Select the icon to replace it with a custom image.</p>
+</dd>
+<dt class="hdlist1">Status</dt>
+<dd>
+<p>Shows the current workflow, publishing, and change status. See <a href="../workflow.ahtml">Workflow</a> for the complete state model.</p>
+</dd>
+<dt class="hdlist1">Display name</dt>
+<dd>
+<p>The display name shown for the item throughout Content Studio.</p>
+</dd>
+<dt class="hdlist1">Path</dt>
+<dd>
+<p>The item&#8217;s full location in the content tree.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="permissions"><a class="link" href="#permissions">Permissions</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Shows a summary of the principals that have access to the content item, grouped by their effective level of access.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Public / Private</dt>
+<dd>
+<p>A lock icon symbolizes public or private mode</p>
+</dd>
+<dt class="hdlist1">Can Read</dt>
+<dd>
+<p>Optionally lists users with <code>Can read</code> permissions</p>
+</dd>
+<dt class="hdlist1">Can Write</dt>
+<dd>
+<p>Optionally lists users with <code>Can write</code> permissions</p>
+</dd>
+<dt class="hdlist1">Can Publish</dt>
+<dd>
+<p>Optionally lists users with <code>Can publish</code> permissions</p>
+</dd>
+<dt class="hdlist1">Full Access</dt>
+<dd>
+<p>Optionally lists users with <code>Full access</code> permissions</p>
+</dd>
+<dt class="hdlist1">Custom</dt>
+<dd>
+<p>Optionally lists users with <code>Custom</code> permissions</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>Click btn:[Edit permissions] to open the <a href="../workbench/permissions.ahtml">permissions dialog</a>.</p>
+</div>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -447,50 +544,112 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-<strong>Content Studio+ feature.</strong> The Variants widget is part of the <a href="https://market.enonic.com/vendors/enonic/content-studio-plus">Content Studio+</a> subscription.
+Only users with the <strong>Write permissions</strong> permission can edit an item&#8217;s permissions.
 </td>
 </tr>
 </table>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="info_section"><a class="link" href="#info_section">Info section</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>Variants are essentially slightly modified copies of a content item used for comparing them against each other to determine
-which one performs better for end user (A/B Testing).</p>
+<p>The Info section contains system metadata for the selected item:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">ID</dt>
+<dd>
+<p>The item&#8217;s immutable content ID. Use the copy button to copy the complete ID to the clipboard.</p>
+</dd>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>The content type used by the item.</p>
+</dd>
+<dt class="hdlist1">Application</dt>
+<dd>
+<p>The application that provides the content type, if applicable.</p>
+</dd>
+<dt class="hdlist1">Created</dt>
+<dd>
+<p>When the item was created and which user created it.</p>
+</dd>
+<dt class="hdlist1">Last modified</dt>
+<dd>
+<p>When the active version was last changed and which user made the change.</p>
+</dd>
+<dt class="hdlist1">First published</dt>
+<dd>
+<p>When the item was first published. This field is only shown after the item has been published.</p>
+</dd>
+<dt class="hdlist1">Language</dt>
+<dd>
+<p>The language assigned to the item, if any.</p>
+</dd>
+<dt class="hdlist1">Owner</dt>
+<dd>
+<p>The user registered as the content owner.</p>
+</dd>
+</dl>
 </div>
 <div class="paragraph">
-<p>Using "Variants" widget provided by <strong>Content Studio+</strong>, user can create variants of a specific content item, duplicate them (make copies of variants),
-then use URLs of variants in a 3rd party A/B Testing tool. Variants can be managed (modified, published, duplicated, deleted etc.) just as regular
-content items.</p>
+<p>Click btn:[Edit settings] to change the item&#8217;s owner or language. The availability of this action depends on the current user&#8217;s permissions.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="schedule"><a class="link" href="#schedule">Schedule</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Schedule section shows the item&#8217;s publishing window:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Online from</dt>
+<dd>
+<p>The date and time when the item became, or is scheduled to become, available online.</p>
+</dd>
+<dt class="hdlist1">Online to</dt>
+<dd>
+<p>The date and time when the item is scheduled to go offline. This field is omitted when no end time has been set.</p>
+</dd>
+</dl>
 </div>
 <div class="paragraph">
-<p>To create a new variant, select a content item in the <a href="../navigator.ahtml">Navigator</a> grid, then open the "Variants" widget in the <a href="../contextpanel.ahtml">Context panel</a> on the right-hand side (if you cannot find it then you probably don&#8217;t have <strong>Content Studio+</strong> installed) and click "<strong>Create Variant</strong>" button.</p>
+<p>The publishing schedule is read-only. It can only be configured via the publishing wizard, or manually unpublishing the item. See <a href="../actions/publish.ahtml#scheduled_publishing">Scheduled publishing</a>.</p>
 </div>
 <div class="paragraph">
-<p>This will open a new modal dialog for specifying name of a variant, suggesting "<em>variant-1</em>", "<em>variant-2</em>" etc., based on how many variants of the item
-already exist. A new name will be verified for uniqueness. The rest of the properties will be copied from the original item.</p>
+<p>The section is only visible if publishing dates are available for the selected item.</p>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="images/variants-dialog.png" alt="New variant dialog" width="400px">
 </div>
+</div>
+<div class="sect1">
+<h2 id="template"><a class="link" href="#template">Template</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>For renderable content, this section optionally shows the <a href="../content-types/page-template.ahtml">page template</a> used to render the item. Content with a customized page is identified as <strong>Custom</strong>.</p>
 </div>
 <div class="paragraph">
-<p>After a new variant is created, it will be placed under the original item in the Navigator grid and displayed in the "Variants" widget under
-the original item. Each variant has a context menu with "<strong>Edit</strong>" and "<strong>Duplicate</strong>" options.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/variants-grid.png" alt="Variants in Content Navigator" width="400px">
+<p>The Template section is only shown for content that supports page rendering.</p>
 </div>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="images/variants-widget.png" alt="Variants widget" width="400px">
+</div>
+<div class="sect1">
+<h2 id="attachments"><a class="link" href="#attachments">Attachments</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This section lists files attached to the content item. Select an attachment to download it.</p>
+</div>
+<div class="paragraph">
+<p>The Attachments section is only shown when the selected item has one or more attachments.</p>
+</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-08-03 12:33:04 UTC
+Last updated 2026-08-25 07:17:39 UTC
 </div>
 </div>
 </body>
