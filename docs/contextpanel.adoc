@@ -33,9 +33,9 @@ NOTE: The list of available panels depends on the user's permissions and the cur
 
 The following panels are contributed by https://market.enonic.com/vendors/enonic/content-studio-plus[Content Studio+]:
 
-* <<projects/layers#layers_panel,Layers>> — shows the status of a content item across every layer in the system.
+* <<contextpanel/layers#,Layers>> — shows the status of a content item across its project layer tree.
 * <<contextpanel/variants#,Variants>> — creates and manages A/B variants of the selected item.
-* <<contextpanel/publish-report#,Publishing report>> — generate a report that compares published versions of a content item.
+* <<contextpanel/publish-report#,Publishing report>> — generates a report that compares published versions of a content item.
 
 == Bring your own context panel
 

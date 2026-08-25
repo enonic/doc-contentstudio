@@ -8,7 +8,7 @@ Settings is where you manage your Content Projects
 image::settings.png[Settings section, 684px]
 
 == Introduction
-Unlike the other Content Studio menu items, Settings is not scoped to the currently selected project — it manages all <<../projects#,projects>> and <<../projects/layers#,layers>> in the system.
+Unlike the other Content Studio menu items, Settings is not scoped to the currently selected project — it manages all <<../projects#,projects>> and <<../projects/layering#,layers>> in the system.
 
 
 == Toolbar
@@ -26,4 +26,3 @@ For details on creating, editing and deleting projects — including important c
 The Settings section displays all projects the current user has permissions for, in the form of a tree — layers appear as children of their parent project. Users with the roles _Content Manager Administrator_ and _System Administrator_ always have full access to all projects.
 
 TIP: By selecting the top node called "Projects", you will display a graph of all projects and their relations in the panel on the right.
-

@@ -17,7 +17,7 @@ Each project has a unique *identifier*, which is set when the project is created
 
 Privileged users can create and manage projects via <<workbench/settings#, Content Studio settings>>.
 
-NOTE: Content items cannot be moved or copied between projects. For reusing content across projects, see <<projects/layers#,content layering>>.
+NOTE: Content items cannot be moved or copied between projects. For reusing content across projects, see <<projects/layering#,content layering>>.
 
 
 [[access-mode]]
@@ -77,4 +77,4 @@ Existing projects can be edited or deleted from the Settings section. See <<proj
 
 == Project layering
 
-Content Studio also offers an advanced feature for reusing and augmenting content across multiple projects. This is called <<projects/layers#, content layering>>.
+Content Studio also offers an advanced feature for reusing and augmenting content across multiple projects. This is called <<projects/layering#,content layering>>.

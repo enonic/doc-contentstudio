@@ -13,7 +13,7 @@ New projects are created with the project wizard. It launches from the first-run
 
 . Language and content layering
 +
-Optionally select a *parent project* — this makes the new project a <<layers#,layer>>, inheriting content from the parent. Then select the *default language*, which will be applied to new content created in the root of the project.
+Optionally select a *parent project* — this makes the new project a <<layering#,layer>>, inheriting content from the parent. Then select the *default language*, which will be applied to new content created in the root of the project.
 +
 image::project-step1.png[Dialog for selecting parent project and default language, 839w]
 +

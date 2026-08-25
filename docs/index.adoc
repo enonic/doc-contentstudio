@@ -27,7 +27,7 @@ A few recurring concepts surface everywhere in the UI — in dialogs, widgets, t
 
 === Projects and layers
 
-Content lives in <<projects#,projects>>. Each project has a repository with its own content tree, optional applications, and settings. <<projects/layers#,Layers>> inherit content for reuse or adaptation for other markets or languages.
+Content lives in <<projects#,projects>>. Each project has a repository with its own content tree, optional applications, and settings. <<projects/layering#,Layers>> inherit content for reuse or adaptation for other markets or languages.
 
 === Content items and content types
 
@@ -86,14 +86,14 @@ Content Studio itself is free and open source. An Enonic subscription unlocks *C
 
 * <<workbench/archive#,Archive browser>> — the dedicated *Archive* menuitem for browsing, restoring, and permanently deleting archived content.
 * <<contextpanel/variants#,Content Variants>> — create and manage variant copies of a content item for A/B testing.
-* <<projects/layers#ai_translation,AI translation>> — automatic translation of inherited content when localizing in a layer.
-* <<projects/layers#layers_panel,Layers widget>> — see the status of a content item across every layer in the system.
+* <<ai#ai_translator,AI translation>> — translate inherited content into a layer's language while localizing it.
+* <<contextpanel/layers#,Layers panel>> — inspect an item across a project layer tree and open it in any accessible layer where it exists.
 
 Without a valid license the Content Studio+ application can still be installed, but its UI contributions remain inactive. Pages that document a CS+ feature carry a *Content Studio+ feature* admonition at the top.
 
 == Artificial Intelligence
 
-Enonic offers a growing suite of AI-powered features to assist editors in their work. These features are available as for subscription customers under the <<ai#, Juke AI>> brand, and can be installed from https://market.enonic.com/vendors/enonic/ai-content-operator[Enonic Market].
+Enonic offers a growing suite of AI-powered features to assist editors in their work. These features are available to subscription customers under the <<ai#,Juke AI>> brand. Install the application for each skill that editors will use.
 
 
 == Browser support

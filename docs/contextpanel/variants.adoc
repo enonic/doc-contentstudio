@@ -15,7 +15,7 @@ Create variants when you need multiple versions of selected content without chan
 * Preparing campaign-specific versions of a page or content item.
 * Translating a small number of selected items when a complete localization structure is unnecessary.
 
-Variants do not provide language inheritance, automatic propagation, or a separate content tree per language. For a multilingual site or any setup where translations should remain connected to source content, use <<../projects/layers#,layers and localization>> instead.
+Variants do not provide language inheritance, automatic propagation, or a separate content tree per language. For a multilingual site or any setup where translations should remain connected to source content, use <<../projects/layering#,layers and localization>> instead.
 
 Each variant remains associated with its *original* item, but is otherwise managed as a regular content item. Content Studio creates and manages the variants; it does not run the A/B test or select a winning version.
 
@@ -58,4 +58,4 @@ Variants also appear as children of the original item in the Navigator. Use the 
 
 Because each variant has its own path and publishing state, an external A/B-testing or delivery system can address the variants separately.
 
-Each variant also maintains its own <<../contextpanel/version-history#,Version history>>, so you can track changes and publishing history, as well as restoring previous versions independently of the original item or other variants.
+Each variant also maintains its own <<../contextpanel/version-history#,Version history>>, so you can track changes and publishing activity or restore a previous version independently of the original item and other variants.

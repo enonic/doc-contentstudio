@@ -14,7 +14,7 @@
         },
         {
           "title": "Layers & localization",
-          "document": "projects/layers"
+          "document": "projects/layering"
         }
       ]
     },
@@ -63,6 +63,10 @@
         {
           "title": "Content exports",
           "document": "contextpanel/export"
+        },
+        {
+          "title": "Layers",
+          "document": "contextpanel/layers"
         },
         {
           "title": "Variants",
@@ -183,7 +187,7 @@
       ]
     },
     {
-      "title": "AI Assistant",
+      "title": "Juke AI",
       "document": "ai"
     },
     {

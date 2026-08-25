@@ -29,7 +29,7 @@ NOTE: Archived content can only be restored from the Archive view, which require
 
 The *Restore* action in the Archive view opens the *Restore from Archive* dialog. Content is always restored together with all of its descendants, preserving structure. Content returns to its original location when that location is available; otherwise, it is restored to the project root.
 
-If an item is restored directly from a layer's archive, it is automatically localised (unlinked from the corresponding content in the parent project/layer).
+If an item is restored directly from a layer's Archive, it becomes local and is no longer linked to the corresponding content in the parent layer.
 
 image::archive-restore.png[Restore dialog showing the items that will be restored, 912px]
 
@@ -61,10 +61,13 @@ image::archive-history.png[Version history showing archive and restore actions, 
 [#archive_layers]
 == Archive and layers
 
-When working with <<../projects/layers#,layers>>, there are some details to note about how things behave.
+Archive operations in <<../projects/layering#,layers>> follow the content inheritance model:
 
-* Deleting a content item in a parent project automatically archives it in all child layers (cascade style), unless the item has been localized.
-* Creating a new layer automatically inherits the archive states of its parent project/layer. So once an item is archived in a parent layer it will also be archived in the child layer.
-* Permanently deleting a content item from a layer's archive will automatically recreate it in the branch content (if it still exists in the parent layer).
+* Archiving an item in a parent layer also archives corresponding items in descendants that still inherit both their *Content* and *Parent* dimensions. A descendant remains active if either dimension is local or if inbound references from outside the archived selection prevent it from being archived.
+* Archiving an inherited item directly in a child layer does not affect the parent. The archived copy becomes local and stops receiving inherited changes.
+* A new layer inherits the archive state of its parent. Content already archived in the parent is therefore also archived in the new child layer.
+* Permanently deleting inherited content from a layer's Archive can cause synchronization to create a fresh inherited copy if the item still exists in the parent layer.
 +
 NOTE: When permanently deleting a localized item, these changes will be lost and cannot be recovered, even if the item is recreated from the parent layer.
+
+See <<../projects/layering#archive_and_delete,Archive and delete>> for the relationship between Archive operations and inheritance.

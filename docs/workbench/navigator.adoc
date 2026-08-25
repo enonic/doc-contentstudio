@@ -61,7 +61,7 @@ The content list contains two main columns. Columns may be hidden as the panel n
 
 * Column 2 shows the <<../workflow#publish_state,publish state>> as text: *Online*, *Offline*, *Scheduled*, or *Expired*, telling you whether the content is currently published, unpublished or not.
 
-NOTE: If you are working in a layer, a third column will appear, showing the content's layering status. It will indicate if it is an original item, inherited from the parent project, or inherited and localized. See <<../projects/layers#,layering>> for details.
+NOTE: If you are working in a layer, a third column will appear, showing the content's layering status. It will indicate if it is an original item, inherited from the parent project, or inherited and localized. See <<../projects/layering#,layering>> for details.
 
 === Bulk selection
 

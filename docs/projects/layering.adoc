@@ -1,0 +1,173 @@
+= Layers and localization
+:toc: right
+:imagesdir: images
+:experimental:
+
+Content layers let editors reuse or adapt content across languages, regions, brands, or channels while changing only what each destination needs.
+
+== Project layering
+
+A *layer* is a <<../projects#,content project>> that has a parent project. Like any other project, it has its own repository, default language, permissions, editorial workflow, and published content. The difference is that it inherits content from the parent project. The project at the top of a layer tree is the *root project*.
+
+Layers can be nested or arranged as siblings. For example, a global project can have Norwegian and German child layers, while the German layer can have separate Austrian and Swiss descendants. Content and changes can therefore flow through several generations of layers.
+
+.Layers overview presented as a directed graph with a root project and several child layers
+image::layers-overview.png["Content Studio Settings showing a root project with several child layers, including one with two child layers of its own", 1430px]
+
+== Creating a layer
+
+Create a layer with the <<manage#project-wizard,project wizard>>. On the first step, select the project that the new layer should inherit from, then choose the layer's default language. Use the *Copy from...* option to use the same language as the parent.
+
+.Select the parent project and default language
+image::layers-create.png["Project wizard with a parent project and Swedish as the default language", 848px]
+
+Name the layer and review its generated identifier. Keeping the identifier similar to the parent's makes the relationship easier to recognize. For example, a Swedish layer below `hmdb` could use `hmdb-se`.
+
+.Name the layer and set its identifier
+image::layers-create-name.png["Project wizard with the new layer's display name and identifier", 848px]
+
+IMPORTANT: The parent project and project identifier cannot be changed after the layer is created. The default language and other project settings can be changed later.
+
+Choose the layer's access mode. Use the *Copy from...* option to apply the same default content visibility as the parent.
+
+.Choose the default content visibility
+image::layers-create-access.png["Project wizard showing the access mode choices for the new layer", 848px]
+
+Complete the remaining project wizard steps to assign roles and review the applications inherited from the parent. When the project is created, a background synchronization job starts copying the parent's content into the new layer.
+
+== Layer configuration
+
+=== Roles and access
+
+Each layer has its own project roles and content permissions, allowing access to be controlled independently for every layer.
+
+Access to a parent project does not automatically grant access to its child layers, or vice versa. Assign users the appropriate <<../projects#project-roles,project role>> in every layer where they work.
+
+NOTE: Users with the *Content Manager Administrator* or *System Administrator* role can access all layers by default.
+
+=== Applications
+
+A layer inherits the <<../projects#project-applications,project applications>> assigned to its parent. Inherited applications cannot be removed from the child layer, but additional applications can be assigned there. Application inheritance follows the project hierarchy independently of whether individual content items have been localized.
+
+[[content_inheritance]]
+== Content inheritance
+
+An inherited item keeps the same content ID in every layer. Content Studio can therefore identify corresponding items across the layer tree even when their names, locations, or editorial data differ.
+
+NOTE: A layer can also contain local content created directly in that layer. These items are not visible in parent projects, but are inherited by descendants of the layer where they were created.
+
+Inheritance is tracked independently for four dimensions:
+
+[cols="1,2,2", options="header"]
+|===
+| Dimension | What is inherited | What makes it local
+
+| *Content*
+| Editorial data, including values entered in the content form.
+| Localizing the item in the layer.
+
+| *Name*
+| The path name of the corresponding parent item.
+| Renaming the item in the layer.
+
+| *Parent*
+| The item's location beneath its parent in the content tree.
+| Moving the item in the layer.
+
+| *Sort*
+| The default ordering of the item's children.
+| Changing the sort order in the layer.
+|===
+
+Content Studio updates the relevant inheritance dimension automatically when an editor localizes, renames, moves, or sorts an item. Changing one dimension does not stop the others from inheriting. For example, an item can have a local name and location while its content form continues to receive changes from the parent layer.
+
+NOTE: In Content Studio, an item described simply as *localized* normally has localized *Content* data. It may still inherit its name, parent, or sort order.
+
+=== Propagation
+
+Parent changes are automatically replicated to descendants for each dimension that they still inherit. If one dimension is local, the remaining dimensions continue receiving updates.
+
+Consider three nested layers, *A* → *B* → *C*:
+
+* If *B* localizes only the content data, later content changes from *A* stop at *B*. Name, parent, and sort changes from *A* can still propagate through *B* to *C*.
+* The localized content from *B* becomes the inherited source for *C*, unless *C* has localized its own content.
+* Content created locally in *B* is inherited by *C*, but does not appear in *A*.
+
+New items and their changes initially propagate to child layers. After an item is marked *Ready* in the parent layer for the first time, only subsequent versions marked *Ready* propagate. This keeps unfinished parent edits out of established downstream workflows and reduces unnecessary versions. See <<../workflow#,Workflow>> for the available workflow states.
+
+Replication normally runs in the background immediately after a change. A consistency job also reconciles the layers if initial synchronization or an individual update is interrupted.
+
+== Working in a layer
+
+Editors create, organize, and publish content in a layer much as they do in any other project. Actions are performed on the item in the current layer; an item is never moved between layers for editing.
+
+=== Navigator indicators
+
+Items whose content data is still inherited are visually subdued in the <<../workbench/navigator#,Navigator>>. A Layers indicator appears beside the publishing status of inherited and localized items. When the <<../contextpanel/layers#,Layers panel>> is available, selecting the indicator opens the panel for that item.
+
+image::layers-navigator.png["Navigator showing Layers indicators beside inherited content items", 634px]
+
+[[layers_panel]]
+=== Layers context panel
+
+The <<../contextpanel/layers#,Layers context panel>> shows the corresponding item throughout the layer tree, including its publishing and localization status in each project. Use it to inspect the item's state, edit it in the current layer, or open it in another accessible layer.
+
+[[localize]]
+=== Localize
+
+Inherited content data is read-only. Opening an inherited item in the Content Editor displays the form in a disabled state. Click btn:[Localize] to stop inheriting its content data and enable editing in the current layer.
+
+image::layers-disabled.png["Content Editor with a disabled form and the Localize action available for an inherited item", 546px]
+
+Localizing the item:
+
+* stops *Content* inheritance from the parent;
+* assigns the layer's default language;
+* enables the item for editing in the <<../editor#,Content Editor>>; and
+* leaves name, parent, and sort inheritance unchanged.
+
+The localized draft can be edited and published independently of the corresponding item in every other layer.
+
+[[ai_translation]]
+=== AI translation
+
+When enabled, the <<../ai#ai_translator,AI Translator>> opens after an item is localized and can translate supported text into the current layer's language. Review the translated values in the Content Editor before saving or publishing them.
+
+=== Rename, move, and sort
+
+Renaming, moving, and sorting inherited content do not localize its content data. Each action makes only its corresponding inheritance dimension local:
+
+* <<../actions/move#,Move>> changes *Parent* inheritance when the item is moved to another parent.
+* Renaming the path in the <<../editor/content-form#,Content Form>> changes *Name* inheritance.
+* <<../actions/sort#,Sort>> changes *Sort* inheritance for the parent whose children are reordered.
+
+The content form continues to inherit parent changes until the item is explicitly localized.
+
+=== Reset inheritance
+
+Once an item's content data has been localized, btn:[Reset] is available in the Content Editor. Reset restores inheritance for every dimension that was made local, refreshes those values from the parent, and returns the content data to a read-only state.
+
+image::layers-reset.png["Localized content item with the Reset action available in the Content Editor", 546px]
+
+IMPORTANT: Reset replaces local content data, name, location, and sort order with the current values from the parent. Earlier local versions remain available in <<../contextpanel/version-history#,Version history>>, but the reset action itself cannot be undone directly.
+
+=== Publishing and versions
+
+Every layer has its own _draft_ and _master_ branches. Inheritance updates the layer's draft, but does not publish the item there. Each layer can review, schedule, publish, and unpublish its corresponding item independently.
+
+Version history is also scoped to the current layer. The panel shows versions and activities recorded in that layer without mixing in timelines from its parent, siblings, or descendants.
+
+[[archive_and_delete]]
+=== Archive and delete
+
+Archiving an item moves that item and its descendants into the current layer's <<../workbench/archive#,Archive>> and takes any published versions offline. If the item was inherited, its archived copy becomes local and stops receiving inherited changes. The corresponding item in the parent layer is not affected.
+
+When an item is archived in a parent layer, the action propagates to descendants that still inherit both its *Content* and *Parent* dimensions. A descendant remains active if either dimension is local or if inbound references from items outside the archived selection prevent it from being archived.
+
+Restoring an item from a layer's Archive restores that layer's archived copy as local content. If an inherited item is permanently deleted while its origin still exists in the parent, synchronization can create a fresh inherited copy in the layer. Permanent deletion is therefore not a way to exclude parent content from a layer; leave the item archived instead.
+
+See <<../actions/delete#delete_in_layers,Delete in layers>> for the complete Delete workflow.
+
+== Understanding the CMS model
+
+For details about the underlying properties and replication engine, see the https://developer.enonic.com/docs/cms/stable/content/layering[Content layers reference].

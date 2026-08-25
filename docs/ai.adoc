@@ -1,37 +1,44 @@
-= Juke - AI Content Operator
+= Juke AI
 :toc: right
 :imagesdir: ai/images
 
-NOTE: *Content Studio+ feature.* The AI Assistant is part of the https://market.enonic.com/vendors/enonic/content-studio-plus[Content Studio+] subscription. It also requires the https://market.enonic.com/vendors/enonic/ai-content-operator[Juke AI Content Operator] application.
+NOTE: *Content Studio+ feature.* Juke AI requires a valid https://market.enonic.com/vendors/enonic/content-studio-plus[Content Studio+] subscription and the application for each skill that editors will use.
 
-Juke AI brings artificial intelligence to Content Studio. Over time, Juke will evolve to help out with a range of daily content management chores.
+Juke AI brings a collection of AI-assisted skills to Content Studio. The *Content Operator* provides a chat interface for working with individual fields, while the *AI Translator* translates localized content into a layer's language.
 
-NOTE: Juke AI is in early development stages. Errors may occur, and responses will improve over time. See <<#known_issues, Known issues>> for more details.
+AI-generated content can contain mistakes. Review generated or translated values before saving and publishing them.
 
-== Interface
-To launch the Juke chat interface, you may either click the Juke icon in the Content Editor’s toolbar, or the Juke icon appearing next to an active form field.
+[[content_operator]]
+== Content Operator
+
+The Content Operator requires the https://market.enonic.com/vendors/enonic/ai-content-operator[Juke AI Content Operator] application. It lets editors prompt Juke from the Content Editor and insert generated values into supported fields.
+
+NOTE: Juke AI is in early development stages. Errors may occur, and responses will improve over time. See <<#known_issues,Known issues>> for more details.
+
+=== Interface
+Launch the Juke chat interface from the Juke icon in the Content Editor toolbar or beside an active form field.
 
 image::juke-toolbar.png[Click the Juke icon to activate the chat, 410w]
 
-This will open a modal chat interface where you can communicate with Juke.
+The icon opens a dialog where you can communicate with Juke.
 
 image::juke-chat.png[Interact with Juke in the chat, 638w]
 
 
-== Field context
+=== Field context
 
-It may often be useful to focus Juke's attention on a specific field. Clicking or focusing on a supported form field will instantly trigger Juke's attention by setting the field in the chat context.
+To focus Juke on a specific value, select a supported form field. The field is added to the chat context automatically.
 
 image::juke-context.png[The field "Abstract" is set as context, 636w]
 
-To clear the context, simply click the `x` to the right.
+Click the `x` beside the field to remove it from the context.
 
-NOTE: Juke is currently limited to work with TextLine, TextArea and HtmlArea fields in the main content type form. More will follow soon.
+NOTE: The Content Operator currently works with TextLine, TextArea, and HtmlArea fields in the main content type form.
 
-== Mentions
+=== Mentions
 Fields may also be mentioned directly in the chat. Pressing `@` inside the chat's input will list all available fields in the scope of the current context. Select a field from the list to make it a part of your prompt.
 
-NOTE: If no context is set, you may mention fields at the root level of your content
+NOTE: If no context is set, you can mention fields at the root level of the content.
 
 image::juke-mention.png[type @ to reveal list of contextual input fields, 776w]
 
@@ -40,13 +47,13 @@ image::juke-mention.png[type @ to reveal list of contextual input fields, 776w]
 * Expand the list in `@Article body` from 3 to 5 items and turn it into a numbered list
 * Create `@Display Name` based on `@Article body`
 
-== Retry
-If you are not satisfied with the response provided by Juke or the request fails, use the «retry» icon to make Juke reprocess the instruction.
+=== Retry
+If the response is unsuitable or the request fails, use the *Retry* icon to process the instruction again.
 
 image::juke-retry.png[Click retry icon to give it another shot, 635w]
 
-== Insert
-Juke may provide field value responses. Simply click the `Insert` icon next to value in order to update the form directly.
+=== Insert
+When Juke returns a field value, click the *Insert* icon beside the value to update the form.
 
 image::juke-insert.png[Clicking insert icon will copy the text into the respective field, 665w]
 
@@ -54,9 +61,9 @@ If Juke provides multiple field values, you may use the `Insert all` icon to ins
 
 Finally, the `Copy to buffer` icon will copy the text to your clipboard, allowing you to paste it manually later.
 
-== Variants
+=== Variants
 
-On demand, Juke may provide multiple variants for a single field. Use the arrow icons next to the response which you can use to navigate through the suggestions, and insert values as required.
+Juke can provide multiple variants for a field. Use the arrow icons beside the response to review the suggestions, then insert the preferred value.
 
 image::juke-variants.png[Ask for multiple suggestions related to a field, 634w]
 
@@ -66,27 +73,52 @@ Sample prompts:
 * Make 2 suggestions for `@Abstract`
 
 
-== General instructions
+=== General instructions
 
 You may provide a standard prompt for Juke. These instructions may be specified at a project or site level.
 
 For instance, you may want Juke to use a consistent tone of voice or provide other relevant details about the content you are working on. This helps Juke produce more relevant responses every time.
 
-By adding the `Juke AI Content Operator` application to your project or site, you may provide `custom instructions` as desired
+Add the `Juke AI Content Operator` application to a project or site to provide custom instructions for that scope.
 
 image::juke-instructions.png[Provide general instructions via app settings, 733w]
 
 NOTE: Working with application settings requires the <<projects#project-roles,Owner>> project role or higher.
 
 [[known_issues]]
-== Known issues
+=== Known issues
 
-Known limitations in current version
+Known limitations in the current version:
 
 * Not optimized for general chat
 * Only works with text-based fields
-* Single Item-/OptionSet occurences may not be a context
+* Single ItemSet or OptionSet occurrences may not be available as context
 * Only works with fields in the main content type form
-* Only availabe in "Edit" context
+* Only available in the Content Editor
 * Initial greeting is hardcoded (not AI generated)
-* <<projects/layers#, AI localization>> can't be invoked from chat
+* The <<#ai_translator,AI Translator>> cannot be invoked from the Content Operator chat
+
+[[ai_translator]]
+== AI Translator
+
+The AI Translator is a Juke skill for translating content during <<projects/layering#localize,localization>>. It requires the https://market.enonic.com/vendors/enonic/juke-ai-content-translator[Juke AI Content Translator] application.
+
+When an editor localizes an inherited item or changes an item's language, the AI Translator detects the change and opens the translation dialog. The dialog identifies the target language and allows the editor to start the translation.
+
+image::juke-translator.png[Juke AI Translator dialog targeting the layer language, 907px]
+
+Click btn:[Translate] to translate the detected values. Progress is reported for each value, and successful results are inserted into the open content form. Close the dialog when translation finishes, review the translated content, and then save or publish it through the normal workflow.
+
+The translator handles the display name and supported text inputs, including TextLine, TextArea, and HtmlArea fields. Text in supported X-data and page components can also be translated when their schemas are available. Non-text values and unsupported inputs are left unchanged.
+
+NOTE: The Localize action stops the item's *Content* inheritance before the Translator opens. Translation does not change name, parent, or sort inheritance. See <<projects/layering#content_inheritance,Content inheritance>> for details.
+
+=== Translation instructions
+
+Expand *Translation instructions* in the translation dialog to provide guidance for the current item. Instructions can specify terminology, tone, words to avoid, contextual information, or text that must remain unchanged.
+
+Project owners can also configure general instructions on the Translator application at project or site level. These are included when content in that scope is translated, and editors can supplement them for an individual translation.
+
+image::juke-translator-settings.png[General translation instructions configured on the Translator application, 744px]
+
+NOTE: Changing project or site application settings requires the <<projects#project-roles,Owner>> project role or higher.

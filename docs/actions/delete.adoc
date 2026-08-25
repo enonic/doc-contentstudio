@@ -31,10 +31,14 @@ Delete is a soft operation — the content is moved into the Archive and remains
 
 image::archive-delete-dropdown.png[Permanent delete from the Archive dropdown, 384]
 
+[[delete_in_layers]]
 == Delete in layers
 
-Delete behaves specifically when <<../projects/layers#,layers>> are involved:
+Delete behaves specifically when <<../projects/layering#,layers>> are involved:
 
-* An item deleted in a parent project is deleted in all child layers where it is not localised.
-* Deleting an _inherited_ (non-localised) item in a layer removes it from that layer without touching the parent — a useful way to prune inherited content from a layer.
-* Restoring from a layer's archive may recreate the item in the layer if the original still exists in the parent.
+* Archiving an item in a parent layer also archives corresponding items in descendant layers that still inherit both its content and location. A descendant with either dimension made local, or with an external reference that prevents archiving, remains in place.
+* Archiving an inherited item directly in a child layer does not affect its parent. The archived copy becomes local and stops receiving inherited changes.
+* Restoring that copy from the layer's Archive restores it as local content.
+* Permanently deleting an inherited item while its origin still exists in the parent can cause synchronization to create a fresh inherited copy. To keep inherited content out of the active tree, leave it in the Archive instead of permanently deleting it.
+
+See <<../projects/layering#archive_and_delete,Layers and localization>> for how this behavior relates to inheritance.
