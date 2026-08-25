@@ -4,7 +4,7 @@
 
 The *Navigator* is the default menu item in Content Studio — what you see when you open the application. It is built around the current project's content list and the actions you can perform on it.
 
-The action toolbar runs across the top. Below it, the <<#content_list,Content list>> is the primary panel. The <<#search_panel,Search panel>> opens to its left, while the <<preview#,Preview panel>> and <<contextpanel#,Context panel>> appear to its right. The layout adapts to the available width, so fewer panels and columns may be visible in a narrow window.
+The action toolbar runs across the top. Below it, the <<#content_list,Content list>> is the primary panel. The <<#search_panel,Search panel>> opens to its left, while the <<preview#,Preview panel>> and <<../contextpanel#,Context panel>> appear to its right. The layout adapts to the available width, so fewer panels and columns may be visible in a narrow window.
 
 image::navigator.png[Content Studio Navigator showing the content list, preview, and Details widget, 1440px]
 
@@ -108,6 +108,6 @@ Use the *Export* button next to the hit count to download the search result as C
 Selecting a single content item updates both right-hand panels:
 
 * The <<preview#,Preview panel>> shows the selected item's draft rendition. Its toolbar displays status and offers preview modes and device-size emulation. If the item cannot be rendered, the preview is unavailable or replaced by a placeholder.
-* The <<contextpanel#,Context panel>> hosts widgets for the selected item. Built-in widgets provide details, dependencies, and version history; installed applications may contribute additional widgets.
+* The <<../contextpanel#,Context panel>> hosts widgets for the selected item. Built-in widgets provide details, dependencies, and version history; installed applications may contribute additional widgets.
 
 Both panels are also used in the <<../editor#,Editor>>. Their dedicated pages describe all controls and available modes.

@@ -19,7 +19,7 @@ Content Studio is a standalone Enonic XP application that can be installed from 
 
 The <<workbench#,Workbench>> is the application shell: a project bar on top, a menu bar on the left, and a main panel filling the rest. The default menuitem is the <<workbench/navigator#,Navigator>> — the content list, search, and per-content actions.
 
-Autoring happesn in the <<editor#,Content Editor>>, which launches in a separate browser tab (Google Docs style) and provides a consistent interface for editing and previewing.
+Authoring happens in the <<editor#,Content Editor>>, which launches in a separate browser tab (Google Docs style) and provides a consistent interface for editing and previewing.
 
 == Concepts
 
@@ -54,13 +54,13 @@ Content is always edited in the *draft* branch. Publishing copies the active dra
 
 *Workflow state* is the signal between editors that a draft is ready to publish — _In progress_, _Ready for publishing_, _Publish request_, _Published_, _Unpublished_. See <<workflow#,Workflow>> for the state machine and <<actions/publish#,Publish>> for the flow.
 
-=== Versions
+=== Version history
 
-Every save, publish, unpublish, rename, or permissions change creates a new *version*. Versions can be compared and reverted from the Version history widget — see <<workbench/contextpanel/versions#,Versions>>.
+Every save, publish, unpublish, rename, or permissions change creates a new *version*. Versions can be compared and reverted from the Version history widget — see <<contextpanel/version-history#,Version history>>.
 
 === Dependencies
 
-Content items reference each other — pages embed images, shortcuts target content, text fields link to other items. *Dependencies* are tracked in both directions (inbound: who uses this; outbound: what does this use). Publishing, archiving, and unpublishing all check dependencies — see <<workbench/contextpanel/dependencies#,Dependencies>>.
+Content items reference each other — pages embed images, shortcuts target content, text fields link to other items. *Dependencies* are tracked in both directions (inbound: who uses this; outbound: what does this use). Publishing, archiving, and unpublishing all check dependencies — see <<contextpanel/dependencies#,Dependencies>>.
 
 === Permissions
 
@@ -74,7 +74,7 @@ Deleting content is destructive. *Archiving* is the non-destructive alternative 
 
 An *application* is an installable unit of XP code that can contribute content types, page controllers, parts, layouts, translations, and UI widgets. Applications are attached to a site via its Applications field; some (like Juke and Content Studio+) contribute UI across all sites.
 
-*Extensions* are typically small UI surfaces contributed by an application. The main host is the <<workbench/contextpanel#,Context panel>>; applications can also contribute <<workbench/preview#,preview modes>> and <<workbench#,menuitems>>.
+*Extensions* are typically small UI surfaces contributed by an application. The main host is the <<contextpanel#,Context panel>>; applications can also contribute <<workbench/preview#,preview modes>> and <<workbench#,menuitems>>.
 
 === Issues and publish requests
 
@@ -85,7 +85,7 @@ An *application* is an installable unit of XP code that can contribute content t
 Content Studio itself is free and open source. An Enonic subscription unlocks *Content Studio+*, a companion application distributed on https://market.enonic.com/vendors/enonic/content-studio-plus[Enonic Market] that adds advanced editorial capabilities:
 
 * <<workbench/archive#,Archive browser>> — the dedicated *Archive* menuitem for browsing, restoring, and permanently deleting archived content.
-* <<workbench/contextpanel/variants#,Content Variants>> — create and manage variant copies of a content item for A/B testing.
+* <<contextpanel/variants#,Content Variants>> — create and manage variant copies of a content item for A/B testing.
 * <<projects/layers#ai_translation,AI translation>> — automatic translation of inherited content when localizing in a layer.
 * <<projects/layers#layers_panel,Layers widget>> — see the status of a content item across every layer in the system.
 

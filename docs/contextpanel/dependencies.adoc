@@ -1,0 +1,31 @@
+= Dependencies
+:toc: right
+:imagesdir: images
+:experimental:
+
+Content items reference each other — pages embed images, shortcuts target content, text fields link to other items. Those references are *dependencies*. Content Studio tracks them in both directions, and makes them inspectable via the *Dependencies* widget in the <<../contextpanel#,Context panel>>.
+
+* An *inbound* dependency is content that _uses_ the selected item — for example, a page that embeds it, or a shortcut that points at it.
+* An *outbound* dependency is content that the selected item _uses_ — for example, images referenced in its rich-text fields, or targets of content selectors.
+
+image::dependencies.png[Dependencies context panel showing inbound and outbound dependencies to a content item, 353px]
+
+Inbound dependencies are listed above the content box, outbound below. When there are no dependencies of a kind, the widget shows a placeholder (_No incoming dependencies_, etc.). When there are dependencies, a button displays the total count, with icons and counts broken out per content type.
+
+== Dependency search
+
+Click btn:[Show all incoming] or btn:[Show all outgoing] to open the dependency search in a new browser tab. Selecting a content-type icon opens the same view with that content type preselected.
+
+image::dependencies-search.png[Dependencies search panel showing the special filter activated and matching results, 1001px]
+
+The selected content item remains fixed as a filter in the search panel. The results list shows dependencies in the chosen direction, including each item's display name, path, content type, and publishing status.
+
+Use the search field to filter the results by text, or the *Content Types* checkboxes to include only specific content types. Select individual results with their checkboxes, or use *Select all*. Click the refresh button to update the results. The btn:[Export] action downloads the dependency search results.
+
+== Dependencies in content actions
+
+Content Studio checks dependencies when performing actions that could affect related content:
+
+* <<../actions/publish#,Publishing>> loads related dependencies into the publishing batch. Required dependencies cannot be excluded; optional dependencies can be included or excluded before publishing.
+* <<../actions/delete#,Delete>> warns when other content depends on the item being deleted.
+* <<../actions/unpublish#,Unpublish>> warns when published content depends on the item being taken offline.

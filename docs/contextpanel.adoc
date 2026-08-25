@@ -1,0 +1,49 @@
+= Context panel
+:toc: right
+:imagesdir: contextpanel/images
+
+The *Context panel* is the multifunction column on the right of the <<workbench/navigator#,Navigator>>, the <<workbench/archive#,Archive browser>>, and the <<editor#,Content Editor>>.
+
+== Overview
+
+In most Content Studio views, the right-hand side is reserved for the Context panel. It shows information and actions related to the currently selected content item. The available panels depend on the current view, the selected content, the installed applications, and the current user's permissions.
+
+.On desktop screens, the Context panel is visible by default. On smaller screens, it is hidden by default. Use the *Context panel* icon in the toolbar to show or hide it.
+image::contextpanel-overview.png[Illustration showing the various elements of context panel with toggle selector and active panel, width=1506px]
+
+TIP: Resize the Context panel by dragging its left edge.
+
+=== Panel selector
+
+Use the dropdown at the top to switch between the available panels. Built-in panels appear first, followed by custom panels provided by installed applications. Use the filter to narrow the list by keyword.
+
+image::contextpanel-selector.png[Expanded Context panel selector showing the search field and built-in panels, width=361px]
+
+NOTE: The list of available panels depends on the user's permissions and the current view.
+
+== Built-in panels
+
+* <<contextpanel/details#,Details panel>> — basic properties of the selected content item (display name, path, status, permissions, properties, schedule, attachments).
+* <<contextpanel/version-history#,Version history panel>> — every version of the selected item, with actions to compare or revert versions.
+* <<contextpanel/dependencies#,Dependencies panel>> — inbound and outbound references between the item and other content.
+* <<contextpanel/export#,Content Exports panel>> — export and import content items.
+* <<editor/page-editor#_components_widget,Components panel>> — the page-building tool that appears in the Editor for renderable content.
+
+== Content Studio+ panels
+
+The following panels are contributed by https://market.enonic.com/vendors/enonic/content-studio-plus[Content Studio+]:
+
+* <<projects/layers#layers_panel,Layers>> — shows the status of a content item across every layer in the system.
+* <<contextpanel/variants#,Variants>> — creates and manages A/B variants of the selected item.
+* <<contextpanel/publish-report#,Publishing report>> — generate a report that compares published versions of a content item.
+
+== Bring your own context panel
+
+Enonic applications can contribute custom panels through the Context panel extension point.
+
+See the https://developer.enonic.com/docs/code/stable/web/extensions/contextpanel[Context panel extension reference] for the descriptor format, lifecycle, and implementation details.
+
+.Custom panel contributed by the SEO Metafields application
+image::contextpanel-custom.png[Sample custom panel from the SEO Metafields application, width=690px]
+
+The https://market.enonic.com/vendors/enonic/seo-metafields[SEO Metafields application] is available for free on Enonic Market.

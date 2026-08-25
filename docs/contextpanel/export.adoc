@@ -1,0 +1,52 @@
+= Content exports
+:toc: right
+:imagesdir: images
+:experimental:
+
+The *Content Exports* panel creates and imports portable copies of content trees. Use it to transfer selected content between Enonic XP installations or to re-import an exported tree into a project.
+
+NOTE: This panel is only available to Content Administrators and System Administrators.
+
+== Overview
+
+An export contains the selected item, its descendants, and associated binary files such as images and attachments. It represents the current version in the project's _draft_ branch; it is not a backup of the project's complete publishing or version history.
+
+image::exports.png[Content Exports context panel showing selected item and available actions, 355px]
+
+Exports are stored on the Enonic XP server rather than downloaded through the browser. The panel lists the exports available to the current installation and provides a name filter and a refresh button. Moving an export to another installation requires an administrator to transfer the named export between the servers.
+
+
+== Creating an export
+
+. Select the root item of the tree you want to export in the <<../workbench/navigator#,Navigator>>.
+. Open *Content Exports* from the <<../contextpanel#,Context panel>> selector.
+. Click btn:[Export].
+. In the *Export options* dialog, review the selected item and enter an *Export name*. The content name is suggested by default.
+. Click btn:[Export] to create the export.
+
+image::exports-dialog.png[Export options dialog showing the selected item and suggested export name, 461px]
+
+Content Studio combines the installation, project, supplied name, and creation time into the final server-side export name. When the operation completes, the dialog shows this name and the number of exported nodes. Use the copy button to copy the final name.
+
+The new export is selected in the panel automatically. If an export created elsewhere does not appear, click the refresh button above the list.
+
+== Importing an export
+
+Importing adds the exported content tree beneath a target item.
+
+image::exports-list.png[The panel dialog showing the exports available for importing, 351px]
+
+NOTE: Existing items with the same IDs are updated, while new items are created. The import does not delete any content.
+
+. Open the *Content Exports* panel and select an export from the *Imports* list. Use *Filter by name* to narrow a long list.
+. Click btn:[Import].
+. In the *Import options* dialog, verify the export shown under *Import from*.
+. Under *Import into*, select the target content item. The item currently selected in Content Studio is used by default; select the project root to import at the top level.
+. Leave *Preserve original first-published timestamp* selected to retain that metadata from the source, or clear it to discard the imported value.
+. Click btn:[Import].
+
+image::exports-import-dialog.png[Import options dialog showing the selected export and target location, 698px]
+
+After completing the import, the result reports how many nodes were added and updated. Imported content is placed in the target project's _draft_ branch. Review it in the Navigator and use the normal <<../actions/publish#,publishing flow>> when it is ready to go online.
+
+TIP: Developers may programmatically create their own export and import operations using the https://developer.enonic.com/docs/code/xp8/libraries/lib-export[Enonic XP Export library].

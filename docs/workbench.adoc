@@ -38,6 +38,6 @@ See the https://developer.enonic.com/docs/code/stable/web/extensions/menuitem[me
 [[main_panel]]
 == Main panel
 
-The remaining space is the main panel — the surface controlled by the active menuitem. The Navigator splits it into a toolbar, search panel, content list, <<workbench/preview#,Preview>>, and <<workbench/contextpanel#,Context panel>>; other menuitems arrange the panel differently.
+The remaining space is the main panel — the surface controlled by the active menuitem. The Navigator splits it into a toolbar, search panel, content list, <<workbench/preview#,Preview>>, and <<contextpanel#,Context panel>>; other menuitems arrange the panel differently.
 
-Two of those panels — <<workbench/preview#,Preview>> and <<workbench/contextpanel#,Context panel>> — appear inside multiple menuitem views (Navigator, Archive) and also inside the <<editor#,Editor>>. Their behaviour and extension models are shared across surfaces, which is why they are documented on their own pages.
+Two of those panels — <<workbench/preview#,Preview>> and <<contextpanel#,Context panel>> — appear inside multiple menuitem views (Navigator, Archive) and also inside the <<editor#,Editor>>. Their behaviour and extension models are shared across surfaces, which is why they are documented on their own pages.

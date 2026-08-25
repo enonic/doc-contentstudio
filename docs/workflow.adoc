@@ -120,7 +120,7 @@ Published:: The draft version is identical to the live one — no changes to pub
 
 NOTE: *Moved* may be combined with other states, since an item can be both edited and relocated in the same round of work. Such an item reads *Modified, Moved*.
 
-The change status is shown in the toolbar of the <<workbench/preview#,Preview panel>>, in the <<workbench/contextpanel/details#,Details>> widget, and per item in the <<actions/publish#,Publishing wizard>>. In the wizard it appears next to the <<#publish_state,publish state>>, so a single line tells you both where the item stands today and what publishing will change:
+The change status is shown in the toolbar of the <<workbench/preview#,Preview panel>>, in the <<contextpanel/details#,Details>> widget, and per item in the <<actions/publish#,Publishing wizard>>. In the wizard it appears next to the <<#publish_state,publish state>>, so a single line tells you both where the item stands today and what publishing will change:
 
  ONLINE | Modified, Moved
 
@@ -133,4 +133,3 @@ Items with change status *Published* never appear in the Publishing wizard — t
 Publish requests are part of the effective workflow, but not a workflow state in themselves, as they operate across multiple items. They exist so work can be handed to someone else for review and publishing — typically when the editor lacks publish permission, or wants sign-off before going live. The full wizard, the request dialog, and how requests are managed are documented under <<workflow/issues#publish_requests,Publish requests>>.
 
 NOTE: Content items can also be attached to *tasks*, the other issue type. Unlike publish requests, tasks are purely editorial work items — they have no effect on an item's workflow or publish state. See <<workflow/issues#,Issues>>.
-
