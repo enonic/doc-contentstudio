@@ -458,7 +458,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel2">
 <li><a href="#navigator_indicators">Navigator indicators</a></li>
 <li><a href="#layers_panel">Layers context panel</a></li>
-<li><a href="#localize">Localize</a></li>
+<li><a href="#localize">Edit and Localize</a></li>
 <li><a href="#ai_translation">AI translation</a></li>
 <li><a href="#rename_move_and_sort">Rename, move, and sort</a></li>
 <li><a href="#reset_inheritance">Reset inheritance</a></li>
@@ -489,7 +489,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/layers-overview.png" alt="Content Studio Settings showing a root project with several child layers, including one with two child layers of its own" width="1430px">
+<img src="images/layering-overview.png" alt="Content Studio Settings showing a root project with several child layers, including one with two child layers of its own" width="1430px">
 </div>
 <div class="title">Figure 1. Layers overview presented as a directed graph with a root project and several child layers</div>
 </div>
@@ -503,7 +503,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/layers-create.png" alt="Project wizard with a parent project and Swedish as the default language" width="848px">
+<img src="images/layering-step1.png" alt="Project wizard with a parent project and Danish as the default language" width="905px">
 </div>
 <div class="title">Figure 2. Select the parent project and default language</div>
 </div>
@@ -512,7 +512,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/layers-create-name.png" alt="Project wizard with the new layer&#8217;s display name and identifier" width="848px">
+<img src="images/layering-step2.png" alt="Project wizard with the new layer&#8217;s display name and identifier" width="905px">
 </div>
 <div class="title">Figure 3. Name the layer and set its identifier</div>
 </div>
@@ -533,7 +533,7 @@ The parent project and project identifier cannot be changed after the layer is c
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/layers-create-access.png" alt="Project wizard showing the access mode choices for the new layer" width="848px">
+<img src="images/layering-step3.png" alt="Project wizard showing the access mode choices for the new layer" width="848px">
 </div>
 <div class="title">Figure 4. Choose the default content visibility</div>
 </div>
@@ -689,8 +689,9 @@ In Content Studio, an item described simply as <strong>localized</strong> normal
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/layers-navigator.png" alt="Navigator showing Layers indicators beside inherited content items" width="634px">
+<img src="images/layering-navigator.png" alt="Navigator showing Layers indicators beside inherited content items" width="634px">
 </div>
+<div class="title">Figure 5. A small layer icon is displayed next to the publish status in the content list</div>
 </div>
 </div>
 <div class="sect2">
@@ -700,13 +701,13 @@ In Content Studio, an item described simply as <strong>localized</strong> normal
 </div>
 </div>
 <div class="sect2">
-<h3 id="localize"><a class="link" href="#localize">Localize</a></h3>
+<h3 id="localize"><a class="link" href="#localize">Edit and Localize</a></h3>
 <div class="paragraph">
 <p>Inherited content data is read-only. Opening an inherited item in the Content Editor displays the form in a disabled state. Click <b class="button">Localize</b> to stop inheriting its content data and enable editing in the current layer.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/layers-disabled.png" alt="Content Editor with a disabled form and the Localize action available for an inherited item" width="546px">
+<img src="images/layering-disabled.png" alt="Content Editor with a disabled form and the Localize action available for an inherited item" width="546px">
 </div>
 </div>
 <div class="paragraph">
@@ -730,6 +731,18 @@ In Content Studio, an item described simply as <strong>localized</strong> normal
 </div>
 <div class="paragraph">
 <p>The localized draft can be edited and published independently of the corresponding item in every other layer.</p>
+</div>
+<div class="paragraph">
+<p>Also notice that the editor toolbar presents the inheritance icon together with the content name, giving you a visual indication of inheritance status.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/layering-edit-icon.png" alt="Editor toolbar showing the inheritance icon to the left of the content name and workflow status" width="326px">
+</div>
+<div class="title">Figure 6. Instantly see the inheritance status of an item in the editor toolbar</div>
+</div>
+<div class="paragraph">
+<p>Clicking the icon will open the <a href="../contextpanel/layers.ahtml">Layers panel</a> if it is available.</p>
 </div>
 </div>
 <div class="sect2">
@@ -767,7 +780,7 @@ In Content Studio, an item described simply as <strong>localized</strong> normal
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/layers-reset.png" alt="Localized content item with the Reset action available in the Content Editor" width="546px">
+<img src="images/layering-reset.png" alt="Localized content item with the Reset action available in the Content Editor" width="546px">
 </div>
 </div>
 <div class="admonitionblock important">
@@ -820,7 +833,7 @@ Reset replaces local content data, name, location, and sort order with the curre
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-08-25 15:51:41 UTC
+Last updated 2026-08-26 11:12:59 UTC
 </div>
 </div>
 </body>

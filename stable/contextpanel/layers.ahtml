@@ -542,7 +542,7 @@ Opening an item in another layer does not move or copy it between projects. It o
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/layers-all.png" alt="Dialog showing the complete layer tree for the selected item" width="866px">
+<img src="images/layers-all.png" alt="Dialog showing the complete layer tree for the selected item" width="905px">
 </div>
 </div>
 <div class="paragraph">
@@ -564,7 +564,7 @@ Opening an item in another layer does not move or copy it between projects. It o
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-08-25 15:51:41 UTC
+Last updated 2026-08-26 11:12:59 UTC
 </div>
 </div>
 </body>

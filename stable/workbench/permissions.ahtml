@@ -441,10 +441,18 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
+<li><a href="#introduction">Introduction</a></li>
 <li><a href="#principals">Principals</a></li>
-<li><a href="#permissions">Permissions</a></li>
-<li><a href="#public_content">Public content</a></li>
-<li><a href="#editing_permissions">Editing permissions</a></li>
+<li><a href="#detail_panel">Detail panel</a></li>
+<li><a href="#edit_permissions">Editing permissions</a>
+<ul class="sectlevel2">
+<li><a href="#permission_levels">Permission levels</a></li>
+<li><a href="#custom_permissions">Custom permissions</a></li>
+<li><a href="#public_or_restricted">Public or restricted</a></li>
+<li><a href="#applying_to_children">Applying to children</a></li>
+<li><a href="#summary">Summary</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -452,7 +460,24 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Security of content is determined by the principals and permissions in the content’s security settings. Principals are <strong>Users</strong>, <strong>Groups</strong> and <strong>Roles</strong> which are managed in the Users application. Principals are added to each content. Permissions are granted to the principals of the content.</p>
+<p>Permissions determine who can access content and what actions they can perform.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="introduction"><a class="link" href="#introduction">Introduction</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Granular permissions such as <code>Read</code> and <code>Modify</code> are granted to principals for each content item. Principals are users, groups, and roles managed by your administrator.</p>
+</div>
+<div class="paragraph">
+<p>Every <a href="../projects.ahtml">content project</a> defines the default permissions for content in that project.</p>
+</div>
+<div class="paragraph">
+<p>When a content item is created, it receives a copy of its parent&#8217;s permissions. An item created directly at the project root therefore receives a copy of the project&#8217;s default permissions. From that point, the permissions are independent: later changes to the parent do not automatically affect the item.</p>
+</div>
+<div class="paragraph">
+<p>Permissions can be changed for an individual item or explicitly applied to its child items.</p>
 </div>
 </div>
 </div>
@@ -460,99 +485,263 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="principals"><a class="link" href="#principals">Principals</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Individual users could be added to each content. But security is easier to manage by adding groups and roles to each content and then granting the appropriate permissions to these groups and roles. When a group is added to content then all users who are members of that group will have the group permissions for that content. Similarly, when a role is granted permissions to content, all users who have that role will also have those permissions.</p>
+<p>Individual users can be given permissions, but using groups or roles generally simplifies access management. When a group is granted permissions, all direct and indirect members receive those permissions for the content. Similarly, all users assigned a role receive the permissions granted to that role.</p>
+</div>
+<div class="paragraph">
+<p>A user&#8217;s effective access combines permissions granted directly and through group and role membership.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="permissions"><a class="link" href="#permissions">Permissions</a></h2>
+<h2 id="detail_panel"><a class="link" href="#detail_panel">Detail panel</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Permissions are granted to principals on a per-content basis. This means that changing a principal’s permissions for one content does not affect that principal’s permissions for other content. Below is a list of permissions that can be applied to each principal for any content.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Read:</strong> The principal can see this content;</p>
-</li>
-<li>
-<p><strong>Create:</strong> The principal can create child items under this content. For example, if a user has this permission on a folder then the user can create new content in the folder;</p>
-</li>
-<li>
-<p><strong>Modify:</strong> The principal can edit this content and save changes in the draft branch;</p>
-</li>
-<li>
-<p><strong>Delete:</strong> The principal can delete this content from the draft branch;</p>
-</li>
-<li>
-<p><strong>Publish:</strong> The principal can publish this content to the master branch;</p>
-</li>
-<li>
-<p><strong>Read permissions:</strong> The principal can see this content’s permissions;</p>
-</li>
-<li>
-<p><strong>Write permissions:</strong> The principal can change this content’s permissions.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Permissions can also be denied to a principal, even if the permissions would otherwise be granted from another principal. For example, all content editors might be added to a group called <strong>Content editors</strong> which has the <code>Can Publish</code> permissions. But new content editors might break stuff, so they would also be added to a group called <strong>Noobs</strong>. Users in this group could be prevented from publishing and deleting content by denying those permissions to the group.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="public_content"><a class="link" href="#public_content">Public content</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>For content to be accessible to the public, (meaning users who are not logged in), it must have the role <strong>Everyone</strong> with the <code>Read</code> permission. The content must also be published. Content without the <strong>Everyone</strong> role can only be seen by users who are logged in and have read access to it through one of the content’s principals.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="editing_permissions"><a class="link" href="#editing_permissions">Editing permissions</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>When a site is first created, it will have the roles <strong>Administrator</strong> and <strong>Content Manager Administrator</strong> with full access. It will also have the role of <strong>Content Manager App</strong> with reading access. When content is created it will inherit the security settings from its parent content. The security settings for any content can be changed through the Edit permissions dialog. This can be accessed with the <code>Edit Permissions</code> button in the Security section when editing content, or by the button in the details panel in browse view.</p>
+<p>Use the <a href="../contextpanel/details.ahtml">Details panel</a> to see and edit content permissions. The public or restricted status of the item appears at the top, followed by a summary of the principals with access, grouped by permission level.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="permissions/images/permissions-dialog.png" alt="permissions dialog">
+<img src="images/permissions-view.png" alt="Details panel showing the permissions for a content item" width="358px">
 </div>
-</div>
-<div class="paragraph">
-<p>Opening the <strong>Edit Permissions</strong> dialog shows a list of the current principals and their permissions for the content. By default, all content will inherit permissions from its parent. Permissions cannot be changed until the box for <code>Inherit permissions</code> is unchecked. Any changes that are made will also be applied to all child items that directly or indirectly inherit permissions from this content. There is also a checkbox at the bottom of the dialog labeled <code>Overwrite child permissions</code>. Checking this box will force the new permissions on child content that do not inherit permissions.</p>
+<div class="title">Figure 1. A public content item with several users who have Full Access</div>
 </div>
 <div class="paragraph">
-<p>When the <code>Inherit permissions</code> checkbox is unchecked, a dropdown selector will appear for adding new principals. The permissions for each principal in the list can be determined by the settings in blue letters on the right. Clicking a setting will open a menu with the available options that can be applied, which are listed below:</p>
+<p>Click <b class="button">Edit permissions</b> to open the <a href="#edit_permissions">permissions wizard</a> and change the permissions for the content item.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="edit_permissions"><a class="link" href="#edit_permissions">Editing permissions</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Changing permissions on one content item does not automatically affect any other item. The permissions wizard can explicitly apply the selected changes to child items, with an option to replace their permissions completely.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Only users with the <strong>Permissions</strong> permission can edit an item&#8217;s permissions. <strong>Full Access</strong> includes this permission.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Step 1 of the permissions wizard shows the current principals and their permission levels. The list of principals can be filtered by name or type.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/permissions-step1.png" alt="Permissions wizard step 1 listing permissions per principal" width="903px">
+</div>
+<div class="title">Figure 2. Manage access for a content item</div>
+</div>
+<div class="paragraph">
+<p>From the access step, you can add or remove principals and change their permission levels. If the item&#8217;s permissions differ from its parent, <b class="button">Copy from parent</b> replaces the current settings with a copy of the parent&#8217;s permissions. For an item at the project root, the button is labeled <b class="button">Copy from project</b>.</p>
+</div>
+<div class="sect2">
+<h3 id="permission_levels"><a class="link" href="#permission_levels">Permission levels</a></h3>
+<div class="paragraph">
+<p>These are the available permission levels:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Can Read:</strong> Has only the <code>Read</code> permission;</p>
+<p>Can Read: The principal can see this content.</p>
 </li>
 <li>
-<p><strong>Can Write:</strong> Has permissions for <code>Read</code>, <code>Create</code>, <code>Modify</code>, and <code>Delete</code>;</p>
+<p>Can Write: The principal can create child items and edit or delete this content.</p>
 </li>
 <li>
-<p><strong>Can Publish:</strong> Has permissions for <code>Read</code>, <code>Create</code>, <code>Modify</code>, <code>Delete</code>, and <code>Publish</code>;</p>
+<p>Can Publish: The principal has <strong>Can Write</strong> access and can publish this content.</p>
 </li>
 <li>
-<p><strong>Full Access:</strong> Has all permissions;</p>
+<p>Full Access: The principal has <strong>Can Publish</strong> access and can change the permissions of this content.</p>
 </li>
 <li>
-<p><strong>Custom:</strong> Any combination of permissions.</p>
+<p>Custom: The principal can be granted any combination of granular permissions.</p>
 </li>
 </ul>
 </div>
+</div>
+<div class="sect2">
+<h3 id="custom_permissions"><a class="link" href="#custom_permissions">Custom permissions</a></h3>
 <div class="paragraph">
-<p>Selecting <strong>Custom</strong> will list all of the permissions. Clicking on permission will toggle it between white (not granted), green (granted) and red (denied).</p>
+<p>Permission levels are pre-configured sets of permissions. Select <strong>Custom</strong> to grant any combination of the permissions in the table.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 40%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Permission</th>
+<th class="tableblock halign-left valign-top">Allows the principal to</th>
+<th class="tableblock halign-center valign-top">Can Read</th>
+<th class="tableblock halign-center valign-top">Can Write</th>
+<th class="tableblock halign-center valign-top">Can Publish</th>
+<th class="tableblock halign-center valign-top">Full Access</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Read</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">See the content.</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✓</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✓</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✓</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✓</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create child items under the content.</p></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✓</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✓</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✓</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Modify</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Edit the content and save changes.</p></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✓</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✓</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✓</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete the content.</p></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✓</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✓</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✓</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Publish</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Publish the content from the draft branch to the master branch.</p></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✓</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✓</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Permissions</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Change the content&#8217;s permissions.</p></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✓</p></td>
+</tr>
+</tbody>
+</table>
+<div class="imageblock">
+<div class="content">
+<img src="images/permissions-custom.png" alt="Custom permission checkboxes for a principal" width="903px">
+</div>
+<div class="title">Figure 3. Custom permissions for a principal</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="public_or_restricted"><a class="link" href="#public_or_restricted">Public or restricted</a></h3>
+<div class="paragraph">
+<p>For anonymous visitors to access content, the access mode must be <strong>Public</strong> and the content must be published. With <strong>Restricted</strong> access, only principals granted the <code>Read</code> permission can access the content.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/permissions-public.png" alt="Access mode set to Public" width="469px">
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Under the hood, <strong>Public</strong> grants the <code>Everyone</code> role the <code>Read</code> permission.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="applying_to_children"><a class="link" href="#applying_to_children">Applying to children</a></h3>
+<div class="paragraph">
+<p>If the content has child items, Step 2 lets you apply the changes to this item, its children, or both.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/permissions-apply.png" alt="Permissions wizard step 2 showing where changes can be applied" width="905px">
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+When changes are applied only to the current item, existing children remain unaffected. New child items will still receive a copy of the current item&#8217;s permissions when they are created.
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/permissions-replace.png" alt="Option to replace all child permissions" width="905px">
+</div>
+</div>
+<div class="paragraph">
+<p>By default, only the changes made in Step 1 are applied to the selected child items; their other permissions are preserved. Select <strong>Replace all child permissions</strong> to remove their existing permissions and replace them with the permissions configured in Step 1.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+There is no automatic undo after permissions are applied. To reverse the changes, edit the permissions again.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="summary"><a class="link" href="#summary">Summary</a></h3>
+<div class="paragraph">
+<p>The final step of the wizard summarizes the changes that will be applied. Click <b class="button">Apply changes</b> to save them.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/permissions-summary.png" alt="Permissions wizard summary showing the changes and where they will be applied" width="905px">
+</div>
+<div class="title">Figure 4. One added, one removed, and one modified principal, applied without replacing child permissions</div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Permission changes take effect across all branches, so both draft and published versions are affected.
+</td>
+</tr>
+</table>
+</div>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-08-25 15:51:41 UTC
+Last updated 2026-08-26 11:12:59 UTC
 </div>
 </div>
 </body>
