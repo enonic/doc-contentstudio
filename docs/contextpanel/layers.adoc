@@ -39,7 +39,7 @@ The branch shown in the panel is only one route through a layer tree. Sibling la
 
 Click btn:[Show all] to open a dialog containing the complete layer tree for the item. The number on the button is the total number of layers in which the item exists and can therefore be greater than the number of cards currently displayed in the panel.
 
-image::layers-all.png["Dialog showing the complete layer tree for the selected item", 866px]
+image::layers-all.png["Dialog showing the complete layer tree for the selected item", 905px]
 
 As in the branch view, select a card in the dialog to open the item in the corresponding layer. Close the dialog to return to the branch view.
 

@@ -12,26 +12,26 @@ A *layer* is a <<../projects#,content project>> that has a parent project. Like 
 Layers can be nested or arranged as siblings. For example, a global project can have Norwegian and German child layers, while the German layer can have separate Austrian and Swiss descendants. Content and changes can therefore flow through several generations of layers.
 
 .Layers overview presented as a directed graph with a root project and several child layers
-image::layers-overview.png["Content Studio Settings showing a root project with several child layers, including one with two child layers of its own", 1430px]
+image::layering-overview.png["Content Studio Settings showing a root project with several child layers, including one with two child layers of its own", 1430px]
 
 == Creating a layer
 
 Create a layer with the <<manage#project-wizard,project wizard>>. On the first step, select the project that the new layer should inherit from, then choose the layer's default language. Use the *Copy from...* option to use the same language as the parent.
 
 .Select the parent project and default language
-image::layers-create.png["Project wizard with a parent project and Swedish as the default language", 848px]
+image::layering-step1.png["Project wizard with a parent project and Danish as the default language", 905px]
 
 Name the layer and review its generated identifier. Keeping the identifier similar to the parent's makes the relationship easier to recognize. For example, a Swedish layer below `hmdb` could use `hmdb-se`.
 
 .Name the layer and set its identifier
-image::layers-create-name.png["Project wizard with the new layer's display name and identifier", 848px]
+image::layering-step2.png["Project wizard with the new layer's display name and identifier", 905px]
 
 IMPORTANT: The parent project and project identifier cannot be changed after the layer is created. The default language and other project settings can be changed later.
 
 Choose the layer's access mode. Use the *Copy from...* option to apply the same default content visibility as the parent.
 
 .Choose the default content visibility
-image::layers-create-access.png["Project wizard showing the access mode choices for the new layer", 848px]
+image::layering-step3.png["Project wizard showing the access mode choices for the new layer", 848px]
 
 Complete the remaining project wizard steps to assign roles and review the applications inherited from the parent. When the project is created, a background synchronization job starts copying the parent's content into the new layer.
 
@@ -105,7 +105,9 @@ Editors create, organize, and publish content in a layer much as they do in any 
 
 Items whose content data is still inherited are visually subdued in the <<../workbench/navigator#,Navigator>>. A Layers indicator appears beside the publishing status of inherited and localized items. When the <<../contextpanel/layers#,Layers panel>> is available, selecting the indicator opens the panel for that item.
 
-image::layers-navigator.png["Navigator showing Layers indicators beside inherited content items", 634px]
+.A small layer icon is displayed next to the publish status in the content list
+image::layering-navigator.png["Navigator showing Layers indicators beside inherited content items", 634px]
+
 
 [[layers_panel]]
 === Layers context panel
@@ -113,11 +115,11 @@ image::layers-navigator.png["Navigator showing Layers indicators beside inherite
 The <<../contextpanel/layers#,Layers context panel>> shows the corresponding item throughout the layer tree, including its publishing and localization status in each project. Use it to inspect the item's state, edit it in the current layer, or open it in another accessible layer.
 
 [[localize]]
-=== Localize
+=== Edit and Localize
 
 Inherited content data is read-only. Opening an inherited item in the Content Editor displays the form in a disabled state. Click btn:[Localize] to stop inheriting its content data and enable editing in the current layer.
 
-image::layers-disabled.png["Content Editor with a disabled form and the Localize action available for an inherited item", 546px]
+image::layering-disabled.png["Content Editor with a disabled form and the Localize action available for an inherited item", 546px]
 
 Localizing the item:
 
@@ -127,6 +129,13 @@ Localizing the item:
 * leaves name, parent, and sort inheritance unchanged.
 
 The localized draft can be edited and published independently of the corresponding item in every other layer.
+
+Also notice that the editor toolbar presents the inheritance icon together with the content name, giving you a visual indication of inheritance status.
+
+.Instantly see the inheritance status of an item in the editor toolbar
+image::layering-edit-icon.png["Editor toolbar showing the inheritance icon to the left of the content name and workflow status", 326px]
+
+Clicking the icon will open the <<../contextpanel/layers#,Layers panel>> if it is available.
 
 [[ai_translation]]
 === AI translation
@@ -147,7 +156,7 @@ The content form continues to inherit parent changes until the item is explicitl
 
 Once an item's content data has been localized, btn:[Reset] is available in the Content Editor. Reset restores inheritance for every dimension that was made local, refreshes those values from the parent, and returns the content data to a read-only state.
 
-image::layers-reset.png["Localized content item with the Reset action available in the Content Editor", 546px]
+image::layering-reset.png["Localized content item with the Reset action available in the Content Editor", 546px]
 
 IMPORTANT: Reset replaces local content data, name, location, and sort order with the current values from the parent. Earlier local versions remain available in <<../contextpanel/version-history#,Version history>>, but the reset action itself cannot be undone directly.
 

@@ -1,50 +1,140 @@
 = Permissions
 :toc: right
-:imagesdir: permissions/images
+:imagesdir: images
+:experimental:
 
-Security of content is determined by the principals and permissions in the content’s security settings. Principals are *Users*, *Groups* and *Roles* which are managed in the Users application. Principals are added to each content. Permissions are granted to the principals of the content.
+Permissions determine who can access content and what actions they can perform.
 
+== Introduction
+
+Granular permissions such as `Read` and `Modify` are granted to principals for each content item. Principals are users, groups, and roles managed by your administrator.
+
+Every <<../projects#, content project>> defines the default permissions for content in that project.
+
+When a content item is created, it receives a copy of its parent's permissions. An item created directly at the project root therefore receives a copy of the project's default permissions. From that point, the permissions are independent: later changes to the parent do not automatically affect the item.
+
+Permissions can be changed for an individual item or explicitly applied to its child items.
 
 == Principals
 
-Individual users could be added to each content. But security is easier to manage by adding groups and roles to each content and then granting the appropriate permissions to these groups and roles. When a group is added to content then all users who are members of that group will have the group permissions for that content. Similarly, when a role is granted permissions to content, all users who have that role will also have those permissions.
+Individual users can be given permissions, but using groups or roles generally simplifies access management. When a group is granted permissions, all direct and indirect members receive those permissions for the content. Similarly, all users assigned a role receive the permissions granted to that role.
 
+A user's effective access combines permissions granted directly and through group and role membership.
 
-== Permissions
+== Detail panel
 
-Permissions are granted to principals on a per-content basis. This means that changing a principal’s permissions for one content does not affect that principal’s permissions for other content. Below is a list of permissions that can be applied to each principal for any content.
+Use the <<../contextpanel/details#,Details panel>> to see and edit content permissions. The public or restricted status of the item appears at the top, followed by a summary of the principals with access, grouped by permission level.
 
-* *Read:* The principal can see this content;
-* *Create:* The principal can create child items under this content. For example, if a user has this permission on a folder then the user can create new content in the folder;
-* *Modify:* The principal can edit this content and save changes in the draft branch;
-* *Delete:* The principal can delete this content from the draft branch;
-* *Publish:* The principal can publish this content to the master branch;
-* *Read permissions:* The principal can see this content’s permissions;
-* *Write permissions:* The principal can change this content’s permissions.
+.A public content item with several users who have Full Access
+image::permissions-view.png[Details panel showing the permissions for a content item, 358px]
 
-Permissions can also be denied to a principal, even if the permissions would otherwise be granted from another principal. For example, all content editors might be added to a group called *Content editors* which has the `Can Publish` permissions. But new content editors might break stuff, so they would also be added to a group called *Noobs*. Users in this group could be prevented from publishing and deleting content by denying those permissions to the group.
+Click btn:[Edit permissions] to open the <<edit_permissions,permissions wizard>> and change the permissions for the content item.
 
-
-== Public content
-
-For content to be accessible to the public, (meaning users who are not logged in), it must have the role *Everyone* with the `Read` permission. The content must also be published. Content without the *Everyone* role can only be seen by users who are logged in and have read access to it through one of the content’s principals.
-
-
+[[edit_permissions]]
 == Editing permissions
 
-When a site is first created, it will have the roles *Administrator* and *Content Manager Administrator* with full access. It will also have the role of *Content Manager App* with reading access. When content is created it will inherit the security settings from its parent content. The security settings for any content can be changed through the Edit permissions dialog. This can be accessed with the `Edit Permissions` button in the Security section when editing content, or by the button in the details panel in browse view.
+Changing permissions on one content item does not automatically affect any other item. The permissions wizard can explicitly apply the selected changes to child items, with an option to replace their permissions completely.
 
+NOTE: Only users with the *Permissions* permission can edit an item's permissions. *Full Access* includes this permission.
 
-image::permissions-dialog.png[]
+Step 1 of the permissions wizard shows the current principals and their permission levels. The list of principals can be filtered by name or type.
 
-Opening the *Edit Permissions* dialog shows a list of the current principals and their permissions for the content. By default, all content will inherit permissions from its parent. Permissions cannot be changed until the box for `Inherit permissions` is unchecked. Any changes that are made will also be applied to all child items that directly or indirectly inherit permissions from this content. There is also a checkbox at the bottom of the dialog labeled `Overwrite child permissions`. Checking this box will force the new permissions on child content that do not inherit permissions.
+.Manage access for a content item
+image::permissions-step1.png[Permissions wizard step 1 listing permissions per principal, 903px]
 
-When the `Inherit permissions` checkbox is unchecked, a dropdown selector will appear for adding new principals. The permissions for each principal in the list can be determined by the settings in blue letters on the right. Clicking a setting will open a menu with the available options that can be applied, which are listed below:
+From the access step, you can add or remove principals and change their permission levels. If the item's permissions differ from its parent, btn:[Copy from parent] replaces the current settings with a copy of the parent's permissions. For an item at the project root, the button is labeled btn:[Copy from project].
 
-* *Can Read:* Has only the `Read` permission;
-* *Can Write:* Has permissions for `Read`, `Create`, `Modify`, and `Delete`;
-* *Can Publish:* Has permissions for `Read`, `Create`, `Modify`, `Delete`, and `Publish`;
-* *Full Access:* Has all permissions;
-* *Custom:* Any combination of permissions.
+=== Permission levels
 
-Selecting *Custom* will list all of the permissions. Clicking on permission will toggle it between white (not granted), green (granted) and red (denied).
+These are the available permission levels:
+
+* Can Read: The principal can see this content.
+* Can Write: The principal can create child items and edit or delete this content.
+* Can Publish: The principal has *Can Write* access and can publish this content.
+* Full Access: The principal has *Can Publish* access and can change the permissions of this content.
+* Custom: The principal can be granted any combination of granular permissions.
+
+=== Custom permissions
+
+Permission levels are pre-configured sets of permissions. Select *Custom* to grant any combination of the permissions in the table.
+
+[cols="2,4,^1,^1,^1,^1", options="header"]
+|===
+| Permission | Allows the principal to | Can Read | Can Write | Can Publish | Full Access
+
+| Read
+| See the content.
+| ✓
+| ✓
+| ✓
+| ✓
+
+| Create
+| Create child items under the content.
+|
+| ✓
+| ✓
+| ✓
+
+| Modify
+| Edit the content and save changes.
+|
+| ✓
+| ✓
+| ✓
+
+| Delete
+| Delete the content.
+|
+| ✓
+| ✓
+| ✓
+
+| Publish
+| Publish the content from the draft branch to the master branch.
+|
+|
+| ✓
+| ✓
+
+| Permissions
+| Change the content's permissions.
+|
+|
+|
+| ✓
+|===
+
+.Custom permissions for a principal
+image::permissions-custom.png[Custom permission checkboxes for a principal, 903px]
+
+=== Public or restricted
+
+For anonymous visitors to access content, the access mode must be *Public* and the content must be published. With *Restricted* access, only principals granted the `Read` permission can access the content.
+
+image::permissions-public.png[Access mode set to Public, 469px]
+
+TIP: Under the hood, *Public* grants the `Everyone` role the `Read` permission.
+
+=== Applying to children
+
+If the content has child items, Step 2 lets you apply the changes to this item, its children, or both.
+
+image::permissions-apply.png[Permissions wizard step 2 showing where changes can be applied, 905px]
+
+NOTE: When changes are applied only to the current item, existing children remain unaffected. New child items will still receive a copy of the current item's permissions when they are created.
+
+image::permissions-replace.png[Option to replace all child permissions, 905px]
+
+By default, only the changes made in Step 1 are applied to the selected child items; their other permissions are preserved. Select *Replace all child permissions* to remove their existing permissions and replace them with the permissions configured in Step 1.
+
+WARNING: There is no automatic undo after permissions are applied. To reverse the changes, edit the permissions again.
+
+=== Summary
+
+The final step of the wizard summarizes the changes that will be applied. Click btn:[Apply changes] to save them.
+
+.One added, one removed, and one modified principal, applied without replacing child permissions
+image::permissions-summary.png[Permissions wizard summary showing the changes and where they will be applied, 905px]
+
+IMPORTANT: Permission changes take effect across all branches, so both draft and published versions are affected.
