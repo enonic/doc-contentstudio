@@ -9,7 +9,7 @@ The Rich Text Editor is used to create structured text with headings, inline for
 
 The editor is provided by the https://developer.enonic.com/docs/cms/stable/schemas/form-items/htmlarea[HtmlArea form item] and is used when editors need formatted content beyond what is possible with plain text, such as articles and blog posts. HtmlArea fields can be added to schemas for content types, mixins, and page components.
 
-image::rich-text-editor.png["Rich Text Editor with its toolbar visible and content containing a heading, text, an image, and a link"]
+image::rich-text-editor.png["Rich Text Editor with its toolbar visible and content containing a heading, text, an image, and a link", 546px]
 
 The toolbar may vary between editor instances. Developers may limit the available headings, remove default tools, or enable additional tools. Controls are also disabled when they do not apply to the current selection or when the content is read-only. The toolbar is visible only when the editor has focus.
 
@@ -89,7 +89,7 @@ To edit an existing link, double-click it, or select the link and use the link c
 
 Anchors are created using a dedicated anchor control in the toolbar.
 
-image::rich-text-anchor.png[Insert Anchor dialog with an anchor name]
+image::rich-text-anchor.png[Insert Anchor dialog with an anchor name, 560px]
 
 To create an anchor, place the cursor at the destination and use the anchor control. Anchor names cannot contain spaces and must be unique within the rich-text value. The anchor then becomes available in the link dialog.
 
@@ -140,7 +140,6 @@ Developers can define custom image styles as described in the https://developer.
 Developers control the final image rendering in the presentation layer. The result, normally visible in the preview, may therefore differ from the configuration shown in the editor.
 
 For the stored image reference and front-end processing model, see the https://developer.enonic.com/docs/cms/stable/richtext/images[CMS rich-text image reference].
-
 
 == Macros
 
