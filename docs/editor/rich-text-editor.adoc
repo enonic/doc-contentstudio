@@ -1,115 +1,222 @@
-= Rich text editor
+= Rich Text Editor
 :toc: right
 :imagesdir: images
+:experimental:
 
-Rich Text Editor is used by the https://developer.enonic.com/docs/cms/stable/schemas/form-items/htmlarea[HTMLArea input type]
-and for editing <<page-editor#text,Text components>> inside the Page editor.
-It's capable of formatting the text in many ways, pasting from Word and Google Docs, using macros to insert code snippets
-and iFrames, inserting tables, images and content links etc.
+The Rich Text Editor is used to create structured text with headings, inline formatting, lists, links, images, tables, and embedded functionality.
 
-image::rich-text-editor.png[Rich Text Editor, 730]
+== Overview
+
+The editor is provided by the https://developer.enonic.com/docs/cms/stable/schemas/form-items/htmlarea[HtmlArea form item] and is used when editors need formatted content beyond what is possible with plain text, such as articles and blog posts. HtmlArea fields can be added to schemas for content types, mixins, and page components.
+
+image::rich-text-editor.png["Rich Text Editor with its toolbar visible and content containing a heading, text, an image, and a link"]
+
+The toolbar may vary between editor instances. Developers may limit the available headings, remove default tools, or enable additional tools. Controls are also disabled when they do not apply to the current selection or when the content is read-only. The toolbar is visible only when the editor has focus.
+
+NOTE: The <<page-editor#text,Text component>> has been deprecated in Content Studio 6 and is unavailable for new insertion by default, but existing components remain editable. An administrator can temporarily re-enable insertion from the Content Studio <<../config#_enable_rich_text_component,configuration>>.
+
+For details about the raw and processed HTML formats used by front ends, see the https://developer.enonic.com/docs/cms/stable/richtext[CMS rich-text reference].
 
 == Toolbar
 
-The toolbar contains buttons for various formatting options as well as inserting elements like pictures, links, special characters and more.
+The toolbar groups controls by purpose:
 
-=== Style menu
+Styles and formatting:: Apply a block style or format selected text with bold, italic, underline, or other enabled inline styles.
+Alignment:: Align the current block to the left, center, or right, or justify it.
+Lists and indentation:: Create numbered or bulleted lists and change their nesting level.
+Find and insert:: Find text and insert special characters, anchors, images, macros, or links.
+Tables:: Insert a table and access table-specific actions.
+Paste mode:: Choose whether pasted content keeps compatible formatting or is inserted as plain text.
+Additional tools:: Source editing, fullscreen mode, and other application-enabled controls appear when available.
 
-Style menu contains options for styles that can be applied to the entire paragraph, for example to create heading elements or snippets of code.
+Hover over a toolbar button to see its name. Tools that do not fit the available width wrap onto another toolbar row.
+
+== Formatting text
+
+=== Block styles
+
+The *Styles* menu applies a semantic structure to the block containing the cursor. Common choices include normal text, headings, a generic block, preformatted text, and code. The available heading levels and styles can vary by field.
+
+Use heading levels to describe the document hierarchy rather than to achieve a particular visual size. The front end determines how each semantic element is presented to readers.
 
 === Inline formatting
 
-The next group of icons represent inline styles which can be combined in the same paragraph, for example bold, italic, strikethrough etc.
+Bold, italic, and underline are available by default and can be combined within the same block. An application can enable additional formats such as strikethrough, superscript, and subscript.
+
+Select text before applying an inline format, or enable the format before typing. Apply the same active format again to remove it.
 
 === Alignment
 
-The next four icons can be used to change alignment of selected element: left-align, center, right-align or justify.
+Alignment controls apply to the block containing the cursor or to all selected blocks. The available choices are left, center, right, and justified alignment.
 
-=== Lists
+=== Lists and indentation
 
-The next two icons will turn text into a bullet list or a numbered list. Pressing `Enter` / `Return` will make a new list item and pressing it a second time will end the list. Use `Shift + Enter` / `Shift + Return` to make a new line within the list item. A sub-list can be created with the indent button.
+Use the numbered-list or bulleted-list control to turn the current block into a list. Pressing Enter creates another list item; pressing Enter on an empty list item ends the list. Use a soft line break when you need a new line without creating another item.
 
-TIP: Right-click the list to change styling of its bullets or numbers.
+The indent and outdent controls change the nesting level of a list item. Outside a list, they adjust the indentation of the selected block when the field permits it.
 
-=== Indent
+Right-click a list to open its properties. Depending on the list type, you can change the marker style or the starting number.
 
-The next buttons will decrease and increase indent for the selected text. These buttons will also increase or decrease the level of a list item.
+== Language behavior
 
-=== Find/Replace
+The editor follows the content language. Text is presented right-to-left when the selected language uses a right-to-left writing system; no manual direction setting is required.
 
-This dialog can be used to find (and replace) words and phrases inside the Rich Editor. The dialog has toggle buttons for making search case-sensitive (`Aa`) and forcing search for full words (`W`). Use up/down arrows to find next/previous entry and use `Replace`/`Replace all` buttons to replace the found entries with provided replacement string.
+Content Studio enables spell checking via the browser's built-in spell checker. It must be enabled in the browser, and the content language must be available among the browser's spell-checking languages.
 
-TIP: This dialog can also be opened using the `Ctrl`/`Cmd`+`F` keyboard shortcut.
+== Finding and replacing text
 
-image::rich-text-editor-find-replace.png[Insert Link dialog, 75%]
+The find control opens a search popup without leaving the editor. Enter a term and use the previous and next controls to move between matches. The result counter identifies the current match and the total number found.
 
-=== Special character
+image::rich-text-replace.png[Rich Text Editor with the replace popup open and matching text highlighted, 690px]
 
-This button opens a menu with special characters. Selecting one will insert it at the cursor’s location.
+Search can be restricted to matching case or whole words. Switch the popup to replace mode to replace the current match or every match. The popup retains focus inside the Rich Text Editor so editing can continue when it is closed.
 
-=== Anchor
+== Links and anchors
 
-Anchors enable pointing to a specific position on a page via context link. If a link references an anchor on the same page then the page will scroll up or down to the location of the anchor. The anchor button in the toolbar opens the Insert Anchor dialog where the name of the anchor is entered. The anchor name will be used as the value of the “id” attribute, so it should be lower case without spaces.
+Select existing text before opening the link dialog, or enter the link text in the dialog. An optional tooltip can provide additional information about the destination. The available link types are organized into tabs.
+
+image::rich-text-links.png["Insert Link dialog showing the Content, URL, and Email link types", 905px]
+
+Content:: Select another content item. Internal links use a content reference, so they continue to target the same item if it is moved or renamed. Depending on the selected item, you can open it in a new tab, add a fragment or query parameters, or choose how a media item should open.
+URL:: Enter an HTTPS, HTTP, FTP, telephone, or relative URL and choose whether it opens in a new tab.
+Email:: Enter an email address and, optionally, a subject.
+Anchor:: Link to an anchor in the same rich-text field. The Anchor tab is visible only when anchors already exist in the document.
+
+To edit an existing link, double-click it, or select the link and use the link control in the toolbar. Use the unlink control to remove the link while keeping its text.
+
+
+=== Anchors
+
+Anchors are created using a dedicated anchor control in the toolbar.
+
+image::rich-text-anchor.png[Insert Anchor dialog with an anchor name]
+
+To create an anchor, place the cursor at the destination and use the anchor control. Anchor names cannot contain spaces and must be unique within the rich-text value. The anchor then becomes available in the link dialog.
+
+=== Internal vs external links
+
+Internal links are stored as references to other content items, while external links are stored as literal URLs.
+
+For details about how internal and media links are stored and resolved by a front end, see the https://developer.enonic.com/docs/cms/stable/richtext/links[CMS rich-text links reference].
 
 [[insert-image]]
-=== Insert/Edit image
+== Images
 
-This button (or a double click on the image) opens the Insert Image dialog. An existing image content can be selected from the “Image” selector, or a new image can be uploaded using the upload button.
+Use the image control to insert an existing image content item or upload a new image. Open an image already in the editor to change its configuration.
 
-Once an image is selected, additional formatting options will appear. The image can be floated to the left or right so that text wraps around it.
-The image can also be centered or set to full width. By checking off “Custom width” you will have an option to set relative width of the image.
+=== Inserting an image
 
-Additionally, there's an option to apply <<#custom_image_styles,custom image styles>>.
+After selecting an image, the dialog provides controls for alignment, style, and width. Left- or right-aligned images allow surrounding text to wrap around them. Centered and full-width placement keep the image on its own line.
 
-"Caption" field allows to enter a caption/title for the image and will be displayed under the image as a part of the `figure` element.
+image::rich-text-image.png["Insert Image dialog showing alignment, style, and custom-width controls"]
 
-The *Accessibility* section at the bottom lets you mark the image as decorative, so assistive technologies can ignore it, or provide alternative text that describes the image's meaning or purpose.
+NOTE: In general, avoid using *Custom width*. The editor may declare a relative width, but the front end can override it through its layout and styling rules.
 
-image::rich-text-editor-image-dialog.png[Insert Image dialog, 75%]
+=== Caption and accessibility
 
+Editors may optionally provide an image caption, which will be displayed with the image.
 
-=== Insert macro
+Content Studio requires an accessibility setting for each image:
 
-This button opens the Insert Macro dialog, which contains a selector for choosing a macro. Macros allow all sorts of things to be inserted into the input, such as iframes, YouTube videos, Twitter Tweets, etc. There are two built-in macros and others can be added with applications. Once a macro is selected, a form appears with inputs for the macro’s configuration settings. A double click on a macro inside the Editor will open the modal dialog for editing properties of the macro.
+Decorative image:: Use when the image adds no information that is not already provided by the surrounding text. Assistive technologies can then ignore it.
+Alternative text:: Use when the image conveys meaning. Supply alternative text that communicates the image's purpose or essential information.
 
-=== Insert/Edit Link
+image::rich-text-accessibility.png[Insert Image dialog showing the caption and accessibility settings]
 
-This button opens the Insert Link dialog. You can select existing text in the HTML Area before opening the dialog or write it directly inside the dialog. You can link to a content item, external URL, relative URL on the same site, trigger media download or create a mailto link. A double click on a link inside the Editor will open the modal dialog for editing properties of the link.
-
-image::rich-text-editor-link-dialog-1.png[Insert Link dialog, 75%]
-image::rich-text-editor-link-dialog-2.png[Insert Link dialog, 75%]
-image::rich-text-editor-link-dialog-3.png[Insert Link dialog, 75%]
-
-=== Unlink
-
-Pressing this button will remove a link from an element.
-
-=== Table
-
-This button expands a dropdown menu enabling you to insert a new table, manage table properties or add/delete columns/rows in existing table.
-
-=== Paste text mode
-
-This button allows toggling between "formatted text" (default setting) and "plain text" modes when pasting text into the editor.
-
-=== Source
-
-This button will open a modal dialog allowing you to manually edit HTML source content of the text editor. For HTML Area input type this button will be
-placed in the footer of the editor, while for a Text component inside the Page Editor it's part of the toolbar.
-
-=== Full screen
-
-This button will open the editor in the full screen mode for more convenient user experience. Not available inside the text component editor.
+TIP: If alternative text already exists on the image content, it is automatically prefilled in the accessibility settings.
 
 
 [[custom_image_styles]]
-== Custom Image Styles
+=== Image styles
 
-By default, XP comes with one built-in image style called “_Original (no image processing)_”. By applying this style to the image, you'll make sure
-that the image won't undergo any processing on the server and will be rendered “as is”.
+Image styles are supplied by applications and can control server-side cropping or filters as well as the presentation in the editor. Styles available from the applications associated with the current content are combined in the image dialog.
 
-Custom Image Styles can be defined in your application as https://developer.enonic.com/docs/cms/stable/richtext/styles[described] in the CMS section of XP docs.
+The built-in *Original (no image processing)* style serves the original image without server-side processing or resizing. Selecting it can disable controls that depend on image processing, such as custom width.
 
-Custom styles from all the applications added to the site (plus the "_Original_" style) will be combined into one list inside the dropdown of the Image modal dialog.
+Developers can define custom image styles as described in the https://developer.enonic.com/docs/cms/stable/richtext/styles[CMS image-style reference].
 
-image::rich-text-editor-image-style.png[Insert Image dialog, 75%]
+=== Presentation
+
+Developers control the final image rendering in the presentation layer. The result, normally visible in the preview, may therefore differ from the configuration shown in the editor.
+
+For the stored image reference and front-end processing model, see the https://developer.enonic.com/docs/cms/stable/richtext/images[CMS rich-text image reference].
+
+
+== Macros
+
+Macros provide functionality for embedding application-defined content or elements into rich text. Open the macro dialog, select an available macro, and complete its configuration form. The Preview tab shows the macro's rendered result when a preview is available.
+
+image::rich-text-macro.png[Insert Macro dialog showing a configuration form and the Preview tab, 905px]
+
+Once the macro is inserted into the rich text, it will appear as a placeholder that can be interacted with like any other content element.
+
+image::rich-text-macro-inserted.png[Rich Text Editor showing an inserted macro as its name and configured values, 546px]
+
+To edit an existing macro, double-click it to reopen the macro dialog.
+
+=== Built-in macros
+
+Content Studio includes two built-in macros:
+
+Embed iframe:: Allows the editor to embed iframe content within the rich text.
+
+Disable macros:: Prevents macro instructions from being evaluated within the rich text, typically used if you want to include raw macro syntax without it being processed.
+
+
+See the https://developer.enonic.com/docs/cms/stable/richtext/macros[CMS macro reference] for the available built-in macros, application configuration, and rendering model.
+
+== Tables
+
+The Rich Text Editor provides controls for inserting, editing, and configuring tables.
+
+=== Inserting a table
+
+Use the table control to select a table size from the grid, or choose *More* to open a dialog where you can specify the number of rows and columns, headers, and a caption.
+
+image::rich-text-table-insert.png[Table size selector with a two-by-three grid selected, 546px]
+
+=== Editing table content
+
+When the cursor is inside an existing table, use the table menu or context menu to add and remove rows or columns, configure headers, edit table properties, or remove the table. The actions available depend on the current cell and selection.
+
+image::rich-text-table.png[Rich Text Editor showing a table with a caption and header row, 546px]
+
+=== Context menu
+
+Using the context menu, you may perform a range of actions on the table, such as adding or removing rows and columns, accessing the table properties or cell properties, and other table-related operations.
+
+image::rich-text-table-menu.png["Table context menu showing cell, row, column, sorting, and table actions", 506px]
+
+=== Table properties
+
+Open *Table Properties* from the context menu to configure the table's dimensions, headers, and caption. The dimensions of an existing table cannot be changed from this dialog; use the context-menu actions to add or remove rows and columns.
+
+image::rich-text-table-properties.png["Table Properties dialog showing dimensions, headers, and a caption", 660px]
+
+== Special characters
+
+The special-character control opens a character map. Select a character to insert it at the cursor position. This is useful for symbols that are difficult to enter with the current keyboard layout.
+
+== Pasting, source, and fullscreen
+
+=== Paste mode
+
+Formatted paste is the default. It retains compatible structure and formatting from sources such as word processors while removing unsupported markup. Switch to plain-text paste when only the text should be inserted.
+
+The paste-mode selection applies to subsequent paste operations. It does not change content already in the editor.
+
+=== Source editing
+
+Users with the *Content Expert* role or the <<../projects#project-roles,Editor or Owner project role>> can open the source dialog and edit the underlying HTML. This is useful for inspecting structure or making a precise correction that the visual controls do not support.
+
+CAUTION: Source editing can introduce invalid or unsupported markup. Use only well-formed HTML supported by the field's configuration.
+
+=== Fullscreen mode
+
+Fullscreen mode expands the Rich Text Editor into a dialog with more room for long content. The same content and configured toolbar remain available, including dialogs for links, images, macros, and other elements. Closing fullscreen mode returns to the original field without creating a separate value.
+
+== Keyboard shortcuts
+
+The Rich Text Editor supports shortcuts for frequent formatting, insertion, navigation, and editing actions. Shortcut availability follows the tools and heading levels enabled for the field.
+
+See the centralized <<../keyboard-shortcuts#_rich_text_editor,Rich Text Editor keyboard shortcuts>> table for the complete list.

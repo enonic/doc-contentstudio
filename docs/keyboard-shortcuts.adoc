@@ -9,7 +9,7 @@ NOTE: Press F2 to reveal all available shortcuts for a view.
 == Browse View
 
 |===
-|Content Navigator ^|Mac OS X ^|Windows / Linux
+|Content Navigator ^|macOS ^|Windows / Linux
 
 |New content
 2+^|`Alt + N`
@@ -45,7 +45,7 @@ NOTE: Press F2 to reveal all available shortcuts for a view.
 == Content Editor
 
 |===
-|Edit content wizard ^|Mac OS X ^|Windows / Linux
+|Edit content wizard ^|macOS ^|Windows / Linux
 
 |Save content
 ^|`⌘ + S`
@@ -72,10 +72,13 @@ NOTE: Press F2 to reveal all available shortcuts for a view.
 
 |===
 
+[#_rich_text_editor]
 == Rich Text Editor
 
+The available formatting shortcuts depend on the tools and heading levels enabled for the HtmlArea field. See <<editor/rich-text-editor#,Rich Text Editor>> for the corresponding editing features.
+
 |===
-|HtmlArea editor ^|Mac OS X ^|Windows / Linux
+|HtmlArea editor ^|macOS ^|Windows / Linux
 
 |Cut
 ^|`⌘ + X`
@@ -137,7 +140,7 @@ NOTE: Press F2 to reveal all available shortcuts for a view.
 ^|`⌘ + Shift + 7`
 ^|`Ctrl + Shift + 7`
 
-|Div (Nornal)
+|Div (Normal)
 ^|`⌘ + Shift + 8`
 ^|`Ctrl + Shift + 8`
 
@@ -176,6 +179,6 @@ NOTE: Press F2 to reveal all available shortcuts for a view.
 2+^|`Alt + F11`
 
 |Insert non-breaking space
-2+^|`Ctrl + Space`
+2+^|`Ctrl + Shift + Space`
 
 |===
