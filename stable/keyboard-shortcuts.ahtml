@@ -443,7 +443,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel1">
 <li><a href="#browse_view">Browse View</a></li>
 <li><a href="#content_editor">Content Editor</a></li>
-<li><a href="#rich_text_editor">Rich Text Editor</a></li>
+<li><a href="#_rich_text_editor">Rich Text Editor</a></li>
 </ul>
 </div>
 </div>
@@ -479,7 +479,7 @@ Press F2 to reveal all available shortcuts for a view.
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Content Navigator</th>
-<th class="tableblock halign-center valign-top">Mac OS X</th>
+<th class="tableblock halign-center valign-top">macOS</th>
 <th class="tableblock halign-center valign-top">Windows / Linux</th>
 </tr>
 </thead>
@@ -536,7 +536,7 @@ Press F2 to reveal all available shortcuts for a view.
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Edit content wizard</th>
-<th class="tableblock halign-center valign-top">Mac OS X</th>
+<th class="tableblock halign-center valign-top">macOS</th>
 <th class="tableblock halign-center valign-top">Windows / Linux</th>
 </tr>
 </thead>
@@ -575,8 +575,11 @@ Press F2 to reveal all available shortcuts for a view.
 </div>
 </div>
 <div class="sect1">
-<h2 id="rich_text_editor"><a class="link" href="#rich_text_editor">Rich Text Editor</a></h2>
+<h2 id="_rich_text_editor"><a class="link" href="#_rich_text_editor">Rich Text Editor</a></h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>The available formatting shortcuts depend on the tools and heading levels enabled for the HtmlArea field. See <a href="editor/rich-text-editor.ahtml">Rich Text Editor</a> for the corresponding editing features.</p>
+</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 33.3333%;">
@@ -586,7 +589,7 @@ Press F2 to reveal all available shortcuts for a view.
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">HtmlArea editor</th>
-<th class="tableblock halign-center valign-top">Mac OS X</th>
+<th class="tableblock halign-center valign-top">macOS</th>
 <th class="tableblock halign-center valign-top">Windows / Linux</th>
 </tr>
 </thead>
@@ -667,7 +670,7 @@ Press F2 to reveal all available shortcuts for a view.
 <td class="tableblock halign-center valign-top"><p class="tableblock"><code>Ctrl + Shift + 7</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Div (Nornal)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Div (Normal)</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><code>⌘ + Shift + 8</code></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><code>Ctrl + Shift + 8</code></p></td>
 </tr>
@@ -716,7 +719,7 @@ Press F2 to reveal all available shortcuts for a view.
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Insert non-breaking space</p></td>
-<td class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><code>Ctrl + Space</code></p></td>
+<td class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><code>Ctrl + Shift + Space</code></p></td>
 </tr>
 </tbody>
 </table>
@@ -725,7 +728,7 @@ Press F2 to reveal all available shortcuts for a view.
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-08-27 06:42:05 UTC
+Last updated 2026-08-27 10:15:40 UTC
 </div>
 </div>
 </body>

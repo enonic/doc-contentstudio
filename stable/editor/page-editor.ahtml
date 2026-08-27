@@ -679,8 +679,20 @@ Layouts cannot be nested inside other layouts. If a layout is hard to click in t
 <div class="paragraph">
 <p>The Text component is a formatted text block — it places a rich-text surface directly into a page region. Text components support images, videos, links, and macros, all edited via the <a href="rich-text-editor.ahtml">Rich Text Editor</a>.</p>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The Text component is deprecated in Content Studio 6 and hidden from the Insert tab by default. Existing Text components remain editable. An administrator can temporarily restore insertion from the Content Studio <a href="../config.ahtml#_enable_rich_text_component">configuration</a>.
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
-<p>Drag a Text component into a region and start typing. If another component is selected first, double-click the text component to return to editing.</p>
+<p>When insertion is enabled, drag a Text component into a region and start typing. If another component is selected first, double-click the Text component to return to editing.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -737,7 +749,7 @@ Layouts cannot be nested inside other layouts. If a layout is hard to click in t
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-08-27 06:42:05 UTC
+Last updated 2026-08-27 10:15:40 UTC
 </div>
 </div>
 </body>

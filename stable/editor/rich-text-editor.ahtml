@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.26">
-<title>Rich text editor</title>
+<title>Rich Text Editor</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -437,31 +437,58 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article toc2 toc-right">
 <div id="header">
-<h1>Rich text editor</h1>
+<h1>Rich Text Editor</h1>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#toolbar">Toolbar</a>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#toolbar">Toolbar</a></li>
+<li><a href="#formatting_text">Formatting text</a>
 <ul class="sectlevel2">
-<li><a href="#style_menu">Style menu</a></li>
+<li><a href="#block_styles">Block styles</a></li>
 <li><a href="#inline_formatting">Inline formatting</a></li>
 <li><a href="#alignment">Alignment</a></li>
-<li><a href="#lists">Lists</a></li>
-<li><a href="#indent">Indent</a></li>
-<li><a href="#findreplace">Find/Replace</a></li>
-<li><a href="#special_character">Special character</a></li>
-<li><a href="#anchor">Anchor</a></li>
-<li><a href="#insert-image">Insert/Edit image</a></li>
-<li><a href="#insert_macro">Insert macro</a></li>
-<li><a href="#insertedit_link">Insert/Edit Link</a></li>
-<li><a href="#unlink">Unlink</a></li>
-<li><a href="#table">Table</a></li>
-<li><a href="#paste_text_mode">Paste text mode</a></li>
-<li><a href="#source">Source</a></li>
-<li><a href="#full_screen">Full screen</a></li>
+<li><a href="#lists_and_indentation">Lists and indentation</a></li>
 </ul>
 </li>
-<li><a href="#custom_image_styles">Custom Image Styles</a></li>
+<li><a href="#language_behavior">Language behavior</a></li>
+<li><a href="#finding_and_replacing_text">Finding and replacing text</a></li>
+<li><a href="#links_and_anchors">Links and anchors</a>
+<ul class="sectlevel2">
+<li><a href="#anchors">Anchors</a></li>
+<li><a href="#internal_vs_external_links">Internal vs external links</a></li>
+</ul>
+</li>
+<li><a href="#insert-image">Images</a>
+<ul class="sectlevel2">
+<li><a href="#inserting_an_image">Inserting an image</a></li>
+<li><a href="#caption_and_accessibility">Caption and accessibility</a></li>
+<li><a href="#custom_image_styles">Image styles</a></li>
+<li><a href="#presentation">Presentation</a></li>
+</ul>
+</li>
+<li><a href="#macros">Macros</a>
+<ul class="sectlevel2">
+<li><a href="#built_in_macros">Built-in macros</a></li>
+</ul>
+</li>
+<li><a href="#tables">Tables</a>
+<ul class="sectlevel2">
+<li><a href="#inserting_a_table">Inserting a table</a></li>
+<li><a href="#editing_table_content">Editing table content</a></li>
+<li><a href="#context_menu">Context menu</a></li>
+<li><a href="#table_properties">Table properties</a></li>
+</ul>
+</li>
+<li><a href="#special_characters">Special characters</a></li>
+<li><a href="#pasting_source_and_fullscreen">Pasting, source, and fullscreen</a>
+<ul class="sectlevel2">
+<li><a href="#paste_mode">Paste mode</a></li>
+<li><a href="#source_editing">Source editing</a></li>
+<li><a href="#fullscreen_mode">Fullscreen mode</a></li>
+</ul>
+</li>
+<li><a href="#keyboard_shortcuts">Keyboard shortcuts</a></li>
 </ul>
 </div>
 </div>
@@ -469,15 +496,38 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Rich Text Editor is used by the <a href="https://developer.enonic.com/docs/cms/stable/schemas/form-items/htmlarea">HTMLArea input type</a>
-and for editing <a href="page-editor.ahtml#text">Text components</a> inside the Page editor.
-It&#8217;s capable of formatting the text in many ways, pasting from Word and Google Docs, using macros to insert code snippets
-and iFrames, inserting tables, images and content links etc.</p>
+<p>The Rich Text Editor is used to create structured text with headings, inline formatting, lists, links, images, tables, and embedded functionality.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The editor is provided by the <a href="https://developer.enonic.com/docs/cms/stable/schemas/form-items/htmlarea">HtmlArea form item</a> and is used when editors need formatted content beyond what is possible with plain text, such as articles and blog posts. HtmlArea fields can be added to schemas for content types, mixins, and page components.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/rich-text-editor.png" alt="Rich Text Editor" width="730">
+<img src="images/rich-text-editor.png" alt="Rich Text Editor with its toolbar visible and content containing a heading, text, an image, and a link">
 </div>
+</div>
+<div class="paragraph">
+<p>The toolbar may vary between editor instances. Developers may limit the available headings, remove default tools, or enable additional tools. Controls are also disabled when they do not apply to the current selection or when the content is read-only. The toolbar is visible only when the editor has focus.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The <a href="page-editor.ahtml#text">Text component</a> has been deprecated in Content Studio 6 and is unavailable for new insertion by default, but existing components remain editable. An administrator can temporarily re-enable insertion from the Content Studio <a href="../config.ahtml#_enable_rich_text_component">configuration</a>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>For details about the raw and processed HTML formats used by front ends, see the <a href="https://developer.enonic.com/docs/cms/stable/richtext">CMS rich-text reference</a>.</p>
 </div>
 </div>
 </div>
@@ -485,193 +535,420 @@ and iFrames, inserting tables, images and content links etc.</p>
 <h2 id="toolbar"><a class="link" href="#toolbar">Toolbar</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The toolbar contains buttons for various formatting options as well as inserting elements like pictures, links, special characters and more.</p>
+<p>The toolbar groups controls by purpose:</p>
 </div>
-<div class="sect2">
-<h3 id="style_menu"><a class="link" href="#style_menu">Style menu</a></h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Styles and formatting</dt>
+<dd>
+<p>Apply a block style or format selected text with bold, italic, underline, or other enabled inline styles.</p>
+</dd>
+<dt class="hdlist1">Alignment</dt>
+<dd>
+<p>Align the current block to the left, center, or right, or justify it.</p>
+</dd>
+<dt class="hdlist1">Lists and indentation</dt>
+<dd>
+<p>Create numbered or bulleted lists and change their nesting level.</p>
+</dd>
+<dt class="hdlist1">Find and insert</dt>
+<dd>
+<p>Find text and insert special characters, anchors, images, macros, or links.</p>
+</dd>
+<dt class="hdlist1">Tables</dt>
+<dd>
+<p>Insert a table and access table-specific actions.</p>
+</dd>
+<dt class="hdlist1">Paste mode</dt>
+<dd>
+<p>Choose whether pasted content keeps compatible formatting or is inserted as plain text.</p>
+</dd>
+<dt class="hdlist1">Additional tools</dt>
+<dd>
+<p>Source editing, fullscreen mode, and other application-enabled controls appear when available.</p>
+</dd>
+</dl>
+</div>
 <div class="paragraph">
-<p>Style menu contains options for styles that can be applied to the entire paragraph, for example to create heading elements or snippets of code.</p>
+<p>Hover over a toolbar button to see its name. Tools that do not fit the available width wrap onto another toolbar row.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="formatting_text"><a class="link" href="#formatting_text">Formatting text</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="block_styles"><a class="link" href="#block_styles">Block styles</a></h3>
+<div class="paragraph">
+<p>The <strong>Styles</strong> menu applies a semantic structure to the block containing the cursor. Common choices include normal text, headings, a generic block, preformatted text, and code. The available heading levels and styles can vary by field.</p>
+</div>
+<div class="paragraph">
+<p>Use heading levels to describe the document hierarchy rather than to achieve a particular visual size. The front end determines how each semantic element is presented to readers.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="inline_formatting"><a class="link" href="#inline_formatting">Inline formatting</a></h3>
 <div class="paragraph">
-<p>The next group of icons represent inline styles which can be combined in the same paragraph, for example bold, italic, strikethrough etc.</p>
+<p>Bold, italic, and underline are available by default and can be combined within the same block. An application can enable additional formats such as strikethrough, superscript, and subscript.</p>
+</div>
+<div class="paragraph">
+<p>Select text before applying an inline format, or enable the format before typing. Apply the same active format again to remove it.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="alignment"><a class="link" href="#alignment">Alignment</a></h3>
 <div class="paragraph">
-<p>The next four icons can be used to change alignment of selected element: left-align, center, right-align or justify.</p>
+<p>Alignment controls apply to the block containing the cursor or to all selected blocks. The available choices are left, center, right, and justified alignment.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="lists"><a class="link" href="#lists">Lists</a></h3>
+<h3 id="lists_and_indentation"><a class="link" href="#lists_and_indentation">Lists and indentation</a></h3>
 <div class="paragraph">
-<p>The next two icons will turn text into a bullet list or a numbered list. Pressing <code>Enter</code> / <code>Return</code> will make a new list item and pressing it a second time will end the list. Use <code>Shift + Enter</code> / <code>Shift + Return</code> to make a new line within the list item. A sub-list can be created with the indent button.</p>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-Right-click the list to change styling of its bullets or numbers.
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect2">
-<h3 id="indent"><a class="link" href="#indent">Indent</a></h3>
-<div class="paragraph">
-<p>The next buttons will decrease and increase indent for the selected text. These buttons will also increase or decrease the level of a list item.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="findreplace"><a class="link" href="#findreplace">Find/Replace</a></h3>
-<div class="paragraph">
-<p>This dialog can be used to find (and replace) words and phrases inside the Rich Editor. The dialog has toggle buttons for making search case-sensitive (<code>Aa</code>) and forcing search for full words (<code>W</code>). Use up/down arrows to find next/previous entry and use <code>Replace</code>/<code>Replace all</code> buttons to replace the found entries with provided replacement string.</p>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-This dialog can also be opened using the <code>Ctrl</code>/<code>Cmd</code>+<code>F</code> keyboard shortcut.
-</td>
-</tr>
-</table>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/rich-text-editor-find-replace.png" alt="Insert Link dialog" width="75%">
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="special_character"><a class="link" href="#special_character">Special character</a></h3>
-<div class="paragraph">
-<p>This button opens a menu with special characters. Selecting one will insert it at the cursor’s location.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="anchor"><a class="link" href="#anchor">Anchor</a></h3>
-<div class="paragraph">
-<p>Anchors enable pointing to a specific position on a page via context link. If a link references an anchor on the same page then the page will scroll up or down to the location of the anchor. The anchor button in the toolbar opens the Insert Anchor dialog where the name of the anchor is entered. The anchor name will be used as the value of the “id” attribute, so it should be lower case without spaces.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="insert-image"><a class="link" href="#insert-image">Insert/Edit image</a></h3>
-<div class="paragraph">
-<p>This button (or a double click on the image) opens the Insert Image dialog. An existing image content can be selected from the “Image” selector, or a new image can be uploaded using the upload button.</p>
+<p>Use the numbered-list or bulleted-list control to turn the current block into a list. Pressing Enter creates another list item; pressing Enter on an empty list item ends the list. Use a soft line break when you need a new line without creating another item.</p>
 </div>
 <div class="paragraph">
-<p>Once an image is selected, additional formatting options will appear. The image can be floated to the left or right so that text wraps around it.
-The image can also be centered or set to full width. By checking off “Custom width” you will have an option to set relative width of the image.</p>
+<p>The indent and outdent controls change the nesting level of a list item. Outside a list, they adjust the indentation of the selected block when the field permits it.</p>
 </div>
 <div class="paragraph">
-<p>Additionally, there&#8217;s an option to apply <a href="#custom_image_styles">custom image styles</a>.</p>
-</div>
-<div class="paragraph">
-<p>"Caption" field allows to enter a caption/title for the image and will be displayed under the image as a part of the <code>figure</code> element.</p>
-</div>
-<div class="paragraph">
-<p>The <strong>Accessibility</strong> section at the bottom lets you mark the image as decorative, so assistive technologies can ignore it, or provide alternative text that describes the image&#8217;s meaning or purpose.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/rich-text-editor-image-dialog.png" alt="Insert Image dialog" width="75%">
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="insert_macro"><a class="link" href="#insert_macro">Insert macro</a></h3>
-<div class="paragraph">
-<p>This button opens the Insert Macro dialog, which contains a selector for choosing a macro. Macros allow all sorts of things to be inserted into the input, such as iframes, YouTube videos, Twitter Tweets, etc. There are two built-in macros and others can be added with applications. Once a macro is selected, a form appears with inputs for the macro’s configuration settings. A double click on a macro inside the Editor will open the modal dialog for editing properties of the macro.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="insertedit_link"><a class="link" href="#insertedit_link">Insert/Edit Link</a></h3>
-<div class="paragraph">
-<p>This button opens the Insert Link dialog. You can select existing text in the HTML Area before opening the dialog or write it directly inside the dialog. You can link to a content item, external URL, relative URL on the same site, trigger media download or create a mailto link. A double click on a link inside the Editor will open the modal dialog for editing properties of the link.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/rich-text-editor-link-dialog-1.png" alt="Insert Link dialog" width="75%">
-</div>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/rich-text-editor-link-dialog-2.png" alt="Insert Link dialog" width="75%">
-</div>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/rich-text-editor-link-dialog-3.png" alt="Insert Link dialog" width="75%">
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="unlink"><a class="link" href="#unlink">Unlink</a></h3>
-<div class="paragraph">
-<p>Pressing this button will remove a link from an element.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="table"><a class="link" href="#table">Table</a></h3>
-<div class="paragraph">
-<p>This button expands a dropdown menu enabling you to insert a new table, manage table properties or add/delete columns/rows in existing table.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="paste_text_mode"><a class="link" href="#paste_text_mode">Paste text mode</a></h3>
-<div class="paragraph">
-<p>This button allows toggling between "formatted text" (default setting) and "plain text" modes when pasting text into the editor.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="source"><a class="link" href="#source">Source</a></h3>
-<div class="paragraph">
-<p>This button will open a modal dialog allowing you to manually edit HTML source content of the text editor. For HTML Area input type this button will be
-placed in the footer of the editor, while for a Text component inside the Page Editor it&#8217;s part of the toolbar.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="full_screen"><a class="link" href="#full_screen">Full screen</a></h3>
-<div class="paragraph">
-<p>This button will open the editor in the full screen mode for more convenient user experience. Not available inside the text component editor.</p>
+<p>Right-click a list to open its properties. Depending on the list type, you can change the marker style or the starting number.</p>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="custom_image_styles"><a class="link" href="#custom_image_styles">Custom Image Styles</a></h2>
+<h2 id="language_behavior"><a class="link" href="#language_behavior">Language behavior</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>By default, XP comes with one built-in image style called “<em>Original (no image processing)</em>”. By applying this style to the image, you&#8217;ll make sure
-that the image won&#8217;t undergo any processing on the server and will be rendered “as is”.</p>
+<p>The editor follows the content language. Text is presented right-to-left when the selected language uses a right-to-left writing system; no manual direction setting is required.</p>
 </div>
 <div class="paragraph">
-<p>Custom Image Styles can be defined in your application as <a href="https://developer.enonic.com/docs/cms/stable/richtext/styles">described</a> in the CMS section of XP docs.</p>
+<p>Content Studio enables spell checking via the browser&#8217;s built-in spell checker. It must be enabled in the browser, and the content language must be available among the browser&#8217;s spell-checking languages.</p>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="finding_and_replacing_text"><a class="link" href="#finding_and_replacing_text">Finding and replacing text</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>Custom styles from all the applications added to the site (plus the "<em>Original</em>" style) will be combined into one list inside the dropdown of the Image modal dialog.</p>
+<p>The find control opens a search popup without leaving the editor. Enter a term and use the previous and next controls to move between matches. The result counter identifies the current match and the total number found.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/rich-text-editor-image-style.png" alt="Insert Image dialog" width="75%">
+<img src="images/rich-text-replace.png" alt="Rich Text Editor with the replace popup open and matching text highlighted" width="690px">
 </div>
+</div>
+<div class="paragraph">
+<p>Search can be restricted to matching case or whole words. Switch the popup to replace mode to replace the current match or every match. The popup retains focus inside the Rich Text Editor so editing can continue when it is closed.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="links_and_anchors"><a class="link" href="#links_and_anchors">Links and anchors</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Select existing text before opening the link dialog, or enter the link text in the dialog. An optional tooltip can provide additional information about the destination. The available link types are organized into tabs.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/rich-text-links.png" alt="Insert Link dialog showing the Content, URL, and Email link types" width="905px">
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Content</dt>
+<dd>
+<p>Select another content item. Internal links use a content reference, so they continue to target the same item if it is moved or renamed. Depending on the selected item, you can open it in a new tab, add a fragment or query parameters, or choose how a media item should open.</p>
+</dd>
+<dt class="hdlist1">URL</dt>
+<dd>
+<p>Enter an HTTPS, HTTP, FTP, telephone, or relative URL and choose whether it opens in a new tab.</p>
+</dd>
+<dt class="hdlist1">Email</dt>
+<dd>
+<p>Enter an email address and, optionally, a subject.</p>
+</dd>
+<dt class="hdlist1">Anchor</dt>
+<dd>
+<p>Link to an anchor in the same rich-text field. The Anchor tab is visible only when anchors already exist in the document.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>To edit an existing link, double-click it, or select the link and use the link control in the toolbar. Use the unlink control to remove the link while keeping its text.</p>
+</div>
+<div class="sect2">
+<h3 id="anchors"><a class="link" href="#anchors">Anchors</a></h3>
+<div class="paragraph">
+<p>Anchors are created using a dedicated anchor control in the toolbar.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/rich-text-anchor.png" alt="Insert Anchor dialog with an anchor name">
+</div>
+</div>
+<div class="paragraph">
+<p>To create an anchor, place the cursor at the destination and use the anchor control. Anchor names cannot contain spaces and must be unique within the rich-text value. The anchor then becomes available in the link dialog.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="internal_vs_external_links"><a class="link" href="#internal_vs_external_links">Internal vs external links</a></h3>
+<div class="paragraph">
+<p>Internal links are stored as references to other content items, while external links are stored as literal URLs.</p>
+</div>
+<div class="paragraph">
+<p>For details about how internal and media links are stored and resolved by a front end, see the <a href="https://developer.enonic.com/docs/cms/stable/richtext/links">CMS rich-text links reference</a>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="insert-image"><a class="link" href="#insert-image">Images</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Use the image control to insert an existing image content item or upload a new image. Open an image already in the editor to change its configuration.</p>
+</div>
+<div class="sect2">
+<h3 id="inserting_an_image"><a class="link" href="#inserting_an_image">Inserting an image</a></h3>
+<div class="paragraph">
+<p>After selecting an image, the dialog provides controls for alignment, style, and width. Left- or right-aligned images allow surrounding text to wrap around them. Centered and full-width placement keep the image on its own line.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/rich-text-image.png" alt="Insert Image dialog showing alignment, style, and custom-width controls">
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+In general, avoid using <strong>Custom width</strong>. The editor may declare a relative width, but the front end can override it through its layout and styling rules.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="caption_and_accessibility"><a class="link" href="#caption_and_accessibility">Caption and accessibility</a></h3>
+<div class="paragraph">
+<p>Editors may optionally provide an image caption, which will be displayed with the image.</p>
+</div>
+<div class="paragraph">
+<p>Content Studio requires an accessibility setting for each image:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Decorative image</dt>
+<dd>
+<p>Use when the image adds no information that is not already provided by the surrounding text. Assistive technologies can then ignore it.</p>
+</dd>
+<dt class="hdlist1">Alternative text</dt>
+<dd>
+<p>Use when the image conveys meaning. Supply alternative text that communicates the image&#8217;s purpose or essential information.</p>
+</dd>
+</dl>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/rich-text-accessibility.png" alt="Insert Image dialog showing the caption and accessibility settings">
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+If alternative text already exists on the image content, it is automatically prefilled in the accessibility settings.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="custom_image_styles"><a class="link" href="#custom_image_styles">Image styles</a></h3>
+<div class="paragraph">
+<p>Image styles are supplied by applications and can control server-side cropping or filters as well as the presentation in the editor. Styles available from the applications associated with the current content are combined in the image dialog.</p>
+</div>
+<div class="paragraph">
+<p>The built-in <strong>Original (no image processing)</strong> style serves the original image without server-side processing or resizing. Selecting it can disable controls that depend on image processing, such as custom width.</p>
+</div>
+<div class="paragraph">
+<p>Developers can define custom image styles as described in the <a href="https://developer.enonic.com/docs/cms/stable/richtext/styles">CMS image-style reference</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="presentation"><a class="link" href="#presentation">Presentation</a></h3>
+<div class="paragraph">
+<p>Developers control the final image rendering in the presentation layer. The result, normally visible in the preview, may therefore differ from the configuration shown in the editor.</p>
+</div>
+<div class="paragraph">
+<p>For the stored image reference and front-end processing model, see the <a href="https://developer.enonic.com/docs/cms/stable/richtext/images">CMS rich-text image reference</a>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="macros"><a class="link" href="#macros">Macros</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Macros provide functionality for embedding application-defined content or elements into rich text. Open the macro dialog, select an available macro, and complete its configuration form. The Preview tab shows the macro&#8217;s rendered result when a preview is available.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/rich-text-macro.png" alt="Insert Macro dialog showing a configuration form and the Preview tab" width="905px">
+</div>
+</div>
+<div class="paragraph">
+<p>Once the macro is inserted into the rich text, it will appear as a placeholder that can be interacted with like any other content element.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/rich-text-macro-inserted.png" alt="Rich Text Editor showing an inserted macro as its name and configured values" width="546px">
+</div>
+</div>
+<div class="paragraph">
+<p>To edit an existing macro, double-click it to reopen the macro dialog.</p>
+</div>
+<div class="sect2">
+<h3 id="built_in_macros"><a class="link" href="#built_in_macros">Built-in macros</a></h3>
+<div class="paragraph">
+<p>Content Studio includes two built-in macros:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Embed iframe</dt>
+<dd>
+<p>Allows the editor to embed iframe content within the rich text.</p>
+</dd>
+<dt class="hdlist1">Disable macros</dt>
+<dd>
+<p>Prevents macro instructions from being evaluated within the rich text, typically used if you want to include raw macro syntax without it being processed.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>See the <a href="https://developer.enonic.com/docs/cms/stable/richtext/macros">CMS macro reference</a> for the available built-in macros, application configuration, and rendering model.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="tables"><a class="link" href="#tables">Tables</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Rich Text Editor provides controls for inserting, editing, and configuring tables.</p>
+</div>
+<div class="sect2">
+<h3 id="inserting_a_table"><a class="link" href="#inserting_a_table">Inserting a table</a></h3>
+<div class="paragraph">
+<p>Use the table control to select a table size from the grid, or choose <strong>More</strong> to open a dialog where you can specify the number of rows and columns, headers, and a caption.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/rich-text-table-insert.png" alt="Table size selector with a two-by-three grid selected" width="546px">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="editing_table_content"><a class="link" href="#editing_table_content">Editing table content</a></h3>
+<div class="paragraph">
+<p>When the cursor is inside an existing table, use the table menu or context menu to add and remove rows or columns, configure headers, edit table properties, or remove the table. The actions available depend on the current cell and selection.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/rich-text-table.png" alt="Rich Text Editor showing a table with a caption and header row" width="546px">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="context_menu"><a class="link" href="#context_menu">Context menu</a></h3>
+<div class="paragraph">
+<p>Using the context menu, you may perform a range of actions on the table, such as adding or removing rows and columns, accessing the table properties or cell properties, and other table-related operations.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/rich-text-table-menu.png" alt="Table context menu showing cell, row, column, sorting, and table actions" width="506px">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="table_properties"><a class="link" href="#table_properties">Table properties</a></h3>
+<div class="paragraph">
+<p>Open <strong>Table Properties</strong> from the context menu to configure the table&#8217;s dimensions, headers, and caption. The dimensions of an existing table cannot be changed from this dialog; use the context-menu actions to add or remove rows and columns.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/rich-text-table-properties.png" alt="Table Properties dialog showing dimensions, headers, and a caption" width="660px">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="special_characters"><a class="link" href="#special_characters">Special characters</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The special-character control opens a character map. Select a character to insert it at the cursor position. This is useful for symbols that are difficult to enter with the current keyboard layout.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="pasting_source_and_fullscreen"><a class="link" href="#pasting_source_and_fullscreen">Pasting, source, and fullscreen</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="paste_mode"><a class="link" href="#paste_mode">Paste mode</a></h3>
+<div class="paragraph">
+<p>Formatted paste is the default. It retains compatible structure and formatting from sources such as word processors while removing unsupported markup. Switch to plain-text paste when only the text should be inserted.</p>
+</div>
+<div class="paragraph">
+<p>The paste-mode selection applies to subsequent paste operations. It does not change content already in the editor.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="source_editing"><a class="link" href="#source_editing">Source editing</a></h3>
+<div class="paragraph">
+<p>Users with the <strong>Content Expert</strong> role or the <a href="../projects.ahtml#project-roles">Editor or Owner project role</a> can open the source dialog and edit the underlying HTML. This is useful for inspecting structure or making a precise correction that the visual controls do not support.</p>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+Source editing can introduce invalid or unsupported markup. Use only well-formed HTML supported by the field&#8217;s configuration.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="fullscreen_mode"><a class="link" href="#fullscreen_mode">Fullscreen mode</a></h3>
+<div class="paragraph">
+<p>Fullscreen mode expands the Rich Text Editor into a dialog with more room for long content. The same content and configured toolbar remain available, including dialogs for links, images, macros, and other elements. Closing fullscreen mode returns to the original field without creating a separate value.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="keyboard_shortcuts"><a class="link" href="#keyboard_shortcuts">Keyboard shortcuts</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Rich Text Editor supports shortcuts for frequent formatting, insertion, navigation, and editing actions. Shortcut availability follows the tools and heading levels enabled for the field.</p>
+</div>
+<div class="paragraph">
+<p>See the centralized <a href="../keyboard-shortcuts.ahtml#_rich_text_editor">Rich Text Editor keyboard shortcuts</a> table for the complete list.</p>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-08-27 06:42:05 UTC
+Last updated 2026-08-27 10:15:40 UTC
 </div>
 </div>
 </body>
