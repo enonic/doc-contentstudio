@@ -1,16 +1,84 @@
 = Content Editor
 :toc: right
 :imagesdir: editor/images
+:experimental:
 
-The *Content Editor* opens in a new browser tab from the <<workbench/navigator#,Navigator>> when content is created or edited. Multiple content tabs can be open at the same time. Clicking on the *Content Studio* tree icon in the top left corner will open the <<workbench/navigator#,Navigator>> in a new browser tab. User will get a browser warning upon trying to close a tab with modified but unsaved content.
+The *Content Editor* is the main interface for creating and editing content items in Content Studio.
 
-The edit view has three panels. On the left is the <<editor/content-form#,Content Form>>, where the content's data fields are edited. In the middle is either the <<editor/page-editor#,Page editor>> (for renderable content — a drag-and-drop page-building surface) or the <<workbench/preview#,Preview>> panel (for other content types — a type-appropriate read-only preview). On the right is the <<contextpanel#,Context panel>>, which hosts built-in widgets (Details, Version history, Dependencies, and — for renderable content — Components) as well as any widgets contributed by installed applications.
+== Overview
 
-image::editor.png[Content Wizard, 1680]
+The Content Editor combines the content form, a preview or page-building surface, and the Context panel in a workspace topped by a shared toolbar.
+
+.The Content Editor workspace
+image::editor.png[Content Editor screenshot of a blog post being edited with the Content Form and Preview visible, 1440px]
+
+== Opening the editor
+
+Creating or editing an item opens the Content Editor in a dedicated browser tab. Multiple content items, including items from different projects or layers, can therefore remain open at the same time.
+
+If you navigate away from or close an editor with unsaved changes, Content Studio asks for confirmation before discarding them.
+
+=== Why browser-native tabs?
+
+Content Studio deliberately uses browser-native tabs instead of maintaining an internal set of editor tabs. This provides several practical benefits:
+
+* More workspace for editing, especially on smaller screens.
+* Multiple content items can remain open across different projects and layers without losing context.
+* Content opens in the same editing interface whether editing starts from the Navigator, Archive, a search result, or another reference to the item.
+* Native browser features such as tab grouping, keyboard shortcuts, history, and reopening closed tabs remain available.
+* Each editor has a direct URL that can be bookmarked or shared with another user who has access.
+* Editor workspaces remain separate instead of accumulating inside one Content Studio window, avoiding the responsiveness and resource overhead of an internal tab system.
+
+== Workspace layout
+
+.The main areas of the Content Editor
+image::editor-panels.png[Content Editor with the toolbar above the content form and preview, 1442px]
+
+The workspace can contain up to four panels:
+
+Content Form:: The <<editor/content-form#,Content Form>> appears on the left and contains the fields defined by the content type. Use it to edit the content's display name, path, data, and other configuration.
+Preview or Page editor:: The central panel shows either the <<workbench/preview#,Preview>> or the <<editor/page-editor#,Page editor>>. The Page editor replaces the Preview for renderable content and provides a drag-and-drop surface for building pages.
+Context panel:: The <<contextpanel#,Context panel>> appears on the right and provides details, version history, dependencies, permissions, and other panels relevant to the current item. Available panels depend on the content, installed applications, and the user's permissions.
+
+Panel visibility adapts to the available screen width. The Content Form and Context panel can also be collapsed manually to provide more space for the preview or Page editor.
+
+== Toolbar
+
+The toolbar provides navigation, content actions, status information, workflow actions, and panel controls. The available and enabled controls depend on the content's state, the current project, installed features, and the user's permissions.
+
+.The Content Editor toolbar
+image::editor-toolbar.png[Annotated Content Editor toolbar showing project navigation, actions, content status and name, Juke AI, collaborators, workflow controls, and the Context panel toggle, 1558px]
+
+Project navigation:: The project name and language identify the active <<projects#,content project>>. Click the project name to return this browser tab to the <<workbench/navigator#,Navigator>> for that project.
+
+Content actions:: Common <<actions#,content actions>> appear on the left. btn:[Save] stores changes in the draft branch. Other actions can include <<actions/delete#,Delete>>, <<actions/duplicate#,Duplicate>>, <<actions/move#,Move>>, <<actions/preview#,Preview>>, and layer-specific actions such as Localize or Reset. Actions that do not fit are placed in the adjacent menu.
+
+Content status and name:: The center shows the content's <<workflow#workflow_state,validation or workflow state>> and path name. For inherited content, it also shows the layer indicator. Click the name to open the rename dialog when renaming is permitted.
+
+Juke AI:: When the Juke AI Content Operator is installed, the Juke icon opens or closes the AI assistant. See <<ai#content_operator,Juke AI Content Operator>>.
+
+Collaborators:: Avatars identify users who currently have the same content item open. The current user is highlighted, and hovering over an avatar displays the user's name. When space is limited, additional collaborators are represented by a count.
+
+Publishing and workflow:: The publishing badge shows whether the content is online, offline, scheduled, or expired. The adjacent primary action changes with the item's workflow state and the user's permissions—for example, btn:[Mark as ready], btn:[Publish], btn:[Request publishing], or btn:[Open request]. Open its menu for other available workflow and issue actions. See <<workflow#,Content life cycle and workflow>>.
+
+Context panel:: Use the rightmost toggle to show or hide the <<contextpanel#,Context panel>>.
+
+== Saving and validation
+
+Editing takes place in the `draft` branch. Click btn:[Save] to store the current changes; the button changes to btn:[Saved] when there are no unsaved changes. Saving does not publish the content or change the version currently available from the `master` branch.
+
+Content is validated continuously while it is edited. Validation errors are shown in the form and represented by the state icon in the toolbar. Invalid content can be saved, but it cannot be marked ready or published until the blocking errors are resolved. See <<workflow#_invalid,Invalid content>>.
+
+The most common actions also have <<keyboard-shortcuts#,keyboard shortcuts>>, including saving the current item.
 
 == Collaboration
 
-Toolbar of the Content Editor will display avatar icons of users who currently have the same content opened in the Content Editor.
+The toolbar displays the avatars of users who currently have the same content item open in the same project. This presence information helps editors identify potential simultaneous work on an item.
 
-:imagesdir: editor/images
-image::content-wizard-collaboration.png[Collaboration, 1331]
+Collaboration indicators do not replace normal saving and workflow.
+
+== Responsive layout
+
+On narrow screens, the toolbar moves actions into compact menus and replaces the visible content name with a path icon. The Context panel is hidden by default, and the available workspace panels use the remaining width.
+
+Collapse the <<editor/content-form#,Content Form>> when more room is needed for the Preview or Page editor. For page content, collapsing the form also changes how the <<editor/page-editor#_components_widget,Components panel>> is presented.

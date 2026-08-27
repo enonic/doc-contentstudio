@@ -1,54 +1,126 @@
 = Content Form
 :toc: right
 :imagesdir: images
+:experimental:
 
-This panel appears on the left side of the page after content is created or while being edited. It is here the form appears in which content
-data is entered. The structure and fields in the form are determined by the *content type* which is defined in the application code.
-The content editor panel can be collapsed to give the page editor more room by clicking the arrow icon on the top right of the panel.
+The *Content Form* is the left-hand panel of the <<../editor#,Content Editor>>. It contains the editable fields and supporting controls for a content item.
 
-image::editor-form.png[Editor form, 75%]
+== Overview
 
-== Header
+The form is assembled from the item's content type and any mixins enabled for the item. The content type supplies the primary fields, while mixins add reusable groups of fields such as search engine optimization (SEO) metadata. Page-capable content also has a *Page* tab for working with the page structure.
 
-The top of the content form has the content type icon, the Display Name, and the content path name.
-The default icon can be replaced with a thumbnail image by clicking on it and uploading an image file.
-When the Display Name is being changed, the path name will change accordingly, to a URL-friendly version.
-It is also possible for the Display Name to be generated dynamically from the values of other form
-fields, if the application's content type defines a Display Name expression.
+.Content Form for a blog post
+image::form.png[Content Form showing the content type and mixin tabs, 681px]
 
-NOTE: Value of the Path field must be unique and will be validated against existing content every time the field is changed.
+== Form tabs
 
-TIP: For a new content, Path will be auto-generated as you type into the Display Name field. International letters will be automatically
-transliterated into their english equivalents. It's possible to turn off this behaviour in the Content Studio's <<../config#disable_path_name_transliteration, config file>>.
+Use the tabs at the top to switch between sets of fields. The first tab is always the content type, optionally followed by the *Page* tab and any enabled mixins. A tab displays a validation marker when one of its fields contains an error.
 
-After a content has been published, the Path field gets locked and user must click the path to rename content in the dedicated
-modal dialog. These precautions aim to prevent accidental breaking of external hard-coded links.
+=== Content type
 
-image::editor-rename-path.png[Rename content dialog, 548w]
+The first tab is named after the content type. It contains the display name followed by the fields defined by that content type.
 
-== Form
+Content types are supplied by applications available to the <<../projects#,project>> or site. They determine which fields are shown, the kind of value each field accepts, and whether a value is required. Editors fill in these fields but do not change the form structure.
 
-Underneath the header is the toolbar with clickable navigation steps that correspond to different sections of the content form. The first one is always
-the content type name followed by optional *X-data* steps (if any). Clicking on an item in the toolbar will scroll the content
-form down to the corresponding section.
+=== Mixins
 
-Clicking the "<" icon in the menu toolbar will collapse the Content Form and automatically undock the Page Components tree.
+A mixin is a reusable set of fields that an application can add to multiple content types. For example, an SEO mixin might add a page title, description, and other metadata without defining a separate content type. The available mixins are determined by the configuration of your <<../projects#,project>> or site. Some mixins are required and cannot be disabled, while others are optional and can be enabled or disabled by the editor.
 
-NOTE: If you collapse the tree, your browser will remember this selection and won't reopen it the next time you collapse the form.
+Each enabled mixin has its own tab. Required mixins are enabled automatically and cannot be disabled. To manage optional mixins, open the menu next to the tabs, select or clear the available mixins, and click btn:[Confirm].
 
-== Page Components tree
+image::form-mixins.png[Content Form showing the content type, mixin tabs and optionally the page tab, 681px]
 
-When content has a controller the toolbar menu will have a step called "Page". This form step contains a hierarchical tree representation
-of all the components and regions on the page, including the page itself. This tree makes it very easy to manage content structure without having to use the Page Editor.
+CAUTION: Disabling an optional mixin removes the mixin and its values from the draft when the item is saved.
 
-Selecting a component in the tree will highlight the component in the Page editor and display its configuration in the <<page-editor#_components_widget,Components widget>>.
-The triple dot icon on the right of each component will open a context menu. This menu is the same as the one that would open for the same component
-in the <<page-editor#editing-page,Page editor>>.
+Developers can learn how mixins are defined and assigned in the https://developer.enonic.com/docs/cms/stable/content/mixins[Enonic CMS mixin documentation].
 
-Components can be rearranged directly in the tree with drag’n’drop function.
+=== Page
 
-In the image below, a part called *Latest comments* is selected in the Page Components view and highlighted with a blue border/mask in the Page Editor. The selected part's configuration form is displayed in the Components widget on the right.
+The *Page* tab is available when the item has a page configuration. It contains a hierarchical tree of the page, its regions, and its components.
 
-image::page-editor-components-docked.png[Page Components, 75%]
+Selecting a component in the tree also selects it in the Page Editor and opens its configuration in the <<page-editor#_components_widget,Components widget>>. Use a component's context menu to access its available actions. Components that support moving can also be rearranged by dragging them in the tree.
 
-NOTE: For fragments and page templates the Page Components tree will be inside the first form step.
+image::form-page.png[Content Form showing the Page tab with the page structure tree, 546px]
+
+See <<page-editor#_page_components_tree,Page Components tree>> for details about managing a page structure.
+
+== Content identity
+
+Every content item has a few common properties that identify it.
+
+=== Display name
+
+The display name is the large field at the top of the content type tab. It identifies the item throughout Content Studio and is a required field. An application's content type can also define an expression that generates the display name from other field values.
+
+=== Path name (slug)
+
+For new items, Content Studio automatically generates a URL-friendly path name, also called a slug, from the display name. The path name is shown in the center of the Editor toolbar.
+
+Like a file system, the path name is relative to its parent item. It must use supported characters and be unique among its siblings. The path name is commonly used in the item's URL and can be changed by renaming the item.
+
+TIP: International characters are transliterated when a path name is generated. An administrator can turn off this behavior in the Content Studio <<../config#disable_path_name_transliteration,configuration>>.
+
+=== Content ID
+
+Content items are automatically assigned a unique ID when they are created. This ID remains unchanged throughout the item's lifetime. References between content items use these IDs, so renaming or moving an item does not break the reference. You can see and copy the ID from the <<../contextpanel/details#,Details panel>>.
+
+== Renaming content
+
+Click the path name in the Editor toolbar to rename the item when you have permission to do so. The new path name must be unique among items with the same parent.
+
+.The dialog indicates whether the new path name is available.
+image::form-rename.png[Rename content item dialog showing the current path name and a new name being entered, 750px]
+
+Changing the path of an existing item changes its URL. Check references and external links before renaming published content.
+
+== Editing fields
+
+Field labels, help text, validation rules, and available controls come from the content type or mixin definition. The exact form therefore varies between content types, but the following patterns are common.
+
+For the complete catalog of form items, their UI examples, and schema configuration, see the https://developer.enonic.com/docs/cms/stable/schemas/form-items[Enonic CMS form-item reference].
+
+=== Required and optional values
+
+Required fields are marked with an asterisk. If a required value is missing, or a value does not match the field's rules, the form highlights the field and explains what must be corrected.
+
+image::form-required.png[Form showing a required field marked with an asterisk, 520px]
+
+Optional fields can be left empty. Some fields may appear or become required only after another option has been selected.
+
+=== Multiple and structured values
+
+A field that accepts multiple values provides controls for adding and removing occurrences. Minimum and maximum occurrence rules can limit how many values the field accepts.
+
+Related fields may be grouped into field sets or repeated as structured items. Values inside a structured item belong together; add or remove the complete item when managing its occurrences.
+
+.Multiple structured entries; click Add to create another entry
+image::form-items.png[Form showing a list of chapters where each chapter represents a substructure, 546px]
+
+=== Selectors and references
+
+Selectors let you find and reference other content, media, or predefined options. Start typing to search when the field supports search, then choose a result. The selected item remains separate content: the form stores a reference rather than copying its data.
+
+Available actions depend on the selector and your permissions. They can include opening the selected item, replacing it, or clearing the field.
+
+image::form-references.png[Form item showing a content selector for referencing author content, 520px]
+
+=== Rich text
+
+Rich text fields provide formatting, links, images, and embedded content. See the <<rich-text-editor#,Rich Text Editor>> reference for its controls and supported content.
+
+== Validation
+
+Content Studio validates fields while you edit and when you perform workflow actions. Errors are shown next to the affected field. If an error is in another tab, that tab is marked so you can find it without inspecting every field.
+
+.The field validation error is also indicated in the tab and editor toolbar.
+image::form-validation.png["Content Form showing a required field with a validation error propagating to the tab and editor toolbar", 681px]
+
+Page configuration errors are also indicated in the *Page* tab and its component tree. Select the affected component to review its configuration.
+
+An item with validation errors can be saved as a draft, but it cannot be marked as ready or published. See <<../editor#_saving_and_validation,Saving and validation>> for the Editor-level behavior and <<../workflow#_invalid,Invalid content>> for its effect on workflow.
+
+== Resizing and collapsing
+
+Drag the divider between the form and preview to change their relative widths. Alternatively, click the arrow at the upper-right of the form to collapse it and give the preview more space.
+
+For page-capable content, collapsing the form detaches the Page Components tree into a floating panel above the <<page-editor#,Page Editor>>. See <<page-editor#_page_components_tree,Page Components tree>> for details about the detached view.
