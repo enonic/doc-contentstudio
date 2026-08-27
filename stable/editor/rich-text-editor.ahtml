@@ -508,7 +508,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/rich-text-editor.png" alt="Rich Text Editor with its toolbar visible and content containing a heading, text, an image, and a link">
+<img src="images/rich-text-editor.png" alt="Rich Text Editor with its toolbar visible and content containing a heading, text, an image, and a link" width="546px">
 </div>
 </div>
 <div class="paragraph">
@@ -683,7 +683,7 @@ The <a href="page-editor.ahtml#text">Text component</a> has been deprecated in C
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/rich-text-anchor.png" alt="Insert Anchor dialog with an anchor name">
+<img src="images/rich-text-anchor.png" alt="Insert Anchor dialog with an anchor name" width="560px">
 </div>
 </div>
 <div class="paragraph">
@@ -948,7 +948,7 @@ Source editing can introduce invalid or unsupported markup. Use only well-formed
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-08-27 10:15:40 UTC
+Last updated 2026-08-27 11:08:55 UTC
 </div>
 </div>
 </body>
