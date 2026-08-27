@@ -441,7 +441,17 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
+<li><a href="#overview">Overview</a></li>
+<li><a href="#opening_the_editor">Opening the editor</a>
+<ul class="sectlevel2">
+<li><a href="#why_browser_native_tabs">Why browser-native tabs?</a></li>
+</ul>
+</li>
+<li><a href="#workspace_layout">Workspace layout</a></li>
+<li><a href="#toolbar">Toolbar</a></li>
+<li><a href="#saving_and_validation">Saving and validation</a></li>
 <li><a href="#collaboration">Collaboration</a></li>
+<li><a href="#responsive_layout">Responsive layout</a></li>
 </ul>
 </div>
 </div>
@@ -449,15 +459,153 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>The <strong>Content Editor</strong> opens in a new browser tab from the <a href="workbench/navigator.ahtml">Navigator</a> when content is created or edited. Multiple content tabs can be open at the same time. Clicking on the <strong>Content Studio</strong> tree icon in the top left corner will open the <a href="workbench/navigator.ahtml">Navigator</a> in a new browser tab. User will get a browser warning upon trying to close a tab with modified but unsaved content.</p>
+<p>The <strong>Content Editor</strong> is the main interface for creating and editing content items in Content Studio.</p>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>The edit view has three panels. On the left is the <a href="editor/content-form.ahtml">Content Form</a>, where the content&#8217;s data fields are edited. In the middle is either the <a href="editor/page-editor.ahtml">Page editor</a> (for renderable content — a drag-and-drop page-building surface) or the <a href="workbench/preview.ahtml">Preview</a> panel (for other content types — a type-appropriate read-only preview). On the right is the <a href="contextpanel.ahtml">Context panel</a>, which hosts built-in widgets (Details, Version history, Dependencies, and — for renderable content — Components) as well as any widgets contributed by installed applications.</p>
+<p>The Content Editor combines the content form, a preview or page-building surface, and the Context panel in a workspace topped by a shared toolbar.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="editor/images/editor.png" alt="Content Wizard" width="1680">
+<img src="editor/images/editor.png" alt="Content Editor screenshot of a blog post being edited with the Content Form and Preview visible" width="1440px">
 </div>
+<div class="title">Figure 1. The Content Editor workspace</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="opening_the_editor"><a class="link" href="#opening_the_editor">Opening the editor</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Creating or editing an item opens the Content Editor in a dedicated browser tab. Multiple content items, including items from different projects or layers, can therefore remain open at the same time.</p>
+</div>
+<div class="paragraph">
+<p>If you navigate away from or close an editor with unsaved changes, Content Studio asks for confirmation before discarding them.</p>
+</div>
+<div class="sect2">
+<h3 id="why_browser_native_tabs"><a class="link" href="#why_browser_native_tabs">Why browser-native tabs?</a></h3>
+<div class="paragraph">
+<p>Content Studio deliberately uses browser-native tabs instead of maintaining an internal set of editor tabs. This provides several practical benefits:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>More workspace for editing, especially on smaller screens.</p>
+</li>
+<li>
+<p>Multiple content items can remain open across different projects and layers without losing context.</p>
+</li>
+<li>
+<p>Content opens in the same editing interface whether editing starts from the Navigator, Archive, a search result, or another reference to the item.</p>
+</li>
+<li>
+<p>Native browser features such as tab grouping, keyboard shortcuts, history, and reopening closed tabs remain available.</p>
+</li>
+<li>
+<p>Each editor has a direct URL that can be bookmarked or shared with another user who has access.</p>
+</li>
+<li>
+<p>Editor workspaces remain separate instead of accumulating inside one Content Studio window, avoiding the responsiveness and resource overhead of an internal tab system.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="workspace_layout"><a class="link" href="#workspace_layout">Workspace layout</a></h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="editor/images/editor-panels.png" alt="Content Editor with the toolbar above the content form and preview" width="1442px">
+</div>
+<div class="title">Figure 2. The main areas of the Content Editor</div>
+</div>
+<div class="paragraph">
+<p>The workspace can contain up to four panels:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Content Form</dt>
+<dd>
+<p>The <a href="editor/content-form.ahtml">Content Form</a> appears on the left and contains the fields defined by the content type. Use it to edit the content&#8217;s display name, path, data, and other configuration.</p>
+</dd>
+<dt class="hdlist1">Preview or Page editor</dt>
+<dd>
+<p>The central panel shows either the <a href="workbench/preview.ahtml">Preview</a> or the <a href="editor/page-editor.ahtml">Page editor</a>. The Page editor replaces the Preview for renderable content and provides a drag-and-drop surface for building pages.</p>
+</dd>
+<dt class="hdlist1">Context panel</dt>
+<dd>
+<p>The <a href="contextpanel.ahtml">Context panel</a> appears on the right and provides details, version history, dependencies, permissions, and other panels relevant to the current item. Available panels depend on the content, installed applications, and the user&#8217;s permissions.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>Panel visibility adapts to the available screen width. The Content Form and Context panel can also be collapsed manually to provide more space for the preview or Page editor.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="toolbar"><a class="link" href="#toolbar">Toolbar</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The toolbar provides navigation, content actions, status information, workflow actions, and panel controls. The available and enabled controls depend on the content&#8217;s state, the current project, installed features, and the user&#8217;s permissions.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="editor/images/editor-toolbar.png" alt="Annotated Content Editor toolbar showing project navigation" width="actions" height="content status and name">
+</div>
+<div class="title">Figure 3. The Content Editor toolbar</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Project navigation</dt>
+<dd>
+<p>The project name and language identify the active <a href="projects.ahtml">content project</a>. Click the project name to return this browser tab to the <a href="workbench/navigator.ahtml">Navigator</a> for that project.</p>
+</dd>
+<dt class="hdlist1">Content actions</dt>
+<dd>
+<p>Common <a href="actions.ahtml">content actions</a> appear on the left. <b class="button">Save</b> stores changes in the draft branch. Other actions can include <a href="actions/delete.ahtml">Delete</a>, <a href="actions/duplicate.ahtml">Duplicate</a>, <a href="actions/move.ahtml">Move</a>, <a href="actions/preview.ahtml">Preview</a>, and layer-specific actions such as Localize or Reset. Actions that do not fit are placed in the adjacent menu.</p>
+</dd>
+<dt class="hdlist1">Content status and name</dt>
+<dd>
+<p>The center shows the content&#8217;s <a href="workflow.ahtml#workflow_state">validation or workflow state</a> and path name. For inherited content, it also shows the layer indicator. Click the name to open the rename dialog when renaming is permitted.</p>
+</dd>
+<dt class="hdlist1">Juke AI</dt>
+<dd>
+<p>When the Juke AI Content Operator is installed, the Juke icon opens or closes the AI assistant. See <a href="ai.ahtml#content_operator">Juke AI Content Operator</a>.</p>
+</dd>
+<dt class="hdlist1">Collaborators</dt>
+<dd>
+<p>Avatars identify users who currently have the same content item open. The current user is highlighted, and hovering over an avatar displays the user&#8217;s name. When space is limited, additional collaborators are represented by a count.</p>
+</dd>
+<dt class="hdlist1">Publishing and workflow</dt>
+<dd>
+<p>The publishing badge shows whether the content is online, offline, scheduled, or expired. The adjacent primary action changes with the item&#8217;s workflow state and the user&#8217;s permissions—for example, <b class="button">Mark as ready</b>, <b class="button">Publish</b>, <b class="button">Request publishing</b>, or <b class="button">Open request</b>. Open its menu for other available workflow and issue actions. See <a href="workflow.ahtml">Content life cycle and workflow</a>.</p>
+</dd>
+<dt class="hdlist1">Context panel</dt>
+<dd>
+<p>Use the rightmost toggle to show or hide the <a href="contextpanel.ahtml">Context panel</a>.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="saving_and_validation"><a class="link" href="#saving_and_validation">Saving and validation</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Editing takes place in the <code>draft</code> branch. Click <b class="button">Save</b> to store the current changes; the button changes to <b class="button">Saved</b> when there are no unsaved changes. Saving does not publish the content or change the version currently available from the <code>master</code> branch.</p>
+</div>
+<div class="paragraph">
+<p>Content is validated continuously while it is edited. Validation errors are shown in the form and represented by the state icon in the toolbar. Invalid content can be saved, but it cannot be marked ready or published until the blocking errors are resolved. See <a href="workflow.ahtml#_invalid">Invalid content</a>.</p>
+</div>
+<div class="paragraph">
+<p>The most common actions also have <a href="keyboard-shortcuts.ahtml">keyboard shortcuts</a>, including saving the current item.</p>
 </div>
 </div>
 </div>
@@ -465,19 +613,28 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="collaboration"><a class="link" href="#collaboration">Collaboration</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Toolbar of the Content Editor will display avatar icons of users who currently have the same content opened in the Content Editor.</p>
+<p>The toolbar displays the avatars of users who currently have the same content item open in the same project. This presence information helps editors identify potential simultaneous work on an item.</p>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="editor/images/content-wizard-collaboration.png" alt="Collaboration" width="1331">
+<div class="paragraph">
+<p>Collaboration indicators do not replace normal saving and workflow.</p>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="responsive_layout"><a class="link" href="#responsive_layout">Responsive layout</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>On narrow screens, the toolbar moves actions into compact menus and replaces the visible content name with a path icon. The Context panel is hidden by default, and the available workspace panels use the remaining width.</p>
+</div>
+<div class="paragraph">
+<p>Collapse the <a href="editor/content-form.ahtml">Content Form</a> when more room is needed for the Preview or Page editor. For page content, collapsing the form also changes how the <a href="editor/page-editor.ahtml#_components_widget">Components panel</a> is presented.</p>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-08-26 11:12:59 UTC
+Last updated 2026-08-27 06:42:05 UTC
 </div>
 </div>
 </body>

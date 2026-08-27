@@ -443,6 +443,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel1">
 <li><a href="#content_studio_6_0">Content Studio 6.0</a>
 <ul class="sectlevel2">
+<li><a href="#video_overview">Video overview</a></li>
 <li><a href="#revamped_ui">Revamped UI</a></li>
 <li><a href="#permissions">Permissions</a></li>
 <li><a href="#pluggable_preview">Pluggable preview</a></li>
@@ -482,6 +483,18 @@ Content Studio 6 requires Enonic XP 8.0 or newer.
 <div class="sectionbody">
 <div class="paragraph">
 <p>This is a major release with significant improvements and new features. The release focuses on modernizing the user interface, improving the preview system, and rebuilding the underlying architecture for better performance and extensibility.</p>
+</div>
+<div class="sect2">
+<h3 id="video_overview"><a class="link" href="#video_overview">Video overview</a></h3>
+<div class="paragraph">
+<p>Watch this overview for a guided tour of Content Studio 6 and its redesigned interface.</p>
+</div>
+<div class="videoblock">
+<div class="title">Content Studio 6 overview</div>
+<div class="content">
+<iframe src="https://www.youtube.com/embed/n_RmUz_jGas?rel=0" frameborder="0" allowfullscreen></iframe>
+</div>
+</div>
 </div>
 <div class="sect2">
 <h3 id="revamped_ui"><a class="link" href="#revamped_ui">Revamped UI</a></h3>
@@ -772,7 +785,7 @@ Full functionalilty may be re-activated via the <a href="config.ahtml">content s
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-08-26 11:12:59 UTC
+Last updated 2026-08-27 06:42:05 UTC
 </div>
 </div>
 </body>
