@@ -442,7 +442,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
 <li><a href="#fields">Fields</a></li>
-<li><a href="#behaviour">Behaviour</a></li>
+<li><a href="#behavior">Behavior</a></li>
 </ul>
 </div>
 </div>
@@ -450,7 +450,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>A <strong>Shortcut</strong> is a content item whose only purpose is to redirect to another path. It is the intended way to expose a short, stable URL that points at deeply-nested content, or to alias one content item under another path.</p>
+<p>A <strong>Shortcut</strong> is a content item whose purpose is to redirect to another content item. It provides a short, stable path to deeply nested content or makes the same target available from another location in the content tree.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/shortcut.png" alt="Shortcut content item with Target and Parameters fields" width="546px">
+</div>
+<div class="title">Figure 1. Shortcut content item</div>
 </div>
 </div>
 </div>
@@ -460,7 +466,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Target</strong> (required) — the content item or URL to redirect to.</p>
+<p><strong>Target</strong> (required) — the content item to which the shortcut redirects.</p>
 </li>
 <li>
 <p><strong>Parameters</strong> (optional) — a list of name-value pairs appended to the redirect URL as query-string parameters.</p>
@@ -470,17 +476,20 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="behaviour"><a class="link" href="#behaviour">Behaviour</a></h2>
+<h2 id="behavior"><a class="link" href="#behavior">Behavior</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Shortcuts cannot use page templates — the redirect fires even if a matching template exists. The shortcut&#8217;s target is resolved at request time; if the target is missing or unpublished, the redirect will produce a broken response.</p>
+<p>Like any other content type, shortcuts are simply content. The front-end is responsible for the actual behaviour, but in a regular web-based front-end it will normally be implemented as a regular HTTP redirect.</p>
+</div>
+<div class="paragraph">
+<p>The target is resolved when the shortcut is requested; if it is missing or unavailable, the redirect cannot be completed.</p>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-08-27 11:08:55 UTC
+Last updated 2026-09-01 10:03:37 UTC
 </div>
 </div>
 </body>

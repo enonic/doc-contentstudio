@@ -441,9 +441,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#creating_a_page_template">Creating a page template</a></li>
-<li><a href="#which_template_is_used">Which template is used</a></li>
-<li><a href="#rendering_content_without_a_matching_template">Rendering content without a matching template</a></li>
+<li><a href="#creating_a_page_template">Creating a Page template</a></li>
+<li><a href="#template_settings">Template settings</a></li>
+<li><a href="#relationship_to_content">Relationship to content</a></li>
+<li><a href="#editing_and_publishing">Editing and publishing</a></li>
+<li><a href="#limitations">Limitations</a></li>
 </ul>
 </div>
 </div>
@@ -451,75 +453,121 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>A <strong>Page template</strong> is a reusable page definition that renders one or more content types as pages. Templates live inside a site&#8217;s automatically-provisioned <a href="site.ahtml#templates_folder">Templates folder</a>, and each one pairs a page controller (the HTML skeleton from an application) with one or more content types that will use it.</p>
+<p>A <strong>Page template</strong> contains a reusable page that supports one or more content types. It defines a Page component and may include configured regions and nested components.</p>
+</div>
+<div class="paragraph">
+<p>Page templates belong to a Site and live in its automatically provisioned <a href="site.ahtml#templates_folder">Templates folder</a>. Editors may use page templates as a starting point for their pages, or front ends can resolve page templates automatically when rendering specific content types.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/browse-templates-list.png" alt="List of page templates in the Templates folder">
+<img src="images/page-template.png" alt="Page template form contains a content type supports filter" width="546px">
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="creating_a_page_template"><a class="link" href="#creating_a_page_template">Creating a page template</a></h2>
+<h2 id="creating_a_page_template"><a class="link" href="#creating_a_page_template">Creating a Page template</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Create a new <strong>Page template</strong> content inside the Templates folder. Two fields drive the template:</p>
+<p>Page templates can be created in two ways:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Supports</strong> — the content types this template can render.</p>
+<p>Create a <strong>Page template</strong> content item inside the Site&#8217;s Templates (<code>_templates/</code>) folder.</p>
 </li>
 <li>
-<p><strong>Controller</strong> (the selector on the right of the editor) — the page component from an installed application that provides the HTML skeleton. Once a controller is picked, the <a href="../editor/page-editor.ahtml">Page editor</a> becomes active and components can be placed into the controller&#8217;s regions.</p>
+<p>Use <strong>Save as Template</strong> on the Page root of an item-specific page.</p>
 </li>
 </ul>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="which_template_is_used"><a class="link" href="#which_template_is_used">Which template is used</a></h2>
-<div class="sectionbody">
 <div class="paragraph">
-<p>When several templates support the same content type, the one that appears <em>first</em> in the Templates folder is used by default. Individual content items can override the default via the <strong>Page template</strong> dropdown in the <a href="../editor/page-editor.ahtml#inspect_tab">Inspect tab</a> of the Components widget.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/wizard-template.png" alt="Choosing a template for a content item">
-</div>
+<p>A Page template cannot be created outside a Templates folder. See <a href="../editor/page-editor.ahtml#_page_root_actions">Page root actions</a> for the <strong>Save as Template</strong> operation.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="rendering_content_without_a_matching_template"><a class="link" href="#rendering_content_without_a_matching_template">Rendering content without a matching template</a></h2>
+<h2 id="template_settings"><a class="link" href="#template_settings">Template settings</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Content with no supporting template can still be rendered as a page — for example, rendering a folder called <em>Articles</em> as a listing of its children. Open the content in the editor, pick a page controller from the dropdown in the empty Page editor, and build the page from components as usual.</p>
+<p>Two settings determine the template&#8217;s purpose and structure:</p>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="images/wizard-template-select.png" alt="Selecting a controller for unsupported content">
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Supports</dt>
+<dd>
+<p>Specifies the content types for which the template is available. A template may support more than one content type.</p>
+</dd>
+<dt class="hdlist1">Page</dt>
+<dd>
+<p>Contains the Page component tree and the individual component configurations. Edit it from the <strong>Page</strong> tab.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>The available Page components and their configuration fields are supplied by applications assigned to the Site. See <a href="../editor/page-editor.ahtml">Page editor</a> for the shared Page settings and component-editing interface.</p>
 </div>
 </div>
-<div class="admonitionblock note">
+</div>
+<div class="sect1">
+<h2 id="relationship_to_content"><a class="link" href="#relationship_to_content">Relationship to content</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <strong>Supports</strong> setting makes a Page template available to content of the specified types. A content item may use an automatically matched template, an explicitly selected (pinned) template, or an item-specific page created by customization of the template.</p>
+</div>
+<div class="paragraph">
+<p>These choices are managed through Page settings on each individual content item. Content that pins a template remains linked to it. Customization copies the template&#8217;s page structure into the content item so that it can be edited independently.</p>
+</div>
+<div class="paragraph">
+<p>The front-end integration ultimately determines how Page template and page data are resolved and rendered. See <a href="../editor/page-editor.ahtml#_page_settings">Page settings</a> for the editor-facing behavior, including automatic selection, pinning, and customization.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="editing_and_publishing"><a class="link" href="#editing_and_publishing">Editing and publishing</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A Page template has its own status, permissions, workflow, publishing state, and version history. Changes are saved to the template&#8217;s draft and must be published before they affect published content that uses the template.</p>
+</div>
+<div class="admonitionblock important">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<i class="fa icon-important" title="Important"></i>
 </td>
 <td class="content">
-Shortcuts cannot use page templates — the shortcut&#8217;s redirect fires even if a matching template exists.
+Changes to a page template may affect multiple content items, including content that automatically resolves the template. Preview representative content before publishing substantial changes. The <a href="../contextpanel/dependencies.ahtml">Dependencies context panel</a> can identify explicit template references, but it does not provide a complete list of content matched automatically by content type.
 </td>
 </tr>
 </table>
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="limitations"><a class="link" href="#limitations">Limitations</a></h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Page templates are only available within a Site and can only be stored in that Site&#8217;s Templates folder.</p>
+</li>
+<li>
+<p>A Page template can only use components supplied by applications available to the Site.</p>
+</li>
+<li>
+<p>Shortcuts do not use page templates because opening a Shortcut resolves its target instead.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For the underlying content model and template-resolution rules, see the <a href="https://developer.enonic.com/docs/cms/stable/pages/page-templates">Enonic CMS Page templates reference</a>.</p>
+</div>
+</div>
+</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-08-27 11:08:55 UTC
+Last updated 2026-09-01 10:03:37 UTC
 </div>
 </div>
 </body>

@@ -527,7 +527,7 @@ The list of available panels depends on the user&#8217;s permissions and the cur
 <p><a href="contextpanel/export.ahtml">Content Exports panel</a> — export and import content items.</p>
 </li>
 <li>
-<p><a href="editor/page-editor.ahtml#_components_widget">Components panel</a> — the page-building tool that appears in the Editor for renderable content.</p>
+<p><a href="editor/page-editor.ahtml#_components_widget">Components panel</a> — the page-building tool that appears in the Editor for content with a page.</p>
 </li>
 </ul>
 </div>
@@ -577,7 +577,7 @@ The list of available panels depends on the user&#8217;s permissions and the cur
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-08-27 11:08:55 UTC
+Last updated 2026-09-01 10:03:37 UTC
 </div>
 </div>
 </body>

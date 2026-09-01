@@ -572,7 +572,7 @@ Project roles set the <strong>default</strong> permissions that every new conten
 <h2 id="project-applications"><a class="link" href="#project-applications">Applications</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Applications may be assigned to a project. This enables usage of content types and controller mappings defined in the assigned applications when creating or rendering content outside of sites. This is especially useful for management of headless content, as opposed to a site-oriented approach.</p>
+<p>Applications may be assigned to a project. This makes their content types, mixins, Page components, and other CMS features available when managing content outside of sites. This is especially useful for headless content, as opposed to a site-oriented approach.</p>
 </div>
 <div class="paragraph">
 <p>Application assignment follows these rules:</p>
@@ -625,7 +625,7 @@ Project roles set the <strong>default</strong> permissions that every new conten
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-08-27 11:08:55 UTC
+Last updated 2026-09-01 10:03:37 UTC
 </div>
 </div>
 </body>

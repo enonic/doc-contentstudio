@@ -441,10 +441,19 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#introduction">Introduction</a></li>
-<li><a href="#metadata_extraction">Metadata extraction</a></li>
-<li><a href="#cropping">Cropping</a></li>
+<li><a href="#image_editor">Image editor</a>
+<ul class="sectlevel2">
 <li><a href="#focal_point">Focal point</a></li>
+<li><a href="#cropping">Cropping</a></li>
+</ul>
+</li>
+<li><a href="#fields_and_metadata">Fields and metadata</a>
+<ul class="sectlevel2">
+<li><a href="#properties">Properties</a></li>
+<li><a href="#photo">Photo</a></li>
+<li><a href="#location">Location</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -452,76 +461,390 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Image is a specialised <a href="media.ahtml">Media</a> content type.</p>
+<p><strong>Image</strong> is the specialized <a href="media.ahtml">Media</a> content type for bitmap image files. Content Studio creates an Image content item automatically when a supported image file is uploaded.</p>
+</div>
+<div class="paragraph">
+<p>In addition to the standard content properties, the Image form provides editorial fields, extracted image metadata, and tools for cropping and setting a focal point.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/image.png" alt="Image content item with its preview and editorial fields" width="1440px">
+</div>
+<div class="title">Figure 1. Image content item</div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="introduction"><a class="link" href="#introduction">Introduction</a></h2>
+<h2 id="image_editor"><a class="link" href="#image_editor">Image editor</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Uploading an raster image file creates an <strong>Image</strong> content item. Unlike a regular media item, an image content has additional editorial capabilities.</p>
+<p>The image preview includes a lightweight editor for preparing an image for delivery. Its toolbar provides controls for cropping, setting a focal point, rotating, flipping, resetting, and replacing the source file.</p>
+</div>
+<div class="paragraph">
+<p>Image edits are non-destructive. Content Studio stores the crop, focal point, and orientation as properties on the image content item; it does not rewrite the <code>source</code> attachment. The saved properties can then be applied when an integration requests a transformed image. Downloading the source attachment still returns the original uploaded file.</p>
+</div>
+<div class="paragraph">
+<p>The toolbar contains the following controls:</p>
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1">Visual editor</dt>
+<dt class="hdlist1">Crop</dt>
 <dd>
-<p>Supports basic image editing such as <strong>Cropping</strong> and <strong>Focal point</strong>, which affect the delivery of the image.</p>
+<p>Define the area of the source image that should be retained.</p>
 </dd>
-<dt class="hdlist1">Image fields</dt>
+<dt class="hdlist1">Focal point</dt>
 <dd>
-<p>The image form has fields such as <code>Caption</code> and <code>Alt text</code>, but also technical metadata such as dimensions, photo fields like <code>aperture</code> and even Geo-location - if available.</p>
+<p>Identify the subject that should be prioritized if an integration needs to crop the image further for a different aspect ratio.</p>
+</dd>
+<dt class="hdlist1">Rotate clockwise</dt>
+<dd>
+<p>Rotate the presentation of the image 90 degrees clockwise. Click repeatedly to continue rotating it.</p>
+</dd>
+<dt class="hdlist1">Flip</dt>
+<dd>
+<p>Mirror the presentation of the image horizontally.</p>
+</dd>
+<dt class="hdlist1">Reset</dt>
+<dd>
+<p>Appears after an adjustment has been made and removes the applicable image edits. Outside crop or focal-point mode, this returns the crop, focal point, rotation, and flip settings to their defaults.</p>
+</dd>
+<dt class="hdlist1">Upload</dt>
+<dd>
+<p>Replace the source attachment with a different image file. This also clears image edits that belonged to the previous file. The attachment filename changes, but the content item keeps its existing name and path; see <a href="media.ahtml#upload_and_replace">Upload and replace</a>.</p>
 </dd>
 </dl>
 </div>
+<div class="paragraph">
+<p>Rotation and flipping are applied immediately in the preview. Cropping and focal-point selection use a dedicated editing mode with these actions:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Reset</dt>
+<dd>
+<p>Clear the current crop or return the focal point to the center of the available image area.</p>
+</dd>
+<dt class="hdlist1">Apply</dt>
+<dd>
+<p>Accept the current edit and return to the normal image preview.</p>
+</dd>
+<dt class="hdlist1">Cancel</dt>
+<dd>
+<p>Discard changes made since entering the current editing mode.</p>
+</dd>
+</dl>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<b class="button">Apply</b> confirms a crop or focal-point edit within the image editor. Use <b class="button">Save</b> in the Content Editor toolbar to save all image changes as a new version of the content item.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="focal_point"><a class="link" href="#focal_point">Focal point</a></h3>
+<div class="paragraph">
+<p>A focal point identifies the image&#8217;s most important subject. It is used when a delivery integration requests an image variant whose aspect ratio requires additional cropping. For example, the focal point can keep a person&#8217;s face in view when the same image is delivered as both a wide banner and a square thumbnail.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Click the focal-point icon in the image toolbar.</p>
+</li>
+<li>
+<p>Click the subject that should be prioritized, or drag the focal-point marker into position.</p>
+</li>
+<li>
+<p>Click <b class="button">Apply</b> to accept the position. Use <b class="button">Reset</b> to return it to the center of the cropped area, or to the center of the complete image when no crop is set.</p>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/image-focal-point.png" alt="Image editor in focal-point mode with the windhield of a porsche selected as the focal area. The focal area is visualized as a circle that can be moved around inside the image" width="880px">
+</div>
+<div class="title">Figure 2. Setting a focal point</div>
+</div>
+<div class="paragraph">
+<p>The focal point does not crop the image by itself. Its effect depends on the front-end integration and the image transformation it requests. See the <a href="https://developer.enonic.com/docs/cms/stable/apis/image">Enonic CMS Image API reference</a> for the available delivery transformations.</p>
+</div>
+<div class="paragraph">
+<p>Examples of what the above image might look like when delivered by the image API to the front-end based on different aspect ratio requests:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/image-wide.png" alt="Wide cropped version of the porsche keeping the windshield in the image" width="591px">
+</div>
+<div class="title">Figure 3. Wide image</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/image-tall.png" alt="Tall crop of the porsche keeping the windshield in the image" width="319px">
+</div>
+<div class="title">Figure 4. Tall image</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="cropping"><a class="link" href="#cropping">Cropping</a></h3>
+<div class="paragraph">
+<p>Cropping defines a persistent boundary around the useful part of the source image. Image variants generated from the content item use this cropped area as their starting point.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Click the crop icon in the image toolbar.</p>
+</li>
+<li>
+<p>Drag a side or corner handle to resize the crop area. The dimmed area will be excluded.</p>
+</li>
+<li>
+<p>Drag inside the crop area to reposition it without changing its size.</p>
+</li>
+<li>
+<p>Click <b class="button">Apply</b> to accept the crop, or use <b class="button">Reset</b> to remove it.</p>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/image-crop.png" alt="Image editor in crop mode with resize handles around the retained area" width="880px">
+</div>
+<div class="title">Figure 5. Cropping an image</div>
+</div>
+<div class="paragraph">
+<p>Cropping does not constrain the image to a predefined aspect ratio. Choose a crop that preserves the useful image area while leaving enough space for the aspect ratios required by the intended channels.</p>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="metadata_extraction"><a class="link" href="#metadata_extraction">Metadata extraction</a></h2>
+<h2 id="fields_and_metadata"><a class="link" href="#fields_and_metadata">Fields and metadata</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Once an image is uploaded, the underlying API will automatically pick up any Exif metadata from the source file and populate the corresponding fields in the content form.</p>
+<p>The <strong>Image</strong> tab contains the editorial fields used to describe and classify the image:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Caption</dt>
+<dd>
+<p>A description or caption intended for presentation with the image. Whether and where it is displayed depends on the site or delivery integration.</p>
+</dd>
+<dt class="hdlist1">Alternative text</dt>
+<dd>
+<p>A concise text alternative for readers who cannot see the image. Describe the meaning or purpose of the image rather than its appearance alone. Images used only for decoration may not require alternative text, depending on the implementation.</p>
+</dd>
+<dt class="hdlist1">Artist</dt>
+<dd>
+<p>One or more names identifying the photographer, illustrator, or other creator. This is a tag field, so existing values can be reused.</p>
+</dd>
+<dt class="hdlist1">Copyright</dt>
+<dd>
+<p>A copyright or rights notice for the image.</p>
+</dd>
+<dt class="hdlist1">Tags</dt>
+<dd>
+<p>One or more reusable labels that help editors classify and find the image.</p>
+</dd>
+</dl>
 </div>
 <div class="paragraph">
-<p>Like other media content, the metadata fields are indexed and searchable, so you can find images by searching for camera model, focal length etc.</p>
+<p>Content Studio automatically extracts available EXIF, IPTC, and XMP metadata from the uploaded file. Depending on the source image, this can include dimensions, camera and exposure details, and geographic coordinates.</p>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="cropping"><a class="link" href="#cropping">Cropping</a></h2>
-<div class="sectionbody">
 <div class="paragraph">
-<p>The crop icon above the image dims the surrounding area and reveals the crop-editing tools. The zoom slider enlarges the preview; the image can be dragged to reposition. The aspect-ratio handle (circle with arrows at the bottom) changes the crop ratio. <strong>Apply</strong> returns the editor to normal mode.</p>
+<p>For the mapping between these fields and their source metadata properties, see the <a href="https://developer.enonic.com/docs/cms/stable/media/image#automatic_metadata_extraction">Enonic CMS image metadata reference</a>.</p>
+</div>
+<div class="paragraph">
+<p>Editorial and extracted metadata are indexed and searchable, allowing images to be found by values such as artist, camera model, or focal length.</p>
+</div>
+<div class="paragraph">
+<p>The available metadata varies by file and by the software or device that produced it. Empty fields are therefore normal. Applications can also add mixins, so an image may contain tabs in addition to the built-in <strong>Image</strong>, <strong>Properties</strong>, <strong>Photo</strong>, and <strong>Location</strong> tabs.</p>
+</div>
+<div class="sect2">
+<h3 id="properties"><a class="link" href="#properties">Properties</a></h3>
+<div class="paragraph">
+<p>The <strong>Properties</strong> tab contains technical information about the source file and the image itself:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Size (px)</dt>
+<dd>
+<p>The total number of pixels, calculated as width multiplied by height.</p>
+</dd>
+<dt class="hdlist1">Height (px)</dt>
+<dd>
+<p>The image height in pixels.</p>
+</dd>
+<dt class="hdlist1">Width (px)</dt>
+<dd>
+<p>The image width in pixels.</p>
+</dd>
+<dt class="hdlist1">Orientation</dt>
+<dd>
+<p>The embedded orientation value that indicates how the stored pixels should be rotated or mirrored for display.</p>
+</dd>
+<dt class="hdlist1">Content Type</dt>
+<dd>
+<p>The file&#8217;s media type, such as <code>image/jpeg</code> or <code>image/png</code>.</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>A description extracted from the file&#8217;s embedded metadata. This is separate from the editorial <strong>Caption</strong> and <strong>Alternative text</strong> fields.</p>
+</dd>
+<dt class="hdlist1">Size (bytes)</dt>
+<dd>
+<p>The size of the source attachment in bytes.</p>
+</dd>
+<dt class="hdlist1">Color Space</dt>
+<dd>
+<p>The embedded color-space information, when available.</p>
+</dd>
+<dt class="hdlist1">File Source</dt>
+<dd>
+<p>Information recorded by the source device or software about how the image was created.</p>
+</dd>
+</dl>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/image-crop.png" alt="Cropping an image">
+<img src="images/image-properties.png" alt="Properties tab with dimensions, orientation, content type, and description" width="546px">
+</div>
+<div class="title">Figure 6. Image properties</div>
 </div>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="focal_point"><a class="link" href="#focal_point">Focal point</a></h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="photo"><a class="link" href="#photo">Photo</a></h3>
 <div class="paragraph">
-<p>Rendered images often need to be cropped to match a different aspect ratio than the original, which can cut off the subject. Setting a <strong>focal point</strong> tells the renderer which part of the image to always keep in frame.</p>
+<p>The <strong>Photo</strong> tab contains camera, lens, and exposure information extracted from photographic metadata:</p>
 </div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Date</dt>
+<dd>
+<p>The date and time when the image was captured.</p>
+</dd>
+<dt class="hdlist1">Make</dt>
+<dd>
+<p>The camera or device manufacturer.</p>
+</dd>
+<dt class="hdlist1">Model</dt>
+<dd>
+<p>The camera or device model.</p>
+</dd>
+<dt class="hdlist1">Lens</dt>
+<dd>
+<p>The lens model or description.</p>
+</dd>
+<dt class="hdlist1">ISO</dt>
+<dd>
+<p>The camera sensitivity used for the exposure.</p>
+</dd>
+<dt class="hdlist1">Focal Length</dt>
+<dd>
+<p>The lens focal length used when the image was captured.</p>
+</dd>
+<dt class="hdlist1">Focal Length 35mm</dt>
+<dd>
+<p>The equivalent focal length on a 35 mm camera, which makes the field of view easier to compare across sensor sizes.</p>
+</dd>
+<dt class="hdlist1">Exposure Bias</dt>
+<dd>
+<p>The exposure compensation applied by the camera.</p>
+</dd>
+<dt class="hdlist1">Aperture</dt>
+<dd>
+<p>The lens aperture used for the exposure, expressed as an f-number.</p>
+</dd>
+<dt class="hdlist1">Shutter Time</dt>
+<dd>
+<p>The exposure duration.</p>
+</dd>
+<dt class="hdlist1">Flash</dt>
+<dd>
+<p>Information about whether and how the flash fired.</p>
+</dd>
+<dt class="hdlist1">Auto Flash Compensation</dt>
+<dd>
+<p>Flash-exposure compensation applied automatically by the camera.</p>
+</dd>
+<dt class="hdlist1">White Balance</dt>
+<dd>
+<p>The white-balance setting used by the camera.</p>
+</dd>
+<dt class="hdlist1">Exposure Program</dt>
+<dd>
+<p>The camera program used to determine the exposure.</p>
+</dd>
+<dt class="hdlist1">Shooting Mode</dt>
+<dd>
+<p>The camera&#8217;s selected scene or shooting mode.</p>
+</dd>
+<dt class="hdlist1">Metering Mode</dt>
+<dd>
+<p>The method used by the camera to measure light.</p>
+</dd>
+<dt class="hdlist1">Exposure Mode</dt>
+<dd>
+<p>Indicates whether the exposure was selected automatically, manually, or by exposure bracketing.</p>
+</dd>
+<dt class="hdlist1">Focus Distance</dt>
+<dd>
+<p>The recorded distance from the camera to the subject.</p>
+</dd>
+<dt class="hdlist1">Orientation</dt>
+<dd>
+<p>The orientation recorded by the camera for the photograph.</p>
+</dd>
+</dl>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/image-photo.png" alt="Photo tab with camera, lens, and exposure metadata" width="546px">
+</div>
+<div class="title">Figure 7. Photo metadata</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="location"><a class="link" href="#location">Location</a></h3>
 <div class="paragraph">
-<p>Click the focal point icon, then click the part of the image that should stay centred, and <strong>Apply</strong>. The focal point is marked with a red circle in the editor.</p>
+<p>The <strong>Location</strong> tab contains positioning information recorded when the image was captured:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Geo Point</dt>
+<dd>
+<p>The latitude and longitude of the capture location.</p>
+</dd>
+<dt class="hdlist1">Altitude</dt>
+<dd>
+<p>The recorded elevation at the capture location.</p>
+</dd>
+<dt class="hdlist1">Direction</dt>
+<dd>
+<p>The direction the camera was facing, normally expressed in degrees.</p>
+</dd>
+</dl>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/image-focal-point-1.png" alt="Original image" width="no focal point">
+<img src="images/image-location.png" alt="Location tab with geographic coordinates, altitude, and camera direction" width="546px">
 </div>
+<div class="title">Figure 8. Location metadata</div>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="images/image-focal-point-2.png" alt="Setting the focal point">
-</div>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/image-focal-point-3.png" alt="Subject stays in frame across aspect ratios">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Location metadata can reveal a precise capture location. Review it before publishing or exposing image metadata through an API.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -529,7 +852,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-08-27 11:08:55 UTC
+Last updated 2026-09-01 10:03:37 UTC
 </div>
 </div>
 </body>

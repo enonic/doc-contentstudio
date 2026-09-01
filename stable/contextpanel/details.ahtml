@@ -628,10 +628,10 @@ Only users with the <strong>Write permissions</strong> permission can edit an it
 <h2 id="template"><a class="link" href="#template">Template</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>For renderable content, this section optionally shows the <a href="../content-types/page-template.ahtml">page template</a> used to render the item. Content with a customized page is identified as <strong>Custom</strong>.</p>
+<p>For content with a page, this section optionally shows the <a href="../content-types/page-template.ahtml">page template</a> supplying its component structure. Content with a customized page is identified as <strong>Custom</strong>.</p>
 </div>
 <div class="paragraph">
-<p>The Template section is only shown for content that supports page rendering.</p>
+<p>The Template section is only shown for content that supports pages.</p>
 </div>
 </div>
 </div>
@@ -649,7 +649,7 @@ Only users with the <strong>Write permissions</strong> permission can edit an it
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-08-27 11:08:55 UTC
+Last updated 2026-09-01 10:03:37 UTC
 </div>
 </div>
 </body>

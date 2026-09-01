@@ -517,7 +517,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/form-mixins.png" alt="Content Form showing the content type" width="mixin tabs and optionally the page tab" height="681px">
+<img src="images/form-mixins.png" alt="Content Form showing the content type, mixin tabs and optionally the page tab" width="681px">
 </div>
 </div>
 <div class="admonitionblock caution">
@@ -543,11 +543,6 @@ Disabling an optional mixin removes the mixin and its values from the draft when
 </div>
 <div class="paragraph">
 <p>Selecting a component in the tree also selects it in the Page Editor and opens its configuration in the <a href="page-editor.ahtml#_components_widget">Components widget</a>. Use a component&#8217;s context menu to access its available actions. Components that support moving can also be rearranged by dragging them in the tree.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/form-page.png" alt="Content Form showing the Page tab with the page structure tree" width="546px">
-</div>
 </div>
 <div class="paragraph">
 <p>See <a href="page-editor.ahtml#_page_components_tree">Page Components tree</a> for details about managing a page structure.</p>
@@ -707,7 +702,7 @@ International characters are transliterated when a path name is generated. An ad
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-08-27 11:08:55 UTC
+Last updated 2026-09-01 10:03:37 UTC
 </div>
 </div>
 </body>

@@ -441,9 +441,15 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#introduction">Introduction</a></li>
+<li><a href="#media_types">Media types</a></li>
 <li><a href="#upload_and_replace">Upload and replace</a></li>
-<li><a href="#shared_fields">Shared fields</a></li>
+<li><a href="#media_content_and_attachments">Media content and attachments</a>
+<ul class="sectlevel2">
+<li><a href="#content_paths_and_attachment_urls">Content paths and attachment URLs</a></li>
+</ul>
+</li>
+<li><a href="#fields_metadata_and_indexing">Fields, metadata, and indexing</a></li>
+<li><a href="#preview">Preview</a></li>
 <li><a href="#referencing_media">Referencing media</a></li>
 </ul>
 </div>
@@ -452,18 +458,52 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p><strong>Media</strong> is a collection of content types that transform binary files — images, video, audio, documents — into content items.</p>
+<p><strong>Media</strong> is the equivalent of files in a traditional file system. Unlike other content, Media can only be created by uploading files such as images, video, audio, and documents. Files will automatically be detected and saved as their appropriate Media type based on the file&#8217;s MIME type.</p>
+</div>
+<div class="paragraph">
+<p>As content items, media files participate in search, permissions, workflow, publishing, and version history. Media content cannot contain child items.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/document.png" alt="A pdf file has been uploaded and saved as the document media type with a full preview of the file visible" width="1440px">
+</div>
+<div class="title">Figure 1. Sample media content</div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="introduction"><a class="link" href="#introduction">Introduction</a></h2>
+<h2 id="media_types"><a class="link" href="#media_types">Media types</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Storing media as content means each file gets all the capabilities of a content item, including search indexing, permissions, and the same lifecycle as any other content (drafts, publishing, archiving, versions).</p>
+<p>Files will be saves as a particular media type, which determines the fields and preview available in the Content Editor. Built-in media types cover:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Bitmap images — see <a href="image.ahtml">Image</a> for the specialized image fields and editing tools.</p>
+</li>
+<li>
+<p>Audio and video files.</p>
+</li>
+<li>
+<p>Text and source-code files.</p>
+</li>
+<li>
+<p>Documents, spreadsheets, and presentations.</p>
+</li>
+<li>
+<p>Vector images.</p>
+</li>
+<li>
+<p>Archives and executable files.</p>
+</li>
+<li>
+<p>Other binary or unknown file formats.</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>Content Studio identifies the media subtype from the file&#8217;s MIME type when uploading. Images get the most specialised UI (cropping, focal point — see <a href="image.ahtml">Image</a>); other media types share a common set of metadata fields and rely on the browser for preview.</p>
+<p>See the <a href="https://developer.enonic.com/docs/cms/stable/media/media-types">Enonic CMS media type reference</a> for the complete technical list and MIME-type mapping.</p>
 </div>
 </div>
 </div>
@@ -471,42 +511,123 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="upload_and_replace"><a class="link" href="#upload_and_replace">Upload and replace</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Media items are created by:</p>
-</div>
-<div class="paragraph">
-<p>Clicking <strong>New</strong> action in the toolbar.
-.. Dragging files into the dialog
-.. Clicking the upload link in the media dialog.</p>
-</div>
-<div class="paragraph">
-<p>The underlying file can be replaced after creation by dragging a new file onto the preview, or via the upload icon.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="shared_fields"><a class="link" href="#shared_fields">Shared fields</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>All media content types share a small set of metadata fields:</p>
+<p>Create media from the <a href="../actions/new.ahtml">New Content dialog</a> using either of these methods:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Caption</strong> — short description shown alongside the media.</p>
+<p>Drag one or more files into the dialog.</p>
 </li>
 <li>
-<p><strong>Artist</strong> — original author or creator.</p>
-</li>
-<li>
-<p><strong>Copyright</strong> — licensing or attribution statement.</p>
-</li>
-<li>
-<p><strong>Tags</strong> — free-text keywords for search and filtering.</p>
+<p>Click the upload button and select the files.</p>
 </li>
 </ul>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="images/media.png" alt="Media upload dialog" width="820px">
+</div>
+<div class="title">Figure 2. Upload media</div>
+</div>
 <div class="paragraph">
-<p>The <strong>Image</strong> content type also includes a <strong>Text</strong> field for alternative text and picks up Exif metadata automatically from the source file.</p>
+<p>The underlying file can be replaced after creation via the upload icon.</p>
+</div>
+<div class="paragraph">
+<p>Replacing a file adopts the new attachment filename but does not rename the media item or change its content path, even before the item has been published. Use the <strong>Rename</strong> action separately if the content name should match the replacement file.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="media_content_and_attachments"><a class="link" href="#media_content_and_attachments">Media content and attachments</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A media item consists of the content item and its uploaded file. The content item provides the identity, fields, permissions, workflow, and version history, while the file is embedded as a <code>source</code> attachment.</p>
+</div>
+<div class="paragraph">
+<p>The attachment is not a separate item in the content tree and does not have independent permissions or publishing status. It is versioned and published together with the media item. Replacing the file updates the attachment without changing the content ID, so existing references to the media item remain valid.</p>
+</div>
+<div class="paragraph">
+<p>To download the current file, click its filename in the <a href="../editor/content-form.ahtml">Content Form</a>. Alternatively, select the media item, open the <a href="../contextpanel/details.ahtml">Details context panel</a>, and click the file under <strong>Attachments</strong>.</p>
+</div>
+<div class="paragraph">
+<p>Other content types can also contain attachments, but for Media the attachment is the item&#8217;s primary payload. See the <a href="https://developer.enonic.com/docs/cms/stable/content/attachments">Enonic CMS attachment reference</a> for the underlying attachment data.</p>
+</div>
+<div class="sect2">
+<h3 id="content_paths_and_attachment_urls"><a class="link" href="#content_paths_and_attachment_urls">Content paths and attachment URLs</a></h3>
+<div class="paragraph">
+<p>A media item&#8217;s path identifies the content item, not its uploaded file. A URL such as <code>/documents/report.pdf</code> is therefore handled as a content route and does not automatically download the PDF in your front-end.</p>
+</div>
+<div class="paragraph">
+<p>In order to ensure optimal use of CDN and caching, the files are normally served through the Attachment API. A typical attachment URL looks like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-text" data-lang="text">/_/media:attachment/&lt;project&gt;/&lt;content-id&gt;:&lt;fingerprint&gt;/&lt;filename&gt;?download</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The URL components serve these purposes:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Project</dt>
+<dd>
+<p>Identifies the content project.</p>
+</dd>
+<dt class="hdlist1">Content ID</dt>
+<dd>
+<p>Keeps the URL independent of the item&#8217;s name and location.</p>
+</dd>
+<dt class="hdlist1">Fingerprint</dt>
+<dd>
+<p>Identifies the current binary and supports long-lived caching. It changes when the file is replaced.</p>
+</dd>
+<dt class="hdlist1">Filename</dt>
+<dd>
+<p>Identifies the attachment stored on the content item.</p>
+</dd>
+<dt class="hdlist1"><code>?download</code></dt>
+<dd>
+<p>Asks the browser to download the file instead of displaying it inline.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>The public API prefix may differ depending on the virtual-host configuration. Integrations should therefore use URLs generated for their environment rather than constructing attachment URLs from content paths. See the <a href="https://developer.enonic.com/docs/cms/stable/apis/attachment">Attachment API reference</a> for the complete URL structure and configuration options.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="fields_metadata_and_indexing"><a class="link" href="#fields_metadata_and_indexing">Fields, metadata, and indexing</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>All media types include a <strong>Tags</strong> field for adding searchable labels. Other editorial fields depend on the detected media type.</p>
+</div>
+<div class="paragraph">
+<p>For text-bearing files, indexing also happens at the attachment level. When a plain-text file, PDF, word-processing document, spreadsheet, presentation, or another supported format is uploaded, XP automatically extracts the readable text from the <code>source</code> attachment and includes it in the media item&#8217;s full-text search data. This allows Content Studio to find a media item by words inside the uploaded file, even though the extracted text is not displayed as an editable field in the Content Form.</p>
+</div>
+<div class="paragraph">
+<p>The attachment remains part of the media item rather than becoming a separate searchable content item. Replacing the file causes the text of the new attachment to be extracted and indexed. Files without readable text do not contribute attachment text to the search index.</p>
+</div>
+<div class="paragraph">
+<p>Images have the most extensive editorial fields and automatically extracted metadata. See <a href="image.ahtml">Image</a> for details.</p>
+</div>
+<div class="paragraph">
+<p>See the <a href="https://developer.enonic.com/docs/cms/stable/media/media-indexing">Enonic CMS media-indexing reference</a> for the supported extraction model and underlying searchable fields.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="preview"><a class="link" href="#preview">Preview</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When available, Content Studio will automatically detect and apply the media preview to media content. Like any other content, users may choose an alternative preview like JSON.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/media-preview.png" alt="Demonstrating that media preview is part of the preview extensios list" width="688px">
+</div>
 </div>
 </div>
 </div>
@@ -514,14 +635,14 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="referencing_media"><a class="link" href="#referencing_media">Referencing media</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Media items can be referenced from rich-text fields, content selectors, and image inputs in the <a href="../editor/content-form.ahtml">Content Form</a>. References are stored by content ID, so renaming or moving a media item keeps existing references intact.</p>
+<p>Media items can be referenced from content selectors, rich-text, and and other fields in the <a href="../editor/content-form.ahtml">Content Form</a>. References are stored by content ID, so renaming or moving a media item keeps existing references intact, just like any other content item.</p>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-08-27 11:08:55 UTC
+Last updated 2026-09-01 10:03:37 UTC
 </div>
 </div>
 </body>

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.26">
-<title>Built-in and custom Content Types</title>
+<title>Content types</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -437,11 +437,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article toc2 toc-right">
 <div id="header">
-<h1>Built-in and custom Content Types</h1>
+<h1>Content types</h1>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#overview">Overview</a></li>
+<li><a href="#built_in_and_custom_types">Built-in and custom types</a></li>
+<li><a href="#related_concepts">Related concepts</a></li>
+<li><a href="#folder">Folder</a></li>
 </ul>
 </div>
 </div>
@@ -449,65 +451,78 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Every content item in Enonic XP has a content type — it defines the item&#8217;s form and behavior</p>
+<p>A <strong>content type</strong> defines the fields and capabilities of a content item. Every item has exactly one content type.</p>
+</div>
+<div class="paragraph">
+<p>When creating content, the <a href="actions/new.ahtml">New Content dialog</a> lists the types available at the selected location. Availability depends on the applications assigned to the current project or enclosing site, as well as any restrictions on the parent item.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
+<h2 id="built_in_and_custom_types"><a class="link" href="#built_in_and_custom_types">Built-in and custom types</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Content types come from two sources: a set of <strong>built-in</strong> types that ship with Enonic XP, and <strong>custom</strong> types defined by the applications available in your project.</p>
+<p><strong>Custom content types</strong> are supplied by applications and provide forms designed for a particular solution, such as an article, product, or event.</p>
 </div>
 <div class="paragraph">
-<p>Custom types simply render the form their application defines. The built-in types, however, have special behaviour and dedicated tooling in Content Studio — those are documented in this chapter:</p>
+<p><strong>Built-in content types</strong> are supplied by Enonic XP for common purposes. This reference covers the built-in types editors work with in Content Studio:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="content-types/folder.ahtml">Folder</a> — grouping container with no data fields.</p>
+<p><a href="#folder">Folder</a> — grouping container with no data fields.</p>
 </li>
 <li>
-<p><a href="content-types/shortcut.ahtml">Shortcut</a> — redirect to another path.</p>
-</li>
-<li>
-<p><a href="content-types/site.ahtml">Site</a> — the root of a website; carries installed applications.</p>
-</li>
-<li>
-<p><a href="content-types/page-template.ahtml">Page template</a> — reusable page definition pairing a page controller with one or more content types.</p>
+<p><a href="content-types/shortcut.ahtml">Shortcut</a> — redirect to another content item.</p>
 </li>
 <li>
 <p><a href="content-types/media.ahtml">Media</a> — images, video, audio, documents, and other binary uploads.</p>
 </li>
 <li>
-<p><a href="content-types/image.ahtml">Image</a> — image-specific tools (cropping, focal point).</p>
+<p><a href="content-types/site.ahtml">Site</a> — the root of a website; carries installed applications.</p>
 </li>
 <li>
 <p><a href="content-types/fragment.ahtml">Fragment</a> — reusable page component stored as a content item; edits propagate everywhere referenced.</p>
 </li>
 <li>
-<p><a href="content-types/unstructured.ahtml">Unstructured</a> — formless content used by applications to store free-form data.</p>
+<p><a href="content-types/page-template.ahtml">Page template</a> — reusable component structure that can be applied to one or more content types.</p>
 </li>
 </ul>
 </div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-For defining your own content types and content modelling in general, see the <a href="https://developer.enonic.com/docs/cms/stable/content/content-types">Enonic CMS docs</a>.
-</td>
-</tr>
-</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="related_concepts"><a class="link" href="#related_concepts">Related concepts</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A content type supplies the primary fields in the <a href="editor/content-form.ahtml">Content Form</a>. A <a href="editor/content-form.ahtml#_mixins">mixin</a> can add reusable fields without defining another content type, while a <a href="editor/page-editor.ahtml">page</a> can add an optional component structure without changing the content type. Site, Fragment, and Page template are themselves built-in content types that support page composition.</p>
+</div>
+<div class="paragraph">
+<p>For the underlying schemas and application-side definitions, see the <a href="https://developer.enonic.com/docs/cms/stable/content/content-types">Enonic CMS content type reference</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="folder"><a class="link" href="#folder">Folder</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Folder</strong> is the simplest content type. Inspired by a traditional file syste, it has no type-specific fields and is used to organize child content in the content tree.</p>
+</div>
+<div class="paragraph">
+<p>Folders still have the standard properties and editorial features of content, including a display name, path, permissions, workflow state, and version history. A Folder can also have mixins, or a page when page components are available at its location.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="content-types/images/folder.png" alt="Folder content item in the Content Editor" width="546px">
+</div>
+<div class="title">Figure 1. Folder content item</div>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-08-27 11:08:55 UTC
+Last updated 2026-09-01 10:03:37 UTC
 </div>
 </div>
 </body>

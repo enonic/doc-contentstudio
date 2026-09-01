@@ -441,12 +441,15 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
+<li><a href="#concept">Concept</a></li>
 <li><a href="#site_fields">Site fields</a></li>
-<li><a href="#applications">Applications</a>
+<li><a href="#site_applications">Site applications</a></li>
+<li><a href="#managing_applications">Managing applications</a>
 <ul class="sectlevel2">
 <li><a href="#application_configuration">Application configuration</a></li>
 </ul>
 </li>
+<li><a href="#sites_and_pages">Sites and pages</a></li>
 <li><a href="#templates_folder">Templates folder</a></li>
 </ul>
 </div>
@@ -455,15 +458,24 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>A <strong>Site</strong> is a special content type that sits at the root of a website. Sites are the bridge between content and applications: installing an application on a site is what makes page rendering, parts, layouts, and custom configuration available to the content inside.</p>
+<p>Defines the root of a scoped content area within a content project, usually representing a website. Content is organized beneath it, and the Site&#8217;s configuration determine which content types, mixins, page components, and other CMS features are available within that area.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="concept"><a class="link" href="#concept">Concept</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A Site is usually created directly under the project root. As a regular content item, it can contain other content, have its own page, and participate in permissions, versioning, publishing, and workflow. The site content is different from other content in that it allows administrators to configure applications it&#8217;s scope, similar to how a project works. It also features a baseUrl setting.</p>
 </div>
 <div class="paragraph">
-<p>Sites are usually created at the root of the content tree. Creating one automatically provisions a <strong>Templates</strong> folder as its first child.</p>
+<p>Creating a site also unlocks support for pages. Sites may also contain regular structured content, without using page components for presentation.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/browse-template.png" alt="Site with its Templates folder">
+<img src="images/site.png" alt="Site content item with its Description" width="Base URL" height="and Applications fields">
 </div>
+<div class="title">Figure 1. Site content form</div>
 </div>
 </div>
 </div>
@@ -471,63 +483,172 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="site_fields"><a class="link" href="#site_fields">Site fields</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>A Site content item has:</p>
+<p>The Site form contains these fields:</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>A description field (plain text).</p>
-</li>
-<li>
-<p>An <strong>Applications</strong> selector for attaching and configuring applications that run on this site.</p>
-</li>
-<li>
-<p>The standard <strong>Settings</strong> and <strong>Security</strong> sections available to any content item.</p>
-</li>
-</ul>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>A plain-text description of the Site. Whether it is presented by a front end depends on the implementation.</p>
+</dd>
+<dt class="hdlist1">Base URL</dt>
+<dd>
+<p>The external base address associated with the Site, such as <code><a href="https://www.example.com" class="bare">https://www.example.com</a></code>. When set, it overrides the default base URL used by XP when generating absolute URLs for the Site. It does not deploy or configure the front end itself.</p>
+</dd>
+<dt class="hdlist1">Applications</dt>
+<dd>
+<p>The applications assigned to the Site and the configuration associated with each application.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>The standard Settings and Security sections work as they do for other content items; see the <a href="../editor/content-form.ahtml">Content Form</a>.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="applications"><a class="link" href="#applications">Applications</a></h2>
+<h2 id="site_applications"><a class="link" href="#site_applications">Site applications</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Applications provide the code behind a site. Some apps contribute components (parts, layouts, page controllers) used for page building in the <a href="../editor/page-editor.ahtml">Page editor</a>; others just add functionality.</p>
-</div>
-<div class="paragraph">
-<p>A site needs at least one app that contributes a page controller before any content inside it can be rendered as a page.</p>
-</div>
-<div class="paragraph">
-<p>Applications are attached via the <strong>Applications</strong> selector in the site&#8217;s edit view. Adding or removing an application requires the <strong>Administrator</strong> or <strong>Content Manager Administrator</strong> role.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/wizard-applications.png" alt="Adding applications to a site">
-</div>
-</div>
-<div class="sect2">
-<h3 id="application_configuration"><a class="link" href="#application_configuration">Application configuration</a></h3>
-<div class="paragraph">
-<p>Each application added to a site appears in the site&#8217;s edit view with:</p>
+<p>An application must already be installed and running on XP before it can be added for a Site. Assigning it to a Site does not install or deploy the application. Instead, it makes the application&#8217;s CMS features available within it&#8217;s scope. Depending on the application, these can include:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>A pencil icon — edit the application&#8217;s configuration (fields defined by the application itself).</p>
+<p>Content types and mixins used by the Content Form.</p>
 </li>
 <li>
-<p>An X icon — remove the application from the site.</p>
+<p>Page, Part, and Layout components used in the <a href="../editor/page-editor.ahtml">Page Editor</a>.</p>
+</li>
+<li>
+<p>Rich-text macros and styles.</p>
+</li>
+<li>
+<p>Content Studio extensions and more</p>
 </li>
 </ul>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Similar to projects, only applications that offer CMS functionality may be added to a site.
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
-<p>The available configuration options vary per application. Only <strong>Administrator</strong> or <strong>Content Manager Administrator</strong> can edit them.</p>
+<p>Applications assigned at the <a href="../projects.ahtml#project-applications">project level</a> apply to content outside Sites. They do not automatically apply inside a Site; assign the required applications directly to the Site as well.</p>
+</div>
+<div class="paragraph">
+<p>This distinction allows different Sites in the same project to use different content models and page-building features.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="managing_applications"><a class="link" href="#managing_applications">Managing applications</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Use the <strong>Applications</strong> selector to search for and add available applications. Selected applications appear beneath the selector and can provide these actions:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Configure</dt>
+<dd>
+<p>Click the pencil icon to open the application&#8217;s configuration form. The icon is only shown when the application provides configurable fields.</p>
+</dd>
+<dt class="hdlist1">Remove</dt>
+<dd>
+<p>Click the X icon to remove the application from the Site.</p>
+</dd>
+<dt class="hdlist1">Reorder</dt>
+<dd>
+<p>Drag applications to change their order in the list.</p>
+</dd>
+</dl>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/wizard-config.png" alt="Application configuration dialog">
+<img src="images/site-applications.png" alt="Applications field with selected applications and their available actions" width="546px">
+</div>
+<div class="title">Figure 2. Applications assigned to a site - Some application may support configuration options</div>
+</div>
+<div class="paragraph">
+<p>Only project <strong>Owners</strong> and users with the <strong>CMS Administrator</strong> or <strong>Administrator</strong> role can create Sites or change their application assignments and configuration. Other users may edit the remaining Site fields when their permissions allow it, but the application controls are read-only. See <a href="../projects.ahtml#project-roles">Project roles</a>.</p>
+</div>
+<div class="sect2">
+<h3 id="application_configuration"><a class="link" href="#application_configuration">Application configuration</a></h3>
+<div class="paragraph">
+<p>Similar to projects, an application&#8217;s configuration form is defined by the application and therefore varies between applications. It can contain the same kinds of fields and validation rules as other forms in Content Studio.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Click the pencil icon beside the application.</p>
+</li>
+<li>
+<p>Complete or update the configuration fields.</p>
+</li>
+<li>
+<p>Click <b class="button">Apply</b> to accept the values and close the configuration dialog.</p>
+</li>
+<li>
+<p>Click <b class="button">Save</b> in the Content Editor toolbar to save the Site and create a new version.</p>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/site-application-config.png" alt="Application configuration dialog with application-specific fields" width="546px">
+</div>
+<div class="title">Figure 3. Configuring a Site application</div>
+</div>
+<div class="paragraph">
+<p><b class="button">Apply</b> only accepts the values in the configuration dialog. The Site itself must still be saved, and the Site must be published before the changes are available on the published branch.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+In contrast to projects, the site configuration is not effective until the changes have been published.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Removing an application does not delete content or page components created with it. However, its content types, mixins, components, and configuration are no longer available within the Site. Existing content may consequently become invalid or impossible to edit as intended. Review affected content before removing an application.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sites_and_pages"><a class="link" href="#sites_and_pages">Sites and pages</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Site content item can have a page structure of its own, commonly used as the website&#8217;s front page. Descendant content can also have pages when the assigned applications provide suitable Page components.</p>
+</div>
+<div class="paragraph">
+<p>Without an application that provides a Page component, editors cannot create an item-specific page structure within the Site. This does not prevent the Site from being used for structured or headless content that does not need pages.</p>
+</div>
+<div class="paragraph">
+<p>See the <a href="../editor/page-editor.ahtml">Page Editor</a> for creating and editing pages, components, and page settings.</p>
 </div>
 </div>
 </div>
@@ -535,27 +656,29 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="templates_folder"><a class="link" href="#templates_folder">Templates folder</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Every site has a <strong>Templates</strong> folder automatically created as a direct child. It behaves like a regular folder except that:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>It can <em>only</em> contain <a href="page-template.ahtml">Page template</a> content.</p>
-</li>
-<li>
-<p>It has a distinct icon in the Navigator tree.</p>
-</li>
-</ul>
+<p>Creating a Site automatically creates a <strong>_templates/</strong> folder as its direct child. This is a system-managed folder with a distinct icon, and it can only contain <a href="page-template.ahtml">Page template</a> content items.</p>
 </div>
 <div class="paragraph">
-<p>The order of templates inside the folder matters — when several templates support the same content type, the one listed first is used by default.</p>
+<p>Page templates provide reusable page structures for specified content types. When several templates support the same content type, the first compatible template in the folder is used by default. Editors normally work with the content type while Content Studio resolves the template behind the scenes.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/site-templates.png" alt="Content tree with a Site, its Templates folder, and page templates" width="683px">
+</div>
+<div class="title">Figure 4. Site with its Templates folder</div>
+</div>
+<div class="paragraph">
+<p>See the <a href="page-template.ahtml">Page template</a> reference for template selection and customization behavior.</p>
+</div>
+<div class="paragraph">
+<p>For the underlying Site model and application configuration, see the <a href="https://developer.enonic.com/docs/cms/stable/pages/site">Enonic CMS Site reference</a>.</p>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-08-27 11:08:55 UTC
+Last updated 2026-09-01 10:03:37 UTC
 </div>
 </div>
 </body>

@@ -445,7 +445,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#toolbar">Toolbar</a></li>
 <li><a href="#formatting_text">Formatting text</a>
 <ul class="sectlevel2">
-<li><a href="#block_styles">Block styles</a></li>
+<li><a href="#block_formats">Block formats</a></li>
 <li><a href="#inline_formatting">Inline formatting</a></li>
 <li><a href="#alignment">Alignment</a></li>
 <li><a href="#lists_and_indentation">Lists and indentation</a></li>
@@ -514,18 +514,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="paragraph">
 <p>The toolbar may vary between editor instances. Developers may limit the available headings, remove default tools, or enable additional tools. Controls are also disabled when they do not apply to the current selection or when the content is read-only. The toolbar is visible only when the editor has focus.</p>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-The <a href="page-editor.ahtml#text">Text component</a> has been deprecated in Content Studio 6 and is unavailable for new insertion by default, but existing components remain editable. An administrator can temporarily re-enable insertion from the Content Studio <a href="../config.ahtml#_enable_rich_text_component">configuration</a>.
-</td>
-</tr>
-</table>
-</div>
 <div class="paragraph">
 <p>For details about the raw and processed HTML formats used by front ends, see the <a href="https://developer.enonic.com/docs/cms/stable/richtext">CMS rich-text reference</a>.</p>
 </div>
@@ -539,9 +527,9 @@ The <a href="page-editor.ahtml#text">Text component</a> has been deprecated in C
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1">Styles and formatting</dt>
+<dt class="hdlist1">Block formats</dt>
 <dd>
-<p>Apply a block style or format selected text with bold, italic, underline, or other enabled inline styles.</p>
+<p>Apply a paragraph, heading, or other enabled block format.</p>
 </dd>
 <dt class="hdlist1">Alignment</dt>
 <dd>
@@ -563,11 +551,21 @@ The <a href="page-editor.ahtml#text">Text component</a> has been deprecated in C
 <dd>
 <p>Choose whether pasted content keeps compatible formatting or is inserted as plain text.</p>
 </dd>
-<dt class="hdlist1">Additional tools</dt>
+<dt class="hdlist1">Application-enabled tools</dt>
 <dd>
-<p>Source editing, fullscreen mode, and other application-enabled controls appear when available.</p>
+<p>Additional controls, including inline formats such as bold, italic, and underline, appear when included in the HtmlArea configuration.</p>
+</dd>
+<dt class="hdlist1">Content Studio controls</dt>
+<dd>
+<p>Source editing and fullscreen mode appear when available. These controls are provided by Content Studio rather than configured as HtmlArea tools.</p>
 </dd>
 </dl>
+</div>
+<div class="paragraph">
+<p>The default HtmlArea toolbar includes block formats, alignment, lists and indentation, find and insert controls, tables, and paste mode. Applications can remove default tools or include other available tools.</p>
+</div>
+<div class="paragraph">
+<p>Depending on the field, you may also see controls for block quotes, text and background colors, horizontal rules, language, copying or removing formatting, and undo or redo. See the <a href="https://developer.enonic.com/docs/cms/stable/schemas/form-items/htmlarea">HtmlArea form-item reference</a> for the complete list of configurable tools.</p>
 </div>
 <div class="paragraph">
 <p>Hover over a toolbar button to see its name. Tools that do not fit the available width wrap onto another toolbar row.</p>
@@ -578,9 +576,9 @@ The <a href="page-editor.ahtml#text">Text component</a> has been deprecated in C
 <h2 id="formatting_text"><a class="link" href="#formatting_text">Formatting text</a></h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="block_styles"><a class="link" href="#block_styles">Block styles</a></h3>
+<h3 id="block_formats"><a class="link" href="#block_formats">Block formats</a></h3>
 <div class="paragraph">
-<p>The <strong>Styles</strong> menu applies a semantic structure to the block containing the cursor. Common choices include normal text, headings, a generic block, preformatted text, and code. The available heading levels and styles can vary by field.</p>
+<p>The format menu applies semantic structure to the block containing the cursor. Common choices include normal text, headings, a generic block, preformatted text, and code. The available heading levels and block formats can vary by field.</p>
 </div>
 <div class="paragraph">
 <p>Use heading levels to describe the document hierarchy rather than to achieve a particular visual size. The front end determines how each semantic element is presented to readers.</p>
@@ -589,7 +587,7 @@ The <a href="page-editor.ahtml#text">Text component</a> has been deprecated in C
 <div class="sect2">
 <h3 id="inline_formatting"><a class="link" href="#inline_formatting">Inline formatting</a></h3>
 <div class="paragraph">
-<p>Bold, italic, and underline are available by default and can be combined within the same block. An application can enable additional formats such as strikethrough, superscript, and subscript.</p>
+<p>Applications can enable inline formats such as bold, italic, underline, strikethrough, superscript, and subscript. Enabled formats can be combined within the same block.</p>
 </div>
 <div class="paragraph">
 <p>Select text before applying an inline format, or enable the format before typing. Apply the same active format again to remove it.</p>
@@ -948,7 +946,7 @@ Source editing can introduce invalid or unsupported markup. Use only well-formed
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-08-27 11:08:55 UTC
+Last updated 2026-09-01 10:03:37 UTC
 </div>
 </div>
 </body>

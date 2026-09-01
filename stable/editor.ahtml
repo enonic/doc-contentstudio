@@ -534,9 +534,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <dd>
 <p>The <a href="editor/content-form.ahtml">Content Form</a> appears on the left and contains the fields defined by the content type. Use it to edit the content&#8217;s display name, path, data, and other configuration.</p>
 </dd>
-<dt class="hdlist1">Preview or Page editor</dt>
+<dt class="hdlist1">Preview or Page Editor</dt>
 <dd>
-<p>The central panel shows either the <a href="workbench/preview.ahtml">Preview</a> or the <a href="editor/page-editor.ahtml">Page editor</a>. The Page editor replaces the Preview for renderable content and provides a drag-and-drop surface for building pages.</p>
+<p>The central panel shows either the <a href="workbench/preview.ahtml">Preview</a> or the <a href="editor/page-editor.ahtml">Page Editor</a>. The Page Editor manages the component structure and configuration data of content that has a page. Visual and drag-and-drop editing are available when supported by the front-end integration.</p>
 </dd>
 <dt class="hdlist1">Context panel</dt>
 <dd>
@@ -634,7 +634,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-08-27 11:08:55 UTC
+Last updated 2026-09-01 10:03:37 UTC
 </div>
 </div>
 </body>

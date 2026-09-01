@@ -441,9 +441,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#introduction">Introduction</a></li>
-<li><a href="#editing_a_fragment">Editing a fragment</a></li>
-<li><a href="#creating_inserting_detaching">Creating, inserting, detaching</a></li>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#creating_a_fragment">Creating a Fragment</a></li>
+<li><a href="#reusing_a_fragment">Reusing a Fragment</a></li>
+<li><a href="#editing_a_fragment">Editing a Fragment</a></li>
+<li><a href="#detaching_a_fragment">Detaching a Fragment</a></li>
+<li><a href="#dependencies_and_lifecycle">Dependencies and lifecycle</a></li>
+<li><a href="#search_and_indexing">Search and indexing</a></li>
 </ul>
 </div>
 </div>
@@ -451,51 +455,195 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>The <strong>Fragment</strong> content type is a reusable page component saved as its own content item.</p>
+<p>A <strong>Fragment</strong> contains a reusable component tree. Pages reference the Fragment instead of storing a local copy, so the Fragment can be maintained in one place and reused across multiple pages.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="introduction"><a class="link" href="#introduction">Introduction</a></h2>
+<h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Parts and Layouts placed directly on a page are configured independently on every page that uses them, a Fragment is configured <em>once</em> — editing the fragment updates every page that references it.</p>
+<p>Similar to a page, every Fragment has a root component. This component is normally a Part or Layout. A Layout may include additional components within the Layout&#8217;s regions. The entire structure belongs to the Fragment and is shared by every page that references it.</p>
 </div>
 <div class="paragraph">
-<p>Fragments live in the content tree like any other content item, with their own path, status, permissions, and version history.</p>
+<p>Like any other content, Fragments live in the content tree with their own path, status, permissions, workflow, publishing state, and version history. Changes to a Fragment affect all references, while components placed directly on a page are configured independently.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="editing_a_fragment"><a class="link" href="#editing_a_fragment">Editing a fragment</a></h2>
+<h2 id="creating_a_fragment"><a class="link" href="#creating_a_fragment">Creating a Fragment</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>In the content form, a single part or layout appears at root of the component tree. Layout fragments may contain additional components, just like in a normal page structure.  The components can be edited in place. Once updated, any page using the fragment will instantly reflect the changes in preview, and on the live site after publishing.</p>
+<p>Fragments are created from components on pages. They are not available in the <a href="../actions/new.ahtml">New Content dialog</a>, and <strong>Save as Fragment</strong> is not available for Page templates.</p>
 </div>
-<div class="paragraph">
-<p>TODO: Screenshot of fragment content form, showing a part or layout at the root of the component tree, with the edit-in-place tools visible.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="creating_inserting_detaching"><a class="link" href="#creating_inserting_detaching">Creating, inserting, detaching</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Fragments are created indirectly from existing pages, and placed on pages either by direct insertion or by reference. The full workflow — save-as-fragment, insert, detach — is documented under the Page editor:</p>
-</div>
-<div class="ulist">
-<ul>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
-<p><a href="../editor/page-editor.ahtml#_fragment">Page editor — Fragment</a></p>
+<p>Open a content item with a page and select the component in either the visual editor or component tree.</p>
 </li>
-</ul>
+<li>
+<p>Open the component&#8217;s context menu.</p>
+</li>
+<li>
+<p>Select <strong>Save as Fragment</strong>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Content Studio creates a Fragment content item as a child of the current content item and stores the selected component tree in it. On the original page, Content Studio replaces the selected component with a reference to the Fragment.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/fragment-create.png" alt="Page component context menu with Save as Fragment selected" width="1440px">
+</div>
+<div class="title">Figure 1. Saving a component as a Fragment</div>
+</div>
+<div class="paragraph">
+<p>The Fragment receives an automatically generated name and can subsequently be renamed or moved within the Site without breaking existing references.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="reusing_a_fragment"><a class="link" href="#reusing_a_fragment">Reusing a Fragment</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To place an existing Fragment on another page:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Drag a <strong>Fragment</strong> component from the <strong>Insert</strong> tab into a region, or insert one from a component context menu.</p>
+</li>
+<li>
+<p>Select the empty Fragment component.</p>
+</li>
+<li>
+<p>Choose the content item from the <strong>Fragment</strong> selector in the <strong>Inspect</strong> tab.</p>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/fragment-select.png" alt="Inspect tab with a Fragment selected for an empty Fragment component" width="1440px">
+</div>
+<div class="title">Figure 2. Selecting a Fragment</div>
+</div>
+<div class="paragraph">
+<p>Inside a Site, the selector lists Fragments from that Site. For content outside a Site, it searches the current project. The application that supplies the Fragment&#8217;s wrapped component must also be available in the destination context.</p>
+</div>
+<div class="paragraph">
+<p>The page stores the Fragment&#8217;s content ID. Renaming or moving the Fragment therefore keeps the reference intact.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="../editor/page-editor.ahtml#_fragment">Fragment components</a> for the corresponding Page editor controls.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="editing_a_fragment"><a class="link" href="#editing_a_fragment">Editing a Fragment</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Open a Fragment directly from the content tree, or select a Fragment reference on a page and use <strong>Edit Fragment</strong>. The Fragment content type has no editorial fields of its own; its editable data is the wrapped component and its configuration.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/fragment-reference.png" alt="Fragment reference selected with the Edit Fragment action in the Page context panel" width="1440px">
+</div>
+<div class="title">Figure 3. Opening a referenced Fragment</div>
+</div>
+<div class="paragraph">
+<p>The component tree shows the wrapped component at its root. A Layout Fragment can contain Parts, Fragments, and other supported components in its regions. Select a component to edit its application-provided configuration in the <a href="../editor/page-editor.ahtml#page_context_panel">Page context panel</a>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/fragment.png" alt="Fragment content item with its component tree and editing controls" width="1440px">
+</div>
+<div class="title">Figure 4. Fragment content item</div>
+</div>
+<div class="paragraph">
+<p>Visual preview depends on the front-end integration. The component tree and configuration controls remain available even when the Fragment cannot be previewed in isolation.</p>
+</div>
+<div class="paragraph">
+<p>Page operations are saved automatically. Configuration changes are accepted with <b class="button">Apply</b>. These changes update the Fragment&#8217;s draft but do not publish it.</p>
+</div>
+<div class="paragraph">
+<p>Draft previews that resolve the Fragment use its updated draft. Published pages continue to use the published Fragment until the Fragment changes are published.</p>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Editing a Fragment can change many pages at once. Check its <a href="../contextpanel/dependencies.ahtml">incoming dependencies</a> before making a substantial change.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="detaching_a_fragment"><a class="link" href="#detaching_a_fragment">Detaching a Fragment</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Detach a reference when one page needs an independent variation of a shared Fragment:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Select the Fragment component on the page.</p>
+</li>
+<li>
+<p>Open its context menu and select <strong>Detach from Fragment</strong>.</p>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/fragment-detach.png" alt="Component context menu with Detach from Fragment selected" width="546px">
+</div>
+<div class="title">Figure 5. Detaching a Fragment</div>
+</div>
+<div class="paragraph">
+<p>Content Studio replaces the reference with a copy of the Fragment&#8217;s wrapped component on that page. Later Fragment changes no longer affect the detached copy. The Fragment content item and its references from other pages are not changed or deleted.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="dependencies_and_lifecycle"><a class="link" href="#dependencies_and_lifecycle">Dependencies and lifecycle</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Each page that uses a Fragment creates an incoming dependency on the Fragment. The <a href="../contextpanel/dependencies.ahtml">Dependencies context panel</a> lists these pages and can open a complete dependency search.</p>
+</div>
+<div class="paragraph">
+<p>A Fragment is published and versioned independently from the pages that reference it. Publishing an updated Fragment makes the new version available to already published pages without republishing each page. Publishing a page with a new Fragment reference also includes the required Fragment in the publishing dependencies.</p>
+</div>
+<div class="paragraph">
+<p>Deleting or unpublishing a Fragment can leave pages with a missing reference, so Content Studio warns when other content depends on it. Moving or renaming it is safe because references use its content ID.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="search_and_indexing"><a class="link" href="#search_and_indexing">Search and indexing</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Searchable text and component configuration stored in a Fragment are indexed on the Fragment content item. They are not copied into the search data of pages that reference it. A search for text contained only in a Fragment can therefore return the Fragment itself without returning the pages where it appears.</p>
+</div>
+<div class="paragraph">
+<p>This distinction is particularly important for customer-facing search. A front end may need to exclude Fragment content from direct results and index the resolved page output separately when Fragment text should contribute to its containing pages.</p>
+</div>
+<div class="paragraph">
+<p>For the underlying content model and API behavior, see the <a href="https://developer.enonic.com/docs/cms/stable/pages/fragments">Enonic CMS Fragment reference</a>.</p>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-08-27 11:08:55 UTC
+Last updated 2026-09-01 10:03:37 UTC
 </div>
 </div>
 </body>
