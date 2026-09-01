@@ -1,48 +1,98 @@
 = Site
 :toc: right
 :imagesdir: images
+:experimental:
 
-A *Site* is a special content type that sits at the root of a website. Sites are the bridge between content and applications: installing an application on a site is what makes page rendering, parts, layouts, and custom configuration available to the content inside.
+Defines the root of a scoped content area within a content project, usually representing a website. Content is organized beneath it, and the Site's configuration determine which content types, mixins, page components, and other CMS features are available within that area.
 
-Sites are usually created at the root of the content tree. Creating one automatically provisions a *Templates* folder as its first child.
 
-image::browse-template.png[Site with its Templates folder]
+== Concept
+
+A Site is usually created directly under the project root. As a regular content item, it can contain other content, have its own page, and participate in permissions, versioning, publishing, and workflow. The site content is different from other content in that it allows administrators to configure applications it's scope, similar to how a project works. It also features a baseUrl setting.
+
+Creating a site also unlocks support for pages. Sites may also contain regular structured content, without using page components for presentation.
+
+.Site content form
+image::site.png[Site content item with its Description, Base URL, and Applications fields]
+
 
 == Site fields
 
-A Site content item has:
+The Site form contains these fields:
 
-* A description field (plain text).
-* An *Applications* selector for attaching and configuring applications that run on this site.
-* The standard *Settings* and *Security* sections available to any content item.
+Description:: A plain-text description of the Site. Whether it is presented by a front end depends on the implementation.
+Base URL:: The external base address associated with the Site, such as `https://www.example.com`. When set, it overrides the default base URL used by XP when generating absolute URLs for the Site. It does not deploy or configure the front end itself.
+Applications:: The applications assigned to the Site and the configuration associated with each application.
 
-== Applications
+The standard Settings and Security sections work as they do for other content items; see the <<../editor/content-form#,Content Form>>.
 
-Applications provide the code behind a site. Some apps contribute components (parts, layouts, page controllers) used for page building in the <<../editor/page-editor#,Page editor>>; others just add functionality.
+== Site applications
 
-A site needs at least one app that contributes a page controller before any content inside it can be rendered as a page.
+An application must already be installed and running on XP before it can be added for a Site. Assigning it to a Site does not install or deploy the application. Instead, it makes the application's CMS features available within it's scope. Depending on the application, these can include:
 
-Applications are attached via the *Applications* selector in the site's edit view. Adding or removing an application requires the *Administrator* or *Content Manager Administrator* role.
+* Content types and mixins used by the Content Form.
+* Page, Part, and Layout components used in the <<../editor/page-editor#,Page Editor>>.
+* Rich-text macros and styles.
+* Content Studio extensions and more
 
-image::wizard-applications.png[Adding applications to a site]
+NOTE: Similar to projects, only applications that offer CMS functionality may be added to a site.
+
+Applications assigned at the <<../projects#project-applications,project level>> apply to content outside Sites. They do not automatically apply inside a Site; assign the required applications directly to the Site as well.
+
+This distinction allows different Sites in the same project to use different content models and page-building features.
+
+== Managing applications
+
+Use the *Applications* selector to search for and add available applications. Selected applications appear beneath the selector and can provide these actions:
+
+Configure:: Click the pencil icon to open the application's configuration form. The icon is only shown when the application provides configurable fields.
+Remove:: Click the X icon to remove the application from the Site.
+Reorder:: Drag applications to change their order in the list.
+
+.Applications assigned to a site - Some application may support configuration options
+image::site-applications.png["Applications field with selected applications and their available actions", 546px]
+
+Only project *Owners* and users with the *CMS Administrator* or *Administrator* role can create Sites or change their application assignments and configuration. Other users may edit the remaining Site fields when their permissions allow it, but the application controls are read-only. See <<../projects#project-roles,Project roles>>.
 
 === Application configuration
 
-Each application added to a site appears in the site's edit view with:
+Similar to projects, an application's configuration form is defined by the application and therefore varies between applications. It can contain the same kinds of fields and validation rules as other forms in Content Studio.
 
-* A pencil icon — edit the application's configuration (fields defined by the application itself).
-* An X icon — remove the application from the site.
+. Click the pencil icon beside the application.
+. Complete or update the configuration fields.
+. Click btn:[Apply] to accept the values and close the configuration dialog.
+. Click btn:[Save] in the Content Editor toolbar to save the Site and create a new version.
 
-The available configuration options vary per application. Only *Administrator* or *Content Manager Administrator* can edit them.
+.Configuring a Site application
+image::site-application-config.png["Application configuration dialog with application-specific fields", 546px]
 
-image::wizard-config.png[Application configuration dialog]
+btn:[Apply] only accepts the values in the configuration dialog. The Site itself must still be saved, and the Site must be published before the changes are available on the published branch.
+
+NOTE: In contrast to projects, the site configuration is not effective until the changes have been published.
+
+[CAUTION]
+====
+Removing an application does not delete content or page components created with it. However, its content types, mixins, components, and configuration are no longer available within the Site. Existing content may consequently become invalid or impossible to edit as intended. Review affected content before removing an application.
+====
+
+== Sites and pages
+
+The Site content item can have a page structure of its own, commonly used as the website's front page. Descendant content can also have pages when the assigned applications provide suitable Page components.
+
+Without an application that provides a Page component, editors cannot create an item-specific page structure within the Site. This does not prevent the Site from being used for structured or headless content that does not need pages.
+
+See the <<../editor/page-editor#,Page Editor>> for creating and editing pages, components, and page settings.
 
 [[templates_folder]]
 == Templates folder
 
-Every site has a *Templates* folder automatically created as a direct child. It behaves like a regular folder except that:
+Creating a Site automatically creates a *_templates/* folder as its direct child. This is a system-managed folder with a distinct icon, and it can only contain <<page-template#,Page template>> content items.
 
-* It can _only_ contain <<page-template#,Page template>> content.
-* It has a distinct icon in the Navigator tree.
+Page templates provide reusable page structures for specified content types. When several templates support the same content type, the first compatible template in the folder is used by default. Editors normally work with the content type while Content Studio resolves the template behind the scenes.
 
-The order of templates inside the folder matters — when several templates support the same content type, the one listed first is used by default.
+.Site with its Templates folder
+image::site-templates.png["Content tree with a Site, its Templates folder, and page templates", 683px]
+
+See the <<page-template#,Page template>> reference for template selection and customization behavior.
+
+For the underlying Site model and application configuration, see the https://developer.enonic.com/docs/cms/stable/pages/site[Enonic CMS Site reference].

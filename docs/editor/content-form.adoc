@@ -10,7 +10,7 @@ The *Content Form* is the left-hand panel of the <<../editor#,Content Editor>>. 
 The form is assembled from the item's content type and any mixins enabled for the item. The content type supplies the primary fields, while mixins add reusable groups of fields such as search engine optimization (SEO) metadata. Page-capable content also has a *Page* tab for working with the page structure.
 
 .Content Form for a blog post
-image::form.png[Content Form showing the content type and mixin tabs, 681px]
+image::form.png["Content Form showing the content type and mixin tabs", 681px]
 
 == Form tabs
 
@@ -28,7 +28,7 @@ A mixin is a reusable set of fields that an application can add to multiple cont
 
 Each enabled mixin has its own tab. Required mixins are enabled automatically and cannot be disabled. To manage optional mixins, open the menu next to the tabs, select or clear the available mixins, and click btn:[Confirm].
 
-image::form-mixins.png[Content Form showing the content type, mixin tabs and optionally the page tab, 681px]
+image::form-mixins.png["Content Form showing the content type, mixin tabs and optionally the page tab", 681px]
 
 CAUTION: Disabling an optional mixin removes the mixin and its values from the draft when the item is saved.
 
@@ -39,8 +39,6 @@ Developers can learn how mixins are defined and assigned in the https://develope
 The *Page* tab is available when the item has a page configuration. It contains a hierarchical tree of the page, its regions, and its components.
 
 Selecting a component in the tree also selects it in the Page Editor and opens its configuration in the <<page-editor#_components_widget,Components widget>>. Use a component's context menu to access its available actions. Components that support moving can also be rearranged by dragging them in the tree.
-
-image::form-page.png[Content Form showing the Page tab with the page structure tree, 546px]
 
 See <<page-editor#_page_components_tree,Page Components tree>> for details about managing a page structure.
 

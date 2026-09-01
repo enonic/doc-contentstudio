@@ -2,27 +2,49 @@
 :toc: right
 :imagesdir: images
 
-A *Page template* is a reusable page definition that renders one or more content types as pages. Templates live inside a site's automatically-provisioned <<site#templates_folder,Templates folder>>, and each one pairs a page controller (the HTML skeleton from an application) with one or more content types that will use it.
+A *Page template* contains a reusable page that supports one or more content types. It defines a Page component and may include configured regions and nested components.
 
-image::browse-templates-list.png[List of page templates in the Templates folder]
+Page templates belong to a Site and live in its automatically provisioned <<site#templates_folder,Templates folder>>. Editors may use page templates as a starting point for their pages, or front ends can resolve page templates automatically when rendering specific content types.
 
-== Creating a page template
+image::page-template.png["Page template form contains a content type supports filter", 546px]
 
-Create a new *Page template* content inside the Templates folder. Two fields drive the template:
+== Creating a Page template
 
-* *Supports* — the content types this template can render.
-* *Controller* (the selector on the right of the editor) — the page component from an installed application that provides the HTML skeleton. Once a controller is picked, the <<../editor/page-editor#,Page editor>> becomes active and components can be placed into the controller's regions.
+Page templates can be created in two ways:
 
-== Which template is used
+* Create a *Page template* content item inside the Site's Templates (`_templates/`) folder.
+* Use *Save as Template* on the Page root of an item-specific page.
 
-When several templates support the same content type, the one that appears _first_ in the Templates folder is used by default. Individual content items can override the default via the *Page template* dropdown in the <<../editor/page-editor#inspect_tab,Inspect tab>> of the Components widget.
+A Page template cannot be created outside a Templates folder. See <<../editor/page-editor#_page_root_actions,Page root actions>> for the *Save as Template* operation.
 
-image::wizard-template.png[Choosing a template for a content item]
+== Template settings
 
-== Rendering content without a matching template
+Two settings determine the template's purpose and structure:
 
-Content with no supporting template can still be rendered as a page — for example, rendering a folder called _Articles_ as a listing of its children. Open the content in the editor, pick a page controller from the dropdown in the empty Page editor, and build the page from components as usual.
+Supports:: Specifies the content types for which the template is available. A template may support more than one content type.
 
-image::wizard-template-select.png[Selecting a controller for unsupported content]
+Page:: Contains the Page component tree and the individual component configurations. Edit it from the *Page* tab.
 
-NOTE: Shortcuts cannot use page templates — the shortcut's redirect fires even if a matching template exists.
+The available Page components and their configuration fields are supplied by applications assigned to the Site. See <<../editor/page-editor#,Page editor>> for the shared Page settings and component-editing interface.
+
+== Relationship to content
+
+The *Supports* setting makes a Page template available to content of the specified types. A content item may use an automatically matched template, an explicitly selected (pinned) template, or an item-specific page created by customization of the template.
+
+These choices are managed through Page settings on each individual content item. Content that pins a template remains linked to it. Customization copies the template's page structure into the content item so that it can be edited independently.
+
+The front-end integration ultimately determines how Page template and page data are resolved and rendered. See <<../editor/page-editor#_page_settings,Page settings>> for the editor-facing behavior, including automatic selection, pinning, and customization.
+
+== Editing and publishing
+
+A Page template has its own status, permissions, workflow, publishing state, and version history. Changes are saved to the template's draft and must be published before they affect published content that uses the template.
+
+IMPORTANT: Changes to a page template may affect multiple content items, including content that automatically resolves the template. Preview representative content before publishing substantial changes. The <<../contextpanel/dependencies#,Dependencies context panel>> can identify explicit template references, but it does not provide a complete list of content matched automatically by content type.
+
+== Limitations
+
+* Page templates are only available within a Site and can only be stored in that Site's Templates folder.
+* A Page template can only use components supplied by applications available to the Site.
+* Shortcuts do not use page templates because opening a Shortcut resolves its target instead.
+
+For the underlying content model and template-resolution rules, see the https://developer.enonic.com/docs/cms/stable/pages/page-templates[Enonic CMS Page templates reference].

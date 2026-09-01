@@ -27,7 +27,7 @@ NOTE: The list of available panels depends on the user's permissions and the cur
 * <<contextpanel/version-history#,Version history panel>> — every version of the selected item, with actions to compare or revert versions.
 * <<contextpanel/dependencies#,Dependencies panel>> — inbound and outbound references between the item and other content.
 * <<contextpanel/export#,Content Exports panel>> — export and import content items.
-* <<editor/page-editor#_components_widget,Components panel>> — the page-building tool that appears in the Editor for renderable content.
+* <<editor/page-editor#_components_widget,Components panel>> — the page-building tool that appears in the Editor for content with a page.
 
 == Content Studio+ panels
 

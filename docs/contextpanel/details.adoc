@@ -62,9 +62,9 @@ The section is only visible if publishing dates are available for the selected i
 
 == Template
 
-For renderable content, this section optionally shows the <<../content-types/page-template#,page template>> used to render the item. Content with a customized page is identified as *Custom*.
+For content with a page, this section optionally shows the <<../content-types/page-template#,page template>> supplying its component structure. Content with a customized page is identified as *Custom*.
 
-The Template section is only shown for content that supports page rendering.
+The Template section is only shown for content that supports pages.
 
 == Attachments
 

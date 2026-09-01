@@ -1,21 +1,36 @@
-= Built-in and custom Content Types
+= Content types
 :toc: right
 :imagesdir: content-types/images
 
-Every content item in Enonic XP has a content type — it defines the item's form and behavior
+A *content type* defines the fields and capabilities of a content item. Every item has exactly one content type.
 
-== Overview
-Content types come from two sources: a set of *built-in* types that ship with Enonic XP, and *custom* types defined by the applications available in your project.
+When creating content, the <<actions/new#,New Content dialog>> lists the types available at the selected location. Availability depends on the applications assigned to the current project or enclosing site, as well as any restrictions on the parent item.
 
-Custom types simply render the form their application defines. The built-in types, however, have special behaviour and dedicated tooling in Content Studio — those are documented in this chapter:
+== Built-in and custom types
 
-* <<content-types/folder#,Folder>> — grouping container with no data fields.
-* <<content-types/shortcut#,Shortcut>> — redirect to another path.
-* <<content-types/site#,Site>> — the root of a website; carries installed applications.
-* <<content-types/page-template#,Page template>> — reusable page definition pairing a page controller with one or more content types.
+*Custom content types* are supplied by applications and provide forms designed for a particular solution, such as an article, product, or event.
+
+*Built-in content types* are supplied by Enonic XP for common purposes. This reference covers the built-in types editors work with in Content Studio:
+
+* <<#folder,Folder>> — grouping container with no data fields.
+* <<content-types/shortcut#,Shortcut>> — redirect to another content item.
 * <<content-types/media#,Media>> — images, video, audio, documents, and other binary uploads.
-* <<content-types/image#,Image>> — image-specific tools (cropping, focal point).
+* <<content-types/site#,Site>> — the root of a website; carries installed applications.
 * <<content-types/fragment#,Fragment>> — reusable page component stored as a content item; edits propagate everywhere referenced.
-* <<content-types/unstructured#,Unstructured>> — formless content used by applications to store free-form data.
+* <<content-types/page-template#,Page template>> — reusable component structure that can be applied to one or more content types.
 
-TIP: For defining your own content types and content modelling in general, see the https://developer.enonic.com/docs/cms/stable/content/content-types[Enonic CMS docs].
+== Related concepts
+
+A content type supplies the primary fields in the <<editor/content-form#,Content Form>>. A <<editor/content-form#_mixins,mixin>> can add reusable fields without defining another content type, while a <<editor/page-editor#,page>> can add an optional component structure without changing the content type. Site, Fragment, and Page template are themselves built-in content types that support page composition.
+
+For the underlying schemas and application-side definitions, see the https://developer.enonic.com/docs/cms/stable/content/content-types[Enonic CMS content type reference].
+
+[[folder]]
+== Folder
+
+*Folder* is the simplest content type. Inspired by a traditional file syste, it has no type-specific fields and is used to organize child content in the content tree.
+
+Folders still have the standard properties and editorial features of content, including a display name, path, permissions, workflow state, and version history. A Folder can also have mixins, or a page when page components are available at its location.
+
+.Folder content item
+image::folder.png["Folder content item in the Content Editor", 546px]

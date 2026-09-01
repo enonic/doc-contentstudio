@@ -37,7 +37,7 @@ image::editor-panels.png[Content Editor with the toolbar above the content form 
 The workspace can contain up to four panels:
 
 Content Form:: The <<editor/content-form#,Content Form>> appears on the left and contains the fields defined by the content type. Use it to edit the content's display name, path, data, and other configuration.
-Preview or Page editor:: The central panel shows either the <<workbench/preview#,Preview>> or the <<editor/page-editor#,Page editor>>. The Page editor replaces the Preview for renderable content and provides a drag-and-drop surface for building pages.
+Preview or Page Editor:: The central panel shows either the <<workbench/preview#,Preview>> or the <<editor/page-editor#,Page Editor>>. The Page Editor manages the component structure and configuration data of content that has a page. Visual and drag-and-drop editing are available when supported by the front-end integration.
 Context panel:: The <<contextpanel#,Context panel>> appears on the right and provides details, version history, dependencies, permissions, and other panels relevant to the current item. Available panels depend on the content, installed applications, and the user's permissions.
 
 Panel visibility adapts to the available screen width. The Content Form and Context panel can also be collapsed manually to provide more space for the preview or Page editor.

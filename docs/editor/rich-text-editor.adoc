@@ -13,35 +13,38 @@ image::rich-text-editor.png["Rich Text Editor with its toolbar visible and conte
 
 The toolbar may vary between editor instances. Developers may limit the available headings, remove default tools, or enable additional tools. Controls are also disabled when they do not apply to the current selection or when the content is read-only. The toolbar is visible only when the editor has focus.
 
-NOTE: The <<page-editor#text,Text component>> has been deprecated in Content Studio 6 and is unavailable for new insertion by default, but existing components remain editable. An administrator can temporarily re-enable insertion from the Content Studio <<../config#_enable_rich_text_component,configuration>>.
-
 For details about the raw and processed HTML formats used by front ends, see the https://developer.enonic.com/docs/cms/stable/richtext[CMS rich-text reference].
 
 == Toolbar
 
 The toolbar groups controls by purpose:
 
-Styles and formatting:: Apply a block style or format selected text with bold, italic, underline, or other enabled inline styles.
+Block formats:: Apply a paragraph, heading, or other enabled block format.
 Alignment:: Align the current block to the left, center, or right, or justify it.
 Lists and indentation:: Create numbered or bulleted lists and change their nesting level.
 Find and insert:: Find text and insert special characters, anchors, images, macros, or links.
 Tables:: Insert a table and access table-specific actions.
 Paste mode:: Choose whether pasted content keeps compatible formatting or is inserted as plain text.
-Additional tools:: Source editing, fullscreen mode, and other application-enabled controls appear when available.
+Application-enabled tools:: Additional controls, including inline formats such as bold, italic, and underline, appear when included in the HtmlArea configuration.
+Content Studio controls:: Source editing and fullscreen mode appear when available. These controls are provided by Content Studio rather than configured as HtmlArea tools.
+
+The default HtmlArea toolbar includes block formats, alignment, lists and indentation, find and insert controls, tables, and paste mode. Applications can remove default tools or include other available tools.
+
+Depending on the field, you may also see controls for block quotes, text and background colors, horizontal rules, language, copying or removing formatting, and undo or redo. See the https://developer.enonic.com/docs/cms/stable/schemas/form-items/htmlarea[HtmlArea form-item reference] for the complete list of configurable tools.
 
 Hover over a toolbar button to see its name. Tools that do not fit the available width wrap onto another toolbar row.
 
 == Formatting text
 
-=== Block styles
+=== Block formats
 
-The *Styles* menu applies a semantic structure to the block containing the cursor. Common choices include normal text, headings, a generic block, preformatted text, and code. The available heading levels and styles can vary by field.
+The format menu applies semantic structure to the block containing the cursor. Common choices include normal text, headings, a generic block, preformatted text, and code. The available heading levels and block formats can vary by field.
 
 Use heading levels to describe the document hierarchy rather than to achieve a particular visual size. The front end determines how each semantic element is presented to readers.
 
 === Inline formatting
 
-Bold, italic, and underline are available by default and can be combined within the same block. An application can enable additional formats such as strikethrough, superscript, and subscript.
+Applications can enable inline formats such as bold, italic, underline, strikethrough, superscript, and subscript. Enabled formats can be combined within the same block.
 
 Select text before applying an inline format, or enable the format before typing. Apply the same active format again to remove it.
 

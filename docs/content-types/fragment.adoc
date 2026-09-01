@@ -1,24 +1,96 @@
 = Fragment
 :toc: right
 :imagesdir: images
+:experimental:
 
-The *Fragment* content type is a reusable page component saved as its own content item. 
+A *Fragment* contains a reusable component tree. Pages reference the Fragment instead of storing a local copy, so the Fragment can be maintained in one place and reused across multiple pages.
 
-== Introduction
+== Overview
 
-Parts and Layouts placed directly on a page are configured independently on every page that uses them, a Fragment is configured _once_ — editing the fragment updates every page that references it.
+Similar to a page, every Fragment has a root component. This component is normally a Part or Layout. A Layout may include additional components within the Layout's regions. The entire structure belongs to the Fragment and is shared by every page that references it.
 
-Fragments live in the content tree like any other content item, with their own path, status, permissions, and version history.
+Like any other content, Fragments live in the content tree with their own path, status, permissions, workflow, publishing state, and version history. Changes to a Fragment affect all references, while components placed directly on a page are configured independently.
 
-== Editing a fragment
+== Creating a Fragment
 
-In the content form, a single part or layout appears at root of the component tree. Layout fragments may contain additional components, just like in a normal page structure.  The components can be edited in place. Once updated, any page using the fragment will instantly reflect the changes in preview, and on the live site after publishing.
+Fragments are created from components on pages. They are not available in the <<../actions/new#,New Content dialog>>, and *Save as Fragment* is not available for Page templates.
 
-TODO: Screenshot of fragment content form, showing a part or layout at the root of the component tree, with the edit-in-place tools visible.
+. Open a content item with a page and select the component in either the visual editor or component tree.
+. Open the component's context menu.
+. Select *Save as Fragment*.
+
+Content Studio creates a Fragment content item as a child of the current content item and stores the selected component tree in it. On the original page, Content Studio replaces the selected component with a reference to the Fragment.
+
+.Saving a component as a Fragment
+image::fragment-create.png["Page component context menu with Save as Fragment selected", 1440px]
+
+The Fragment receives an automatically generated name and can subsequently be renamed or moved within the Site without breaking existing references.
+
+== Reusing a Fragment
+
+To place an existing Fragment on another page:
+
+. Drag a *Fragment* component from the *Insert* tab into a region, or insert one from a component context menu.
+. Select the empty Fragment component.
+. Choose the content item from the *Fragment* selector in the *Inspect* tab.
+
+.Selecting a Fragment
+image::fragment-select.png["Inspect tab with a Fragment selected for an empty Fragment component", 1440px]
+
+Inside a Site, the selector lists Fragments from that Site. For content outside a Site, it searches the current project. The application that supplies the Fragment's wrapped component must also be available in the destination context.
+
+The page stores the Fragment's content ID. Renaming or moving the Fragment therefore keeps the reference intact.
+
+See <<../editor/page-editor#_fragment,Fragment components>> for the corresponding Page editor controls.
+
+== Editing a Fragment
+
+Open a Fragment directly from the content tree, or select a Fragment reference on a page and use *Edit Fragment*. The Fragment content type has no editorial fields of its own; its editable data is the wrapped component and its configuration.
+
+.Opening a referenced Fragment
+image::fragment-reference.png["Fragment reference selected with the Edit Fragment action in the Page context panel", 1440px]
+
+The component tree shows the wrapped component at its root. A Layout Fragment can contain Parts, Fragments, and other supported components in its regions. Select a component to edit its application-provided configuration in the <<../editor/page-editor#page_context_panel,Page context panel>>.
+
+.Fragment content item
+image::fragment.png["Fragment content item with its component tree and editing controls", 1440px]
+
+Visual preview depends on the front-end integration. The component tree and configuration controls remain available even when the Fragment cannot be previewed in isolation.
+
+Page operations are saved automatically. Configuration changes are accepted with btn:[Apply]. These changes update the Fragment's draft but do not publish it.
+
+Draft previews that resolve the Fragment use its updated draft. Published pages continue to use the published Fragment until the Fragment changes are published.
+
+[CAUTION]
+====
+Editing a Fragment can change many pages at once. Check its <<../contextpanel/dependencies#,incoming dependencies>> before making a substantial change.
+====
+
+== Detaching a Fragment
+
+Detach a reference when one page needs an independent variation of a shared Fragment:
+
+. Select the Fragment component on the page.
+. Open its context menu and select *Detach from Fragment*.
+
+.Detaching a Fragment
+image::fragment-detach.png["Component context menu with Detach from Fragment selected", 546px]
+
+Content Studio replaces the reference with a copy of the Fragment's wrapped component on that page. Later Fragment changes no longer affect the detached copy. The Fragment content item and its references from other pages are not changed or deleted.
 
 
-== Creating, inserting, detaching
+== Dependencies and lifecycle
 
-Fragments are created indirectly from existing pages, and placed on pages either by direct insertion or by reference. The full workflow — save-as-fragment, insert, detach — is documented under the Page editor:
+Each page that uses a Fragment creates an incoming dependency on the Fragment. The <<../contextpanel/dependencies#,Dependencies context panel>> lists these pages and can open a complete dependency search.
 
-* <<../editor/page-editor#_fragment,Page editor — Fragment>>
+A Fragment is published and versioned independently from the pages that reference it. Publishing an updated Fragment makes the new version available to already published pages without republishing each page. Publishing a page with a new Fragment reference also includes the required Fragment in the publishing dependencies.
+
+Deleting or unpublishing a Fragment can leave pages with a missing reference, so Content Studio warns when other content depends on it. Moving or renaming it is safe because references use its content ID.
+
+== Search and indexing
+
+Searchable text and component configuration stored in a Fragment are indexed on the Fragment content item. They are not copied into the search data of pages that reference it. A search for text contained only in a Fragment can therefore return the Fragment itself without returning the pages where it appears.
+
+This distinction is particularly important for customer-facing search. A front end may need to exclude Fragment content from direct results and index the resolved page output separately when Fragment text should contribute to its containing pages.
+
+For the underlying content model and API behavior, see the https://developer.enonic.com/docs/cms/stable/pages/fragments[Enonic CMS Fragment reference].

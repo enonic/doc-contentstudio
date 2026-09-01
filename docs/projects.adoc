@@ -50,7 +50,7 @@ NOTE: Project roles set the *default* permissions that every new content item in
 [[project-applications]]
 == Applications
 
-Applications may be assigned to a project. This enables usage of content types and controller mappings defined in the assigned applications when creating or rendering content outside of sites. This is especially useful for management of headless content, as opposed to a site-oriented approach.
+Applications may be assigned to a project. This makes their content types, mixins, Page components, and other CMS features available when managing content outside of sites. This is especially useful for headless content, as opposed to a site-oriented approach.
 
 Application assignment follows these rules:
 

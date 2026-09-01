@@ -45,7 +45,7 @@
       ]
     },
     {
-      "title": "Context panel",
+      "title": "Context panels",
       "document": "contextpanel",
       "menuItems": [
         {
@@ -101,20 +101,8 @@
       "document": "content-types",
       "menuItems": [
         {
-          "title": "Folder",
-          "document": "content-types/folder"
-        },
-        {
           "title": "Shortcut",
           "document": "content-types/shortcut"
-        },
-        {
-          "title": "Site",
-          "document": "content-types/site"
-        },
-        {
-          "title": "Page template",
-          "document": "content-types/page-template"
         },
         {
           "title": "Media",
@@ -125,12 +113,16 @@
           "document": "content-types/image"
         },
         {
+          "title": "Site",
+          "document": "content-types/site"
+        },
+        {
           "title": "Fragment",
           "document": "content-types/fragment"
         },
         {
-          "title": "Unstructured",
-          "document": "content-types/unstructured"
+          "title": "Page template",
+          "document": "content-types/page-template"
         }
       ]
     },
