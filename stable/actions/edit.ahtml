@@ -435,40 +435,67 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body class="article">
+<body class="article toc2 toc-right">
 <div id="header">
 <h1>Edit</h1>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#opening_content">Opening content</a></li>
+<li><a href="#inherited_content">Inherited content</a></li>
+</ul>
+</div>
 </div>
 <div id="content">
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph">
 <p>The <strong>Edit</strong> action opens selected items in the <a href="../editor.ahtml">Content Editor</a>. Each selected item opens in its own browser tab.</p>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="opening_content"><a class="link" href="#opening_content">Opening content</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>There are four ways to invoke Edit:</p>
+<p>From the <a href="../workbench/navigator.ahtml">Navigator</a>, open content using:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Keyboard shortcut — <code>⌘ + e</code> on macOS, <code>ctrl + e</code> on Windows/Linux.</p>
+<p><b class="button">Edit</b> in the toolbar after selecting one or more items.</p>
 </li>
 <li>
-<p>The <strong>Edit</strong> button in the Content Navigator toolbar.</p>
+<p><strong>Edit</strong> in an item&#8217;s right-click menu.</p>
 </li>
 <li>
-<p>Double-clicking an item in the Navigator grid.</p>
+<p>Double-clicking an item in the content list.</p>
 </li>
 <li>
-<p>The <strong>Edit</strong> entry in the context menu (right-click an item).</p>
+<p><code>⌘ + E</code> on macOS or <code>Ctrl + E</code> on Windows/Linux for the current selection.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>For inherited content in a <a href="../projects/layering.ahtml">layer</a>, <strong>Edit</strong> is replaced with <strong>Localize</strong> — the same effect, but the action also severs data inheritance from the parent project for that item.</p>
+<p>The <a href="../editor/content-form.ahtml">Content Form</a> reference describes the fields and controls used to edit an item. For saving changes and handling validation, see <a href="../editor.ahtml#_saving_and_validation">Saving and validation</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="inherited_content"><a class="link" href="#inherited_content">Inherited content</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Use <strong>Edit</strong> to open inherited content in a layer as well. If the item&#8217;s content data has not been localized, its form is initially read-only. Opening the item does not change its inheritance.</p>
+</div>
+<div class="paragraph">
+<p>Use <a href="localize.ahtml">Localize</a> inside the Content Editor to enable editing of the inherited content data in the current layer.</p>
+</div>
+</div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-09-01 10:03:37 UTC
+Last updated 2026-09-23 12:05:52 UTC
 </div>
 </div>
 </body>

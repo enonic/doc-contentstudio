@@ -435,62 +435,122 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body class="article">
+<body class="article toc2 toc-right">
 <div id="header">
 <h1>Move</h1>
-</div>
-<div id="content">
-<div class="paragraph">
-<p>The <strong>Move</strong> action launches the <strong>Move item(s) with children</strong> dialog for the selected content. It relocates the selection — together with all its children and current permissions — to a different parent in the content tree.</p>
-</div>
-<div class="paragraph">
-<p>There are three ways to invoke Move:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Select one or more items in the Content Navigator and click the <strong>Move</strong> button in the toolbar.</p>
-</li>
-<li>
-<p>The <strong>Move</strong> entry in the context menu (right-click an item in the Navigator).</p>
-</li>
-<li>
-<p>The <strong>Move</strong> button in the Content Editor toolbar (moves only the currently opened item).</p>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#opening_the_dialog">Opening the dialog</a></li>
+<li><a href="#selecting_a_destination">Selecting a destination</a></li>
+<li><a href="#moving_out_of_a_site">Moving out of a site</a></li>
+<li><a href="#effect_on_the_content">Effect on the content</a>
+<ul class="sectlevel2">
+<li><a href="#publishing">Publishing</a></li>
+<li><a href="#layers">Layers</a></li>
+</ul>
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>In the dialog, type into the input to search for a new parent, or use the dropdown to browse. The current parent and the item itself are disabled in the dropdown list.</p>
 </div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-The dropdown has a special <strong>Project root</strong> entry at the top. Select it to move the selection to the root of the content project.
-</td>
-</tr>
-</table>
+<div id="content">
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <strong>Move</strong> action relocates selected content to a different parent in the current project&#8217;s content tree. All descendants move with their parent, preserving the subtree and its existing permissions.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="opening_the_dialog"><a class="link" href="#opening_the_dialog">Opening the dialog</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In the <a href="../workbench/navigator.ahtml">Navigator</a>, select one or more items and choose <b class="button">Move</b> from the toolbar or <strong>Move</strong> from the right-click menu. The keyboard shortcut is <code>Alt + M</code>.</p>
+</div>
+<div class="paragraph">
+<p>In the <a href="../editor.ahtml">Content Editor</a>, Move applies to the item open in that tab and its descendants.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="selecting_a_destination"><a class="link" href="#selecting_a_destination">Selecting a destination</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <strong>Select destination</strong> field identifies the new parent for all selected items. Type to search for content, or open the dropdown to browse the tree. The <b class="button">Move</b> button is disabled until a destination is selected.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/dialog-move.png" alt="Move dialog" width="980">
+<img src="images/move.png" alt="Move items with children dialog with an empty destination selector and disabled Move button" width="900px">
 </div>
+<div class="title">Figure 1. Move dialog before a destination is selected</div>
 </div>
 <div class="paragraph">
-<p>Once the move completes, a notification appears at the bottom of the screen. If the move was triggered from the Content Navigator, the notification includes the new parent path — click it to locate and expand the new parent in the Navigator.</p>
+<p>The selected items, their descendants, and their current parents cannot be selected as destinations. The destination must allow the content types being moved. You also need permission to modify the selected items and create content under the new parent; see <a href="../workbench/permissions.ahtml#_custom_permissions">Permissions</a>.</p>
+</div>
+<div class="paragraph">
+<p>Choose <strong>Project root</strong> to move the selection to the top level of the current project. This option is unavailable when the selection already contains an item at the project root. Use the X beside a selected destination to clear it and choose another.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/notification-move.png" alt="Move confirmation notification" width="672">
+<img src="images/move-root.png" alt="Move dialog with Project root selected and Move (2) enabled" width="900px">
+</div>
+<div class="title">Figure 2. Project root selected as the destination</div>
+</div>
+<div class="paragraph">
+<p>The number on <b class="button">Move</b> counts the selected items. Their descendants are moved automatically and are not included in this button count. There is no option to leave children behind. Click <b class="button">Move</b> after selecting the destination.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="moving_out_of_a_site"><a class="link" href="#moving_out_of_a_site">Moving out of a site</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When the destination is outside an item&#8217;s current <a href="../content-types/site.ahtml">Site</a>, including inside a different Site, Content Studio asks for confirmation. Content can depend on its Site&#8217;s applications and page templates for rendering, so moving it out may make it unreachable as a page.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/move-confirm.png" alt="Confirmation that moving content out of its site might make it unreachable, with Cancel and Confirm buttons" width="740px">
+</div>
+<div class="title">Figure 3. Confirmation before moving content out of its Site</div>
+</div>
+<div class="paragraph">
+<p>Click <b class="button">Cancel</b> to return to destination selection, or <b class="button">Confirm</b> to proceed. The dialog displays progress during the move and a notification reports completion. In the Navigator, the success notification includes the destination path.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="effect_on_the_content"><a class="link" href="#effect_on_the_content">Effect on the content</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Move keeps each item&#8217;s content ID, display name, and path name. Its full path changes because it has a new parent. For example, moving <code>/superhero/posts/hello-world</code> into <code>/superhero/archive</code> gives it the path <code>/superhero/archive/hello-world</code>. Its descendants' paths change with it.</p>
+</div>
+<div class="paragraph">
+<p>If the destination already contains an item with the same path name, that item cannot be moved there. Use the <a href="../editor/content-form.ahtml#_renaming_content">rename dialog</a> to resolve the conflict or choose another destination.</p>
+</div>
+<div class="paragraph">
+<p>References stored by content ID continue to identify the moved items. Links that use a fixed path or URL may need updating. Moving content can also change its Site context, so review its <a href="../workbench/preview.ahtml">preview</a> at the new location.</p>
+</div>
+<div class="paragraph">
+<p>The moved items retain their existing <a href="../workbench/permissions.ahtml">permissions</a>. Moving them under a different parent does not copy that parent&#8217;s permissions onto them.</p>
+</div>
+<div class="sect2">
+<h3 id="publishing"><a class="link" href="#publishing">Publishing</a></h3>
+<div class="paragraph">
+<p>Move changes the draft location. For published content, the live version remains at its previous location until the move is <a href="publish.ahtml">published</a>. The draft has change status <strong>Moved</strong>, which can appear alongside <strong>Modified</strong> when it also contains edits. Content that has never been published remains <strong>New</strong>. See <a href="../workflow.ahtml#change_status">Change status</a> for these indicators.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="layers"><a class="link" href="#layers">Layers</a></h3>
+<div class="paragraph">
+<p>Move operates within the current project or layer. Moving inherited content makes its <strong>Parent</strong> inheritance local without localizing its content data. See <a href="../projects/layering.ahtml#_rename_move_and_sort">Rename, move, and sort</a> for the effects on inheritance.</p>
+</div>
+</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-09-01 10:03:37 UTC
+Last updated 2026-09-23 12:05:52 UTC
 </div>
 </div>
 </body>

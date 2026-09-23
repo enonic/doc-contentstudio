@@ -441,8 +441,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#in_this_chapter">In this chapter</a></li>
-<li><a href="#related_reference">Related reference</a></li>
+<li><a href="#access_and_availability">Access and availability</a></li>
+<li><a href="#available_actions">Available actions</a></li>
 </ul>
 </div>
 </div>
@@ -450,87 +450,125 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Actions are the verbs editors use day-to-day on content — creating, editing, moving, publishing, and so on. They are available from three consistent places:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>The <strong>toolbar</strong> at the top of the <a href="workbench/navigator.ahtml">Navigator</a> and the <a href="editor.ahtml">Editor</a>.</p>
-</li>
-<li>
-<p>The <strong>context menu</strong> that appears when right-clicking an item in the Navigator.</p>
-</li>
-<li>
-<p><strong>Keyboard shortcuts</strong> — see the <a href="keyboard-shortcuts.ahtml">Keyboard shortcuts</a> reference for the full list.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Whether a given action is shown, enabled, or disabled depends on two things: the selection (what content is currently selected) and the user&#8217;s <a href="workbench/permissions.ahtml">permissions</a> on that content.</p>
+<p>Content actions create, edit, organize, and publish content. This page summarizes the available actions and links to their detailed references, including actions documented under Workflow, Layers, and Archive.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="in_this_chapter"><a class="link" href="#in_this_chapter">In this chapter</a></h2>
+<h2 id="access_and_availability"><a class="link" href="#access_and_availability">Access and availability</a></h2>
 <div class="sectionbody">
-<div class="dlist">
-<dl>
-<dt class="hdlist1"><a href="actions/new.ahtml">New</a></dt>
-<dd>
-<p>Create a new content item via the <strong>New Content</strong> dialog — either by picking a content type or by uploading a file.</p>
-</dd>
-<dt class="hdlist1"><a href="actions/edit.ahtml">Edit</a></dt>
-<dd>
-<p>Open one or more selected items in the Content Editor.</p>
-</dd>
-<dt class="hdlist1"><a href="actions/duplicate.ahtml">Duplicate</a></dt>
-<dd>
-<p>Make a copy of the selected content (optionally including its children).</p>
-</dd>
-<dt class="hdlist1"><a href="actions/move.ahtml">Move</a></dt>
-<dd>
-<p>Relocate content to a different parent in the tree, preserving children and permissions.</p>
-</dd>
-<dt class="hdlist1"><a href="actions/sort.ahtml">Sort</a></dt>
-<dd>
-<p>Configure how child items of the selected content are ordered in the Navigator and on rendered pages.</p>
-</dd>
-<dt class="hdlist1"><a href="actions/preview.ahtml">Preview</a></dt>
-<dd>
-<p>Open the rendered page for a site or page content in a new browser tab.</p>
-</dd>
-<dt class="hdlist1"><a href="workflow.ahtml#_in_progress">Mark as ready</a></dt>
-<dd>
-<p>Flag in-progress content as done, making it eligible for publishing. Part of the publishing state machine, and documented under <a href="workflow.ahtml">Workflow</a>.</p>
-</dd>
-<dt class="hdlist1"><a href="actions/publish.ahtml">Publish</a></dt>
-<dd>
-<p>Push content from the <em>draft</em> branch to <em>master</em> so it becomes available online. Covers the publishing wizard, scheduled publishing, and publishing with dependencies.</p>
-</dd>
-<dt class="hdlist1"><a href="actions/unpublish.ahtml">Unpublish</a></dt>
-<dd>
-<p>Remove published content from <em>master</em>. Descendants are unpublished along with the selection.</p>
-</dd>
-<dt class="hdlist1"><a href="actions/delete.ahtml">Delete</a></dt>
-<dd>
-<p>Remove content from the active tree. Deleted items are moved to the <a href="workbench/archive.ahtml">Archive</a>, preserving descendants and version history so they can be restored.</p>
-</dd>
-</dl>
+<div class="paragraph">
+<p>Actions are available from the toolbars and their menus in the <a href="workbench/navigator.ahtml">Navigator</a> and <a href="editor.ahtml">Content Editor</a>. Right-clicking an item in the Navigator opens a context menu with applicable actions. Some actions also have <a href="keyboard-shortcuts.ahtml">keyboard shortcuts</a>.</p>
+</div>
+<div class="paragraph">
+<p>The available actions depend on where you are working, the selected content, its <a href="workflow.ahtml">workflow and publish state</a>, and your <a href="workbench/permissions.ahtml">permissions</a>. An action may be hidden or disabled when it does not apply. For example, <strong>Unpublish</strong> applies to online content, while <strong>Localize</strong> applies to inherited content in a layer.</p>
+</div>
+<div class="paragraph">
+<p>In the Navigator, actions that support multiple items operate on the selection; actions that require a single item are disabled when several are selected. In the Content Editor, actions apply to the item open in that tab. Some actions are available without a selection, such as <strong>New</strong> and <strong>Create task</strong>.</p>
+</div>
+<div class="paragraph">
+<p>The primary workflow button changes with the content and your permissions, offering actions such as <strong>Mark as ready</strong>, <strong>Publish</strong>, or <strong>Request publishing</strong>. Its menu provides additional workflow and issue actions.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="related_reference"><a class="link" href="#related_reference">Related reference</a></h2>
+<h2 id="available_actions"><a class="link" href="#available_actions">Available actions</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The publishing state machine — invalid, in progress, ready, and the publish states — is documented under <a href="workflow.ahtml">Workflow</a>. <strong>Request publishing</strong> (the review/approval handoff variant of Publish) is a kind of issue — see <a href="workflow/issues.ahtml#publish_requests">Publish requests</a>. <strong>Permanent delete</strong> (from the archive) and restoring archived items are on the <a href="workbench/archive.ahtml">Archive</a> page. The <strong>Create task</strong> entry point is documented under <a href="workflow/issues.ahtml">Issues</a>.</p>
+<p>Each reference explains the action&#8217;s controls, restrictions, and effects, including how it handles children and dependencies.</p>
 </div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Action</th>
+<th class="tableblock halign-left valign-top">Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="actions/new.ahtml">New</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create content by choosing a content type or uploading files.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="actions/edit.ahtml">Edit</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Open selected content in the Content Editor.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="editor.ahtml#_saving_and_validation">Save</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Store changes to the current item&#8217;s draft without publishing them.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="actions/duplicate.ahtml">Duplicate</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create a copy of selected content.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="actions/move.ahtml">Move</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Move content to a different parent in the content tree.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="actions/sort.ahtml">Sort</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Set the order of an item&#8217;s children.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="actions/preview.ahtml">Preview</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Open the content in a new browser tab using the selected preview mode.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="workflow.ahtml#_ready_for_publishing">Mark as ready</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mark valid content as ready for publishing.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="actions/publish.ahtml">Publish</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Make draft content available online immediately or through scheduled publishing.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="actions/publish.ahtml#publish_tree">Publish tree</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Open the Publishing wizard with the selection, its descendants, and their dependencies.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="actions/unpublish.ahtml">Unpublish</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Take published content offline.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="workflow/issues.ahtml#publish_requests">Request publishing</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ask another user to review and publish content.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="workflow/issues.ahtml#create_a_task">Create task</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create an editorial work item with assignees and optional content attachments.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="actions/localize.ahtml">Localize</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Stop inheriting content data so it can be edited in the current layer.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="actions/reset.ahtml">Reset</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Replace local values with the parent&#8217;s values and restore inheritance.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="actions/delete.ahtml">Delete</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Move content from the active tree to the Archive.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="workbench/archive.ahtml#_restore">Restore</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Return archived content to the active tree.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="workbench/archive.ahtml#_permanent_deletion">Permanent deletion</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use <strong>Delete</strong> in the Archive to remove archived content permanently.</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-09-01 10:03:37 UTC
+Last updated 2026-09-23 12:05:52 UTC
 </div>
 </div>
 </body>

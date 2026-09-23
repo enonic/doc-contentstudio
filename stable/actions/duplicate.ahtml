@@ -435,54 +435,152 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body class="article">
+<body class="article toc2 toc-right">
 <div id="header">
 <h1>Duplicate</h1>
-</div>
-<div id="content">
-<div class="paragraph">
-<p>The <strong>Duplicate</strong> action launches the <strong>Duplicate content</strong> dialog for the selected item.</p>
-</div>
-<div class="paragraph">
-<p>There are two ways to invoke it:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>The <strong>Duplicate</strong> button in the toolbar.</p>
-</li>
-<li>
-<p>The <strong>Duplicate</strong> entry in the context menu (right-click an item).</p>
-</li>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#opening_the_dialog">Opening the dialog</a></li>
+<li><a href="#duplicate_content_dialog">Duplicate content dialog</a></li>
+<li><a href="#location_and_names">Location and names</a></li>
+<li><a href="#identity_and_initial_state">Identity and initial state</a></li>
 </ul>
 </div>
+</div>
+<div id="content">
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph">
-<p>In the dialog, decide whether to copy the children of the selected item along with it by toggling the tree icon to the left of each content row. Clicking <strong>Duplicate</strong> starts the copy; a progress bar appears if the operation takes more than a few seconds.</p>
+<p>The <strong>Duplicate</strong> action creates independent copies of selected content, optionally including its descendants. Each copied item gets its own unique content ID and can be edited and published separately from the original.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="opening_the_dialog"><a class="link" href="#opening_the_dialog">Opening the dialog</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In the <a href="../workbench/navigator.ahtml">Navigator</a>, select one or more items and choose <b class="button">Duplicate</b> from the toolbar or <strong>Duplicate</strong> from the right-click menu. In the <a href="../editor.ahtml">Content Editor</a>, Duplicate opens the dialog for the item in that editor tab.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="duplicate_content_dialog"><a class="link" href="#duplicate_content_dialog">Duplicate content dialog</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The selected items appear at the top of the dialog. For an item with children, <strong>Include child items</strong> is selected by default. This includes all descendants, preserving their hierarchy. Clear the checkbox to copy only the selected item. If you change the selection, use <b class="button">Apply</b> to update the list before duplicating.</p>
 </div>
 <div class="paragraph">
-<p>The copies get fresh IDs. Path names are postfixed with <code>-copy</code>, and subsequent copies with <code>-copy-2</code>, <code>-copy-3</code>, and so on.</p>
+<p>Descendants included in the operation appear under <strong>Other items that will be duplicated</strong>. The number on the <b class="button">Duplicate</b> button is the total number of items to copy, including the selected items and their included descendants.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/dialog-duplicate.png" alt="Duplicate items and children" width="727">
+<img src="images/duplicate.png" alt="Duplicate content dialog with Include child items selected and 16 items to duplicate" width="900px">
+</div>
+<div class="title">Figure 1. Duplicating a folder with its descendants</div>
+</div>
+<div class="paragraph">
+<p>The paths and state indicators in the dialog describe the source items. The copies receive new paths and initial states as described below.</p>
+</div>
+<div class="paragraph">
+<p>Click <b class="button">Duplicate</b> to start the operation. The dialog displays progress while the items are copied.</p>
 </div>
 </div>
-<div class="admonitionblock note">
-<table>
+</div>
+<div class="sect1">
+<h2 id="location_and_names"><a class="link" href="#location_and_names">Location and names</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Each selected item is copied beside its original, under the same parent in the current project or layer. An item at the project root is copied to that root. Included descendants are created beneath the copied parent, rather than beside their individual originals.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Display name</dt>
+<dd>
+<p>The copy keeps the original item&#8217;s display name. Duplicate does not append "copy" to this label.</p>
+</dd>
+<dt class="hdlist1">Path name</dt>
+<dd>
+<p>The selected item&#8217;s copy receives a unique path name with a <code>-copy</code> suffix. If that name is already taken, Content Studio tries <code>-copy-2</code>, <code>-copy-3</code>, and so on. Descendants copied as part of the subtree keep their original path names beneath the new parent.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>For example, duplicating <code>/superhero/posts</code> with its children creates:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
 <tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-When <strong>Duplicate</strong> is invoked from inside the Content Editor, only the item in that editor tab is pre-selected in the dialog.
-</td>
+<th class="tableblock halign-left valign-top">Original path</th>
+<th class="tableblock halign-left valign-top">Copy path</th>
 </tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/superhero/posts</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/superhero/posts-copy</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/superhero/posts/hello-world</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/superhero/posts-copy/hello-world</code></p></td>
+</tr>
+</tbody>
 </table>
+<div class="paragraph">
+<p>The copied folder still has the display name <strong>Posts</strong>. Use the <a href="../editor/content-form.ahtml#_content_identity">Content Form</a> to change its display name, the <a href="../editor/content-form.ahtml#_renaming_content">rename dialog</a> to change its path name, or <a href="move.ahtml">Move</a> to place it under another parent.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="identity_and_initial_state"><a class="link" href="#identity_and_initial_state">Identity and initial state</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Every copied item, including each copied descendant, receives a new <a href="../editor/content-form.ahtml#_content_id">content ID</a>. Editing the copy does not edit the original, and existing references to the original continue to identify that original item.</p>
+</div>
+<div class="paragraph">
+<p>Copies are made from the current draft content. They start with these <a href="../workflow.ahtml">states</a>, regardless of whether the source is ready, published, or scheduled:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Publish state</dt>
+<dd>
+<p><strong>Offline</strong>. Copies are created in draft and are not published. The original&#8217;s publishing schedule is not carried over.</p>
+</dd>
+<dt class="hdlist1">Change status</dt>
+<dd>
+<p><strong>New</strong>. Each copy is a new item that has never been published.</p>
+</dd>
+<dt class="hdlist1">Workflow state</dt>
+<dd>
+<p><strong>In progress</strong>. Copies must be reviewed and marked ready before publishing. If copied content fails validation, the interface shows <strong>Invalid</strong> instead.</p>
+</dd>
+</dl>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/duplicate-result.png" alt="Navigator showing posts-copy and its descendants with yellow In progress icons and Offline status" width="680px">
+</div>
+<div class="title">Figure 2. The copied folder and its descendants are In progress and Offline</div>
+</div>
+<div class="paragraph">
+<p>The yellow exclamation marks indicate <strong>In progress</strong>. The folder keeps the display name <strong>Posts</strong>, while its path name is <code>posts-copy</code>. Duplicating the original again creates <code>posts-copy-2</code>, then <code>posts-copy-3</code>, as those names are taken. The copied descendants keep their names beneath the new folder.</p>
+</div>
+<div class="paragraph">
+<p>Duplicating inherited content in a layer creates independent local items. The copies do not retain the originals' inheritance relationship with the parent layer.</p>
+</div>
+<div class="paragraph">
+<p>Use <a href="edit.ahtml">Edit</a> to review the copies and <a href="publish.ahtml">Publish</a> when they are ready to go online. The originals retain their existing content and publishing state.</p>
+</div>
+</div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-09-01 10:03:37 UTC
+Last updated 2026-09-23 12:05:52 UTC
 </div>
 </div>
 </body>

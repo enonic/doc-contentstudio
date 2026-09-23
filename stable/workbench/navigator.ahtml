@@ -483,65 +483,18 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="paragraph">
-<p>The toolbar contains the following content actions. Buttons are enabled or disabled according to the selection and the current user&#8217;s permissions:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>New</strong> — opens the <a href="../actions/new.ahtml">New content</a> dialog.</p>
-</li>
-<li>
-<p><strong>Edit</strong> — opens the selected content for <a href="../actions/edit.ahtml">editing</a> in a new browser tab.</p>
-</li>
-<li>
-<p><strong>Delete</strong> — opens the <a href="../actions/delete.ahtml">Delete</a> dialog. Deleted items are moved to the <a href="archive.ahtml">Archive</a>.</p>
-</li>
-<li>
-<p><strong>Duplicate</strong> — makes a <a href="../actions/duplicate.ahtml">copy</a> of the selected content.</p>
-</li>
-<li>
-<p><strong>Move</strong> — opens the <a href="../actions/move.ahtml">Move item(s) with children</a> dialog.</p>
-</li>
-<li>
-<p><strong>Sort</strong> — opens the <a href="../actions/sort.ahtml">Sort items</a> dialog for ordering the selected item&#8217;s children.</p>
-</li>
-<li>
-<p><strong>Preview</strong> — opens renderable content in a new browser tab; see the <a href="../actions/preview.ahtml">Preview action</a>.</p>
-</li>
-</ul>
+<p>The search button on the left opens the <a href="#search_panel">Search panel</a>. Content actions follow it, including <strong>New</strong> for creating content and <strong>Edit</strong> for opening selected items in the Content Editor. Buttons are enabled or disabled according to the selection, content state, and your permissions. See <a href="../actions.ahtml">Actions</a> for the available actions and their detailed references.</p>
 </div>
 <div class="paragraph">
-<p>The action button on the right is context-dependent. Its main action and dropdown options vary with the selection, content status, workflow state, and current user&#8217;s permissions. Typical actions include:</p>
+<p>The primary workflow button is on the right. Its main action and menu options change with the selection, the content&#8217;s <a href="../workflow.ahtml">workflow and publish state</a>, and your permissions. For example, it can offer <strong>Mark as ready</strong> for in-progress content or <strong>Request publishing</strong> when you cannot publish the content yourself. Open its dropdown for additional workflow and issue actions.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/navigator-workflow-menu.png" alt="Toolbar" width="181px">
+<img src="images/navigator-workflow-menu.png" alt="Primary workflow button menu" width="181px">
 </div>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Publish</strong> — opens the <a href="../actions/publish.ahtml#publishing_wizard">Publishing wizard</a> for content that is not online.</p>
-</li>
-<li>
-<p><strong>Mark as ready</strong> — changes selected in-progress content to the <a href="../workflow.ahtml#_ready_for_publishing">ready for publishing</a> workflow state.</p>
-</li>
-<li>
-<p><strong>Publish Tree</strong> — opens the <a href="../actions/publish.ahtml#publish_tree">Publishing wizard</a> with the selected content, its descendants, and their dependencies.</p>
-</li>
-<li>
-<p><strong>Unpublish</strong> — opens the <a href="../actions/unpublish.ahtml">Unpublish wizard</a> for content that is online.</p>
-</li>
-<li>
-<p><strong>Request Publishing</strong> — opens the <a href="../workflow/issues.ahtml#publish_requests">Publish Request</a> wizard when the current user cannot publish the selected content.</p>
-</li>
-<li>
-<p><strong>Create Task</strong> — opens the <a href="../workflow/issues.ahtml#create_a_task">New Task</a> dialog. It is available without a content selection; selected items are attached to the new task automatically.</p>
-</li>
-</ul>
 </div>
 <div class="paragraph">
-<p>Applicable actions are also available from the context menu that appears when you right-click a content item in the list.</p>
+<p>Right-click a content item in the list to open a context menu with applicable actions. For actions on several items, use <a href="#_bulk_selection">Bulk selection</a>.</p>
 </div>
 </div>
 </div>
@@ -686,7 +639,7 @@ If you are working in a layer, a third column will appear, showing the content&#
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-09-01 10:03:37 UTC
+Last updated 2026-09-23 12:05:52 UTC
 </div>
 </div>
 </body>

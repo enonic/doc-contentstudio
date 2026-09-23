@@ -569,7 +569,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </dd>
 <dt class="hdlist1">Content actions</dt>
 <dd>
-<p>Common <a href="actions.ahtml">content actions</a> appear on the left. <b class="button">Save</b> stores changes in the draft branch. Other actions can include <a href="actions/delete.ahtml">Delete</a>, <a href="actions/duplicate.ahtml">Duplicate</a>, <a href="actions/move.ahtml">Move</a>, <a href="actions/preview.ahtml">Preview</a>, and layer-specific actions such as Localize or Reset. Actions that do not fit are placed in the adjacent menu.</p>
+<p>Common <a href="actions.ahtml">content actions</a> appear on the left. <b class="button">Save</b> stores changes in the draft branch. Other actions can include <a href="actions/delete.ahtml">Delete</a>, <a href="actions/duplicate.ahtml">Duplicate</a>, <a href="actions/move.ahtml">Move</a>, <a href="actions/preview.ahtml">Preview</a>, and layer-specific actions such as <a href="actions/localize.ahtml">Localize</a> or <a href="actions/reset.ahtml">Reset</a>. Actions that do not fit are placed in the adjacent menu.</p>
 </dd>
 <dt class="hdlist1">Content status and name</dt>
 <dd>
@@ -634,7 +634,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-09-01 10:03:37 UTC
+Last updated 2026-09-23 12:05:52 UTC
 </div>
 </div>
 </body>

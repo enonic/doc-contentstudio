@@ -435,50 +435,150 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body class="article">
+<body class="article toc2 toc-right">
 <div id="header">
 <h1>Sort</h1>
-</div>
-<div id="content">
-<div class="paragraph">
-<p>The <strong>Sort</strong> action launches the <strong>Sort items</strong> dialog, which configures how the child items of the selected content are ordered — both in the Content Navigator tree and when an application queries for children.</p>
-</div>
-<div class="paragraph">
-<p>There are two ways to invoke Sort:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>The <strong>Sort</strong> button in the toolbar.</p>
-</li>
-<li>
-<p>The <strong>Sort</strong> entry in the context menu (right-click an item).</p>
-</li>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#opening_the_dialog">Opening the dialog</a></li>
+<li><a href="#automatic_ordering">Automatic ordering</a></li>
+<li><a href="#manual_ordering">Manual ordering</a></li>
+<li><a href="#saving_and_publishing">Saving and publishing</a></li>
+<li><a href="#layers">Layers</a></li>
 </ul>
 </div>
+</div>
+<div id="content">
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph">
-<p>The default order is by <strong>Modified date</strong> descending. Children can also be sorted by <strong>Created date</strong>, <strong>Display name</strong>, or <strong>Publish date</strong>, ascending or descending. For manual ordering, drag rows into the desired order inside the dialog.</p>
+<p>The <strong>Sort</strong> action configures the default order of an item&#8217;s direct children in the CMS. Saving stores the selected sort field and direction, or the manual arrangement, as part of the content&#8217;s draft. This setting persists across sessions and is used by the <a href="../workbench/navigator.ahtml">Navigator</a> tree.</p>
+</div>
+<div class="paragraph">
+<p>Websites, applications, and other API clients can use this stored default order or choose their own sorting when fetching or displaying content. For example, a client can list children alphabetically even when their CMS order is manual. Changing Sort affects clients that use the stored order; it does not enforce an order on every client.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="opening_the_dialog"><a class="link" href="#opening_the_dialog">Opening the dialog</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Select a single parent item in the Navigator and choose <b class="button">Sort</b> from the toolbar or <strong>Sort</strong> from its right-click menu. For example, select the <strong>Posts</strong> folder to order the posts inside it.</p>
+</div>
+<div class="paragraph">
+<p>The <strong>Sort items</strong> dialog shows the parent&#8217;s current order in the <strong>Sort Element</strong> selector and lists its direct children. Sorting this list does not change the order inside each child&#8217;s own subtree.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/dialog-sort.png" alt="Sort dialog" width="730">
+<img src="images/sort.png" alt="Sort items dialog with Modified date (Old to new) selected and a list of child content" width="853px">
+</div>
+<div class="title">Figure 1. Sort items dialog showing children ordered by modified date</div>
 </div>
 </div>
+</div>
+<div class="sect1">
+<h2 id="automatic_ordering"><a class="link" href="#automatic_ordering">Automatic ordering</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>Once saved, the parent content gets an icon in the Navigator grid showing the sort order: an up or down arrow for ascending/descending, or a three-bar icon for manual sorting. Clicking the icon reopens the dialog.</p>
+<p><strong>Modified date</strong> is the initial default, before a different order is saved for the parent. Choose a field and direction from <strong>Sort Element</strong> to configure its stored default order. The available fields are:</p>
 </div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Order based on</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Modified date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">When each child was last modified.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Created date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">When each child was created.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Display name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The child&#8217;s display name, in A–Z or Z–A order.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Published date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">When each child was first published.</p></td>
+</tr>
+</tbody>
+</table>
 <div class="paragraph">
-<p>In the example below, <code>/Posts/Featured Image</code> is sorted by Display name ascending, <code>/Posts/Gotham Sure Is A Big Town</code> is sorted by Publish date ascending, and <code>/Posts</code> has manual sorting.</p>
+<p>Date fields offer <strong>New to old</strong> and <strong>Old to new</strong> choices. Selecting an option refreshes the list so you can review the resulting order before saving.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/dialog-sort-grid.png" alt="Sort indicators in the tree" width="741">
+<img src="images/sort-options.png" alt="Expanded Sort Element selector showing date, display name, and Manually sorted options" width="820px">
+</div>
+<div class="title">Figure 2. Sort Element options for automatic and manual ordering</div>
+</div>
+<div class="paragraph">
+<p>Automatic ordering stores a sorting rule. The resulting order follows that rule as children are added or their values change.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="manual_ordering"><a class="link" href="#manual_ordering">Manual ordering</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Choose <strong>Manually sorted</strong> to arrange the children yourself. Drag rows using the handles on the left and drop them at the desired positions. Dragging a row while an automatic order is selected also switches the dialog to manual ordering.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/sort-manual.png" alt="Sort items dialog with Manually sorted selected, reordered children, and Save enabled" width="853px">
+</div>
+<div class="title">Figure 3. Manual ordering with drag handles beside the child items</div>
+</div>
+<div class="paragraph">
+<p>Items <a href="new.ahtml">created</a> under a manually sorted parent are inserted at the top of the list. Items <a href="move.ahtml">moved</a> into that parent also appear at the top. The existing children keep their relative order. Reopen Sort to place the new items where you want them, then click <b class="button">Save</b>.</p>
+</div>
+<div class="paragraph">
+<p>Selecting an automatic order again replaces the manual arrangement with the order determined by that field.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="saving_and_publishing"><a class="link" href="#saving_and_publishing">Saving and publishing</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Click <b class="button">Save</b> to store the order in the CMS and apply it in the Navigator. Save is enabled when the selected order or manual arrangement differs from the saved state. Closing the dialog without saving discards the pending changes.</p>
+</div>
+<div class="paragraph">
+<p>Sorting changes the draft and is recorded as <strong>Sorted</strong> in <a href="../contextpanel/version-history.ahtml">Version history</a>. For published content, a changed sort order can give the parent change status <strong>Modified</strong> while its publish state remains <strong>Online</strong>. Sorting does not itself change the workflow state to <strong>In progress</strong>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/sort-change-state.png" alt="Navigator showing Posts as Online, Modified change status, and a Sorted entry in Version history" width="1440px">
+</div>
+<div class="title">Figure 4. Posts remains Online while its draft is Modified, with a Sorted entry in version history</div>
+</div>
+<div class="paragraph">
+<p>Use <a href="publish.ahtml">Publish</a> to make the sorting changes available to applications reading published content. See <a href="../workflow.ahtml">Workflow</a> for the distinction between workflow state, publish state, and change status.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="layers"><a class="link" href="#layers">Layers</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Changing the order in a layer makes the parent&#8217;s <strong>Sort</strong> inheritance local. Its content data can continue to inherit from the parent layer. See <a href="../projects/layering.ahtml#_rename_move_and_sort">Rename, move, and sort</a> for the inheritance rules.</p>
+</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-09-01 10:03:37 UTC
+Last updated 2026-09-23 12:05:52 UTC
 </div>
 </div>
 </body>

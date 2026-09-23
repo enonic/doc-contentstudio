@@ -441,8 +441,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#new_by_type">New by type</a></li>
-<li><a href="#new_by_uploading">New by uploading</a></li>
+<li><a href="#opening_the_dialog">Opening the dialog</a></li>
+<li><a href="#choosing_a_content_type">Choosing a content type</a></li>
+<li><a href="#uploading_media">Uploading media</a></li>
+<li><a href="#new_content_and_publishing">New content and publishing</a></li>
 </ul>
 </div>
 </div>
@@ -450,25 +452,66 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>The <strong>New</strong> action launches the <strong>New Content</strong> dialog for creating content. It can be invoked three ways:</p>
+<p>The <strong>New</strong> action opens the <strong>New Content</strong> dialog. Create an item by choosing a content type, or upload files to create media items.</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>Keyboard shortcut — <code>alt + n</code>.</p>
-</li>
-<li>
-<p>The <strong>New</strong> button in the toolbar.</p>
-</li>
-<li>
-<p>The <strong>New</strong> entry in the context menu (right-click an item in the Content Navigator).</p>
-</li>
-</ul>
+</div>
+</div>
+<div class="sect1">
+<h2 id="opening_the_dialog"><a class="link" href="#opening_the_dialog">Opening the dialog</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Open the dialog from the <a href="../workbench/navigator.ahtml">Navigator</a> using <b class="button">New</b> in the toolbar, <strong>New</strong> in an item&#8217;s right-click menu, or the <code>Alt + N</code> keyboard shortcut.</p>
+</div>
+<div class="paragraph">
+<p>The selected item is the parent for the new content. With nothing selected, content is created at the root of the current project. The heading <strong>Create content in location</strong> shows the destination path; in the example below, new items will be children of <code>/superhero</code>.</p>
+</div>
+<div class="paragraph">
+<p>You need the <a href="../workbench/permissions.ahtml#_custom_permissions">Create permission</a> at the destination. The parent must also allow the content type you want to create.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/dialog-new.png" alt="New Content dialog" width="723">
+<img src="images/new.png" alt="New Content dialog at /superhero/ with All, Suggested, and Media tabs" width="820px">
 </div>
+<div class="title">Figure 1. New Content dialog showing the destination and available content types</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="choosing_a_content_type"><a class="link" href="#choosing_a_content_type">Choosing a content type</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The dialog has three tabs:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">All</dt>
+<dd>
+<p>Lists the content types available at the destination, with an icon, name, and description for each type.</p>
+</dd>
+<dt class="hdlist1">Suggested</dt>
+<dd>
+<p>Provides a selection of suggested content types.</p>
+</dd>
+<dt class="hdlist1">Media</dt>
+<dd>
+<p>Provides the upload area for creating content from files.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>The list can include built-in types such as <strong>Folder</strong>, <strong>Shortcut</strong>, and <strong>Site</strong>, alongside application-specific types such as <strong>Post</strong> or <strong>Author</strong>. Available types depend on the applications assigned to the project or enclosing site and any restrictions on the parent item. See <a href="../content-types.ahtml">Content types</a> for the role of each built-in type.</p>
+</div>
+<div class="paragraph">
+<p>Start typing to filter the content type list by name. A search field appears above the matching types. Click the X inside the search field to clear the filter.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/new-search.png" alt="New Content dialog filtered to show the Post content type" width="820px">
+</div>
+<div class="title">Figure 2. Filtering the available types by typing "post"</div>
+</div>
+<div class="paragraph">
+<p>Selecting a type opens a new item in the <a href="../editor.ahtml">Content Editor</a> in a separate browser tab. The selected type determines which fields appear in the content form.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -477,7 +520,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-The <strong>New Content</strong> dialog uses the current selection as the parent for the new item. If nothing is selected, the new item is created at the root of the project.
+Media items are created by uploading files. <a href="../content-types/fragment.ahtml">Fragments</a> are created with <strong>Save as Fragment</strong> from a page component, rather than from this dialog.
 </td>
 </tr>
 </table>
@@ -485,76 +528,49 @@ The <strong>New Content</strong> dialog uses the current selection as the parent
 </div>
 </div>
 <div class="sect1">
-<h2 id="new_by_type"><a class="link" href="#new_by_type">New by type</a></h2>
+<h2 id="uploading_media"><a class="link" href="#uploading_media">Uploading media</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The dialog lets you choose from the content types available in the current context. Pick a type and a new content item is created; the Content Editor opens in a new tab.</p>
-</div>
-<div class="paragraph">
-<p>The dialog offers three ways to find a type:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>The full list of all content types available in the current context.</p>
-</li>
-<li>
-<p>The <strong>Most Popular</strong> list — the types most frequently used at this location.</p>
-</li>
-<li>
-<p>The <strong>Recently Used</strong> list — based on your own recent actions.</p>
-</li>
-</ul>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-Start typing on your keyboard to filter the list by name.
-</td>
-</tr>
-</table>
+<p>The <strong>Media</strong> tab has an upload area labeled <strong>Click here or drop files to upload</strong>. Click the area to select files from your computer, or drag files onto it. Multiple files can be uploaded together.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/dialog-new-search.png" alt="Filtered list of content types" width="720">
+<img src="images/new-media.png" alt="Media tab in the New Content dialog with a clickable file drop area" width="820px">
 </div>
+<div class="title">Figure 3. Media tab with the file upload area</div>
+</div>
+<div class="paragraph">
+<p>Each uploaded file becomes a separate media item at the destination shown in the dialog. Content Studio detects the file&#8217;s type and chooses the appropriate media content type, such as Image, Video, or Document. You do not need to choose a media type before uploading.</p>
+</div>
+<div class="paragraph">
+<p>After uploading, open an item in the Content Editor to review its fields and metadata. See <a href="../content-types/media.ahtml">Media</a> for file handling and <a href="../content-types/image.ahtml">Image</a> for image-specific fields and editing controls.</p>
+</div>
+<div class="paragraph">
+<p>The maximum file size is controlled by the <a href="../config.ahtml#_max_file_upload_size">Content Studio configuration</a>.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="new_by_uploading"><a class="link" href="#new_by_uploading">New by uploading</a></h2>
+<h2 id="new_content_and_publishing"><a class="link" href="#new_content_and_publishing">New content and publishing</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>File-based content (images, videos, other media) can be created directly by uploading. The underlying content type is detected automatically from the file&#8217;s type.</p>
+<p>New content is created in the current project&#8217;s draft and is initially offline. Creating an item or uploading a file does not publish it.</p>
 </div>
 <div class="paragraph">
-<p>There are two ways to upload:</p>
+<p>For form-based content, enter a display name and complete the fields in the Content Editor. Content Studio normally generates the path name from the display name. Use <b class="button">Save</b> to store changes; required fields and validation errors are shown in the <a href="../editor/content-form.ahtml">Content Form</a>.</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>Click the upload icon in the top right of the dialog.</p>
-</li>
-<li>
-<p>Drag files onto the dialog. Bulk uploading is supported — drop multiple files at once.</p>
-</li>
-</ul>
+<div class="paragraph">
+<p>New items receive a copy of their parent&#8217;s permissions, or the project&#8217;s default permissions when created at the project root. See <a href="../workbench/permissions.ahtml">Permissions</a> for how access is managed after creation.</p>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="images/dialog-new-media.png" alt="Drag-and-drop upload" width="721">
-</div>
+<div class="paragraph">
+<p>When the content is complete and valid, it can be marked ready and <a href="publish.ahtml">published</a> through the normal <a href="../workflow.ahtml">workflow</a>.</p>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-09-01 10:03:37 UTC
+Last updated 2026-09-23 12:05:52 UTC
 </div>
 </div>
 </body>

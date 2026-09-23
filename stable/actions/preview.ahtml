@@ -435,26 +435,21 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body class="article">
+<body class="article toc2 toc-right">
 <div id="header">
 <h1>Preview</h1>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#opening_a_preview">Opening a preview</a></li>
+</ul>
+</div>
 </div>
 <div id="content">
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph">
-<p>The <strong>Preview</strong> action renders a site or page content in a new browser tab as the end user would see it. Unlike the in-editor <a href="../workbench/preview.ahtml">Preview panel</a>, the <strong>Preview</strong> action opens the rendered output in a full browser tab — useful for checking responsive behavior, printing, or sharing a draft link.</p>
-</div>
-<div class="paragraph">
-<p>There are two ways to invoke Preview:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>The <strong>Preview</strong> button in the toolbar.</p>
-</li>
-<li>
-<p>The <strong>Preview</strong> entry in the context menu (right-click an item).</p>
-</li>
-</ul>
+<p>The <strong>Preview</strong> action opens the current content preview in a separate browser tab.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -463,15 +458,31 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Preview only opens for content that can be rendered as a page — sites, page templates, and content with a supporting template. For other content types, the action is disabled.
+The new tab uses the preview mode selected in the <a href="../workbench/preview.ahtml">Preview panel</a>. For example, selecting <strong>JSON</strong> opens the JSON preview. See <a href="../workbench/preview.ahtml#preview_modes">Preview modes</a> for the available choices.
 </td>
 </tr>
 </table>
 </div>
 </div>
+</div>
+<div class="sect1">
+<h2 id="opening_a_preview"><a class="link" href="#opening_a_preview">Opening a preview</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Choose <b class="button">Preview</b> from the <a href="../workbench/navigator.ahtml">Navigator</a> or <a href="../editor.ahtml">Content Editor</a> toolbar, or <strong>Preview</strong> from an item&#8217;s right-click menu in the Navigator.</p>
+</div>
+<div class="paragraph">
+<p>The keyboard shortcut is <code>Alt + Space</code> on macOS or <code>Ctrl + Alt + Space</code> on Windows/Linux. See <a href="../keyboard-shortcuts.ahtml">Keyboard shortcuts</a> for the full reference.</p>
+</div>
+<div class="paragraph">
+<p>The new tab shows draft content with the full browser viewport available. Opening a preview does not publish the content.</p>
+</div>
+</div>
+</div>
+</div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-09-01 10:03:37 UTC
+Last updated 2026-09-23 12:05:52 UTC
 </div>
 </div>
 </body>
