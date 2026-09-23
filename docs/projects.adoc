@@ -11,7 +11,7 @@ Content Studio allows you to organize your content in multiple independent repos
 
 Each project provides a dedicated repository for content, with its own access control, project roles, features, and language settings. Content in one project is managed independently of other projects.
 
-Each project's repository also contains its own _draft_ and _master_ branches, meaning content is edited and published independently per project — see <<actions/publish#,Publish>> for how content moves between the branches.
+Each project's repository also contains its own _draft_ and _master_ branches, meaning content is edited and published independently per project — see <<actions/publish#publish,Publish>> for how content moves between the branches.
 
 Each project has a unique *identifier*, which is set when the project is created and cannot be changed later.
 

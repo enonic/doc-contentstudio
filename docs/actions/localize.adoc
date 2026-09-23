@@ -1,18 +1,25 @@
-= Localize
+= Localize and reset
 :toc: right
 :experimental:
 
+Localize and Reset control whether an inherited item can be adapted in the current layer or follows its parent.
+
+[[localize]]
+== Localize
+
 The *Localize* action enables editing of inherited content data in the current <<../projects/layering#,layer>>. It stops the item's content data from following changes in the parent layer, so editors can adapt it locally.
 
-== Availability
+[[_availability]]
+=== Availability
 
-Localize is available inside the <<../editor#,Content Editor>> for an item whose content data is still inherited. Use <<edit#,Edit>> to open the item first. Its form is initially read-only, and opening it does not change its inheritance.
+Localize is available inside the <<../editor#,Content Editor>> for an item whose content data is still inherited. Use <<edit#edit,Edit>> to open the item first. Its form is initially read-only, and opening it does not change its inheritance.
 
 Click btn:[Localize] in the editor toolbar to enable the form. The action applies to the item open in that editor tab and requires permission to edit it in the current layer. See <<../workbench/permissions#,Permissions>> for content access controls.
 
 Items created directly in the current layer, and items whose content data is already localized, can be edited without this action.
 
-== Effect on the item
+[[_effect_on_the_item]]
+=== Effect on the item
 
 The item keeps its existing content values as the starting point for local editing. Subsequent parent changes to its content data no longer replace those values. Local edits affect the current layer's item; they do not edit the parent item.
 
@@ -20,8 +27,37 @@ Localize also assigns the layer's default language. Other inheritance dimensions
 
 When the <<../ai#ai_translator,AI Translator>> is enabled, its translation dialog opens after localization. Review any translated values before saving or publishing.
 
-== Editing after localization
+=== Editing after localization
 
-Use the <<../editor/content-form#,Content Form>> to edit the localized values and <<../editor#_saving_and_validation,Save>> to store changes. Localization does not publish the item; publishing is managed independently in each layer through the normal <<../workflow#,workflow>>.
+Use the <<../editor/content-form#,Content Form>> to edit the localized values and <<edit#save,Save>> to store changes. Localization does not publish the item; publishing is managed independently in each layer through the normal <<../workflow#,workflow>>.
 
-To replace local adaptations with the parent's current values and restore inheritance, use <<reset#,Reset>> in the Content Editor. Review that action's effects before using it.
+To replace local adaptations with the parent's current values and restore inheritance, use <<#reset,Reset>> in the Content Editor. Review that action's effects before using it.
+
+[[reset]]
+== Reset
+
+The *Reset* action restores inheritance for a localized item in the current <<../projects/layering#,layer>>. It replaces local values with the corresponding parent item's current values and makes the content form read-only again.
+
+[[reset_availability]]
+=== Availability
+
+Reset is available in the <<../editor#,Content Editor>> after an item's content data has been <<#localize,localized>>. Use <<edit#edit,Edit>> to open the item, then click btn:[Reset] in the editor toolbar. The action applies to the item open in that tab and requires permission to modify it in the current layer.
+
+Content created directly in the current layer has no inherited parent item to reset to.
+
+[[reset_effect_on_the_item]]
+=== Effect on the item
+
+Reset restores every inheritance dimension that was made local. In addition to replacing edited content data, it can replace a local path name, location, or child sort order. See <<../projects/layering#content_inheritance,Content inheritance>> for the four dimensions and their propagation rules.
+
+The item resumes receiving changes from its parent according to those rules. Reset affects the current layer's item; it does not change the parent item.
+
+IMPORTANT: Reset discards the item's current local adaptations. It uses the parent's current values, which may differ from the values the item had when it was first localized. The reset action cannot be undone directly.
+
+Earlier local versions remain available in <<../contextpanel/version-history#,Version history>>. That panel describes how to inspect previous values and when a content version can be restored.
+
+=== Working after reset
+
+The inherited content form is read-only. To adapt its values locally again, use <<#localize,Localize>> in the Content Editor.
+
+Reset updates the layer's draft without publishing it. Review the result and use the normal <<../workflow#,workflow>> to publish any changes that should go live. Each layer maintains its own publishing state; see <<../projects/layering#_publishing_and_versions,Publishing and versions>>.

@@ -1,10 +1,15 @@
-= Edit
+= Edit and save
 :toc: right
 :experimental:
 
+Edit opens content in the Content Editor; Save stores changes to its draft.
+
+[[edit]]
+== Edit
+
 The *Edit* action opens selected items in the <<../editor#,Content Editor>>. Each selected item opens in its own browser tab.
 
-== Opening content
+=== Opening content
 
 From the <<../workbench/navigator#,Navigator>>, open content using:
 
@@ -13,10 +18,19 @@ From the <<../workbench/navigator#,Navigator>>, open content using:
 * Double-clicking an item in the content list.
 * `⌘ + E` on macOS or `Ctrl + E` on Windows/Linux for the current selection.
 
-The <<../editor/content-form#,Content Form>> reference describes the fields and controls used to edit an item. For saving changes and handling validation, see <<../editor#_saving_and_validation,Saving and validation>>.
+The <<../editor/content-form#,Content Form>> reference describes the fields and controls used to edit an item. For saving changes and handling validation, see <<#save,Save>>.
 
-== Inherited content
+=== Inherited content
 
 Use *Edit* to open inherited content in a layer as well. If the item's content data has not been localized, its form is initially read-only. Opening the item does not change its inheritance.
 
-Use <<localize#,Localize>> inside the Content Editor to enable editing of the inherited content data in the current layer.
+Use <<localize#localize,Localize>> inside the Content Editor to enable editing of the inherited content data in the current layer.
+
+[[save]]
+== Save
+
+Editing takes place in the `draft` branch. Click btn:[Save] to store the current changes; the button changes to btn:[Saved] when there are no unsaved changes. Saving does not publish the content or change the version currently available from the `master` branch.
+
+Invalid content can be saved. See <<../editor#_saving_and_validation,Saving and validation>> for continuous validation and how errors appear in the editor.
+
+The most common actions also have <<../keyboard-shortcuts#,keyboard shortcuts>>, including saving the current item.

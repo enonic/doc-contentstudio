@@ -1,6 +1,18 @@
-= Publish
+= Publish and unpublish
 :toc: right
 :imagesdir: images
+
+These actions mark content ready, publish its draft, or take published content offline. For review requests and editorial tasks, see <<../workflow/issues#,Issues>>.
+
+[[mark_as_ready]]
+== Mark as ready
+
+Use *Mark as ready* in the Content Editor or Content Navigator to mark valid, in-progress content as ready for publishing. The action is disabled for invalid content. After marking, the Publishing wizard opens automatically; marking an item ready does not itself publish it.
+
+The toolbar then offers *Publish* or *Request publishing*, depending on your permissions. Editing the item again returns it to *In progress*. See <<../workflow#_ready_for_publishing,Ready for publishing>> for workflow states and indicators, and <<#_validation,Publishing validation>> for marking items ready within a publishing batch.
+
+[[publish]]
+== Publish
 
 Publishing makes content available online. It is the primary deploy mechanism for content in Enonic XP: nothing is visible to end users until it is published.
 
@@ -16,22 +28,22 @@ image::dialog-publish-button.png[Publish button menu, 302]
 
 The Publish button's dropdown in the toolbar carries several related actions:
 
-* *<<../workflow#_ready_for_publishing,Mark as ready>>* — for in-progress content. After marking, automatically opens the Publishing wizard.
+* *<<#mark_as_ready,Mark as ready>>* — for in-progress content. After marking, automatically opens the Publishing wizard.
 * *Publish* — opens the Publishing wizard for the selected items.
 * *<<#publish_tree,Publish tree>>* — same wizard, including all descendants and dependencies.
-* *<<unpublish#,Unpublish>>* — available only for published items.
+* *<<#unpublish,Unpublish>>* — available only for published items.
 * *<<../workflow/issues#publish_requests,Request publishing>>* — available only for unpublished items.
 * *<<../workflow/issues#create_a_task,Create task>>* — opens the *New Task* dialog.
 
 NOTE: The default action shown on the toolbar button is the first available action for the current selection.
 
-== Draft and Master branches
+=== Draft and Master branches
 
 Content created in Content Studio lands in the *draft* branch with change status *New* and workflow state *In progress*. Saves in the draft branch create new versions; the draft can be edited and previewed until it is ready to publish.
 
 When published, the active draft version is copied into the *master* branch. Only content in the *master* branch is visible outside Content Studio (subject to the content's <<../workbench/permissions#,security settings>>).
 
-== Change status
+=== Change status
 
 Every item carries a <<../workflow#change_status,change status>> — *New*, *Modified*, *Moved*, *Published* or *Unpublished* — describing what has happened to it since it was last published.
 
@@ -42,7 +54,7 @@ When a published content is edited and saved, the new version becomes active in 
 Content can either be archived or instantly deleted via the <<../workbench/archive#,Archive>> dialog. Both take the content offline (remove it from `master`) if it was published. Instant deletion removes it from both branches; archived items move under the `/archive` node and can be restored.
 
 [[publishing_wizard]]
-== Publishing wizard
+=== Publishing wizard
 
 The *Publishing wizard* opens when *Publish* is invoked. The selected content's ascendants and dependencies are automatically included so the published page will not have missing references.
 
@@ -52,7 +64,7 @@ TIP: The calendar icon next to *Publish Now* enables <<#scheduled_publishing,sch
 
 NOTE: If the current user lacks publish permission for any of the batched items, *Publish All* is replaced by *<<../workflow/issues#publish_requests,Request Publishing>>*.
 
-=== Dependencies
+==== Dependencies
 
 Child items of the selection can be added to the batch by clicking the tree icon next to the content. Optional dependencies can be excluded using the checkboxes in the dependency list — confirm with *Apply*.
 
@@ -66,7 +78,7 @@ TIP: The default inclusion behaviour can be inverted via the <<../config#exclude
 
 image::dialog-publish-auto-excluded.png[Auto-excluded dependencies, 747]
 
-=== Validation
+==== Validation
 
 The wizard validates the batch before allowing publishing. If any items are invalid, still in progress, or not publishable by the current user, a warning appears and *Publish* is disabled. The problematic items are pinned to the top of the list.
 
@@ -80,13 +92,8 @@ TIP: Use the *Mark as ready* link in the status bar to bulk-mark all in-progress
 
 NOTE: Some items are required for the batch and cannot be excluded — typically parents and mandatory inbound dependencies.
 
-[[publish_tree]]
-== Publish tree
-
-*Publish tree* runs the same wizard as *Publish*, but pre-includes the selection together with all its descendants and their dependencies. Use this when bringing a whole subtree online at once (for example, publishing a freshly-imported section of a site).
-
 [[scheduled_publishing]]
-== Scheduled publishing
+=== Scheduled publishing
 
 The calendar icon in the *Publishing wizard* opens a scheduling panel at the top of the dialog where you can set the online-from and online-to dates. The *Publish Now* button relabels to *Schedule*.
 
@@ -95,8 +102,38 @@ image::publishing-wizard-schedule.png[Scheduled publishing, 937]
 NOTE: Only currently-offline items are scheduled. All other changes in the batch are published immediately.
 
 [[_publishing_from_the_content_editor]]
-== Publishing from the Content Editor
+=== Publishing from the Content Editor
 
 When *Publish* is invoked from inside the Content Editor (toolbar button or menu), only the currently-open item is pre-selected in the wizard.
 
 TIP: Users with publish permission can use *Publish...* on content that is still *In progress* — doing so automatically marks it as ready, on the assumption that requesting publish signals the work is done.
+
+[[publish_tree]]
+== Publish tree
+
+*Publish tree* runs the same wizard as *Publish*, but pre-includes the selection together with all its descendants and their dependencies. Use this when bringing a whole subtree online at once (for example, publishing a freshly-imported section of a site).
+
+[[unpublish]]
+== Unpublish
+
+The *Unpublish* action takes currently published content offline by removing it from the *master* branch. All of the content's descendants are listed and unpublished along with the selected content; the total count appears on the red *Unpublish* button at the bottom of the dialog.
+
+There are two ways to invoke Unpublish:
+
+* The *Unpublish* button in the toolbar — it replaces the *Publish* button when the selection is currently published, or is available from the Publish button's dropdown otherwise.
+* The *Unpublish* entry in the context menu (right-click a published item).
+
+Unpublishing a published item that is also marked for deletion first takes it offline and then deletes it.
+
+image::dialog-unpublish.png[Unpublish dialog, 934]
+
+NOTE: As with deletion, the dialog asks you to confirm by entering the total number of items to unpublish.
+
+=== Reference checks
+
+If any item in the dialog has a *published* inbound dependency (a published content that references it), a warning appears at the top of the dialog and the button is disabled. Two links are available:
+
+* *Ignore inbound references* — proceed with unpublishing anyway.
+* *Show references* — for each referenced item, open its reference list so it can be edited to remove the dependency. Publishing those changes makes the original unpublish safe to proceed.
+
+image::dialog-unpublish-references.png[Reference check in the Unpublish dialog, 754]

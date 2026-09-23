@@ -48,7 +48,7 @@ The moved items retain their existing <<../workbench/permissions#,permissions>>.
 
 === Publishing
 
-Move changes the draft location. For published content, the live version remains at its previous location until the move is <<publish#,published>>. The draft has change status *Moved*, which can appear alongside *Modified* when it also contains edits. Content that has never been published remains *New*. See <<../workflow#change_status,Change status>> for these indicators.
+Move changes the draft location. For published content, the live version remains at its previous location until the move is <<publish#publish,published>>. The draft has change status *Moved*, which can appear alongside *Modified* when it also contains edits. Content that has never been published remains *New*. See <<../workflow#change_status,Change status>> for these indicators.
 
 === Layers
 

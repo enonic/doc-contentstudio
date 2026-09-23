@@ -64,7 +64,7 @@ Sorting changes the draft and is recorded as *Sorted* in <<../contextpanel/versi
 .Posts remains Online while its draft is Modified, with a Sorted entry in version history
 image::sort-change-state.png["Navigator showing Posts as Online, Modified change status, and a Sorted entry in Version history", 1440px]
 
-Use <<publish#,Publish>> to make the sorting changes available to applications reading published content. See <<../workflow#,Workflow>> for the distinction between workflow state, publish state, and change status.
+Use <<publish#publish,Publish>> to make the sorting changes available to applications reading published content. See <<../workflow#,Workflow>> for the distinction between workflow state, publish state, and change status.
 
 == Layers
 

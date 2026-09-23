@@ -51,7 +51,7 @@ A page adds a configurable component structure to a content item. A *Page compon
 
 Content is always edited in the *draft* branch. Publishing copies the active draft version into the *master* branch, from which it becomes available to public consumers of the API.
 
-*Workflow state* is the signal between editors that a draft is ready to publish — _In progress_, _Ready for publishing_, _Publish request_, _Published_, _Unpublished_. See <<workflow#,Workflow>> for the state machine and <<actions/publish#,Publish>> for the flow.
+*Workflow state* is the signal between editors that a draft is ready to publish — _In progress_, _Ready for publishing_, _Publish request_, _Published_, _Unpublished_. See <<workflow#,Workflow>> for the state machine and <<actions/publish#publish,Publish>> for the flow.
 
 === Version history
 

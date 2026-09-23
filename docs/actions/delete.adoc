@@ -1,6 +1,13 @@
-= Delete
+= Delete and restore
 :toc: right
 :imagesdir: images
+
+Delete moves active content to the Archive. From the Archive, content can be restored or permanently deleted.
+
+NOTE: Archiving is available in all Content Studio installations. The Archive browser, Restore, and permanent deletion require a https://market.enonic.com/vendors/enonic/content-studio-plus[Content Studio+] subscription.
+
+[[delete]]
+== Delete
 
 The *Delete* action removes content from the active tree. Deleted items are not destroyed — they are moved to the <<../workbench/archive#,Archive>>, from which they can later be restored or permanently removed.
 
@@ -16,7 +23,7 @@ image::archive-inbound-references.png[Delete dialog, 600]
 
 IMPORTANT: Online content (published items) is taken offline immediately when deleted. The item remains in `master` only until the delete completes, and end users lose access the moment the action is confirmed.
 
-== Reference checks
+=== Reference checks
 
 If any item in the selection is referenced by other content that is _not_ being deleted along with it, a warning appears at the top of the dialog and the action button is disabled. The referenced items are marked with a small "link" icon over their content-type icon.
 
@@ -25,11 +32,39 @@ Two links are available:
 * *Ignore inbound references* — proceed anyway. Referring content will then point at a non-existent item.
 * *Show references* — open the reference list for each flagged item, so the references can be edited out. Once the references are removed (and saved), the delete dialog refreshes and allows the action.
 
+[[restore]]
+== Restore
+
+NOTE: Archived content can only be restored from the Archive view, which requires https://market.enonic.com/vendors/enonic/content-studio-plus[Content Studio+].
+
+The *Restore* action in the Archive view opens the *Restore from Archive* dialog. Content is always restored together with all of its descendants, preserving structure. Content returns to its original location when that location is available; otherwise, it is restored to the project root.
+
+If an item is restored directly from a layer's Archive, it becomes local and is no longer linked to the corresponding content in the parent layer.
+
+image::archive-restore.png[Restore dialog showing the items that will be restored, 912px]
+
+TIP: If an item with the same path already exists at the restore location, the system appends `-1`, `-2`, etc. to the restored item's path.
+
+[[_permanent_deletion]]
 == Permanent deletion
 
-Delete is a soft operation — the content is moved into the Archive and remains recoverable. *Permanent* deletion happens only from the <<../workbench/archive#,Archive>> view, where a separate *Delete* action physically removes the item from storage. Permanent deletion is not reversible (short of a snapshot restore).
+The *Delete* action in the Archive view permanently removes the selected items from the Archive. This is a separate operation from the <<#delete,Delete>> action in the Navigator and Editor, which only moves content into the Archive.
 
 image::archive-delete-dropdown.png[Permanent delete from the Archive dropdown, 384]
+
+image::archive-delete.png[Permanently delete dialog, 912px]
+
+Select one or more items and click *Delete* to open the *Delete from Archive* dialog. The dialog lists:
+
+* The items selected for deletion.
+* Any descendants and other content items that will be deleted with them.
+* The total number of affected items on the confirmation button.
+
+Deleting a parent item also deletes all of its descendants. Review the complete list before confirming the operation.
+
+IMPORTANT: Permanent deletion removes the archived content, its attachments, and its stored version history. It cannot be undone or restored through Content Studio. Recovery requires an applicable repository snapshot or backup and must be performed outside Content Studio by an administrator.
+
+Permanent deletion applies to the current project or layer. In a layered project, inherited content may reappear after its archived copy is permanently deleted; see <<../workbench/archive#archive_layers,Archive and layers>>.
 
 [[delete_in_layers]]
 == Delete in layers

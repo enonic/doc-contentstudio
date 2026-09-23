@@ -47,6 +47,6 @@ NOTE: Existing items with the same IDs are updated, while new items are created.
 
 image::exports-import-dialog.png[Import options dialog showing the selected export and target location, 698px]
 
-After completing the import, the result reports how many nodes were added and updated. Imported content is placed in the target project's _draft_ branch. Review it in the Navigator and use the normal <<../actions/publish#,publishing flow>> when it is ready to go online.
+After completing the import, the result reports how many nodes were added and updated. Imported content is placed in the target project's _draft_ branch. Review it in the Navigator and use the normal <<../actions/publish#publish,publishing flow>> when it is ready to go online.
 
 TIP: Developers may programmatically create their own export and import operations using the https://developer.enonic.com/docs/code/xp8/libraries/lib-export[Enonic XP Export library].

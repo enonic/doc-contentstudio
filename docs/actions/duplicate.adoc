@@ -61,4 +61,4 @@ The yellow exclamation marks indicate *In progress*. The folder keeps the displa
 
 Duplicating inherited content in a layer creates independent local items. The copies do not retain the originals' inheritance relationship with the parent layer.
 
-Use <<edit#,Edit>> to review the copies and <<publish#,Publish>> when they are ready to go online. The originals retain their existing content and publishing state.
+Use <<edit#edit,Edit>> to review the copies and <<publish#publish,Publish>> when they are ready to go online. The originals retain their existing content and publishing state.

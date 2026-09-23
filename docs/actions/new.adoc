@@ -56,4 +56,4 @@ For form-based content, enter a display name and complete the fields in the Cont
 
 New items receive a copy of their parent's permissions, or the project's default permissions when created at the project root. See <<../workbench/permissions#,Permissions>> for how access is managed after creation.
 
-When the content is complete and valid, it can be marked ready and <<publish#,published>> through the normal <<../workflow#,workflow>>.
+When the content is complete and valid, it can be marked ready and <<publish#publish,published>> through the normal <<../workflow#,workflow>>.

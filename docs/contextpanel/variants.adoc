@@ -53,8 +53,8 @@ Variants also appear as children of the original item in the Navigator. Use the 
 
 * Use *Edit* to change a variant without changing the original or its other variants.
 * Use *Duplicate* from a variant's context menu to create another variant associated with the same original.
-* Use <<../actions/publish#,Publish>> and <<../actions/unpublish#,Unpublish>> to control whether each variant is online.
-* Use <<../actions/delete#,Delete>> to move a variant to the Archive.
+* Use <<../actions/publish#publish,Publish>> and <<../actions/publish#unpublish,Unpublish>> to control whether each variant is online.
+* Use <<../actions/delete#delete,Delete>> to move a variant to the Archive.
 
 Because each variant has its own path and publishing state, an external A/B-testing or delivery system can address the variants separately.
 

@@ -26,7 +26,7 @@ image::workflow-state.png[List of content items demonstrating different workflow
 When an item has been published, the workflow state is no longer displayed - as there are no changes to publishing. If a published item is modified, it immediately reverts back to *In progress*.
 
 
-Transitions between the states are driven by four actions: *Mark as ready*, *<<actions/publish#,Publish>>*, *<<actions/unpublish#,Unpublish>>*, and general creation and editing.
+Transitions between the states are driven by four actions: *<<actions/publish#mark_as_ready,Mark as ready>>*, *<<actions/publish#publish,Publish>>*, *<<actions/publish#unpublish,Unpublish>>*, and general creation and editing.
 
 
 [[_invalid]]
@@ -47,7 +47,7 @@ Validation runs when the content is opened and re-runs continuously while editin
 Invalid content can still be *saved* — validity never blocks saving work in progress. What it blocks is progress through the workflow:
 
 * *Mark as ready* is disabled for invalid content — an invalid item cannot reach <<#_ready_for_publishing,Ready>>, and therefore cannot be published the normal way.
-* In the <<actions/publish#,Publishing wizard>> invalid items block the batch, just like in-progress items do, but the bulk *Mark as ready* link will not clear them. They must either be fixed or excluded from the batch.
+* In the <<actions/publish#publishing_wizard,Publishing wizard>> invalid items block the batch, just like in-progress items do, but the bulk *Mark as ready* link will not clear them. They must either be fixed or excluded from the batch.
 
 Editing a published item into an invalid state is allowed: the red icon appears for the `draft` version, while the version already live on `master` is untouched.
 
@@ -59,7 +59,7 @@ NOTE: Validity is not a stored state — unlike *In progress* and *Ready* it is 
 
 The default state of a new content item. Signals that the content is being worked on; it will stay in this state until the editor explicitly marks it as ready, or until a publisher overrides and publishes it directly.
 
-`In-progress` state *blocks publishing* — this is deliberate, to keep unfinished content from being published by accident. Whenever a batch contains at least one in-progress item, the <<actions/publish#,Publishing wizard>> disables *Publish*, shows a warning, and pins the offending items to the top of the list:
+`In-progress` state *blocks publishing* — this is deliberate, to keep unfinished content from being published by accident. Whenever a batch contains at least one in-progress item, the <<actions/publish#publishing_wizard,Publishing wizard>> disables *Publish*, shows a warning, and pins the offending items to the top of the list:
 
 image::workflow-in-progress.png[In-progress content is blocked in the Publishing wizard, 913px]
 
@@ -76,9 +76,9 @@ The default toolbar action for in-progress content is *Mark as ready*.
 [[_ready_for_publishing]]
 === Ready (for publishing)
 
-Set by the *Mark as ready* action from the Content Editor or Content Navigator. The yellow `!` icon is replaced with a green `✓`, and the item becomes eligible for publishing.
+Set by the *<<actions/publish#mark_as_ready,Mark as ready>>* action from the Content Editor or Content Navigator. The yellow `!` icon is replaced with a green `✓`, and the item becomes eligible for publishing.
 
-The default toolbar action changes to *<<actions/publish#,Publish>>* (if the user has publish permission) or *<<workflow/issues#publish_requests,Request publishing>>* (if not).
+The default toolbar action changes to *<<actions/publish#publish,Publish>>* (if the user has publish permission) or *<<workflow/issues#publish_requests,Request publishing>>* (if not).
 
 TIP: Editors with publish permission may still use *Request publishing* when content needs sign-off or additional input from another user.
 
@@ -94,7 +94,7 @@ There are four publishing states:
 
 image::workflow-publish-state.png[Publishing state is listed in the priority two column as text (Online Offline etc), 565px]
 
-Offline:: The item is not published, and is not visible on the website. This is the default state of a new content item, and <<actions/unpublish#,Unpublishing>> an item returns it to this state as well.
+Offline:: The item is not published, and is not visible on the website. This is the default state of a new content item, and <<actions/publish#unpublish,Unpublishing>> an item returns it to this state as well.
 Online:: The active version has been pushed from `draft` to `master`, and the item is live. For a published item with no changes, the workflow state icon is hidden. Editing a published item resets the workflow state to *In progress*.
 Scheduled:: The editor has set a future date and time for the content to be published. It is not live yet.
 Expired:: The editor set a date and time for the content to be unpublished, and that time has been reached. The item was previously online.
@@ -115,12 +115,12 @@ The values are:
 New:: The item has never been published. There is no live version to compare with.
 Modified:: The item is published, and the draft version differs from the live one.
 Moved:: The item has been renamed or moved to another parent since it was published.
-Unpublished:: The item was previously published, and has since been taken offline with <<actions/unpublish#,Unpublish>>.
+Unpublished:: The item was previously published, and has since been taken offline with <<actions/publish#unpublish,Unpublish>>.
 Published:: The draft version is identical to the live one — no changes to publish.
 
 NOTE: *Moved* may be combined with other states, since an item can be both edited and relocated in the same round of work. Such an item reads *Modified, Moved*.
 
-The change status is shown in the toolbar of the <<workbench/preview#,Preview panel>>, in the <<contextpanel/details#,Details>> widget, and per item in the <<actions/publish#,Publishing wizard>>. In the wizard it appears next to the <<#publish_state,publish state>>, so a single line tells you both where the item stands today and what publishing will change:
+The change status is shown in the toolbar of the <<workbench/preview#,Preview panel>>, in the <<contextpanel/details#,Details>> widget, and per item in the <<actions/publish#publishing_wizard,Publishing wizard>>. In the wizard it appears next to the <<#publish_state,publish state>>, so a single line tells you both where the item stands today and what publishing will change:
 
  ONLINE | Modified, Moved
 

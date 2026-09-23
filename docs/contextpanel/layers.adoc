@@ -47,4 +47,4 @@ As in the branch view, select a card in the dialog to open the item in the corre
 
 The panel's localized state refers primarily to the item's *Content* data. A localized item may still inherit its name, tree location, or child sort order. Conversely, an inherited item can have a local name or location while continuing to inherit its content form.
 
-See <<../projects/layering#content_inheritance,Content inheritance>> for the four independent inheritance dimensions, propagation rules, and publishing model. To replace local adaptations with inherited values, see the <<../actions/reset#,Reset action>>.
+See <<../projects/layering#content_inheritance,Content inheritance>> for the four independent inheritance dimensions, propagation rules, and publishing model. To replace local adaptations with inherited values, see the <<../actions/localize#reset,Reset action>>.

@@ -1,7 +1,7 @@
 = Actions
 :toc: right
 
-Content actions create, edit, organize, and publish content. This page summarizes the available actions and links to their detailed references, including actions documented under Workflow, Layers, and Archive.
+Content actions create, edit, organize, and publish content. This page summarizes the available actions and links to their detailed references, with related actions grouped on shared pages and task and request actions covered under Issues.
 
 == Access and availability
 
@@ -15,7 +15,7 @@ The primary workflow button changes with the content and your permissions, offer
 
 == Available actions
 
-Each reference explains the action's controls, restrictions, and effects, including how it handles children and dependencies.
+Related actions share a page; the links below open the relevant action or section. Each reference explains the action's controls, restrictions, and effects, including how it handles children and dependencies.
 
 [cols="1,3", options="header"]
 |===
@@ -24,10 +24,10 @@ Each reference explains the action's controls, restrictions, and effects, includ
 |<<actions/new#,New>>
 |Create content by choosing a content type or uploading files.
 
-|<<actions/edit#,Edit>>
+|<<actions/edit#edit,Edit>>
 |Open selected content in the Content Editor.
 
-|<<editor#_saving_and_validation,Save>>
+|<<actions/edit#save,Save>>
 |Store changes to the current item's draft without publishing them.
 
 |<<actions/duplicate#,Duplicate>>
@@ -42,16 +42,16 @@ Each reference explains the action's controls, restrictions, and effects, includ
 |<<actions/preview#,Preview>>
 |Open the content in a new browser tab using the selected preview mode.
 
-|<<workflow#_ready_for_publishing,Mark as ready>>
+|<<actions/publish#mark_as_ready,Mark as ready>>
 |Mark valid content as ready for publishing.
 
-|<<actions/publish#,Publish>>
+|<<actions/publish#publish,Publish>>
 |Make draft content available online immediately or through scheduled publishing.
 
 |<<actions/publish#publish_tree,Publish tree>>
 |Open the Publishing wizard with the selection, its descendants, and their dependencies.
 
-|<<actions/unpublish#,Unpublish>>
+|<<actions/publish#unpublish,Unpublish>>
 |Take published content offline.
 
 |<<workflow/issues#publish_requests,Request publishing>>
@@ -60,18 +60,18 @@ Each reference explains the action's controls, restrictions, and effects, includ
 |<<workflow/issues#create_a_task,Create task>>
 |Create an editorial work item with assignees and optional content attachments.
 
-|<<actions/localize#,Localize>>
+|<<actions/localize#localize,Localize>>
 |Stop inheriting content data so it can be edited in the current layer.
 
-|<<actions/reset#,Reset>>
+|<<actions/localize#reset,Reset>>
 |Replace local values with the parent's values and restore inheritance.
 
-|<<actions/delete#,Delete>>
+|<<actions/delete#delete,Delete>>
 |Move content from the active tree to the Archive.
 
-|<<workbench/archive#_restore,Restore>>
+|<<actions/delete#restore,Restore>>
 |Return archived content to the active tree.
 
-|<<workbench/archive#_permanent_deletion,Permanent deletion>>
+|<<actions/delete#_permanent_deletion,Permanent deletion>>
 |Use *Delete* in the Archive to remove archived content permanently.
 |===

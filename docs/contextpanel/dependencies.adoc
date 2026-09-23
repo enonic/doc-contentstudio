@@ -26,6 +26,6 @@ Use the search field to filter the results by text, or the *Content Types* check
 
 Content Studio checks dependencies when performing actions that could affect related content:
 
-* <<../actions/publish#,Publishing>> loads related dependencies into the publishing batch. Required dependencies cannot be excluded; optional dependencies can be included or excluded before publishing.
-* <<../actions/delete#,Delete>> warns when other content depends on the item being deleted.
-* <<../actions/unpublish#,Unpublish>> warns when published content depends on the item being taken offline.
+* <<../actions/publish#publish,Publishing>> loads related dependencies into the publishing batch. Required dependencies cannot be excluded; optional dependencies can be included or excluded before publishing.
+* <<../actions/delete#delete,Delete>> warns when other content depends on the item being deleted.
+* <<../actions/publish#unpublish,Unpublish>> warns when published content depends on the item being taken offline.

@@ -51,7 +51,7 @@ image::editor-toolbar.png[Annotated Content Editor toolbar showing project navig
 
 Project navigation:: The project name and language identify the active <<projects#,content project>>. Click the project name to return this browser tab to the <<workbench/navigator#,Navigator>> for that project.
 
-Content actions:: Common <<actions#,content actions>> appear on the left. btn:[Save] stores changes in the draft branch. Other actions can include <<actions/delete#,Delete>>, <<actions/duplicate#,Duplicate>>, <<actions/move#,Move>>, <<actions/preview#,Preview>>, and layer-specific actions such as <<actions/localize#,Localize>> or <<actions/reset#,Reset>>. Actions that do not fit are placed in the adjacent menu.
+Content actions:: Common <<actions#,content actions>> appear on the left. btn:[Save] stores changes in the draft branch. Other actions can include <<actions/delete#delete,Delete>>, <<actions/duplicate#,Duplicate>>, <<actions/move#,Move>>, <<actions/preview#,Preview>>, and layer-specific actions such as <<actions/localize#localize,Localize>> or <<actions/localize#reset,Reset>>. Actions that do not fit are placed in the adjacent menu.
 
 Content status and name:: The center shows the content's <<workflow#workflow_state,validation or workflow state>> and path name. For inherited content, it also shows the layer indicator. Click the name to open the rename dialog when renaming is permitted.
 
@@ -65,11 +65,9 @@ Context panel:: Use the rightmost toggle to show or hide the <<contextpanel#,Con
 
 == Saving and validation
 
-Editing takes place in the `draft` branch. Click btn:[Save] to store the current changes; the button changes to btn:[Saved] when there are no unsaved changes. Saving does not publish the content or change the version currently available from the `master` branch.
+Use <<actions/edit#save,Save>> to store changes in the draft branch without publishing them.
 
 Content is validated continuously while it is edited. Validation errors are shown in the form and represented by the state icon in the toolbar. Invalid content can be saved, but it cannot be marked ready or published until the blocking errors are resolved. See <<workflow#_invalid,Invalid content>>.
-
-The most common actions also have <<keyboard-shortcuts#,keyboard shortcuts>>, including saving the current item.
 
 == Collaboration
 
