@@ -51,7 +51,7 @@ Related actions share a page; the links below open the relevant action or sectio
 |<<actions/publish#publish_tree,Publish tree>>
 |Open the Publishing wizard with the selection, its descendants, and their dependencies.
 
-|<<actions/publish#unpublish,Unpublish>>
+|<<actions/unpublish#,Unpublish>>
 |Take published content offline.
 
 |<<workflow/issues#publish_requests,Request publishing>>

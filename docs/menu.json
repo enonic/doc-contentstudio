@@ -135,11 +135,11 @@
           "document": "actions/new"
         },
         {
-          "title": "Edit and save",
+          "title": "Edit / Save",
           "document": "actions/edit"
         },
         {
-          "title": "Localize and reset",
+          "title": "Localize / Reset",
           "document": "actions/localize"
         },
         {
@@ -159,11 +159,15 @@
           "document": "actions/preview"
         },
         {
-          "title": "Publish and unpublish",
+          "title": "Publish",
           "document": "actions/publish"
         },
         {
-          "title": "Delete and restore",
+          "title": "Unpublish",
+          "document": "actions/unpublish"
+        },
+        {
+          "title": "Delete / Restore",
           "document": "actions/delete"
         }
       ]

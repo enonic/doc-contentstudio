@@ -26,7 +26,7 @@ image::workflow-state.png[List of content items demonstrating different workflow
 When an item has been published, the workflow state is no longer displayed - as there are no changes to publishing. If a published item is modified, it immediately reverts back to *In progress*.
 
 
-Transitions between the states are driven by four actions: *<<actions/publish#mark_as_ready,Mark as ready>>*, *<<actions/publish#publish,Publish>>*, *<<actions/publish#unpublish,Unpublish>>*, and general creation and editing.
+Transitions between the states are driven by four actions: *<<actions/publish#mark_as_ready,Mark as ready>>*, *<<actions/publish#publish,Publish>>*, *<<actions/unpublish#,Unpublish>>*, and general creation and editing.
 
 
 [[_invalid]]
@@ -94,7 +94,7 @@ There are four publishing states:
 
 image::workflow-publish-state.png[Publishing state is listed in the priority two column as text (Online Offline etc), 565px]
 
-Offline:: The item is not published, and is not visible on the website. This is the default state of a new content item, and <<actions/publish#unpublish,Unpublishing>> an item returns it to this state as well.
+Offline:: The item is not published, and is not visible on the website. This is the default state of a new content item, and <<actions/unpublish#,Unpublishing>> an item returns it to this state as well.
 Online:: The active version has been pushed from `draft` to `master`, and the item is live. For a published item with no changes, the workflow state icon is hidden. Editing a published item resets the workflow state to *In progress*.
 Scheduled:: The editor has set a future date and time for the content to be published. It is not live yet.
 Expired:: The editor set a date and time for the content to be unpublished, and that time has been reached. The item was previously online.
@@ -115,7 +115,7 @@ The values are:
 New:: The item has never been published. There is no live version to compare with.
 Modified:: The item is published, and the draft version differs from the live one.
 Moved:: The item has been renamed or moved to another parent since it was published.
-Unpublished:: The item was previously published, and has since been taken offline with <<actions/publish#unpublish,Unpublish>>.
+Unpublished:: The item was previously published, and has since been taken offline with <<actions/unpublish#,Unpublish>>.
 Published:: The draft version is identical to the live one — no changes to publish.
 
 NOTE: *Moved* may be combined with other states, since an item can be both edited and relocated in the same round of work. Such an item reads *Modified, Moved*.
