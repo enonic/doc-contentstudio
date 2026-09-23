@@ -569,7 +569,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </dd>
 <dt class="hdlist1">Content actions</dt>
 <dd>
-<p>Common <a href="actions.ahtml">content actions</a> appear on the left. <b class="button">Save</b> stores changes in the draft branch. Other actions can include <a href="actions/delete.ahtml">Delete</a>, <a href="actions/duplicate.ahtml">Duplicate</a>, <a href="actions/move.ahtml">Move</a>, <a href="actions/preview.ahtml">Preview</a>, and layer-specific actions such as <a href="actions/localize.ahtml">Localize</a> or <a href="actions/reset.ahtml">Reset</a>. Actions that do not fit are placed in the adjacent menu.</p>
+<p>Common <a href="actions.ahtml">content actions</a> appear on the left. <b class="button">Save</b> stores changes in the draft branch. Other actions can include <a href="actions/delete.ahtml#delete">Delete</a>, <a href="actions/duplicate.ahtml">Duplicate</a>, <a href="actions/move.ahtml">Move</a>, <a href="actions/preview.ahtml">Preview</a>, and layer-specific actions such as <a href="actions/localize.ahtml#localize">Localize</a> or <a href="actions/localize.ahtml#reset">Reset</a>. Actions that do not fit are placed in the adjacent menu.</p>
 </dd>
 <dt class="hdlist1">Content status and name</dt>
 <dd>
@@ -599,13 +599,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="saving_and_validation"><a class="link" href="#saving_and_validation">Saving and validation</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Editing takes place in the <code>draft</code> branch. Click <b class="button">Save</b> to store the current changes; the button changes to <b class="button">Saved</b> when there are no unsaved changes. Saving does not publish the content or change the version currently available from the <code>master</code> branch.</p>
+<p>Use <a href="actions/edit.ahtml#save">Save</a> to store changes in the draft branch without publishing them.</p>
 </div>
 <div class="paragraph">
 <p>Content is validated continuously while it is edited. Validation errors are shown in the form and represented by the state icon in the toolbar. Invalid content can be saved, but it cannot be marked ready or published until the blocking errors are resolved. See <a href="workflow.ahtml#_invalid">Invalid content</a>.</p>
-</div>
-<div class="paragraph">
-<p>The most common actions also have <a href="keyboard-shortcuts.ahtml">keyboard shortcuts</a>, including saving the current item.</p>
 </div>
 </div>
 </div>
@@ -634,7 +631,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-09-23 12:05:52 UTC
+Last updated 2026-09-23 16:23:12 UTC
 </div>
 </div>
 </body>

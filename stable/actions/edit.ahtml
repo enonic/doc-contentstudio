@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.26">
-<title>Edit</title>
+<title>Edit and save</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -437,12 +437,17 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article toc2 toc-right">
 <div id="header">
-<h1>Edit</h1>
+<h1>Edit and save</h1>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
+<li><a href="#edit">Edit</a>
+<ul class="sectlevel2">
 <li><a href="#opening_content">Opening content</a></li>
 <li><a href="#inherited_content">Inherited content</a></li>
+</ul>
+</li>
+<li><a href="#save">Save</a></li>
 </ul>
 </div>
 </div>
@@ -450,13 +455,18 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>The <strong>Edit</strong> action opens selected items in the <a href="../editor.ahtml">Content Editor</a>. Each selected item opens in its own browser tab.</p>
+<p>Edit opens content in the Content Editor; Save stores changes to its draft.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="opening_content"><a class="link" href="#opening_content">Opening content</a></h2>
+<h2 id="edit"><a class="link" href="#edit">Edit</a></h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>The <strong>Edit</strong> action opens selected items in the <a href="../editor.ahtml">Content Editor</a>. Each selected item opens in its own browser tab.</p>
+</div>
+<div class="sect2">
+<h3 id="opening_content"><a class="link" href="#opening_content">Opening content</a></h3>
 <div class="paragraph">
 <p>From the <a href="../workbench/navigator.ahtml">Navigator</a>, open content using:</p>
 </div>
@@ -477,25 +487,38 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ul>
 </div>
 <div class="paragraph">
-<p>The <a href="../editor/content-form.ahtml">Content Form</a> reference describes the fields and controls used to edit an item. For saving changes and handling validation, see <a href="../editor.ahtml#_saving_and_validation">Saving and validation</a>.</p>
+<p>The <a href="../editor/content-form.ahtml">Content Form</a> reference describes the fields and controls used to edit an item. For saving changes and handling validation, see <a href="#save">Save</a>.</p>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="inherited_content"><a class="link" href="#inherited_content">Inherited content</a></h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="inherited_content"><a class="link" href="#inherited_content">Inherited content</a></h3>
 <div class="paragraph">
 <p>Use <strong>Edit</strong> to open inherited content in a layer as well. If the item&#8217;s content data has not been localized, its form is initially read-only. Opening the item does not change its inheritance.</p>
 </div>
 <div class="paragraph">
-<p>Use <a href="localize.ahtml">Localize</a> inside the Content Editor to enable editing of the inherited content data in the current layer.</p>
+<p>Use <a href="localize.ahtml#localize">Localize</a> inside the Content Editor to enable editing of the inherited content data in the current layer.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="save"><a class="link" href="#save">Save</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Editing takes place in the <code>draft</code> branch. Click <b class="button">Save</b> to store the current changes; the button changes to <b class="button">Saved</b> when there are no unsaved changes. Saving does not publish the content or change the version currently available from the <code>master</code> branch.</p>
+</div>
+<div class="paragraph">
+<p>Invalid content can be saved. See <a href="../editor.ahtml#_saving_and_validation">Saving and validation</a> for continuous validation and how errors appear in the editor.</p>
+</div>
+<div class="paragraph">
+<p>The most common actions also have <a href="../keyboard-shortcuts.ahtml">keyboard shortcuts</a>, including saving the current item.</p>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-09-23 12:05:52 UTC
+Last updated 2026-09-23 16:23:12 UTC
 </div>
 </div>
 </body>

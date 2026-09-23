@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.26">
-<title>Delete</title>
+<title>Delete and restore</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -437,18 +437,43 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article toc2 toc-right">
 <div id="header">
-<h1>Delete</h1>
+<h1>Delete and restore</h1>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
+<li><a href="#delete">Delete</a>
+<ul class="sectlevel2">
 <li><a href="#reference_checks">Reference checks</a></li>
-<li><a href="#permanent_deletion">Permanent deletion</a></li>
+</ul>
+</li>
+<li><a href="#restore">Restore</a></li>
+<li><a href="#_permanent_deletion">Permanent deletion</a></li>
 <li><a href="#delete_in_layers">Delete in layers</a></li>
 </ul>
 </div>
 </div>
 <div id="content">
 <div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Delete moves active content to the Archive. From the Archive, content can be restored or permanently deleted.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Archiving is available in all Content Studio installations. The Archive browser, Restore, and permanent deletion require a <a href="https://market.enonic.com/vendors/enonic/content-studio-plus">Content Studio+</a> subscription.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="delete"><a class="link" href="#delete">Delete</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The <strong>Delete</strong> action removes content from the active tree. Deleted items are not destroyed — they are moved to the <a href="../workbench/archive.ahtml">Archive</a>, from which they can later be restored or permanently removed.</p>
@@ -489,11 +514,8 @@ Online content (published items) is taken offline immediately when deleted. The 
 </tr>
 </table>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="reference_checks"><a class="link" href="#reference_checks">Reference checks</a></h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="reference_checks"><a class="link" href="#reference_checks">Reference checks</a></h3>
 <div class="paragraph">
 <p>If any item in the selection is referenced by other content that is <em>not</em> being deleted along with it, a warning appears at the top of the dialog and the action button is disabled. The referenced items are marked with a small "link" icon over their content-type icon.</p>
 </div>
@@ -512,16 +534,96 @@ Online content (published items) is taken offline immediately when deleted. The 
 </div>
 </div>
 </div>
+</div>
 <div class="sect1">
-<h2 id="permanent_deletion"><a class="link" href="#permanent_deletion">Permanent deletion</a></h2>
+<h2 id="restore"><a class="link" href="#restore">Restore</a></h2>
+<div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Archived content can only be restored from the Archive view, which requires <a href="https://market.enonic.com/vendors/enonic/content-studio-plus">Content Studio+</a>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The <strong>Restore</strong> action in the Archive view opens the <strong>Restore from Archive</strong> dialog. Content is always restored together with all of its descendants, preserving structure. Content returns to its original location when that location is available; otherwise, it is restored to the project root.</p>
+</div>
+<div class="paragraph">
+<p>If an item is restored directly from a layer&#8217;s Archive, it becomes local and is no longer linked to the corresponding content in the parent layer.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/archive-restore.png" alt="Restore dialog showing the items that will be restored" width="912px">
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+If an item with the same path already exists at the restore location, the system appends <code>-1</code>, <code>-2</code>, etc. to the restored item&#8217;s path.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_permanent_deletion"><a class="link" href="#_permanent_deletion">Permanent deletion</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Delete is a soft operation — the content is moved into the Archive and remains recoverable. <strong>Permanent</strong> deletion happens only from the <a href="../workbench/archive.ahtml">Archive</a> view, where a separate <strong>Delete</strong> action physically removes the item from storage. Permanent deletion is not reversible (short of a snapshot restore).</p>
+<p>The <strong>Delete</strong> action in the Archive view permanently removes the selected items from the Archive. This is a separate operation from the <a href="#delete">Delete</a> action in the Navigator and Editor, which only moves content into the Archive.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/archive-delete-dropdown.png" alt="Permanent delete from the Archive dropdown" width="384">
 </div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/archive-delete.png" alt="Permanently delete dialog" width="912px">
+</div>
+</div>
+<div class="paragraph">
+<p>Select one or more items and click <strong>Delete</strong> to open the <strong>Delete from Archive</strong> dialog. The dialog lists:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The items selected for deletion.</p>
+</li>
+<li>
+<p>Any descendants and other content items that will be deleted with them.</p>
+</li>
+<li>
+<p>The total number of affected items on the confirmation button.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Deleting a parent item also deletes all of its descendants. Review the complete list before confirming the operation.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Permanent deletion removes the archived content, its attachments, and its stored version history. It cannot be undone or restored through Content Studio. Recovery requires an applicable repository snapshot or backup and must be performed outside Content Studio by an administrator.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Permanent deletion applies to the current project or layer. In a layered project, inherited content may reappear after its archived copy is permanently deleted; see <a href="../workbench/archive.ahtml#archive_layers">Archive and layers</a>.</p>
 </div>
 </div>
 </div>
@@ -555,7 +657,7 @@ Online content (published items) is taken offline immediately when deleted. The 
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-09-23 12:05:52 UTC
+Last updated 2026-09-23 16:23:12 UTC
 </div>
 </div>
 </body>

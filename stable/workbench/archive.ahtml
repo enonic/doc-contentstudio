@@ -477,7 +477,7 @@ Archiving is available in all Content Studio installations: the <strong>Delete</
 <p>The Archive preserves the structure of removed items (descendants, attachments, version history) so content can easily be restored if it is deleted by mistake.</p>
 </div>
 <div class="paragraph">
-<p>When a user performs the <a href="../actions/delete.ahtml">Delete</a> action from the Navigator or Editor, the item is moved to the Archive. From the Archive, items can be <strong>Restored</strong> to their original location when possible, or to the project root when the original location is unavailable. They can also be permanently deleted.</p>
+<p>When a user performs the <a href="../actions/delete.ahtml#delete">Delete</a> action from the Navigator or Editor, the item is moved to the Archive. From the Archive, items can be <strong>Restored</strong> to their original location when possible, or to the project root when the original location is unavailable. They can also be permanently deleted.</p>
 </div>
 </div>
 </div>
@@ -513,40 +513,8 @@ Archiving is available in all Content Studio installations: the <strong>Delete</
 <div class="sect1">
 <h2 id="restore"><a class="link" href="#restore">Restore</a></h2>
 <div class="sectionbody">
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Archived content can only be restored from the Archive view, which requires <a href="https://market.enonic.com/vendors/enonic/content-studio-plus">Content Studio+</a>.
-</td>
-</tr>
-</table>
-</div>
 <div class="paragraph">
-<p>The <strong>Restore</strong> action in the Archive view opens the <strong>Restore from Archive</strong> dialog. Content is always restored together with all of its descendants, preserving structure. Content returns to its original location when that location is available; otherwise, it is restored to the project root.</p>
-</div>
-<div class="paragraph">
-<p>If an item is restored directly from a layer&#8217;s Archive, it becomes local and is no longer linked to the corresponding content in the parent layer.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/archive-restore.png" alt="Restore dialog showing the items that will be restored" width="912px">
-</div>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-If an item with the same path already exists at the restore location, the system appends <code>-1</code>, <code>-2</code>, etc. to the restored item&#8217;s path.
-</td>
-</tr>
-</table>
+<p>The <a href="../actions/delete.ahtml#restore">Restore action</a> returns archived items and their descendants to the active tree. Its reference covers the restore dialog, destination, naming conflicts, and behavior in layers.</p>
 </div>
 </div>
 </div>
@@ -554,46 +522,7 @@ If an item with the same path already exists at the restore location, the system
 <h2 id="permanent_deletion"><a class="link" href="#permanent_deletion">Permanent deletion</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The <strong>Delete</strong> action in the Archive view permanently removes the selected items from the Archive. This is a separate operation from the <a href="../actions/delete.ahtml">Delete</a> action in the Navigator and Editor, which only moves content into the Archive.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/archive-delete.png" alt="Permanently delete dialog" width="912px">
-</div>
-</div>
-<div class="paragraph">
-<p>Select one or more items and click <strong>Delete</strong> to open the <strong>Delete from Archive</strong> dialog. The dialog lists:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>The items selected for deletion.</p>
-</li>
-<li>
-<p>Any descendants and other content items that will be deleted with them.</p>
-</li>
-<li>
-<p>The total number of affected items on the confirmation button.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Deleting a parent item also deletes all of its descendants. Review the complete list before confirming the operation.</p>
-</div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-Permanent deletion removes the archived content, its attachments, and its stored version history. It cannot be undone or restored through Content Studio. Recovery requires an applicable repository snapshot or backup and must be performed outside Content Studio by an administrator.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Permanent deletion applies to the current project or layer. In a layered project, inherited content may reappear after its archived copy is permanently deleted; see <a href="#archive_layers">Archive and layers</a>.</p>
+<p>The <a href="../actions/delete.ahtml#_permanent_deletion">permanent Delete action</a> removes archived items, attachments, and version history. Its reference covers the confirmation dialog, affected items, and recovery limitations.</p>
 </div>
 </div>
 </div>
@@ -652,7 +581,7 @@ When permanently deleting a localized item, these changes will be lost and canno
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-09-23 12:05:52 UTC
+Last updated 2026-09-23 16:23:12 UTC
 </div>
 </div>
 </body>

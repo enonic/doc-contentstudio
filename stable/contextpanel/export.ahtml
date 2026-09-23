@@ -569,7 +569,7 @@ Existing items with the same IDs are updated, while new items are created. The i
 </div>
 </div>
 <div class="paragraph">
-<p>After completing the import, the result reports how many nodes were added and updated. Imported content is placed in the target project&#8217;s <em>draft</em> branch. Review it in the Navigator and use the normal <a href="../actions/publish.ahtml">publishing flow</a> when it is ready to go online.</p>
+<p>After completing the import, the result reports how many nodes were added and updated. Imported content is placed in the target project&#8217;s <em>draft</em> branch. Review it in the Navigator and use the normal <a href="../actions/publish.ahtml#publish">publishing flow</a> when it is ready to go online.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -588,7 +588,7 @@ Developers may programmatically create their own export and import operations us
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-09-23 12:05:52 UTC
+Last updated 2026-09-23 16:23:12 UTC
 </div>
 </div>
 </body>

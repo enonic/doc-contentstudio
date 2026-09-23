@@ -581,7 +581,7 @@ A collection of short videos demonstrating Content Studio&#8217;s features and c
 <p>Content is always edited in the <strong>draft</strong> branch. Publishing copies the active draft version into the <strong>master</strong> branch, from which it becomes available to public consumers of the API.</p>
 </div>
 <div class="paragraph">
-<p><strong>Workflow state</strong> is the signal between editors that a draft is ready to publish — <em>In progress</em>, <em>Ready for publishing</em>, <em>Publish request</em>, <em>Published</em>, <em>Unpublished</em>. See <a href="workflow.ahtml">Workflow</a> for the state machine and <a href="actions/publish.ahtml">Publish</a> for the flow.</p>
+<p><strong>Workflow state</strong> is the signal between editors that a draft is ready to publish — <em>In progress</em>, <em>Ready for publishing</em>, <em>Publish request</em>, <em>Published</em>, <em>Unpublished</em>. See <a href="workflow.ahtml">Workflow</a> for the state machine and <a href="actions/publish.ahtml#publish">Publish</a> for the flow.</p>
 </div>
 </div>
 <div class="sect2">
@@ -679,7 +679,7 @@ A collection of short videos demonstrating Content Studio&#8217;s features and c
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-09-23 12:05:52 UTC
+Last updated 2026-09-23 16:23:12 UTC
 </div>
 </div>
 </body>

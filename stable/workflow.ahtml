@@ -507,7 +507,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>When an item has been published, the workflow state is no longer displayed - as there are no changes to publishing. If a published item is modified, it immediately reverts back to <strong>In progress</strong>.</p>
 </div>
 <div class="paragraph">
-<p>Transitions between the states are driven by four actions: <strong>Mark as ready</strong>, <strong><a href="actions/publish.ahtml">Publish</a></strong>, <strong><a href="actions/unpublish.ahtml">Unpublish</a></strong>, and general creation and editing.</p>
+<p>Transitions between the states are driven by four actions: <strong><a href="actions/publish.ahtml#mark_as_ready">Mark as ready</a></strong>, <strong><a href="actions/publish.ahtml#publish">Publish</a></strong>, <strong><a href="actions/publish.ahtml#unpublish">Unpublish</a></strong>, and general creation and editing.</p>
 </div>
 <div class="sect2">
 <h3 id="_invalid"><a class="link" href="#_invalid">Invalid (blocking)</a></h3>
@@ -548,7 +548,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p><strong>Mark as ready</strong> is disabled for invalid content — an invalid item cannot reach <a href="#_ready_for_publishing">Ready</a>, and therefore cannot be published the normal way.</p>
 </li>
 <li>
-<p>In the <a href="actions/publish.ahtml">Publishing wizard</a> invalid items block the batch, just like in-progress items do, but the bulk <strong>Mark as ready</strong> link will not clear them. They must either be fixed or excluded from the batch.</p>
+<p>In the <a href="actions/publish.ahtml#publishing_wizard">Publishing wizard</a> invalid items block the batch, just like in-progress items do, but the bulk <strong>Mark as ready</strong> link will not clear them. They must either be fixed or excluded from the batch.</p>
 </li>
 </ul>
 </div>
@@ -574,7 +574,7 @@ Validity is not a stored state — unlike <strong>In progress</strong> and <stro
 <p>The default state of a new content item. Signals that the content is being worked on; it will stay in this state until the editor explicitly marks it as ready, or until a publisher overrides and publishes it directly.</p>
 </div>
 <div class="paragraph">
-<p><code>In-progress</code> state <strong>blocks publishing</strong> — this is deliberate, to keep unfinished content from being published by accident. Whenever a batch contains at least one in-progress item, the <a href="actions/publish.ahtml">Publishing wizard</a> disables <strong>Publish</strong>, shows a warning, and pins the offending items to the top of the list:</p>
+<p><code>In-progress</code> state <strong>blocks publishing</strong> — this is deliberate, to keep unfinished content from being published by accident. Whenever a batch contains at least one in-progress item, the <a href="actions/publish.ahtml#publishing_wizard">Publishing wizard</a> disables <strong>Publish</strong>, shows a warning, and pins the offending items to the top of the list:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -616,10 +616,10 @@ The bulk <strong>Mark as ready</strong> link can be disabled in the <a href="con
 <div class="sect2">
 <h3 id="_ready_for_publishing"><a class="link" href="#_ready_for_publishing">Ready (for publishing)</a></h3>
 <div class="paragraph">
-<p>Set by the <strong>Mark as ready</strong> action from the Content Editor or Content Navigator. The yellow <code>!</code> icon is replaced with a green <code>✓</code>, and the item becomes eligible for publishing.</p>
+<p>Set by the <strong><a href="actions/publish.ahtml#mark_as_ready">Mark as ready</a></strong> action from the Content Editor or Content Navigator. The yellow <code>!</code> icon is replaced with a green <code>✓</code>, and the item becomes eligible for publishing.</p>
 </div>
 <div class="paragraph">
-<p>The default toolbar action changes to <strong><a href="actions/publish.ahtml">Publish</a></strong> (if the user has publish permission) or <strong><a href="workflow/issues.ahtml#publish_requests">Request publishing</a></strong> (if not).</p>
+<p>The default toolbar action changes to <strong><a href="actions/publish.ahtml#publish">Publish</a></strong> (if the user has publish permission) or <strong><a href="workflow/issues.ahtml#publish_requests">Request publishing</a></strong> (if not).</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -657,7 +657,7 @@ Editors with publish permission may still use <strong>Request publishing</strong
 <dl>
 <dt class="hdlist1">Offline</dt>
 <dd>
-<p>The item is not published, and is not visible on the website. This is the default state of a new content item, and <a href="actions/unpublish.ahtml">Unpublishing</a> an item returns it to this state as well.</p>
+<p>The item is not published, and is not visible on the website. This is the default state of a new content item, and <a href="actions/publish.ahtml#unpublish">Unpublishing</a> an item returns it to this state as well.</p>
 </dd>
 <dt class="hdlist1">Online</dt>
 <dd>
@@ -717,7 +717,7 @@ The <code>master</code> branch is unaffected by your edits in the <code>draft</c
 </dd>
 <dt class="hdlist1">Unpublished</dt>
 <dd>
-<p>The item was previously published, and has since been taken offline with <a href="actions/unpublish.ahtml">Unpublish</a>.</p>
+<p>The item was previously published, and has since been taken offline with <a href="actions/publish.ahtml#unpublish">Unpublish</a>.</p>
 </dd>
 <dt class="hdlist1">Published</dt>
 <dd>
@@ -738,7 +738,7 @@ The <code>master</code> branch is unaffected by your edits in the <code>draft</c
 </table>
 </div>
 <div class="paragraph">
-<p>The change status is shown in the toolbar of the <a href="workbench/preview.ahtml">Preview panel</a>, in the <a href="contextpanel/details.ahtml">Details</a> widget, and per item in the <a href="actions/publish.ahtml">Publishing wizard</a>. In the wizard it appears next to the <a href="#publish_state">publish state</a>, so a single line tells you both where the item stands today and what publishing will change:</p>
+<p>The change status is shown in the toolbar of the <a href="workbench/preview.ahtml">Preview panel</a>, in the <a href="contextpanel/details.ahtml">Details</a> widget, and per item in the <a href="actions/publish.ahtml#publishing_wizard">Publishing wizard</a>. In the wizard it appears next to the <a href="#publish_state">publish state</a>, so a single line tells you both where the item stands today and what publishing will change:</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -773,7 +773,7 @@ Content items can also be attached to <strong>tasks</strong>, the other issue ty
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-09-23 12:05:52 UTC
+Last updated 2026-09-23 16:23:12 UTC
 </div>
 </div>
 </body>

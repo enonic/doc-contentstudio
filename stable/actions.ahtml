@@ -450,7 +450,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Content actions create, edit, organize, and publish content. This page summarizes the available actions and links to their detailed references, including actions documented under Workflow, Layers, and Archive.</p>
+<p>Content actions create, edit, organize, and publish content. This page summarizes the available actions and links to their detailed references, with related actions grouped on shared pages and task and request actions covered under Issues.</p>
 </div>
 </div>
 </div>
@@ -475,7 +475,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="available_actions"><a class="link" href="#available_actions">Available actions</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Each reference explains the action&#8217;s controls, restrictions, and effects, including how it handles children and dependencies.</p>
+<p>Related actions share a page; the links below open the relevant action or section. Each reference explains the action&#8217;s controls, restrictions, and effects, including how it handles children and dependencies.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -494,11 +494,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <td class="tableblock halign-left valign-top"><p class="tableblock">Create content by choosing a content type or uploading files.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="actions/edit.ahtml">Edit</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="actions/edit.ahtml#edit">Edit</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Open selected content in the Content Editor.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="editor.ahtml#_saving_and_validation">Save</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="actions/edit.ahtml#save">Save</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Store changes to the current item&#8217;s draft without publishing them.</p></td>
 </tr>
 <tr>
@@ -518,11 +518,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <td class="tableblock halign-left valign-top"><p class="tableblock">Open the content in a new browser tab using the selected preview mode.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="workflow.ahtml#_ready_for_publishing">Mark as ready</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="actions/publish.ahtml#mark_as_ready">Mark as ready</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Mark valid content as ready for publishing.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="actions/publish.ahtml">Publish</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="actions/publish.ahtml#publish">Publish</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Make draft content available online immediately or through scheduled publishing.</p></td>
 </tr>
 <tr>
@@ -530,7 +530,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <td class="tableblock halign-left valign-top"><p class="tableblock">Open the Publishing wizard with the selection, its descendants, and their dependencies.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="actions/unpublish.ahtml">Unpublish</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="actions/publish.ahtml#unpublish">Unpublish</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Take published content offline.</p></td>
 </tr>
 <tr>
@@ -542,23 +542,23 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <td class="tableblock halign-left valign-top"><p class="tableblock">Create an editorial work item with assignees and optional content attachments.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="actions/localize.ahtml">Localize</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="actions/localize.ahtml#localize">Localize</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Stop inheriting content data so it can be edited in the current layer.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="actions/reset.ahtml">Reset</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="actions/localize.ahtml#reset">Reset</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Replace local values with the parent&#8217;s values and restore inheritance.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="actions/delete.ahtml">Delete</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="actions/delete.ahtml#delete">Delete</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Move content from the active tree to the Archive.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="workbench/archive.ahtml#_restore">Restore</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="actions/delete.ahtml#restore">Restore</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Return archived content to the active tree.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="workbench/archive.ahtml#_permanent_deletion">Permanent deletion</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="actions/delete.ahtml#_permanent_deletion">Permanent deletion</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Use <strong>Delete</strong> in the Archive to remove archived content permanently.</p></td>
 </tr>
 </tbody>
@@ -568,7 +568,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-09-23 12:05:52 UTC
+Last updated 2026-09-23 16:23:12 UTC
 </div>
 </div>
 </body>

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.26">
-<title>Localize</title>
+<title>Localize and reset</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -437,13 +437,24 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article toc2 toc-right">
 <div id="header">
-<h1>Localize</h1>
+<h1>Localize and reset</h1>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#availability">Availability</a></li>
-<li><a href="#effect_on_the_item">Effect on the item</a></li>
+<li><a href="#localize">Localize</a>
+<ul class="sectlevel2">
+<li><a href="#_availability">Availability</a></li>
+<li><a href="#_effect_on_the_item">Effect on the item</a></li>
 <li><a href="#editing_after_localization">Editing after localization</a></li>
+</ul>
+</li>
+<li><a href="#reset">Reset</a>
+<ul class="sectlevel2">
+<li><a href="#reset_availability">Availability</a></li>
+<li><a href="#reset_effect_on_the_item">Effect on the item</a></li>
+<li><a href="#working_after_reset">Working after reset</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -451,15 +462,20 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>The <strong>Localize</strong> action enables editing of inherited content data in the current <a href="../projects/layering.ahtml">layer</a>. It stops the item&#8217;s content data from following changes in the parent layer, so editors can adapt it locally.</p>
+<p>Localize and Reset control whether an inherited item can be adapted in the current layer or follows its parent.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="availability"><a class="link" href="#availability">Availability</a></h2>
+<h2 id="localize"><a class="link" href="#localize">Localize</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Localize is available inside the <a href="../editor.ahtml">Content Editor</a> for an item whose content data is still inherited. Use <a href="edit.ahtml">Edit</a> to open the item first. Its form is initially read-only, and opening it does not change its inheritance.</p>
+<p>The <strong>Localize</strong> action enables editing of inherited content data in the current <a href="../projects/layering.ahtml">layer</a>. It stops the item&#8217;s content data from following changes in the parent layer, so editors can adapt it locally.</p>
+</div>
+<div class="sect2">
+<h3 id="_availability"><a class="link" href="#_availability">Availability</a></h3>
+<div class="paragraph">
+<p>Localize is available inside the <a href="../editor.ahtml">Content Editor</a> for an item whose content data is still inherited. Use <a href="edit.ahtml#edit">Edit</a> to open the item first. Its form is initially read-only, and opening it does not change its inheritance.</p>
 </div>
 <div class="paragraph">
 <p>Click <b class="button">Localize</b> in the editor toolbar to enable the form. The action applies to the item open in that editor tab and requires permission to edit it in the current layer. See <a href="../workbench/permissions.ahtml">Permissions</a> for content access controls.</p>
@@ -468,10 +484,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Items created directly in the current layer, and items whose content data is already localized, can be edited without this action.</p>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="effect_on_the_item"><a class="link" href="#effect_on_the_item">Effect on the item</a></h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_effect_on_the_item"><a class="link" href="#_effect_on_the_item">Effect on the item</a></h3>
 <div class="paragraph">
 <p>The item keeps its existing content values as the starting point for local editing. Subsequent parent changes to its content data no longer replace those values. Local edits affect the current layer&#8217;s item; they do not edit the parent item.</p>
 </div>
@@ -482,22 +496,71 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>When the <a href="../ai.ahtml#ai_translator">AI Translator</a> is enabled, its translation dialog opens after localization. Review any translated values before saving or publishing.</p>
 </div>
 </div>
+<div class="sect2">
+<h3 id="editing_after_localization"><a class="link" href="#editing_after_localization">Editing after localization</a></h3>
+<div class="paragraph">
+<p>Use the <a href="../editor/content-form.ahtml">Content Form</a> to edit the localized values and <a href="edit.ahtml#save">Save</a> to store changes. Localization does not publish the item; publishing is managed independently in each layer through the normal <a href="../workflow.ahtml">workflow</a>.</p>
+</div>
+<div class="paragraph">
+<p>To replace local adaptations with the parent&#8217;s current values and restore inheritance, use <a href="#reset">Reset</a> in the Content Editor. Review that action&#8217;s effects before using it.</p>
+</div>
+</div>
+</div>
 </div>
 <div class="sect1">
-<h2 id="editing_after_localization"><a class="link" href="#editing_after_localization">Editing after localization</a></h2>
+<h2 id="reset"><a class="link" href="#reset">Reset</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Use the <a href="../editor/content-form.ahtml">Content Form</a> to edit the localized values and <a href="../editor.ahtml#_saving_and_validation">Save</a> to store changes. Localization does not publish the item; publishing is managed independently in each layer through the normal <a href="../workflow.ahtml">workflow</a>.</p>
+<p>The <strong>Reset</strong> action restores inheritance for a localized item in the current <a href="../projects/layering.ahtml">layer</a>. It replaces local values with the corresponding parent item&#8217;s current values and makes the content form read-only again.</p>
+</div>
+<div class="sect2">
+<h3 id="reset_availability"><a class="link" href="#reset_availability">Availability</a></h3>
+<div class="paragraph">
+<p>Reset is available in the <a href="../editor.ahtml">Content Editor</a> after an item&#8217;s content data has been <a href="#localize">localized</a>. Use <a href="edit.ahtml#edit">Edit</a> to open the item, then click <b class="button">Reset</b> in the editor toolbar. The action applies to the item open in that tab and requires permission to modify it in the current layer.</p>
 </div>
 <div class="paragraph">
-<p>To replace local adaptations with the parent&#8217;s current values and restore inheritance, use <a href="reset.ahtml">Reset</a> in the Content Editor. Review that action&#8217;s effects before using it.</p>
+<p>Content created directly in the current layer has no inherited parent item to reset to.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="reset_effect_on_the_item"><a class="link" href="#reset_effect_on_the_item">Effect on the item</a></h3>
+<div class="paragraph">
+<p>Reset restores every inheritance dimension that was made local. In addition to replacing edited content data, it can replace a local path name, location, or child sort order. See <a href="../projects/layering.ahtml#content_inheritance">Content inheritance</a> for the four dimensions and their propagation rules.</p>
+</div>
+<div class="paragraph">
+<p>The item resumes receiving changes from its parent according to those rules. Reset affects the current layer&#8217;s item; it does not change the parent item.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Reset discards the item&#8217;s current local adaptations. It uses the parent&#8217;s current values, which may differ from the values the item had when it was first localized. The reset action cannot be undone directly.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Earlier local versions remain available in <a href="../contextpanel/version-history.ahtml">Version history</a>. That panel describes how to inspect previous values and when a content version can be restored.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="working_after_reset"><a class="link" href="#working_after_reset">Working after reset</a></h3>
+<div class="paragraph">
+<p>The inherited content form is read-only. To adapt its values locally again, use <a href="#localize">Localize</a> in the Content Editor.</p>
+</div>
+<div class="paragraph">
+<p>Reset updates the layer&#8217;s draft without publishing it. Review the result and use the normal <a href="../workflow.ahtml">workflow</a> to publish any changes that should go live. Each layer maintains its own publishing state; see <a href="../projects/layering.ahtml#_publishing_and_versions">Publishing and versions</a>.</p>
+</div>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-09-23 12:05:52 UTC
+Last updated 2026-09-23 16:23:12 UTC
 </div>
 </div>
 </body>

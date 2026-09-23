@@ -465,7 +465,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Each project provides a dedicated repository for content, with its own access control, project roles, features, and language settings. Content in one project is managed independently of other projects.</p>
 </div>
 <div class="paragraph">
-<p>Each project&#8217;s repository also contains its own <em>draft</em> and <em>master</em> branches, meaning content is edited and published independently per project — see <a href="actions/publish.ahtml">Publish</a> for how content moves between the branches.</p>
+<p>Each project&#8217;s repository also contains its own <em>draft</em> and <em>master</em> branches, meaning content is edited and published independently per project — see <a href="actions/publish.ahtml#publish">Publish</a> for how content moves between the branches.</p>
 </div>
 <div class="paragraph">
 <p>Each project has a unique <strong>identifier</strong>, which is set when the project is created and cannot be changed later.</p>
@@ -625,7 +625,7 @@ Project roles set the <strong>default</strong> permissions that every new conten
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-09-23 12:05:52 UTC
+Last updated 2026-09-23 16:23:12 UTC
 </div>
 </div>
 </body>

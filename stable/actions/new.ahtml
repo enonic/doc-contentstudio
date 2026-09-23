@@ -563,14 +563,14 @@ Media items are created by uploading files. <a href="../content-types/fragment.a
 <p>New items receive a copy of their parent&#8217;s permissions, or the project&#8217;s default permissions when created at the project root. See <a href="../workbench/permissions.ahtml">Permissions</a> for how access is managed after creation.</p>
 </div>
 <div class="paragraph">
-<p>When the content is complete and valid, it can be marked ready and <a href="publish.ahtml">published</a> through the normal <a href="../workflow.ahtml">workflow</a>.</p>
+<p>When the content is complete and valid, it can be marked ready and <a href="publish.ahtml#publish">published</a> through the normal <a href="../workflow.ahtml">workflow</a>.</p>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-09-23 12:05:52 UTC
+Last updated 2026-09-23 16:23:12 UTC
 </div>
 </div>
 </body>

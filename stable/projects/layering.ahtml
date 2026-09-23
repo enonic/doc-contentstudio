@@ -703,7 +703,7 @@ In Content Studio, an item described simply as <strong>localized</strong> normal
 <div class="sect2">
 <h3 id="localize"><a class="link" href="#localize">Edit and Localize</a></h3>
 <div class="paragraph">
-<p>Inherited content data is read-only. The <a href="../actions/edit.ahtml">Edit action</a> opens an inherited item in the Content Editor with its form in a disabled state. The <a href="../actions/localize.ahtml">Localize action</a> in the editor stops content-data inheritance and enables editing in the current layer.</p>
+<p>Inherited content data is read-only. The <a href="../actions/edit.ahtml#edit">Edit action</a> opens an inherited item in the Content Editor with its form in a disabled state. The <a href="../actions/localize.ahtml#localize">Localize action</a> in the editor stops content-data inheritance and enables editing in the current layer.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -776,7 +776,7 @@ In Content Studio, an item described simply as <strong>localized</strong> normal
 <div class="sect2">
 <h3 id="reset_inheritance"><a class="link" href="#reset_inheritance">Reset inheritance</a></h3>
 <div class="paragraph">
-<p>Once an item&#8217;s content data has been localized, the <a href="../actions/reset.ahtml">Reset action</a> is available in the Content Editor. Reset restores inheritance for every dimension that was made local, refreshes those values from the parent, and returns the content data to a read-only state.</p>
+<p>Once an item&#8217;s content data has been localized, the <a href="../actions/localize.ahtml#reset">Reset action</a> is available in the Content Editor. Reset restores inheritance for every dimension that was made local, refreshes those values from the parent, and returns the content data to a read-only state.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -833,7 +833,7 @@ Reset replaces local content data, name, location, and sort order with the curre
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-09-23 12:05:52 UTC
+Last updated 2026-09-23 16:23:12 UTC
 </div>
 </div>
 </body>

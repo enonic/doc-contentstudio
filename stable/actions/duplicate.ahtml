@@ -573,14 +573,14 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Duplicating inherited content in a layer creates independent local items. The copies do not retain the originals' inheritance relationship with the parent layer.</p>
 </div>
 <div class="paragraph">
-<p>Use <a href="edit.ahtml">Edit</a> to review the copies and <a href="publish.ahtml">Publish</a> when they are ready to go online. The originals retain their existing content and publishing state.</p>
+<p>Use <a href="edit.ahtml#edit">Edit</a> to review the copies and <a href="publish.ahtml#publish">Publish</a> when they are ready to go online. The originals retain their existing content and publishing state.</p>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-09-23 12:05:52 UTC
+Last updated 2026-09-23 16:23:12 UTC
 </div>
 </div>
 </body>
