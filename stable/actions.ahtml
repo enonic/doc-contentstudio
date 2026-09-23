@@ -530,7 +530,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <td class="tableblock halign-left valign-top"><p class="tableblock">Open the Publishing wizard with the selection, its descendants, and their dependencies.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="actions/publish.ahtml#unpublish">Unpublish</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="actions/unpublish.ahtml">Unpublish</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Take published content offline.</p></td>
 </tr>
 <tr>
@@ -568,7 +568,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-09-23 16:23:12 UTC
+Last updated 2026-09-23 16:59:36 UTC
 </div>
 </div>
 </body>

@@ -576,7 +576,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Use <strong>Duplicate</strong> from a variant&#8217;s context menu to create another variant associated with the same original.</p>
 </li>
 <li>
-<p>Use <a href="../actions/publish.ahtml#publish">Publish</a> and <a href="../actions/publish.ahtml#unpublish">Unpublish</a> to control whether each variant is online.</p>
+<p>Use <a href="../actions/publish.ahtml#publish">Publish</a> and <a href="../actions/unpublish.ahtml">Unpublish</a> to control whether each variant is online.</p>
 </li>
 <li>
 <p>Use <a href="../actions/delete.ahtml#delete">Delete</a> to move a variant to the Archive.</p>
@@ -594,7 +594,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-09-23 16:23:12 UTC
+Last updated 2026-09-23 16:59:36 UTC
 </div>
 </div>
 </body>

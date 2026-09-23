@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.26">
-<title>Publish and unpublish</title>
+<title>Publish</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -437,7 +437,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article toc2 toc-right">
 <div id="header">
-<h1>Publish and unpublish</h1>
+<h1>Publish</h1>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
@@ -452,11 +452,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ul>
 </li>
 <li><a href="#publish_tree">Publish tree</a></li>
-<li><a href="#unpublish">Unpublish</a>
-<ul class="sectlevel2">
-<li><a href="#reference_checks">Reference checks</a></li>
-</ul>
-</li>
 </ul>
 </div>
 </div>
@@ -464,7 +459,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>These actions mark content ready, publish its draft, or take published content offline. For review requests and editorial tasks, see <a href="../workflow/issues.ahtml">Issues</a>.</p>
+<p>This page covers marking content ready and publishing its draft. To take published content offline, see <a href="unpublish.ahtml">Unpublish</a>. For review requests and editorial tasks, see <a href="../workflow/issues.ahtml">Issues</a>.</p>
 </div>
 </div>
 </div>
@@ -483,132 +478,103 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="publish"><a class="link" href="#publish">Publish</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Publishing makes content available online. It is the primary deploy mechanism for content in Enonic XP: nothing is visible to end users until it is published.</p>
+<p>Publishing makes the current draft of an item available online, subject to its <a href="../workbench/permissions.ahtml">permissions</a>. New content must be published before it is available to end users, and changes to online content must be published again to go live.</p>
 </div>
 <div class="paragraph">
-<p>Before a content item can be published it has to be <strong>marked as ready</strong> (unless the publisher also has the editing permission and invokes publish from the editor — see <a href="#_publishing_from_the_content_editor">Publishing from the Content Editor</a>).</p>
+<p>Before an item can be published, it must be valid and marked as ready. Users with editing and publishing permissions can also publish in-progress content directly from the editor; see <a href="#_publishing_from_the_content_editor">Publishing from the Content Editor</a>.</p>
 </div>
 <div class="paragraph">
-<p>There are three ways to invoke the <strong>Publish</strong> action:</p>
+<p>Open the <strong>Publishing Wizard</strong> using:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Keyboard shortcut — <code>⌘ + alt + p</code> on macOS, <code>ctrl + alt + p</code> on Windows/Linux.</p>
+<p><strong>Publish</strong> in the toolbar or its menu.</p>
 </li>
 <li>
-<p>The <strong>Publish</strong> button in the toolbar.</p>
+<p><strong>Publish</strong> in an item&#8217;s right-click menu in the Navigator.</p>
 </li>
 <li>
-<p>The <strong>Publish</strong> entry in the context menu (right-click an item in the Content Navigator).</p>
+<p><code>⌘ + alt + p</code> on macOS or <code>Ctrl + Alt + P</code> on Windows/Linux.</p>
 </li>
 </ul>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/dialog-publish-button.png" alt="Publish button menu" width="302">
-</div>
 </div>
 <div class="paragraph">
-<p>The Publish button&#8217;s dropdown in the toolbar carries several related actions:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong><a href="#mark_as_ready">Mark as ready</a></strong> — for in-progress content. After marking, automatically opens the Publishing wizard.</p>
-</li>
-<li>
-<p><strong>Publish</strong> — opens the Publishing wizard for the selected items.</p>
-</li>
-<li>
-<p><strong><a href="#publish_tree">Publish tree</a></strong> — same wizard, including all descendants and dependencies.</p>
-</li>
-<li>
-<p><strong><a href="#unpublish">Unpublish</a></strong> — available only for published items.</p>
-</li>
-<li>
-<p><strong><a href="../workflow/issues.ahtml#publish_requests">Request publishing</a></strong> — available only for unpublished items.</p>
-</li>
-<li>
-<p><strong><a href="../workflow/issues.ahtml#create_a_task">Create task</a></strong> — opens the <strong>New Task</strong> dialog.</p>
-</li>
-</ul>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-The default action shown on the toolbar button is the first available action for the current selection.
-</td>
-</tr>
-</table>
+<p>The toolbar&#8217;s default action depends on the selection&#8217;s state and your permissions. Its menu also provides related <a href="../actions.ahtml">content actions</a>, including <a href="#publish_tree">Publish tree</a>, <a href="unpublish.ahtml">Unpublish</a>, and <a href="../workflow/issues.ahtml#publish_requests">Request publishing</a>. Use a publish request when another user needs to review or publish the content.</p>
 </div>
 <div class="sect2">
 <h3 id="draft_and_master_branches"><a class="link" href="#draft_and_master_branches">Draft and Master branches</a></h3>
 <div class="paragraph">
-<p>Content created in Content Studio lands in the <strong>draft</strong> branch with change status <strong>New</strong> and workflow state <strong>In progress</strong>. Saves in the draft branch create new versions; the draft can be edited and previewed until it is ready to publish.</p>
+<p>Content is created and edited in the <strong>draft</strong> branch. Saving creates a new version without changing what is online. Publishing copies the active draft version into the <strong>master</strong> branch, making that version available outside Content Studio according to its permissions.</p>
 </div>
 <div class="paragraph">
-<p>When published, the active draft version is copied into the <strong>master</strong> branch. Only content in the <strong>master</strong> branch is visible outside Content Studio (subject to the content&#8217;s <a href="../workbench/permissions.ahtml">security settings</a>).</p>
+<p>After publishing, further edits remain in draft until published again. Each project or layer has its own draft and master branches. See <a href="../workflow.ahtml">Content life cycle and workflow</a> for the workflow and publishing states, and <a href="../projects/layering.ahtml#_publishing_and_versions">Publishing and versions</a> for layers.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="change_status"><a class="link" href="#change_status">Change status</a></h3>
 <div class="paragraph">
-<p>Every item carries a <a href="../workflow.ahtml#change_status">change status</a> — <strong>New</strong>, <strong>Modified</strong>, <strong>Moved</strong>, <strong>Published</strong> or <strong>Unpublished</strong> — describing what has happened to it since it was last published.</p>
+<p>Each item in the wizard shows its current publish state and change status, such as <strong>Online | Modified</strong> or <strong>Offline | New</strong>. An online item can have unpublished changes; publishing it updates the version that is already live. Items with no changes to publish are not included in the publishing batch.</p>
 </div>
 <div class="paragraph">
-<p>In the Publishing wizard the change status is listed per item, next to the item&#8217;s <a href="../workflow.ahtml#publish_state">publish state</a> — for example <code>ONLINE | Modified, Moved</code>. Items with status <strong>Published</strong> are not listed, as they have nothing to publish.</p>
-</div>
-<div class="paragraph">
-<p>When a published content is edited and saved, the new version becomes active in <code>draft</code>, but <code>master</code> is unchanged. Change status flips to <strong>Modified</strong>, and the content must be re-published for changes to go live.</p>
-</div>
-<div class="paragraph">
-<p>Content can either be archived or instantly deleted via the <a href="../workbench/archive.ahtml">Archive</a> dialog. Both take the content offline (remove it from <code>master</code>) if it was published. Instant deletion removes it from both branches; archived items move under the <code>/archive</code> node and can be restored.</p>
+<p>See <a href="../workflow.ahtml#change_status">Change status</a> for the meanings of New, Modified, Moved, Published, and Unpublished. To remove content from the active tree and take it offline, use <a href="delete.ahtml#delete">Delete</a>; archived items can be restored or permanently deleted from the <a href="../workbench/archive.ahtml">Archive</a>.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="publishing_wizard"><a class="link" href="#publishing_wizard">Publishing wizard</a></h3>
 <div class="paragraph">
-<p>The <strong>Publishing wizard</strong> opens when <strong>Publish</strong> is invoked. The selected content&#8217;s ascendants and dependencies are automatically included so the published page will not have missing references.</p>
+<p>The wizard lists the selected items, their dependencies, and any conditions that block publishing. Review the included content before confirming. When all checks pass, the status bar displays <strong>Content is ready for publishing</strong> and <b class="button">Publish now</b> becomes available. For a batch with multiple items, the button shows the number of items to publish.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/publish.png" alt="Publishing Wizard showing a ready item, Include child items, an unchecked dependency, Add comment, and Publish now" width="900">
+</div>
+<div class="title">Figure 1. Publishing wizard with an online item whose location has changed and an optional dependency left unchecked</div>
 </div>
 <div class="paragraph">
-<p>In the example below, the post "<em>March madness</em>" was selected for publishing. It has two related <strong>Category</strong> items (<em>/parent</em> and <em>/parent/first-child-category</em>) and one related <strong>Author</strong> item (<em>/authors/michael-lazell</em>) — those are automatically added to the batch, together with all their ascendants. The total count of items to be published appears on the <strong>Publish Now</strong> button.</p>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-The calendar icon next to <strong>Publish Now</strong> enables <a href="#scheduled_publishing">scheduled publishing</a>.
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-If the current user lacks publish permission for any of the batched items, <strong>Publish All</strong> is replaced by <strong><a href="../workflow/issues.ahtml#publish_requests">Request Publishing</a></strong>.
-</td>
-</tr>
-</table>
+<p>The selected items appear above the <strong>Dependencies</strong> list. Click an item&#8217;s name to open it in the Content Editor. The remove control beside a selected item removes it from this publishing batch when allowed; it does not delete the content.</p>
 </div>
 <div class="sect3">
 <h4 id="dependencies"><a class="link" href="#dependencies">Dependencies</a></h4>
 <div class="paragraph">
-<p>Child items of the selection can be added to the batch by clicking the tree icon next to the content. Optional dependencies can be excluded using the checkboxes in the dependency list — confirm with <strong>Apply</strong>.</p>
+<p>Publishing can involve more than the original selection. The wizard resolves related content and includes required dependencies, such as ancestors needed to preserve the content tree. By default, optional dependencies are listed but left unchecked. Select the ones whose changes should be published with the selected content.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Include child items</strong> adds an item&#8217;s descendants to the batch. This checkbox appears beneath selected items with children that have unpublished changes.</p>
+</li>
+<li>
+<p>The checkbox beside a dependency includes or excludes that item. <strong>All</strong> selects or clears the dependencies that can be changed together.</p>
+</li>
+<li>
+<p>Required items have disabled controls. An ancestor may be required because a child is included; exclude the child and apply the change before trying to exclude that ancestor.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/publish-dependencies.png" alt="Dependencies list with one of three items selected and a Hide excluded control" width="830">
+</div>
+<div class="title">Figure 2. Optional dependencies can be selected individually</div>
 </div>
 <div class="paragraph">
-<p>Some checkboxes are disabled: either the item is a required inbound dependency, or it has children in the list (children cannot be published without all their ascendants). In the latter case, exclude the children first, apply, and then the parent becomes excludable.</p>
+<p>Changing the selection displays a blue status bar. Click <b class="button">Apply</b> to confirm the selection and recalculate dependencies and validation, or <b class="button">Cancel</b> to discard the pending selection changes. Applying the selection does not publish content.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/publish-apply.png" alt="Include child items selected with Apply and Cancel controls in the status bar" width="820">
+</div>
+<div class="title">Figure 3. Applying a change to Include child items</div>
+</div>
+<div class="paragraph">
+<p>Use <strong>Hide excluded</strong> to show only included dependencies. <strong>Show excluded</strong> reveals unchecked items again so they can be added back. This changes the list&#8217;s visibility, not which items will be published.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/publish-hide-excluded.png" alt="Dependencies list showing only the selected item with a Show excluded control" width="830">
+</div>
+<div class="title">Figure 4. Excluded dependencies hidden from the list</div>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -617,63 +583,47 @@ If the current user lacks publish permission for any of the batched items, <stro
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-To restore items excluded by mistake, click <strong>Show excluded</strong> above the list and re-select them.
+Administrators can configure optional dependencies to be selected automatically. See <a href="../config.ahtml#exclude_optional_dependencies">Exclude optional dependencies</a> for the setting.
 </td>
 </tr>
 </table>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/dialog-publish-excluded.png" alt="Publishing wizard with excluded dependencies" width="934">
-</div>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-The default inclusion behaviour can be inverted via the <a href="../config.ahtml#exclude_optional_dependencies">Content Studio config file</a> — in that mode, only mandatory dependencies are auto-included and the optional ones must be manually added.
-</td>
-</tr>
-</table>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/dialog-publish-auto-excluded.png" alt="Auto-excluded dependencies" width="747">
-</div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="validation"><a class="link" href="#validation">Validation</a></h4>
 <div class="paragraph">
-<p>The wizard validates the batch before allowing publishing. If any items are invalid, still in progress, or not publishable by the current user, a warning appears and <strong>Publish</strong> is disabled. The problematic items are pinned to the top of the list.</p>
+<p>The wizard checks the included items before allowing publishing. Separate status bars identify <strong>In progress</strong> items, <strong>Invalid items</strong>, and items for which the user lacks publish permission. Publishing remains disabled while blocking conditions remain.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/dialog-publish-invalid.png" alt="Invalid state blocks publishing" width="938">
+<img src="images/publish-blocking.png" alt="Publishing Wizard with separate In progress and Invalid items warnings, Exclude controls, and disabled publishing buttons" width="880">
 </div>
+<div class="title">Figure 5. In-progress and invalid items block publishing</div>
 </div>
 <div class="paragraph">
-<p>Each validation check has a link that excludes the offending items from the batch. Validation re-runs on every change. Once all checks pass, the warning becomes a green "ready to publish" message and the button enables.</p>
+<p>Each warning offers applicable actions:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><b class="button">Mark as ready</b> marks the in-progress items ready together. It does not fix invalid content.</p>
+</li>
+<li>
+<p><b class="button">Exclude</b> removes the affected items from the publishing batch when they are optional. Required items cannot be excluded.</p>
+</li>
+<li>
+<p>Click an item&#8217;s name to open it in the Content Editor, complete or correct its content, and mark it ready individually. The wizard updates its checks when the content changes.</p>
+</li>
+</ul>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/dialog-publish-valid.png" alt="Ready to publish" width="940">
+<img src="images/publish-in-progress.png" alt="Publishing Wizard with an In progress warning and Mark as ready button for a single item" width="900">
 </div>
+<div class="title">Figure 6. A single in-progress item must be marked ready before publishing</div>
 </div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-Use the <strong>Mark as ready</strong> link in the status bar to bulk-mark all in-progress items as ready, or click an individual item&#8217;s link to open it in the Content Editor and mark it ready there. The bulk action can be disabled via the <a href="../config.ahtml#disable_mark_as_ready">Content Studio config file</a> — see <a href="../workflow.ahtml#_in_progress">Workflow</a>.
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p>Once all checks pass, the green ready message replaces the warnings and publishing becomes available. For validation rules and workflow states, see <a href="../workflow.ahtml#_invalid">Invalid content</a> and <a href="../workflow.ahtml#_in_progress">In progress</a>. If another user must publish the content, use <a href="../workflow/issues.ahtml#publish_requests">Request publishing</a>.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -682,22 +632,48 @@ Use the <strong>Mark as ready</strong> link in the status bar to bulk-mark all i
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Some items are required for the batch and cannot be excluded — typically parents and mandatory inbound dependencies.
+The bulk <b class="button">Mark as ready</b> action can be disabled through <a href="../config.ahtml#disable_mark_as_ready">Content Studio configuration</a>. In that case, open and mark each item ready individually.
 </td>
 </tr>
 </table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="publishing_comment"><a class="link" href="#publishing_comment">Publishing comment</a></h4>
+<div class="paragraph">
+<p>Click <b class="button">Add comment</b> to enter an optional comment for the publication. The comment is recorded in the content&#8217;s <a href="../contextpanel/version-history.ahtml">Version history</a>, where it provides context for the published changes. Use <b class="button">Remove comment</b> to discard it before publishing.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/publish-comment.png" alt="Publishing Wizard with a Comment field and Remove comment button" width="900">
+</div>
+<div class="title">Figure 7. Adding a comment to the publication</div>
 </div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="scheduled_publishing"><a class="link" href="#scheduled_publishing">Scheduled publishing</a></h3>
 <div class="paragraph">
-<p>The calendar icon in the <strong>Publishing wizard</strong> opens a scheduling panel at the top of the dialog where you can set the online-from and online-to dates. The <strong>Publish Now</strong> button relabels to <strong>Schedule</strong>.</p>
+<p>When the batch includes content that can be scheduled, <b class="button">Schedule</b> appears beside <b class="button">Publish now</b>. It opens the scheduling fields below the content list:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Online from</strong> sets when the content becomes available. The default <strong>Now</strong> publishes immediately; enter a future date and time to delay publication.</p>
+</li>
+<li>
+<p><strong>Online to</strong> optionally sets when the content is taken offline. This must be later than the start time and in the future.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Click <b class="button">Confirm schedule</b> to submit the schedule. Use <b class="button">Cancel schedule</b> to leave scheduling mode and return to the <b class="button">Publish now</b> controls.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/publishing-wizard-schedule.png" alt="Scheduled publishing" width="937">
+<img src="images/publish-schedule.png" alt="Publishing Wizard with Online from and Online to fields, Cancel schedule, and Confirm schedule" width="900">
 </div>
+<div class="title">Figure 8. Scheduling fields and confirmation controls</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -706,16 +682,19 @@ Some items are required for the batch and cannot be excluded — typically paren
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Only currently-offline items are scheduled. All other changes in the batch are published immediately.
+Only currently-offline items are scheduled. Other changes included in the batch are published immediately.
 </td>
 </tr>
 </table>
+</div>
+<div class="paragraph">
+<p>The default time and whether an explicit <strong>Online from</strong> value is required can be configured. See <a href="../config.ahtml#_default_online_from_time">Default Online from time</a> and <a href="../config.ahtml#_required_online_from">Required Online from</a>. Scheduled and expired items are described under <a href="../workflow.ahtml#publish_state">Publish state</a>.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_publishing_from_the_content_editor"><a class="link" href="#_publishing_from_the_content_editor">Publishing from the Content Editor</a></h3>
 <div class="paragraph">
-<p>When <strong>Publish</strong> is invoked from inside the Content Editor (toolbar button or menu), only the currently-open item is pre-selected in the wizard.</p>
+<p>When <strong>Publish</strong> is invoked from inside the Content Editor, only the currently open item is initially selected. Review its children and dependencies in the wizard just as when publishing from the Navigator.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -724,7 +703,7 @@ Only currently-offline items are scheduled. All other changes in the batch are p
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-Users with publish permission can use <strong>Publish&#8230;&#8203;</strong> on content that is still <strong>In progress</strong> — doing so automatically marks it as ready, on the assumption that requesting publish signals the work is done.
+Users with editing and publishing permissions can publish content that is still <strong>In progress</strong> from the editor. This automatically marks it ready; the content must still pass validation.
 </td>
 </tr>
 </table>
@@ -736,76 +715,14 @@ Users with publish permission can use <strong>Publish&#8230;&#8203;</strong> on 
 <h2 id="publish_tree"><a class="link" href="#publish_tree">Publish tree</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><strong>Publish tree</strong> runs the same wizard as <strong>Publish</strong>, but pre-includes the selection together with all its descendants and their dependencies. Use this when bringing a whole subtree online at once (for example, publishing a freshly-imported section of a site).</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="unpublish"><a class="link" href="#unpublish">Unpublish</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The <strong>Unpublish</strong> action takes currently published content offline by removing it from the <strong>master</strong> branch. All of the content&#8217;s descendants are listed and unpublished along with the selected content; the total count appears on the red <strong>Unpublish</strong> button at the bottom of the dialog.</p>
-</div>
-<div class="paragraph">
-<p>There are two ways to invoke Unpublish:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>The <strong>Unpublish</strong> button in the toolbar — it replaces the <strong>Publish</strong> button when the selection is currently published, or is available from the Publish button&#8217;s dropdown otherwise.</p>
-</li>
-<li>
-<p>The <strong>Unpublish</strong> entry in the context menu (right-click a published item).</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Unpublishing a published item that is also marked for deletion first takes it offline and then deletes it.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/dialog-unpublish.png" alt="Unpublish dialog" width="934">
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-As with deletion, the dialog asks you to confirm by entering the total number of items to unpublish.
-</td>
-</tr>
-</table>
-</div>
-<div class="sect2">
-<h3 id="reference_checks"><a class="link" href="#reference_checks">Reference checks</a></h3>
-<div class="paragraph">
-<p>If any item in the dialog has a <strong>published</strong> inbound dependency (a published content that references it), a warning appears at the top of the dialog and the button is disabled. Two links are available:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Ignore inbound references</strong> — proceed with unpublishing anyway.</p>
-</li>
-<li>
-<p><strong>Show references</strong> — for each referenced item, open its reference list so it can be edited to remove the dependency. Publishing those changes makes the original unpublish safe to proceed.</p>
-</li>
-</ul>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/dialog-unpublish-references.png" alt="Reference check in the Unpublish dialog" width="754">
-</div>
-</div>
+<p><strong>Publish tree</strong> opens the same wizard as <strong>Publish</strong>, with the selection and its descendants included. The wizard also resolves their dependencies. Review the batch, resolve any blocking conditions, and publish or schedule it using the same controls. This is useful when bringing a whole section of the content tree online at once.</p>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-09-23 16:23:12 UTC
+Last updated 2026-09-23 16:59:36 UTC
 </div>
 </div>
 </body>

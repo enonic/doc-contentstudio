@@ -507,7 +507,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>When an item has been published, the workflow state is no longer displayed - as there are no changes to publishing. If a published item is modified, it immediately reverts back to <strong>In progress</strong>.</p>
 </div>
 <div class="paragraph">
-<p>Transitions between the states are driven by four actions: <strong><a href="actions/publish.ahtml#mark_as_ready">Mark as ready</a></strong>, <strong><a href="actions/publish.ahtml#publish">Publish</a></strong>, <strong><a href="actions/publish.ahtml#unpublish">Unpublish</a></strong>, and general creation and editing.</p>
+<p>Transitions between the states are driven by four actions: <strong><a href="actions/publish.ahtml#mark_as_ready">Mark as ready</a></strong>, <strong><a href="actions/publish.ahtml#publish">Publish</a></strong>, <strong><a href="actions/unpublish.ahtml">Unpublish</a></strong>, and general creation and editing.</p>
 </div>
 <div class="sect2">
 <h3 id="_invalid"><a class="link" href="#_invalid">Invalid (blocking)</a></h3>
@@ -657,7 +657,7 @@ Editors with publish permission may still use <strong>Request publishing</strong
 <dl>
 <dt class="hdlist1">Offline</dt>
 <dd>
-<p>The item is not published, and is not visible on the website. This is the default state of a new content item, and <a href="actions/publish.ahtml#unpublish">Unpublishing</a> an item returns it to this state as well.</p>
+<p>The item is not published, and is not visible on the website. This is the default state of a new content item, and <a href="actions/unpublish.ahtml">Unpublishing</a> an item returns it to this state as well.</p>
 </dd>
 <dt class="hdlist1">Online</dt>
 <dd>
@@ -717,7 +717,7 @@ The <code>master</code> branch is unaffected by your edits in the <code>draft</c
 </dd>
 <dt class="hdlist1">Unpublished</dt>
 <dd>
-<p>The item was previously published, and has since been taken offline with <a href="actions/publish.ahtml#unpublish">Unpublish</a>.</p>
+<p>The item was previously published, and has since been taken offline with <a href="actions/unpublish.ahtml">Unpublish</a>.</p>
 </dd>
 <dt class="hdlist1">Published</dt>
 <dd>
@@ -773,7 +773,7 @@ Content items can also be attached to <strong>tasks</strong>, the other issue ty
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-09-23 16:23:12 UTC
+Last updated 2026-09-23 16:59:36 UTC
 </div>
 </div>
 </body>
