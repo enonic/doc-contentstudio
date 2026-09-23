@@ -101,7 +101,7 @@ Known limitations in the current version:
 [[ai_translator]]
 == AI Translator
 
-The AI Translator is a Juke skill for translating content during <<projects/layering#localize,localization>>. It requires the https://market.enonic.com/vendors/enonic/juke-ai-content-translator[Juke AI Content Translator] application.
+The AI Translator is a Juke skill for translating content during <<actions/localize#,localization>>. It requires the https://market.enonic.com/vendors/enonic/juke-ai-content-translator[Juke AI Content Translator] application.
 
 When an editor localizes an inherited item or changes an item's language, the AI Translator detects the change and opens the translation dialog. The dialog identifies the target language and allows the editor to start the translation.
 

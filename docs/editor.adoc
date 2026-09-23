@@ -51,7 +51,7 @@ image::editor-toolbar.png[Annotated Content Editor toolbar showing project navig
 
 Project navigation:: The project name and language identify the active <<projects#,content project>>. Click the project name to return this browser tab to the <<workbench/navigator#,Navigator>> for that project.
 
-Content actions:: Common <<actions#,content actions>> appear on the left. btn:[Save] stores changes in the draft branch. Other actions can include <<actions/delete#,Delete>>, <<actions/duplicate#,Duplicate>>, <<actions/move#,Move>>, <<actions/preview#,Preview>>, and layer-specific actions such as Localize or Reset. Actions that do not fit are placed in the adjacent menu.
+Content actions:: Common <<actions#,content actions>> appear on the left. btn:[Save] stores changes in the draft branch. Other actions can include <<actions/delete#,Delete>>, <<actions/duplicate#,Duplicate>>, <<actions/move#,Move>>, <<actions/preview#,Preview>>, and layer-specific actions such as <<actions/localize#,Localize>> or <<actions/reset#,Reset>>. Actions that do not fit are placed in the adjacent menu.
 
 Content status and name:: The center shows the content's <<workflow#workflow_state,validation or workflow state>> and path name. For inherited content, it also shows the layer indicator. Click the name to open the rename dialog when renaming is permitted.
 

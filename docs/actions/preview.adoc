@@ -1,12 +1,15 @@
 = Preview
 :toc: right
-:imagesdir: images
+:experimental:
 
-The *Preview* action renders a site or page content in a new browser tab as the end user would see it. Unlike the in-editor <<../workbench/preview#,Preview panel>>, the *Preview* action opens the rendered output in a full browser tab — useful for checking responsive behavior, printing, or sharing a draft link.
+The *Preview* action opens the current content preview in a separate browser tab.
 
-There are two ways to invoke Preview:
+NOTE: The new tab uses the preview mode selected in the <<../workbench/preview#,Preview panel>>. For example, selecting *JSON* opens the JSON preview. See <<../workbench/preview#preview_modes,Preview modes>> for the available choices.
 
-* The *Preview* button in the toolbar.
-* The *Preview* entry in the context menu (right-click an item).
+== Opening a preview
 
-NOTE: Preview only opens for content that can be rendered as a page — sites, page templates, and content with a supporting template. For other content types, the action is disabled.
+Choose btn:[Preview] from the <<../workbench/navigator#,Navigator>> or <<../editor#,Content Editor>> toolbar, or *Preview* from an item's right-click menu in the Navigator.
+
+The keyboard shortcut is `Alt + Space` on macOS or `Ctrl + Alt + Space` on Windows/Linux. See <<../keyboard-shortcuts#,Keyboard shortcuts>> for the full reference.
+
+The new tab shows draft content with the full browser viewport available. Opening a preview does not publish the content.

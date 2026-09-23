@@ -1,47 +1,77 @@
 = Actions
 :toc: right
-:imagesdir: actions/images
 
-Actions are the verbs editors use day-to-day on content — creating, editing, moving, publishing, and so on. They are available from three consistent places:
+Content actions create, edit, organize, and publish content. This page summarizes the available actions and links to their detailed references, including actions documented under Workflow, Layers, and Archive.
 
-* The *toolbar* at the top of the <<workbench/navigator#,Navigator>> and the <<editor#,Editor>>.
-* The *context menu* that appears when right-clicking an item in the Navigator.
-* *Keyboard shortcuts* — see the <<keyboard-shortcuts#,Keyboard shortcuts>> reference for the full list.
+== Access and availability
 
-Whether a given action is shown, enabled, or disabled depends on two things: the selection (what content is currently selected) and the user's <<workbench/permissions#,permissions>> on that content.
+Actions are available from the toolbars and their menus in the <<workbench/navigator#,Navigator>> and <<editor#,Content Editor>>. Right-clicking an item in the Navigator opens a context menu with applicable actions. Some actions also have <<keyboard-shortcuts#,keyboard shortcuts>>.
 
-== In this chapter
+The available actions depend on where you are working, the selected content, its <<workflow#,workflow and publish state>>, and your <<workbench/permissions#,permissions>>. An action may be hidden or disabled when it does not apply. For example, *Unpublish* applies to online content, while *Localize* applies to inherited content in a layer.
 
-<<actions/new#,New>>::
-Create a new content item via the *New Content* dialog — either by picking a content type or by uploading a file.
+In the Navigator, actions that support multiple items operate on the selection; actions that require a single item are disabled when several are selected. In the Content Editor, actions apply to the item open in that tab. Some actions are available without a selection, such as *New* and *Create task*.
 
-<<actions/edit#,Edit>>::
-Open one or more selected items in the Content Editor.
+The primary workflow button changes with the content and your permissions, offering actions such as *Mark as ready*, *Publish*, or *Request publishing*. Its menu provides additional workflow and issue actions.
 
-<<actions/duplicate#,Duplicate>>::
-Make a copy of the selected content (optionally including its children).
+== Available actions
 
-<<actions/move#,Move>>::
-Relocate content to a different parent in the tree, preserving children and permissions.
+Each reference explains the action's controls, restrictions, and effects, including how it handles children and dependencies.
 
-<<actions/sort#,Sort>>::
-Configure how child items of the selected content are ordered in the Navigator and on rendered pages.
+[cols="1,3", options="header"]
+|===
+|Action |Purpose
 
-<<actions/preview#,Preview>>::
-Open the rendered page for a site or page content in a new browser tab.
+|<<actions/new#,New>>
+|Create content by choosing a content type or uploading files.
 
-<<workflow#_in_progress,Mark as ready>>::
-Flag in-progress content as done, making it eligible for publishing. Part of the publishing state machine, and documented under <<workflow#,Workflow>>.
+|<<actions/edit#,Edit>>
+|Open selected content in the Content Editor.
 
-<<actions/publish#,Publish>>::
-Push content from the _draft_ branch to _master_ so it becomes available online. Covers the publishing wizard, scheduled publishing, and publishing with dependencies.
+|<<editor#_saving_and_validation,Save>>
+|Store changes to the current item's draft without publishing them.
 
-<<actions/unpublish#,Unpublish>>::
-Remove published content from _master_. Descendants are unpublished along with the selection.
+|<<actions/duplicate#,Duplicate>>
+|Create a copy of selected content.
 
-<<actions/delete#,Delete>>::
-Remove content from the active tree. Deleted items are moved to the <<workbench/archive#,Archive>>, preserving descendants and version history so they can be restored.
+|<<actions/move#,Move>>
+|Move content to a different parent in the content tree.
 
-== Related reference
+|<<actions/sort#,Sort>>
+|Set the order of an item's children.
 
-The publishing state machine — invalid, in progress, ready, and the publish states — is documented under <<workflow#,Workflow>>. *Request publishing* (the review/approval handoff variant of Publish) is a kind of issue — see <<workflow/issues#publish_requests,Publish requests>>. *Permanent delete* (from the archive) and restoring archived items are on the <<workbench/archive#,Archive>> page. The *Create task* entry point is documented under <<workflow/issues#,Issues>>.
+|<<actions/preview#,Preview>>
+|Open the content in a new browser tab using the selected preview mode.
+
+|<<workflow#_ready_for_publishing,Mark as ready>>
+|Mark valid content as ready for publishing.
+
+|<<actions/publish#,Publish>>
+|Make draft content available online immediately or through scheduled publishing.
+
+|<<actions/publish#publish_tree,Publish tree>>
+|Open the Publishing wizard with the selection, its descendants, and their dependencies.
+
+|<<actions/unpublish#,Unpublish>>
+|Take published content offline.
+
+|<<workflow/issues#publish_requests,Request publishing>>
+|Ask another user to review and publish content.
+
+|<<workflow/issues#create_a_task,Create task>>
+|Create an editorial work item with assignees and optional content attachments.
+
+|<<actions/localize#,Localize>>
+|Stop inheriting content data so it can be edited in the current layer.
+
+|<<actions/reset#,Reset>>
+|Replace local values with the parent's values and restore inheritance.
+
+|<<actions/delete#,Delete>>
+|Move content from the active tree to the Archive.
+
+|<<workbench/archive#_restore,Restore>>
+|Return archived content to the active tree.
+
+|<<workbench/archive#_permanent_deletion,Permanent deletion>>
+|Use *Delete* in the Archive to remove archived content permanently.
+|===

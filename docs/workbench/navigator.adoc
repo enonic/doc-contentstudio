@@ -14,28 +14,13 @@ image::navigator.png[Content Studio Navigator showing the content list, preview,
 
 image::navigator-toolbar.png[Navigator toolbar showing search icon, buttons new edit delete duplicate move sort preview and the main workflow action button with dropdown, 961px]
 
-The toolbar contains the following content actions. Buttons are enabled or disabled according to the selection and the current user's permissions:
+The search button on the left opens the <<#search_panel,Search panel>>. Content actions follow it, including *New* for creating content and *Edit* for opening selected items in the Content Editor. Buttons are enabled or disabled according to the selection, content state, and your permissions. See <<../actions#,Actions>> for the available actions and their detailed references.
 
-* *New* — opens the <<../actions/new#,New content>> dialog.
-* *Edit* — opens the selected content for <<../actions/edit#,editing>> in a new browser tab.
-* *Delete* — opens the <<../actions/delete#,Delete>> dialog. Deleted items are moved to the <<archive#,Archive>>.
-* *Duplicate* — makes a <<../actions/duplicate#,copy>> of the selected content.
-* *Move* — opens the <<../actions/move#,Move item(s) with children>> dialog.
-* *Sort* — opens the <<../actions/sort#,Sort items>> dialog for ordering the selected item's children.
-* *Preview* — opens renderable content in a new browser tab; see the <<../actions/preview#,Preview action>>.
+The primary workflow button is on the right. Its main action and menu options change with the selection, the content's <<../workflow#,workflow and publish state>>, and your permissions. For example, it can offer *Mark as ready* for in-progress content or *Request publishing* when you cannot publish the content yourself. Open its dropdown for additional workflow and issue actions.
 
-The action button on the right is context-dependent. Its main action and dropdown options vary with the selection, content status, workflow state, and current user's permissions. Typical actions include:
+image::navigator-workflow-menu.png[Primary workflow button menu, 181px]
 
-image::navigator-workflow-menu.png[Toolbar, 181px]
-
-* *Publish* — opens the <<../actions/publish#publishing_wizard,Publishing wizard>> for content that is not online.
-* *Mark as ready* — changes selected in-progress content to the <<../workflow#_ready_for_publishing,ready for publishing>> workflow state.
-* *Publish Tree* — opens the <<../actions/publish#publish_tree,Publishing wizard>> with the selected content, its descendants, and their dependencies.
-* *Unpublish* — opens the <<../actions/unpublish#,Unpublish wizard>> for content that is online.
-* *Request Publishing* — opens the <<../workflow/issues#publish_requests,Publish Request>> wizard when the current user cannot publish the selected content.
-* *Create Task* — opens the <<../workflow/issues#create_a_task,New Task>> dialog. It is available without a content selection; selected items are attached to the new task automatically.
-
-Applicable actions are also available from the context menu that appears when you right-click a content item in the list.
+Right-click a content item in the list to open a context menu with applicable actions. For actions on several items, use <<#_bulk_selection,Bulk selection>>.
 
 
 [[content_list]]

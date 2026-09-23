@@ -1,38 +1,59 @@
 = New
 :toc: right
 :imagesdir: images
+:experimental:
 
-The *New* action launches the *New Content* dialog for creating content. It can be invoked three ways:
+The *New* action opens the *New Content* dialog. Create an item by choosing a content type, or upload files to create media items.
 
-* Keyboard shortcut — `alt + n`.
-* The *New* button in the toolbar.
-* The *New* entry in the context menu (right-click an item in the Content Navigator).
+== Opening the dialog
 
-image::dialog-new.png[New Content dialog, 723]
+Open the dialog from the <<../workbench/navigator#,Navigator>> using btn:[New] in the toolbar, *New* in an item's right-click menu, or the `Alt + N` keyboard shortcut.
 
-NOTE: The *New Content* dialog uses the current selection as the parent for the new item. If nothing is selected, the new item is created at the root of the project.
+The selected item is the parent for the new content. With nothing selected, content is created at the root of the current project. The heading *Create content in location* shows the destination path; in the example below, new items will be children of `/superhero`.
 
-== New by type
+You need the <<../workbench/permissions#_custom_permissions,Create permission>> at the destination. The parent must also allow the content type you want to create.
 
-The dialog lets you choose from the content types available in the current context. Pick a type and a new content item is created; the Content Editor opens in a new tab.
+.New Content dialog showing the destination and available content types
+image::new.png["New Content dialog at /superhero/ with All, Suggested, and Media tabs", 820px]
 
-The dialog offers three ways to find a type:
+== Choosing a content type
 
-* The full list of all content types available in the current context.
-* The *Most Popular* list — the types most frequently used at this location.
-* The *Recently Used* list — based on your own recent actions.
+The dialog has three tabs:
 
-TIP: Start typing on your keyboard to filter the list by name.
+All:: Lists the content types available at the destination, with an icon, name, and description for each type.
+Suggested:: Provides a selection of suggested content types.
+Media:: Provides the upload area for creating content from files.
 
-image::dialog-new-search.png[Filtered list of content types, 720]
+The list can include built-in types such as *Folder*, *Shortcut*, and *Site*, alongside application-specific types such as *Post* or *Author*. Available types depend on the applications assigned to the project or enclosing site and any restrictions on the parent item. See <<../content-types#,Content types>> for the role of each built-in type.
 
-== New by uploading
+Start typing to filter the content type list by name. A search field appears above the matching types. Click the X inside the search field to clear the filter.
 
-File-based content (images, videos, other media) can be created directly by uploading. The underlying content type is detected automatically from the file's type.
+.Filtering the available types by typing "post"
+image::new-search.png[New Content dialog filtered to show the Post content type, 820px]
 
-There are two ways to upload:
+Selecting a type opens a new item in the <<../editor#,Content Editor>> in a separate browser tab. The selected type determines which fields appear in the content form.
 
-* Click the upload icon in the top right of the dialog.
-* Drag files onto the dialog. Bulk uploading is supported — drop multiple files at once.
+NOTE: Media items are created by uploading files. <<../content-types/fragment#,Fragments>> are created with *Save as Fragment* from a page component, rather than from this dialog.
 
-image::dialog-new-media.png[Drag-and-drop upload, 721]
+== Uploading media
+
+The *Media* tab has an upload area labeled *Click here or drop files to upload*. Click the area to select files from your computer, or drag files onto it. Multiple files can be uploaded together.
+
+.Media tab with the file upload area
+image::new-media.png[Media tab in the New Content dialog with a clickable file drop area, 820px]
+
+Each uploaded file becomes a separate media item at the destination shown in the dialog. Content Studio detects the file's type and chooses the appropriate media content type, such as Image, Video, or Document. You do not need to choose a media type before uploading.
+
+After uploading, open an item in the Content Editor to review its fields and metadata. See <<../content-types/media#,Media>> for file handling and <<../content-types/image#,Image>> for image-specific fields and editing controls.
+
+The maximum file size is controlled by the <<../config#_max_file_upload_size,Content Studio configuration>>.
+
+== New content and publishing
+
+New content is created in the current project's draft and is initially offline. Creating an item or uploading a file does not publish it.
+
+For form-based content, enter a display name and complete the fields in the Content Editor. Content Studio normally generates the path name from the display name. Use btn:[Save] to store changes; required fields and validation errors are shown in the <<../editor/content-form#,Content Form>>.
+
+New items receive a copy of their parent's permissions, or the project's default permissions when created at the project root. See <<../workbench/permissions#,Permissions>> for how access is managed after creation.
+
+When the content is complete and valid, it can be marked ready and <<publish#,published>> through the normal <<../workflow#,workflow>>.

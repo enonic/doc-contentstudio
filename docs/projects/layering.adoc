@@ -117,7 +117,7 @@ The <<../contextpanel/layers#,Layers context panel>> shows the corresponding ite
 [[localize]]
 === Edit and Localize
 
-Inherited content data is read-only. Opening an inherited item in the Content Editor displays the form in a disabled state. Click btn:[Localize] to stop inheriting its content data and enable editing in the current layer.
+Inherited content data is read-only. The <<../actions/edit#,Edit action>> opens an inherited item in the Content Editor with its form in a disabled state. The <<../actions/localize#,Localize action>> in the editor stops content-data inheritance and enables editing in the current layer.
 
 image::layering-disabled.png["Content Editor with a disabled form and the Localize action available for an inherited item", 546px]
 
@@ -154,7 +154,7 @@ The content form continues to inherit parent changes until the item is explicitl
 
 === Reset inheritance
 
-Once an item's content data has been localized, btn:[Reset] is available in the Content Editor. Reset restores inheritance for every dimension that was made local, refreshes those values from the parent, and returns the content data to a read-only state.
+Once an item's content data has been localized, the <<../actions/reset#,Reset action>> is available in the Content Editor. Reset restores inheritance for every dimension that was made local, refreshes those values from the parent, and returns the content data to a read-only state.
 
 image::layering-reset.png["Localized content item with the Reset action available in the Content Editor", 546px]
 

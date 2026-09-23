@@ -1,18 +1,64 @@
 = Duplicate
 :toc: right
 :imagesdir: images
+:experimental:
 
-The *Duplicate* action launches the *Duplicate content* dialog for the selected item.
+The *Duplicate* action creates independent copies of selected content, optionally including its descendants. Each copied item gets its own unique content ID and can be edited and published separately from the original.
 
-There are two ways to invoke it:
+== Opening the dialog
 
-* The *Duplicate* button in the toolbar.
-* The *Duplicate* entry in the context menu (right-click an item).
+In the <<../workbench/navigator#,Navigator>>, select one or more items and choose btn:[Duplicate] from the toolbar or *Duplicate* from the right-click menu. In the <<../editor#,Content Editor>>, Duplicate opens the dialog for the item in that editor tab.
 
-In the dialog, decide whether to copy the children of the selected item along with it by toggling the tree icon to the left of each content row. Clicking *Duplicate* starts the copy; a progress bar appears if the operation takes more than a few seconds.
+== Duplicate content dialog
 
-The copies get fresh IDs. Path names are postfixed with `-copy`, and subsequent copies with `-copy-2`, `-copy-3`, and so on.
+The selected items appear at the top of the dialog. For an item with children, *Include child items* is selected by default. This includes all descendants, preserving their hierarchy. Clear the checkbox to copy only the selected item. If you change the selection, use btn:[Apply] to update the list before duplicating.
 
-image::dialog-duplicate.png[Duplicate items and children, 727]
+Descendants included in the operation appear under *Other items that will be duplicated*. The number on the btn:[Duplicate] button is the total number of items to copy, including the selected items and their included descendants.
 
-NOTE: When *Duplicate* is invoked from inside the Content Editor, only the item in that editor tab is pre-selected in the dialog.
+.Duplicating a folder with its descendants
+image::duplicate.png["Duplicate content dialog with Include child items selected and 16 items to duplicate", 900px]
+
+The paths and state indicators in the dialog describe the source items. The copies receive new paths and initial states as described below.
+
+Click btn:[Duplicate] to start the operation. The dialog displays progress while the items are copied.
+
+== Location and names
+
+Each selected item is copied beside its original, under the same parent in the current project or layer. An item at the project root is copied to that root. Included descendants are created beneath the copied parent, rather than beside their individual originals.
+
+Display name:: The copy keeps the original item's display name. Duplicate does not append "copy" to this label.
+Path name:: The selected item's copy receives a unique path name with a `-copy` suffix. If that name is already taken, Content Studio tries `-copy-2`, `-copy-3`, and so on. Descendants copied as part of the subtree keep their original path names beneath the new parent.
+
+For example, duplicating `/superhero/posts` with its children creates:
+
+[cols="1,1", options="header"]
+|===
+|Original path |Copy path
+
+|`/superhero/posts`
+|`/superhero/posts-copy`
+
+|`/superhero/posts/hello-world`
+|`/superhero/posts-copy/hello-world`
+|===
+
+The copied folder still has the display name *Posts*. Use the <<../editor/content-form#_content_identity,Content Form>> to change its display name, the <<../editor/content-form#_renaming_content,rename dialog>> to change its path name, or <<move#,Move>> to place it under another parent.
+
+== Identity and initial state
+
+Every copied item, including each copied descendant, receives a new <<../editor/content-form#_content_id,content ID>>. Editing the copy does not edit the original, and existing references to the original continue to identify that original item.
+
+Copies are made from the current draft content. They start with these <<../workflow#,states>>, regardless of whether the source is ready, published, or scheduled:
+
+Publish state:: *Offline*. Copies are created in draft and are not published. The original's publishing schedule is not carried over.
+Change status:: *New*. Each copy is a new item that has never been published.
+Workflow state:: *In progress*. Copies must be reviewed and marked ready before publishing. If copied content fails validation, the interface shows *Invalid* instead.
+
+.The copied folder and its descendants are In progress and Offline
+image::duplicate-result.png["Navigator showing posts-copy and its descendants with yellow In progress icons and Offline status", 680px]
+
+The yellow exclamation marks indicate *In progress*. The folder keeps the display name *Posts*, while its path name is `posts-copy`. Duplicating the original again creates `posts-copy-2`, then `posts-copy-3`, as those names are taken. The copied descendants keep their names beneath the new folder.
+
+Duplicating inherited content in a layer creates independent local items. The copies do not retain the originals' inheritance relationship with the parent layer.
+
+Use <<edit#,Edit>> to review the copies and <<publish#,Publish>> when they are ready to go online. The originals retain their existing content and publishing state.

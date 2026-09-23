@@ -1,14 +1,22 @@
 = Edit
 :toc: right
-:imagesdir: images
+:experimental:
 
 The *Edit* action opens selected items in the <<../editor#,Content Editor>>. Each selected item opens in its own browser tab.
 
-There are four ways to invoke Edit:
+== Opening content
 
-* Keyboard shortcut — `⌘ + e` on macOS, `ctrl + e` on Windows/Linux.
-* The *Edit* button in the Content Navigator toolbar.
-* Double-clicking an item in the Navigator grid.
-* The *Edit* entry in the context menu (right-click an item).
+From the <<../workbench/navigator#,Navigator>>, open content using:
 
-For inherited content in a <<../projects/layering#,layer>>, *Edit* is replaced with *Localize* — the same effect, but the action also severs data inheritance from the parent project for that item.
+* btn:[Edit] in the toolbar after selecting one or more items.
+* *Edit* in an item's right-click menu.
+* Double-clicking an item in the content list.
+* `⌘ + E` on macOS or `Ctrl + E` on Windows/Linux for the current selection.
+
+The <<../editor/content-form#,Content Form>> reference describes the fields and controls used to edit an item. For saving changes and handling validation, see <<../editor#_saving_and_validation,Saving and validation>>.
+
+== Inherited content
+
+Use *Edit* to open inherited content in a layer as well. If the item's content data has not been localized, its form is initially read-only. Opening the item does not change its inheritance.
+
+Use <<localize#,Localize>> inside the Content Editor to enable editing of the inherited content data in the current layer.

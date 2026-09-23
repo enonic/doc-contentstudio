@@ -139,6 +139,14 @@
           "document": "actions/edit"
         },
         {
+          "title": "Localize",
+          "document": "actions/localize"
+        },
+        {
+          "title": "Reset",
+          "document": "actions/reset"
+        },
+        {
           "title": "Duplicate",
           "document": "actions/duplicate"
         },

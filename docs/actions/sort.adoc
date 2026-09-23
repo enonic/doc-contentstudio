@@ -1,20 +1,71 @@
 = Sort
 :toc: right
 :imagesdir: images
+:experimental:
 
-The *Sort* action launches the *Sort items* dialog, which configures how the child items of the selected content are ordered — both in the Content Navigator tree and when an application queries for children.
+The *Sort* action configures the default order of an item's direct children in the CMS. Saving stores the selected sort field and direction, or the manual arrangement, as part of the content's draft. This setting persists across sessions and is used by the <<../workbench/navigator#,Navigator>> tree.
 
-There are two ways to invoke Sort:
+Websites, applications, and other API clients can use this stored default order or choose their own sorting when fetching or displaying content. For example, a client can list children alphabetically even when their CMS order is manual. Changing Sort affects clients that use the stored order; it does not enforce an order on every client.
 
-* The *Sort* button in the toolbar.
-* The *Sort* entry in the context menu (right-click an item).
+== Opening the dialog
 
-The default order is by *Modified date* descending. Children can also be sorted by *Created date*, *Display name*, or *Publish date*, ascending or descending. For manual ordering, drag rows into the desired order inside the dialog.
+Select a single parent item in the Navigator and choose btn:[Sort] from the toolbar or *Sort* from its right-click menu. For example, select the *Posts* folder to order the posts inside it.
 
-image::dialog-sort.png[Sort dialog, 730]
+The *Sort items* dialog shows the parent's current order in the *Sort Element* selector and lists its direct children. Sorting this list does not change the order inside each child's own subtree.
 
-Once saved, the parent content gets an icon in the Navigator grid showing the sort order: an up or down arrow for ascending/descending, or a three-bar icon for manual sorting. Clicking the icon reopens the dialog.
+.Sort items dialog showing children ordered by modified date
+image::sort.png["Sort items dialog with Modified date (Old to new) selected and a list of child content", 853px]
 
-In the example below, `/Posts/Featured Image` is sorted by Display name ascending, `/Posts/Gotham Sure Is A Big Town` is sorted by Publish date ascending, and `/Posts` has manual sorting.
+== Automatic ordering
 
-image::dialog-sort-grid.png[Sort indicators in the tree, 741]
+*Modified date* is the initial default, before a different order is saved for the parent. Choose a field and direction from *Sort Element* to configure its stored default order. The available fields are:
+
+[cols="1,3", options="header"]
+|===
+|Field |Order based on
+
+|Modified date
+|When each child was last modified.
+
+|Created date
+|When each child was created.
+
+|Display name
+|The child's display name, in A–Z or Z–A order.
+
+|Published date
+|When each child was first published.
+|===
+
+Date fields offer *New to old* and *Old to new* choices. Selecting an option refreshes the list so you can review the resulting order before saving.
+
+.Sort Element options for automatic and manual ordering
+image::sort-options.png["Expanded Sort Element selector showing date, display name, and Manually sorted options", 820px]
+
+Automatic ordering stores a sorting rule. The resulting order follows that rule as children are added or their values change.
+
+== Manual ordering
+
+Choose *Manually sorted* to arrange the children yourself. Drag rows using the handles on the left and drop them at the desired positions. Dragging a row while an automatic order is selected also switches the dialog to manual ordering.
+
+.Manual ordering with drag handles beside the child items
+image::sort-manual.png["Sort items dialog with Manually sorted selected, reordered children, and Save enabled", 853px]
+
+Items <<new#,created>> under a manually sorted parent are inserted at the top of the list. Items <<move#,moved>> into that parent also appear at the top. The existing children keep their relative order. Reopen Sort to place the new items where you want them, then click btn:[Save].
+
+Selecting an automatic order again replaces the manual arrangement with the order determined by that field.
+
+== Saving and publishing
+
+Click btn:[Save] to store the order in the CMS and apply it in the Navigator. Save is enabled when the selected order or manual arrangement differs from the saved state. Closing the dialog without saving discards the pending changes.
+
+Sorting changes the draft and is recorded as *Sorted* in <<../contextpanel/version-history#,Version history>>. For published content, a changed sort order can give the parent change status *Modified* while its publish state remains *Online*. Sorting does not itself change the workflow state to *In progress*.
+
+.Posts remains Online while its draft is Modified, with a Sorted entry in version history
+image::sort-change-state.png["Navigator showing Posts as Online, Modified change status, and a Sorted entry in Version history", 1440px]
+
+Use <<publish#,Publish>> to make the sorting changes available to applications reading published content. See <<../workflow#,Workflow>> for the distinction between workflow state, publish state, and change status.
+
+== Layers
+
+Changing the order in a layer makes the parent's *Sort* inheritance local. Its content data can continue to inherit from the parent layer. See <<../projects/layering#_rename_move_and_sort,Rename, move, and sort>> for the inheritance rules.

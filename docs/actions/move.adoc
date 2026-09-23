@@ -1,21 +1,55 @@
 = Move
 :toc: right
 :imagesdir: images
+:experimental:
 
-The *Move* action launches the *Move item(s) with children* dialog for the selected content. It relocates the selection — together with all its children and current permissions — to a different parent in the content tree.
+The *Move* action relocates selected content to a different parent in the current project's content tree. All descendants move with their parent, preserving the subtree and its existing permissions.
 
-There are three ways to invoke Move:
+== Opening the dialog
 
-* Select one or more items in the Content Navigator and click the *Move* button in the toolbar.
-* The *Move* entry in the context menu (right-click an item in the Navigator).
-* The *Move* button in the Content Editor toolbar (moves only the currently opened item).
+In the <<../workbench/navigator#,Navigator>>, select one or more items and choose btn:[Move] from the toolbar or *Move* from the right-click menu. The keyboard shortcut is `Alt + M`.
 
-In the dialog, type into the input to search for a new parent, or use the dropdown to browse. The current parent and the item itself are disabled in the dropdown list.
+In the <<../editor#,Content Editor>>, Move applies to the item open in that tab and its descendants.
 
-TIP: The dropdown has a special *Project root* entry at the top. Select it to move the selection to the root of the content project.
+== Selecting a destination
 
-image::dialog-move.png[Move dialog, 980]
+The *Select destination* field identifies the new parent for all selected items. Type to search for content, or open the dropdown to browse the tree. The btn:[Move] button is disabled until a destination is selected.
 
-Once the move completes, a notification appears at the bottom of the screen. If the move was triggered from the Content Navigator, the notification includes the new parent path — click it to locate and expand the new parent in the Navigator.
+.Move dialog before a destination is selected
+image::move.png["Move items with children dialog with an empty destination selector and disabled Move button", 900px]
 
-image::notification-move.png[Move confirmation notification, 672]
+The selected items, their descendants, and their current parents cannot be selected as destinations. The destination must allow the content types being moved. You also need permission to modify the selected items and create content under the new parent; see <<../workbench/permissions#_custom_permissions,Permissions>>.
+
+Choose *Project root* to move the selection to the top level of the current project. This option is unavailable when the selection already contains an item at the project root. Use the X beside a selected destination to clear it and choose another.
+
+.Project root selected as the destination
+image::move-root.png["Move dialog with Project root selected and Move (2) enabled", 900px]
+
+The number on btn:[Move] counts the selected items. Their descendants are moved automatically and are not included in this button count. There is no option to leave children behind. Click btn:[Move] after selecting the destination.
+
+== Moving out of a site
+
+When the destination is outside an item's current <<../content-types/site#,Site>>, including inside a different Site, Content Studio asks for confirmation. Content can depend on its Site's applications and page templates for rendering, so moving it out may make it unreachable as a page.
+
+.Confirmation before moving content out of its Site
+image::move-confirm.png["Confirmation that moving content out of its site might make it unreachable, with Cancel and Confirm buttons", 740px]
+
+Click btn:[Cancel] to return to destination selection, or btn:[Confirm] to proceed. The dialog displays progress during the move and a notification reports completion. In the Navigator, the success notification includes the destination path.
+
+== Effect on the content
+
+Move keeps each item's content ID, display name, and path name. Its full path changes because it has a new parent. For example, moving `/superhero/posts/hello-world` into `/superhero/archive` gives it the path `/superhero/archive/hello-world`. Its descendants' paths change with it.
+
+If the destination already contains an item with the same path name, that item cannot be moved there. Use the <<../editor/content-form#_renaming_content,rename dialog>> to resolve the conflict or choose another destination.
+
+References stored by content ID continue to identify the moved items. Links that use a fixed path or URL may need updating. Moving content can also change its Site context, so review its <<../workbench/preview#,preview>> at the new location.
+
+The moved items retain their existing <<../workbench/permissions#,permissions>>. Moving them under a different parent does not copy that parent's permissions onto them.
+
+=== Publishing
+
+Move changes the draft location. For published content, the live version remains at its previous location until the move is <<publish#,published>>. The draft has change status *Moved*, which can appear alongside *Modified* when it also contains edits. Content that has never been published remains *New*. See <<../workflow#change_status,Change status>> for these indicators.
+
+=== Layers
+
+Move operates within the current project or layer. Moving inherited content makes its *Parent* inheritance local without localizing its content data. See <<../projects/layering#_rename_move_and_sort,Rename, move, and sort>> for the effects on inheritance.
