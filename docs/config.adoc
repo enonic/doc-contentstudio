@@ -1,35 +1,13 @@
 = Configuration file
 :toc: right
-:imagesdir: config/images
 
-This section describes how to configure Content Studio via the config file.
+Configure Content Studio by adding properties to its configuration file. Each setting below describes the behavior it controls.
 
 .Add config properties to this file:
 [source,filename]
 ----
 $XP_HOME/config/com.enonic.app.contentstudio.cfg
 ----
-
-== Enable Rich Text component
-
-[source,properties]
-----
-settings.enableTextComponent=true
-----
-
-Rich Text component was deprecated in Content Studio 6.0. The setting above will enable it.
-
-== Matching mode for content type patterns
-
-[source,properties]
-----
-contentTypePatternMode = MATCH
-----
-
-Defines matching mode for content type patterns. Can be `MATCH` or `LEGACY`. Default: `MATCH`.
-See https://developer.enonic.com/docs/cms/stable/schemas/form-items/contentselector#allowContentType[description].
-
-
 
 == Max file upload size
 
@@ -38,8 +16,7 @@ See https://developer.enonic.com/docs/cms/stable/schemas/form-items/contentselec
 uploadMaxFileSize = 100mb
 ----
 
-Used for setting size limit on attachments, media content and both project and content thumbnail uploads
-
+Sets the maximum size of an individual uploaded file. The limit applies to attachments, media content, and project and content thumbnails. The default is `100mb`.
 
 [[disable_path_name_transliteration]]
 == Disable path name transliteration
@@ -49,43 +26,11 @@ Used for setting size limit on attachments, media content and both project and c
 contentWizard.allowPathTransliteration=false
 ----
 
-Turn off automatic transliteration of name when generating it based on a value typed into the display name field in the Content form.
-
-
-== Content Security Policy
-
-Enonic XP and Content Studio enforces several layers of Content Security Policy (CSP) to prevent cross-site scripting, clickjacking and other code injection attacks resulting from execution of malicious content in the trusted web page context.
-
-You may override the default CSP header via the `contentSecurityPolicy.header` property.
-
-=== Widgets
-Content Studio uses widgets from other applications extensively. As widgets are loaded into Content Studio's context, they must comply with the Content Studio CSP.
-
-By default, widgets with inline scripts/styles or scripts loaded from external domains will be blocked.
-
-==== Example: Google Analytics Widget
-
-The https://market.enonic.com/vendors/enonic/google-analytics[Google analytics app] injects its own scripts referring to an external domains. See CSP example in the https://developer.enonic.com/docs/google-analytics/stable#content_security_policy[GA app documentation].
-
-==== Example: Disable CSP
-
-If you trust all of the widgets you use in Content Studio, you may disable the CSP completely:
-
-[source,properties]
-----
-contentSecurityPolicy.enabled=false
-----
-
-=== Site Engine Preview
-Content Studio's preview uses an iFrame to isolate the client-side assets from interfering with the Content Studio's own.
-
-In production, front-ends built with the Enonic site engine deployed on custom domains. In preview mode however, the site engine is accessed in the same domain and URL context as Content Studio. To mitigate this, Site Engine has a standard preview CSP to protect Content Studio and the XP admin.
-
-If your site is not working properly in preview mode, consider improving the implementation. Details on tuning the Site Engine CSP are described in the  https://developer.enonic.com/docs/xp/stable/deployment/config#admin[XP configuration documentation].
-
-NOTE: While using Site Engine in visual edit mode, the CSP is strictly enforced, and is currently not possible to override.
+By default, Content Studio transliterates characters when generating an item's path name from its display name. Set `contentWizard.allowPathTransliteration` to `false` to disable this conversion. The display name itself is unaffected.
 
 == Publishing Wizard
+
+These settings control readiness actions, scheduling, and the initial dependency selection in the <<actions/publish#publishing_wizard,Publishing wizard>>.
 
 [[disable_mark_as_ready]]
 === Disable "Mark as Ready" action
@@ -95,14 +40,9 @@ NOTE: While using Site Engine in visual edit mode, the CSP is strictly enforced,
 publishingWizard.allowContentUpdate = false
 ----
 
-Whenever the Publishing Wizard contains at least one item that is "_Work in progress_", publishing will be disabled. The editor can solve
-this by clicking the "*Mark as ready*" link on top of the dialog, which will mark all such items as "_Ready for Publishing_".
+By default, the Publishing wizard offers a bulk *Mark as ready* action when the batch contains *In progress* items. Set `publishingWizard.allowContentUpdate` to `false` to disable this bulk action. Users must then open and mark each item ready individually before publishing it.
 
-image::pubwiz-mark-as-ready.png[Mark as ready action in the Publishing Wizard, 823w]
-
-To add another level of restriction and prevent accidental publishing of items that are not ready for publishing, the "*Mark as ready*" bulk action
-can be disabled by adding the parameter above to the config file.
-
+This setting does not change the readiness or validation requirements for publishing. See <<actions/publish#mark_as_ready,Mark as ready>> for the available actions.
 
 === Default "Online from" time
 
@@ -111,22 +51,20 @@ can be disabled by adding the parameter above to the config file.
 publishingWizard.defaultPublishFromTime = 12:00
 ----
 
-The default value can be changed by setting the `publishingWizard.defaultPublishFromTime` config property.
+Sets the default time offered when choosing an *Online from* date for <<actions/publish#scheduled_publishing,scheduled publishing>>. Use the 24-hour format `HH:mm`; the default is `12:00`. Users can change the time before confirming the schedule.
 
-image::pubwiz-online-from.png[Default Online From time in the Publishing Wizard, 754w]
-
+This setting does not automatically schedule content for that time. Without an explicit start date and time, *Online from* uses *Now* unless the field is configured as required below.
 
 === Required "Online from"
-
-By default, when scheduling new publishing the "Online from" field will be preset to "Now", which means that the content will go online immediately. It's possible to make this field mandatory to make sure the user explicitly sets the date/time when the content will go online.
 
 [source,properties]
 ----
 publishingWizard.requiredPublishFrom = true
 ----
 
-image::pubwiz-required-publish-from.png[Publishing Wizard - Required "Online from", 821w]
+By default, `publishingWizard.requiredPublishFrom` is `false`: users can leave *Online from* unset when scheduling, which means *Now*. Set it to `true` to require an explicit start date and time before a schedule can be confirmed.
 
+This requirement applies when scheduling; it does not disable the *Publish now* action.
 
 [[exclude_optional_dependencies]]
 === Exclude optional dependencies
@@ -136,12 +74,72 @@ image::pubwiz-required-publish-from.png[Publishing Wizard - Required "Online fro
 publishingWizard.excludeDependencies = false
 ----
 
-By default, only mandatory dependencies (ascendant items and inbound references) of the content staged for publishing will be automatically loaded and displayed in the list of dependencies in the Publishing Wizard with checkboxes selected and disabled. Optional dependencies (like outbound references) will be loaded as well, but they will *not* be preselected and can be added to the publishing batch manually by the user.
+Controls whether optional dependencies are initially selected for publishing. The default is `true`: optional dependencies, such as referenced content, appear in the wizard but are left unchecked. Users choose which ones to include.
 
-It's possible to overrule this behavior and preselect all the dependencies – both mandatory and optional – by setting the `publishingWizard.excludeDependencies` config property to `false`. This will ensure that the content will be published with no broken references.
+Set `publishingWizard.excludeDependencies` to `false` to preselect optional dependencies as well. Users can still exclude optional items before publishing. Required dependencies, such as ancestors needed to preserve the content tree, remain included regardless of this setting.
 
-.Only mandatory dependencies (default behaviour)
-image::pubwiz-dependencies-mandatory.png[Publishing Wizard - mandatory dependencies, 822w]
+See <<actions/publish#_dependencies,Publishing dependencies>> for reviewing and changing the batch.
 
-.All dependencies
-image::pubwiz-dependencies-all.png[Publishing Wizard - all dependencies, 821w]
+== Content Security Policy
+
+Content Security Policy (CSP) controls which scripts, styles, images, frames, and network connections a page may use. Content Studio applies a policy to its interface, while content rendered through the *XP Site service* preview has a separate policy.
+
+Both policies can be customized in `com.enonic.app.contentstudio.cfg`.
+
+=== Extensions
+
+Applications contribute extensions to Content Studio, such as <<contextpanel#,Context panels>>. Extensions rendered inside the Content Studio interface must comply with its CSP. Loading scripts, calling APIs, or embedding frames from external domains may require additional allowed sources.
+
+==== Customize the policy
+
+Set `contentSecurityPolicy.header` to allow the resources your extensions need while keeping CSP enabled. For example, this policy allows connections to `https://api.example.com` alongside the sources used by Content Studio:
+
+[source,properties]
+----
+contentSecurityPolicy.header = default-src 'self'; connect-src 'self' ws: wss: https://market.enonic.com https://api.example.com; script-src 'self' 'unsafe-inline'; object-src 'none'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:
+----
+
+Replace the example API origin with the required origin. Keep the configured Market API origin if your installation uses a different one. Use `script-src` for scripts, `connect-src` for API connections, and `frame-src` for embedded frames.
+
+NOTE: In Content Studio 6.0, `contentSecurityPolicy.header` replaces the complete default policy. Include all directives and sources needed by Content Studio as well as the extension; a single extra directive is not appended to the default.
+
+The https://market.enonic.com/vendors/enonic/google-analytics[Google Analytics app] is an example of an extension that loads external resources. See its https://developer.enonic.com/docs/google-analytics/stable#content_security_policy[CSP configuration example] for the sources it requires.
+
+==== Disable the policy
+
+To disable Content Studio's own CSP, set:
+
+[source,properties]
+----
+contentSecurityPolicy.enabled = false
+----
+
+Customizing the allowed sources keeps the rest of the policy in effect. Disabling this policy does not disable the separate XP Site service preview policy.
+
+=== XP Site service preview
+
+The *XP Site service* <<workbench/preview#preview_modes,preview mode>> renders content using XP's Site service. The Preview panel displays it in an iframe, while the <<actions/preview#,Preview action>> opens it in a separate tab. These previews run under the admin origin, so their resource requirements may differ from those of the public site.
+
+Use `site.preview.contentSecurityPolicy` to customize the fallback policy for this content. In Content Studio 6.0, it applies in preview and inline modes when the rendered response does not already provide a `Content-Security-Policy` header. If the application supplies its own header, its developers must update that policy instead.
+
+For example, this preview policy allows scripts from `https://cdn.example.com`:
+
+[source,properties]
+----
+site.preview.contentSecurityPolicy = default-src 'self'; base-uri 'self'; form-action 'self'; script-src 'self' https://cdn.example.com; object-src 'none'; img-src * data:; style-src * 'unsafe-inline'; font-src * data:
+----
+
+This setting supplies a complete fallback policy. Adjust the required resource directives and keep the remaining restrictions appropriate for the site.
+
+NOTE: Visual editing in the <<editor/page-editor#,Page Editor>> uses its own CSP. Neither `contentSecurityPolicy.header` nor `site.preview.contentSecurityPolicy` customizes that editing policy.
+
+== Legacy and deprecated features
+
+=== Enable Rich Text component
+
+[source,properties]
+----
+settings.enableTextComponent=true
+----
+
+The Rich Text component was deprecated in Content Studio 6.0. The setting above re-enables insertion of this component. See <<editor/page-editor#text,Text component>> for its behavior.

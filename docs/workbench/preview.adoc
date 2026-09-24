@@ -32,7 +32,7 @@ By default, the panel offers the following preview modes:
 
 * *Automatic* — picks the first mode that supports the current content. This is the default.
 * *Media* — for image, video and other media content types. Shows the media itself at its original resolution, with basic metadata.
-* *Standard* — uses Enonic's built-in framework to render the content.
+* *XP Site service* — renders content using XP's Site service. See <<../config#_xp_site_service_preview,Preview CSP configuration>> for controlling the resources it can load.
 * *JSON* — displays the current content in JSON format. Available for any content, but not used as a fallback by *Automatic*.
 
 
