@@ -1,141 +1,128 @@
 = Issues
 :toc: right
 :imagesdir: images
+:experimental:
 
-There are two types of issues in Content Studio: *tasks* and *publish requests*. Both are lightweight work items with assignees, comments, and an Open/Closed state — the *Open Issues* dialog lists both together on separate tabs.
+Issues coordinate editorial work within a project. Content Studio supports two types:
 
-*<<#tasks,Tasks>>* are general editorial work items — "spellcheck this article", "add new content to this section". They carry no workflow meaning: attaching content to a task does not affect the item's <<../workflow#,workflow or publish state>>.
+* *General issues* track tasks such as checking an article or updating a set of authors. They can have assignees, comments, and optionally a selection of content items.
+* *<<#publish_requests,Publish requests>>* ask another user to review and publish one or more content items. Content is mandatory. They include the controls needed to review the publishing batch and publish or schedule it.
 
-*<<#publish_requests,Publish requests>>* ask another user to review and publish content. They are the standard path for an editor who lacks publish permission, and are also useful when the editor has permission but wants a reviewer to sign off before content goes live.
+Both types have an *Open* or *Closed* status. This status belongs to the issue: creating, assigning, or manually closing an issue does not change the attached content's <<../workflow#,workflow or publish state>>.
 
 [[issues_list]]
 == Issues list
 
-"*Open Issues"* button in the Content Studio header opens the modal dialog with the list of issues (both tasks and publish requests).
-If there are no active issues, the button will say "*No Open Issues*".
+Click *Open issues* in the Content Studio header to open the Issues dialog for the current project. The header shows the number of open issues; when there are none, it displays *No open issues*.
 
-image::issues-header.png[Issues button, 478]
+.Open the issues overview from the header, or create an issue from the toolbar menu
+image::Issues-bar.png["Content Studio header with Open issues and the toolbar menu's Create issue action", 900]
 
-The list by default shows all active issues. Use Open/Closed toggler to switch between Open and Closed issues.
+The dialog lists general issues and publish requests together. Each row shows its number, title, creator, creation time, and status. A hash icon identifies a general issue; a globe identifies a publish request. Click a row to open its details, or btn:[New Issue] to create a general issue.
 
-image::issues-list.png[Issues list, 719]
+.General issues and publish requests in the same list
+image::issues-list.png["Issues dialog listing two general issues and a publish request, with Open and Closed tabs and New Issue button", 900]
 
-TIP: Tasks and Publish Requests are using different icons to make it easier to distinguish them.
+Use the *Open* and *Closed* tabs to choose the status, and the *Filter* selector to narrow the list:
 
-By using the filter above the list you can narrow down the list to issues assigned to current user, created by current user,
-only Publish Requests or only task. By default, if you have any active issues assigned to you, the filter will be preset to show you only them.
+* *All* — both issue types.
+* *Assigned to Me* — issues assigned to the current user.
+* *Created by Me* — issues created by the current user.
+* *Publish requests* — requests for review and publishing.
+* *Issues* — general editorial issues.
 
-image::issues-list-filter.png[Filter in the Issues list, 716]
+Counts show how many entries match each choice. Choices with no matching entries are disabled.
 
-To create a new task, click the <<#create_a_task,`New Task…`>> button.
-
-Clicking on an issue from the list will open the <<#update_an_issue,issue details dialog>>.
+.Filtering by involvement or issue type
+image::issues-filter.png["Issues filter showing All, Assigned to Me, Created by Me, Publish requests, and Issues", 900]
 
 [[tasks]]
-== Tasks
+== General issues
+
+A general issue describes work to be done. It can exist without attached content, and attaching an item does not mark it ready or publish it.
 
 [[create_a_task]]
-=== Create a task
+=== Create an issue
 
-To create a new task, click "Create Task..." button in the Content Studio toolbar.
+Use btn:[New Issue] in the Issues list or *Create issue* in the toolbar menu. When started from selected content, the selection is added to the new issue.
 
-image::create-task-1.png[Create Task, 372]
+The *New Issue* dialog contains a required *Title*, an optional *Description*, and an *Assignees* selector. Choose one or more users to involve in the work, or leave the issue unassigned. Content can be linked to the issue through the *Items* selector.
 
-If some content items are selected in the Content Navigator, you can expand the toolbar menu and select either "Create Task..." or "Request Publishing...".
-In this case selected items will be automatically added to a new issue you are about to create.
+.Creating a general issue and selecting assignees
+image::issue-create.png["New Issue dialog with Title, Description, Assignees selector, and Create issue button", 900]
 
-image::create-task-2.png[Create Task, 372]
-
-You can assign multiple users to work on an issue, using the *Assignees* selector, but you can't assign yourself.
-
-To add specific content to an issue, click on the `Add items` button. The *Items* selector will appear.
-
-image::dialog-issue-1.png[New task, 708]
+Click btn:[Create issue] to save the issue and open its details. You can update its content and assignments afterwards.
 
 [[update_an_issue]]
-=== Update an issue
+== Issue details
 
-To modify an issue, click on it in the <<#issues_list,*Issue list*>> dialog. It will open the dialog with three tabs.
+The details dialog shows the title and issue number, a status selector, and tabs for comments, content, and assignees. Tab counts show the number of entries. Use btn:[Back to issues] to return to the list.
 
-Click the title to edit it, then click anywhere outside of the text field to save the changes.
+Click the title to edit it. Use the status selector to change an issue from *Open* to *Closed* when the work is complete, or reopen it if further work is needed. Closing preserves the issue and its discussion in the *Closed* list. Reopen a closed issue before changing its title, comments, content, or assignees.
 
-Under the title you will see the status of the current issue. It can be `Open` or `Close`. Click this button to change the issue status.
-Altenatively, you can use `Close Task` button (for an active issue) or `Reopen Task` (for a closed issue).
+=== Comments
 
-image::dialog-issue-edit-1.png[Issue title and comments, 714]
+The *Comments* tab holds the discussion, including the description or comment supplied when the issue was created. Enter text in the *Comment* field and click btn:[Comment] to post it. The menu beside a comment provides *Edit* and *Delete* when those actions are available to you.
 
-==== Comments
+.An issue's discussion and status selector
+image::issue-view.png["Open issue with Comments, Items, and Assignees tabs, existing comments, and a Comment field", 900]
 
-The first tab shows comments on the current issue. Comments can be added by clicking the `Comment` button.
+=== Items
 
-TIP: When you are in the comment field, "Close Task" button changes to "Comment & Close Task" to comment and close with one click.
+For a general issue, the *Items* tab lists its attached content. Search or browse with the selector to add items. Click an item's name to open it in the Content Editor; use the remove control beside it to detach it from the issue. Removing an attachment does not delete the content.
 
-To *edit* or *delete* a comment, click on the *kebab* icon to the right of the comment, that will show the menu with those two options.
-The number next to the tab title shows the total number of comments.
+.Content attached to a general issue
+image::issue-items.png["Issue Items tab with a content selector and two attached authors, each with a remove control", 900]
 
-==== Items
+Publish requests use a *Publish request* tab instead, with publishing states, dependencies, and publishing controls. See <<#_the_publish_request_dialog,The publish request dialog>>.
 
-On the second tab, you can update the list of content items in this issue.
-There can be multiple items or no content at all.
-Child/dependent items of the selected content can be toggled by clicking on the tree icon next to the content item.
+=== Assignees
 
-If you are inside a *task* and click the `Publish...` button, you will be taken to the Publishing Wizard where you can publish items immediately
-or schedule publishing.
-For a _Publish Request_ you can publish items or schedule publish directly from this dialog.
+The *Assignees* tab shows the users assigned to the issue. Search for users to add them, or use the remove control beside an assignee to remove their assignment. Multiple users can be assigned to the same issue.
 
-The number next to the tab title shows the total number of content items inside the issue.
-
-image::dialog-issue-edit-2.png[Issue content, 700]
-
-==== Assignees
-
-On the third tab, assignees can be added and removed from this issue. The number next to the tab title shows the total number of assignees.
-
-image::dialog-issue-edit-3.png[Issue assignees, 700]
+.Managing the people assigned to an issue
+image::issue-assignees.png["Issue Assignees tab with a user selector and an assigned user with a remove control", 900]
 
 [[publish_requests]]
 == Publish requests
 
-A *publish request* asks another user to review and publish one or more content items.
+A publish request hands content to another user for review and publishing. Use it when you lack publish permission, or when you want another person to review your changes before they go live. Creating the request does not publish the content.
+
+A request wraps the <<../actions/publish#publishing_wizard,Publishing wizard>> in an issue, adding a title, assignees, discussion, and an Open/Closed status. The content selection, dependencies, readiness checks, validation, and publishing controls follow the same rules as the wizard.
+
+A publish request must contain at least one content item. General issues can be created without content, but a publish request needs a publishing batch for the reviewer to act on.
 
 [[create_a_publish_request]]
 === Create a publish request
 
-The *Request publishing* action is available from the same places as <<../actions/publish#publish,Publish>> — the toolbar, the context menu, and the Content Editor — but it replaces the *Publish* button for users without publish permission.
+Select one or more content items and choose *Request publishing* from the toolbar or context menu. For users without publish permission, it is the primary publishing action once content is ready.
 
-The Publish Request wizard has two steps.
+.Request publishing from the toolbar menu
+image::publish-request-action.png["Navigator with ready content selected and Request publishing in the toolbar menu", 1100]
 
-*Step 1.* Review the items to be published together with their dependencies — the same tree the Publishing wizard would show.
+The *Request publishing* dialog combines the request details and its content in one form. Enter a required *Title*, optionally *Add a comment*, and select assignees to review the request.
 
-image::request-publishing-wizard-1.png[Publish Request wizard — step 1, 660]
+.Describing the request and choosing reviewers
+image::publish-request-create.png["Request publishing dialog with readiness status, Title, Add a comment, Assignees, and Create request button", 900]
 
-*Step 2.* Describe the changes (required) and pick one or more assignees who will receive the request.
+Review the *Items* and *Dependencies* further down in the same dialog. *Include child items* adds descendants where available, and the dependency checkboxes control which related items are included. Selection changes must be applied before continuing. See <<../actions/publish#_dependencies,Publishing dependencies>> for these shared controls.
 
-image::request-publishing-wizard-2.png[Publish Request wizard — step 2, 671]
+.Reviewing the content included in the request
+image::publish-request-items.png["Lower portion of Request publishing with selected content, Include child items, a dependency, and Create request button", 900]
 
-Clicking *Create request* creates the publish request and opens its detail dialog.
+The status bar reports readiness. Resolve any blocking conditions before submitting; see <<../actions/publish#mark_as_ready,Mark as ready>> and <<../actions/publish#_validation,Publishing validation>>. Click btn:[Create request] to create the request and open its details. For multiple included items, the button displays the item count.
 
 === The publish request dialog
 
-The publish request dialog looks much like an Issue dialog, with one important difference: the *Items* tab includes a *Publish now* button so a reviewer can publish directly from the dialog. The calendar icon at the bottom toggles a scheduling form to set online-from/online-to dates.
+A publish request opens on its *Publish request* tab, which presents the Publishing wizard's controls within the issue. It shows the current content states, included items and dependencies, and any conditions that block publishing. Use the content selector to add items, or adjust the existing selection and apply the changes.
 
-image::publishing-request-1.png[Publish request dialog, 673]
-image::publishing-request-2.png[Publish request with scheduling, 673]
+.Reviewing and publishing an open request
+image::publish-request-view.png["Publish request details with readiness status, content selector, selected content and dependency, Schedule, and Publish now", 900]
+
+The *Comments* and *Assignees* tabs work as described under <<#update_an_issue,Issue details>>. Use comments to discuss changes or ask the author to revise the content before publishing.
+
+A reviewer with publish permission can use btn:[Publish now] to publish the included changes, or btn:[Schedule] to set publishing dates. The same <<../actions/publish#_validation,validation>> and <<../actions/publish#scheduled_publishing,scheduling rules>> apply as in the Publishing wizard. After a successful publishing operation, the request is closed automatically.
 
 === Find a publish request
 
-Publish requests appear in the same <<#issues_list,*Open Issues*>> dialog as tasks, on a dedicated *Publish requests* tab.
-
-image::publishing-request-list.png[Publish request list, 701]
-
-When the currently-edited content is part of an open publish request, the default toolbar action in the Content Editor becomes *Open request* — clicking it jumps to the most recent open request containing the item.
-
-image::publishing-request-toolbar.png[Open request toolbar button, 494]
-
-The full list of open issues and publish requests containing this item is available from the dropdown next to the main button.
-
-image::publish-button-menu.png[Issues and publish requests menu]
-
-The same list is also shown in the Preview-panel toolbar in the <<../workbench/navigator#,Navigator>>.
-
-image::issues-toolbar.png[Issues menu in the Preview toolbar]
+Open the <<#issues_list,Issues list>> and select the *Publish requests* filter. Use *Open* to find requests awaiting work, or *Closed* to find completed requests and their discussions. Closing a request manually does not publish its content.

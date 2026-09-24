@@ -9,7 +9,7 @@ Actions are available from the toolbars and their menus in the <<workbench/navig
 
 The available actions depend on where you are working, the selected content, its <<workflow#,workflow and publish state>>, and your <<workbench/permissions#,permissions>>. An action may be hidden or disabled when it does not apply. For example, *Unpublish* applies to online content, while *Localize* applies to inherited content in a layer.
 
-In the Navigator, actions that support multiple items operate on the selection; actions that require a single item are disabled when several are selected. In the Content Editor, actions apply to the item open in that tab. Some actions are available without a selection, such as *New* and *Create task*.
+In the Navigator, actions that support multiple items operate on the selection; actions that require a single item are disabled when several are selected. In the Content Editor, actions apply to the item open in that tab. Some actions are available without a selection, such as *New* and *Create issue*.
 
 The primary workflow button changes with the content and your permissions, offering actions such as *Mark as ready*, *Publish*, or *Request publishing*. Its menu provides additional workflow and issue actions.
 
@@ -57,7 +57,7 @@ Related actions share a page; the links below open the relevant action or sectio
 |<<workflow/issues#publish_requests,Request publishing>>
 |Ask another user to review and publish content.
 
-|<<workflow/issues#create_a_task,Create task>>
+|<<workflow/issues#create_a_task,Create issue>>
 |Create an editorial work item with assignees and optional content attachments.
 
 |<<actions/localize#localize,Localize>>

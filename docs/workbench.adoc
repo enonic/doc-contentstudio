@@ -13,7 +13,7 @@ TIP: The <<editor#,Editor>> is not part of the Workbench — it opens in a separ
 The horizontal bar across the top of the window. It carries application-wide controls that are not specific to any single menuitem:
 
 * The *project context selector* on the left — switches between the projects and layers the current user has access to. Every menuitem (except Settings, see below) inherits the selected project as its context.
-* An *open issues* indicator showing the number of unresolved <<workflow/issues#,issues>> in the current project, with a dropdown to jump into them.
+* An *Open issues* button showing the number of unresolved issues in the current project. Click it to open the <<workflow/issues#issues_list,Issues list>>.
 * The current user's avatar and the XP admin menu on the right.
 
 [[menuitems]]
