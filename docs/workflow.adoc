@@ -57,7 +57,7 @@ NOTE: Validity is not a stored state — unlike *In progress* and *Ready* it is 
 [[_in_progress]]
 === In progress (blocking)
 
-The default state of a new content item. Signals that the content is being worked on; it will stay in this state until the editor explicitly marks it as ready, or until a publisher overrides and publishes it directly.
+The default state of a new content item. Signals that the content is being worked on; it will stay in this state until explicitly <<actions/publish#mark_as_ready,marked as ready>>.
 
 `In-progress` state *blocks publishing* — this is deliberate, to keep unfinished content from being published by accident. Whenever a batch contains at least one in-progress item, the <<actions/publish#publishing_wizard,Publishing wizard>> disables *Publish*, shows a warning, and pins the offending items to the top of the list:
 

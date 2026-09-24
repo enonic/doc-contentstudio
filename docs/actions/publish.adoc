@@ -8,21 +8,35 @@ This page covers marking content ready and publishing its draft. To take publish
 [[mark_as_ready]]
 == Mark as ready
 
-Use *Mark as ready* in the Content Editor or Content Navigator to mark valid, in-progress content as ready for publishing. The action is disabled for invalid content. After marking, the Publishing wizard opens automatically; marking an item ready does not itself publish it.
+The *Mark as ready* action marks valid, in-progress content as ready for publishing. It is disabled for invalid content. Marking an item ready does not itself publish it.
 
-The toolbar then offers *Publish* or *Request publishing*, depending on your permissions. Editing the item again returns it to *In progress*. See <<../workflow#_ready_for_publishing,Ready for publishing>> for workflow states and indicators, and <<#_validation,Publishing validation>> for marking items ready within a publishing batch.
+Editing a ready item again returns it to *In progress*. See <<../workflow#_ready_for_publishing,Ready for publishing>> for workflow states and indicators.
+
+=== From the Navigator or Editor
+
+Use *Mark as ready* in the Content Navigator for the selected content, or in the Content Editor for the open item. After marking, the Publishing wizard opens automatically. The toolbar then offers *Publish* or *Request publishing*, depending on your permissions.
+
+=== In the Publishing wizard
+
+If the publishing batch contains in-progress items, the wizard displays an *In progress* warning. Click btn:[Mark as ready] in that warning to mark the in-progress items ready together. This does not fix invalid content; other <<#_validation,blocking conditions>> must also be resolved before publishing.
+
+.A single in-progress item must be marked ready before publishing
+image::publish-in-progress.png["Publishing Wizard with an In progress warning and Mark as ready button for a single item", 900]
+
+To handle items individually, click an item's name to open it in the Content Editor, complete its content, and mark it ready there. The wizard updates its checks when the content changes.
+
+NOTE: The bulk btn:[Mark as ready] action can be disabled through <<../config#disable_mark_as_ready,Content Studio configuration>>. In that case, open and mark each item ready individually.
 
 [[publish]]
 == Publish
 
 Publishing makes the current draft of an item available online, subject to its <<../workbench/permissions#,permissions>>. New content must be published before it is available to end users, and changes to online content must be published again to go live.
 
-Before an item can be published, it must be valid and marked as ready. Users with editing and publishing permissions can also publish in-progress content directly from the editor; see <<#_publishing_from_the_content_editor,Publishing from the Content Editor>>.
+Before an item can be published, it must be valid and explicitly <<#mark_as_ready,marked as ready>>. The same readiness and validation rules apply whether publishing starts from the Content Editor or the Navigator.
 
 Open the *Publishing Wizard* using:
 
-* *Publish* in the toolbar or its menu.
-* *Publish* in an item's right-click menu in the Navigator.
+* *Publish* from the toolbar or context menu.
 * `⌘ + alt + p` on macOS or `Ctrl + Alt + P` on Windows/Linux.
 
 The toolbar's default action depends on the selection's state and your permissions. Its menu also provides related <<../actions#,content actions>>, including <<#publish_tree,Publish tree>>, <<unpublish#,Unpublish>>, and <<../workflow/issues#publish_requests,Request publishing>>. Use a publish request when another user needs to review or publish the content.
@@ -45,7 +59,7 @@ See <<../workflow#change_status,Change status>> for the meanings of New, Modifie
 The wizard lists the selected items, their dependencies, and any conditions that block publishing. Review the included content before confirming. When all checks pass, the status bar displays *Content is ready for publishing* and btn:[Publish now] becomes available. For a batch with multiple items, the button shows the number of items to publish.
 
 .Publishing wizard with an online item whose location has changed and an optional dependency left unchecked
-image::publish.png["Publishing Wizard showing a ready item, Include child items, an unchecked dependency, Add comment, and Publish now", 900]
+image::publish.png["Publishing Wizard showing a ready item, Include child items, an unchecked dependency, Add comment, and Publish now", 900px]
 
 The selected items appear above the *Dependencies* list. Click an item's name to open it in the Content Editor. The remove control beside a selected item removes it from this publishing batch when allowed; it does not delete the content.
 
@@ -76,21 +90,19 @@ TIP: Administrators can configure optional dependencies to be selected automatic
 
 The wizard checks the included items before allowing publishing. Separate status bars identify *In progress* items, *Invalid items*, and items for which the user lacks publish permission. Publishing remains disabled while blocking conditions remain.
 
-.In-progress and invalid items block publishing
-image::publish-blocking.png["Publishing Wizard with separate In progress and Invalid items warnings, Exclude controls, and disabled publishing buttons", 880]
+.An invalid dependency blocks publishing even when the selected item is ready
+image::publish-invalid.png["Publishing Wizard with an Invalid items warning, an invalid dependency, and disabled publishing buttons", 900px]
 
-Each warning offers applicable actions:
+Resolve blocking conditions using the applicable actions:
 
-* btn:[Mark as ready] marks the in-progress items ready together. It does not fix invalid content.
-* btn:[Exclude] removes the affected items from the publishing batch when they are optional. Required items cannot be excluded.
-* Click an item's name to open it in the Content Editor, complete or correct its content, and mark it ready individually. The wizard updates its checks when the content changes.
+* For in-progress items, use <<#mark_as_ready,Mark as ready>>.
+* btn:[Exclude] on a warning removes the affected optional items in that category from the publishing batch together. Required items cannot be excluded.
+* For invalid items, click an item's name to open it in the Content Editor and correct its content. The wizard updates its checks when the content changes.
 
-.A single in-progress item must be marked ready before publishing
-image::publish-in-progress.png["Publishing Wizard with an In progress warning and Mark as ready button for a single item", 900]
+.Separate Exclude controls for in-progress and invalid items
+image::publish-bulk-exclude.png["Publishing Wizard with separate In progress and Invalid items warnings, each offering an Exclude control", 900px]
 
 Once all checks pass, the green ready message replaces the warnings and publishing becomes available. For validation rules and workflow states, see <<../workflow#_invalid,Invalid content>> and <<../workflow#_in_progress,In progress>>. If another user must publish the content, use <<../workflow/issues#publish_requests,Request publishing>>.
-
-NOTE: The bulk btn:[Mark as ready] action can be disabled through <<../config#disable_mark_as_ready,Content Studio configuration>>. In that case, open and mark each item ready individually.
 
 [[publishing_comment]]
 ==== Publishing comment
@@ -98,7 +110,7 @@ NOTE: The bulk btn:[Mark as ready] action can be disabled through <<../config#di
 Click btn:[Add comment] to enter an optional comment for the publication. The comment is recorded in the content's <<../contextpanel/version-history#,Version history>>, where it provides context for the published changes. Use btn:[Remove comment] to discard it before publishing.
 
 .Adding a comment to the publication
-image::publish-comment.png["Publishing Wizard with a Comment field and Remove comment button", 900]
+image::publish-comment.png["Publishing Wizard with a Comment field and Remove comment button", 900px]
 
 [[scheduled_publishing]]
 === Scheduled publishing
@@ -116,13 +128,6 @@ image::publish-schedule.png["Publishing Wizard with Online from and Online to fi
 NOTE: Only currently-offline items are scheduled. Other changes included in the batch are published immediately.
 
 The default time and whether an explicit *Online from* value is required can be configured. See <<../config#_default_online_from_time,Default Online from time>> and <<../config#_required_online_from,Required Online from>>. Scheduled and expired items are described under <<../workflow#publish_state,Publish state>>.
-
-[[_publishing_from_the_content_editor]]
-=== Publishing from the Content Editor
-
-When *Publish* is invoked from inside the Content Editor, only the currently open item is initially selected. Review its children and dependencies in the wizard just as when publishing from the Navigator.
-
-TIP: Users with editing and publishing permissions can publish content that is still *In progress* from the editor. This automatically marks it ready; the content must still pass validation.
 
 [[publish_tree]]
 == Publish tree

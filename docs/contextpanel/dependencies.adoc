@@ -27,5 +27,23 @@ Use the search field to filter the results by text, or the *Content Types* check
 Content Studio checks dependencies when performing actions that could affect related content:
 
 * <<../actions/publish#publish,Publishing>> loads related dependencies into the publishing batch. Required dependencies cannot be excluded; optional dependencies can be included or excluded before publishing.
-* <<../actions/delete#delete,Delete>> warns when other content depends on the item being deleted.
-* <<../actions/unpublish#,Unpublish>> warns when published content depends on the item being taken offline.
+* <<../actions/delete#_reference_checks,Delete>> warns when other content depends on the item being deleted.
+* <<../actions/unpublish#_reference_checks,Unpublish>> warns when published content depends on the item being taken offline.
+
+[[reference_checks]]
+== Reference checks
+
+Delete and Unpublish check for inbound references to the affected content, including descendants. When referring content outside the affected set depends on these items, the dialog displays an *Inbound references* warning and blocks the action. The action references above explain which references are checked and whether changes to the referring content must be saved or published.
+
+=== Show references
+
+Click *Show references* beside an affected item to open its inbound dependency search. The referenced item is fixed as a filter, and the results show content that uses it. Use the results to find the referring items and remove or replace their references. See <<#_dependency_search,Dependency search>> for filtering and working with the results.
+
+.Posts referencing Kari Nordmann, opened from the Unpublish dialog
+image::dependencies-inbound-search.png["Inbound Dependencies search for Kari Nordmann showing referencing posts and their publishing states", 892]
+
+=== Ignore inbound references
+
+Click btn:[Ignore inbound references] to allow the action despite the references. This clears the reference block; it does not perform the action until you confirm with btn:[Delete] or btn:[Unpublish].
+
+Ignoring the check leaves the references in place. Referring content may then have broken links or missing embedded content because the referenced items are archived or offline.
