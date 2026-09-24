@@ -464,7 +464,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>The available actions depend on where you are working, the selected content, its <a href="workflow.ahtml">workflow and publish state</a>, and your <a href="workbench/permissions.ahtml">permissions</a>. An action may be hidden or disabled when it does not apply. For example, <strong>Unpublish</strong> applies to online content, while <strong>Localize</strong> applies to inherited content in a layer.</p>
 </div>
 <div class="paragraph">
-<p>In the Navigator, actions that support multiple items operate on the selection; actions that require a single item are disabled when several are selected. In the Content Editor, actions apply to the item open in that tab. Some actions are available without a selection, such as <strong>New</strong> and <strong>Create task</strong>.</p>
+<p>In the Navigator, actions that support multiple items operate on the selection; actions that require a single item are disabled when several are selected. In the Content Editor, actions apply to the item open in that tab. Some actions are available without a selection, such as <strong>New</strong> and <strong>Create issue</strong>.</p>
 </div>
 <div class="paragraph">
 <p>The primary workflow button changes with the content and your permissions, offering actions such as <strong>Mark as ready</strong>, <strong>Publish</strong>, or <strong>Request publishing</strong>. Its menu provides additional workflow and issue actions.</p>
@@ -538,7 +538,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <td class="tableblock halign-left valign-top"><p class="tableblock">Ask another user to review and publish content.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="workflow/issues.ahtml#create_a_task">Create task</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="workflow/issues.ahtml#create_a_task">Create issue</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Create an editorial work item with assignees and optional content attachments.</p></td>
 </tr>
 <tr>
@@ -568,7 +568,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-09-24 07:58:27 UTC
+Last updated 2026-09-24 18:16:49 UTC
 </div>
 </div>
 </body>
