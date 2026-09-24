@@ -441,14 +441,18 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#mark_as_ready">Mark as ready</a></li>
+<li><a href="#mark_as_ready">Mark as ready</a>
+<ul class="sectlevel2">
+<li><a href="#from_the_navigator_or_editor">From the Navigator or Editor</a></li>
+<li><a href="#in_the_publishing_wizard">In the Publishing wizard</a></li>
+</ul>
+</li>
 <li><a href="#publish">Publish</a>
 <ul class="sectlevel2">
 <li><a href="#draft_and_master_branches">Draft and Master branches</a></li>
 <li><a href="#change_status">Change status</a></li>
 <li><a href="#publishing_wizard">Publishing wizard</a></li>
 <li><a href="#scheduled_publishing">Scheduled publishing</a></li>
-<li><a href="#_publishing_from_the_content_editor">Publishing from the Content Editor</a></li>
 </ul>
 </li>
 <li><a href="#publish_tree">Publish tree</a></li>
@@ -467,10 +471,43 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="mark_as_ready"><a class="link" href="#mark_as_ready">Mark as ready</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Use <strong>Mark as ready</strong> in the Content Editor or Content Navigator to mark valid, in-progress content as ready for publishing. The action is disabled for invalid content. After marking, the Publishing wizard opens automatically; marking an item ready does not itself publish it.</p>
+<p>The <strong>Mark as ready</strong> action marks valid, in-progress content as ready for publishing. It is disabled for invalid content. Marking an item ready does not itself publish it.</p>
 </div>
 <div class="paragraph">
-<p>The toolbar then offers <strong>Publish</strong> or <strong>Request publishing</strong>, depending on your permissions. Editing the item again returns it to <strong>In progress</strong>. See <a href="../workflow.ahtml#_ready_for_publishing">Ready for publishing</a> for workflow states and indicators, and <a href="#_validation">Publishing validation</a> for marking items ready within a publishing batch.</p>
+<p>Editing a ready item again returns it to <strong>In progress</strong>. See <a href="../workflow.ahtml#_ready_for_publishing">Ready for publishing</a> for workflow states and indicators.</p>
+</div>
+<div class="sect2">
+<h3 id="from_the_navigator_or_editor"><a class="link" href="#from_the_navigator_or_editor">From the Navigator or Editor</a></h3>
+<div class="paragraph">
+<p>Use <strong>Mark as ready</strong> in the Content Navigator for the selected content, or in the Content Editor for the open item. After marking, the Publishing wizard opens automatically. The toolbar then offers <strong>Publish</strong> or <strong>Request publishing</strong>, depending on your permissions.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="in_the_publishing_wizard"><a class="link" href="#in_the_publishing_wizard">In the Publishing wizard</a></h3>
+<div class="paragraph">
+<p>If the publishing batch contains in-progress items, the wizard displays an <strong>In progress</strong> warning. Click <b class="button">Mark as ready</b> in that warning to mark the in-progress items ready together. This does not fix invalid content; other <a href="#_validation">blocking conditions</a> must also be resolved before publishing.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/publish-in-progress.png" alt="Publishing Wizard with an In progress warning and Mark as ready button for a single item" width="900">
+</div>
+<div class="title">Figure 1. A single in-progress item must be marked ready before publishing</div>
+</div>
+<div class="paragraph">
+<p>To handle items individually, click an item&#8217;s name to open it in the Content Editor, complete its content, and mark it ready there. The wizard updates its checks when the content changes.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The bulk <b class="button">Mark as ready</b> action can be disabled through <a href="../config.ahtml#disable_mark_as_ready">Content Studio configuration</a>. In that case, open and mark each item ready individually.
+</td>
+</tr>
+</table>
+</div>
 </div>
 </div>
 </div>
@@ -481,7 +518,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Publishing makes the current draft of an item available online, subject to its <a href="../workbench/permissions.ahtml">permissions</a>. New content must be published before it is available to end users, and changes to online content must be published again to go live.</p>
 </div>
 <div class="paragraph">
-<p>Before an item can be published, it must be valid and marked as ready. Users with editing and publishing permissions can also publish in-progress content directly from the editor; see <a href="#_publishing_from_the_content_editor">Publishing from the Content Editor</a>.</p>
+<p>Before an item can be published, it must be valid and explicitly <a href="#mark_as_ready">marked as ready</a>. The same readiness and validation rules apply whether publishing starts from the Content Editor or the Navigator.</p>
 </div>
 <div class="paragraph">
 <p>Open the <strong>Publishing Wizard</strong> using:</p>
@@ -489,10 +526,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Publish</strong> in the toolbar or its menu.</p>
-</li>
-<li>
-<p><strong>Publish</strong> in an item&#8217;s right-click menu in the Navigator.</p>
+<p><strong>Publish</strong> from the toolbar or context menu.</p>
 </li>
 <li>
 <p><code>⌘ + alt + p</code> on macOS or <code>Ctrl + Alt + P</code> on Windows/Linux.</p>
@@ -527,9 +561,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/publish.png" alt="Publishing Wizard showing a ready item, Include child items, an unchecked dependency, Add comment, and Publish now" width="900">
+<img src="images/publish.png" alt="Publishing Wizard showing a ready item, Include child items, an unchecked dependency, Add comment, and Publish now" width="900px">
 </div>
-<div class="title">Figure 1. Publishing wizard with an online item whose location has changed and an optional dependency left unchecked</div>
+<div class="title">Figure 2. Publishing wizard with an online item whose location has changed and an optional dependency left unchecked</div>
 </div>
 <div class="paragraph">
 <p>The selected items appear above the <strong>Dependencies</strong> list. Click an item&#8217;s name to open it in the Content Editor. The remove control beside a selected item removes it from this publishing batch when allowed; it does not delete the content.</p>
@@ -556,7 +590,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="content">
 <img src="images/publish-dependencies.png" alt="Dependencies list with one of three items selected and a Hide excluded control" width="830">
 </div>
-<div class="title">Figure 2. Optional dependencies can be selected individually</div>
+<div class="title">Figure 3. Optional dependencies can be selected individually</div>
 </div>
 <div class="paragraph">
 <p>Changing the selection displays a blue status bar. Click <b class="button">Apply</b> to confirm the selection and recalculate dependencies and validation, or <b class="button">Cancel</b> to discard the pending selection changes. Applying the selection does not publish content.</p>
@@ -565,7 +599,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="content">
 <img src="images/publish-apply.png" alt="Include child items selected with Apply and Cancel controls in the status bar" width="820">
 </div>
-<div class="title">Figure 3. Applying a change to Include child items</div>
+<div class="title">Figure 4. Applying a change to Include child items</div>
 </div>
 <div class="paragraph">
 <p>Use <strong>Hide excluded</strong> to show only included dependencies. <strong>Show excluded</strong> reveals unchecked items again so they can be added back. This changes the list&#8217;s visibility, not which items will be published.</p>
@@ -574,7 +608,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="content">
 <img src="images/publish-hide-excluded.png" alt="Dependencies list showing only the selected item with a Show excluded control" width="830">
 </div>
-<div class="title">Figure 4. Excluded dependencies hidden from the list</div>
+<div class="title">Figure 5. Excluded dependencies hidden from the list</div>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -596,46 +630,34 @@ Administrators can configure optional dependencies to be selected automatically.
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/publish-blocking.png" alt="Publishing Wizard with separate In progress and Invalid items warnings, Exclude controls, and disabled publishing buttons" width="880">
+<img src="images/publish-invalid.png" alt="Publishing Wizard with an Invalid items warning, an invalid dependency, and disabled publishing buttons" width="900px">
 </div>
-<div class="title">Figure 5. In-progress and invalid items block publishing</div>
+<div class="title">Figure 6. An invalid dependency blocks publishing even when the selected item is ready</div>
 </div>
 <div class="paragraph">
-<p>Each warning offers applicable actions:</p>
+<p>Resolve blocking conditions using the applicable actions:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><b class="button">Mark as ready</b> marks the in-progress items ready together. It does not fix invalid content.</p>
+<p>For in-progress items, use <a href="#mark_as_ready">Mark as ready</a>.</p>
 </li>
 <li>
-<p><b class="button">Exclude</b> removes the affected items from the publishing batch when they are optional. Required items cannot be excluded.</p>
+<p><b class="button">Exclude</b> on a warning removes the affected optional items in that category from the publishing batch together. Required items cannot be excluded.</p>
 </li>
 <li>
-<p>Click an item&#8217;s name to open it in the Content Editor, complete or correct its content, and mark it ready individually. The wizard updates its checks when the content changes.</p>
+<p>For invalid items, click an item&#8217;s name to open it in the Content Editor and correct its content. The wizard updates its checks when the content changes.</p>
 </li>
 </ul>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/publish-in-progress.png" alt="Publishing Wizard with an In progress warning and Mark as ready button for a single item" width="900">
+<img src="images/publish-bulk-exclude.png" alt="Publishing Wizard with separate In progress and Invalid items warnings, each offering an Exclude control" width="900px">
 </div>
-<div class="title">Figure 6. A single in-progress item must be marked ready before publishing</div>
+<div class="title">Figure 7. Separate Exclude controls for in-progress and invalid items</div>
 </div>
 <div class="paragraph">
 <p>Once all checks pass, the green ready message replaces the warnings and publishing becomes available. For validation rules and workflow states, see <a href="../workflow.ahtml#_invalid">Invalid content</a> and <a href="../workflow.ahtml#_in_progress">In progress</a>. If another user must publish the content, use <a href="../workflow/issues.ahtml#publish_requests">Request publishing</a>.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-The bulk <b class="button">Mark as ready</b> action can be disabled through <a href="../config.ahtml#disable_mark_as_ready">Content Studio configuration</a>. In that case, open and mark each item ready individually.
-</td>
-</tr>
-</table>
 </div>
 </div>
 <div class="sect3">
@@ -645,9 +667,9 @@ The bulk <b class="button">Mark as ready</b> action can be disabled through <a h
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/publish-comment.png" alt="Publishing Wizard with a Comment field and Remove comment button" width="900">
+<img src="images/publish-comment.png" alt="Publishing Wizard with a Comment field and Remove comment button" width="900px">
 </div>
-<div class="title">Figure 7. Adding a comment to the publication</div>
+<div class="title">Figure 8. Adding a comment to the publication</div>
 </div>
 </div>
 </div>
@@ -673,7 +695,7 @@ The bulk <b class="button">Mark as ready</b> action can be disabled through <a h
 <div class="content">
 <img src="images/publish-schedule.png" alt="Publishing Wizard with Online from and Online to fields, Cancel schedule, and Confirm schedule" width="900">
 </div>
-<div class="title">Figure 8. Scheduling fields and confirmation controls</div>
+<div class="title">Figure 9. Scheduling fields and confirmation controls</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -691,24 +713,6 @@ Only currently-offline items are scheduled. Other changes included in the batch 
 <p>The default time and whether an explicit <strong>Online from</strong> value is required can be configured. See <a href="../config.ahtml#_default_online_from_time">Default Online from time</a> and <a href="../config.ahtml#_required_online_from">Required Online from</a>. Scheduled and expired items are described under <a href="../workflow.ahtml#publish_state">Publish state</a>.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_publishing_from_the_content_editor"><a class="link" href="#_publishing_from_the_content_editor">Publishing from the Content Editor</a></h3>
-<div class="paragraph">
-<p>When <strong>Publish</strong> is invoked from inside the Content Editor, only the currently open item is initially selected. Review its children and dependencies in the wizard just as when publishing from the Navigator.</p>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-Users with editing and publishing permissions can publish content that is still <strong>In progress</strong> from the editor. This automatically marks it ready; the content must still pass validation.
-</td>
-</tr>
-</table>
-</div>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -722,7 +726,7 @@ Users with editing and publishing permissions can publish content that is still 
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-09-23 16:59:36 UTC
+Last updated 2026-09-24 07:21:27 UTC
 </div>
 </div>
 </body>

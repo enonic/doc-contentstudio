@@ -456,7 +456,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Delete moves active content to the Archive. From the Archive, content can be restored or permanently deleted.</p>
+<p>Delete moves content and its descendants to the <a href="../workbench/archive.ahtml">Archive</a>. From there, content can be restored to the active tree or permanently deleted.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -476,31 +476,44 @@ Archiving is available in all Content Studio installations. The Archive browser,
 <h2 id="delete"><a class="link" href="#delete">Delete</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The <strong>Delete</strong> action removes content from the active tree. Deleted items are not destroyed — they are moved to the <a href="../workbench/archive.ahtml">Archive</a>, from which they can later be restored or permanently removed.</p>
-</div>
-<div class="paragraph">
-<p>There are three ways to invoke Delete:</p>
+<p>Open the <strong>Delete</strong> dialog using:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Keyboard shortcut — <code>⌘ + del</code> on macOS, <code>ctrl + del</code> on Windows/Linux.</p>
+<p><strong>Delete</strong> from the toolbar or context menu.</p>
 </li>
 <li>
-<p>The <strong>Delete</strong> button in the toolbar.</p>
-</li>
-<li>
-<p>The <strong>Delete</strong> entry in the context menu (right-click an item in the Navigator).</p>
+<p><code>⌘ + Delete</code> on macOS or <code>Ctrl + Delete</code> on Windows/Linux.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>A selection is always deleted together with all of its descendants, so the archive preserves the original structure. The dialog lists every item that will be moved.</p>
+<p>The dialog lists the selected items first, followed by their descendants under <strong>Other items that will be archived</strong>. Deleting a parent includes all of its descendants and preserves their structure in the Archive. The <b class="button">Delete</b> button shows the total number of affected items when there is more than one.</p>
+</div>
+<div class="paragraph">
+<p>In the example below, deleting <strong>Categories</strong> archives the folder and its five descendants. References from other content initially block the action; see <a href="#_reference_checks">Reference checks</a>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/archive-inbound-references.png" alt="Delete dialog" width="600">
+<img src="images/delete.png" alt="Delete dialog showing Categories, its descendants, an Inbound references warning, and a disabled Delete button" width="900px">
 </div>
+<div class="title">Figure 1. Deleting a folder includes its descendants</div>
+</div>
+<div class="paragraph">
+<p>Review the entire list, resolve or ignore any blocking references, then click <b class="button">Delete</b> to archive the listed items. Their attachments and version history are retained for <a href="#restore">restoration</a>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+When deleting multiple items or a site, an additional confirmation asks you to enter the total number of affected items.
+</td>
+</tr>
+</table>
 </div>
 <div class="admonitionblock important">
 <table>
@@ -509,7 +522,7 @@ Archiving is available in all Content Studio installations. The Archive browser,
 <i class="fa icon-important" title="Important"></i>
 </td>
 <td class="content">
-Online content (published items) is taken offline immediately when deleted. The item remains in <code>master</code> only until the delete completes, and end users lose access the moment the action is confirmed.
+Deleting published content also takes it offline. The archived items are no longer available to end users.
 </td>
 </tr>
 </table>
@@ -517,20 +530,10 @@ Online content (published items) is taken offline immediately when deleted. The 
 <div class="sect2">
 <h3 id="reference_checks"><a class="link" href="#reference_checks">Reference checks</a></h3>
 <div class="paragraph">
-<p>If any item in the selection is referenced by other content that is <em>not</em> being deleted along with it, a warning appears at the top of the dialog and the action button is disabled. The referenced items are marked with a small "link" icon over their content-type icon.</p>
+<p>If any item being deleted is referenced by content outside the selection and its descendants, an inbound-reference warning blocks the action. Remove or replace those references and save the referring items; the dialog updates its checks when the content changes.</p>
 </div>
 <div class="paragraph">
-<p>Two links are available:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Ignore inbound references</strong> — proceed anyway. Referring content will then point at a non-existent item.</p>
-</li>
-<li>
-<p><strong>Show references</strong> — open the reference list for each flagged item, so the references can be edited out. Once the references are removed (and saved), the delete dialog refreshes and allows the action.</p>
-</li>
-</ul>
+<p>See <a href="../contextpanel/dependencies.ahtml#reference_checks">Reference checks</a> for <strong>Show references</strong> and <strong>Ignore inbound references</strong>. Ignoring the check leaves references to content that will be in the Archive and unavailable in the active tree.</p>
 </div>
 </div>
 </div>
@@ -538,28 +541,17 @@ Online content (published items) is taken offline immediately when deleted. The 
 <div class="sect1">
 <h2 id="restore"><a class="link" href="#restore">Restore</a></h2>
 <div class="sectionbody">
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Archived content can only be restored from the Archive view, which requires <a href="https://market.enonic.com/vendors/enonic/content-studio-plus">Content Studio+</a>.
-</td>
-</tr>
-</table>
-</div>
 <div class="paragraph">
-<p>The <strong>Restore</strong> action in the Archive view opens the <strong>Restore from Archive</strong> dialog. Content is always restored together with all of its descendants, preserving structure. Content returns to its original location when that location is available; otherwise, it is restored to the project root.</p>
-</div>
-<div class="paragraph">
-<p>If an item is restored directly from a layer&#8217;s Archive, it becomes local and is no longer linked to the corresponding content in the parent layer.</p>
+<p>Select archived items in the <a href="../workbench/archive.ahtml">Archive</a> and choose <strong>Restore</strong> to open the <strong>Restore from Archive</strong> dialog. It lists the selection and any descendants that will be restored with it. The <b class="button">Restore</b> button shows the total number of affected items when there is more than one.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/archive-restore.png" alt="Restore dialog showing the items that will be restored" width="912px">
+<img src="images/archive-restore.png" alt="Restore from Archive dialog showing a content item, its child image, and Restore (2)" width="912">
 </div>
+<div class="title">Figure 2. Restoring an item together with its child image</div>
+</div>
+<div class="paragraph">
+<p>Click <b class="button">Restore</b> to return the listed items to the active tree. Their structure is preserved. Content returns to its original location when that location is available; otherwise, it is restored to the project root.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -573,42 +565,25 @@ If an item with the same path already exists at the restore location, the system
 </tr>
 </table>
 </div>
+<div class="paragraph">
+<p>Restoring content does not publish it. Review the restored items and use <a href="publish.ahtml#publish">Publish</a> to make them available online. Items restored in a layer become local; see <a href="#delete_in_layers">Delete in layers</a>.</p>
+</div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="_permanent_deletion"><a class="link" href="#_permanent_deletion">Permanent deletion</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The <strong>Delete</strong> action in the Archive view permanently removes the selected items from the Archive. This is a separate operation from the <a href="#delete">Delete</a> action in the Navigator and Editor, which only moves content into the Archive.</p>
+<p>The <strong>Delete</strong> action in the Archive permanently removes archived content. Select one or more archived items and choose <strong>Delete</strong> to open the <strong>Delete from Archive</strong> dialog.</p>
+</div>
+<div class="paragraph">
+<p>The dialog lists the selected items and any descendants or other content that will be deleted with them. The <b class="button">Delete</b> button shows the total number of affected items when there is more than one. Deleting a parent also deletes all of its descendants, so review the entire list before confirming.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/archive-delete-dropdown.png" alt="Permanent delete from the Archive dropdown" width="384">
+<img src="images/archive-delete.png" alt="Delete from Archive dialog showing an archived item, two child images, and Delete (3)" width="912">
 </div>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/archive-delete.png" alt="Permanently delete dialog" width="912px">
-</div>
-</div>
-<div class="paragraph">
-<p>Select one or more items and click <strong>Delete</strong> to open the <strong>Delete from Archive</strong> dialog. The dialog lists:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>The items selected for deletion.</p>
-</li>
-<li>
-<p>Any descendants and other content items that will be deleted with them.</p>
-</li>
-<li>
-<p>The total number of affected items on the confirmation button.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Deleting a parent item also deletes all of its descendants. Review the complete list before confirming the operation.</p>
+<div class="title">Figure 3. Permanently deleting an archived item and its two child images</div>
 </div>
 <div class="admonitionblock important">
 <table>
@@ -623,7 +598,7 @@ Permanent deletion removes the archived content, its attachments, and its stored
 </table>
 </div>
 <div class="paragraph">
-<p>Permanent deletion applies to the current project or layer. In a layered project, inherited content may reappear after its archived copy is permanently deleted; see <a href="../workbench/archive.ahtml#archive_layers">Archive and layers</a>.</p>
+<p>The action applies to the current project or layer. Inherited content may reappear after permanent deletion; see <a href="#delete_in_layers">Delete in layers</a>.</p>
 </div>
 </div>
 </div>
@@ -631,33 +606,23 @@ Permanent deletion removes the archived content, its attachments, and its stored
 <h2 id="delete_in_layers"><a class="link" href="#delete_in_layers">Delete in layers</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Delete behaves specifically when <a href="../projects/layering.ahtml">layers</a> are involved:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Archiving an item in a parent layer also archives corresponding items in descendant layers that still inherit both its content and location. A descendant with either dimension made local, or with an external reference that prevents archiving, remains in place.</p>
-</li>
-<li>
-<p>Archiving an inherited item directly in a child layer does not affect its parent. The archived copy becomes local and stops receiving inherited changes.</p>
-</li>
-<li>
-<p>Restoring that copy from the layer&#8217;s Archive restores it as local content.</p>
-</li>
-<li>
-<p>Permanently deleting an inherited item while its origin still exists in the parent can cause synchronization to create a fresh inherited copy. To keep inherited content out of the active tree, leave it in the Archive instead of permanently deleting it.</p>
-</li>
-</ul>
+<p>Deleting inherited content in a child layer archives that layer&#8217;s copy without changing the parent item. The archived copy becomes local and stops receiving inherited changes. Restoring it returns it as local content.</p>
 </div>
 <div class="paragraph">
-<p>See <a href="../projects/layering.ahtml#archive_and_delete">Layers and localization</a> for how this behavior relates to inheritance.</p>
+<p>Deleting content in a parent layer also archives corresponding items in descendant layers that still inherit both content and location. Items with either dimension made local, or with external references that block archiving, remain in place.</p>
+</div>
+<div class="paragraph">
+<p>Permanently deleting an inherited item while it still exists in the parent can cause synchronization to create a fresh inherited copy. To keep inherited content out of the active tree, leave it in the Archive.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="../projects/layering.ahtml#archive_and_delete">Archive and delete in layers</a> for the inheritance rules and <a href="../workbench/archive.ahtml#archive_layers">Archive and layers</a> for archive-state propagation.</p>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-09-23 16:59:36 UTC
+Last updated 2026-09-24 07:21:27 UTC
 </div>
 </div>
 </body>

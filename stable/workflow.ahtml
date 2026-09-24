@@ -571,7 +571,7 @@ Validity is not a stored state — unlike <strong>In progress</strong> and <stro
 <div class="sect2">
 <h3 id="_in_progress"><a class="link" href="#_in_progress">In progress (blocking)</a></h3>
 <div class="paragraph">
-<p>The default state of a new content item. Signals that the content is being worked on; it will stay in this state until the editor explicitly marks it as ready, or until a publisher overrides and publishes it directly.</p>
+<p>The default state of a new content item. Signals that the content is being worked on; it will stay in this state until explicitly <a href="actions/publish.ahtml#mark_as_ready">marked as ready</a>.</p>
 </div>
 <div class="paragraph">
 <p><code>In-progress</code> state <strong>blocks publishing</strong> — this is deliberate, to keep unfinished content from being published by accident. Whenever a batch contains at least one in-progress item, the <a href="actions/publish.ahtml#publishing_wizard">Publishing wizard</a> disables <strong>Publish</strong>, shows a warning, and pins the offending items to the top of the list:</p>
@@ -773,7 +773,7 @@ Content items can also be attached to <strong>tasks</strong>, the other issue ty
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-09-23 16:59:36 UTC
+Last updated 2026-09-24 07:21:27 UTC
 </div>
 </div>
 </body>
