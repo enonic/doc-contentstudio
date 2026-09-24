@@ -525,7 +525,7 @@ The preview mode selected in the panel is also used in the new tab.
 <p><strong>Media</strong> — for image, video and other media content types. Shows the media itself at its original resolution, with basic metadata.</p>
 </li>
 <li>
-<p><strong>Standard</strong> — uses Enonic&#8217;s built-in framework to render the content.</p>
+<p><strong>XP Site service</strong> — renders content using XP&#8217;s Site service. See <a href="../config.ahtml#_xp_site_service_preview">Preview CSP configuration</a> for controlling the resources it can load.</p>
 </li>
 <li>
 <p><strong>JSON</strong> — displays the current content in JSON format. Available for any content, but not used as a fallback by <strong>Automatic</strong>.</p>
@@ -575,7 +575,7 @@ The preview mode selected in the panel is also used in the new tab.
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-09-24 07:21:27 UTC
+Last updated 2026-09-24 07:58:27 UTC
 </div>
 </div>
 </body>
