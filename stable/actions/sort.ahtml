@@ -471,7 +471,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/sort.png" alt="Sort items dialog with Modified date (Old to new) selected and a list of child content" width="853px">
+<img src="images/sort.png" alt="Sort items dialog with Modified date (Old to new) selected and a list of child content" width="900px">
 </div>
 <div class="title">Figure 1. Sort items dialog showing children ordered by modified date</div>
 </div>
@@ -535,7 +535,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/sort-manual.png" alt="Sort items dialog with Manually sorted selected, reordered children, and Save enabled" width="853px">
+<img src="images/sort-manual.png" alt="Sort items dialog with Manually sorted selected, reordered children, and Save enabled" width="900px">
 </div>
 <div class="title">Figure 3. Manual ordering with drag handles beside the child items</div>
 </div>
@@ -558,7 +558,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/sort-change-state.png" alt="Navigator showing Posts as Online, Modified change status, and a Sorted entry in Version history" width="1440px">
+<img src="images/sort-change-state.png" alt="Navigator showing Posts as Online, Modified change status, and a Sorted entry in Version history" width="1382px">
 </div>
 <div class="title">Figure 4. Posts remains Online while its draft is Modified, with a Sorted entry in version history</div>
 </div>
@@ -578,7 +578,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-09-24 18:16:49 UTC
+Last updated 2026-09-25 08:17:51 UTC
 </div>
 </div>
 </body>

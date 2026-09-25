@@ -521,7 +521,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sectionbody">
 <div class="imageblock">
 <div class="content">
-<img src="editor/images/editor-panels.png" alt="Content Editor with the toolbar above the content form and preview" width="1442px">
+<img src="editor/images/editor-panels.png" alt="Content Editor with the toolbar above the content form and preview" width="1441.5px">
 </div>
 <div class="title">Figure 2. The main areas of the Content Editor</div>
 </div>
@@ -631,7 +631,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-09-24 18:16:49 UTC
+Last updated 2026-09-25 08:17:51 UTC
 </div>
 </div>
 </body>

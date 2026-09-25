@@ -470,7 +470,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/project-step1.png" alt="Dialog for selecting parent project and default language" width="839w">
+<img src="images/project-step1.png" alt="Dialog for selecting parent project and default language" width="920px">
 </div>
 </div>
 <div class="admonitionblock important">
@@ -493,7 +493,7 @@ The parent project cannot be changed after the project is created. The default l
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/project-step2.png" alt="Dialog for setting project name and unique identifier" width="920w">
+<img src="images/project-step2.png" alt="Dialog for setting project name and unique identifier" width="920px">
 </div>
 </div>
 <div class="admonitionblock note">
@@ -516,7 +516,7 @@ When creating a layer, the wizard will suggest display name and description base
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/project-step3.png" alt="Select default content visibility" width="920w">
+<img src="images/project-step3.png" alt="Select default content visibility" width="922px">
 </div>
 </div>
 </li>
@@ -527,7 +527,7 @@ When creating a layer, the wizard will suggest display name and description base
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/project-step4.png" alt="Configure authoring access" width="920w">
+<img src="images/project-step4.png" alt="Configure authoring access" width="920px">
 </div>
 </div>
 </li>
@@ -538,7 +538,7 @@ When creating a layer, the wizard will suggest display name and description base
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/project-step5.png" alt="Configure applications for project" width="920w">
+<img src="images/project-step5.png" alt="Configure applications for project" width="920px">
 </div>
 </div>
 </li>
@@ -549,7 +549,7 @@ When creating a layer, the wizard will suggest display name and description base
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/project-summary.png" alt="Summary of project settings" width="920w">
+<img src="images/project-summary.png" alt="Summary of project settings" width="920px">
 </div>
 </div>
 </li>
@@ -616,7 +616,7 @@ Deleting a project will delete its repository and all the data inside. This acti
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-09-24 18:16:49 UTC
+Last updated 2026-09-25 08:17:51 UTC
 </div>
 </div>
 </body>

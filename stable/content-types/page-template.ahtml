@@ -460,7 +460,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/page-template.png" alt="Page template form contains a content type supports filter" width="546px">
+<img src="images/page-template.png" alt="Page template form contains a content type supports filter" width="545px">
 </div>
 </div>
 </div>
@@ -567,7 +567,7 @@ Changes to a page template may affect multiple content items, including content 
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-09-24 18:16:49 UTC
+Last updated 2026-09-25 08:17:51 UTC
 </div>
 </div>
 </body>

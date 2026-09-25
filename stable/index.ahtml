@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.26">
-<title>Content Studio 6 documentation - WIP</title>
+<title>Content Studio 6 documentation</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -437,7 +437,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article toc2 toc-right">
 <div id="header">
-<h1>Content Studio 6 documentation - WIP</h1>
+<h1>Content Studio 6 documentation</h1>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
@@ -469,18 +469,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sectionbody">
 <div class="paragraph">
 <p>Content Studio is Enonic XP&#8217;s content-management UI — the editor-facing application for creating, organising, and publishing content.</p>
-</div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-<strong>Work in progress</strong> We are still working to complete the documentation. Expect some outdated screenshots until we finish this work.
-</td>
-</tr>
-</table>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -527,7 +515,7 @@ A collection of short videos demonstrating Content Studio&#8217;s features and c
 <h2 id="concepts"><a class="link" href="#concepts">Concepts</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>A few recurring concepts surface everywhere in the UI — in dialogs, widgets, toolbars, and URLs.</p>
+<p>A few recurring concepts surface everywhere in the UI — in dialogs, panels, toolbars, and URLs.</p>
 </div>
 <div class="sect2">
 <h3 id="projects_and_layers"><a class="link" href="#projects_and_layers">Projects and layers</a></h3>
@@ -587,7 +575,7 @@ A collection of short videos demonstrating Content Studio&#8217;s features and c
 <div class="sect2">
 <h3 id="version_history"><a class="link" href="#version_history">Version history</a></h3>
 <div class="paragraph">
-<p>Every save, publish, unpublish, rename, or permissions change creates a new <strong>version</strong>. Versions can be compared and reverted from the Version history widget — see <a href="contextpanel/version-history.ahtml">Version history</a>.</p>
+<p>Every save, publish, unpublish, rename, or permissions change creates a new <strong>version</strong>. Versions can be compared and reverted from the Version history panel — see <a href="contextpanel/version-history.ahtml">Version history</a>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -611,7 +599,7 @@ A collection of short videos demonstrating Content Studio&#8217;s features and c
 <div class="sect2">
 <h3 id="applications_and_extensions"><a class="link" href="#applications_and_extensions">Applications and extensions</a></h3>
 <div class="paragraph">
-<p>An <strong>application</strong> is an installable unit of XP code that can contribute content types, Page components, Parts, Layouts, translations, and UI widgets. Applications are attached to a site via its Applications field; some (like Juke and Content Studio+) contribute UI across all sites.</p>
+<p>An <strong>application</strong> is an installable unit of XP code that can contribute content types, Page components, Parts, Layouts, translations, and UI extensions. Applications are attached to a site via its Applications field; some (like Juke and Content Studio+) contribute UI across all sites.</p>
 </div>
 <div class="paragraph">
 <p><strong>Extensions</strong> are typically small UI surfaces contributed by an application. The main host is the <a href="contextpanel.ahtml">Context panel</a>; applications can also contribute <a href="workbench/preview.ahtml">preview modes</a> and <a href="workbench.ahtml">menuitems</a>.</p>
@@ -679,7 +667,7 @@ A collection of short videos demonstrating Content Studio&#8217;s features and c
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-09-24 18:16:49 UTC
+Last updated 2026-09-25 08:17:51 UTC
 </div>
 </div>
 </body>

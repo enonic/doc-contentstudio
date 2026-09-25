@@ -473,7 +473,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/site.png" alt="Site content item with its Description" width="Base URL" height="and Applications fields">
+<img src="images/site.png" alt="Site content item with its Description, Base URL, and Applications fields" width="546px">
 </div>
 <div class="title">Figure 1. Site content form</div>
 </div>
@@ -602,7 +602,7 @@ Similar to projects, only applications that offer CMS functionality may be added
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/site-application-config.png" alt="Application configuration dialog with application-specific fields" width="546px">
+<img src="images/site-application-config.png" alt="Application configuration dialog with application-specific fields" width="760px">
 </div>
 <div class="title">Figure 3. Configuring a Site application</div>
 </div>
@@ -678,7 +678,7 @@ In contrast to projects, the site configuration is not effective until the chang
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-09-24 18:16:49 UTC
+Last updated 2026-09-25 08:17:51 UTC
 </div>
 </div>
 </body>

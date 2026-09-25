@@ -443,18 +443,19 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel1">
 <li><a href="#content_operator">Content Operator</a>
 <ul class="sectlevel2">
-<li><a href="#interface">Interface</a></li>
+<li><a href="#_interface">Open the chat</a></li>
+<li><a href="#_mentions">Field mentions</a></li>
 <li><a href="#field_context">Field context</a></li>
-<li><a href="#mentions">Mentions</a></li>
+<li><a href="#_insert">Suggestions and insertion</a></li>
 <li><a href="#retry">Retry</a></li>
-<li><a href="#insert">Insert</a></li>
-<li><a href="#variants">Variants</a></li>
+<li><a href="#_variants">Alternatives</a></li>
 <li><a href="#general_instructions">General instructions</a></li>
-<li><a href="#known_issues">Known issues</a></li>
+<li><a href="#known_issues">Scope and limitations</a></li>
 </ul>
 </li>
 <li><a href="#ai_translator">AI Translator</a>
 <ul class="sectlevel2">
+<li><a href="#translate_content">Translate content</a></li>
 <li><a href="#translation_instructions">Translation instructions</a></li>
 </ul>
 </li>
@@ -464,6 +465,19 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="content">
 <div id="preamble">
 <div class="sectionbody">
+<div class="paragraph">
+<p>Juke AI assists editors with writing and translating content in the <a href="editor.ahtml">Content Editor</a>. It provides two skills:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong><a href="#content_operator">Content Operator</a></strong> — a chat interface for generating, revising, and comparing suggestions for form fields.</p>
+</li>
+<li>
+<p><strong><a href="#ai_translator">AI Translator</a></strong> — translates supported text when localizing content or changing its language.</p>
+</li>
+</ul>
+</div>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -477,10 +491,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </table>
 </div>
 <div class="paragraph">
-<p>Juke AI brings a collection of AI-assisted skills to Content Studio. The <strong>Content Operator</strong> provides a chat interface for working with individual fields, while the <strong>AI Translator</strong> translates localized content into a layer&#8217;s language.</p>
-</div>
-<div class="paragraph">
-<p>AI-generated content can contain mistakes. Review generated or translated values before saving and publishing them.</p>
+<p>Review generated and translated values before saving or publishing. AI suggestions can contain mistakes, and inserting them does not replace the normal <a href="workflow.ahtml">content workflow</a>.</p>
 </div>
 </div>
 </div>
@@ -488,211 +499,158 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="content_operator"><a class="link" href="#content_operator">Content Operator</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The Content Operator requires the <a href="https://market.enonic.com/vendors/enonic/ai-content-operator">Juke AI Content Operator</a> application. It lets editors prompt Juke from the Content Editor and insert generated values into supported fields.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Juke AI is in early development stages. Errors may occur, and responses will improve over time. See <a href="#known_issues">Known issues</a> for more details.
-</td>
-</tr>
-</table>
+<p>The <a href="https://market.enonic.com/vendors/enonic/ai-content-operator">Juke AI Content Operator</a> application provides the chat interface. It works with the current content&#8217;s form and returns suggestions that can be inserted into individual fields.</p>
 </div>
 <div class="sect2">
-<h3 id="interface"><a class="link" href="#interface">Interface</a></h3>
+<h3 id="_interface"><a class="link" href="#_interface">Open the chat</a></h3>
 <div class="paragraph">
-<p>Launch the Juke chat interface from the Juke icon in the Content Editor toolbar or beside an active form field.</p>
+<p>Click the Juke icon in the Content Editor toolbar to open or close the chat.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="ai/images/juke-toolbar.png" alt="Click the Juke icon to activate the chat" width="410w">
+<img src="ai/images/ai-icon.png" alt="Content Editor toolbar with an annotation pointing to the Juke AI icon" width="490px">
 </div>
+<div class="title">Figure 1. The Juke icon in the Content Editor toolbar</div>
 </div>
 <div class="paragraph">
-<p>The icon opens a dialog where you can communicate with Juke.</p>
+<p>Enter a prompt at the bottom of the dialog and use the send arrow to submit it. Juke&#8217;s responses appear in the conversation, where you can ask follow-up questions or refine the instructions.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="ai/images/juke-chat.png" alt="Interact with Juke in the chat" width="638w">
+<img src="ai/images/ai-chat.png" alt="Juke AI chat showing the New chat icon, conversation, response copy control, Retry button, and prompt field" width="690px">
 </div>
+<div class="title">Figure 2. The chat dialog with a prompt, response, and Retry control</div>
+</div>
+<div class="paragraph">
+<p>Use <strong>New chat</strong>, the icon in the upper-left corner, to clear the conversation and its field context. Starting a new chat does not undo values already inserted into the form.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_mentions"><a class="link" href="#_mentions">Field mentions</a></h3>
+<div class="paragraph">
+<p>Type <code>@</code> in the prompt to open the field picker, then select a field. This inserts a <strong>field mention</strong>: a reference to that form field and its value. You can mention several fields in the same prompt, for example to generate a display name from the body text or revise a title and teaser together.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="ai/images/ai-mention.png" alt="Typing @ opens the field picker with All Inputs, Display Name, Teaser text, and Body text" width="1175px">
+</div>
+<div class="title">Figure 3. Choosing a field to mention in the prompt</div>
+</div>
+<div class="paragraph">
+<p>The <strong>All Inputs</strong> choice references all available fields in the current scope. A field mention appears as a labeled token in the prompt; select it from the picker so Juke receives the field reference.</p>
+</div>
+<div class="paragraph">
+<p>Example prompts using field mentions:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Improve <code>@Display Name</code> and <code>@Teaser text</code>.</p>
+</li>
+<li>
+<p>Write a shorter <code>@Teaser text</code> based on <code>@Body text</code>.</p>
+</li>
+<li>
+<p>Turn the list in <code>@Body text</code> into a numbered list.</p>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect2">
 <h3 id="field_context"><a class="link" href="#field_context">Field context</a></h3>
 <div class="paragraph">
-<p>To focus Juke on a specific value, select a supported form field. The field is added to the chat context automatically.</p>
+<p>Field context narrows the conversation to a particular part of the form. The selected field&#8217;s label appears above the prompt, such as <strong>Body text</strong>. When a field context is active, the mention picker offers fields within that scope. Use <strong>Clear context</strong> beside the field label to return to the form&#8217;s root-level fields.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="ai/images/juke-context.png" alt="The field &quot;Abstract&quot; is set as context" width="636w">
+<img src="ai/images/ai-field-context.png" alt="Selected Body text field beside the Juke AI prompt showing Body text as the active context and the Clear context control" width="1020px">
 </div>
+<div class="title">Figure 4. The selected Body text field shown as the chat context</div>
 </div>
 <div class="paragraph">
-<p>Click the <code>x</code> beside the field to remove it from the context.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-The Content Operator currently works with TextLine, TextArea, and HtmlArea fields in the main content type form.
-</td>
-</tr>
-</table>
+<p>Field mentions let you identify the inputs to use in an individual prompt. The available fields depend on the current form and context; see <a href="#known_issues">Scope and limitations</a>.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="mentions"><a class="link" href="#mentions">Mentions</a></h3>
+<h3 id="_insert"><a class="link" href="#_insert">Suggestions and insertion</a></h3>
 <div class="paragraph">
-<p>Fields may also be mentioned directly in the chat. Pressing <code>@</code> inside the chat&#8217;s input will list all available fields in the scope of the current context. Select a field from the list to make it a part of your prompt.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-If no context is set, you can mention fields at the root level of the content.
-</td>
-</tr>
-</table>
+<p>Juke can return a general response or suggestions associated with named fields. Field suggestions show the target field&#8217;s label above the proposed value.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="ai/images/juke-mention.png" alt="type @ to reveal list of contextual input fields" width="776w">
+<img src="ai/images/ai-suggestions.png" alt="Juke suggestions for Display Name and Teaser text with field mentions, per-field controls, Insert All, and Retry" width="865px">
 </div>
+<div class="title">Figure 5. Suggestions for two mentioned fields</div>
 </div>
 <div class="paragraph">
-<p><strong>Sample prompts:</strong></p>
+<p>Each field suggestion provides these controls:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Expand the list in <code>@Article body</code> from 3 to 5 items and turn it into a numbered list</p>
+<p><strong>Insert</strong> — the sparkle icon replaces the corresponding form value with the suggestion.</p>
 </li>
 <li>
-<p>Create <code>@Display Name</code> based on <code>@Article body</code></p>
+<p><strong>Copy</strong> — the overlapping-squares icon copies the suggestion to the clipboard for manual use.</p>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>Use <b class="button">Insert All</b> to insert the response&#8217;s field suggestions together. A general response can be copied, but has no target field for insertion.</p>
+</div>
+<div class="paragraph">
+<p>Inserted values update the open form. Review them and use the normal <a href="actions/edit.ahtml#save">Save</a> and <a href="actions/publish.ahtml">publishing actions</a> to keep or publish the changes.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="retry"><a class="link" href="#retry">Retry</a></h3>
 <div class="paragraph">
-<p>If the response is unsuitable or the request fails, use the <strong>Retry</strong> icon to process the instruction again.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="ai/images/juke-retry.png" alt="Click retry icon to give it another shot" width="635w">
-</div>
+<p>Use <b class="button">Retry</b> beneath the latest response to generate another response to the same prompt. To change the instructions, send a follow-up prompt instead. A new response does not replace form values until you insert it.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="insert"><a class="link" href="#insert">Insert</a></h3>
+<h3 id="_variants"><a class="link" href="#_variants">Alternatives</a></h3>
 <div class="paragraph">
-<p>When Juke returns a field value, click the <strong>Insert</strong> icon beside the value to update the form.</p>
+<p>Ask for multiple alternatives when you want to compare suggestions for a field, for example: <code>Make 3 alternatives for @Teaser text</code>.</p>
+</div>
+<div class="paragraph">
+<p>Use the arrows beside the field label to browse the alternatives. The counter, such as <strong>1/3</strong>, identifies the currently selected suggestion. <strong>Insert</strong> uses that suggestion; <b class="button">Insert All</b> uses the selected alternative for each field in the response.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="ai/images/juke-insert.png" alt="Clicking insert icon will copy the text into the respective field" width="665w">
+<img src="ai/images/ai-variants.png" alt="Teaser text suggestion with previous and next arrows, a 1/3 counter, Copy, Insert, Insert All, and Retry" width="640px">
 </div>
-</div>
-<div class="paragraph">
-<p>If Juke provides multiple field values, you may use the <code>Insert all</code> icon to insert all values into the form with a single click.</p>
+<div class="title">Figure 6. Browsing three alternatives for a teaser</div>
 </div>
 <div class="paragraph">
-<p>Finally, the <code>Copy to buffer</code> icon will copy the text to your clipboard, allowing you to paste it manually later.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="variants"><a class="link" href="#variants">Variants</a></h3>
-<div class="paragraph">
-<p>Juke can provide multiple variants for a field. Use the arrow icons beside the response to review the suggestions, then insert the preferred value.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="ai/images/juke-variants.png" alt="Ask for multiple suggestions related to a field" width="634w">
-</div>
-</div>
-<div class="paragraph">
-<p>Sample prompts:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Give 3 variants of <code>@Teaser</code> and <code>@Display Name</code></p>
-</li>
-<li>
-<p>Make 2 suggestions for <code>@Abstract</code></p>
-</li>
-</ul>
+<p>These alternatives exist in the chat. They do not create content copies or <a href="contextpanel/variants.ahtml">content variants</a>.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="general_instructions"><a class="link" href="#general_instructions">General instructions</a></h3>
 <div class="paragraph">
-<p>You may provide a standard prompt for Juke. These instructions may be specified at a project or site level.</p>
-</div>
-<div class="paragraph">
-<p>For instance, you may want Juke to use a consistent tone of voice or provide other relevant details about the content you are working on. This helps Juke produce more relevant responses every time.</p>
-</div>
-<div class="paragraph">
-<p>Add the <code>Juke AI Content Operator</code> application to a project or site to provide custom instructions for that scope.</p>
+<p>Configure <strong>General Instructions</strong> on the Content Operator application to give Juke guidance that applies across conversations. This can describe the intended audience, tone of voice, preferred terminology, or writing style. Editors can give more specific instructions in individual prompts.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="ai/images/juke-instructions.png" alt="Provide general instructions via app settings" width="733w">
+<img src="ai/images/ai-instructions.png" alt="Juke AI Content Operator application configuration with General Instructions for tone and writing style" width="760px">
 </div>
+<div class="title">Figure 7. General instructions for the Content Operator</div>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Working with application settings requires the <a href="projects.ahtml#project-roles">Owner</a> project role or higher.
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p>Add and configure the application in the relevant <a href="projects.ahtml#project-applications">project</a> or <a href="content-types/site.ahtml#_site_applications">Site</a> application settings. Project application settings apply to content outside Sites; configure the application on a Site for content within it. Changing these settings requires the <a href="projects.ahtml#project-roles">Owner</a> project role or an administrator role.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="known_issues"><a class="link" href="#known_issues">Known issues</a></h3>
+<h3 id="known_issues"><a class="link" href="#known_issues">Scope and limitations</a></h3>
 <div class="paragraph">
-<p>Known limitations in the current version:</p>
+<p>The Content Operator works in the Content Editor with the display name and supported text fields, including TextLine, TextArea, and HtmlArea inputs. Use the field picker to see which fields are available in the current context.</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>Not optimized for general chat</p>
-</li>
-<li>
-<p>Only works with text-based fields</p>
-</li>
-<li>
-<p>Single ItemSet or OptionSet occurrences may not be available as context</p>
-</li>
-<li>
-<p>Only works with fields in the main content type form</p>
-</li>
-<li>
-<p>Only available in the Content Editor</p>
-</li>
-<li>
-<p>Initial greeting is hardcoded (not AI generated)</p>
-</li>
-<li>
-<p>The <a href="#ai_translator">AI Translator</a> cannot be invoked from the Content Operator chat</p>
-</li>
-</ul>
+<div class="paragraph">
+<p>The chat currently does not support fields in mixins or pages. Support for these fields is planned for an upcoming release.</p>
+</div>
+<div class="paragraph">
+<p>Suggestions are intended for content authoring. They do not perform content actions such as publishing, moving, or deleting items. The <a href="#ai_translator">AI Translator</a> has its own dialog and is not invoked through the Content Operator chat.</p>
 </div>
 </div>
 </div>
@@ -701,21 +659,24 @@ Working with application settings requires the <a href="projects.ahtml#project-r
 <h2 id="ai_translator"><a class="link" href="#ai_translator">AI Translator</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The AI Translator is a Juke skill for translating content during <a href="actions/localize.ahtml#localize">localization</a>. It requires the <a href="https://market.enonic.com/vendors/enonic/juke-ai-content-translator">Juke AI Content Translator</a> application.</p>
+<p>The <a href="https://market.enonic.com/vendors/enonic/juke-ai-content-translator">Juke AI Content Translator</a> application translates content into the item&#8217;s target language. When enabled, it opens the <strong>AI Automated Translation</strong> dialog after an editor <a href="actions/localize.ahtml#localize">localizes an inherited item</a> or changes an item&#8217;s language.</p>
 </div>
+<div class="sect2">
+<h3 id="translate_content"><a class="link" href="#translate_content">Translate content</a></h3>
 <div class="paragraph">
-<p>When an editor localizes an inherited item or changes an item&#8217;s language, the AI Translator detects the change and opens the translation dialog. The dialog identifies the target language and allows the editor to start the translation.</p>
+<p>The dialog identifies the target language and automatically copies the Translator application&#8217;s <strong>General Instructions</strong> into <strong>Translation instructions</strong>. Use this standard prompt as provided, or adjust it for the current item before clicking <b class="button">Translate</b>. Instructions can specify terminology, tone, words to avoid, or names and phrases that must remain unchanged.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="ai/images/juke-translator.png" alt="Juke AI Translator dialog targeting the layer language" width="907px">
+<img src="ai/images/ai-translation.png" alt="AI Automated Translation dialog targeting Norwegian, with Translation instructions and a Translate button" width="790px">
 </div>
-</div>
-<div class="paragraph">
-<p>Click btn:[Translate] to translate the detected values. Progress is reported for each value, and successful results are inserted into the open content form. Close the dialog when translation finishes, review the translated content, and then save or publish it through the normal workflow.</p>
+<div class="title">Figure 8. Translation into the layer&#8217;s language with instructions for the current item</div>
 </div>
 <div class="paragraph">
-<p>The translator handles the display name and supported text inputs, including TextLine, TextArea, and HtmlArea fields. Text in supported X-data and page components can also be translated when their schemas are available. Non-text values and unsupported inputs are left unchanged.</p>
+<p>Translation progress is reported for each value, and successful results are inserted into the open form. Close the dialog when translation finishes, review the results, and save the content. Publishing remains a separate action; see <a href="actions/publish.ahtml">Publish</a>.</p>
+</div>
+<div class="paragraph">
+<p>The Translator handles the display name and supported text inputs, including TextLine, TextArea, and HtmlArea fields. Text in supported X-data and page components can also be translated when their schemas are available. Non-text values and unsupported inputs are left unchanged.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -724,35 +685,28 @@ Working with application settings requires the <a href="projects.ahtml#project-r
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-The Localize action stops the item&#8217;s <strong>Content</strong> inheritance before the Translator opens. Translation does not change name, parent, or sort inheritance. See <a href="projects/layering.ahtml#content_inheritance">Content inheritance</a> for details.
+The Localize action stops the item&#8217;s <strong>Content</strong> inheritance before the Translator opens. Translation does not change name, parent, or sort inheritance. See <a href="projects/layering.ahtml#content_inheritance">Content inheritance</a>.
 </td>
 </tr>
 </table>
+</div>
 </div>
 <div class="sect2">
 <h3 id="translation_instructions"><a class="link" href="#translation_instructions">Translation instructions</a></h3>
 <div class="paragraph">
-<p>Expand <strong>Translation instructions</strong> in the translation dialog to provide guidance for the current item. Instructions can specify terminology, tone, words to avoid, contextual information, or text that must remain unchanged.</p>
-</div>
-<div class="paragraph">
-<p>Project owners can also configure general instructions on the Translator application at project or site level. These are included when content in that scope is translated, and editors can supplement them for an individual translation.</p>
+<p>Configure <strong>General Instructions</strong> on the Translator application to provide reusable translation guidance, such as a glossary or language-specific writing conventions. The Translator has its own instructions, separate from the Content Operator&#8217;s.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="ai/images/juke-translator-settings.png" alt="General translation instructions configured on the Translator application" width="744px">
+<img src="ai/images/ai-translator-prompt.png" alt="Juke AI Translator application configuration with a General Instructions field and Apply button" width="760px">
 </div>
+<div class="title">Figure 9. General translation instructions on the Translator application</div>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Changing project or site application settings requires the <a href="projects.ahtml#project-roles">Owner</a> project role or higher.
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p>Configure the application at the relevant <a href="projects.ahtml#project-applications">project</a> or <a href="content-types/site.ahtml#_site_applications">Site</a> scope. Changing application settings requires the <a href="projects.ahtml#project-roles">Owner</a> project role or an administrator role.</p>
+</div>
+<div class="paragraph">
+<p>These instructions are automatically copied into the translation dialog for each item. Editors can use the standard prompt unchanged or adjust <strong>Translation instructions</strong> for that item. Edits in the dialog do not change the application&#8217;s configured instructions.</p>
 </div>
 </div>
 </div>
@@ -760,7 +714,7 @@ Changing project or site application settings requires the <a href="projects.aht
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-09-24 18:16:49 UTC
+Last updated 2026-09-25 08:17:51 UTC
 </div>
 </div>
 </body>

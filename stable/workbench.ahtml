@@ -459,7 +459,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="workbench/images/workbench.png" alt="The application shell with project bar at top and menu bar on the right" width="1024px">
+<img src="workbench/images/workbench.png" alt="The application shell with project bar at top and menu bar on the right" width="511px">
 </div>
 </div>
 <div class="admonitionblock tip">
@@ -551,7 +551,7 @@ The <a href="editor.ahtml">Editor</a> is not part of the Workbench — it opens 
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-09-24 18:16:49 UTC
+Last updated 2026-09-25 08:17:51 UTC
 </div>
 </div>
 </body>

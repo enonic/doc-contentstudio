@@ -546,7 +546,7 @@ Deleting published content also takes it offline. The archived items are no long
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/archive-restore.png" alt="Restore from Archive dialog showing a content item, its child image, and Restore (2)" width="912">
+<img src="images/archive-restore.png" alt="Restore from Archive dialog showing a content item, its child image, and Restore (2)" width="912px">
 </div>
 <div class="title">Figure 2. Restoring an item together with its child image</div>
 </div>
@@ -581,7 +581,7 @@ If an item with the same path already exists at the restore location, the system
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/archive-delete.png" alt="Delete from Archive dialog showing an archived item, two child images, and Delete (3)" width="912">
+<img src="images/archive-delete.png" alt="Delete from Archive dialog showing an archived item, two child images, and Delete (3)" width="912px">
 </div>
 <div class="title">Figure 3. Permanently deleting an archived item and its two child images</div>
 </div>
@@ -622,7 +622,7 @@ Permanent deletion removes the archived content, its attachments, and its stored
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-09-24 18:16:49 UTC
+Last updated 2026-09-25 08:17:51 UTC
 </div>
 </div>
 </body>

@@ -490,7 +490,7 @@ The preview mode selected in the panel is also used in the new tab.
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Change status</strong> — shows the <a href="../workflow.ahtml#change_status">change status</a> of the selected content item — <strong>New</strong>, <strong>Modified</strong>, <strong>Moved</strong>, <strong>Unpublished</strong> or <strong>Published</strong> — telling you what has happened to the item since it was last published. Clicking it opens the <a href="../contextpanel/version-history.ahtml">Version history</a> widget, where the changes can be inspected and reverted.</p>
+<p><strong>Change status</strong> — shows the <a href="../workflow.ahtml#change_status">change status</a> of the selected content item — <strong>New</strong>, <strong>Modified</strong>, <strong>Moved</strong>, <strong>Unpublished</strong> or <strong>Published</strong> — telling you what has happened to the item since it was last published. Clicking it opens the <a href="../contextpanel/version-history.ahtml">Version history</a> panel, where the changes can be inspected and reverted.</p>
 </li>
 <li>
 <p><strong>Emulator</strong> dropdown to emulate screen resolutions of various device types (monitor, tablet, mobile).</p>
@@ -537,7 +537,7 @@ The preview mode selected in the panel is also used in the new tab.
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/preview-modes.png" alt="Preview panel in Automatic mode showing the preview mode selector" width="904px">
+<img src="images/preview-modes.png" alt="Preview panel in Automatic mode showing the preview mode selector" width="914px">
 </div>
 <div class="title">Figure 1. Automatic preview mode</div>
 </div>
@@ -575,7 +575,7 @@ The preview mode selected in the panel is also used in the new tab.
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-09-24 18:16:49 UTC
+Last updated 2026-09-25 08:17:51 UTC
 </div>
 </div>
 </body>

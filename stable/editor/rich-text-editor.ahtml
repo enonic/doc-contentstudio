@@ -648,7 +648,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/rich-text-links.png" alt="Insert Link dialog showing the Content, URL, and Email link types" width="905px">
+<img src="images/rich-text-links.png" alt="Insert Link dialog showing the Content, URL, and Email link types" width="820px">
 </div>
 </div>
 <div class="dlist">
@@ -681,7 +681,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/rich-text-anchor.png" alt="Insert Anchor dialog with an anchor name" width="560px">
+<img src="images/rich-text-anchor.png" alt="Insert Anchor dialog with an anchor name" width="580px">
 </div>
 </div>
 <div class="paragraph">
@@ -712,7 +712,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/rich-text-image.png" alt="Insert Image dialog showing alignment, style, and custom-width controls">
+<img src="images/rich-text-image.png" alt="Insert Image dialog showing alignment, style, and custom-width controls" width="905px">
 </div>
 </div>
 <div class="admonitionblock note">
@@ -750,7 +750,7 @@ In general, avoid using <strong>Custom width</strong>. The editor may declare a 
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/rich-text-accessibility.png" alt="Insert Image dialog showing the caption and accessibility settings">
+<img src="images/rich-text-accessibility.png" alt="Insert Image dialog showing the caption and accessibility settings" width="905px">
 </div>
 </div>
 <div class="admonitionblock tip">
@@ -946,7 +946,7 @@ Source editing can introduce invalid or unsupported markup. Use only well-formed
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-09-24 18:16:49 UTC
+Last updated 2026-09-25 08:17:51 UTC
 </div>
 </div>
 </body>

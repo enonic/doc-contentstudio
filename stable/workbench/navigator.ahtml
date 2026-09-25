@@ -469,7 +469,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/navigator.png" alt="Content Studio Navigator showing the content list" width="preview" height="and Details widget">
+<img src="images/navigator.png" alt="Content Studio Navigator showing the content list" width="preview" height="and Details panel">
 </div>
 </div>
 </div>
@@ -627,7 +627,7 @@ If you are working in a layer, a third column will appear, showing the content&#
 <p>The <a href="preview.ahtml">Preview panel</a> shows the selected item&#8217;s draft rendition. Its toolbar displays status and offers preview modes and device-size emulation. If the item cannot be rendered, the preview is unavailable or replaced by a placeholder.</p>
 </li>
 <li>
-<p>The <a href="../contextpanel.ahtml">Context panel</a> hosts widgets for the selected item. Built-in widgets provide details, dependencies, and version history; installed applications may contribute additional widgets.</p>
+<p>The <a href="../contextpanel.ahtml">Context panel</a> provides details, dependencies, and version history for the selected item. Installed applications may contribute additional panels through extensions.</p>
 </li>
 </ul>
 </div>
@@ -639,7 +639,7 @@ If you are working in a layer, a third column will appear, showing the content&#
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-09-24 18:16:49 UTC
+Last updated 2026-09-25 08:17:51 UTC
 </div>
 </div>
 </body>

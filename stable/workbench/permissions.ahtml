@@ -641,7 +641,7 @@ Only users with the <strong>Permissions</strong> permission can edit an item&#82
 </table>
 <div class="imageblock">
 <div class="content">
-<img src="images/permissions-custom.png" alt="Custom permission checkboxes for a principal" width="903px">
+<img src="images/permissions-custom.png" alt="Custom permission checkboxes for a principal" width="795px">
 </div>
 <div class="title">Figure 3. Custom permissions for a principal</div>
 </div>
@@ -741,7 +741,7 @@ Permission changes take effect across all branches, so both draft and published 
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-09-24 18:16:49 UTC
+Last updated 2026-09-25 08:17:51 UTC
 </div>
 </div>
 </body>

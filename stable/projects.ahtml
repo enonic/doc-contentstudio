@@ -561,7 +561,7 @@ The access mode only affects <strong>published</strong> content (the <em>master<
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Project roles set the <strong>default</strong> permissions that every new content item in the project inherits. Per-item overrides are managed through the <strong>Edit Permissions</strong> dialog opened from the <a href="contextpanel/details.ahtml">Details widget</a> in the Context panel. See <a href="workbench/permissions.ahtml">Permissions</a> for the full model.
+Project roles set the <strong>default</strong> permissions that every new content item in the project inherits. Per-item overrides are managed through the <strong>Edit Permissions</strong> dialog opened from the <a href="contextpanel/details.ahtml">Details panel</a> in the Context panel. See <a href="workbench/permissions.ahtml">Permissions</a> for the full model.
 </td>
 </tr>
 </table>
@@ -603,7 +603,7 @@ Project roles set the <strong>default</strong> permissions that every new conten
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="projects/images/project-first.png" alt="Dialog showing a button to start project wizard" width="839w">
+<img src="projects/images/project-first.png" alt="Dialog showing a button to start project wizard" width="839px">
 </div>
 </div>
 <div id="project-wizard" class="paragraph">
@@ -625,7 +625,7 @@ Project roles set the <strong>default</strong> permissions that every new conten
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-09-24 18:16:49 UTC
+Last updated 2026-09-25 08:17:51 UTC
 </div>
 </div>
 </body>

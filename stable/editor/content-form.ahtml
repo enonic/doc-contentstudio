@@ -517,7 +517,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/form-mixins.png" alt="Content Form showing the content type, mixin tabs and optionally the page tab" width="681px">
+<img src="images/form-mixins.png" alt="Content Form showing the content type, mixin tabs and optionally the page tab" width="674px">
 </div>
 </div>
 <div class="admonitionblock caution">
@@ -542,7 +542,7 @@ Disabling an optional mixin removes the mixin and its values from the draft when
 <p>The <strong>Page</strong> tab is available when the item has a page configuration. It contains a hierarchical tree of the page, its regions, and its components.</p>
 </div>
 <div class="paragraph">
-<p>Selecting a component in the tree also selects it in the Page Editor and opens its configuration in the <a href="page-editor.ahtml#_components_widget">Components widget</a>. Use a component&#8217;s context menu to access its available actions. Components that support moving can also be rearranged by dragging them in the tree.</p>
+<p>Selecting a component in the tree also selects it in the Page Editor and opens its configuration in the <a href="page-editor.ahtml#_components_widget">Components panel</a>. Use a component&#8217;s context menu to access its available actions. Components that support moving can also be rearranged by dragging them in the tree.</p>
 </div>
 <div class="paragraph">
 <p>See <a href="page-editor.ahtml#_page_components_tree">Page Components tree</a> for details about managing a page structure.</p>
@@ -599,7 +599,7 @@ International characters are transliterated when a path name is generated. An ad
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/form-rename.png" alt="Rename content item dialog showing the current path name and a new name being entered" width="750px">
+<img src="images/form-rename.png" alt="Rename content item dialog showing the current path name and a new name being entered" width="760px">
 </div>
 <div class="title">Figure 2. The dialog indicates whether the new path name is available.</div>
 </div>
@@ -702,7 +702,7 @@ International characters are transliterated when a path name is generated. An ad
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-09-24 18:16:49 UTC
+Last updated 2026-09-25 08:17:51 UTC
 </div>
 </div>
 </body>

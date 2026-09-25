@@ -501,7 +501,7 @@ Archiving is available in all Content Studio installations: the <strong>Delete</
 <p>Preview only works for media items (images, videos, etc.).</p>
 </li>
 <li>
-<p>The widget selector has only two choices: <strong>Details</strong> and <strong>Version history</strong>.</p>
+<p>The panel selector has only two choices: <strong>Details</strong> and <strong>Version history</strong>.</p>
 </li>
 </ul>
 </div>
@@ -581,7 +581,7 @@ When permanently deleting a localized item, these changes will be lost and canno
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-09-24 18:16:49 UTC
+Last updated 2026-09-25 08:17:51 UTC
 </div>
 </div>
 </body>

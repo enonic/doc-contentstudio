@@ -493,7 +493,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/Issues-bar.png" alt="Content Studio header with Open issues and the toolbar menu&#8217;s Create issue action" width="900">
+<img src="images/Issues-bar.png" alt="Content Studio header with Open issues and the toolbar menu&#8217;s Create issue action" width="688px">
 </div>
 <div class="title">Figure 1. Open the issues overview from the header, or create an issue from the toolbar menu</div>
 </div>
@@ -502,7 +502,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/issues-list.png" alt="Issues dialog listing two general issues and a publish request, with Open and Closed tabs and New Issue button" width="900">
+<img src="images/issues-list.png" alt="Issues dialog listing two general issues and a publish request, with Open and Closed tabs and New Issue button" width="960px">
 </div>
 <div class="title">Figure 2. General issues and publish requests in the same list</div>
 </div>
@@ -533,7 +533,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/issues-filter.png" alt="Issues filter showing All, Assigned to Me, Created by Me, Publish requests, and Issues" width="900">
+<img src="images/issues-filter.png" alt="Issues filter showing All, Assigned to Me, Created by Me, Publish requests, and Issues" width="960px">
 </div>
 <div class="title">Figure 3. Filtering by involvement or issue type</div>
 </div>
@@ -555,7 +555,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/issue-create.png" alt="New Issue dialog with Title, Description, Assignees selector, and Create issue button" width="900">
+<img src="images/issue-create.png" alt="New Issue dialog with Title, Description, Assignees selector, and Create issue button" width="960px">
 </div>
 <div class="title">Figure 4. Creating a general issue and selecting assignees</div>
 </div>
@@ -581,7 +581,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/issue-view.png" alt="Open issue with Comments, Items, and Assignees tabs, existing comments, and a Comment field" width="900">
+<img src="images/issue-view.png" alt="Open issue with Comments, Items, and Assignees tabs, existing comments, and a Comment field" width="960px">
 </div>
 <div class="title">Figure 5. An issue&#8217;s discussion and status selector</div>
 </div>
@@ -593,7 +593,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/issue-items.png" alt="Issue Items tab with a content selector and two attached authors, each with a remove control" width="900">
+<img src="images/issue-items.png" alt="Issue Items tab with a content selector and two attached authors, each with a remove control" width="960px">
 </div>
 <div class="title">Figure 6. Content attached to a general issue</div>
 </div>
@@ -608,7 +608,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/issue-assignees.png" alt="Issue Assignees tab with a user selector and an assigned user with a remove control" width="900">
+<img src="images/issue-assignees.png" alt="Issue Assignees tab with a user selector and an assigned user with a remove control" width="960px">
 </div>
 <div class="title">Figure 7. Managing the people assigned to an issue</div>
 </div>
@@ -634,7 +634,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/publish-request-action.png" alt="Navigator with ready content selected and Request publishing in the toolbar menu" width="1100">
+<img src="images/publish-request-action.png" alt="Navigator with ready content selected and Request publishing in the toolbar menu" width="1333px">
 </div>
 <div class="title">Figure 8. Request publishing from the toolbar menu</div>
 </div>
@@ -643,7 +643,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/publish-request-create.png" alt="Request publishing dialog with readiness status, Title, Add a comment, Assignees, and Create request button" width="900">
+<img src="images/publish-request-create.png" alt="Request publishing dialog with readiness status, Title, Add a comment, Assignees, and Create request button" width="960px">
 </div>
 <div class="title">Figure 9. Describing the request and choosing reviewers</div>
 </div>
@@ -652,7 +652,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/publish-request-items.png" alt="Lower portion of Request publishing with selected content, Include child items, a dependency, and Create request button" width="900">
+<img src="images/publish-request-items.png" alt="Lower portion of Request publishing with selected content, Include child items, a dependency, and Create request button" width="960px">
 </div>
 <div class="title">Figure 10. Reviewing the content included in the request</div>
 </div>
@@ -667,7 +667,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/publish-request-view.png" alt="Publish request details with readiness status, content selector, selected content and dependency, Schedule, and Publish now" width="900">
+<img src="images/publish-request-view.png" alt="Publish request details with readiness status, content selector, selected content and dependency, Schedule, and Publish now" width="960px">
 </div>
 <div class="title">Figure 11. Reviewing and publishing an open request</div>
 </div>
@@ -689,7 +689,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-09-24 18:16:49 UTC
+Last updated 2026-09-25 08:17:51 UTC
 </div>
 </div>
 </body>

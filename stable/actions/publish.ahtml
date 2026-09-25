@@ -489,7 +489,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/publish-in-progress.png" alt="Publishing Wizard with an In progress warning and Mark as ready button for a single item" width="900">
+<img src="images/publish-in-progress.png" alt="Publishing Wizard with an In progress warning and Mark as ready button for a single item" width="900px">
 </div>
 <div class="title">Figure 1. A single in-progress item must be marked ready before publishing</div>
 </div>
@@ -588,7 +588,7 @@ The bulk <b class="button">Mark as ready</b> action can be disabled through <a h
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/publish-dependencies.png" alt="Dependencies list with one of three items selected and a Hide excluded control" width="830">
+<img src="images/publish-dependencies.png" alt="Dependencies list with one of three items selected and a Hide excluded control" width="830px">
 </div>
 <div class="title">Figure 3. Optional dependencies can be selected individually</div>
 </div>
@@ -597,7 +597,7 @@ The bulk <b class="button">Mark as ready</b> action can be disabled through <a h
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/publish-apply.png" alt="Include child items selected with Apply and Cancel controls in the status bar" width="820">
+<img src="images/publish-apply.png" alt="Include child items selected with Apply and Cancel controls in the status bar" width="820px">
 </div>
 <div class="title">Figure 4. Applying a change to Include child items</div>
 </div>
@@ -606,7 +606,7 @@ The bulk <b class="button">Mark as ready</b> action can be disabled through <a h
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/publish-hide-excluded.png" alt="Dependencies list showing only the selected item with a Show excluded control" width="830">
+<img src="images/publish-hide-excluded.png" alt="Dependencies list showing only the selected item with a Show excluded control" width="830px">
 </div>
 <div class="title">Figure 5. Excluded dependencies hidden from the list</div>
 </div>
@@ -693,7 +693,7 @@ Administrators can configure optional dependencies to be selected automatically.
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/publish-schedule.png" alt="Publishing Wizard with Online from and Online to fields, Cancel schedule, and Confirm schedule" width="900">
+<img src="images/publish-schedule.png" alt="Publishing Wizard with Online from and Online to fields, Cancel schedule, and Confirm schedule" width="900px">
 </div>
 <div class="title">Figure 9. Scheduling fields and confirmation controls</div>
 </div>
@@ -726,7 +726,7 @@ Only currently-offline items are scheduled. Other changes included in the batch 
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-09-24 18:16:49 UTC
+Last updated 2026-09-25 08:17:51 UTC
 </div>
 </div>
 </body>

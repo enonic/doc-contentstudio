@@ -533,7 +533,7 @@ The parent project and project identifier cannot be changed after the layer is c
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/layering-step3.png" alt="Project wizard showing the access mode choices for the new layer" width="848px">
+<img src="images/layering-step3.png" alt="Project wizard showing the access mode choices for the new layer" width="905px">
 </div>
 <div class="title">Figure 4. Choose the default content visibility</div>
 </div>
@@ -833,7 +833,7 @@ Reset replaces local content data, name, location, and sort order with the curre
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-09-24 18:16:49 UTC
+Last updated 2026-09-25 08:17:51 UTC
 </div>
 </div>
 </body>

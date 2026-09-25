@@ -611,7 +611,7 @@ Content Studio 6 requires Enonic XP 8.0 or newer.
 <div class="sect2">
 <h3 id="version_history"><a class="link" href="#version_history">Version history</a></h3>
 <div class="paragraph">
-<p>The version history widget has been updated to take advantage of the new features in XP8.</p>
+<p>The Version history panel has been updated to take advantage of the new features in XP8.</p>
 </div>
 <div class="ulist">
 <ul>
@@ -628,7 +628,7 @@ Content Studio 6 requires Enonic XP 8.0 or newer.
 <p><strong>Improved diff dialog</strong> — the diff dialog now shows only the fields that can be reverted, with clearer indicators for changes and improved layout for better readability.</p>
 </li>
 <li>
-<p><strong>Patch handling</strong> — Version history widget informs users when a version is a patch, and prevents reverting to versions that may break content due to missing required fields or other issues.</p>
+<p><strong>Patch handling</strong> — The Version history panel informs users when a version is a patch, and prevents reverting to versions that may break content due to missing required fields or other issues.</p>
 </li>
 </ul>
 </div>
@@ -658,7 +658,7 @@ the page editor and content grid.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Import content widget</strong> — import widget is now a native Content Studio feature.</p>
+<p><strong>Content import</strong> — importing content is now a native Content Studio feature.</p>
 </li>
 <li>
 <p><strong>New-version notification</strong> — Content Studio notifies when a new version is available.</p>
@@ -785,7 +785,7 @@ Full functionalilty may be re-activated via the <a href="config.ahtml">content s
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-09-24 18:16:49 UTC
+Last updated 2026-09-25 08:17:51 UTC
 </div>
 </div>
 </body>

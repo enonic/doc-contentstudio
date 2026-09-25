@@ -839,7 +839,7 @@ Only components of type <strong>Page</strong> are listed here. Most setups provi
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/page-empty-region.png" alt="Empty region shown as a box with a dashed border and a prompt to drop components" width="784px">
+<img src="images/page-empty-region.png" alt="Empty region shown as a box with a dashed border and a prompt to drop components" width="793px">
 </div>
 <div class="title">Figure 11. Empty region in the visual editor</div>
 </div>
@@ -848,7 +848,7 @@ Only components of type <strong>Page</strong> are listed here. Most setups provi
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/page-placeholder.png" alt="Empty Part shown as a box with a solid border and a component type icon" width="784px">
+<img src="images/page-placeholder.png" alt="Empty Part shown as a box with a solid border and a component type icon" width="795px">
 </div>
 <div class="title">Figure 12. Empty Part placeholder</div>
 </div>
@@ -1020,7 +1020,7 @@ The <strong>Text</strong> component has been deprecated in Content Studio 6 and 
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-09-24 18:16:49 UTC
+Last updated 2026-09-25 08:17:51 UTC
 </div>
 </div>
 </body>
