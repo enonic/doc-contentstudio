@@ -5,7 +5,7 @@
 
 Variants are linked copies of a content item that can be edited and published independently. They are primarily intended for A/B testing, where an external testing tool serves the variants through their separate IDs or path and measures their performance.
 
-NOTE: *Content Studio+ feature.* The Variants widget is part of the https://market.enonic.com/vendors/enonic/content-studio-plus[Content Studio+] subscription.
+NOTE: *Content Studio+ feature.* The Variants panel is part of the https://market.enonic.com/vendors/enonic/content-studio-plus[Content Studio+] subscription.
 
 == Use cases
 

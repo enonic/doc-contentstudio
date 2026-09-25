@@ -106,7 +106,7 @@ Permission levels are pre-configured sets of permissions. Select *Custom* to gra
 |===
 
 .Custom permissions for a principal
-image::permissions-custom.png[Custom permission checkboxes for a principal, 903px]
+image::permissions-custom.png[Custom permission checkboxes for a principal, 795px]
 
 === Public or restricted
 

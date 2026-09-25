@@ -6,7 +6,7 @@ The *Details* context panel is the default panel that shows the basic properties
 
 == Overview
 
-The details panel shows the core metadata an editor typically needs to know without opening the item. It is the default widget shown in the <<../contextpanel#,Context panel>>.
+The Details panel shows the core metadata an editor typically needs to know without opening the item. It is shown by default in the <<../contextpanel#,Context panel>>.
 
 image::details.png[Details context panel including icon status path permissions content id metadata and more, 357px]
 

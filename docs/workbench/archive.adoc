@@ -19,7 +19,7 @@ Click the *Archive* icon in the Content Studio main menu to open the Archive vie
 
 * Only two actions are available: *Restore* and *Delete*. *Restore* returns the selected content to its original location when possible, falling back to the project root when necessary. *Delete* permanently removes the selected content from storage.
 * Preview only works for media items (images, videos, etc.).
-* The widget selector has only two choices: *Details* and *Version history*.
+* The panel selector has only two choices: *Details* and *Version history*.
 
 The preview panel on the right shows who archived each item, when, and the original location of the item.
 

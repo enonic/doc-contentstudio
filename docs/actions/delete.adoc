@@ -40,7 +40,7 @@ See <<../contextpanel/dependencies#reference_checks,Reference checks>> for *Show
 Select archived items in the <<../workbench/archive#,Archive>> and choose *Restore* to open the *Restore from Archive* dialog. It lists the selection and any descendants that will be restored with it. The btn:[Restore] button shows the total number of affected items when there is more than one.
 
 .Restoring an item together with its child image
-image::archive-restore.png["Restore from Archive dialog showing a content item, its child image, and Restore (2)", 912]
+image::archive-restore.png["Restore from Archive dialog showing a content item, its child image, and Restore (2)", 912px]
 
 Click btn:[Restore] to return the listed items to the active tree. Their structure is preserved. Content returns to its original location when that location is available; otherwise, it is restored to the project root.
 
@@ -56,7 +56,7 @@ The *Delete* action in the Archive permanently removes archived content. Select 
 The dialog lists the selected items and any descendants or other content that will be deleted with them. The btn:[Delete] button shows the total number of affected items when there is more than one. Deleting a parent also deletes all of its descendants, so review the entire list before confirming.
 
 .Permanently deleting an archived item and its two child images
-image::archive-delete.png["Delete from Archive dialog showing an archived item, two child images, and Delete (3)", 912]
+image::archive-delete.png["Delete from Archive dialog showing an archived item, two child images, and Delete (3)", 912px]
 
 IMPORTANT: Permanent deletion removes the archived content, its attachments, and its stored version history. It cannot be undone or restored through Content Studio. Recovery requires an applicable repository snapshot or backup and must be performed outside Content Studio by an administrator.
 

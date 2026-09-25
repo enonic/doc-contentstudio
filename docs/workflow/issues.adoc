@@ -16,12 +16,12 @@ Both types have an *Open* or *Closed* status. This status belongs to the issue: 
 Click *Open issues* in the Content Studio header to open the Issues dialog for the current project. The header shows the number of open issues; when there are none, it displays *No open issues*.
 
 .Open the issues overview from the header, or create an issue from the toolbar menu
-image::Issues-bar.png["Content Studio header with Open issues and the toolbar menu's Create issue action", 900]
+image::Issues-bar.png["Content Studio header with Open issues and the toolbar menu's Create issue action", 688px]
 
 The dialog lists general issues and publish requests together. Each row shows its number, title, creator, creation time, and status. A hash icon identifies a general issue; a globe identifies a publish request. Click a row to open its details, or btn:[New Issue] to create a general issue.
 
 .General issues and publish requests in the same list
-image::issues-list.png["Issues dialog listing two general issues and a publish request, with Open and Closed tabs and New Issue button", 900]
+image::issues-list.png["Issues dialog listing two general issues and a publish request, with Open and Closed tabs and New Issue button", 960px]
 
 Use the *Open* and *Closed* tabs to choose the status, and the *Filter* selector to narrow the list:
 
@@ -34,7 +34,7 @@ Use the *Open* and *Closed* tabs to choose the status, and the *Filter* selector
 Counts show how many entries match each choice. Choices with no matching entries are disabled.
 
 .Filtering by involvement or issue type
-image::issues-filter.png["Issues filter showing All, Assigned to Me, Created by Me, Publish requests, and Issues", 900]
+image::issues-filter.png["Issues filter showing All, Assigned to Me, Created by Me, Publish requests, and Issues", 960px]
 
 [[tasks]]
 == General issues
@@ -49,7 +49,7 @@ Use btn:[New Issue] in the Issues list or *Create issue* in the toolbar menu. Wh
 The *New Issue* dialog contains a required *Title*, an optional *Description*, and an *Assignees* selector. Choose one or more users to involve in the work, or leave the issue unassigned. Content can be linked to the issue through the *Items* selector.
 
 .Creating a general issue and selecting assignees
-image::issue-create.png["New Issue dialog with Title, Description, Assignees selector, and Create issue button", 900]
+image::issue-create.png["New Issue dialog with Title, Description, Assignees selector, and Create issue button", 960px]
 
 Click btn:[Create issue] to save the issue and open its details. You can update its content and assignments afterwards.
 
@@ -65,14 +65,14 @@ Click the title to edit it. Use the status selector to change an issue from *Ope
 The *Comments* tab holds the discussion, including the description or comment supplied when the issue was created. Enter text in the *Comment* field and click btn:[Comment] to post it. The menu beside a comment provides *Edit* and *Delete* when those actions are available to you.
 
 .An issue's discussion and status selector
-image::issue-view.png["Open issue with Comments, Items, and Assignees tabs, existing comments, and a Comment field", 900]
+image::issue-view.png["Open issue with Comments, Items, and Assignees tabs, existing comments, and a Comment field", 960px]
 
 === Items
 
 For a general issue, the *Items* tab lists its attached content. Search or browse with the selector to add items. Click an item's name to open it in the Content Editor; use the remove control beside it to detach it from the issue. Removing an attachment does not delete the content.
 
 .Content attached to a general issue
-image::issue-items.png["Issue Items tab with a content selector and two attached authors, each with a remove control", 900]
+image::issue-items.png["Issue Items tab with a content selector and two attached authors, each with a remove control", 960px]
 
 Publish requests use a *Publish request* tab instead, with publishing states, dependencies, and publishing controls. See <<#_the_publish_request_dialog,The publish request dialog>>.
 
@@ -81,7 +81,7 @@ Publish requests use a *Publish request* tab instead, with publishing states, de
 The *Assignees* tab shows the users assigned to the issue. Search for users to add them, or use the remove control beside an assignee to remove their assignment. Multiple users can be assigned to the same issue.
 
 .Managing the people assigned to an issue
-image::issue-assignees.png["Issue Assignees tab with a user selector and an assigned user with a remove control", 900]
+image::issue-assignees.png["Issue Assignees tab with a user selector and an assigned user with a remove control", 960px]
 
 [[publish_requests]]
 == Publish requests
@@ -98,17 +98,17 @@ A publish request must contain at least one content item. General issues can be 
 Select one or more content items and choose *Request publishing* from the toolbar or context menu. For users without publish permission, it is the primary publishing action once content is ready.
 
 .Request publishing from the toolbar menu
-image::publish-request-action.png["Navigator with ready content selected and Request publishing in the toolbar menu", 1100]
+image::publish-request-action.png["Navigator with ready content selected and Request publishing in the toolbar menu", 1333px]
 
 The *Request publishing* dialog combines the request details and its content in one form. Enter a required *Title*, optionally *Add a comment*, and select assignees to review the request.
 
 .Describing the request and choosing reviewers
-image::publish-request-create.png["Request publishing dialog with readiness status, Title, Add a comment, Assignees, and Create request button", 900]
+image::publish-request-create.png["Request publishing dialog with readiness status, Title, Add a comment, Assignees, and Create request button", 960px]
 
 Review the *Items* and *Dependencies* further down in the same dialog. *Include child items* adds descendants where available, and the dependency checkboxes control which related items are included. Selection changes must be applied before continuing. See <<../actions/publish#_dependencies,Publishing dependencies>> for these shared controls.
 
 .Reviewing the content included in the request
-image::publish-request-items.png["Lower portion of Request publishing with selected content, Include child items, a dependency, and Create request button", 900]
+image::publish-request-items.png["Lower portion of Request publishing with selected content, Include child items, a dependency, and Create request button", 960px]
 
 The status bar reports readiness. Resolve any blocking conditions before submitting; see <<../actions/publish#mark_as_ready,Mark as ready>> and <<../actions/publish#_validation,Publishing validation>>. Click btn:[Create request] to create the request and open its details. For multiple included items, the button displays the item count.
 
@@ -117,7 +117,7 @@ The status bar reports readiness. Resolve any blocking conditions before submitt
 A publish request opens on its *Publish request* tab, which presents the Publishing wizard's controls within the issue. It shows the current content states, included items and dependencies, and any conditions that block publishing. Use the content selector to add items, or adjust the existing selection and apply the changes.
 
 .Reviewing and publishing an open request
-image::publish-request-view.png["Publish request details with readiness status, content selector, selected content and dependency, Schedule, and Publish now", 900]
+image::publish-request-view.png["Publish request details with readiness status, content selector, selected content and dependency, Schedule, and Publish now", 960px]
 
 The *Comments* and *Assignees* tabs work as described under <<#update_an_issue,Issue details>>. Use comments to discuss changes or ask the author to revise the content before publishing.
 

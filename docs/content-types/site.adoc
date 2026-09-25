@@ -13,7 +13,7 @@ A Site is usually created directly under the project root. As a regular content 
 Creating a site also unlocks support for pages. Sites may also contain regular structured content, without using page components for presentation.
 
 .Site content form
-image::site.png[Site content item with its Description, Base URL, and Applications fields]
+image::site.png["Site content item with its Description, Base URL, and Applications fields", 546px]
 
 
 == Site fields
@@ -64,7 +64,7 @@ Similar to projects, an application's configuration form is defined by the appli
 . Click btn:[Save] in the Content Editor toolbar to save the Site and create a new version.
 
 .Configuring a Site application
-image::site-application-config.png["Application configuration dialog with application-specific fields", 546px]
+image::site-application-config.png["Application configuration dialog with application-specific fields", 760px]
 
 btn:[Apply] only accepts the values in the configuration dialog. The Site itself must still be saved, and the Site must be published before the changes are available on the published branch.
 

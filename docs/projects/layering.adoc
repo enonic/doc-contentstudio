@@ -31,7 +31,7 @@ IMPORTANT: The parent project and project identifier cannot be changed after the
 Choose the layer's access mode. Use the *Copy from...* option to apply the same default content visibility as the parent.
 
 .Choose the default content visibility
-image::layering-step3.png["Project wizard showing the access mode choices for the new layer", 848px]
+image::layering-step3.png["Project wizard showing the access mode choices for the new layer", 905px]
 
 Complete the remaining project wizard steps to assign roles and review the applications inherited from the parent. When the project is created, a background synchronization job starts copying the parent's content into the new layer.
 

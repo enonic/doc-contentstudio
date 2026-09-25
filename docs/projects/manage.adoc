@@ -15,7 +15,7 @@ New projects are created with the project wizard. It launches from the first-run
 +
 Optionally select a *parent project* — this makes the new project a <<layering#,layer>>, inheriting content from the parent. Then select the *default language*, which will be applied to new content created in the root of the project.
 +
-image::project-step1.png[Dialog for selecting parent project and default language, 839w]
+image::project-step1.png[Dialog for selecting parent project and default language, 920px]
 +
 IMPORTANT: The parent project cannot be changed after the project is created. The default language can.
 +
@@ -23,7 +23,7 @@ IMPORTANT: The parent project cannot be changed after the project is created. Th
 +
 Give the project a *display name*. The *identifier* is auto-generated from the display name, but can be overridden. Only alphanumeric characters and "-" are allowed, the value is validated for uniqueness, and it cannot be changed later. Optionally, add a description.
 +
-image::project-step2.png[Dialog for setting project name and unique identifier, 920w]
+image::project-step2.png[Dialog for setting project name and unique identifier, 920px]
 +
 NOTE: When creating a layer, the wizard will suggest display name and description based on the parent project and the selected language.
 +
@@ -31,25 +31,25 @@ NOTE: When creating a layer, the wizard will suggest display name and descriptio
 +
 Select the <<../projects#access-mode,access mode>> — the default READ permissions for content in the project.
 +
-image::project-step3.png[Select default content visibility, 920w]
+image::project-step3.png[Select default content visibility, 922px]
 +
 . Grant project roles
 +
 Give users or groups access to the project by assigning <<../projects#project-roles,project roles>>.
 +
-image::project-step4.png[Configure authoring access, 920w]
+image::project-step4.png[Configure authoring access, 920px]
 +
 . Project scope applications
 +
 Select the <<../projects#project-applications,applications>> that should be available for the project's content.
 +
-image::project-step5.png[Configure applications for project, 920w]
+image::project-step5.png[Configure applications for project, 920px]
 +
 . Summary
 +
 Verify the settings of the project you are about to create, then click btn:[Create Project].
 +
-image::project-summary.png[Summary of project settings, 920w]
+image::project-summary.png[Summary of project settings, 920px]
 
 NOTE: If you created a layer, a synchronization job will kick in and inherit content from the parent project.
 

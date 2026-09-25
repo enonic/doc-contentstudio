@@ -3,14 +3,14 @@
 :imagesdir: images
 :experimental:
 
-Content items reference each other — pages embed images, shortcuts target content, text fields link to other items. Those references are *dependencies*. Content Studio tracks them in both directions, and makes them inspectable via the *Dependencies* widget in the <<../contextpanel#,Context panel>>.
+Content items reference each other — pages embed images, shortcuts target content, text fields link to other items. Those references are *dependencies*. Content Studio tracks them in both directions, and makes them inspectable via the *Dependencies* panel in the <<../contextpanel#,Context panel>>.
 
 * An *inbound* dependency is content that _uses_ the selected item — for example, a page that embeds it, or a shortcut that points at it.
 * An *outbound* dependency is content that the selected item _uses_ — for example, images referenced in its rich-text fields, or targets of content selectors.
 
 image::dependencies.png[Dependencies context panel showing inbound and outbound dependencies to a content item, 353px]
 
-Inbound dependencies are listed above the content box, outbound below. When there are no dependencies of a kind, the widget shows a placeholder (_No incoming dependencies_, etc.). When there are dependencies, a button displays the total count, with icons and counts broken out per content type.
+Inbound dependencies are listed above the content box, outbound below. When there are no dependencies of a kind, the panel shows a placeholder (_No incoming dependencies_, etc.). When there are dependencies, a button displays the total count, with icons and counts broken out per content type.
 
 == Dependency search
 
@@ -40,7 +40,7 @@ Delete and Unpublish check for inbound references to the affected content, inclu
 Click *Show references* beside an affected item to open its inbound dependency search. The referenced item is fixed as a filter, and the results show content that uses it. Use the results to find the referring items and remove or replace their references. See <<#_dependency_search,Dependency search>> for filtering and working with the results.
 
 .Posts referencing Kari Nordmann, opened from the Unpublish dialog
-image::dependencies-inbound-search.png["Inbound Dependencies search for Kari Nordmann showing referencing posts and their publishing states", 892]
+image::dependencies-inbound-search.png["Inbound Dependencies search for Kari Nordmann showing referencing posts and their publishing states", 892px]
 
 === Ignore inbound references
 

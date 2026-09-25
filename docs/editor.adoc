@@ -32,7 +32,7 @@ Content Studio deliberately uses browser-native tabs instead of maintaining an i
 == Workspace layout
 
 .The main areas of the Content Editor
-image::editor-panels.png[Content Editor with the toolbar above the content form and preview, 1442px]
+image::editor-panels.png[Content Editor with the toolbar above the content form and preview, 1441.5px]
 
 The workspace can contain up to four panels:
 

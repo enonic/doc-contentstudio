@@ -21,7 +21,7 @@ Use *Mark as ready* in the Content Navigator for the selected content, or in the
 If the publishing batch contains in-progress items, the wizard displays an *In progress* warning. Click btn:[Mark as ready] in that warning to mark the in-progress items ready together. This does not fix invalid content; other <<#_validation,blocking conditions>> must also be resolved before publishing.
 
 .A single in-progress item must be marked ready before publishing
-image::publish-in-progress.png["Publishing Wizard with an In progress warning and Mark as ready button for a single item", 900]
+image::publish-in-progress.png["Publishing Wizard with an In progress warning and Mark as ready button for a single item", 900px]
 
 To handle items individually, click an item's name to open it in the Content Editor, complete its content, and mark it ready there. The wizard updates its checks when the content changes.
 
@@ -72,17 +72,17 @@ Publishing can involve more than the original selection. The wizard resolves rel
 * Required items have disabled controls. An ancestor may be required because a child is included; exclude the child and apply the change before trying to exclude that ancestor.
 
 .Optional dependencies can be selected individually
-image::publish-dependencies.png["Dependencies list with one of three items selected and a Hide excluded control", 830]
+image::publish-dependencies.png["Dependencies list with one of three items selected and a Hide excluded control", 830px]
 
 Changing the selection displays a blue status bar. Click btn:[Apply] to confirm the selection and recalculate dependencies and validation, or btn:[Cancel] to discard the pending selection changes. Applying the selection does not publish content.
 
 .Applying a change to Include child items
-image::publish-apply.png["Include child items selected with Apply and Cancel controls in the status bar", 820]
+image::publish-apply.png["Include child items selected with Apply and Cancel controls in the status bar", 820px]
 
 Use *Hide excluded* to show only included dependencies. *Show excluded* reveals unchecked items again so they can be added back. This changes the list's visibility, not which items will be published.
 
 .Excluded dependencies hidden from the list
-image::publish-hide-excluded.png["Dependencies list showing only the selected item with a Show excluded control", 830]
+image::publish-hide-excluded.png["Dependencies list showing only the selected item with a Show excluded control", 830px]
 
 TIP: Administrators can configure optional dependencies to be selected automatically. See <<../config#exclude_optional_dependencies,Exclude optional dependencies>> for the setting.
 
@@ -123,7 +123,7 @@ When the batch includes content that can be scheduled, btn:[Schedule] appears be
 Click btn:[Confirm schedule] to submit the schedule. Use btn:[Cancel schedule] to leave scheduling mode and return to the btn:[Publish now] controls.
 
 .Scheduling fields and confirmation controls
-image::publish-schedule.png["Publishing Wizard with Online from and Online to fields, Cancel schedule, and Confirm schedule", 900]
+image::publish-schedule.png["Publishing Wizard with Online from and Online to fields, Cancel schedule, and Confirm schedule", 900px]
 
 NOTE: Only currently-offline items are scheduled. Other changes included in the batch are published immediately.
 

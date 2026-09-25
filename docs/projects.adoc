@@ -44,7 +44,7 @@ Every project has a fixed set of roles that can be used to assign different leve
 * *Editor* — same as *Author* + publish content and modify content permissions.
 * *Owner* — same as *Editor* + create and configure sites, and modify project settings.
 
-NOTE: Project roles set the *default* permissions that every new content item in the project inherits. Per-item overrides are managed through the *Edit Permissions* dialog opened from the <<contextpanel/details#,Details widget>> in the Context panel. See <<workbench/permissions#,Permissions>> for the full model.
+NOTE: Project roles set the *default* permissions that every new content item in the project inherits. Per-item overrides are managed through the *Edit Permissions* dialog opened from the <<contextpanel/details#,Details panel>> in the Context panel. See <<workbench/permissions#,Permissions>> for the full model.
 
 
 [[project-applications]]
@@ -65,7 +65,7 @@ A fresh Enonic installation contains no projects, meaning you will have to creat
 
 You should see the following dialog when starting Content Studio for the first time:
 
-image::project-first.png[Dialog showing a button to start project wizard, 839w]
+image::project-first.png[Dialog showing a button to start project wizard, 839px]
 
 [[project-wizard]]
 Clicking btn:[Start Project wizard] will launch the <<projects/manage#project-wizard,project wizard>>, which guides you through the steps of creating a new project.

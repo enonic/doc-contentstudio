@@ -84,13 +84,13 @@ While conceptually similar, the page editor has been completely redesigned to wo
 
 === Version history
 
-The version history widget has been updated to take advantage of the new features in XP8.
+The Version history panel has been updated to take advantage of the new features in XP8.
 
 * *Show only revertable versions* — by default, only versions that can be reverted to are shown in the version history, reducing clutter and confusion for users.
 * *Show all actions* — users can choose to show all actions if they want to see the full history of changes and events for a content item.
 * *Lazy loading* — version history now loads versions on demand, improving performance for content items with many versions.
 * *Improved diff dialog* — the diff dialog now shows only the fields that can be reverted, with clearer indicators for changes and improved layout for better readability.
-* *Patch handling* — Version history widget informs users when a version is a patch, and prevents reverting to versions that may break content due to missing required fields or other issues.
+* *Patch handling* — The Version history panel informs users when a version is a patch, and prevents reverting to versions that may break content due to missing required fields or other issues.
 
 === Modernized technology
 
@@ -104,7 +104,7 @@ the page editor and content grid.
 
 === Improvements
 
-* *Import content widget* — import widget is now a native Content Studio feature.
+* *Content import* — importing content is now a native Content Studio feature.
 * *New-version notification* — Content Studio notifies when a new version is available.
 * *baseUrl support* — support for configuring a base URL for your front-end directly in Content Studio.
 * *Scheduled publishing defaults* — "Online from" defaults to "Now", and the Publish button shows a distinct caption for scheduled publishing.
@@ -151,4 +151,3 @@ Read more about the XP 8.0 upgrade process in the https://developer.enonic.com/d
 TIP: Full functionalilty may be re-activated via the <<config#, content studio configuration>> 
 
 * *New URL pattern* — Content Studio is now served without the `/tool/` prefix
-

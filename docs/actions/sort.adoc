@@ -14,7 +14,7 @@ Select a single parent item in the Navigator and choose btn:[Sort] from the tool
 The *Sort items* dialog shows the parent's current order in the *Sort Element* selector and lists its direct children. Sorting this list does not change the order inside each child's own subtree.
 
 .Sort items dialog showing children ordered by modified date
-image::sort.png["Sort items dialog with Modified date (Old to new) selected and a list of child content", 853px]
+image::sort.png["Sort items dialog with Modified date (Old to new) selected and a list of child content", 900px]
 
 == Automatic ordering
 
@@ -49,7 +49,7 @@ Automatic ordering stores a sorting rule. The resulting order follows that rule 
 Choose *Manually sorted* to arrange the children yourself. Drag rows using the handles on the left and drop them at the desired positions. Dragging a row while an automatic order is selected also switches the dialog to manual ordering.
 
 .Manual ordering with drag handles beside the child items
-image::sort-manual.png["Sort items dialog with Manually sorted selected, reordered children, and Save enabled", 853px]
+image::sort-manual.png["Sort items dialog with Manually sorted selected, reordered children, and Save enabled", 900px]
 
 Items <<new#,created>> under a manually sorted parent are inserted at the top of the list. Items <<move#,moved>> into that parent also appear at the top. The existing children keep their relative order. Reopen Sort to place the new items where you want them, then click btn:[Save].
 
@@ -62,7 +62,7 @@ Click btn:[Save] to store the order in the CMS and apply it in the Navigator. Sa
 Sorting changes the draft and is recorded as *Sorted* in <<../contextpanel/version-history#,Version history>>. For published content, a changed sort order can give the parent change status *Modified* while its publish state remains *Online*. Sorting does not itself change the workflow state to *In progress*.
 
 .Posts remains Online while its draft is Modified, with a Sorted entry in version history
-image::sort-change-state.png["Navigator showing Posts as Online, Modified change status, and a Sorted entry in Version history", 1440px]
+image::sort-change-state.png["Navigator showing Posts as Online, Modified change status, and a Sorted entry in Version history", 1382px]
 
 Use <<publish#publish,Publish>> to make the sorting changes available to applications reading published content. See <<../workflow#,Workflow>> for the distinction between workflow state, publish state, and change status.
 

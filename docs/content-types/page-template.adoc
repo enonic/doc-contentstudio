@@ -6,7 +6,7 @@ A *Page template* contains a reusable page that supports one or more content typ
 
 Page templates belong to a Site and live in its automatically provisioned <<site#templates_folder,Templates folder>>. Editors may use page templates as a starting point for their pages, or front ends can resolve page templates automatically when rendering specific content types.
 
-image::page-template.png["Page template form contains a content type supports filter", 546px]
+image::page-template.png["Page template form contains a content type supports filter", 545px]
 
 == Creating a Page template
 

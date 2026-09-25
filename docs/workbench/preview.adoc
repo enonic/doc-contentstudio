@@ -18,7 +18,7 @@ The preview-panel toolbar contains the following controls:
 
 image::preview-toolbar.png[Preview toolbar with change state, emulator selector, preview mode selector and a refresh button, 949px]
 
-* *Change status* — shows the <<../workflow#change_status,change status>> of the selected content item — *New*, *Modified*, *Moved*, *Unpublished* or *Published* — telling you what has happened to the item since it was last published. Clicking it opens the <<../contextpanel/version-history#,Version history>> widget, where the changes can be inspected and reverted.
+* *Change status* — shows the <<../workflow#change_status,change status>> of the selected content item — *New*, *Modified*, *Moved*, *Unpublished* or *Published* — telling you what has happened to the item since it was last published. Clicking it opens the <<../contextpanel/version-history#,Version history>> panel, where the changes can be inspected and reverted.
 * *Emulator* dropdown to emulate screen resolutions of various device types (monitor, tablet, mobile).
 +
 image::preview-emulator.png[Preview emulator letting you select between different devices and screen sizes, 915px]
@@ -39,7 +39,7 @@ By default, the panel offers the following preview modes:
 Automatic mode is the default, and will pick the first mode that supports the current content.
 
 .Automatic preview mode
-image::preview-modes.png[Preview panel in Automatic mode showing the preview mode selector, 904px]
+image::preview-modes.png[Preview panel in Automatic mode showing the preview mode selector, 914px]
 
 For content that cannot be rendered by any of the available preview modes, the Preview panel shows a placeholder saying "No preview available". However, you may still manually select the JSON preview mode to see the content in raw JSON format.
 

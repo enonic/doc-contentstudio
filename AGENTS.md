@@ -51,6 +51,7 @@ This project relies on GitHub Actions for building and publishing. There are no 
 
 - **Images:**
   - Images live in `images/` subdirectories. `:imagesdir:` resolves relative to the referencing `.adoc` file.
+  - Annotate every image with a display width in `px` equal to half its stored pixel width, since screenshots are captured on a high-resolution MacBook. For example, a 1800-pixel-wide screenshot uses `image::screenshot.png[Description, 900px]`.
   - **One shared `images/` folder per section when subpages are leaves.** If a section's subpages have no further nesting of their own, do not create a per-subpage `images/` folder — all subpages share a single `images/` folder at the section root. Don't leave empty `images/` directories behind.
   - Example layout (content-types — all subpages are leaves):
     ```

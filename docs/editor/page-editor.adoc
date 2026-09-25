@@ -185,12 +185,12 @@ Drag an existing component to another valid position to reorder it or move it be
 Empty regions are shown as drop zones:
 
 .Empty region in the visual editor
-image::page-empty-region.png["Empty region shown as a box with a dashed border and a prompt to drop components", 784px]
+image::page-empty-region.png["Empty region shown as a box with a dashed border and a prompt to drop components", 793px]
 
 Empty components are shown as placeholders with icons that identify their component type:
 
 .Empty Part placeholder
-image::page-placeholder.png["Empty Part shown as a box with a solid border and a component type icon", 784px]
+image::page-placeholder.png["Empty Part shown as a box with a solid border and a component type icon", 795px]
 
 [[_component_actions]]
 

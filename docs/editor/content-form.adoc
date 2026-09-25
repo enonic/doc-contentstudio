@@ -28,7 +28,7 @@ A mixin is a reusable set of fields that an application can add to multiple cont
 
 Each enabled mixin has its own tab. Required mixins are enabled automatically and cannot be disabled. To manage optional mixins, open the menu next to the tabs, select or clear the available mixins, and click btn:[Confirm].
 
-image::form-mixins.png["Content Form showing the content type, mixin tabs and optionally the page tab", 681px]
+image::form-mixins.png["Content Form showing the content type, mixin tabs and optionally the page tab", 674px]
 
 CAUTION: Disabling an optional mixin removes the mixin and its values from the draft when the item is saved.
 
@@ -38,7 +38,7 @@ Developers can learn how mixins are defined and assigned in the https://develope
 
 The *Page* tab is available when the item has a page configuration. It contains a hierarchical tree of the page, its regions, and its components.
 
-Selecting a component in the tree also selects it in the Page Editor and opens its configuration in the <<page-editor#_components_widget,Components widget>>. Use a component's context menu to access its available actions. Components that support moving can also be rearranged by dragging them in the tree.
+Selecting a component in the tree also selects it in the Page Editor and opens its configuration in the <<page-editor#_components_widget,Components panel>>. Use a component's context menu to access its available actions. Components that support moving can also be rearranged by dragging them in the tree.
 
 See <<page-editor#_page_components_tree,Page Components tree>> for details about managing a page structure.
 
@@ -67,7 +67,7 @@ Content items are automatically assigned a unique ID when they are created. This
 Click the path name in the Editor toolbar to rename the item when you have permission to do so. The new path name must be unique among items with the same parent.
 
 .The dialog indicates whether the new path name is available.
-image::form-rename.png[Rename content item dialog showing the current path name and a new name being entered, 750px]
+image::form-rename.png[Rename content item dialog showing the current path name and a new name being entered, 760px]
 
 Changing the path of an existing item changes its URL. Check references and external links before renaming published content.
 

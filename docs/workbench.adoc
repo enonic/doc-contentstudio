@@ -4,7 +4,7 @@
 
 The *Workbench* is the application shell of Content Studio. It has three parts: a *project bar* across the top, a *menu bar* on the left, and a *main panel* that fills the rest.
 
-image::workbench.png[The application shell with project bar at top and menu bar on the right, width=1024px]
+image::workbench.png[The application shell with project bar at top and menu bar on the right, width=511px]
 
 TIP: The <<editor#,Editor>> is not part of the Workbench — it opens in a separate browser tab.
 

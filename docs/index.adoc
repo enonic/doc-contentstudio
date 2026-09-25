@@ -1,10 +1,8 @@
-= Content Studio 6 documentation - WIP
+= Content Studio 6 documentation
 :toc: right
 :imagesdir: images
 
 Content Studio is Enonic XP's content-management UI — the editor-facing application for creating, organising, and publishing content.
-
-IMPORTANT: *Work in progress* We are still working to complete the documentation. Expect some outdated screenshots until we finish this work.
 
 image::content-studio.png[Content Studio screenshot showing the content list and preview of an Enonic web page saying "This is Enonic", width=1440px]
 
@@ -23,7 +21,7 @@ Authoring happens in the <<editor#,Content Editor>>, which launches in a separat
 
 == Concepts
 
-A few recurring concepts surface everywhere in the UI — in dialogs, widgets, toolbars, and URLs. 
+A few recurring concepts surface everywhere in the UI — in dialogs, panels, toolbars, and URLs.
 
 === Projects and layers
 
@@ -55,7 +53,7 @@ Content is always edited in the *draft* branch. Publishing copies the active dra
 
 === Version history
 
-Every save, publish, unpublish, rename, or permissions change creates a new *version*. Versions can be compared and reverted from the Version history widget — see <<contextpanel/version-history#,Version history>>.
+Every save, publish, unpublish, rename, or permissions change creates a new *version*. Versions can be compared and reverted from the Version history panel — see <<contextpanel/version-history#,Version history>>.
 
 === Dependencies
 
@@ -71,7 +69,7 @@ Deleting content is destructive. *Archiving* is the non-destructive alternative 
 
 === Applications and extensions
 
-An *application* is an installable unit of XP code that can contribute content types, Page components, Parts, Layouts, translations, and UI widgets. Applications are attached to a site via its Applications field; some (like Juke and Content Studio+) contribute UI across all sites.
+An *application* is an installable unit of XP code that can contribute content types, Page components, Parts, Layouts, translations, and UI extensions. Applications are attached to a site via its Applications field; some (like Juke and Content Studio+) contribute UI across all sites.
 
 *Extensions* are typically small UI surfaces contributed by an application. The main host is the <<contextpanel#,Context panel>>; applications can also contribute <<workbench/preview#,preview modes>> and <<workbench#,menuitems>>.
 

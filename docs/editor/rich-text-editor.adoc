@@ -78,7 +78,7 @@ Search can be restricted to matching case or whole words. Switch the popup to re
 
 Select existing text before opening the link dialog, or enter the link text in the dialog. An optional tooltip can provide additional information about the destination. The available link types are organized into tabs.
 
-image::rich-text-links.png["Insert Link dialog showing the Content, URL, and Email link types", 905px]
+image::rich-text-links.png["Insert Link dialog showing the Content, URL, and Email link types", 820px]
 
 Content:: Select another content item. Internal links use a content reference, so they continue to target the same item if it is moved or renamed. Depending on the selected item, you can open it in a new tab, add a fragment or query parameters, or choose how a media item should open.
 URL:: Enter an HTTPS, HTTP, FTP, telephone, or relative URL and choose whether it opens in a new tab.
@@ -92,7 +92,7 @@ To edit an existing link, double-click it, or select the link and use the link c
 
 Anchors are created using a dedicated anchor control in the toolbar.
 
-image::rich-text-anchor.png[Insert Anchor dialog with an anchor name, 560px]
+image::rich-text-anchor.png[Insert Anchor dialog with an anchor name, 580px]
 
 To create an anchor, place the cursor at the destination and use the anchor control. Anchor names cannot contain spaces and must be unique within the rich-text value. The anchor then becomes available in the link dialog.
 
@@ -111,7 +111,7 @@ Use the image control to insert an existing image content item or upload a new i
 
 After selecting an image, the dialog provides controls for alignment, style, and width. Left- or right-aligned images allow surrounding text to wrap around them. Centered and full-width placement keep the image on its own line.
 
-image::rich-text-image.png["Insert Image dialog showing alignment, style, and custom-width controls"]
+image::rich-text-image.png["Insert Image dialog showing alignment, style, and custom-width controls", 905px]
 
 NOTE: In general, avoid using *Custom width*. The editor may declare a relative width, but the front end can override it through its layout and styling rules.
 
@@ -124,7 +124,7 @@ Content Studio requires an accessibility setting for each image:
 Decorative image:: Use when the image adds no information that is not already provided by the surrounding text. Assistive technologies can then ignore it.
 Alternative text:: Use when the image conveys meaning. Supply alternative text that communicates the image's purpose or essential information.
 
-image::rich-text-accessibility.png[Insert Image dialog showing the caption and accessibility settings]
+image::rich-text-accessibility.png[Insert Image dialog showing the caption and accessibility settings, 905px]
 
 TIP: If alternative text already exists on the image content, it is automatically prefilled in the accessibility settings.
 
