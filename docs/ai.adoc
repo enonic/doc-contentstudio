@@ -3,12 +3,23 @@
 :imagesdir: ai/images
 :experimental:
 
-Juke AI assists editors with writing and translating content in the <<editor#,Content Editor>>. It provides two skills:
+Juke AI assists editors with writing, describing, and translating content in the <<editor#,Content Editor>>. It provides three skills:
 
 * *<<#content_operator,Content Operator>>* — a chat interface for generating, revising, and comparing suggestions for form fields.
+* *<<#alt_text,Alt text generation>>* — describes newly uploaded images by filling in their *Alternative text* field. Provided by the Content Operator application.
 * *<<#ai_translator,AI Translator>>* — translates supported text when localizing content or changing its language.
 
 NOTE: *Content Studio+ feature.* Juke AI requires a valid https://market.enonic.com/vendors/enonic/content-studio-plus[Content Studio+] subscription and the application for each skill that editors will use.
+
+[[enabling]]
+== Enabling Juke AI
+
+Installing a Juke application is not enough to make its skills available. Each application must also be added to the <<projects#project-applications,project>> or <<content-types/site#_site_applications,Site>> that contains the content. Project applications apply to content outside Sites; add the application to a Site for content within it. Changing these settings requires the <<projects#project-roles,Owner>> project role or an administrator role.
+
+Skills are available only for content in a project or Site where the corresponding application is added:
+
+* The Content Operator chat and alt text generation require the *Juke AI Content Operator* application. Without it, the Juke icon does not appear in the Content Editor toolbar.
+* The AI Translator requires the *Juke AI Content Translator* application. Without it, the translation dialog does not open when content is localized or its language is changed.
 
 Review generated and translated values before saving or publishing. AI suggestions can contain mistakes, and inserting them does not replace the normal <<workflow#,content workflow>>.
 
@@ -97,7 +108,7 @@ Configure *General Instructions* on the Content Operator application to give Juk
 .General instructions for the Content Operator
 image::ai-instructions.png["Juke AI Content Operator application configuration with General Instructions for tone and writing style", 760px]
 
-Add and configure the application in the relevant <<projects#project-applications,project>> or <<content-types/site#_site_applications,Site>> application settings. Project application settings apply to content outside Sites; configure the application on a Site for content within it. Changing these settings requires the <<projects#project-roles,Owner>> project role or an administrator role.
+Configure the instructions where the application is added to the project or site; see <<#enabling,Enabling Juke AI>>.
 
 [[known_issues]]
 === Scope and limitations
@@ -108,10 +119,27 @@ The chat currently does not support fields in mixins or pages. Support for these
 
 Suggestions are intended for content authoring. They do not perform content actions such as publishing, moving, or deleting items. The <<#ai_translator,AI Translator>> has its own dialog and is not invoked through the Content Operator chat.
 
+[[alt_text]]
+== Alt text generation
+
+The Content Operator application also generates alternative text for uploaded images. This skill runs automatically and has no chat interface.
+
+When an editor uploads an <<content-types/image#,Image>> or vector file, Juke analyzes the image and writes a short description into its *Alternative text* field. This applies to all upload paths in Content Studio: uploading new files from the content tree, inserting an image from a URL, and replacing the file of an existing image. The description is written in the content's language, or the <<projects#,project>>'s default language when the content has none.
+
+Generation runs in the background and takes a few seconds. The field is updated in the open form, including the *Alternative text* input of the <<editor/rich-text-editor#_caption_and_accessibility,Insert Image dialog>> when the image was uploaded from the Rich Text Editor.
+
+The skill only fills in empty fields. Images that already have alternative text, or that an editor describes while generation is in progress, are left unchanged. Images uploaded before the application was enabled are not processed.
+
+Review the generated text as part of the normal content workflow. Alt text should convey the meaning or purpose of the image in its context, which the model cannot always infer from the image alone.
+
+The skill is active only in projects and Sites the Content Operator application is added to; see <<#enabling,Enabling Juke AI>>.
+
+NOTE: General instructions configured for the Juke Operator app do not apply to alt text generation.
+
 [[ai_translator]]
 == AI Translator
 
-The https://market.enonic.com/vendors/enonic/juke-ai-content-translator[Juke AI Content Translator] application translates content into the item's target language. When enabled, it opens the *AI Automated Translation* dialog after an editor <<actions/localize#localize,localizes an inherited item>> or changes an item's language.
+The https://market.enonic.com/vendors/enonic/juke-ai-content-translator[Juke AI Content Translator] application translates content into the item's target language. When added to the project or site (see <<#enabling,Enabling Juke AI>>), it opens the *AI Automated Translation* dialog after an editor <<actions/localize#localize,localizes an inherited item>> or changes an item's language.
 
 === Translate content
 
@@ -133,6 +161,6 @@ Configure *General Instructions* on the Translator application to provide reusab
 .General translation instructions on the Translator application
 image::ai-translator-prompt.png["Juke AI Translator application configuration with a General Instructions field and Apply button", 760px]
 
-Configure the application at the relevant <<projects#project-applications,project>> or <<content-types/site#_site_applications,Site>> scope. Changing application settings requires the <<projects#project-roles,Owner>> project role or an administrator role.
+Configure the instructions where the application is added to the project or site; see <<#enabling,Enabling Juke AI>>.
 
 These instructions are automatically copied into the translation dialog for each item. Editors can use the standard prompt unchanged or adjust *Translation instructions* for that item. Edits in the dialog do not change the application's configured instructions.

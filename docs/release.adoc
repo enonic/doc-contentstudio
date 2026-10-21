@@ -2,10 +2,6 @@
 :imagesdir: release/images
 :toc: right
 
-Release notes for Content Studio 6 - June 2026.
-
-IMPORTANT: Content Studio 6 requires Enonic XP 8.0 or newer.
-
 ////
 Template for future feature releases — uncomment and fill in when a release ships.
 Newest release goes at the TOP, directly below this comment and above "Content Studio 6.0".
@@ -23,7 +19,40 @@ Newest release goes at the TOP, directly below this comment and above "Content S
 * <fix>
 ////
 
+
+== Content Studio 6.1
+
+IMPORTANT: Content Studio 6.1 requires Enonic XP 8.1 or newer.
+
+=== Generation of alt text for images
+
+With the Juke AI Content Operator application installed, enabled and assigned to a site, Content Studio now automatically generates alternative text for images uploaded under the site. When an editor uploads an image or vector file, the *Alternative text* field is filled in with a short description in the content's language. Existing alt text is never overwritten.
+
+Read more about <<ai#alt_text,Alt text generation>>.
+
+=== Automatic template customization
+
+Content types can now declare that new items are customized at creation. When a content type has `customizeOnCreate: true` in its config block, Content Studio copies the resolved page template into every new item of that type, so the Page Editor opens with an editable page instead of a locked template.
+
+Read more about <<editor/page-editor#customize_on_create,Automatic customization on creation>>.
+
+
+=== Improvements
+
+* Juke AI apps will function only when added to the site
+* Animate input fields during Juke translation
+* Improved accessibility
+* Improved responsiveness
+* Support custom component icons
+* Adapt content type icons to color theme
+* Panel resize improvements
+* Change "Include child items" to a toggle in the Publishing Wizard
+* Add Theme switcher to Settings
+* GraalJS compatibility
+
 == Content Studio 6.0
+
+IMPORTANT: Content Studio 6 requires Enonic XP 8.0 or newer.
 
 This is a major release with significant improvements and new features. The release focuses on modernizing the user interface, improving the preview system, and rebuilding the underlying architecture for better performance and extensibility.
 
@@ -135,9 +164,9 @@ Resolved in the 6.0.x patch releases:
 [#upgrade]
 == Upgrade notes
 
-Content Studio 6 requires XP 8.0 or newer, which is a breaking release. In order to start using Content Studio 6 you must 
+Content Studio 6 requires XP 8.0 or newer, which is a breaking release. In order to start using Content Studio 6 you must
 
-* Upgrade your XP installation 
+* Upgrade your XP installation
 * Upgrade all Enonic apps running on your instance to their latest versions, which are compatible with XP 8.0 and Content Studio 6.0.
 
 Read more about the XP 8.0 upgrade process in the https://developer.enonic.com/docs/xp/stable/release/upgrade[XP upgrade guide].
@@ -148,6 +177,6 @@ Read more about the XP 8.0 upgrade process in the https://developer.enonic.com/d
 
 * *Rich Text component is deprecated* — and will be removed in a future release. Create your own rich text part and migrate at will. Existing components will continue to work, but insert is now disabled by default. +
 
-TIP: Full functionalilty may be re-activated via the <<config#, content studio configuration>> 
+TIP: Full functionalilty may be re-activated via the <<config#, content studio configuration>>
 
 * *New URL pattern* — Content Studio is now served without the `/tool/` prefix
