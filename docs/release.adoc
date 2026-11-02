@@ -26,7 +26,7 @@ IMPORTANT: Content Studio 6.1 requires Enonic XP 8.1 or newer.
 
 === Generation of alt text for images
 
-With the Juke AI Content Operator application installed and assigned to a site or a project, Content Studio now automatically generates alternative text for images uploaded under that site or project. When an editor uploads an image or vector file, the *Alternative text* field is filled in with a short description in the content's language. Existing alt text is never overwritten.
+With the Juke AI Content Operator application installed and assigned to a site or a project, Content Studio now automatically generates alternative text for images uploaded under that site or project. When an editor uploads an image or vector file, the *Alternative text* field is filled in with a short description in the content's language, written according to the WCAG guidelines for text alternatives. Existing alt text is never overwritten.
 
 Read more about <<ai#alt_text,Alt text generation>>.
 
