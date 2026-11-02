@@ -577,7 +577,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </dd>
 <dt class="hdlist1">Juke AI</dt>
 <dd>
-<p>When the Juke AI Content Operator is installed, the Juke icon opens or closes the AI assistant. See <a href="ai.ahtml#content_operator">Juke AI Content Operator</a>.</p>
+<p>When the Juke AI Content Operator is added to the project or Site, the Juke icon opens or closes the AI assistant. See <a href="ai.ahtml#content_operator">Juke AI Content Operator</a>.</p>
 </dd>
 <dt class="hdlist1">Collaborators</dt>
 <dd>
@@ -631,7 +631,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-09-25 08:17:51 UTC
+Last updated 2026-11-02 21:44:14 UTC
 </div>
 </div>
 </body>

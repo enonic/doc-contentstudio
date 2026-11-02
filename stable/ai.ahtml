@@ -441,6 +441,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
+<li><a href="#enabling">Enabling Juke AI</a></li>
 <li><a href="#content_operator">Content Operator</a>
 <ul class="sectlevel2">
 <li><a href="#_interface">Open the chat</a></li>
@@ -453,6 +454,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#known_issues">Scope and limitations</a></li>
 </ul>
 </li>
+<li><a href="#alt_text">Alt text generation</a></li>
 <li><a href="#ai_translator">AI Translator</a>
 <ul class="sectlevel2">
 <li><a href="#translate_content">Translate content</a></li>
@@ -466,12 +468,15 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Juke AI assists editors with writing and translating content in the <a href="editor.ahtml">Content Editor</a>. It provides two skills:</p>
+<p>Juke AI assists editors with writing, describing, and translating content in the <a href="editor.ahtml">Content Editor</a>. It provides three skills:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
 <p><strong><a href="#content_operator">Content Operator</a></strong> — a chat interface for generating, revising, and comparing suggestions for form fields.</p>
+</li>
+<li>
+<p><strong><a href="#alt_text">Alt text generation</a></strong> — describes newly uploaded images by filling in their <strong>Alternative text</strong> field. Provided by the Content Operator application.</p>
 </li>
 <li>
 <p><strong><a href="#ai_translator">AI Translator</a></strong> — translates supported text when localizing content or changing its language.</p>
@@ -489,6 +494,27 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </td>
 </tr>
 </table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="enabling"><a class="link" href="#enabling">Enabling Juke AI</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Installing a Juke application is not enough to make its skills available. Each application must also be added to the <a href="projects.ahtml#project-applications">project</a> or <a href="content-types/site.ahtml#_site_applications">Site</a> that contains the content. An application added to the project applies to all content in that project, inside and outside Sites. An application added only to a Site applies to content under that Site. Changing these settings requires the <a href="projects.ahtml#project-roles">Owner</a> project role or an administrator role.</p>
+</div>
+<div class="paragraph">
+<p>Skills are available only for content in a project or Site where the corresponding application is added:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The Content Operator chat and alt text generation require the <strong>Juke AI Content Operator</strong> application. Without it, the Juke icon does not appear in the Content Editor toolbar.</p>
+</li>
+<li>
+<p>The AI Translator requires the <strong>Juke AI Content Translator</strong> application. Without it, the translation dialog does not open when content is localized or its language is changed.</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>Review generated and translated values before saving or publishing. AI suggestions can contain mistakes, and inserting them does not replace the normal <a href="workflow.ahtml">content workflow</a>.</p>
@@ -638,7 +664,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="title">Figure 7. General instructions for the Content Operator</div>
 </div>
 <div class="paragraph">
-<p>Add and configure the application in the relevant <a href="projects.ahtml#project-applications">project</a> or <a href="content-types/site.ahtml#_site_applications">Site</a> application settings. Project application settings apply to content outside Sites; configure the application on a Site for content within it. Changing these settings requires the <a href="projects.ahtml#project-roles">Owner</a> project role or an administrator role.</p>
+<p>Configure the instructions where the application is added to the project or site; see <a href="#enabling">Enabling Juke AI</a>. For content under a Site that has the application, the Site&#8217;s instructions apply, even when the field is left empty. Otherwise the project&#8217;s instructions apply.</p>
 </div>
 </div>
 <div class="sect2">
@@ -656,10 +682,45 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
+<h2 id="alt_text"><a class="link" href="#alt_text">Alt text generation</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Content Operator application also generates alternative text for uploaded images. This skill runs automatically and has no chat interface.</p>
+</div>
+<div class="paragraph">
+<p>When an editor uploads an <a href="content-types/image.ahtml">Image</a> or vector file, Juke analyzes the image and writes a short description into its <strong>Alternative text</strong> field. The description follows the <a href="https://www.w3.org/TR/WCAG22/<mark>non-text-content" target="_blank" rel="noopener">WCAG 2.2</a> guidelines for text alternatives: it is concise, conveys the meaning of the image rather than its visual details, reproduces any text visible in the image, summarizes charts and diagrams by their key finding, names logos and well-known subjects, and avoids redundant phrases such as "image of". This applies to all upload paths in Content Studio: uploading new files from the content tree, inserting an image from a URL, and replacing the file of an existing image. The description is written in the content&#8217;s language, or the <a href="#projects</mark>">project</a>'s default language when the content has none.</p>
+</div>
+<div class="paragraph">
+<p>Generation runs in the background and takes a few seconds. The field is updated in the open form, including the <strong>Alternative text</strong> input of the <a href="editor/rich-text-editor.ahtml#_caption_and_accessibility">Insert Image dialog</a> when the image was uploaded from the Rich Text Editor.</p>
+</div>
+<div class="paragraph">
+<p>The skill only fills in empty fields. Images that already have alternative text, or that an editor describes while generation is in progress, are left unchanged. Images uploaded before the application was enabled are not processed.</p>
+</div>
+<div class="paragraph">
+<p>Review the generated text as part of the normal content workflow. Alt text should convey the meaning or purpose of the image in its context, which the model cannot always infer from the image alone.</p>
+</div>
+<div class="paragraph">
+<p>The skill is active only in projects and Sites the Content Operator application is added to; see <a href="#enabling">Enabling Juke AI</a>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+General instructions configured for the Juke Operator app do not apply to alt text generation.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="ai_translator"><a class="link" href="#ai_translator">AI Translator</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The <a href="https://market.enonic.com/vendors/enonic/juke-ai-content-translator">Juke AI Content Translator</a> application translates content into the item&#8217;s target language. When enabled, it opens the <strong>AI Automated Translation</strong> dialog after an editor <a href="actions/localize.ahtml#localize">localizes an inherited item</a> or changes an item&#8217;s language.</p>
+<p>The <a href="https://market.enonic.com/vendors/enonic/juke-ai-content-translator">Juke AI Content Translator</a> application translates content into the item&#8217;s target language. When added to the project or site (see <a href="#enabling">Enabling Juke AI</a>), it opens the <strong>AI Automated Translation</strong> dialog after an editor <a href="actions/localize.ahtml#localize">localizes an inherited item</a> or changes an item&#8217;s language.</p>
 </div>
 <div class="sect2">
 <h3 id="translate_content"><a class="link" href="#translate_content">Translate content</a></h3>
@@ -703,7 +764,7 @@ The Localize action stops the item&#8217;s <strong>Content</strong> inheritance 
 <div class="title">Figure 9. General translation instructions on the Translator application</div>
 </div>
 <div class="paragraph">
-<p>Configure the application at the relevant <a href="projects.ahtml#project-applications">project</a> or <a href="content-types/site.ahtml#_site_applications">Site</a> scope. Changing application settings requires the <a href="projects.ahtml#project-roles">Owner</a> project role or an administrator role.</p>
+<p>Configure the instructions where the application is added to the project or site; see <a href="#enabling">Enabling Juke AI</a>. For content under a Site that has the application, the Site&#8217;s instructions are used, even when the field is left empty. Otherwise the project&#8217;s instructions are used.</p>
 </div>
 <div class="paragraph">
 <p>These instructions are automatically copied into the translation dialog for each item. Editors can use the standard prompt unchanged or adjust <strong>Translation instructions</strong> for that item. Edits in the dialog do not change the application&#8217;s configured instructions.</p>
@@ -714,7 +775,7 @@ The Localize action stops the item&#8217;s <strong>Content</strong> inheritance 
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-09-25 08:17:51 UTC
+Last updated 2026-11-02 21:44:14 UTC
 </div>
 </div>
 </body>
