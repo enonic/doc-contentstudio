@@ -83,6 +83,23 @@ image::page-detach.png["Confirmation dialog for copying a page template structur
 
 After customization, the page is no longer linked to the original template, and later template changes do not affect it.
 
+[[customize_on_create]]
+==== Automatic customization on creation
+
+Some content types are meant to be built individually, such as landing pages or campaign pages. Rather than having editors customize every new item by hand, an application can declare that content of a type is customized at creation. Add the `customizeOnCreate` attribute to the content type's `config` block:
+
+[source,yaml]
+----
+config:
+  customizeOnCreate: true
+----
+
+When an editor creates content of such a type inside a Site, Content Studio resolves the page template that applies to the type, using the same automatic resolution as for a locked page, and copies the template's component structure and configuration into the new item. The Page Editor opens with an editable, item-specific page, exactly as if btn:[Customize] had been clicked.
+
+The attribute has no effect when the content is created outside a Site, or when no page template supports the content type. In these cases the content is created without a page as usual. Existing content is not affected, and the page template remains available for other content.
+
+See the https://developer.enonic.com/docs/cms/stable/content/content-types[Enonic CMS content types reference] for the content type descriptor format.
+
 === Pinning a page template
 
 Several page templates may be compatible with your content type.
